@@ -1,0 +1,20 @@
+SEO notes for FireOpsSim.com
+
+This rebuild is designed as a search-friendly hub, not just a graphic splash page.
+
+What was added:
+- Crawlable HTML links instead of JavaScript-only navigation.
+- Unique title tags and meta descriptions for every major page.
+- Canonical URLs using https://fireopssim.com/.
+- Open Graph and Twitter card metadata.
+- JSON-LD structured data for WebSite, Organization, ItemList, SoftwareApplication, FAQPage, and BreadcrumbList where appropriate.
+- sitemap.xml and robots.txt.
+- Netlify-friendly _redirects and _headers files.
+- Supporting landing pages for major search topics: fire pump calculator, FirePumpSim scenarios, driver/operator practice, printable pump scenarios, fireground tools, and apps.
+
+Important next steps:
+- Keep adding useful pages, not just buttons. Examples: standpipe pump pressure, relay pumping calculator, friction loss table, foam eductor pressure, hydrant flow calculator, pump card builder.
+- Link all related sites together naturally: FireOpsSim.com, FireOpsCalc.com, FirePumpSim.com, and app store listings.
+- Add screenshots or short demo videos later, with descriptive alt text and captions.
+- Submit sitemap.xml in Google Search Console.
+- Ranking is not guaranteed. Google rewards useful content, crawlable structure, clear titles/descriptions, and good user experience over keyword stuffing.
