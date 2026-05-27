@@ -1,9 +1,9 @@
 {
   "name": "FireOpsSim",
   "short_name": "FireOpsSim",
+  "description": "Firefighter-built command hub for pump calculators, scenarios, printables, and fire training apps.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f7f6f0",
-  "theme_color": "#0f2418",
-  "description": "Firefighter-built fire training apps, pump calculators, and fireground simulators."
+  "background_color": "#0d1f15",
+  "theme_color": "#0d1f15"
 }

@@ -1,20 +1,22 @@
-SEO notes for FireOpsSim.com
+FireOpsSim SEO Notes
 
-This rebuild is designed as a search-friendly hub, not just a graphic splash page.
+This build turns FireOpsSim.com into a central hub page for fire projects and search landing pages.
 
-What was added:
-- Crawlable HTML links instead of JavaScript-only navigation.
-- Unique title tags and meta descriptions for every major page.
-- Canonical URLs using https://fireopssim.com/.
-- Open Graph and Twitter card metadata.
-- JSON-LD structured data for WebSite, Organization, ItemList, SoftwareApplication, FAQPage, and BreadcrumbList where appropriate.
-- sitemap.xml and robots.txt.
-- Netlify-friendly _redirects and _headers files.
-- Supporting landing pages for major search topics: fire pump calculator, FirePumpSim scenarios, driver/operator practice, printable pump scenarios, fireground tools, and apps.
+Primary SEO targets:
+- fire pump calculator
+- pump discharge pressure calculator
+- fire hose friction loss calculator
+- nozzle reaction calculator
+- relay pumping calculator
+- standpipe FDC calculator
+- printable fire pump scenarios
+- driver operator practice
+- pump card builder
+- FireOps Calc
+- FirePumpSim
 
-Important next steps:
-- Keep adding useful pages, not just buttons. Examples: standpipe pump pressure, relay pumping calculator, friction loss table, foam eductor pressure, hydrant flow calculator, pump card builder.
-- Link all related sites together naturally: FireOpsSim.com, FireOpsCalc.com, FirePumpSim.com, and app store listings.
-- Add screenshots or short demo videos later, with descriptive alt text and captions.
-- Submit sitemap.xml in Google Search Console.
-- Ranking is not guaranteed. Google rewards useful content, crawlable structure, clear titles/descriptions, and good user experience over keyword stuffing.
+Recommended content growth:
+- Add weekly scenario posts under a future /scenarios/ folder.
+- Add downloadable PDFs with links back to FireOpsSim.com.
+- Add screenshots of FireOps Calc and FirePumpSim once you have final store screenshots.
+- Keep admin/editor pages noindexed and out of the sitemap.

@@ -1,26 +1,16 @@
-FireOpsSim fresh landing site
+FireOpsSim Powerhouse Landing Site
 
-Upload all files in this folder to the root of fireopssim.com.
+Upload the full contents of this folder to the root of fireopssim.com.
 
-Required root files:
-- index.html
-- styles.css
-- fire-pump-calculator.html
-- fire-pump-training-scenarios.html
-- driver-operator-practice.html
-- printable-fire-pump-scenarios.html
-- fireground-tools.html
-- apps.html
-- about.html
-- 404.html
-- sitemap.xml
-- robots.txt
-- site.webmanifest
-- _redirects
-- _headers
+Important files:
+- index.html: powerhouse homepage with all FireOps tools/functions surfaced
+- styles.css: modern responsive design
+- calc-tools.js: quick calculator logic and homepage tool search/filter
+- sitemap.xml: submit this in Google Search Console
+- robots.txt: allows public pages and blocks admin-style paths
+- _redirects and _headers: Netlify routing/security helpers
 
-After deployment:
-1. Open https://fireopssim.com/ and check links.
-2. Open https://fireopssim.com/sitemap.xml.
-3. Submit sitemap.xml in Google Search Console.
-4. Link to FireOpsSim.com from FireOpsCalc.com, FirePumpSim.com, app store descriptions, and social profiles.
+After upload:
+1. Visit https://fireopssim.com/ and test all homepage cards.
+2. Submit https://fireopssim.com/sitemap.xml in Google Search Console.
+3. Keep FireOpsCalc.com as the deeper calculator site and FirePumpSim.com as the visual scenario app site.
