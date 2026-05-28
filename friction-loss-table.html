@@ -3,24 +3,33 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Foam Operations Calculator | Fire Eductor Pump Pressure Training</title>
-  <meta name="description" content="Foam operations calculator landing page for fire eductor pressure, attack line hose layouts, and driver/operator foam training.">
+  <title>Fire Hose Friction Loss Table Generator | FireOpsSim</title>
+  <meta name="description" content="Generate a quick fire hose friction loss table by GPM and C-values for driver/operator training.">
   
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <link rel="canonical" href="https://fireopssim.com/foam-operations-calculator.html">
+  <link rel="canonical" href="https://fireopssim.com/friction-loss-table.html">
   <meta name="theme-color" content="#0d1f15">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Foam Operations Calculator | Fire Eductor Pump Pressure Training">
-  <meta property="og:description" content="Foam operations calculator landing page for fire eductor pressure, attack line hose layouts, and driver/operator foam training.">
-  <meta property="og:url" content="https://fireopssim.com/foam-operations-calculator.html">
+  <meta property="og:title" content="Fire Hose Friction Loss Table Generator | FireOpsSim">
+  <meta property="og:description" content="Generate a quick fire hose friction loss table by GPM and C-values for driver/operator training.">
+  <meta property="og:url" content="https://fireopssim.com/friction-loss-table.html">
   <meta property="og:site_name" content="FireOpsSim">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Foam Operations Calculator | Fire Eductor Pump Pressure Training">
-  <meta name="twitter:description" content="Foam operations calculator landing page for fire eductor pressure, attack line hose layouts, and driver/operator foam training.">
+  <meta name="twitter:title" content="Fire Hose Friction Loss Table Generator | FireOpsSim">
+  <meta name="twitter:description" content="Generate a quick fire hose friction loss table by GPM and C-values for driver/operator training.">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="stylesheet" href="/styles.css">
   <script defer src="/calc-tools.js"></script>
-  
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "FireOps Calc",
+  "applicationCategory": "ReferenceApplication",
+  "operatingSystem": "iOS, Android, Web",
+  "url": "https://fireopscalc.com/"
+}
+</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -43,8 +52,8 @@
   </nav>
 </header>
 <main id="main">
-<section class="subhero"><div class="shell"><p class="eyebrow">Foam operations</p><h1>Foam eductor and attack line training page</h1><p>A FireOpsSim page for foam attack layout, eductor pressure logic, hose before and after the eductor, and pump pressure training links.</p><div class="hero-actions"><a class="button primary" href="/tools.html">View All Tools</a><a class="button secondary" href="https://fireopscalc.com/">Open FireOps Calc</a></div></div></section>
-<section class="section shell two-column"><article class="quick-tool full-tool" data-calc="foam"><h2>Foam eductor layout estimate</h2><p>Training model: pump to 200 PSI at the eductor, then account for hose between engine and eductor. Eductor-to-nozzle hose is limited by the eductor/nozzle setup and department guidance.</p><div class="fields two-col"><label>Required pressure at eductor PSI<input type="number" data-field="eductor" value="200"></label><label>Flow GPM<input type="number" data-field="gpm" value="185"></label><label>Hose C-value to eductor<input type="number" step="0.1" data-field="c" value="15.5"></label><label>Engine to eductor length ft<input type="number" data-field="length" value="50"></label><label>Elevation PSI<input type="number" data-field="elev" value="0"></label></div><output class="calc-output" data-output></output></article><aside class="content-card"><h2>FireOps Calc foam logic</h2><p>This page supports the same training concept you wanted in FireOps Calc: hose from engine to eductor, 200 PSI at eductor, then hose from eductor to nozzle.</p><a class="button primary" href="/attack-line-calculator.html">Attack line calculator</a></aside></section><div class="notice"><strong>Training note:</strong> These web tools are for education, practice, and estimating. Use your department SOPs, instructor direction, and manufacturer guidance for live operations.</div>
+<section class="subhero"><div class="shell"><p class="eyebrow">Friction loss</p><h1>Friction loss table generator</h1><p>Build a quick reference table for common hose sizes and GPM values, then send users into the full FireOps Calc app for saved department presets.</p><div class="hero-actions"><a class="button primary" href="/tools.html">View Total Toolkit</a><a class="button secondary" href="https://fireopscalc.com/">Open FireOps Calc</a></div></div></section>
+<section class="section shell"><article class="quick-tool full-tool" data-calc="fltable"><h2>Friction loss table</h2><p>Enter a flow and compare common hose C-values. Edit values to match your local training standards.</p><div class="fields four-col"><label>Flow GPM<input type="number" data-field="gpm" value="185"></label><label>1¾ C<input type="number" step="0.1" data-field="c1" value="15.5"></label><label>2½ C<input type="number" step="0.1" data-field="c2" value="2"></label><label>LDH C<input type="number" step="0.01" data-field="c3" value="0.08"></label></div><div class="table-wrap"><table class="data-table"><thead><tr><th>Hose</th><th>C</th><th>FL / 100 ft</th><th>200 ft</th><th>300 ft</th></tr></thead><tbody data-table-output></tbody></table></div><output class="calc-output" data-output></output></article></section><div class="notice"><strong>Training note:</strong> These web tools are for education, practice, and estimating. Use your department SOPs, instructor direction, and manufacturer guidance for live operations.</div>
 </main>
 <footer class="footer">
   <div class="shell footer-grid">

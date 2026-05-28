@@ -12,3 +12,11 @@
 /apps /apps.html 200
 /tools /tools.html 200
 /* /404.html 404
+
+/attack-line-calculator /attack-line-calculator.html 200
+/master-stream-calculator /master-stream-calculator.html 200
+/wye-siamese-calculator /wye-siamese-calculator.html 200
+/deck-gun-calculator /deck-gun-calculator.html 200
+/department-setup /department-setup.html 200
+/friction-loss-table /friction-loss-table.html 200
+/hose-layout-planner /hose-layout-planner.html 200

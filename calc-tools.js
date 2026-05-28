@@ -56,6 +56,64 @@
       const pdp = np + fl + system + elev + app;
       out.textContent = `${fmt(pdp)} PSI estimated FDC pressure • Elevation ${fmt(elev)} PSI`;
     }
+
+    if(type === 'master'){
+      const gpm=num(box,'gpm',500), np=num(box,'np',80), lines=Math.max(1,num(box,'lines',2)), c=num(box,'c',2), len=num(box,'length',200), app=num(box,'app',0);
+      const perLine = gpm / lines;
+      const fl100 = c * Math.pow(perLine/100,2);
+      const fl = fl100 * (len/100);
+      const pdp = np + fl + app;
+      out.textContent = `${fmt(pdp)} PSI PDP • ${fmt(perLine)} GPM per line • FL ${fmt(fl)} PSI per line`;
+    }
+    if(type === 'wye'){
+      const mainfl=num(box,'mainfl',20), app=num(box,'app',10), npa=num(box,'npa',50), fla=num(box,'fla',30), npb=num(box,'npb',50), flb=num(box,'flb',45), elev=num(box,'elev',0);
+      const a = npa + fla;
+      const b = npb + flb;
+      const govern = Math.max(a,b);
+      const pdp = mainfl + app + govern + elev;
+      const branch = a >= b ? 'Branch A controls' : 'Branch B controls';
+      out.textContent = `${fmt(pdp)} PSI PDP • ${branch} (${fmt(govern)} PSI branch requirement)`;
+    }
+    if(type === 'deck'){
+      const gpm=num(box,'gpm',500), np=num(box,'np',80), app=num(box,'app',0);
+      const pdp = np + app;
+      const nr = 0.0505 * gpm * Math.sqrt(np);
+      out.textContent = `${fmt(pdp)} PSI pump target • ${fmt(nr)} lb estimated nozzle reaction`;
+    }
+    if(type === 'foam'){
+      const eductor=num(box,'eductor',200), gpm=num(box,'gpm',185), c=num(box,'c',15.5), len=num(box,'length',50), elev=num(box,'elev',0);
+      const fl100 = c * Math.pow(gpm/100,2);
+      const fl = fl100 * (len/100);
+      const pdp = eductor + fl + elev;
+      out.textContent = `${fmt(pdp)} PSI engine PDP • 200 PSI at eductor + ${fmt(fl)} PSI engine-to-eductor FL`;
+    }
+    if(type === 'setup'){
+      const val = name => {
+        const el = box.querySelector(`[data-field="${name}"]`);
+        return el ? el.value : '';
+      };
+      out.textContent = `${val('apparatus')} • ${val('line')}: ${val('length')} ft ${val('hose')} using ${val('nozzle')} • C ${val('c')}`;
+    }
+    if(type === 'fltable'){
+      const gpm=num(box,'gpm',185), c1=num(box,'c1',15.5), c2=num(box,'c2',2), c3=num(box,'c3',0.08);
+      const rows = [['1¾ in.',c1],['2½ in.',c2],['LDH / supply',c3]];
+      const tbody = box.querySelector('[data-table-output]');
+      if(tbody){
+        tbody.innerHTML = rows.map(([label,c])=>{
+          const fl100 = c * Math.pow(gpm/100,2);
+          return `<tr><td>${label}</td><td>${c}</td><td>${fmt(fl100)} PSI</td><td>${fmt(fl100*2)} PSI</td><td>${fmt(fl100*3)} PSI</td></tr>`;
+        }).join('');
+      }
+      out.textContent = `Friction loss table generated at ${fmt(gpm)} GPM`;
+    }
+    if(type === 'layout'){
+      const val = name => {
+        const el = box.querySelector(`[data-field="${name}"]`);
+        return el ? el.value : '';
+      };
+      out.textContent = `${val('type')} • ${val('gpm')} GPM • ${val('length')} ft ${val('hose')} • target ${val('np')} PSI • ${val('notes')}`;
+    }
+
     if(type === 'convert'){
       const feet=num(box,'feet',100), gal=num(box,'gal',1000), psi=num(box,'psi',100);
       out.textContent = `${feet} ft = ${(feet*0.3048).toFixed(1)} m • ${gal} gal = ${fmt(gal*3.78541)} L • ${psi} PSI = ${(psi*0.0689476).toFixed(1)} bar`;

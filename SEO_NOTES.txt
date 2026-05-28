@@ -1,22 +1,24 @@
-FireOpsSim SEO Notes
+FireOpsSim Total Toolkit SEO Notes
 
-This build turns FireOpsSim.com into a central hub page for fire projects and search landing pages.
+This build makes FireOpsSim the main landing page and Google-friendly hub for the FireOps ecosystem. Each major FireOps Calc-style tool has a crawlable page with a focused title, meta description, and internal links.
 
-Primary SEO targets:
+Core SEO targets:
 - fire pump calculator
 - pump discharge pressure calculator
+- attack line pump pressure
 - fire hose friction loss calculator
+- friction loss table
 - nozzle reaction calculator
+- hydrant flow calculator
 - relay pumping calculator
+- tender shuttle calculator
 - standpipe FDC calculator
-- printable fire pump scenarios
+- foam eductor pump pressure
+- wye siamese pump pressure
+- master stream calculator
+- deck gun calculator
+- fire pump card builder
 - driver operator practice
-- pump card builder
-- FireOps Calc
-- FirePumpSim
+- printable pump scenarios
 
-Recommended content growth:
-- Add weekly scenario posts under a future /scenarios/ folder.
-- Add downloadable PDFs with links back to FireOpsSim.com.
-- Add screenshots of FireOps Calc and FirePumpSim once you have final store screenshots.
-- Keep admin/editor pages noindexed and out of the sitemap.
+Ranking is not guaranteed, but this structure gives Google many specific pages to crawl instead of only one broad homepage.

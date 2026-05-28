@@ -1,16 +1,23 @@
-FireOpsSim Powerhouse Landing Site
+FireOpsSim Total Toolkit Upload Notes
 
-Upload the full contents of this folder to the root of fireopssim.com.
+Upload the full contents of this folder to FireOpsSim.com. This version turns FireOpsSim into the primary fire project hub and mirrors the major FireOps Calc tool categories.
 
-Important files:
-- index.html: powerhouse homepage with all FireOps tools/functions surfaced
-- styles.css: modern responsive design
-- calc-tools.js: quick calculator logic and homepage tool search/filter
-- sitemap.xml: submit this in Google Search Console
-- robots.txt: allows public pages and blocks admin-style paths
-- _redirects and _headers: Netlify routing/security helpers
+New/expanded focus:
+- Pump pressure / PDP
+- Attack lines
+- Friction loss calculator and friction loss table
+- Nozzle reaction
+- Hydrant flow
+- Relay pumping
+- Tender shuttle
+- Standpipe / FDC
+- Sprinkler / FDC
+- Foam eductor operations
+- Wye / Siamese branch logic
+- Master stream and deck gun
+- Department setup preview
+- Pump card builder
+- Hose layout planner
+- Printable scenarios and FirePumpSim scenario training
 
-After upload:
-1. Visit https://fireopssim.com/ and test all homepage cards.
-2. Submit https://fireopssim.com/sitemap.xml in Google Search Console.
-3. Keep FireOpsCalc.com as the deeper calculator site and FirePumpSim.com as the visual scenario app site.
+After upload, submit https://fireopssim.com/sitemap.xml in Google Search Console.

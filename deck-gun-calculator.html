@@ -3,24 +3,33 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Foam Operations Calculator | Fire Eductor Pump Pressure Training</title>
-  <meta name="description" content="Foam operations calculator landing page for fire eductor pressure, attack line hose layouts, and driver/operator foam training.">
+  <title>Deck Gun Pump Pressure Calculator | FireOpsSim</title>
+  <meta name="description" content="Estimate pump pressure and nozzle reaction for engine-mounted deck gun operations.">
   
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <link rel="canonical" href="https://fireopssim.com/foam-operations-calculator.html">
+  <link rel="canonical" href="https://fireopssim.com/deck-gun-calculator.html">
   <meta name="theme-color" content="#0d1f15">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Foam Operations Calculator | Fire Eductor Pump Pressure Training">
-  <meta property="og:description" content="Foam operations calculator landing page for fire eductor pressure, attack line hose layouts, and driver/operator foam training.">
-  <meta property="og:url" content="https://fireopssim.com/foam-operations-calculator.html">
+  <meta property="og:title" content="Deck Gun Pump Pressure Calculator | FireOpsSim">
+  <meta property="og:description" content="Estimate pump pressure and nozzle reaction for engine-mounted deck gun operations.">
+  <meta property="og:url" content="https://fireopssim.com/deck-gun-calculator.html">
   <meta property="og:site_name" content="FireOpsSim">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Foam Operations Calculator | Fire Eductor Pump Pressure Training">
-  <meta name="twitter:description" content="Foam operations calculator landing page for fire eductor pressure, attack line hose layouts, and driver/operator foam training.">
+  <meta name="twitter:title" content="Deck Gun Pump Pressure Calculator | FireOpsSim">
+  <meta name="twitter:description" content="Estimate pump pressure and nozzle reaction for engine-mounted deck gun operations.">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="stylesheet" href="/styles.css">
   <script defer src="/calc-tools.js"></script>
-  
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "FireOps Calc",
+  "applicationCategory": "ReferenceApplication",
+  "operatingSystem": "iOS, Android, Web",
+  "url": "https://fireopscalc.com/"
+}
+</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -43,8 +52,8 @@
   </nav>
 </header>
 <main id="main">
-<section class="subhero"><div class="shell"><p class="eyebrow">Foam operations</p><h1>Foam eductor and attack line training page</h1><p>A FireOpsSim page for foam attack layout, eductor pressure logic, hose before and after the eductor, and pump pressure training links.</p><div class="hero-actions"><a class="button primary" href="/tools.html">View All Tools</a><a class="button secondary" href="https://fireopscalc.com/">Open FireOps Calc</a></div></div></section>
-<section class="section shell two-column"><article class="quick-tool full-tool" data-calc="foam"><h2>Foam eductor layout estimate</h2><p>Training model: pump to 200 PSI at the eductor, then account for hose between engine and eductor. Eductor-to-nozzle hose is limited by the eductor/nozzle setup and department guidance.</p><div class="fields two-col"><label>Required pressure at eductor PSI<input type="number" data-field="eductor" value="200"></label><label>Flow GPM<input type="number" data-field="gpm" value="185"></label><label>Hose C-value to eductor<input type="number" step="0.1" data-field="c" value="15.5"></label><label>Engine to eductor length ft<input type="number" data-field="length" value="50"></label><label>Elevation PSI<input type="number" data-field="elev" value="0"></label></div><output class="calc-output" data-output></output></article><aside class="content-card"><h2>FireOps Calc foam logic</h2><p>This page supports the same training concept you wanted in FireOps Calc: hose from engine to eductor, 200 PSI at eductor, then hose from eductor to nozzle.</p><a class="button primary" href="/attack-line-calculator.html">Attack line calculator</a></aside></section><div class="notice"><strong>Training note:</strong> These web tools are for education, practice, and estimating. Use your department SOPs, instructor direction, and manufacturer guidance for live operations.</div>
+<section class="subhero"><div class="shell"><p class="eyebrow">Master streams</p><h1>Deck gun calculator</h1><p>A quick deck gun reference page for engine-mounted master stream training and FireOps Calc routing.</p><div class="hero-actions"><a class="button primary" href="/tools.html">View Total Toolkit</a><a class="button secondary" href="https://fireopscalc.com/">Open FireOps Calc</a></div></div></section>
+<section class="section shell two-column"><article class="quick-tool full-tool" data-calc="deck"><h2>Deck gun estimate</h2><p>Engine-mounted deck gun operations commonly use master stream nozzle pressure assumptions such as 80 PSI. Confirm your device and SOPs.</p><div class="fields two-col"><label>Flow GPM<input type="number" data-field="gpm" value="500"></label><label>Nozzle pressure PSI<input type="number" data-field="np" value="80"></label><label>Appliance/Internal loss PSI<input type="number" data-field="app" value="0"></label></div><output class="calc-output" data-output></output></article><aside class="content-card"><h2>Scenario connection</h2><p>Use this as a bridge from Google searches for deck gun pressure into FirePumpSim master stream practice.</p><a class="button primary" href="/fire-pump-training-scenarios.html">Practice master stream scenarios</a></aside></section><div class="notice"><strong>Training note:</strong> These web tools are for education, practice, and estimating. Use your department SOPs, instructor direction, and manufacturer guidance for live operations.</div>
 </main>
 <footer class="footer">
   <div class="shell footer-grid">
