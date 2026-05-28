@@ -11,6 +11,14 @@
 /printable-scenarios /printable-fire-pump-scenarios.html 301
 /apps /apps.html 200
 /tools /tools.html 200
+/hazmat /hazmat-tools.html 301
+/hazmat-tools /hazmat-tools.html 200
+/hazmat-sizeup /hazmat-sizeup-checklist.html 301
+/hazmat-placards /hazmat-placard-reference.html 301
+/hazmat-isolation /hazmat-isolation-planner.html 301
+/spill-volume /spill-volume-calculator.html 301
+/decon-planner /decon-corridor-planner.html 301
+/hazmat-notes /hazmat-incident-notes.html 301
 /* /404.html 404
 
 /attack-line-calculator /attack-line-calculator.html 200

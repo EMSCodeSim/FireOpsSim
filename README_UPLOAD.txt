@@ -21,3 +21,14 @@ New/expanded focus:
 - Printable scenarios and FirePumpSim scenario training
 
 After upload, submit https://fireopssim.com/sitemap.xml in Google Search Console.
+
+
+HazMat expansion added:
+- hazmat-tools.html
+- hazmat-sizeup-checklist.html
+- hazmat-placard-reference.html
+- hazmat-isolation-planner.html
+- spill-volume-calculator.html
+- decon-corridor-planner.html
+- hazmat-incident-notes.html
+- Added HazMat links to navigation, homepage, tools directory, sitemap, and redirects.

@@ -114,6 +114,38 @@
       out.textContent = `${val('type')} • ${val('gpm')} GPM • ${val('length')} ft ${val('hose')} • target ${val('np')} PSI • ${val('notes')}`;
     }
 
+
+    if(type === 'spill'){
+      const length=num(box,'length',20), width=num(box,'width',12), depth=num(box,'depth',0.5), factor=num(box,'factor',25);
+      const cubicFeet = length * width * (depth/12);
+      const gallons = cubicFeet * 7.48052;
+      const adjusted = gallons * (1 + factor/100);
+      out.textContent = `${fmt(gallons)} gal (${fmt(gallons*3.78541)} L) visible • ${fmt(adjusted)} gal with ${fmt(factor)}% factor`;
+    }
+    if(type === 'hazisolate'){
+      const radius=num(box,'radius',150), downwind=num(box,'downwind',1000), width=num(box,'width',300), density=num(box,'density',10);
+      const circleArea = Math.PI * radius * radius;
+      const downwindArea = downwind * width;
+      const totalSqFt = circleArea + downwindArea;
+      const acres = totalSqFt / 43560;
+      const people = acres * density;
+      out.textContent = `${acres.toFixed(1)} acres planning area • approx. ${fmt(people)} people at ${fmt(density)}/acre`;
+    }
+    if(type === 'decon'){
+      const lanes=Math.max(1,num(box,'lanes',2)), minutes=Math.max(0.1,num(box,'minutes',4)), people=num(box,'people',12), gpm=num(box,'gpm',15);
+      const perHour = lanes * (60/minutes);
+      const totalTime = (people / perHour) * 60;
+      const water = lanes * gpm * totalTime;
+      out.textContent = `${fmt(perHour)} people/hour • ${fmt(totalTime)} min for ${fmt(people)} people • ${fmt(water)} gal water estimate`;
+    }
+    if(type === 'haznotes'){
+      const val = name => {
+        const el = box.querySelector(`[data-field="${name}"]`);
+        return el ? el.value : '';
+      };
+      out.textContent = `Product: ${val('product')} • Container: ${val('container')} • Weather: ${val('weather')} • Actions: ${val('actions')}`;
+    }
+
     if(type === 'convert'){
       const feet=num(box,'feet',100), gal=num(box,'gal',1000), psi=num(box,'psi',100);
       out.textContent = `${feet} ft = ${(feet*0.3048).toFixed(1)} m • ${gal} gal = ${fmt(gal*3.78541)} L • ${psi} PSI = ${(psi*0.0689476).toFixed(1)} bar`;

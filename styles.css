@@ -15,3 +15,5 @@
 .fields.four-col{grid-template-columns:repeat(4,minmax(0,1fr))}
 @media(max-width:800px){.fields.four-col{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.fields.four-col{grid-template-columns:1fr}}
+
+.checklist{list-style:none;padding-left:0}.checklist li{position:relative;padding-left:30px;margin:12px 0}.checklist li:before{content:"✓";position:absolute;left:0;top:0;display:grid;place-items:center;width:20px;height:20px;border-radius:999px;background:var(--lime);color:#102318;font-weight:1000;font-size:.8rem}.light-table{background:#fff;border-color:var(--line)}.light-table .data-table{background:#fff;color:var(--ink)}.light-table .data-table th,.light-table .data-table td{border-bottom:1px solid var(--line);color:var(--ink)}.light-table .data-table th{background:#f4efe4;color:#29422f}.text-output{text-align:left;font-size:1rem;line-height:1.45;white-space:normal}
