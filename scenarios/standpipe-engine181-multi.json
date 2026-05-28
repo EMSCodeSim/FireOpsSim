@@ -1,0 +1,679 @@
+{
+  "id": "standpipe-engine181-multi",
+  "title": "Standpipe Operation — Engine Hose and Attack Hose",
+  "type": "standpipe",
+  "chip": "STANDPIPE",
+  "image": "standpipe-engine181.png",
+  "scene": "Engine 181 is supplying a standpipe/FDC operation at a multi-story apartment building. A 100′ section of 2½″ hose runs from Engine 181 to the FDC. The standpipe carries water vertically to the fire floor. On the fire floor, a separate 2½″ attack hose is connected to the standpipe outlet and advanced to the nozzle.",
+  "studentQuestion": "Calculate the pump pressure. Include the hose from Engine 181 to the FDC, standpipe system loss, elevation to the fire floor, the attack hose after the standpipe outlet, and nozzle pressure.",
+  "details": [
+    "Engine 181 supplying the FDC",
+    "Engine-to-FDC supply hose: 100′ of 2½″ hose",
+    "Standpipe rises to Floor 3",
+    "Attack hose after standpipe: 150′ of 2½″ hose connected at the Floor 3 standpipe outlet",
+    "Nozzle after standpipe: 1⅛″ smooth bore nozzle flowing 265 gpm",
+    "Smooth bore nozzle pressure: 50 psi",
+    "Floor 3 elevation: +15 psi",
+    "Standpipe system loss: 25 psi",
+    "2½″ hose uses C value 2",
+    "Use ±5 psi tolerance"
+  ],
+  "overlays": [
+    {
+      "label": "Engine",
+      "text": "Engine 181",
+      "x": 18,
+      "y": 63
+    },
+    {
+      "label": "Supply Hose",
+      "text": "100′ 2½″ to FDC",
+      "x": 39,
+      "y": 71
+    },
+    {
+      "label": "FDC",
+      "text": "FDC",
+      "x": 62,
+      "y": 64
+    },
+    {
+      "label": "Standpipe",
+      "text": "Standpipe to Floor 3",
+      "x": 56,
+      "y": 24
+    },
+    {
+      "label": "Outlet",
+      "text": "3rd Floor Outlet",
+      "x": 61,
+      "y": 31
+    },
+    {
+      "label": "Attack Hose",
+      "text": "150′ 2½″ Hose",
+      "x": 72,
+      "y": 27
+    },
+    {
+      "label": "Nozzle",
+      "text": "SB 1⅛″ @ 50",
+      "x": 81,
+      "y": 20
+    },
+    {
+      "label": "Floor",
+      "text": "Floor 3",
+      "x": 73,
+      "y": 35
+    },
+    {
+      "label": "Elevation",
+      "text": "+15 psi",
+      "x": 74,
+      "y": 40
+    },
+    {
+      "label": "System Loss",
+      "text": "System +25",
+      "x": 57,
+      "y": 49
+    }
+  ],
+  "answers": {
+    "supplyFrictionLoss": 14,
+    "attackLineFrictionLoss": 21,
+    "frictionLoss": 35,
+    "nozzlePressure": 50,
+    "elevationPressure": 15,
+    "elevation": 15,
+    "standpipeSystemLoss": 25,
+    "applianceLoss": 25,
+    "totalGpm": 265,
+    "pumpPressure": 125
+  },
+  "formulaBreakdown": [
+    "Engine-to-FDC hose = 100′ of 2½″ hose",
+    "Attack hose after standpipe = 150′ of 2½″ hose connected at the Floor 3 outlet",
+    "Nozzle after standpipe = 1⅛″ smooth bore nozzle flowing 265 gpm at 50 psi NP",
+    "FL per 100′ = C × (GPM ÷ 100)^2",
+    "Supply hose FL = 2 × (265 ÷ 100)^2 × 1 = 14 psi",
+    "Attack hose FL = 2 × (265 ÷ 100)^2 × 1.5 = 21 psi",
+    "Total FL = 14 + 21 = 35 psi",
+    "Elevation = Floor 3 × 5 psi = 15 psi",
+    "PP = 35 FL + 50 NP + 15 elevation + 25 system loss",
+    "PP = 125 psi"
+  ],
+  "correctPP": 125,
+  "tolerance": 5,
+  "instructorExplanation": "For this standpipe operation, calculate friction loss in two hose sections: the hose from Engine 181 to the FDC and the attack hose connected after the standpipe outlet. Then add nozzle pressure, elevation to the fire floor, and the 25 psi standpipe system loss.",
+  "explainMistake": "Common mistakes are forgetting the Engine-to-FDC hose, only calculating the attack hose after the standpipe, forgetting the 25 psi standpipe system loss, using the wrong C value for 2½″ hose, using the wrong smooth bore flow, or missing the elevation pressure for the fire floor.",
+  "variations": [
+    {
+      "change": "Base question: 100′ of 2½″ hose from Engine 181 to the FDC, standpipe to Floor 3, then 150′ of 2½″ attack hose with a 1⅛″ smooth bore nozzle.",
+      "question": "Engine 181 is supplying the FDC with 100′ of 2½″ hose. The standpipe rises to Floor 3. A 150′ section of 2½″ attack hose is connected to the 3rd floor standpipe outlet and ends in a 1⅛″ smooth bore nozzle. What pump pressure should you set?",
+      "correctPP": 125,
+      "tolerance": 5,
+      "details": [
+        "Engine 181 supplying the FDC",
+        "Engine-to-FDC supply hose: 100′ of 2½″ hose",
+        "Standpipe rises to Floor 3",
+        "Attack hose after standpipe: 150′ of 2½″ hose connected at the Floor 3 standpipe outlet",
+        "Nozzle after standpipe: 1⅛″ smooth bore nozzle flowing 265 gpm",
+        "Smooth bore nozzle pressure: 50 psi",
+        "Floor 3 elevation: +15 psi",
+        "Standpipe system loss: 25 psi",
+        "2½″ hose uses C value 2",
+        "Use ±5 psi tolerance"
+      ],
+      "answers": {
+        "supplyFrictionLoss": 14,
+        "attackLineFrictionLoss": 21,
+        "frictionLoss": 35,
+        "nozzlePressure": 50,
+        "elevationPressure": 15,
+        "elevation": 15,
+        "standpipeSystemLoss": 25,
+        "applianceLoss": 25,
+        "totalGpm": 265,
+        "pumpPressure": 125
+      },
+      "overlays": [
+        {
+          "label": "Engine",
+          "text": "Engine 181",
+          "x": 18,
+          "y": 63
+        },
+        {
+          "label": "Supply Hose",
+          "text": "100′ 2½″ to FDC",
+          "x": 39,
+          "y": 71
+        },
+        {
+          "label": "FDC",
+          "text": "FDC",
+          "x": 62,
+          "y": 64
+        },
+        {
+          "label": "Standpipe",
+          "text": "Standpipe to Floor 3",
+          "x": 56,
+          "y": 24
+        },
+        {
+          "label": "Outlet",
+          "text": "3rd Floor Outlet",
+          "x": 61,
+          "y": 31
+        },
+        {
+          "label": "Attack Hose",
+          "text": "150′ 2½″ Hose",
+          "x": 72,
+          "y": 27
+        },
+        {
+          "label": "Nozzle",
+          "text": "SB 1⅛″ @ 50",
+          "x": 81,
+          "y": 20
+        },
+        {
+          "label": "Floor",
+          "text": "Floor 3",
+          "x": 73,
+          "y": 35
+        },
+        {
+          "label": "Elevation",
+          "text": "+15 psi",
+          "x": 74,
+          "y": 40
+        },
+        {
+          "label": "System Loss",
+          "text": "System +25",
+          "x": 57,
+          "y": 49
+        }
+      ],
+      "formulaBreakdown": [
+        "Engine-to-FDC hose = 100′ of 2½″ hose",
+        "Attack hose after standpipe = 150′ of 2½″ hose connected at the Floor 3 outlet",
+        "Nozzle after standpipe = 1⅛″ smooth bore nozzle flowing 265 gpm at 50 psi NP",
+        "FL per 100′ = C × (GPM ÷ 100)^2",
+        "Supply hose FL = 2 × (265 ÷ 100)^2 × 1 = 14 psi",
+        "Attack hose FL = 2 × (265 ÷ 100)^2 × 1.5 = 21 psi",
+        "Total FL = 14 + 21 = 35 psi",
+        "Elevation = Floor 3 × 5 psi = 15 psi",
+        "PP = 35 FL + 50 NP + 15 elevation + 25 system loss",
+        "PP = 125 psi"
+      ],
+      "instructorExplanation": "Start with the hose from Engine 181 to the FDC, then add the standpipe system loss, elevation to the fire floor, the attack hose after the standpipe outlet, and the nozzle pressure. Both hose sections use the listed length and size."
+    },
+    {
+      "change": "Increase the attack hose after the standpipe outlet to 200′. Keep 100′ of 2½″ hose from Engine 181 to the FDC, the Floor 3 outlet, and the 1⅛″ smooth bore nozzle.",
+      "question": "Engine 181 is supplying the FDC with 100′ of 2½″ hose. The standpipe rises to Floor 3. A 200′ section of 2½″ attack hose is connected to the 3rd floor standpipe outlet and ends in a 1⅛″ smooth bore nozzle. What pump pressure should you set?",
+      "correctPP": 132,
+      "tolerance": 5,
+      "details": [
+        "Engine 181 supplying the FDC",
+        "Engine-to-FDC supply hose: 100′ of 2½″ hose",
+        "Standpipe rises to Floor 3",
+        "Attack hose after standpipe: 200′ of 2½″ hose connected at the Floor 3 standpipe outlet",
+        "Nozzle after standpipe: 1⅛″ smooth bore nozzle flowing 265 gpm",
+        "Smooth bore nozzle pressure: 50 psi",
+        "Floor 3 elevation: +15 psi",
+        "Standpipe system loss: 25 psi",
+        "2½″ hose uses C value 2",
+        "Use ±5 psi tolerance"
+      ],
+      "answers": {
+        "supplyFrictionLoss": 14,
+        "attackLineFrictionLoss": 28,
+        "frictionLoss": 42,
+        "nozzlePressure": 50,
+        "elevationPressure": 15,
+        "elevation": 15,
+        "standpipeSystemLoss": 25,
+        "applianceLoss": 25,
+        "totalGpm": 265,
+        "pumpPressure": 132
+      },
+      "overlays": [
+        {
+          "label": "Engine",
+          "text": "Engine 181",
+          "x": 18,
+          "y": 63
+        },
+        {
+          "label": "Supply Hose",
+          "text": "100′ 2½″ to FDC",
+          "x": 39,
+          "y": 71
+        },
+        {
+          "label": "FDC",
+          "text": "FDC",
+          "x": 62,
+          "y": 64
+        },
+        {
+          "label": "Standpipe",
+          "text": "Standpipe to Floor 3",
+          "x": 56,
+          "y": 24
+        },
+        {
+          "label": "Outlet",
+          "text": "3rd Floor Outlet",
+          "x": 61,
+          "y": 31
+        },
+        {
+          "label": "Attack Hose",
+          "text": "200′ 2½″ Hose",
+          "x": 72,
+          "y": 27
+        },
+        {
+          "label": "Nozzle",
+          "text": "SB 1⅛″ @ 50",
+          "x": 81,
+          "y": 20
+        },
+        {
+          "label": "Floor",
+          "text": "Floor 3",
+          "x": 73,
+          "y": 35
+        },
+        {
+          "label": "Elevation",
+          "text": "+15 psi",
+          "x": 74,
+          "y": 40
+        },
+        {
+          "label": "System Loss",
+          "text": "System +25",
+          "x": 57,
+          "y": 49
+        }
+      ],
+      "formulaBreakdown": [
+        "Engine-to-FDC hose = 100′ of 2½″ hose",
+        "Attack hose after standpipe = 200′ of 2½″ hose connected at the Floor 3 outlet",
+        "Nozzle after standpipe = 1⅛″ smooth bore nozzle flowing 265 gpm at 50 psi NP",
+        "FL per 100′ = C × (GPM ÷ 100)^2",
+        "Supply hose FL = 2 × (265 ÷ 100)^2 × 1 = 14 psi",
+        "Attack hose FL = 2 × (265 ÷ 100)^2 × 2 = 28 psi",
+        "Total FL = 14 + 28 = 42 psi",
+        "Elevation = Floor 3 × 5 psi = 15 psi",
+        "PP = 42 FL + 50 NP + 15 elevation + 25 system loss",
+        "PP = 132 psi"
+      ],
+      "instructorExplanation": "Start with the hose from Engine 181 to the FDC, then add the standpipe system loss, elevation to the fire floor, the attack hose after the standpipe outlet, and the nozzle pressure. Both hose sections use the listed length and size."
+    },
+    {
+      "change": "Move the standpipe outlet and attack hose connection to Floor 5. Keep 100′ of 2½″ hose from Engine 181 to the FDC, 150′ of 2½″ attack hose after the standpipe, and the 1⅛″ smooth bore nozzle.",
+      "question": "Engine 181 is supplying the FDC with 100′ of 2½″ hose. The standpipe rises to Floor 5. A 150′ section of 2½″ attack hose is connected to the 5th floor standpipe outlet and ends in a 1⅛″ smooth bore nozzle. What pump pressure should you set?",
+      "correctPP": 135,
+      "tolerance": 5,
+      "details": [
+        "Engine 181 supplying the FDC",
+        "Engine-to-FDC supply hose: 100′ of 2½″ hose",
+        "Standpipe rises to Floor 5",
+        "Attack hose after standpipe: 150′ of 2½″ hose connected at the Floor 5 standpipe outlet",
+        "Nozzle after standpipe: 1⅛″ smooth bore nozzle flowing 265 gpm",
+        "Smooth bore nozzle pressure: 50 psi",
+        "Floor 5 elevation: +25 psi",
+        "Standpipe system loss: 25 psi",
+        "2½″ hose uses C value 2",
+        "Use ±5 psi tolerance"
+      ],
+      "answers": {
+        "supplyFrictionLoss": 14,
+        "attackLineFrictionLoss": 21,
+        "frictionLoss": 35,
+        "nozzlePressure": 50,
+        "elevationPressure": 25,
+        "elevation": 25,
+        "standpipeSystemLoss": 25,
+        "applianceLoss": 25,
+        "totalGpm": 265,
+        "pumpPressure": 135
+      },
+      "overlays": [
+        {
+          "label": "Engine",
+          "text": "Engine 181",
+          "x": 18,
+          "y": 63
+        },
+        {
+          "label": "Supply Hose",
+          "text": "100′ 2½″ to FDC",
+          "x": 39,
+          "y": 71
+        },
+        {
+          "label": "FDC",
+          "text": "FDC",
+          "x": 62,
+          "y": 64
+        },
+        {
+          "label": "Standpipe",
+          "text": "Standpipe to Floor 5",
+          "x": 56,
+          "y": 24
+        },
+        {
+          "label": "Outlet",
+          "text": "5th Floor Outlet",
+          "x": 61,
+          "y": 19
+        },
+        {
+          "label": "Attack Hose",
+          "text": "150′ 2½″ Hose",
+          "x": 72,
+          "y": 16
+        },
+        {
+          "label": "Nozzle",
+          "text": "SB 1⅛″ @ 50",
+          "x": 81,
+          "y": 10
+        },
+        {
+          "label": "Floor",
+          "text": "Floor 5",
+          "x": 73,
+          "y": 27
+        },
+        {
+          "label": "Elevation",
+          "text": "+25 psi",
+          "x": 74,
+          "y": 32
+        },
+        {
+          "label": "System Loss",
+          "text": "System +25",
+          "x": 57,
+          "y": 49
+        }
+      ],
+      "formulaBreakdown": [
+        "Engine-to-FDC hose = 100′ of 2½″ hose",
+        "Attack hose after standpipe = 150′ of 2½″ hose connected at the Floor 5 outlet",
+        "Nozzle after standpipe = 1⅛″ smooth bore nozzle flowing 265 gpm at 50 psi NP",
+        "FL per 100′ = C × (GPM ÷ 100)^2",
+        "Supply hose FL = 2 × (265 ÷ 100)^2 × 1 = 14 psi",
+        "Attack hose FL = 2 × (265 ÷ 100)^2 × 1.5 = 21 psi",
+        "Total FL = 14 + 21 = 35 psi",
+        "Elevation = Floor 5 × 5 psi = 25 psi",
+        "PP = 35 FL + 50 NP + 25 elevation + 25 system loss",
+        "PP = 135 psi"
+      ],
+      "instructorExplanation": "Start with the hose from Engine 181 to the FDC, then add the standpipe system loss, elevation to the fire floor, the attack hose after the standpipe outlet, and the nozzle pressure. Both hose sections use the listed length and size."
+    },
+    {
+      "change": "Change the nozzle after the standpipe to a 15/16″ smooth bore. Keep 100′ of 2½″ hose from Engine 181 to the FDC, standpipe to Floor 3, and 150′ of 2½″ attack hose after the outlet.",
+      "question": "Engine 181 is supplying the FDC with 100′ of 2½″ hose. The standpipe rises to Floor 3. A 150′ section of 2½″ attack hose is connected to the 3rd floor standpipe outlet and ends in a 15/16″ smooth bore nozzle. What pump pressure should you set?",
+      "correctPP": 107,
+      "tolerance": 5,
+      "details": [
+        "Engine 181 supplying the FDC",
+        "Engine-to-FDC supply hose: 100′ of 2½″ hose",
+        "Standpipe rises to Floor 3",
+        "Attack hose after standpipe: 150′ of 2½″ hose connected at the Floor 3 standpipe outlet",
+        "Nozzle after standpipe: 15/16″ smooth bore nozzle flowing 185 gpm",
+        "Smooth bore nozzle pressure: 50 psi",
+        "Floor 3 elevation: +15 psi",
+        "Standpipe system loss: 25 psi",
+        "2½″ hose uses C value 2",
+        "Use ±5 psi tolerance"
+      ],
+      "answers": {
+        "supplyFrictionLoss": 7,
+        "attackLineFrictionLoss": 10,
+        "frictionLoss": 17,
+        "nozzlePressure": 50,
+        "elevationPressure": 15,
+        "elevation": 15,
+        "standpipeSystemLoss": 25,
+        "applianceLoss": 25,
+        "totalGpm": 185,
+        "pumpPressure": 107
+      },
+      "overlays": [
+        {
+          "label": "Engine",
+          "text": "Engine 181",
+          "x": 18,
+          "y": 63
+        },
+        {
+          "label": "Supply Hose",
+          "text": "100′ 2½″ to FDC",
+          "x": 39,
+          "y": 71
+        },
+        {
+          "label": "FDC",
+          "text": "FDC",
+          "x": 62,
+          "y": 64
+        },
+        {
+          "label": "Standpipe",
+          "text": "Standpipe to Floor 3",
+          "x": 56,
+          "y": 24
+        },
+        {
+          "label": "Outlet",
+          "text": "3rd Floor Outlet",
+          "x": 61,
+          "y": 31
+        },
+        {
+          "label": "Attack Hose",
+          "text": "150′ 2½″ Hose",
+          "x": 72,
+          "y": 27
+        },
+        {
+          "label": "Nozzle",
+          "text": "SB 15/16″ @ 50",
+          "x": 81,
+          "y": 20
+        },
+        {
+          "label": "Floor",
+          "text": "Floor 3",
+          "x": 73,
+          "y": 35
+        },
+        {
+          "label": "Elevation",
+          "text": "+15 psi",
+          "x": 74,
+          "y": 40
+        },
+        {
+          "label": "System Loss",
+          "text": "System +25",
+          "x": 57,
+          "y": 49
+        }
+      ],
+      "formulaBreakdown": [
+        "Engine-to-FDC hose = 100′ of 2½″ hose",
+        "Attack hose after standpipe = 150′ of 2½″ hose connected at the Floor 3 outlet",
+        "Nozzle after standpipe = 15/16″ smooth bore nozzle flowing 185 gpm at 50 psi NP",
+        "FL per 100′ = C × (GPM ÷ 100)^2",
+        "Supply hose FL = 2 × (185 ÷ 100)^2 × 1 = 7 psi",
+        "Attack hose FL = 2 × (185 ÷ 100)^2 × 1.5 = 10 psi",
+        "Total FL = 7 + 10 = 17 psi",
+        "Elevation = Floor 3 × 5 psi = 15 psi",
+        "PP = 17 FL + 50 NP + 15 elevation + 25 system loss",
+        "PP = 107 psi"
+      ],
+      "instructorExplanation": "Start with the hose from Engine 181 to the FDC, then add the standpipe system loss, elevation to the fire floor, the attack hose after the standpipe outlet, and the nozzle pressure. Both hose sections use the listed length and size."
+    },
+    {
+      "change": "Increase the Engine-to-FDC hose to 150′. Keep the Floor 3 outlet, 150′ of 2½″ attack hose after the standpipe, and the 1⅛″ smooth bore nozzle.",
+      "question": "Engine 181 is supplying the FDC with 150′ of 2½″ hose. The standpipe rises to Floor 3. A 150′ section of 2½″ attack hose is connected to the 3rd floor standpipe outlet and ends in a 1⅛″ smooth bore nozzle. What pump pressure should you set?",
+      "correctPP": 132,
+      "tolerance": 5,
+      "details": [
+        "Engine 181 supplying the FDC",
+        "Engine-to-FDC supply hose: 150′ of 2½″ hose",
+        "Standpipe rises to Floor 3",
+        "Attack hose after standpipe: 150′ of 2½″ hose connected at the Floor 3 standpipe outlet",
+        "Nozzle after standpipe: 1⅛″ smooth bore nozzle flowing 265 gpm",
+        "Smooth bore nozzle pressure: 50 psi",
+        "Floor 3 elevation: +15 psi",
+        "Standpipe system loss: 25 psi",
+        "2½″ hose uses C value 2",
+        "Use ±5 psi tolerance"
+      ],
+      "answers": {
+        "supplyFrictionLoss": 21,
+        "attackLineFrictionLoss": 21,
+        "frictionLoss": 42,
+        "nozzlePressure": 50,
+        "elevationPressure": 15,
+        "elevation": 15,
+        "standpipeSystemLoss": 25,
+        "applianceLoss": 25,
+        "totalGpm": 265,
+        "pumpPressure": 132
+      },
+      "overlays": [
+        {
+          "label": "Engine",
+          "text": "Engine 181",
+          "x": 18,
+          "y": 63
+        },
+        {
+          "label": "Supply Hose",
+          "text": "150′ 2½″ to FDC",
+          "x": 39,
+          "y": 71
+        },
+        {
+          "label": "FDC",
+          "text": "FDC",
+          "x": 62,
+          "y": 64
+        },
+        {
+          "label": "Standpipe",
+          "text": "Standpipe to Floor 3",
+          "x": 56,
+          "y": 24
+        },
+        {
+          "label": "Outlet",
+          "text": "3rd Floor Outlet",
+          "x": 61,
+          "y": 31
+        },
+        {
+          "label": "Attack Hose",
+          "text": "150′ 2½″ Hose",
+          "x": 72,
+          "y": 27
+        },
+        {
+          "label": "Nozzle",
+          "text": "SB 1⅛″ @ 50",
+          "x": 81,
+          "y": 20
+        },
+        {
+          "label": "Floor",
+          "text": "Floor 3",
+          "x": 73,
+          "y": 35
+        },
+        {
+          "label": "Elevation",
+          "text": "+15 psi",
+          "x": 74,
+          "y": 40
+        },
+        {
+          "label": "System Loss",
+          "text": "System +25",
+          "x": 57,
+          "y": 49
+        }
+      ],
+      "formulaBreakdown": [
+        "Engine-to-FDC hose = 150′ of 2½″ hose",
+        "Attack hose after standpipe = 150′ of 2½″ hose connected at the Floor 3 outlet",
+        "Nozzle after standpipe = 1⅛″ smooth bore nozzle flowing 265 gpm at 50 psi NP",
+        "FL per 100′ = C × (GPM ÷ 100)^2",
+        "Supply hose FL = 2 × (265 ÷ 100)^2 × 1.5 = 21 psi",
+        "Attack hose FL = 2 × (265 ÷ 100)^2 × 1.5 = 21 psi",
+        "Total FL = 21 + 21 = 42 psi",
+        "Elevation = Floor 3 × 5 psi = 15 psi",
+        "PP = 42 FL + 50 NP + 15 elevation + 25 system loss",
+        "PP = 132 psi"
+      ],
+      "instructorExplanation": "Start with the hose from Engine 181 to the FDC, then add the standpipe system loss, elevation to the fire floor, the attack hose after the standpipe outlet, and the nozzle pressure. Both hose sections use the listed length and size."
+    }
+  ],
+  "sceneElements": {
+    "engine": "Engine 181",
+    "hoses": [
+      {
+        "section": "engine to FDC",
+        "diameter": "2½″",
+        "length": "100′",
+        "flowGpm": 265,
+        "cValue": 2,
+        "status": "charged"
+      },
+      {
+        "section": "standpipe outlet to nozzle",
+        "diameter": "2½″",
+        "length": "150′",
+        "flowGpm": 265,
+        "cValue": 2,
+        "status": "charged"
+      }
+    ],
+    "standpipe": {
+      "floor": 3,
+      "systemLoss": 25,
+      "elevationPressure": 15
+    },
+    "nozzles": [
+      {
+        "type": "smooth bore",
+        "tip": "1⅛″",
+        "flowGpm": 265,
+        "nozzlePressure": 50
+      }
+    ],
+    "appliances": [
+      {
+        "type": "standpipe/FDC",
+        "loss": 25
+      }
+    ],
+    "elevation": "+15 PSI"
+  }
+}
