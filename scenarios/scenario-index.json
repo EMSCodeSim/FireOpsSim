@@ -1,0 +1,128 @@
+{
+  "version": 3,
+  "packId": "fireops_scene_trainer",
+  "title": "FireOps Scene Trainer Scenario Index",
+  "format": "scene_root_with_problems",
+  "scenarios": [
+    {
+      "file": "single_line_preconnect_001.json",
+      "id": "single_line_preconnect_001",
+      "title": "Basic 1¾ Preconnect to Front Door",
+      "category": "single_line",
+      "difficulty": "beginner",
+      "problemCount": 4
+    },
+    {
+      "file": "single_line_extended_002.json",
+      "id": "single_line_extended_002",
+      "title": "Extended 1¾ Line to Second Floor",
+      "category": "single_line",
+      "difficulty": "intermediate",
+      "problemCount": 4
+    },
+    {
+      "file": "single_line_heavy_003.json",
+      "id": "single_line_heavy_003",
+      "title": "Heavy 2½ Smooth Bore Attack Line",
+      "category": "single_line",
+      "difficulty": "intermediate",
+      "problemCount": 4
+    },
+    {
+      "file": "car_fire_engine181_001.json",
+      "id": "car_fire_engine181_001",
+      "title": "Engine 181 Car Fire Attack Line",
+      "category": "vehicle_fire",
+      "difficulty": "beginner",
+      "problemCount": 4
+    },
+    {
+      "file": "wildland_structure_engine181_001.json",
+      "id": "wildland_structure_engine181_001",
+      "title": "Engine 181 Wildland Structure Protection",
+      "category": "wildland",
+      "difficulty": "beginner",
+      "problemCount": 4
+    },
+    {
+      "file": "wye_residential_split_001.json",
+      "id": "wye_residential_split_001",
+      "title": "Residential Wye Split",
+      "category": "wye",
+      "difficulty": "intermediate",
+      "problemCount": 4
+    },
+    {
+      "file": "standpipe_engine181_multi.json",
+      "id": "standpipe_engine181_multi",
+      "title": "Standpipe Operation — Engine Hose and Attack Hose",
+      "category": "standpipe",
+      "difficulty": "intermediate",
+      "problemCount": 5
+    },
+    {
+      "file": "advanced_standpipe_floor5.json",
+      "id": "advanced_standpipe_floor5",
+      "title": "Advanced Standpipe Floor 5",
+      "category": "standpipe",
+      "difficulty": "advanced",
+      "problemCount": 1
+    },
+    {
+      "file": "masterstream_181_001.json",
+      "id": "masterstream_181_001",
+      "title": "Engine 181 Portable Master Stream",
+      "category": "master_stream",
+      "difficulty": "advanced",
+      "problemCount": 4
+    },
+    {
+      "file": "advanced_portable_monitor_dual_supply.json",
+      "id": "advanced_portable_monitor_dual_supply",
+      "title": "Advanced Portable Monitor Dual Supply",
+      "category": "master_stream",
+      "difficulty": "advanced",
+      "problemCount": 1
+    },
+    {
+      "file": "deck_gun_solid_bore_gpm_001.json",
+      "id": "deck_gun_solid_bore_gpm_001",
+      "title": "Deck Gun Solid Bore Flow",
+      "category": "master_stream",
+      "difficulty": "intermediate",
+      "problemCount": 5
+    },
+    {
+      "file": "relay_ldh_supply_001.json",
+      "id": "relay_ldh_supply_001",
+      "title": "Relay Pumping: LDH Supply to Attack Engine",
+      "category": "relay",
+      "difficulty": "intermediate",
+      "problemCount": 4
+    },
+    {
+      "file": "tender_shuttle_single_tender_001.json",
+      "id": "tender_shuttle_single_tender_001",
+      "title": "Tender Shuttle: Single Tender Sustained Flow",
+      "category": "water_supply",
+      "difficulty": "intermediate",
+      "problemCount": 4
+    },
+    {
+      "file": "hydrant_drop_add_lines_001.json",
+      "id": "hydrant_drop_add_lines_001",
+      "title": "Hydrant Pressure Drop: Additional Attack Lines",
+      "category": "hydrant_drop",
+      "difficulty": "intermediate",
+      "problemCount": 4
+    },
+    {
+      "file": "nozzle_reaction_engine181_001.json",
+      "id": "nozzle_reaction_engine181_001",
+      "title": "Nozzle Reaction Practice",
+      "category": "nozzle_reaction",
+      "difficulty": "intermediate",
+      "problemCount": 5
+    }
+  ]
+}
