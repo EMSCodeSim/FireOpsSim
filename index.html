@@ -23,18 +23,19 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"FireOpsSim fire service tools","itemListElement":[{"@type":"ListItem","position":1,"name":"Pump Pressure Calculator","url":"https://fireopssim.com/fire-pump-calculator.html"},{"@type":"ListItem","position":2,"name":"Friction Loss Table Generator","url":"https://fireopssim.com/friction-loss-table.html"},{"@type":"ListItem","position":3,"name":"HazMat Tools","url":"https://fireopssim.com/hazmat-tools.html"},{"@type":"ListItem","position":4,"name":"Firefighter I/II Tools","url":"https://fireopssim.com/firefighter-1-2-tools.html"},{"@type":"ListItem","position":5,"name":"Fire Inspector Tools","url":"https://fireopssim.com/fire-inspector-tools.html"}]}</script>
 </head>
 <body>
+
 <a class="skip-link" href="#main">Skip to main content</a>
 <header class="site-header" id="top">
   <nav class="nav shell" aria-label="Main navigation">
-    <a class="brand" href="/" aria-label="FireOpsSim home"><span class="brand-mark" aria-hidden="true">FOS</span><span><strong>FireOpsSim</strong><small>Total fire service toolkit</small></span></a>
+    <a class="brand" href="/" aria-label="FireOpsSim home"><span class="brand-mark" aria-hidden="true">FOS</span><span><strong>FireOpsSim</strong><small>Fire service tool hub</small></span></a>
     <input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Open navigation menu">
     <label class="nav-toggle-label" for="nav-toggle"><span></span><span></span><span></span></label>
     <div class="nav-links">
+      <a href="/scenario-player.html">Scenario Player</a>
       <a href="/tools.html">All Tools</a>
-      <a href="/scenario-player.html">Scenarios</a>
+      <a href="/printable-scenarios.html">Printables</a>
       <a href="/fire-pump-calculator.html">Pump Math</a>
       <a href="/hazmat-tools.html">HazMat</a>
-      <a href="/firefighter-1-2-tools.html">Firefighter I/II</a>
       <a href="/fire-inspector-tools.html">Inspector</a>
       <a href="/apps.html">Apps</a>
     </div>
@@ -42,41 +43,63 @@
 </header>
 <main id="main">
 
-<section class="hero tools-hero">
-  <div class="shell hero-grid">
+<section class="hero scenario-home-hero">
+  <div class="shell scenario-hero-grid">
     <div class="hero-copy">
-      <p class="eyebrow">Free fire-service tools first</p>
-      <h1>FireOpsSim is now the working toolkit page — calculators, checklists, preplans, HazMat tools, and training builders.</h1>
-      <p class="hero-lead">Visitors should land here and immediately have something useful to do. The apps are linked when they make sense, but the page now leads with practical tools: pump math, water supply, HazMat, Firefighter I/II, fire inspection, preplans, worksheets, and company drills.</p>
+      <p class="eyebrow">FireOpsSim command center</p>
+      <h1>Train pump operators, run fireground tools, and build printable drills from one page.</h1>
+      <p class="hero-lead">FireOpsSim now leads with the tools: visual scenario practice, pump calculators, water supply tools, HazMat planners, firefighter skills, inspection checklists, preplans, and printable worksheets. App links are here when users want mobile use, but the web toolkit works on its own.</p>
       <div class="hero-actions">
-        <a class="button primary" href="#tool-workbench">Use Quick Tools</a>
-        <a class="button secondary" href="/tools.html">Browse All Tools</a>
-        <a class="button ghost" href="/printable-fire-pump-scenarios.html">Printable Training</a>
+        <a class="button primary" href="/scenario-player.html">Launch Scenario Player</a>
+        <a class="button secondary" href="#find-tools">Find a Tool</a>
+        <a class="button ghost" href="/printable-scenarios.html">Create Printable</a>
       </div>
-      <div class="trust-row" aria-label="tool categories"><span>Pump Math</span><span>Water Supply</span><span>HazMat</span><span>FF I/II</span><span>Inspector</span><span>Preplans</span></div>
+      <div class="trust-row" aria-label="tool categories"><span>Scenario Player</span><span>Pump Math</span><span>Printables</span><span>HazMat</span><span>Inspection</span></div>
     </div>
-    <div class="command-panel tool-command" aria-label="Featured quick tools">
-      <div class="panel-top"><span class="status-dot"></span><span>Tool workbench</span></div>
-      <div class="metric-row"><span>Start here</span><strong>Pick a task</strong><small>Calculate • checklist • plan • print</small></div>
-      <div class="panel-grid panel-grid-wide">
-        <a href="/fire-pump-calculator.html"><b>PDP</b><span>Pump pressure</span></a>
-        <a href="/friction-loss-table.html"><b>FL</b><span>Table generator</span></a>
-        <a href="/hazmat-sizeup-checklist.html"><b>HM</b><span>Size-up checklist</span></a>
-        <a href="/pre-incident-plan-builder.html"><b>Plan</b><span>Preplan builder</span></a>
-        <a href="/fire-inspection-checklist.html"><b>Inspect</b><span>Walkthrough</span></a>
-        <a href="/firefighter-drill-builder.html"><b>Drill</b><span>Training builder</span></a>
+    <a class="scenario-hero-card" href="/scenario-player.html" aria-label="Open the FireOpsSim Scenario Player">
+      <div class="scenario-card-top"><span class="live-dot"></span><span>Featured tool</span><strong>Scenario Player</strong></div>
+      <div class="scenario-photo-stack">
+        <img class="scenario-photo main" src="/scenarios/car-fire-engine181-001.png" alt="FireOpsSim car fire pump scenario preview">
+        <img class="scenario-photo small one" src="/scenarios/standpipe-engine181.png" alt="Standpipe scenario preview">
+        <img class="scenario-photo small two" src="/scenarios/relay_ldh_supply_001.png" alt="Relay pumping scenario preview">
       </div>
-      <div class="soft-app-note">Need saved department setups or mobile use? FireOps Calc and FirePumpSim links are available in the app directory.</div>
-    </div>
+      <div class="scenario-card-bottom">
+        <b>Random visual pump problems</b>
+        <span>Answer check • math breakdown • instructor explanation</span>
+      </div>
+    </a>
   </div>
 </section>
 
-<section class="section shell tool-category-strip" aria-label="Tool categories">
-  <a href="/fire-pump-calculator.html"><strong>Pump calculators</strong><span>PDP, FL, nozzle reaction, master stream, deck gun</span></a>
-  <a href="/relay-pumping-calculator.html"><strong>Water supply</strong><span>Hydrant flow, relay, tender shuttle, LDH planning</span></a>
-  <a href="/hazmat-tools.html"><strong>HazMat tools</strong><span>Size-up, isolation, spill volume, decon, incident notes</span></a>
-  <a href="/firefighter-1-2-tools.html"><strong>Firefighter I/II</strong><span>SCBA, ladders, hose, search, ventilation, ropes</span></a>
-  <a href="/fire-inspector-tools.html"><strong>Inspection/prevention</strong><span>Inspections, occupancy load, preplans, hydrants, code notes</span></a>
+<section id="find-tools" class="section shell quick-find-panel" aria-label="FireOpsSim quick find">
+  <div class="quick-find-copy">
+    <p class="eyebrow">Find what you need fast</p>
+    <h2>Start by job, not by menu.</h2>
+    <p>Large tiles take users straight to the highest-value areas. The full searchable tool directory is still below for everything else.</p>
+  </div>
+  <div class="quick-find-grid">
+    <a href="/scenario-player.html"><strong>Run a scenario</strong><span>Visual pump practice with scenario photos.</span></a>
+    <a href="/fire-pump-calculator.html"><strong>Calculate PDP</strong><span>Attack line, appliance, elevation, and nozzle pressure.</span></a>
+    <a href="/printable-scenarios.html"><strong>Print worksheets</strong><span>Station drills and class handouts.</span></a>
+    <a href="/friction-loss-table.html"><strong>Build FL table</strong><span>GPM-based reference table.</span></a>
+    <a href="/hazmat-tools.html"><strong>HazMat planning</strong><span>Size-up, isolation, decon, spill estimates.</span></a>
+    <a href="/fire-inspector-tools.html"><strong>Inspection tools</strong><span>Checklist, occupancy, code notes, preplans.</span></a>
+  </div>
+</section>
+
+<section class="section shell scenario-showcase">
+  <div class="scenario-showcase-copy">
+    <p class="eyebrow">Highlighted training tool</p>
+    <h2>The Scenario Player should be the main draw.</h2>
+    <p>Users can open a visual fireground problem, calculate the answer, submit their pump pressure or GPM, and review the math. The photos make the site feel like training software instead of a list of links.</p>
+    <div class="hero-actions"><a class="button primary" href="/scenario-player.html">Open Scenario Player</a><a class="button secondary" href="/fire-pump-training-scenarios.html">Scenario library</a></div>
+  </div>
+  <div class="scenario-gallery" aria-label="FireOpsSim scenario previews">
+    <a href="/scenario-player.html"><img src="/scenarios/car-fire-engine181-001.png" alt="Car fire pump scenario"><span>Car fire attack</span></a>
+    <a href="/scenario-player.html"><img src="/scenarios/wildland-structure-engine181-001.png" alt="Wildland structure scenario"><span>Wildland structure</span></a>
+    <a href="/scenario-player.html"><img src="/scenarios/advanced_standpipe_floor5.png" alt="Advanced standpipe scenario"><span>Standpipe operation</span></a>
+    <a href="/scenario-player.html"><img src="/scenarios/advanced_portable_monitor_dual_supply.png" alt="Portable monitor scenario"><span>Master stream</span></a>
+  </div>
 </section>
 
 <section id="tool-workbench" class="section shell tool-demo-section">
@@ -94,51 +117,41 @@
 
 <section class="section shell">
   <div class="section-heading center">
-    <p class="eyebrow">Featured working tools</p>
-    <h2>The tools are the star of the page.</h2>
-    <p>Each card goes to a real tool or checklist page, not just a marketing page.</p>
+    <p class="eyebrow">Searchable tool library</p>
+    <h2>Every major FireOpsSim tool in one place.</h2>
+    <p>Search, pick a category, or jump straight into a working calculator/checklist.</p>
   </div>
   <label class="tool-search-label" for="toolSearch">Search the toolkit</label>
-  <input id="toolSearch" class="tool-search" type="search" placeholder="Search pump pressure, friction loss, relay, hazmat, SCBA, inspection, preplan..." aria-label="Search FireOpsSim tools">
+  <input id="toolSearch" class="tool-search" type="search" placeholder="Search scenarios, pump pressure, friction loss, relay, hazmat, SCBA, inspection, preplan..." aria-label="Search FireOpsSim tools">
   <div class="tool-board spotlight-board" data-tool-board>
-    <a class="tool-card tool-card-rich" data-keywords="pdp pump discharge pressure attack line" href="/fire-pump-calculator.html"><span>Pump Math</span><strong>Pump Pressure Calculator</strong><p>Build PDP from nozzle pressure, flow, hose C-value, length, elevation, and appliance loss.</p><em>Open tool →</em></a><a class="tool-card tool-card-rich" data-keywords="friction loss c value table hose" href="/friction-loss-table.html"><span>Reference</span><strong>Friction Loss Table Generator</strong><p>Enter one GPM and generate side-by-side FL values for common hose sizes and lengths.</p><em>Open tool →</em></a><a class="tool-card tool-card-rich" data-keywords="hydrant static residual available flow" href="/hydrant-flow-calculator.html"><span>Water Supply</span><strong>Hydrant Flow / Available GPM</strong><p>Estimate available flow from static pressure, residual pressure, flow test GPM, and target residual.</p><em>Open tool →</em></a><a class="tool-card tool-card-rich" data-keywords="relay pumping ldh engine spacing" href="/relay-pumping-calculator.html"><span>Water Supply</span><strong>Relay Pumping Calculator</strong><p>Estimate LDH friction loss, relay segment distance, and number of relay engines needed.</p><em>Open tool →</em></a><a class="tool-card tool-card-rich" data-keywords="standpipe fdc high rise floor elevation" href="/standpipe-fdc-calculator.html"><span>FDC / High-Rise</span><strong>Standpipe / FDC Calculator</strong><p>Practice FDC pressure planning with system loss, elevation by floor, hose loss, and appliance loss.</p><em>Open tool →</em></a><a class="tool-card tool-card-rich" data-keywords="foam eductor 200 psi" href="/foam-operations-calculator.html"><span>Foam</span><strong>Foam Eductor Calculator</strong><p>Model engine-to-eductor hose loss with the target pressure required at the eductor.</p><em>Open tool →</em></a><a class="tool-card tool-card-rich" data-keywords="hazmat size up checklist isolation" href="/hazmat-sizeup-checklist.html"><span>HazMat</span><strong>HazMat Size-Up Checklist</strong><p>Organize isolation, identification, exposures, zones, resources, weather, and notifications.</p><em>Open tool →</em></a><a class="tool-card tool-card-rich" data-keywords="fire inspector inspection checklist" href="/fire-inspection-checklist.html"><span>Inspector</span><strong>Fire Inspection Checklist</strong><p>Walk exits, alarms, extinguishers, electrical, storage, access, and notes in a practical checklist format.</p><em>Open tool →</em></a><a class="tool-card tool-card-rich" data-keywords="scba air management turn pressure" href="/scba-air-management-calculator.html"><span>FF I/II</span><strong>SCBA Air Management Calculator</strong><p>Estimate working time, turn pressure, reserve, and safety factor for SCBA training.</p><em>Open tool →</em></a><a class="tool-card tool-card-rich" data-keywords="preplan pre incident plan" href="/pre-incident-plan-builder.html"><span>Preplan</span><strong>Pre-Incident Plan Builder</strong><p>Capture occupancy, construction, hazards, access, hydrants, FDC, utilities, and tactical notes.</p><em>Open tool →</em></a><a class="tool-card tool-card-rich" data-keywords="firefighter drill training builder" href="/firefighter-drill-builder.html"><span>Training</span><strong>Firefighter Drill Builder</strong><p>Generate a short company drill with objective, equipment, safety points, and evaluation criteria.</p><em>Open tool →</em></a><a class="tool-card tool-card-rich" data-keywords="printable pump scenarios worksheets" href="/printable-fire-pump-scenarios.html"><span>Scenario</span><strong>Printable Pump Scenarios</strong><p>Create a pathway for driver/operator worksheets, answer keys, pump cards, and scenario practice.</p><em>Open tool →</em></a>
+    <a class="tool-card tool-card-rich priority-card" data-keywords="scenario player random visual pump practice" href="/scenario-player.html"><span>Featured</span><strong>Visual Scenario Player</strong><p>Random fireground images, answer check, math breakdown, and instructor explanation.</p><em>Launch player →</em></a>
+    <a class="tool-card tool-card-rich priority-card" data-keywords="printable worksheet generator pump scenarios" href="/printable-scenarios.html"><span>Printable</span><strong>Worksheet Generator</strong><p>Create printable pump calculation worksheets with optional answer key.</p><em>Build worksheet →</em></a>
+    <a class="tool-card tool-card-rich" data-keywords="pdp pump discharge pressure attack line" href="/fire-pump-calculator.html"><span>Pump Math</span><strong>Pump Pressure Calculator</strong><p>Build PDP from nozzle pressure, flow, hose C-value, length, elevation, and appliance loss.</p><em>Open tool →</em></a>
+    <a class="tool-card tool-card-rich" data-keywords="friction loss c value table hose" href="/friction-loss-table.html"><span>Reference</span><strong>Friction Loss Table Generator</strong><p>Enter one GPM and generate side-by-side FL values for common hose sizes and lengths.</p><em>Open tool →</em></a>
+    <a class="tool-card tool-card-rich" data-keywords="hydrant static residual available flow" href="/hydrant-flow-calculator.html"><span>Water Supply</span><strong>Hydrant Flow / Available GPM</strong><p>Estimate available flow from static pressure, residual pressure, flow test GPM, and target residual.</p><em>Open tool →</em></a>
+    <a class="tool-card tool-card-rich" data-keywords="relay pumping ldh engine spacing" href="/relay-pumping-calculator.html"><span>Water Supply</span><strong>Relay Pumping Calculator</strong><p>Estimate LDH friction loss, relay segment distance, and number of relay engines needed.</p><em>Open tool →</em></a>
+    <a class="tool-card tool-card-rich" data-keywords="standpipe fdc high rise floor elevation" href="/standpipe-fdc-calculator.html"><span>FDC / High-Rise</span><strong>Standpipe / FDC Calculator</strong><p>Practice FDC pressure planning with system loss, elevation by floor, hose loss, and appliance loss.</p><em>Open tool →</em></a>
+    <a class="tool-card tool-card-rich" data-keywords="foam eductor 200 psi" href="/foam-operations-calculator.html"><span>Foam</span><strong>Foam Eductor Calculator</strong><p>Model engine-to-eductor hose loss with the target pressure required at the eductor.</p><em>Open tool →</em></a>
+    <a class="tool-card tool-card-rich" data-keywords="hazmat size up checklist isolation" href="/hazmat-sizeup-checklist.html"><span>HazMat</span><strong>HazMat Size-Up Checklist</strong><p>Organize isolation, identification, exposures, zones, resources, weather, and notifications.</p><em>Open tool →</em></a>
+    <a class="tool-card tool-card-rich" data-keywords="fire inspector inspection checklist" href="/fire-inspection-checklist.html"><span>Inspector</span><strong>Fire Inspection Checklist</strong><p>Walk exits, alarms, extinguishers, electrical, storage, access, and notes.</p><em>Open tool →</em></a>
+    <a class="tool-card tool-card-rich" data-keywords="scba air management turn pressure" href="/scba-air-management-calculator.html"><span>FF I/II</span><strong>SCBA Air Management</strong><p>Estimate working time, turn pressure, reserve, and safety factor for SCBA training.</p><em>Open tool →</em></a>
+    <a class="tool-card tool-card-rich" data-keywords="preplan pre incident plan" href="/pre-incident-plan-builder.html"><span>Preplan</span><strong>Pre-Incident Plan Builder</strong><p>Capture occupancy, construction, hazards, access, hydrants, FDC, utilities, and tactical notes.</p><em>Open tool →</em></a>
   </div>
 </section>
 
-
-<section class="section shell scenario-feature-band">
-  <div class="section-heading center">
-    <p class="eyebrow">Scenario practice added</p>
-    <h2>Visual scenarios, printable worksheets, and FireOps Calc-style tools are now built into FireOpsSim.</h2>
-    <p>Use this site as the central training toolkit: practice pump problems, generate worksheets, review flashcards, estimate fire load, and run water/tank calculations without leaving FireOpsSim.</p>
-  </div>
-  <div class="tool-board simple-board">
-    <a class="tool-card tool-card-rich" data-keywords="scenario player random visual pump practice" href="/scenario-player.html"><span>Interactive</span><strong>Scenario Player</strong><p>Random visual fireground scenarios with answer check, tolerance, math breakdown, and instructor explanation.</p><em>Open player →</em></a>
-    <a class="tool-card tool-card-rich" data-keywords="printable worksheets answer key pump scenarios" href="/printable-scenarios.html"><span>Printable</span><strong>Worksheet Generator</strong><p>Generate four pump pressure problems per page with optional answer key for class or station drills.</p><em>Build worksheet →</em></a>
-    <a class="tool-card tool-card-rich" data-keywords="driver operator pumper flashcards exam prep" href="/driver-operator-pumper-flashcards.html"><span>Study</span><strong>Driver/Operator Flashcards</strong><p>Quick review cards for pumper operations, hydraulics, water supply, and safety concepts.</p><em>Study cards →</em></a>
-    <a class="tool-card tool-card-rich" data-keywords="fire load calculator btu occupancy" href="/fire-load-calculator.html"><span>Planning</span><strong>Fire Load Calculator</strong><p>Estimate fuel load for training, preplanning, and fire behavior discussion.</p><em>Open tool →</em></a>
-    <a class="tool-card tool-card-rich" data-keywords="tank duration water supply calculator" href="/tank-duration.html"><span>Water</span><strong>Tank Duration Tool</strong><p>Estimate how long onboard water lasts at selected flow rates.</p><em>Open tool →</em></a>
-    <a class="tool-card tool-card-rich" data-keywords="elevation pressure pump fireground" href="/elevation-pressure.html"><span>Hydraulics</span><strong>Elevation Pressure Tool</strong><p>Convert elevation change to PSI for standpipe, hills, and multi-story operations.</p><em>Open tool →</em></a>
-  </div>
+<section class="section shell more-tool-rails">
+  <div class="rail-card"><h3>Pump & water supply</h3><a href="/attack-line-calculator.html">Attack Line Calculator</a><a href="/wye-siamese-calculator.html">Wye / Siamese Calculator</a><a href="/master-stream-calculator.html">Master Stream Calculator</a><a href="/deck-gun-calculator.html">Deck Gun Calculator</a><a href="/tender-shuttle-calculator.html">Tender Shuttle Calculator</a><a href="/tank-duration.html">Tank Duration Tool</a></div>
+  <div class="rail-card"><h3>Training & printables</h3><a href="/driver-operator-pumper-flashcards.html">Driver/Operator Flashcards</a><a href="/printable-fire-pump-scenarios.html">Printable Pump Scenarios</a><a href="/firefighter-drill-builder.html">Firefighter Drill Builder</a><a href="/firefighter-skills-checklist.html">Skills Checklist</a><a href="/fire-load-calculator.html">Fire Load Calculator</a><a href="/elevation-pressure.html">Elevation Pressure Tool</a></div>
+  <div class="rail-card"><h3>HazMat / inspector</h3><a href="/hazmat-placard-reference.html">Placard Reference</a><a href="/hazmat-isolation-planner.html">Isolation Zone Planner</a><a href="/spill-volume-calculator.html">Spill Volume Calculator</a><a href="/decon-corridor-planner.html">Decon Corridor Planner</a><a href="/occupancy-load-calculator.html">Occupancy Load</a><a href="/hydrant-inspection-log.html">Hydrant Inspection Log</a></div>
 </section>
+
 <section class="section shell soft-app-band">
   <div>
-    <p class="eyebrow">Optional mobile apps</p>
-    <h2>Use the web tools here, then use the apps when you want saved setups or scenario practice.</h2>
-    <p>FireOpsSim does not need to hard-sell the apps. It should earn trust first. When a user needs mobile pump calculations, department setup, or visual scenario practice, the related app links are available.</p>
+    <p class="eyebrow">Related apps</p>
+    <h2>Apps are available when users want mobile use.</h2>
+    <p>The site earns trust with free tools first. FireOps Calc and FirePumpSim links are included for saved setups, mobile pump calculations, and app-based scenario practice.</p>
   </div>
   <div class="soft-app-actions"><a class="button secondary" href="/apps.html">View app links</a><a class="button ghost dark" href="https://fireopscalc.com/">Open FireOpsCalc.com</a></div>
-</section>
-
-<section class="section shell">
-  <div class="section-heading">
-    <p class="eyebrow">More tools</p>
-    <h2>Expand into the full toolkit.</h2>
-    <p>These deeper pages support search traffic and give firefighters, inspectors, instructors, and company officers more reasons to stay on the site.</p>
-  </div>
-  <div class="tool-board simple-board more-tools">
-    <a class="tool-card tool-card-rich" data-keywords="" href="/attack-line-calculator.html"><span>Attack</span><strong>Attack Line Calculator</strong><p>Handline and preconnect PDP.</p><em>Open tool →</em></a><a class="tool-card tool-card-rich" data-keywords="" href="/wye-siamese-calculator.html"><span>Appliance</span><strong>Wye / Siamese Calculator</strong><p>Highest branch controls logic.</p><em>Open tool →</em></a><a class="tool-card tool-card-rich" data-keywords="" href="/master-stream-calculator.html"><span>Master Stream</span><strong>Master Stream Calculator</strong><p>Split flow portable monitor math.</p><em>Open tool →</em></a><a class="tool-card tool-card-rich" data-keywords="" href="/deck-gun-calculator.html"><span>Deck Gun</span><strong>Deck Gun Calculator</strong><p>Engine-mounted stream target.</p><em>Open tool →</em></a><a class="tool-card tool-card-rich" data-keywords="" href="/pump-card-builder.html"><span>Pump Card</span><strong>Pump Card Builder</strong><p>Department pump reference card path.</p><em>Open tool →</em></a><a class="tool-card tool-card-rich" data-keywords="" href="/tender-shuttle-calculator.html"><span>Tender</span><strong>Tender Shuttle Calculator</strong><p>Fill, dump, travel, and sustained GPM.</p><em>Open tool →</em></a><a class="tool-card tool-card-rich" data-keywords="" href="/nozzle-reaction-calculator.html"><span>Nozzle</span><strong>Nozzle Reaction Calculator</strong><p>Fog and smooth bore reaction estimate.</p><em>Open tool →</em></a><a class="tool-card tool-card-rich" data-keywords="" href="/sprinkler-fdc-calculator.html"><span>Sprinkler</span><strong>Sprinkler / FDC Reference</strong><p>Support sprinkler/FDC operations.</p><em>Open tool →</em></a><a class="tool-card tool-card-rich" data-keywords="" href="/hazmat-placard-reference.html"><span>HazMat</span><strong>Placard Reference</strong><p>Hazard class recognition practice.</p><em>Open tool →</em></a><a class="tool-card tool-card-rich" data-keywords="" href="/hazmat-isolation-planner.html"><span>HazMat</span><strong>Isolation Zone Planner</strong><p>Area and population planning estimate.</p><em>Open tool →</em></a><a class="tool-card tool-card-rich" data-keywords="" href="/spill-volume-calculator.html"><span>HazMat</span><strong>Spill Volume Calculator</strong><p>Estimate gallons/liters from dimensions.</p><em>Open tool →</em></a><a class="tool-card tool-card-rich" data-keywords="" href="/decon-corridor-planner.html"><span>HazMat</span><strong>Decon Corridor Planner</strong><p>Lane throughput and water demand.</p><em>Open tool →</em></a><a class="tool-card tool-card-rich" data-keywords="" href="/ground-ladder-angle-calculator.html"><span>FF I/II</span><strong>Ground Ladder Angle</strong><p>4:1 set-back rule training tool.</p><em>Open tool →</em></a><a class="tool-card tool-card-rich" data-keywords="" href="/hose-advancement-checklist.html"><span>FF I/II</span><strong>Hose Advancement Checklist</strong><p>Stretch, flake, charge, bleed, advance.</p><em>Open tool →</em></a><a class="tool-card tool-card-rich" data-keywords="" href="/search-and-rescue-sizeup.html"><span>Search</span><strong>Search & Rescue Size-Up</strong><p>Search priorities and report prompts.</p><em>Open tool →</em></a><a class="tool-card tool-card-rich" data-keywords="" href="/ventilation-checklist.html"><span>Truck</span><strong>Ventilation Checklist</strong><p>Vent decision and timing prompts.</p><em>Open tool →</em></a><a class="tool-card tool-card-rich" data-keywords="" href="/ropes-knots-checklist.html"><span>Ropes</span><strong>Ropes & Knots Checklist</strong><p>Basic knot and hardware practice.</p><em>Open tool →</em></a><a class="tool-card tool-card-rich" data-keywords="" href="/occupancy-load-calculator.html"><span>Inspector</span><strong>Occupancy Load Estimator</strong><p>Area divided by load factor.</p><em>Open tool →</em></a><a class="tool-card tool-card-rich" data-keywords="" href="/fire-code-violation-notes.html"><span>Inspector</span><strong>Fire Code Violation Notes</strong><p>Clear issue/location/correction notes.</p><em>Open tool →</em></a><a class="tool-card tool-card-rich" data-keywords="" href="/hydrant-inspection-log.html"><span>Hydrants</span><strong>Hydrant Inspection Log</strong><p>Access, caps, threads, flow marking.</p><em>Open tool →</em></a><a class="tool-card tool-card-rich" data-keywords="" href="/company-officer-tools.html"><span>Officer</span><strong>Company Officer Tools</strong><p>Tailboard and company drill planner.</p><em>Open tool →</em></a><a class="tool-card tool-card-rich" data-keywords="" href="/unit-converter.html"><span>Convert</span><strong>Unit Converter</strong><p>Feet, meters, gallons, liters, PSI, bar.</p><em>Open tool →</em></a><a class="tool-card tool-card-rich" data-keywords="" href="/apps.html"><span>Apps</span><strong>FireOps App Directory</strong><p>Subtle links to apps and sister sites.</p><em>Open tool →</em></a>
-  </div>
 </section>
 </main>
 <footer class="footer">
