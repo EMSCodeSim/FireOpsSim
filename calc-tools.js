@@ -146,6 +146,43 @@
       out.textContent = `Product: ${val('product')} • Container: ${val('container')} • Weather: ${val('weather')} • Actions: ${val('actions')}`;
     }
 
+
+    if(type === 'scba'){
+      const start=num(box,'start',4500), reserve=num(box,'reserve',1575), rate=Math.max(1,num(box,'rate',150)), factor=num(box,'factor',20);
+      const usable = Math.max(0, start - reserve);
+      const raw = usable / rate;
+      const adjusted = raw * (1 - factor/100);
+      const turn = start - (usable/2);
+      out.textContent = `${fmt(adjusted)} min training work time • turn around near ${fmt(turn)} PSI • reserve ${fmt(reserve)} PSI`;
+    }
+    if(type === 'ladder'){
+      const height=num(box,'height',24), length=num(box,'length',28);
+      const setback = height / 4;
+      const reachOk = length >= Math.sqrt(height*height + setback*setback);
+      out.textContent = `${setback.toFixed(1)} ft set-back by 4:1 rule • ${reachOk ? 'ladder length appears adequate for this height' : 'ladder may be too short for this height'}`;
+    }
+    if(type === 'occupancy'){
+      const area=num(box,'area',1200), factor=Math.max(0.1,num(box,'factor',15));
+      const load = Math.ceil(area / factor);
+      out.textContent = `${fmt(load)} person estimated occupant load • ${fmt(area)} sq ft ÷ ${factor} sq ft/person`;
+    }
+    if(type === 'drill'){
+      const val = name => { const el = box.querySelector(`[data-field="${name}"]`); return el ? el.value : ''; };
+      out.textContent = `${val('title')} • Objective: ${val('objective')} • Evaluate: ${val('eval')}`;
+    }
+    if(type === 'preplan'){
+      const val = name => { const el = box.querySelector(`[data-field="${name}"]`); return el ? el.value : ''; };
+      out.textContent = `${val('occupancy')} • ${val('construction')} • Hazards: ${val('hazards')} • Access: ${val('hydrants')}`;
+    }
+    if(type === 'violation'){
+      const val = name => { const el = box.querySelector(`[data-field="${name}"]`); return el ? el.value : ''; };
+      out.textContent = `Issue: ${val('issue')} • Location: ${val('location')} • Correction: ${val('correction')} • Follow-up: ${val('followup')}`;
+    }
+    if(type === 'officer'){
+      const val = name => { const el = box.querySelector(`[data-field="${name}"]`); return el ? el.value : ''; };
+      out.textContent = `${val('topic')} • ${val('time')} • Objective: ${val('objective')} • Evaluation: ${val('eval')}`;
+    }
+
     if(type === 'convert'){
       const feet=num(box,'feet',100), gal=num(box,'gal',1000), psi=num(box,'psi',100);
       out.textContent = `${feet} ft = ${(feet*0.3048).toFixed(1)} m • ${gal} gal = ${fmt(gal*3.78541)} L • ${psi} PSI = ${(psi*0.0689476).toFixed(1)} bar`;

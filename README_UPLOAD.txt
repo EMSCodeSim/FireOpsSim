@@ -32,3 +32,5 @@ HazMat expansion added:
 - decon-corridor-planner.html
 - hazmat-incident-notes.html
 - Added HazMat links to navigation, homepage, tools directory, sitemap, and redirects.
+
+Added Firefighter I/II, fire inspector, prevention, preplan, hydrant, extinguisher, SCBA, ladder, drill, and company officer pages. Upload the entire folder so new navigation, sitemap, and redirects stay together.

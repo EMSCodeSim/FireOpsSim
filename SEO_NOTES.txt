@@ -33,3 +33,5 @@ HazMat expansion added:
 - decon-corridor-planner.html
 - hazmat-incident-notes.html
 - Added HazMat links to navigation, homepage, tools directory, sitemap, and redirects.
+
+Expanded SEO coverage: Firefighter I/II tools, firefighter skills checklist, SCBA air management, ground ladder angle, fire inspector tools, fire inspection checklist, occupancy load estimator, pre-incident plan builder, extinguisher reference, hydrant inspection log, and company officer drill planner.
