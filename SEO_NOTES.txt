@@ -35,3 +35,6 @@ HazMat expansion added:
 - Added HazMat links to navigation, homepage, tools directory, sitemap, and redirects.
 
 Expanded SEO coverage: Firefighter I/II tools, firefighter skills checklist, SCBA air management, ground ladder angle, fire inspector tools, fire inspection checklist, occupancy load estimator, pre-incident plan builder, extinguisher reference, hydrant inspection log, and company officer drill planner.
+
+
+Latest update: Tool-first revision. The homepage and tools directory now emphasize working calculators/checklists first, with app links kept secondary and unobtrusive. Calculator outputs now show deeper math/workflow details and a Copy Result button.

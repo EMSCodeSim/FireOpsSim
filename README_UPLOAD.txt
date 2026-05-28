@@ -34,3 +34,6 @@ HazMat expansion added:
 - Added HazMat links to navigation, homepage, tools directory, sitemap, and redirects.
 
 Added Firefighter I/II, fire inspector, prevention, preplan, hydrant, extinguisher, SCBA, ladder, drill, and company officer pages. Upload the entire folder so new navigation, sitemap, and redirects stay together.
+
+
+Latest update: Tool-first revision. The homepage and tools directory now emphasize working calculators/checklists first, with app links kept secondary and unobtrusive. Calculator outputs now show deeper math/workflow details and a Copy Result button.
