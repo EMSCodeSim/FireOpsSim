@@ -37,3 +37,6 @@ Added Firefighter I/II, fire inspector, prevention, preplan, hydrant, extinguish
 
 
 Latest update: Tool-first revision. The homepage and tools directory now emphasize working calculators/checklists first, with app links kept secondary and unobtrusive. Calculator outputs now show deeper math/workflow details and a Copy Result button.
+
+
+Added FireOps Calc/FirePumpSim content: scenario-player.html, practice-scenarios.html, printable-scenarios.html, scenarios/, js/scenario-player.js, assets/printable-scenarios/, and selected working tools such as driver/operator flashcards, fire load, tank duration, elevation pressure, and tender timer.
