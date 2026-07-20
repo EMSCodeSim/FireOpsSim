@@ -1,9 +1,17 @@
 (function(){
+  const PRACTICE_STATS_KEY = 'fireopssim.practiceStats.v1';
+  const DAILY_PROGRESS_KEY = 'fireopssim.dailyProgress.v1';
+
   const state = {
     baseScenarios: [],
     scenarios: [],
     selected: 0,
-    deck: []
+    deck: [],
+    answerRecorded: false,
+    dailyRecorded: false,
+    dailyMode: false,
+    dailyDate: '',
+    stats: loadPracticeStats()
   };
 
   const paths = {
@@ -11,6 +19,61 @@
     scenarioDir: 'scenarios/',
     imageDirs: ['scenarios/', 'images/scenarios/', 'assets/']
   };
+
+  function loadPracticeStats(){
+    try{
+      const saved = JSON.parse(localStorage.getItem(PRACTICE_STATS_KEY) || '{}');
+      return {
+        attempted: Number(saved.attempted) || 0,
+        correct: Number(saved.correct) || 0,
+        currentStreak: Number(saved.currentStreak) || 0,
+        bestStreak: Number(saved.bestStreak) || 0
+      };
+    } catch(e){
+      return { attempted: 0, correct: 0, currentStreak: 0, bestStreak: 0 };
+    }
+  }
+
+  function savePracticeStats(){
+    try{ localStorage.setItem(PRACTICE_STATS_KEY, JSON.stringify(state.stats)); }
+    catch(e){ console.warn('Practice progress could not be saved.', e); }
+  }
+
+  function loadDailyProgress(){
+    try{
+      const saved = JSON.parse(localStorage.getItem(DAILY_PROGRESS_KEY) || '{}');
+      return saved && typeof saved === 'object' ? saved : {};
+    } catch(e){ return {}; }
+  }
+
+  function localDateKey(date=new Date()){
+    const y = date.getFullYear();
+    const m = String(date.getMonth()+1).padStart(2,'0');
+    const d = String(date.getDate()).padStart(2,'0');
+    return `${y}-${m}-${d}`;
+  }
+
+  function calculateDailyStreak(progress){
+    let streak = 0;
+    const cursor = new Date();
+    cursor.setHours(12,0,0,0);
+    if(!progress[localDateKey(cursor)]?.correct) cursor.setDate(cursor.getDate()-1);
+    while(progress[localDateKey(cursor)]?.correct){
+      streak += 1;
+      cursor.setDate(cursor.getDate()-1);
+    }
+    return streak;
+  }
+
+  function recordDailyCompletion(){
+    if(!state.dailyMode || state.dailyRecorded) return;
+    const progress = loadDailyProgress();
+    const key = state.dailyDate || localDateKey();
+    progress[key] = { correct: true, completedAt: new Date().toISOString() };
+    try{ localStorage.setItem(DAILY_PROGRESS_KEY, JSON.stringify(progress)); }
+    catch(e){ console.warn('Daily challenge progress could not be saved.', e); }
+    state.dailyRecorded = true;
+  }
 
   const $ = (id) => document.getElementById(id);
 
@@ -227,6 +290,8 @@
       }
 
       const params = new URLSearchParams(location.search);
+      state.dailyMode = params.get('daily') === '1';
+      state.dailyDate = params.get('date') || localDateKey();
       const requested = params.get('id');
       const requestedProblem = params.get('problem');
       const requestedIdx = findRequestedScenarioIndex(requested, requestedProblem);
@@ -234,7 +299,7 @@
       state.selected = requestedIdx >= 0 ? requestedIdx : randomIndex(state.scenarios.length);
 
       rebuildDeck();
-      hidePracticeInfo();
+      renderPracticeInfo();
       renderScenario();
     } catch(err){
       const app = $('app');
@@ -255,12 +320,52 @@
     }
   }
 
-  function hidePracticeInfo(){
+  function renderPracticeInfo(){
     const info = $('practiceInfo');
-    if(info){
-      info.innerHTML = '';
-      info.style.display = 'none';
+    if(!info) return;
+    const stats = state.stats;
+    const accuracy = stats.attempted ? Math.round((stats.correct / stats.attempted) * 100) : 0;
+    const dailyProgress = loadDailyProgress();
+    const dailyStreak = calculateDailyStreak(dailyProgress);
+    const dailyCompleted = Boolean(dailyProgress[state.dailyDate || localDateKey()]?.correct);
+
+    info.style.display = '';
+    info.innerHTML = `
+      <h2 class="practice-card-title">${state.dailyMode ? 'Daily challenge progress' : 'Practice progress'}</h2>
+      <p class="practice-copy">Progress is saved only on this device. Show Answer does not count as an attempt.</p>
+      <div class="practice-stats">
+        <div><strong>${stats.attempted}</strong><span>Attempted</span></div>
+        <div><strong>${accuracy}%</strong><span>Accuracy</span></div>
+        <div><strong>${state.dailyMode ? dailyStreak : stats.bestStreak}</strong><span>${state.dailyMode ? 'Daily streak' : 'Best streak'}</span></div>
+      </div>
+      ${state.dailyMode && dailyCompleted ? '<p class="daily-complete">✓ Today’s challenge completed</p>' : ''}
+      ${stats.attempted ? '<button id="resetProgressBtn" class="btn ghost progress-reset" type="button">Reset practice progress</button>' : ''}
+    `;
+
+    const reset = $('resetProgressBtn');
+    if(reset){
+      reset.addEventListener('click', () => {
+        if(!confirm('Reset the practice statistics saved on this device?')) return;
+        state.stats = { attempted: 0, correct: 0, currentStreak: 0, bestStreak: 0 };
+        savePracticeStats();
+        renderPracticeInfo();
+      });
     }
+  }
+
+  function recordPracticeAttempt(correct){
+    if(state.answerRecorded) return;
+    state.answerRecorded = true;
+    state.stats.attempted += 1;
+    if(correct){
+      state.stats.correct += 1;
+      state.stats.currentStreak += 1;
+      state.stats.bestStreak = Math.max(state.stats.bestStreak, state.stats.currentStreak);
+    } else {
+      state.stats.currentStreak = 0;
+    }
+    savePracticeStats();
+    renderPracticeInfo();
   }
 
   function findRequestedScenarioIndex(requested, requestedProblem){
@@ -477,7 +582,7 @@
     }
 
     state.selected = Number.isFinite(next) ? next : randomIndex(state.scenarios.length);
-    hidePracticeInfo();
+    renderPracticeInfo();
     renderScenario();
   }
 
@@ -505,12 +610,14 @@
     state.selected = options[nextPos].i;
     state.deck = state.deck.filter(i => i !== state.selected);
 
-    hidePracticeInfo();
+    renderPracticeInfo();
     renderScenario();
   }
 
   function renderScenario(){
     const s = state.scenarios[state.selected];
+    state.answerRecorded = false;
+    state.dailyRecorded = Boolean(loadDailyProgress()[state.dailyDate || localDateKey()]?.correct);
 
     renderSceneImage(s);
 
@@ -538,8 +645,10 @@
 
       <div class="controls">
         <button id="showAnswerBtn" class="btn secondary">Show Answer</button>
-        <button id="samePictureBtn" class="btn secondary" ${samePictureDisabled}>Same Picture / Next Problem</button>
-        <button id="nextBtn" class="btn ghost">Next Random Scenario</button>
+        ${state.dailyMode
+          ? '<a class="btn ghost" href="/daily-challenge.html">Daily Challenge Home</a>'
+          : `<button id="samePictureBtn" class="btn secondary" ${samePictureDisabled}>Same Picture / Next Problem</button><button id="nextBtn" class="btn ghost">Next Random Scenario</button>`
+        }
       </div>
 
       <div id="result" class="result"></div>
@@ -547,8 +656,10 @@
 
     $('checkBtn').addEventListener('click', checkAnswer);
     $('showAnswerBtn').addEventListener('click', () => showResult(false, true));
-    $('samePictureBtn').addEventListener('click', nextSamePictureRun);
-    $('nextBtn').addEventListener('click', nextRandomScenario);
+    if(!state.dailyMode){
+      $('samePictureBtn').addEventListener('click', nextSamePictureRun);
+      $('nextBtn').addEventListener('click', nextRandomScenario);
+    }
 
     $('ppInput').addEventListener('keydown', e => {
       if(e.key === 'Enter'){
@@ -627,6 +738,11 @@
     const correct = answered && Math.abs(val - s.correctPP) <= s.tolerance;
     const r = $('result');
 
+    if(fromInput && answered){
+      recordPracticeAttempt(correct);
+      if(correct) recordDailyCompletion();
+    }
+
     r.className = `result show ${correct ? 'good' : 'bad'}`;
 
     const correctText = formatAnswer(s.correctPP, s.answerUnit);
@@ -659,7 +775,33 @@
       <div class="math">
         ${s.formulaBreakdown.map(line => `<div>${escapeHtml(line)}</div>`).join('')}
       </div>
+      <div class="result-actions">
+        <button id="shareResultBtn" class="btn secondary" type="button">Share Result</button>
+        <span id="shareStatus" class="share-status" aria-live="polite"></span>
+      </div>
     `;
+
+    const shareButton = $('shareResultBtn');
+    if(shareButton){
+      shareButton.addEventListener('click', async () => {
+        const outcome = forceShow ? 'reviewed' : (correct ? 'answered correctly' : 'completed');
+        const dailyText = state.dailyMode ? "today’s Daily Fire Pump Challenge" : `the “${s.title}” scenario`;
+        const text = `I ${outcome} ${dailyText} on FireOpsSim. Try it: ${location.origin}${state.dailyMode ? '/daily-challenge.html' : '/scenario-player.html'}`;
+        const status = $('shareStatus');
+        try{
+          if(navigator.share){
+            await navigator.share({ title: 'FireOpsSim Scenario Result', text, url: state.dailyMode ? `${location.origin}/daily-challenge.html` : `${location.origin}/scenario-player.html` });
+            if(status) status.textContent = 'Shared';
+          } else {
+            await navigator.clipboard.writeText(text);
+            if(status) status.textContent = 'Result copied';
+          }
+        } catch(e){
+          if(e?.name !== 'AbortError' && status) status.textContent = 'Unable to share on this device';
+        }
+      });
+    }
+    renderPracticeInfo();
   }
 
   load();
