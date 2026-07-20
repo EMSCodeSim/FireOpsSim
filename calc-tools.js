@@ -232,6 +232,25 @@
     box.addEventListener('input',()=>update(box));
     box.addEventListener('change',()=>update(box));
   });
+  document.querySelectorAll('.nav-toggle').forEach(toggle => {
+    const nav = toggle.closest('nav');
+    const label = nav?.querySelector(`label[for="${toggle.id}"]`);
+    const links = nav?.querySelector('.nav-links');
+    const sync = () => {
+      toggle.setAttribute('aria-expanded', toggle.checked ? 'true' : 'false');
+      if(label){
+        label.setAttribute('role','button');
+        label.setAttribute('aria-controls', links?.id || 'site-navigation-links');
+        label.setAttribute('aria-label', toggle.checked ? 'Close navigation menu' : 'Open navigation menu');
+      }
+      if(links && !links.id) links.id = 'site-navigation-links';
+    };
+    toggle.addEventListener('change', sync);
+    links?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { toggle.checked = false; sync(); }));
+    document.addEventListener('keydown', event => { if(event.key === 'Escape' && toggle.checked){ toggle.checked = false; sync(); toggle.focus(); } });
+    sync();
+  });
+
   const search = document.getElementById('toolSearch');
   if(search){
     const cards = Array.from(document.querySelectorAll('[data-tool-board] .tool-card'));

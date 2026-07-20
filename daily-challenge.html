@@ -3,87 +3,79 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Daily Fire Pump Challenge | Driver Operator Practice Question</title>
-  <meta name="description" content="Daily fire pump challenge landing page for driver/operator practice questions, pump calculations, FirePumpSim scenarios, and FireOps Calc links.">
-  
+  <title>Daily Fire Pump Challenge | FireOpsSim</title>
+  <meta name="description" content="Complete one firefighter pump-operations problem each day, check your answer, review the math, and build a practice streak on FireOpsSim.">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <link rel="canonical" href="https://fireopssim.com/daily-challenge.html">
   <meta name="theme-color" content="#0d1f15">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Daily Fire Pump Challenge | Driver Operator Practice Question">
-  <meta property="og:description" content="Daily fire pump challenge landing page for driver/operator practice questions, pump calculations, FirePumpSim scenarios, and FireOps Calc links.">
+  <meta property="og:title" content="Daily Fire Pump Challenge | FireOpsSim">
+  <meta property="og:description" content="One visual pump-operations problem every day with answer checking and a complete math breakdown.">
   <meta property="og:url" content="https://fireopssim.com/daily-challenge.html">
   <meta property="og:site_name" content="FireOpsSim">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Daily Fire Pump Challenge | Driver Operator Practice Question">
-  <meta name="twitter:description" content="Daily fire pump challenge landing page for driver/operator practice questions, pump calculations, FirePumpSim scenarios, and FireOps Calc links.">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="stylesheet" href="/styles.css">
   <script defer src="/calc-tools.js"></script>
-  
+  <script defer src="/js/daily-challenge.js"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
 <header class="site-header" id="top">
   <nav class="nav shell" aria-label="Main navigation">
-    <a class="brand" href="/" aria-label="FireOpsSim home">
-      <span class="brand-mark" aria-hidden="true">FOS</span>
-      <span><strong>FireOpsSim</strong><small>Total fire service toolkit</small></span>
-    </a>
+    <a class="brand" href="/" aria-label="FireOpsSim home"><span class="brand-mark" aria-hidden="true">FOS</span><span><strong>FireOpsSim</strong><small>Fire service tool hub</small></span></a>
     <input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Open navigation menu">
     <label class="nav-toggle-label" for="nav-toggle"><span></span><span></span><span></span></label>
     <div class="nav-links">
+      <a href="/daily-challenge.html" aria-current="page">Daily Challenge</a>
+      <a href="/scenario-player.html">Scenario Player</a>
       <a href="/tools.html">All Tools</a>
-      <a href="/firefighter-1-2-tools.html">Firefighter I/II</a>
-      <a href="/fire-inspector-tools.html">Inspector</a>
-      <a href="/hazmat-tools.html">HazMat</a>
+      <a href="/printable-scenarios.html">Printables</a>
       <a href="/fire-pump-calculator.html">Pump Math</a>
       <a href="/apps.html">Apps</a>
-      <a class="nav-cta" href="https://fireopscalc.com/">Open FireOps Calc</a>
     </div>
   </nav>
 </header>
 <main id="main">
-<section class="subhero"><div class="shell"><p class="eyebrow">Daily challenge</p><h1>Daily fire pump challenge landing page</h1><p>A repeat-visit page concept for daily pump calculation questions, FirePumpSim practice, and driver/operator engagement.</p><div class="hero-actions"><a class="button primary" href="/tools.html">View All Tools</a><a class="button secondary" href="https://fireopscalc.com/">Open FireOps Calc</a></div></div></section>
-<section class="section shell two-column"><article class="content-card"><h2>Daily challenge concept</h2><p>Use this page as a future traffic magnet: one new short pump question per day with a clear answer explanation and links to FirePumpSim and FireOps Calc.</p><ul><li>Single line pump pressure question</li><li>Wye or standpipe question</li><li>Relay/water supply estimate</li><li>Printable weekly review pack</li></ul><a class="button primary" href="/fire-pump-training-scenarios.html">Start scenario practice</a></article><aside class="content-card accent-card"><h2>Why this helps</h2><p>A daily challenge gives users a reason to return, gives you content to post on social media, and creates new indexable training pages over time.</p></aside></section>
+  <section class="subhero daily-subhero">
+    <div class="shell">
+      <p class="eyebrow">One problem every day</p>
+      <h1>Daily Fire Pump Challenge</h1>
+      <p>Calculate today’s answer before opening the explanation. Your completed-day streak is saved locally on this device.</p>
+      <div class="daily-summary" aria-live="polite">
+        <span id="dailyDate">Loading today’s challenge…</span>
+        <strong id="dailyStreak">0-day streak</strong>
+      </div>
+    </div>
+  </section>
+
+  <section class="section shell">
+    <div id="dailyChallengeApp" class="daily-challenge-shell" aria-live="polite">
+      <div class="content-card"><p>Loading today’s scenario…</p></div>
+    </div>
+  </section>
+
+  <section class="section shell daily-support-grid">
+    <article class="content-card">
+      <p class="eyebrow">More practice</p>
+      <h2>Keep training after today’s problem.</h2>
+      <p>The full Scenario Player includes random problems, same-picture variations, saved accuracy, and best-streak tracking.</p>
+      <a class="button primary" href="/scenario-player.html">Open Scenario Player</a>
+    </article>
+    <article class="content-card accent-card">
+      <p class="eyebrow">Instructor use</p>
+      <h2>Turn the problem into a station drill.</h2>
+      <p>Display the scene for the class, collect individual answers, then use the math breakdown for the group review.</p>
+      <a class="button secondary" href="/printable-scenarios.html">Create Printable Worksheets</a>
+    </article>
+  </section>
 </main>
 <footer class="footer">
   <div class="shell footer-grid">
-    <div>
-      <a class="brand footer-brand" href="/">
-        <span class="brand-mark" aria-hidden="true">FOS</span>
-        <span><strong>FireOpsSim</strong><small>Total fire service toolkit</small></span>
-      </a>
-      <p>FireOpsSim is the central fire-service hub for pump calculators, FireOps Calc, FirePumpSim, HazMat tools, Firefighter I/II practice, fire inspector tools, preplans, printable worksheets, and future fireground training projects.</p>
-      <p class="small">For education, training, and reference. Always follow department SOPs, AHJ requirements, manufacturer guidance, current codes, and instructor direction.</p>
-    </div>
-    <div>
-      <h2>Operations</h2>
-      <a href="/fire-pump-calculator.html">Pump Pressure Calculator</a>
-      <a href="/firefighter-1-2-tools.html">Firefighter I/II Tools</a>
-      <a href="/scba-air-management-calculator.html">SCBA Air Management</a>
-      <a href="/ground-ladder-angle-calculator.html">Ground Ladder Angle</a>
-      <a href="/hazmat-tools.html">HazMat Tools</a>
-      <a href="/pump-card-builder.html">Pump Card Builder</a>
-    </div>
-    <div>
-      <h2>Training & Prevention</h2>
-      <a href="/driver-operator-practice.html">Driver/Operator Practice</a>
-      <a href="/firefighter-skills-checklist.html">Firefighter Skills Checklist</a>
-      <a href="/fire-inspector-tools.html">Fire Inspector Tools</a>
-      <a href="/fire-inspection-checklist.html">Inspection Checklist</a>
-      <a href="/pre-incident-plan-builder.html">Pre-Incident Plan Builder</a>
-      <a href="/printable-fire-pump-scenarios.html">Printable Scenarios</a>
-    </div>
-    <div>
-      <h2>Apps & Sites</h2>
-      <a href="https://apps.apple.com/us/app/fireops-calc-engineer-console/id6753922160">FireOps Calc on App Store</a>
-      <a href="https://play.google.com/store/apps/details?id=com.fireopscalc.app">FireOps Calc on Google Play</a>
-      <a href="https://fireopscalc.com/">FireOpsCalc.com</a>
-      <a href="https://firepumpsim.com/">FirePumpSim.com</a>
-      <a href="/about.html">About FireOpsSim</a>
-      <a href="/sitemap.xml">Sitemap</a>
-    </div>
+    <div><a class="brand footer-brand" href="/"><span class="brand-mark" aria-hidden="true">FOS</span><span><strong>FireOpsSim</strong><small>Fire service tool hub</small></span></a><p>Firefighter-built pump calculators, visual scenarios, printable drills, and fireground training resources.</p><p class="small">For education and training. Follow department SOPs, instructor direction, and manufacturer guidance.</p></div>
+    <div><h2>Practice</h2><a href="/daily-challenge.html">Daily Challenge</a><a href="/scenario-player.html">Scenario Player</a><a href="/fire-pump-training-scenarios.html">Scenario Library</a><a href="/printable-scenarios.html">Printable Worksheets</a></div>
+    <div><h2>Calculators</h2><a href="/fire-pump-calculator.html">Pump Pressure</a><a href="/friction-loss-calculator.html">Friction Loss</a><a href="/hydrant-flow-calculator.html">Hydrant Flow</a><a href="/relay-pumping-calculator.html">Relay Pumping</a></div>
+    <div><h2>FireOpsSim</h2><a href="/tools.html">All Tools</a><a href="/apps.html">Apps</a><a href="/about.html">About</a><a href="/sitemap.xml">Sitemap</a></div>
   </div>
   <div class="shell legal"><p>© 2026 FireOpsSim. Built for firefighters, driver/operators, inspectors, instructors, and fire departments.</p></div>
 </footer>
