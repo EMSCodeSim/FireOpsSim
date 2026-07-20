@@ -1,40 +1,215 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Printable Pump Scenarios | FireOpsSim</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Printable Fire Pump Worksheets | FireOpsSim</title>
+  <meta name="description" content="Download printable FirePumpSim driver/operator worksheets for vehicle fires, apartment fires, wye operations, portable monitors, rural water supply, and a blank scenario template.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://fireopssim.com/printable-scenarios.html">
-  <meta name="description" content="Generate printable firefighter pump pressure practice sheets with student questions and optional answer keys." />
+  <meta name="theme-color" content="#0d1f15">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Printable Fire Pump Worksheets | FireOpsSim">
+  <meta property="og:description" content="Ready-to-print driver/operator worksheets with student questions and instructor answer keys.">
+  <meta property="og:url" content="https://fireopssim.com/printable-scenarios.html">
+  <meta property="og:site_name" content="FireOpsSim">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/styles.css">
   <style>
-    :root{--bg:#060a10;--panel:#101824;--text:#f7fbff;--muted:#b8c6d8;--red:#e53935;--paper:#fff;--ink:#111}
-    *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,#07101d,#05070b);color:var(--text)}
-    .wrap{max-width:1180px;margin:0 auto;padding:0 18px}.topbar{position:sticky;top:0;z-index:20;background:rgba(5,8,13,.92);border-bottom:1px solid rgba(255,255,255,.08)}
-    .nav{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:13px 0}.brand{display:flex;align-items:center;gap:10px;font-weight:950;text-decoration:none;color:#fff}.brand-mark{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#e53935,#9f1d18);display:grid;place-items:center;font-weight:1000}.toplink{border:1px solid rgba(255,255,255,.14);background:#111b28;border-radius:999px;padding:9px 13px;text-decoration:none;font-weight:850;font-size:14px;color:#fff}
-    .hero{padding:30px 0 18px}.eyebrow{color:#ff9a94;text-transform:uppercase;font-size:12px;font-weight:950;letter-spacing:.16em;margin-bottom:8px}.hero h1{font-size:clamp(30px,5vw,52px);line-height:1.02;margin:0 0 10px;letter-spacing:-.055em}.hero p{font-size:18px;color:var(--muted);max-width:840px;line-height:1.5;margin:0}
-    .layout{display:grid;grid-template-columns:340px 1fr;gap:18px;align-items:start;padding-bottom:42px}.panel{background:rgba(16,24,36,.92);border:1px solid rgba(255,255,255,.1);box-shadow:0 24px 70px rgba(0,0,0,.28);border-radius:22px;padding:16px}.panel h2{margin:0 0 12px;font-size:21px}.hint{font-size:13px;color:var(--muted);line-height:1.45;margin:0 0 12px}.controls{display:grid;gap:12px}.field{display:grid;gap:6px}.field label{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#d9e5f5;font-weight:950}.field input,.field select{width:100%;border:1px solid #31435c;background:#07101d;color:#fff;border-radius:13px;padding:11px 12px;font-size:15px;font-weight:760}.checkrow{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:#d8e2ee}.btn{border:1px solid rgba(255,255,255,.16);background:#172335;color:#fff;border-radius:15px;padding:12px 13px;font-weight:950;cursor:pointer}.btn.primary{background:linear-gradient(135deg,#f04438,#9f1d18)}.btn.light{background:#f6f8fb;color:#121923}.btn-row{display:grid;grid-template-columns:1fr;gap:10px}.small-note{font-size:12px;color:#9fb0c4;line-height:1.45;margin:10px 0 0}.scenario-mini{display:none}.mini{display:none}.preview-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:12px}.preview-head p{margin:0;color:var(--muted);font-size:13px}.screen-sheet{overflow:auto;padding:6px}.sheet{background:var(--paper);color:var(--ink);width:8.5in;min-height:11in;margin:0 auto;padding:.22in .24in;box-shadow:0 22px 70px rgba(0,0,0,.45)}
-    .sheet-title{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:end;border-bottom:3px solid #111;padding-bottom:6px;margin-bottom:6px}.sheet-title h2{margin:0;font-size:20px}.sheet-title small{font-size:10px;line-height:1.3;text-align:right;color:#222}.scenario-grid{display:grid;grid-template-columns:1fr;gap:7px}.card{break-inside:avoid;border:2px solid #111;border-radius:10px;padding:7px;min-height:1.92in;display:flex;flex-direction:column;gap:5px}.card-head{display:flex;justify-content:space-between;gap:8px;border-bottom:1px solid #222;padding-bottom:4px}.card-head b{font-size:13.5px}.card-head span{font-size:9px;color:#333;text-transform:uppercase;font-weight:800;letter-spacing:.05em}.card-main{display:grid;grid-template-columns:270px 1fr;gap:8px;align-items:start}.scene{position:relative;height:122px;border:1.4px solid #111;border-radius:8px;overflow:hidden;background:#fff}.groundline{position:absolute;left:0;right:0;bottom:16px;border-top:1px dashed rgba(0,0,0,.35)}
-    .asset{position:absolute;display:block;object-fit:contain;filter:grayscale(1) contrast(1.05);mix-blend-mode:multiply;background:transparent}.scene .truck{left:-22px;bottom:-18px;width:126px;height:126px;z-index:4}.scene .target.house{right:4px;top:10px;bottom:auto;width:82px;height:82px;z-index:4}.scene .target.building{right:2px;top:2px;width:80px;height:104px;z-index:4}
-    .hose-layer{position:absolute;inset:0;z-index:6;pointer-events:none}.target-fire-layer{position:absolute;inset:0;z-index:5;pointer-events:none}.hose-main{stroke:#111;stroke-width:8;fill:none;stroke-linecap:round;stroke-linejoin:round}.hose-inner{stroke:#fff;stroke-width:3.2;fill:none;stroke-linecap:round;stroke-linejoin:round}.hose-coupling{fill:#fff;stroke:#111;stroke-width:1.8}.nozzle-shape{fill:#fff;stroke:#111;stroke-width:1.8;stroke-linejoin:round}.flame{fill:#fff;stroke:#111;stroke-width:2.4;stroke-linejoin:round}
-    .scene-label{position:absolute;top:6px;padding:3px 6px;border:1px solid #111;border-radius:5px;background:#fff;font-size:8.5px;font-weight:900;line-height:1;z-index:8}.lbl-hose{left:6px}.lbl-flow{right:6px}.problem{font-size:9.5px;line-height:1.22}.facts{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px}.fact{border:1px solid #aaa;border-radius:5px;padding:2px 4px;font-size:8.4px;line-height:1.12;background:#fafafa}.formula{border:1px solid #111;border-radius:6px;padding:4px 5px;font-size:8.8px;line-height:1.14;background:#f5f5f5}.work{font-size:8.8px}.work-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-top:3px}.blank{border-bottom:1.2px solid #111;min-height:12px;padding-top:1px}.answer-box{display:none;font-size:9.2px;line-height:1.2;border:1px solid #111;border-radius:6px;background:#f7f7f7;padding:4px}.answers-on .answer-box{display:block}.footer{font-size:8.2px;color:#333;text-align:center;margin-top:5px}.answer-page{display:none}.answers-on .answer-page{display:block;page-break-before:always;margin-top:.35in}.answer-table{width:100%;border-collapse:collapse;font-size:11px}.answer-table th,.answer-table td{border:1px solid #111;padding:6px;vertical-align:top}.answer-table th{background:#eee;text-align:left}
-    @media(max-width:980px){.layout{grid-template-columns:1fr}.panel{max-width:760px;width:100%;margin:0 auto}.sheet{transform:scale(.86);transform-origin:top center;margin-bottom:-1.45in}.preview-head{max-width:760px;margin-left:auto;margin-right:auto}.screen-sheet{padding:0}}
-    @media(max-width:760px){.sheet{width:100%;min-height:auto;transform:none;padding:10px}.card-main{grid-template-columns:1fr}.scene{height:165px}.scene .truck{left:-18px;bottom:-10px;width:132px;height:132px}.scene .target.house{right:4px;top:12px;bottom:auto;width:86px;height:86px}.scene .target.building{right:2px;top:4px;bottom:auto;width:82px;height:106px}}
-    @media print{body{background:#fff;color:#000}.topbar,.hero,.builder,.preview-head{display:none!important}.wrap{max-width:none;padding:0}.layout{display:block;padding:0}.panel.preview{border:0;background:#fff;box-shadow:none;padding:0}.screen-sheet{overflow:visible;padding:0}.sheet{box-shadow:none;margin:0;width:8.5in;min-height:11in;padding:.22in .24in}.scenario-grid{grid-template-columns:1fr}.card{min-height:1.92in}.card-main{grid-template-columns:270px 1fr}.scene{height:122px}.scene .truck{left:-22px;bottom:-18px;width:126px;height:126px}.scene .target.house{right:4px;top:10px;bottom:auto;width:82px;height:82px}.scene .target.building{right:2px;top:2px;bottom:auto;width:80px;height:104px}.answer-page{page-break-before:always}.answers-on .answer-page{margin-top:0}@page{size:letter;margin:0}}
+    .printable-intro{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:start}
+    .printable-note{background:linear-gradient(180deg,#fffdf7,#f4ead4);border:1px solid #e2c984;border-radius:24px;padding:24px;box-shadow:var(--soft)}
+    .printable-note strong{display:block;font-size:1.2rem;margin-bottom:8px;color:var(--green)}
+    .printable-note p{margin:0;color:var(--muted)}
+    .printable-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+    .printable-card{display:grid;grid-template-columns:minmax(220px,.82fr) minmax(0,1.18fr);gap:22px;background:var(--paper);border:1px solid var(--line);border-radius:28px;padding:20px;box-shadow:var(--soft);align-items:start}
+    .printable-card:hover{box-shadow:var(--shadow)}
+    .printable-preview{display:block;background:#e8e8e8;border:1px solid #c8c8c8;border-radius:18px;overflow:hidden;aspect-ratio:4/3}
+    .printable-preview.portrait{aspect-ratio:3/4}
+    .printable-preview img{display:block;width:100%;height:100%;object-fit:contain;background:#e6e6e6}
+    .printable-copy{min-width:0}
+    .printable-copy .badge{margin-bottom:12px}
+    .printable-copy h2{font-size:1.55rem;margin-bottom:10px}
+    .printable-copy p{color:var(--muted);margin:0 0 14px}
+    .printable-meta{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px;padding:0;list-style:none}
+    .printable-meta li{border:1px solid var(--line);background:#f8f5ec;border-radius:999px;padding:7px 10px;font-size:.8rem;font-weight:900;color:#324336}
+    .printable-actions{display:flex;gap:10px;flex-wrap:wrap}
+    .printable-actions .button{min-height:44px;padding:10px 15px}
+    .template-card{margin-top:22px;background:linear-gradient(135deg,#0d1f15,#1b462a);color:#fff;border-color:transparent}
+    .template-card .printable-copy p{color:rgba(255,255,255,.75)}
+    .template-card .printable-meta li{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.18);color:#fff}
+    .template-card .badge{background:var(--lime);color:#102318}
+    .template-card .button.secondary{background:#fff;color:var(--green);border-color:#fff}
+    .usage-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+    .usage-step{background:#fff;border:1px solid var(--line);border-radius:22px;padding:20px;box-shadow:var(--soft)}
+    .usage-step b{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--green);color:#fff;margin-bottom:12px}
+    .usage-step h3{font-size:1.1rem;margin-bottom:6px}
+    .usage-step p{color:var(--muted);margin:0}
+    @media(max-width:980px){.printable-grid{grid-template-columns:1fr}.printable-intro{grid-template-columns:1fr}.printable-card{grid-template-columns:290px 1fr}}
+    @media(max-width:700px){.printable-card{grid-template-columns:1fr}.printable-preview,.printable-preview.portrait{aspect-ratio:auto;max-height:none}.printable-preview img{height:auto}.printable-actions{display:grid}.printable-actions .button{width:100%}.usage-steps{grid-template-columns:1fr}}
   </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"CollectionPage",
+    "name":"FireOpsSim Printable Fire Pump Worksheets",
+    "url":"https://fireopssim.com/printable-scenarios.html",
+    "description":"Printable driver/operator worksheets with student pages and instructor answer keys.",
+    "hasPart":[
+      {"@type":"DigitalDocument","name":"Vehicle Fire - Single Attack Line","fileFormat":"application/pdf","url":"https://fireopssim.com/printables/vehicle-fire-single-attack-line.pdf"},
+      {"@type":"DigitalDocument","name":"Apartment Fire - Single Attack Line","fileFormat":"application/pdf","url":"https://fireopssim.com/printables/apartment-fire-single-attack-line.pdf"},
+      {"@type":"DigitalDocument","name":"Industrial Building Fire - Portable Monitor Operation","fileFormat":"application/pdf","url":"https://fireopssim.com/printables/industrial-building-portable-monitor.pdf"},
+      {"@type":"DigitalDocument","name":"Residential Wye Operation - Two Attack Lines","fileFormat":"application/pdf","url":"https://fireopssim.com/printables/residential-wye-operation.pdf"},
+      {"@type":"DigitalDocument","name":"Rural Water Supply - Tanker Shuttle House Fire","fileFormat":"application/pdf","url":"https://fireopssim.com/printables/rural-water-supply-tanker-shuttle.pdf"}
+    ]
+  }
+  </script>
 </head>
 <body>
-<header class="topbar"><div class="wrap nav"><a class="brand" href="/"><span class="brand-mark">FO</span><span>FireOpsSim</span></a><div><a class="toplink" href="/">Home</a> <a class="toplink" href="/fire-pump-calculator.html">Calculator</a></div></div></header>
-<main><section class="hero"><div class="wrap"><div class="eyebrow">Instructor resource</div><h1>Printable Pump Training Worksheets</h1><p>Generate four pump-operation problems per page for station drills, driver/operator practice, and classroom handouts.</p></div></section>
-<section class="wrap layout"><aside class="panel builder"><h2>Build worksheet</h2><p class="hint">Customize the worksheet title, department, difficulty, and optional instructor answer key.</p><div class="controls"><div class="field"><label>Worksheet title</label><input id="title" value="Fire Pump Pressure Practice"></div><div class="field"><label>Class / department</label><input id="dept" value="Driver / Operator Training"></div><div class="field"><label>Difficulty</label><select id="difficulty"><option value="beginner">Beginner</option><option value="mixed">Mixed beginner/intermediate</option></select></div><label class="checkrow"><input type="checkbox" id="answers"> <span>Include answer key when printing / saving PDF</span></label><div class="btn-row"><button class="btn primary" id="generate">Generate New Sheet</button><button class="btn" id="printBtn">Print / Save PDF</button></div></div><p class="small-note">Use Print / Save PDF to create a handout or instructor answer key.</p></aside><section class="panel preview"><div class="preview-head"><h2 style="margin:0">Worksheet preview</h2><p>Four wide rows per page</p></div><div class="screen-sheet"><div class="sheet" id="sheet"></div></div></section></section></main>
-<script>
-(()=>{const $=id=>document.getElementById(id);const ASSET='assets/printable-scenarios/';const equipment=[{hose:'1¾ inch',lengths:[150,200,250,300],nozzles:[{name:'Chief XD Fog',gpm:185,np:50},{name:'Fog Nozzle',gpm:150,np:50}]},{hose:'2½ inch',lengths:[150,200,250,300],nozzles:[{name:'Smooth Bore 1 1/8',gpm:265,np:50},{name:'Fog Nozzle',gpm:250,np:50}]}];const C={'1¾ inch':15.5,'2½ inch':2};const elevationsBeginner=[0,0,0,10,-10];const elevationsMixed=[0,10,-10,20,-20,30];const appliancesBeginner=[0,0,0,10];const appliancesMixed=[0,0,10,10,15];const targetTypes=['house','building'];let scenarios=[];function pick(a){return a[Math.floor(Math.random()*a.length)]}function round5(n){return Math.round(n/5)*5}function esc(s){return String(s??'').replace(/[&<>\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}function elevText(e){return e===0?'Level grade':e>0?`${e} ft uphill`:`${Math.abs(e)} ft downhill`}function appText(a){return a?`${a} psi appliance loss`:'No appliance'}
-function makeScenario(i){const diff=$('difficulty').value;const eq=diff==='beginner'?equipment[0]:pick(equipment);const nozzle=pick(eq.nozzles);const length=pick(eq.lengths);const elevationFeet=pick(diff==='beginner'?elevationsBeginner:elevationsMixed);const elevationPsi=Math.round(elevationFeet*.5);const appliance=pick(diff==='beginner'?appliancesBeginner:appliancesMixed);const q=nozzle.gpm/100,l=length/100,c=C[eq.hose];const fl=Math.round(c*q*q*l);const ppRaw=nozzle.np+fl+elevationPsi+appliance;const pp=round5(ppRaw);const targetType=pick(targetTypes);const hoseCurve=Math.floor(Math.random()*3);const title=targetType==='house'?pick(['Residential Attack Line','Front Door Stretch','Garage Fire Stretch','Single Line House Fire']):pick(['Commercial Attack Line','Storefront Stretch','Apartment Line','Building Fire Attack']);const problem=targetType==='house'?'Engine 181 is stretching one attack line to a residential fire. Calculate the pump discharge pressure.':'Engine 181 is stretching one attack line to a commercial building fire. Calculate the pump discharge pressure.';return{id:`single_line_${Date.now()}_${i}`,type:'single_line',title,apparatus:'Engine 181',hose:eq.hose,length,c,nozzle:nozzle.name,gpm:nozzle.gpm,np:nozzle.np,elevationFeet,elevationPsi,appliance,fl,pp,targetType,hoseCurve,problem,math:`FL = ${c} × (${q.toFixed(2)})² × ${l.toFixed(1)} = ${fl} psi. PP = ${nozzle.np} + ${fl} ${elevationPsi>=0?'+':'-'} ${Math.abs(elevationPsi)} + ${appliance} = ${ppRaw} psi. Round to ${pp} psi.`}}
-function generate(){scenarios=[0,1,2,3].map(makeScenario);render()}
-function hoseSvg(targetType,hoseCurve){const dischargeStub='M 70 100 L 90 100';const housePaths=['M 90 100 C 114 98, 138 95, 161 91 C 183 86, 203 80, 220 74 C 229 71, 236 68, 242 66','M 90 100 C 114 95, 138 92, 161 88 C 183 84, 203 79, 220 74 C 229 70, 236 68, 242 66','M 90 100 C 114 101, 138 98, 161 93 C 183 88, 203 81, 220 75 C 229 71, 236 68, 242 66'];const buildingPaths=['M 90 100 C 116 98, 141 94, 166 89 C 190 84, 210 77, 227 69 C 236 65, 242 61, 247 57','M 90 100 C 116 95, 141 91, 166 86 C 190 82, 210 76, 227 68 C 236 64, 242 60, 247 57','M 90 100 C 116 101, 141 97, 166 91 C 190 86, 210 78, 227 69 C 236 65, 242 60, 247 57'];const attack=(targetType==='house'?housePaths:buildingPaths)[hoseCurve%3];const end=targetType==='house'?{x:242,y:66,a:-24}:{x:247,y:57,a:-34};const nozzle=`<g transform="translate(${end.x+5} ${end.y-1}) rotate(${end.a})"><path class="nozzle-shape" d="M -6 -3 L 2 -3 L 8 -1 L 8 1 L 2 3 L -6 3 Z"/></g>`;return`<svg class="hose-layer" viewBox="0 0 280 132" preserveAspectRatio="none" aria-hidden="true"><path class="hose-main" d="${dischargeStub}"/><path class="hose-inner" d="${dischargeStub}"/><path class="hose-main" d="${attack}"/><path class="hose-inner" d="${attack}"/><circle class="hose-coupling" cx="90" cy="100" r="4.2"/><circle class="hose-coupling" cx="${end.x}" cy="${end.y}" r="4.2"/>${nozzle}</svg>`}
-function fireOverlay(targetType){if(targetType!=='building')return'';return`<svg class="target-fire-layer" viewBox="0 0 280 132" preserveAspectRatio="none" aria-hidden="true"><path class="flame" d="M226 28 C221 20 228 15 230 22 C233 12 243 11 241 25 C248 16 257 17 254 29 C260 22 267 24 265 34 C259 32 255 37 250 32 C246 40 238 36 239 28 C234 33 229 33 226 28 Z"/><path class="flame" d="M240 16 C237 10 243 7 244 12 C247 5 254 5 252 14 C258 8 264 9 262 17 C267 13 272 15 271 22 C266 21 263 24 259 21 C256 27 250 24 250 17 C247 20 242 20 240 16 Z"/></svg>`}
-function sceneHTML(s){const target=s.targetType==='house'?`<img class="asset target house" alt="Burning house" src="${ASSET}house-fire.png">`:`<img class="asset target building" alt="Building" src="${ASSET}urban-building.png">`;return`<div class="scene"><div class="scene-label lbl-hose">${esc(s.length+' ft '+s.hose)}</div><div class="scene-label lbl-flow">${esc(s.gpm+' gpm @ '+s.np+' psi')}</div><div class="groundline"></div><img class="asset truck" alt="Fire truck" src="${ASSET}fire-truck.png">${target}${fireOverlay(s.targetType)}${hoseSvg(s.targetType,s.hoseCurve)}</div>`}
-function card(s,i){return`<article class="card"><div class="card-head"><b>${i+1}. ${esc(s.title)}</b><span>Single line</span></div><div class="card-main"><div>${sceneHTML(s)}</div><div><div class="problem"><b>Problem:</b> ${esc(s.problem)}</div><div class="facts"><div class="fact"><b>Hose:</b> ${s.length} ft ${esc(s.hose)}</div><div class="fact"><b>C:</b> ${s.c}</div><div class="fact"><b>Nozzle:</b> ${esc(s.nozzle)}</div><div class="fact"><b>Flow:</b> ${s.gpm} gpm @ ${s.np} psi</div><div class="fact"><b>Elevation:</b> ${esc(elevText(s.elevationFeet))}</div><div class="fact"><b>Appliance:</b> ${esc(appText(s.appliance))}</div></div><div class="formula"><b>Formula:</b> PP = NP + FL ± Elevation + Appliance &nbsp; | &nbsp; FL = C × (GPM/100)² × Length/100</div><div class="work"><b>Student work:</b><div class="work-grid"><div>NP:<div class="blank"></div></div><div>FL:<div class="blank"></div></div><div>Elev/App:<div class="blank"></div></div><div>Final PP:<div class="blank"></div></div></div></div></div></div><div class="answer-box"><b>Answer:</b> ${s.pp} psi<br>${esc(s.math)}</div></article>`}
-function answerRows(){return scenarios.map((s,i)=>`<tr><td><b>${i+1}. ${esc(s.title)}</b><br>${s.length} ft ${esc(s.hose)}, ${s.gpm} gpm, NP ${s.np}</td><td>${s.fl} psi</td><td>${s.elevationPsi} psi / ${s.appliance} psi</td><td><b>${s.pp} psi</b></td><td>${esc(s.math)}</td></tr>`).join('')}
-function render(){const answers=$('answers').checked;$('sheet').classList.toggle('answers-on',answers);$('sheet').innerHTML=`<div class="sheet-title"><h2>${esc($('title').value)}</h2><small>${esc($('dept').value)}<br>Generated by FireOpsSim<br>Date: __________</small></div><div class="scenario-grid">${scenarios.map(card).join('')}</div><div class="footer">Training worksheet only. Follow local SOPs, instructor direction, and department hydraulic guidelines.</div><section class="answer-page"><div class="sheet-title"><h2>Answer Key</h2><small>${esc($('dept').value)}<br>Single-line scenarios</small></div><table class="answer-table"><thead><tr><th>Scenario</th><th>FL</th><th>Elev/App</th><th>PP</th><th>Math</th></tr></thead><tbody>${answerRows()}</tbody></table></section>`}
-$('generate').addEventListener('click',generate);$('printBtn').addEventListener('click',()=>window.print());$('answers').addEventListener('change',render);$('title').addEventListener('input',render);$('dept').addEventListener('input',render);$('difficulty').addEventListener('change',generate);generate()})();
-</script></body></html>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header" id="top">
+  <nav class="nav shell" aria-label="Main navigation">
+    <a class="brand" href="/" aria-label="FireOpsSim home"><span class="brand-mark" aria-hidden="true">FOS</span><span><strong>FireOpsSim</strong><small>Fire service tool hub</small></span></a>
+    <input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Open navigation menu">
+    <label class="nav-toggle-label" for="nav-toggle"><span></span><span></span><span></span></label>
+    <div class="nav-links">
+      <a href="/daily-challenge.html">Daily Challenge</a>
+      <a href="/scenario-player.html">Scenario Player</a>
+      <a href="/tools.html">All Tools</a>
+      <a href="/printable-scenarios.html" aria-current="page">Printables</a>
+      <a href="/fire-pump-calculator.html">Pump Math</a>
+      <a href="/hazmat-tools.html">HazMat</a>
+      <a href="/apps.html">Apps</a>
+    </div>
+  </nav>
+</header>
+<main id="main">
+  <section class="subhero">
+    <div class="shell printable-intro">
+      <div>
+        <p class="eyebrow">Instructor-ready downloads</p>
+        <h1>Printable fire pump training worksheets.</h1>
+        <p class="hero-lead">Download complete FirePumpSim driver/operator scenarios for station drills, classroom practice, and individual study. Each finished scenario includes a student worksheet followed by an instructor answer key.</p>
+        <div class="hero-actions"><a class="button primary" href="#worksheets">Browse worksheets</a><a class="button secondary" href="/scenario-player.html">Open Scenario Player</a></div>
+      </div>
+      <aside class="printable-note">
+        <strong>Reliable previews and full PDF printing</strong>
+        <p>The webpage shows a lightweight image preview of page 1. Open the full PDF to print or save both the student worksheet and answer key without the browser resizing the website layout.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section shell" id="worksheets">
+    <div class="section-heading">
+      <p class="eyebrow">Five complete scenarios</p>
+      <h2>Choose a worksheet.</h2>
+      <p>Every scenario is ready to use. Open the PDF in a new tab, then print it or save it to the device.</p>
+    </div>
+
+    <div class="printable-grid">
+      <article class="printable-card">
+        <a class="printable-preview portrait" href="/printables/vehicle-fire-single-attack-line.pdf" target="_blank" rel="noopener" aria-label="Open Vehicle Fire Single Attack Line PDF">
+          <img src="/assets/printable-previews/vehicle-fire-single-attack-line.webp" width="773" height="1000" alt="Preview of the Vehicle Fire - Single Attack Line worksheet" loading="lazy">
+        </a>
+        <div class="printable-copy">
+          <span class="badge">Attack line</span>
+          <h2>Vehicle Fire - Single Attack Line</h2>
+          <p>Engine 181 operates from its onboard tank using a 200-foot 1 3/4-inch line and a 95-GPM fog nozzle. Students calculate friction loss, PDP, tank duration, and remaining water.</p>
+          <ul class="printable-meta"><li>2 pages</li><li>Student sheet</li><li>Answer key</li><li>Tank water</li></ul>
+          <div class="printable-actions"><a class="button primary" href="/printables/vehicle-fire-single-attack-line.pdf" target="_blank" rel="noopener">Open / Print PDF</a><a class="button secondary" href="/printables/vehicle-fire-single-attack-line.pdf" download>Download PDF</a></div>
+        </div>
+      </article>
+
+      <article class="printable-card">
+        <a class="printable-preview" href="/printables/apartment-fire-single-attack-line.pdf" target="_blank" rel="noopener" aria-label="Open Apartment Fire Single Attack Line PDF">
+          <img src="/assets/printable-previews/apartment-fire-single-attack-line.webp" width="1000" height="774" alt="Preview of the Apartment Fire - Single Attack Line worksheet" loading="lazy">
+        </a>
+        <div class="printable-copy">
+          <span class="badge">Apartment fire</span>
+          <h2>Apartment Fire - Single Attack Line</h2>
+          <p>A hydrant-supplied engine supports a 200-foot 1 3/4-inch attack line to a second-floor apartment. Students calculate line loss, elevation pressure, PDP, total flow, and a second-line requirement.</p>
+          <ul class="printable-meta"><li>2 pages</li><li>Student sheet</li><li>Answer key</li><li>Elevation</li></ul>
+          <div class="printable-actions"><a class="button primary" href="/printables/apartment-fire-single-attack-line.pdf" target="_blank" rel="noopener">Open / Print PDF</a><a class="button secondary" href="/printables/apartment-fire-single-attack-line.pdf" download>Download PDF</a></div>
+        </div>
+      </article>
+
+      <article class="printable-card">
+        <a class="printable-preview" href="/printables/industrial-building-portable-monitor.pdf" target="_blank" rel="noopener" aria-label="Open Industrial Building Portable Monitor PDF">
+          <img src="/assets/printable-previews/industrial-building-portable-monitor.webp" width="1000" height="774" alt="Preview of the Industrial Building Fire - Portable Monitor Operation worksheet" loading="lazy">
+        </a>
+        <div class="printable-copy">
+          <span class="badge">Master stream</span>
+          <h2>Industrial Building - Portable Monitor</h2>
+          <p>A 500-GPM portable monitor is supplied by two equal 2 1/2-inch lines. Students split the flow, calculate friction loss, add appliance loss, and compare 200-foot and 250-foot supply lines.</p>
+          <ul class="printable-meta"><li>2 pages</li><li>Student sheet</li><li>Answer key</li><li>Dual supply</li></ul>
+          <div class="printable-actions"><a class="button primary" href="/printables/industrial-building-portable-monitor.pdf" target="_blank" rel="noopener">Open / Print PDF</a><a class="button secondary" href="/printables/industrial-building-portable-monitor.pdf" download>Download PDF</a></div>
+        </div>
+      </article>
+
+      <article class="printable-card">
+        <a class="printable-preview" href="/printables/residential-wye-operation.pdf" target="_blank" rel="noopener" aria-label="Open Residential Wye Operation PDF">
+          <img src="/assets/printable-previews/residential-wye-operation.webp" width="1000" height="773" alt="Preview of the Residential Wye Operation - Two Attack Lines worksheet" loading="lazy">
+        </a>
+        <div class="printable-copy">
+          <span class="badge">Wye operation</span>
+          <h2>Residential Wye - Two Attack Lines</h2>
+          <p>Engine 181 supplies two 95-GPM branch lines through a wye. Students calculate branch loss, main-line loss, appliance loss, total PDP, and the pressure change when one branch shuts down.</p>
+          <ul class="printable-meta"><li>2 pages</li><li>Student sheet</li><li>Answer key</li><li>Two branches</li></ul>
+          <div class="printable-actions"><a class="button primary" href="/printables/residential-wye-operation.pdf" target="_blank" rel="noopener">Open / Print PDF</a><a class="button secondary" href="/printables/residential-wye-operation.pdf" download>Download PDF</a></div>
+        </div>
+      </article>
+
+      <article class="printable-card">
+        <a class="printable-preview" href="/printables/rural-water-supply-tanker-shuttle.pdf" target="_blank" rel="noopener" aria-label="Open Rural Water Supply Tanker Shuttle PDF">
+          <img src="/assets/printable-previews/rural-water-supply-tanker-shuttle.webp" width="1000" height="773" alt="Preview of the Rural Water Supply - Tanker Shuttle House Fire worksheet" loading="lazy">
+        </a>
+        <div class="printable-copy">
+          <span class="badge">Rural water supply</span>
+          <h2>Rural Water Supply - Tanker Shuttle</h2>
+          <p>Engine 181 drafts from a 2,000-gallon portable tank during a house fire. Students calculate attack-line PDP, a second line, water duration, combined flow, and tank water remaining.</p>
+          <ul class="printable-meta"><li>2 pages</li><li>Student sheet</li><li>Answer key</li><li>Water duration</li></ul>
+          <div class="printable-actions"><a class="button primary" href="/printables/rural-water-supply-tanker-shuttle.pdf" target="_blank" rel="noopener">Open / Print PDF</a><a class="button secondary" href="/printables/rural-water-supply-tanker-shuttle.pdf" download>Download PDF</a></div>
+        </div>
+      </article>
+    </div>
+
+    <article class="printable-card template-card" id="template">
+      <a class="printable-preview portrait" href="/printables/blank-printable-scenario-template.pdf" target="_blank" rel="noopener" aria-label="Open blank FirePumpSim printable template PDF">
+        <img src="/assets/printable-previews/blank-printable-scenario-template.webp" width="773" height="1000" alt="Preview of the blank FirePumpSim printable scenario template" loading="lazy">
+      </a>
+      <div class="printable-copy">
+        <span class="badge">Blank template</span>
+        <h2>Create a department-specific worksheet</h2>
+        <p>Use the blank FirePumpSim template for a custom scenario. It includes space for a large scene image, five questions, answer/work areas, required equations, and scenario givens.</p>
+        <ul class="printable-meta"><li>1 page</li><li>Custom scenario</li><li>Five questions</li><li>Equation reference</li></ul>
+        <div class="printable-actions"><a class="button primary" href="/printables/blank-printable-scenario-template.pdf" target="_blank" rel="noopener">Open / Print Template</a><a class="button secondary" href="/printables/blank-printable-scenario-template.pdf" download>Download Template</a></div>
+      </div>
+    </article>
+  </section>
+
+  <section class="section shell">
+    <div class="section-heading center"><p class="eyebrow">Simple instructor workflow</p><h2>Use the worksheets in three steps.</h2></div>
+    <div class="usage-steps">
+      <article class="usage-step"><b>1</b><h3>Open the PDF</h3><p>Select a scenario and use the full PDF rather than printing the webpage preview.</p></article>
+      <article class="usage-step"><b>2</b><h3>Print page 1 for students</h3><p>Page 1 contains the scenario givens, student questions, work areas, and required equations.</p></article>
+      <article class="usage-step"><b>3</b><h3>Keep page 2 as the key</h3><p>The second page shows the instructor answer key with formulas, calculations, and acceptable rounding.</p></article>
+    </div>
+  </section>
+
+  <div class="notice"><strong>Training note:</strong> These worksheets are for education and practice. Confirm hose coefficients, nozzle pressures, appliance losses, apparatus capabilities, and department procedures before using the values for live operations.</div>
+</main>
+<footer class="footer">
+  <div class="shell footer-grid">
+    <div>
+      <a class="brand footer-brand" href="/"><span class="brand-mark" aria-hidden="true">FOS</span><span><strong>FireOpsSim</strong><small>Total fire service toolkit</small></span></a>
+      <p>FireOpsSim brings together pump calculators, visual scenarios, HazMat resources, firefighter skills tools, inspection references, preplans, and printable training worksheets.</p>
+      <p class="small">For education, training, and reference. Always follow department SOPs, AHJ requirements, manufacturer guidance, current codes, and instructor direction.</p>
+    </div>
+    <div><h2>Operations</h2><a href="/fire-pump-calculator.html">Pump Pressure Calculator</a><a href="/friction-loss-calculator.html">Friction Loss Calculator</a><a href="/hydrant-flow-calculator.html">Hydrant Flow</a><a href="/relay-pumping-calculator.html">Relay Pumping</a><a href="/standpipe-fdc-calculator.html">Standpipe / FDC</a></div>
+    <div><h2>Training</h2><a href="/daily-challenge.html">Daily Challenge</a><a href="/scenario-player.html">Scenario Player</a><a href="/driver-operator-practice.html">Driver/Operator Practice</a><a href="/driver-operator-pumper-flashcards.html">Pumper Flashcards</a><a href="/printable-scenarios.html">Printable Worksheets</a></div>
+    <div><h2>More</h2><a href="/tools.html">All Tools</a><a href="/hazmat-tools.html">HazMat Tools</a><a href="/fire-inspector-tools.html">Inspector Tools</a><a href="/apps.html">Apps</a><a href="/about.html">About FireOpsSim</a></div>
+  </div>
+  <div class="shell legal"><p>© 2026 FireOpsSim. Built for firefighters, driver/operators, inspectors, instructors, and fire departments.</p></div>
+</footer>
+</body>
+</html>

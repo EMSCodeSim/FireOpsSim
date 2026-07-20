@@ -1,21 +1,33 @@
-FIREOPSSIM RECOMMENDED UPDATE
+FIREOPSSIM PRINTABLE WORKSHEET REPLACEMENT
 
-Upload the contents of this folder to the ROOT of the existing GitHub repository.
-Keep every file in the same path shown here. When GitHub asks, replace the older
-versions of files with these versions.
+Upload every file and folder in this package to the ROOT of the GitHub repository.
+Preserve the printables/ and assets/printable-previews/ folder paths.
+Replace matching HTML files when GitHub asks.
 
-Important:
-1. Upload the top-level HTML, CSS, JavaScript, _redirects, and sitemap.xml files.
-2. Upload the new .webp files into the existing scenarios/ folder.
-3. Upload the changed scenario JSON files into the existing scenarios/ folder.
-4. Do not rename the files.
-5. The older PNG files may remain in the repository. The updated website and
-   Scenario Player use the smaller WebP files.
+REPLACE THESE ROOT FILES:
+- printable-scenarios.html
+- printable-fire-pump-scenarios.html
+- index.html
+- tools.html
+- daily-challenge.html
+- fire-pump-training-scenarios.html
+- instructor-packs.html
+- driver-operator-pumper-flashcards.html
 
-Main changes included:
-- Cleaner homepage and visitor-facing language
-- Creator credibility and site-review information
-- Removed visible SEO/development wording
-- Corrected redirects and sitemap
-- Calculator validation and Reset buttons
-- WebP scenario images for much faster loading
+ADD THESE PDF FILES:
+- printables/vehicle-fire-single-attack-line.pdf
+- printables/apartment-fire-single-attack-line.pdf
+- printables/industrial-building-portable-monitor.pdf
+- printables/residential-wye-operation.pdf
+- printables/rural-water-supply-tanker-shuttle.pdf
+- printables/blank-printable-scenario-template.pdf
+
+ADD THESE PREVIEW FILES:
+- assets/printable-previews/vehicle-fire-single-attack-line.webp
+- assets/printable-previews/apartment-fire-single-attack-line.webp
+- assets/printable-previews/industrial-building-portable-monitor.webp
+- assets/printable-previews/residential-wye-operation.webp
+- assets/printable-previews/rural-water-supply-tanker-shuttle.webp
+- assets/printable-previews/blank-printable-scenario-template.webp
+
+The old random worksheet generator is removed. The printable page now displays reliable image previews and opens the full PDFs for printing or downloading.
