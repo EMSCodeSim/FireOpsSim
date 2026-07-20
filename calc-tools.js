@@ -11,14 +11,41 @@
     return el ? el.value : fallback;
   };
   function result(out, headline, details=[], note=''){
+    out.classList.remove('calc-error');
     const detailHtml = details.length ? `<ul class="result-details">${details.map(d=>`<li>${d}</li>`).join('')}</ul>` : '';
     const noteHtml = note ? `<small class="result-note">${note}</small>` : '';
     out.innerHTML = `<strong>${headline}</strong>${detailHtml}${noteHtml}`;
+  }
+  function errorResult(out, message){
+    out.classList.add('calc-error');
+    out.innerHTML = `<strong>Check the entered values</strong><small class="result-note">${message}</small>`;
+  }
+  function validate(box, type){
+    const positiveFields = ['gpm','length','flow','tank','count','lines','eductor','radius','downwind','width','people','area','factor','height'];
+    for(const name of positiveFields){
+      const el = box.querySelector(`[data-field="${name}"]`);
+      if(el && el.type === 'number' && Number(el.value) < 0){
+        return `${name.replace(/([A-Z])/g,' $1')} cannot be negative.`;
+      }
+    }
+    if(['pdp','friction','nozzle','relay','master','deck','foam','fltable'].includes(type) && num(box,'gpm',0) <= 0) return 'Flow must be greater than zero.';
+    if(['pdp','friction','relay','master','foam'].includes(type) && num(box,'length',0) <= 0) return 'Hose length must be greater than zero.';
+    if(type === 'hydrant'){
+      const s=num(box,'static',0), r=num(box,'residual',0), target=num(box,'target',0), flow=num(box,'flow',0);
+      if(s <= 0 || flow <= 0) return 'Static pressure and test flow must be greater than zero.';
+      if(r >= s) return 'Residual pressure must be lower than static pressure.';
+      if(target >= s) return 'Target residual pressure must be lower than static pressure.';
+    }
+    if(type === 'tender' && num(box,'count',0) < 1) return 'Enter at least one tender.';
+    if(type === 'master' && num(box,'lines',0) < 1) return 'Enter at least one supply line.';
+    return '';
   }
   function update(box){
     const type = box.dataset.calc;
     const out = box.querySelector('[data-output]');
     if(!out) return;
+    const validationMessage = validate(box, type);
+    if(validationMessage){ errorResult(out, validationMessage); return; }
     if(type === 'pdp'){
       const np=num(box,'np',50), gpm=num(box,'gpm',185), c=num(box,'c',15.5), len=num(box,'length',200), elev=num(box,'elev',0), app=num(box,'app',0);
       const fl100 = c * Math.pow(gpm/100,2);
@@ -180,17 +207,26 @@
   }
   document.querySelectorAll('[data-calc]').forEach(box=>{
     const out = box.querySelector('[data-output]');
-    if(out && !box.querySelector('.copy-result')){
-      const btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'copy-result';
-      btn.textContent = 'Copy result';
-      btn.addEventListener('click', async()=>{
+    if(out && !box.querySelector('.calc-actions')){
+      const actions = document.createElement('div');
+      actions.className = 'calc-actions';
+      const copyBtn = document.createElement('button');
+      copyBtn.type = 'button';
+      copyBtn.className = 'copy-result';
+      copyBtn.textContent = 'Copy result';
+      copyBtn.addEventListener('click', async()=>{
         const text = out.innerText.replace(/\n+/g,' • ');
-        try{ await navigator.clipboard.writeText(text); btn.textContent = 'Copied'; setTimeout(()=>btn.textContent='Copy result',1200); }
-        catch(e){ btn.textContent = 'Select result to copy'; }
+        try{ await navigator.clipboard.writeText(text); copyBtn.textContent = 'Copied'; setTimeout(()=>copyBtn.textContent='Copy result',1200); }
+        catch(e){ copyBtn.textContent = 'Select result to copy'; }
       });
-      out.insertAdjacentElement('afterend', btn);
+      const resetBtn = document.createElement('button');
+      resetBtn.type = 'button';
+      resetBtn.className = 'copy-result reset-result';
+      resetBtn.textContent = 'Reset';
+      const defaults = Array.from(box.querySelectorAll('[data-field]')).map(el=>({el, value:el.value}));
+      resetBtn.addEventListener('click',()=>{ defaults.forEach(item=>item.el.value=item.value); update(box); });
+      actions.append(copyBtn, resetBtn);
+      out.insertAdjacentElement('afterend', actions);
     }
     update(box);
     box.addEventListener('input',()=>update(box));

@@ -1,0 +1,21 @@
+FIREOPSSIM RECOMMENDED UPDATE
+
+Upload the contents of this folder to the ROOT of the existing GitHub repository.
+Keep every file in the same path shown here. When GitHub asks, replace the older
+versions of files with these versions.
+
+Important:
+1. Upload the top-level HTML, CSS, JavaScript, _redirects, and sitemap.xml files.
+2. Upload the new .webp files into the existing scenarios/ folder.
+3. Upload the changed scenario JSON files into the existing scenarios/ folder.
+4. Do not rename the files.
+5. The older PNG files may remain in the repository. The updated website and
+   Scenario Player use the smaller WebP files.
+
+Main changes included:
+- Cleaner homepage and visitor-facing language
+- Creator credibility and site-review information
+- Removed visible SEO/development wording
+- Corrected redirects and sitemap
+- Calculator validation and Reset buttons
+- WebP scenario images for much faster loading
