@@ -4,7 +4,7 @@
   "category": "wye",
   "difficulty": "intermediate",
   "type": "pump",
-  "image": "wye_residential_split_001.png",
+  "image": "wye_residential_split_001.webp",
   "scene": {
     "engine": "Engine 181",
     "description": "Engine 181 is supplying a wye with 200' of 2½\" hose. Branch A is 150' of 1¾\" flowing 150 GPM with a fog nozzle at 50 PSI. Branch B is 200' of 1¾\" flowing 185 GPM with a fog nozzle at 50 PSI. What pump pressure should the operator set?",
@@ -30,7 +30,7 @@
     {
       "id": "wye_residential_split_001_q1",
       "title": "Residential Wye Split",
-      "question": "Engine 181 is supplying a wye with 200' of 2½\" hose. Branch A is 150' of 1¾\" flowing 150 GPM with a fog nozzle at 50 PSI. Branch B is 200' of 1¾\" flowing 185 GPM with a fog nozzle at 50 PSI. What pump pressure should the operator set?",
+      "question": "Engine 181 supplies a wye through 200' of 2½\" hose. Branch A is 150' of 1¾\" flowing 150 GPM at 50 PSI. Branch B is 200' of 1¾\" flowing 185 GPM at 50 PSI. What pump pressure should the operator set?",
       "answerLabel": "Pump discharge pressure",
       "answerUnit": "PSI",
       "inputLabel": "Your pump pressure answer",
@@ -39,9 +39,9 @@
       "correctPP": 201,
       "tolerance": 5,
       "answers": {
-        "frictionLoss": 151,
-        "nozzlePressure": 50,
-        "elevation": 0,
+        "supplyFrictionLoss": 45,
+        "branchAFrictionLoss": 52,
+        "branchBFrictionLoss": 106,
         "applianceLoss": 0,
         "totalGpm": 335,
         "pumpPressure": 201,
@@ -62,34 +62,40 @@
         },
         {
           "label": "Branch A",
-          "text": "150' 1¾\" Fog 150",
+          "text": "150' 1¾\" • 150 GPM",
           "x": 34,
           "y": 31
         },
         {
           "label": "Branch B",
-          "text": "200' 1¾\" Fog 185",
+          "text": "200' 1¾\" • 185 GPM",
           "x": 63,
           "y": 35
         }
       ],
       "formulaBreakdown": [
-        "Total GPM = 150 + 185 = 335 GPM",
-        "Supply FL = 2 × 3.35² × 2 = 45 PSI",
-        "Branch A FL = 15.5 × 1.5² × 1.5 = 52 PSI",
-        "Branch A total = 45 + 52 + 50 = 147 PSI",
-        "Branch B FL = 15.5 × 1.85² × 2 = 106 PSI",
-        "Branch B total = 45 + 106 + 50 = 201 PSI",
-        "Highest pressure branch governs",
-        "Pump Pressure = 201 PSI"
+        "Total flow = 150 + 185 = 335 GPM",
+        "Supply FL = 2 × (335 ÷ 100)^2 × 2 = 44.89 ≈ 45 PSI",
+        "Branch A FL = 15.5 × (150 ÷ 100)^2 × 1.5 = 52.31 ≈ 52 PSI",
+        "Branch A total = 45 + 52 + 50 + 0 = 147 PSI",
+        "Branch B FL = 15.5 × (185 ÷ 100)^2 × 2 = 106.10 ≈ 106 PSI",
+        "Branch B total = 45 + 106 + 50 + 0 = 201 PSI",
+        "The highest-pressure branch governs the pump setting",
+        "Pump pressure = 201 PSI"
       ],
-      "instructorExplanation": "",
-      "explainMistake": ""
+      "instructorExplanation": "Set the pump for the branch requiring the greatest total pressure. Gate back the lower-pressure branch as needed.",
+      "explainMistake": "Do not add both branch friction losses together. Calculate each branch separately after the common supply line.",
+      "details": [
+        "200' 2½\"",
+        "150' 1¾\" • 150 GPM",
+        "200' 1¾\" • 185 GPM",
+        "Wye appliance: no added loss"
+      ]
     },
     {
       "id": "wye_residential_split_001_q2",
-      "title": "Residential Wye Split",
-      "question": "Engine 181 is supplying a wye with 200' of 2½\" hose. Branch A is 150' of 1¾\" flowing 150 GPM with a fog nozzle at 50 PSI. Branch B is 200' of 1¾\" flowing 185 GPM with a fog nozzle at 50 PSI. What pump pressure should the operator set?",
+      "title": "Shorter High-flow Branch",
+      "question": "Engine 181 supplies a wye through 200' of 2½\" hose. Branch A is 150' of 1¾\" flowing 150 GPM at 50 PSI. Branch B is 150' of 1¾\" flowing 185 GPM at 50 PSI. What pump pressure should the operator set?",
       "answerLabel": "Pump discharge pressure",
       "answerUnit": "PSI",
       "inputLabel": "Your pump pressure answer",
@@ -98,9 +104,9 @@
       "correctPP": 175,
       "tolerance": 5,
       "answers": {
-        "frictionLoss": 151,
-        "nozzlePressure": 50,
-        "elevation": 0,
+        "supplyFrictionLoss": 45,
+        "branchAFrictionLoss": 52,
+        "branchBFrictionLoss": 80,
         "applianceLoss": 0,
         "totalGpm": 335,
         "pumpPressure": 175,
@@ -121,34 +127,40 @@
         },
         {
           "label": "Branch A",
-          "text": "150' 1¾\" Fog 150",
+          "text": "150' 1¾\" • 150 GPM",
           "x": 34,
           "y": 31
         },
         {
           "label": "Branch B",
-          "text": "200' 1¾\" Fog 185",
+          "text": "150' 1¾\" • 185 GPM",
           "x": 63,
           "y": 35
         }
       ],
       "formulaBreakdown": [
-        "Total GPM = 150 + 185 = 335 GPM",
-        "Supply FL = 2 × 3.35² × 2 = 45 PSI",
-        "Branch A FL = 15.5 × 1.5² × 1.5 = 52 PSI",
-        "Branch A total = 45 + 52 + 50 = 147 PSI",
-        "Branch B FL = 15.5 × 1.85² × 2 = 106 PSI",
-        "Branch B total = 45 + 106 + 50 = 201 PSI",
-        "Highest pressure branch governs",
-        "Pump Pressure = 201 PSI"
+        "Total flow = 150 + 185 = 335 GPM",
+        "Supply FL = 2 × (335 ÷ 100)^2 × 2 = 44.89 ≈ 45 PSI",
+        "Branch A FL = 15.5 × (150 ÷ 100)^2 × 1.5 = 52.31 ≈ 52 PSI",
+        "Branch A total = 45 + 52 + 50 + 0 = 147 PSI",
+        "Branch B FL = 15.5 × (185 ÷ 100)^2 × 1.5 = 79.57 ≈ 80 PSI",
+        "Branch B total = 45 + 80 + 50 + 0 = 175 PSI",
+        "The highest-pressure branch governs the pump setting",
+        "Pump pressure = 175 PSI"
       ],
-      "instructorExplanation": "",
-      "explainMistake": ""
+      "instructorExplanation": "Set the pump for the branch requiring the greatest total pressure. Gate back the lower-pressure branch as needed.",
+      "explainMistake": "Do not add both branch friction losses together. Calculate each branch separately after the common supply line.",
+      "details": [
+        "200' 2½\"",
+        "150' 1¾\" • 150 GPM",
+        "150' 1¾\" • 185 GPM",
+        "Wye appliance: no added loss"
+      ]
     },
     {
       "id": "wye_residential_split_001_q3",
-      "title": "Residential Wye Split",
-      "question": "Engine 181 is supplying a wye with 200' of 2½\" hose. Branch A is 150' of 1¾\" flowing 150 GPM with a fog nozzle at 50 PSI. Branch B is 200' of 1¾\" flowing 185 GPM with a fog nozzle at 50 PSI. What pump pressure should the operator set?",
+      "title": "Dual 185 GPM Wye Operation",
+      "question": "Engine 181 supplies a wye through 200' of 2½\" hose. Branch A is 200' of 1¾\" flowing 185 GPM at 50 PSI. Branch B is 200' of 1¾\" flowing 185 GPM at 50 PSI. Add 10 PSI appliance loss. What pump pressure should the operator set?",
       "answerLabel": "Pump discharge pressure",
       "answerUnit": "PSI",
       "inputLabel": "Your pump pressure answer",
@@ -157,11 +169,11 @@
       "correctPP": 221,
       "tolerance": 5,
       "answers": {
-        "frictionLoss": 151,
-        "nozzlePressure": 50,
-        "elevation": 0,
-        "applianceLoss": 0,
-        "totalGpm": 335,
+        "supplyFrictionLoss": 55,
+        "branchAFrictionLoss": 106,
+        "branchBFrictionLoss": 106,
+        "applianceLoss": 10,
+        "totalGpm": 370,
         "pumpPressure": 221,
         "tolerance": 5
       },
@@ -180,34 +192,40 @@
         },
         {
           "label": "Branch A",
-          "text": "150' 1¾\" Fog 150",
+          "text": "200' 1¾\" • 185 GPM",
           "x": 34,
           "y": 31
         },
         {
           "label": "Branch B",
-          "text": "200' 1¾\" Fog 185",
+          "text": "200' 1¾\" • 185 GPM",
           "x": 63,
           "y": 35
         }
       ],
       "formulaBreakdown": [
-        "Total GPM = 150 + 185 = 335 GPM",
-        "Supply FL = 2 × 3.35² × 2 = 45 PSI",
-        "Branch A FL = 15.5 × 1.5² × 1.5 = 52 PSI",
-        "Branch A total = 45 + 52 + 50 = 147 PSI",
-        "Branch B FL = 15.5 × 1.85² × 2 = 106 PSI",
-        "Branch B total = 45 + 106 + 50 = 201 PSI",
-        "Highest pressure branch governs",
-        "Pump Pressure = 201 PSI"
+        "Total flow = 185 + 185 = 370 GPM",
+        "Supply FL = 2 × (370 ÷ 100)^2 × 2 = 54.76 ≈ 55 PSI",
+        "Branch A FL = 15.5 × (185 ÷ 100)^2 × 2 = 106.10 ≈ 106 PSI",
+        "Branch A total = 55 + 106 + 50 + 10 = 221 PSI",
+        "Branch B FL = 15.5 × (185 ÷ 100)^2 × 2 = 106.10 ≈ 106 PSI",
+        "Branch B total = 55 + 106 + 50 + 10 = 221 PSI",
+        "The highest-pressure branch governs the pump setting",
+        "Pump pressure = 221 PSI"
       ],
-      "instructorExplanation": "",
-      "explainMistake": ""
+      "instructorExplanation": "Set the pump for the branch requiring the greatest total pressure. Gate back the lower-pressure branch as needed.",
+      "explainMistake": "Do not add both branch friction losses together. Calculate each branch separately after the common supply line.",
+      "details": [
+        "200' 2½\"",
+        "200' 1¾\" • 185 GPM",
+        "200' 1¾\" • 185 GPM",
+        "Wye appliance: 10 PSI loss"
+      ]
     },
     {
       "id": "wye_residential_split_001_q4",
-      "title": "Residential Wye Split",
-      "question": "Engine 181 is supplying a wye with 200' of 2½\" hose. Branch A is 150' of 1¾\" flowing 150 GPM with a fog nozzle at 50 PSI. Branch B is 200' of 1¾\" flowing 185 GPM with a fog nozzle at 50 PSI. What pump pressure should the operator set?",
+      "title": "Longer Wye Supply Line",
+      "question": "Engine 181 supplies a wye through 250' of 2½\" hose. Branch A is 150' of 1¾\" flowing 150 GPM at 50 PSI. Branch B is 200' of 1¾\" flowing 185 GPM at 50 PSI. What pump pressure should the operator set?",
       "answerLabel": "Pump discharge pressure",
       "answerUnit": "PSI",
       "inputLabel": "Your pump pressure answer",
@@ -216,9 +234,9 @@
       "correctPP": 212,
       "tolerance": 5,
       "answers": {
-        "frictionLoss": 151,
-        "nozzlePressure": 50,
-        "elevation": 0,
+        "supplyFrictionLoss": 56,
+        "branchAFrictionLoss": 52,
+        "branchBFrictionLoss": 106,
         "applianceLoss": 0,
         "totalGpm": 335,
         "pumpPressure": 212,
@@ -227,7 +245,7 @@
       "overlays": [
         {
           "label": "Supply",
-          "text": "200' 2½\"",
+          "text": "250' 2½\"",
           "x": 28,
           "y": 55
         },
@@ -239,29 +257,35 @@
         },
         {
           "label": "Branch A",
-          "text": "150' 1¾\" Fog 150",
+          "text": "150' 1¾\" • 150 GPM",
           "x": 34,
           "y": 31
         },
         {
           "label": "Branch B",
-          "text": "200' 1¾\" Fog 185",
+          "text": "200' 1¾\" • 185 GPM",
           "x": 63,
           "y": 35
         }
       ],
       "formulaBreakdown": [
-        "Total GPM = 150 + 185 = 335 GPM",
-        "Supply FL = 2 × 3.35² × 2 = 45 PSI",
-        "Branch A FL = 15.5 × 1.5² × 1.5 = 52 PSI",
-        "Branch A total = 45 + 52 + 50 = 147 PSI",
-        "Branch B FL = 15.5 × 1.85² × 2 = 106 PSI",
-        "Branch B total = 45 + 106 + 50 = 201 PSI",
-        "Highest pressure branch governs",
-        "Pump Pressure = 201 PSI"
+        "Total flow = 150 + 185 = 335 GPM",
+        "Supply FL = 2 × (335 ÷ 100)^2 × 2.5 = 56.11 ≈ 56 PSI",
+        "Branch A FL = 15.5 × (150 ÷ 100)^2 × 1.5 = 52.31 ≈ 52 PSI",
+        "Branch A total = 56 + 52 + 50 + 0 = 158 PSI",
+        "Branch B FL = 15.5 × (185 ÷ 100)^2 × 2 = 106.10 ≈ 106 PSI",
+        "Branch B total = 56 + 106 + 50 + 0 = 212 PSI",
+        "The highest-pressure branch governs the pump setting",
+        "Pump pressure = 212 PSI"
       ],
-      "instructorExplanation": "",
-      "explainMistake": ""
+      "instructorExplanation": "Set the pump for the branch requiring the greatest total pressure. Gate back the lower-pressure branch as needed.",
+      "explainMistake": "Do not add both branch friction losses together. Calculate each branch separately after the common supply line.",
+      "details": [
+        "250' 2½\"",
+        "150' 1¾\" • 150 GPM",
+        "200' 1¾\" • 185 GPM",
+        "Wye appliance: no added loss"
+      ]
     }
   ],
   "tags": [

@@ -4,7 +4,7 @@
   "category": "single_line",
   "difficulty": "intermediate",
   "type": "pump",
-  "image": "single_line_heavy_003.png",
+  "image": "single_line_heavy_003.webp",
   "scene": {
     "engine": "Engine 181",
     "description": "Engine 181 is supplying a 250' 2½\" attack line to the corner of a commercial strip. The nozzle is a 1⅛\" smooth bore flowing about 265 GPM at 50 PSI. No elevation and no appliance loss. What pump pressure should you set?",
@@ -35,8 +35,8 @@
   "problems": [
     {
       "id": "single_line_heavy_003_q1",
-      "title": "Heavy 2½ Smooth Bore Attack Line",
-      "question": "Engine 181 is supplying a 250' 2½\" attack line to the corner of a commercial strip. The nozzle is a 1⅛\" smooth bore flowing about 265 GPM at 50 PSI. No elevation and no appliance loss. What pump pressure should you set?",
+      "title": "250-foot 2½ Attack Line",
+      "question": "Engine 181 is supplying a 250' 2½\" attack line. A 1⅛\" smooth-bore tip is flowing about 265 GPM at 50 PSI. No elevation or appliance loss. What pump pressure should you set?",
       "answerLabel": "Pump discharge pressure",
       "answerUnit": "PSI",
       "inputLabel": "Your pump pressure answer",
@@ -57,42 +57,48 @@
         {
           "label": "Engine",
           "text": "Engine 181",
-          "x": 16,
+          "x": 18,
           "y": 68
         },
         {
           "label": "Line",
           "text": "250' 2½\"",
-          "x": 43,
-          "y": 55
+          "x": 45,
+          "y": 52
         },
         {
           "label": "Nozzle",
           "text": "SB 1⅛ @ 50",
-          "x": 73,
-          "y": 32
+          "x": 70,
+          "y": 33
         },
         {
-          "label": "Target",
-          "text": "Commercial",
-          "x": 67,
-          "y": 20
+          "label": "Elev",
+          "text": "Level grade",
+          "x": 49,
+          "y": 72
         }
       ],
       "formulaBreakdown": [
         "PP = FL + NP + elevation + appliance loss",
         "FL per 100' = 2 × (265 ÷ 100)^2",
-        "FL per 100' = 2 × 7.0225 = 14.045 PSI",
-        "Total FL = 14.045 × 2.5 = 35.1125 ≈ 35 PSI",
+        "FL per 100' = 2 × 7.0225 = 14.04 PSI",
+        "Total FL = 14.04 × 2.5 = 35.11 ≈ 35 PSI",
         "PP = 35 + 50 + 0 + 0 = 85 PSI"
       ],
       "instructorExplanation": "",
-      "explainMistake": ""
+      "explainMistake": "",
+      "details": [
+        "250' 2½\"",
+        "SB 1⅛ @ 50",
+        "Elevation: Level grade",
+        "No appliance loss"
+      ]
     },
     {
       "id": "single_line_heavy_003_q2",
-      "title": "Heavy 2½ Smooth Bore Attack Line",
-      "question": "Engine 181 is supplying a 250' 2½\" attack line to the corner of a commercial strip. The nozzle is a 1⅛\" smooth bore flowing about 265 GPM at 50 PSI. No elevation and no appliance loss. What pump pressure should you set?",
+      "title": "200-foot 2½ Attack Line",
+      "question": "Engine 181 is supplying a 200' 2½\" attack line. A 1⅛\" smooth-bore tip is flowing about 265 GPM at 50 PSI. No elevation or appliance loss. What pump pressure should you set?",
       "answerLabel": "Pump discharge pressure",
       "answerUnit": "PSI",
       "inputLabel": "Your pump pressure answer",
@@ -101,7 +107,7 @@
       "correctPP": 78,
       "tolerance": 5,
       "answers": {
-        "frictionLoss": 35,
+        "frictionLoss": 28,
         "nozzlePressure": 50,
         "elevation": 0,
         "applianceLoss": 0,
@@ -113,42 +119,48 @@
         {
           "label": "Engine",
           "text": "Engine 181",
-          "x": 16,
+          "x": 18,
           "y": 68
         },
         {
           "label": "Line",
-          "text": "250' 2½\"",
-          "x": 43,
-          "y": 55
+          "text": "200' 2½\"",
+          "x": 45,
+          "y": 52
         },
         {
           "label": "Nozzle",
           "text": "SB 1⅛ @ 50",
-          "x": 73,
-          "y": 32
+          "x": 70,
+          "y": 33
         },
         {
-          "label": "Target",
-          "text": "Commercial",
-          "x": 67,
-          "y": 20
+          "label": "Elev",
+          "text": "Level grade",
+          "x": 49,
+          "y": 72
         }
       ],
       "formulaBreakdown": [
         "PP = FL + NP + elevation + appliance loss",
         "FL per 100' = 2 × (265 ÷ 100)^2",
-        "FL per 100' = 2 × 7.0225 = 14.045 PSI",
-        "Total FL = 14.045 × 2.5 = 35.1125 ≈ 35 PSI",
-        "PP = 35 + 50 + 0 + 0 = 85 PSI"
+        "FL per 100' = 2 × 7.0225 = 14.04 PSI",
+        "Total FL = 14.04 × 2 = 28.09 ≈ 28 PSI",
+        "PP = 28 + 50 + 0 + 0 = 78 PSI"
       ],
       "instructorExplanation": "",
-      "explainMistake": ""
+      "explainMistake": "",
+      "details": [
+        "200' 2½\"",
+        "SB 1⅛ @ 50",
+        "Elevation: Level grade",
+        "No appliance loss"
+      ]
     },
     {
       "id": "single_line_heavy_003_q3",
-      "title": "Heavy 2½ Smooth Bore Attack Line",
-      "question": "Engine 181 is supplying a 250' 2½\" attack line to the corner of a commercial strip. The nozzle is a 1⅛\" smooth bore flowing about 265 GPM at 50 PSI. No elevation and no appliance loss. What pump pressure should you set?",
+      "title": "235 GPM 2½ Attack Line",
+      "question": "Engine 181 is supplying a 200' 2½\" attack line flowing 235 GPM through a smooth-bore nozzle at 50 PSI. No elevation or appliance loss. What pump pressure should you set?",
       "answerLabel": "Pump discharge pressure",
       "answerUnit": "PSI",
       "inputLabel": "Your pump pressure answer",
@@ -157,11 +169,11 @@
       "correctPP": 72,
       "tolerance": 5,
       "answers": {
-        "frictionLoss": 35,
+        "frictionLoss": 22,
         "nozzlePressure": 50,
         "elevation": 0,
         "applianceLoss": 0,
-        "totalGpm": 265,
+        "totalGpm": 235,
         "pumpPressure": 72,
         "tolerance": 5
       },
@@ -169,42 +181,48 @@
         {
           "label": "Engine",
           "text": "Engine 181",
-          "x": 16,
+          "x": 18,
           "y": 68
         },
         {
           "label": "Line",
-          "text": "250' 2½\"",
-          "x": 43,
-          "y": 55
+          "text": "200' 2½\"",
+          "x": 45,
+          "y": 52
         },
         {
           "label": "Nozzle",
-          "text": "SB 1⅛ @ 50",
-          "x": 73,
-          "y": 32
+          "text": "SB 235 @ 50",
+          "x": 70,
+          "y": 33
         },
         {
-          "label": "Target",
-          "text": "Commercial",
-          "x": 67,
-          "y": 20
+          "label": "Elev",
+          "text": "Level grade",
+          "x": 49,
+          "y": 72
         }
       ],
       "formulaBreakdown": [
         "PP = FL + NP + elevation + appliance loss",
-        "FL per 100' = 2 × (265 ÷ 100)^2",
-        "FL per 100' = 2 × 7.0225 = 14.045 PSI",
-        "Total FL = 14.045 × 2.5 = 35.1125 ≈ 35 PSI",
-        "PP = 35 + 50 + 0 + 0 = 85 PSI"
+        "FL per 100' = 2 × (235 ÷ 100)^2",
+        "FL per 100' = 2 × 5.5225 = 11.05 PSI",
+        "Total FL = 11.05 × 2 = 22.09 ≈ 22 PSI",
+        "PP = 22 + 50 + 0 + 0 = 72 PSI"
       ],
       "instructorExplanation": "",
-      "explainMistake": ""
+      "explainMistake": "",
+      "details": [
+        "200' 2½\"",
+        "SB 235 @ 50",
+        "Elevation: Level grade",
+        "No appliance loss"
+      ]
     },
     {
       "id": "single_line_heavy_003_q4",
-      "title": "Heavy 2½ Smooth Bore Attack Line",
-      "question": "Engine 181 is supplying a 250' 2½\" attack line to the corner of a commercial strip. The nozzle is a 1⅛\" smooth bore flowing about 265 GPM at 50 PSI. No elevation and no appliance loss. What pump pressure should you set?",
+      "title": "Extended 2½ Attack Line",
+      "question": "Engine 181 is supplying a 300' 2½\" attack line flowing about 258 GPM through a smooth-bore nozzle at 50 PSI. No elevation or appliance loss. What pump pressure should you set?",
       "answerLabel": "Pump discharge pressure",
       "answerUnit": "PSI",
       "inputLabel": "Your pump pressure answer",
@@ -213,11 +231,11 @@
       "correctPP": 90,
       "tolerance": 5,
       "answers": {
-        "frictionLoss": 35,
+        "frictionLoss": 40,
         "nozzlePressure": 50,
         "elevation": 0,
         "applianceLoss": 0,
-        "totalGpm": 265,
+        "totalGpm": 258,
         "pumpPressure": 90,
         "tolerance": 5
       },
@@ -225,37 +243,43 @@
         {
           "label": "Engine",
           "text": "Engine 181",
-          "x": 16,
+          "x": 18,
           "y": 68
         },
         {
           "label": "Line",
-          "text": "250' 2½\"",
-          "x": 43,
-          "y": 55
+          "text": "300' 2½\"",
+          "x": 45,
+          "y": 52
         },
         {
           "label": "Nozzle",
-          "text": "SB 1⅛ @ 50",
-          "x": 73,
-          "y": 32
+          "text": "SB 258 @ 50",
+          "x": 70,
+          "y": 33
         },
         {
-          "label": "Target",
-          "text": "Commercial",
-          "x": 67,
-          "y": 20
+          "label": "Elev",
+          "text": "Level grade",
+          "x": 49,
+          "y": 72
         }
       ],
       "formulaBreakdown": [
         "PP = FL + NP + elevation + appliance loss",
-        "FL per 100' = 2 × (265 ÷ 100)^2",
-        "FL per 100' = 2 × 7.0225 = 14.045 PSI",
-        "Total FL = 14.045 × 2.5 = 35.1125 ≈ 35 PSI",
-        "PP = 35 + 50 + 0 + 0 = 85 PSI"
+        "FL per 100' = 2 × (258 ÷ 100)^2",
+        "FL per 100' = 2 × 6.6564 = 13.31 PSI",
+        "Total FL = 13.31 × 3 = 39.94 ≈ 40 PSI",
+        "PP = 40 + 50 + 0 + 0 = 90 PSI"
       ],
       "instructorExplanation": "",
-      "explainMistake": ""
+      "explainMistake": "",
+      "details": [
+        "300' 2½\"",
+        "SB 258 @ 50",
+        "Elevation: Level grade",
+        "No appliance loss"
+      ]
     }
   ],
   "tags": [

@@ -4,7 +4,7 @@
   "category": "single_line",
   "difficulty": "intermediate",
   "type": "pump",
-  "image": "single_line_extended_002.png",
+  "image": "single_line_extended_002.webp",
   "scene": {
     "engine": "Engine 181",
     "description": "Engine 181 has a 250' 1¾\" line stretched to a second-floor apartment fire. The fog nozzle is flowing 185 GPM at 50 PSI. Add 5 PSI for the floor above the pump. No appliance loss. What pump pressure should you set?",
@@ -34,8 +34,8 @@
   "problems": [
     {
       "id": "single_line_extended_002_q1",
-      "title": "Extended 1¾ Line to Second Floor",
-      "question": "Engine 181 has a 250' 1¾\" line stretched to a second-floor apartment fire. The fog nozzle is flowing 185 GPM at 50 PSI. Add 5 PSI for the floor above the pump. No appliance loss. What pump pressure should you set?",
+      "title": "250-foot Line to Second Floor",
+      "question": "Engine 181 has a 250' 1¾\" line stretched to a second-floor apartment. The fog nozzle is flowing 185 GPM at 50 PSI. Add 5 PSI for elevation. What pump pressure should you set?",
       "answerLabel": "Pump discharge pressure",
       "answerUnit": "PSI",
       "inputLabel": "Your pump pressure answer",
@@ -57,41 +57,47 @@
           "label": "Engine",
           "text": "Engine 181",
           "x": 18,
-          "y": 69
+          "y": 68
         },
         {
           "label": "Line",
           "text": "250' 1¾\"",
-          "x": 43,
-          "y": 55
+          "x": 45,
+          "y": 52
         },
         {
           "label": "Nozzle",
           "text": "Fog 185 @ 50",
-          "x": 72,
-          "y": 29
+          "x": 70,
+          "y": 33
         },
         {
           "label": "Elev",
           "text": "+5 PSI",
-          "x": 64,
-          "y": 39
+          "x": 49,
+          "y": 72
         }
       ],
       "formulaBreakdown": [
         "PP = FL + NP + elevation + appliance loss",
         "FL per 100' = 15.5 × (185 ÷ 100)^2",
-        "FL per 100' = 15.5 × 3.4225 = 53.04875 PSI",
-        "Total FL = 53.04875 × 2.5 = 132.621875 ≈ 133 PSI",
+        "FL per 100' = 15.5 × 3.4225 = 53.05 PSI",
+        "Total FL = 53.05 × 2.5 = 132.62 ≈ 133 PSI",
         "PP = 133 + 50 + 5 + 0 = 188 PSI"
       ],
       "instructorExplanation": "",
-      "explainMistake": ""
+      "explainMistake": "",
+      "details": [
+        "250' 1¾\"",
+        "Fog 185 @ 50",
+        "Elevation: +5 PSI",
+        "No appliance loss"
+      ]
     },
     {
       "id": "single_line_extended_002_q2",
-      "title": "Extended 1¾ Line to Second Floor",
-      "question": "Engine 181 has a 250' 1¾\" line stretched to a second-floor apartment fire. The fog nozzle is flowing 185 GPM at 50 PSI. Add 5 PSI for the floor above the pump. No appliance loss. What pump pressure should you set?",
+      "title": "200-foot Line to Second Floor",
+      "question": "Engine 181 has a 200' 1¾\" line stretched to a second-floor apartment. The fog nozzle is flowing 185 GPM at 50 PSI. Add 5 PSI for elevation. What pump pressure should you set?",
       "answerLabel": "Pump discharge pressure",
       "answerUnit": "PSI",
       "inputLabel": "Your pump pressure answer",
@@ -100,7 +106,7 @@
       "correctPP": 161,
       "tolerance": 5,
       "answers": {
-        "frictionLoss": 133,
+        "frictionLoss": 106,
         "nozzlePressure": 50,
         "elevation": 5,
         "applianceLoss": 0,
@@ -113,41 +119,47 @@
           "label": "Engine",
           "text": "Engine 181",
           "x": 18,
-          "y": 69
+          "y": 68
         },
         {
           "label": "Line",
-          "text": "250' 1¾\"",
-          "x": 43,
-          "y": 55
+          "text": "200' 1¾\"",
+          "x": 45,
+          "y": 52
         },
         {
           "label": "Nozzle",
           "text": "Fog 185 @ 50",
-          "x": 72,
-          "y": 29
+          "x": 70,
+          "y": 33
         },
         {
           "label": "Elev",
           "text": "+5 PSI",
-          "x": 64,
-          "y": 39
+          "x": 49,
+          "y": 72
         }
       ],
       "formulaBreakdown": [
         "PP = FL + NP + elevation + appliance loss",
         "FL per 100' = 15.5 × (185 ÷ 100)^2",
-        "FL per 100' = 15.5 × 3.4225 = 53.04875 PSI",
-        "Total FL = 53.04875 × 2.5 = 132.621875 ≈ 133 PSI",
-        "PP = 133 + 50 + 5 + 0 = 188 PSI"
+        "FL per 100' = 15.5 × 3.4225 = 53.05 PSI",
+        "Total FL = 53.05 × 2 = 106.10 ≈ 106 PSI",
+        "PP = 106 + 50 + 5 + 0 = 161 PSI"
       ],
       "instructorExplanation": "",
-      "explainMistake": ""
+      "explainMistake": "",
+      "details": [
+        "200' 1¾\"",
+        "Fog 185 @ 50",
+        "Elevation: +5 PSI",
+        "No appliance loss"
+      ]
     },
     {
       "id": "single_line_extended_002_q3",
-      "title": "Extended 1¾ Line to Second Floor",
-      "question": "Engine 181 has a 250' 1¾\" line stretched to a second-floor apartment fire. The fog nozzle is flowing 185 GPM at 50 PSI. Add 5 PSI for the floor above the pump. No appliance loss. What pump pressure should you set?",
+      "title": "165 GPM Elevated Attack Line",
+      "question": "Engine 181 has a 200' 1¾\" attack line flowing 165 GPM at 50 PSI. Add 8 PSI for elevation. What pump pressure should you set?",
       "answerLabel": "Pump discharge pressure",
       "answerUnit": "PSI",
       "inputLabel": "Your pump pressure answer",
@@ -156,11 +168,11 @@
       "correctPP": 142,
       "tolerance": 5,
       "answers": {
-        "frictionLoss": 133,
+        "frictionLoss": 84,
         "nozzlePressure": 50,
-        "elevation": 5,
+        "elevation": 8,
         "applianceLoss": 0,
-        "totalGpm": 185,
+        "totalGpm": 165,
         "pumpPressure": 142,
         "tolerance": 5
       },
@@ -169,41 +181,47 @@
           "label": "Engine",
           "text": "Engine 181",
           "x": 18,
-          "y": 69
+          "y": 68
         },
         {
           "label": "Line",
-          "text": "250' 1¾\"",
-          "x": 43,
-          "y": 55
+          "text": "200' 1¾\"",
+          "x": 45,
+          "y": 52
         },
         {
           "label": "Nozzle",
-          "text": "Fog 185 @ 50",
-          "x": 72,
-          "y": 29
+          "text": "Fog 165 @ 50",
+          "x": 70,
+          "y": 33
         },
         {
           "label": "Elev",
-          "text": "+5 PSI",
-          "x": 64,
-          "y": 39
+          "text": "+8 PSI",
+          "x": 49,
+          "y": 72
         }
       ],
       "formulaBreakdown": [
         "PP = FL + NP + elevation + appliance loss",
-        "FL per 100' = 15.5 × (185 ÷ 100)^2",
-        "FL per 100' = 15.5 × 3.4225 = 53.04875 PSI",
-        "Total FL = 53.04875 × 2.5 = 132.621875 ≈ 133 PSI",
-        "PP = 133 + 50 + 5 + 0 = 188 PSI"
+        "FL per 100' = 15.5 × (165 ÷ 100)^2",
+        "FL per 100' = 15.5 × 2.7225 = 42.20 PSI",
+        "Total FL = 42.20 × 2 = 84.40 ≈ 84 PSI",
+        "PP = 84 + 50 + 8 + 0 = 142 PSI"
       ],
       "instructorExplanation": "",
-      "explainMistake": ""
+      "explainMistake": "",
+      "details": [
+        "200' 1¾\"",
+        "Fog 165 @ 50",
+        "Elevation: +8 PSI",
+        "No appliance loss"
+      ]
     },
     {
       "id": "single_line_extended_002_q4",
-      "title": "Extended 1¾ Line to Second Floor",
-      "question": "Engine 181 has a 250' 1¾\" line stretched to a second-floor apartment fire. The fog nozzle is flowing 185 GPM at 50 PSI. Add 5 PSI for the floor above the pump. No appliance loss. What pump pressure should you set?",
+      "title": "High-flow Extended Attack Line",
+      "question": "Engine 181 has a 250' 1¾\" attack line flowing 190 GPM at 50 PSI. Add 8 PSI for elevation. What pump pressure should you set?",
       "answerLabel": "Pump discharge pressure",
       "answerUnit": "PSI",
       "inputLabel": "Your pump pressure answer",
@@ -212,11 +230,11 @@
       "correctPP": 198,
       "tolerance": 5,
       "answers": {
-        "frictionLoss": 133,
+        "frictionLoss": 140,
         "nozzlePressure": 50,
-        "elevation": 5,
+        "elevation": 8,
         "applianceLoss": 0,
-        "totalGpm": 185,
+        "totalGpm": 190,
         "pumpPressure": 198,
         "tolerance": 5
       },
@@ -225,36 +243,42 @@
           "label": "Engine",
           "text": "Engine 181",
           "x": 18,
-          "y": 69
+          "y": 68
         },
         {
           "label": "Line",
           "text": "250' 1¾\"",
-          "x": 43,
-          "y": 55
+          "x": 45,
+          "y": 52
         },
         {
           "label": "Nozzle",
-          "text": "Fog 185 @ 50",
-          "x": 72,
-          "y": 29
+          "text": "Fog 190 @ 50",
+          "x": 70,
+          "y": 33
         },
         {
           "label": "Elev",
-          "text": "+5 PSI",
-          "x": 64,
-          "y": 39
+          "text": "+8 PSI",
+          "x": 49,
+          "y": 72
         }
       ],
       "formulaBreakdown": [
         "PP = FL + NP + elevation + appliance loss",
-        "FL per 100' = 15.5 × (185 ÷ 100)^2",
-        "FL per 100' = 15.5 × 3.4225 = 53.04875 PSI",
-        "Total FL = 53.04875 × 2.5 = 132.621875 ≈ 133 PSI",
-        "PP = 133 + 50 + 5 + 0 = 188 PSI"
+        "FL per 100' = 15.5 × (190 ÷ 100)^2",
+        "FL per 100' = 15.5 × 3.6100 = 55.95 PSI",
+        "Total FL = 55.95 × 2.5 = 139.89 ≈ 140 PSI",
+        "PP = 140 + 50 + 8 + 0 = 198 PSI"
       ],
       "instructorExplanation": "",
-      "explainMistake": ""
+      "explainMistake": "",
+      "details": [
+        "250' 1¾\"",
+        "Fog 190 @ 50",
+        "Elevation: +8 PSI",
+        "No appliance loss"
+      ]
     }
   ],
   "tags": [
