@@ -1,33 +1,8 @@
-FIREOPSSIM PRINTABLE WORKSHEET REPLACEMENT
+FIREFIGHTER WELLNESS UPDATE
 
-Upload every file and folder in this package to the ROOT of the GitHub repository.
-Preserve the printables/ and assets/printable-previews/ folder paths.
-Replace matching HTML files when GitHub asks.
+1. Unzip this package.
+2. Upload all included files and folders to the root of the FireOpsSim GitHub repository.
+3. Preserve the js folder.
+4. Allow replacement of existing files when prompted.
 
-REPLACE THESE ROOT FILES:
-- printable-scenarios.html
-- printable-fire-pump-scenarios.html
-- index.html
-- tools.html
-- daily-challenge.html
-- fire-pump-training-scenarios.html
-- instructor-packs.html
-- driver-operator-pumper-flashcards.html
-
-ADD THESE PDF FILES:
-- printables/vehicle-fire-single-attack-line.pdf
-- printables/apartment-fire-single-attack-line.pdf
-- printables/industrial-building-portable-monitor.pdf
-- printables/residential-wye-operation.pdf
-- printables/rural-water-supply-tanker-shuttle.pdf
-- printables/blank-printable-scenario-template.pdf
-
-ADD THESE PREVIEW FILES:
-- assets/printable-previews/vehicle-fire-single-attack-line.webp
-- assets/printable-previews/apartment-fire-single-attack-line.webp
-- assets/printable-previews/industrial-building-portable-monitor.webp
-- assets/printable-previews/residential-wye-operation.webp
-- assets/printable-previews/rural-water-supply-tanker-shuttle.webp
-- assets/printable-previews/blank-printable-scenario-template.webp
-
-The old random worksheet generator is removed. The printable page now displays reliable image previews and opens the full PDFs for printing or downloading.
+This update preserves the firefighter candidate section and printable preview corrections.

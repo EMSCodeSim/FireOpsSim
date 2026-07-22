@@ -42,3 +42,13 @@ sitemap.xml
 standpipe-fdc-calculator.html
 styles.css
 tools.html
+
+FIREFIGHTER WELLNESS UPDATE (2026-07-22)
+- firefighter-wellness.html
+- js/firefighter-wellness.js
+- styles.css
+- index.html
+- tools.html
+- become-a-firefighter.html
+- sitemap.xml
+- Footer links updated across HTML pages
