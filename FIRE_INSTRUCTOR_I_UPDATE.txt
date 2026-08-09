@@ -1,0 +1,22 @@
+Fire Instructor I Learning Center update
+
+New:
+- fire-instructor-1.html
+- js/fire-instructor-1.js
+
+Updated:
+- styles.css
+- training.html
+- firefighter-career.html
+- sitemap.xml
+
+Features:
+- 10-module Instructor I study guide
+- 80+ interactive flashcards with weak-card mode
+- 100-question randomized timed mock exam with explanations/topic breakdown
+- practical/JPR readiness guide
+- 14-day and 3-day prep plans
+- local saved progress/readiness score
+- Colorado exam snapshot and NFPA 1041 -> NFPA 1020 transition note
+
+All practice questions are original FireOpsSim content and are not copied from DFPC, NFPA, IFSAC, Pro Board, or IFSTA exams.
