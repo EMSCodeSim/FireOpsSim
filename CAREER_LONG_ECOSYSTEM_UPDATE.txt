@@ -1,0 +1,31 @@
+FIREOPSSIM CAREER-LONG ECOSYSTEM UPDATE
+Date: August 9, 2026
+
+GOAL
+Reposition FireOpsSim from a collection of fire-service utilities into a career-long firefighter hub similar to the direction of EMSCodeSim.
+
+WHAT CHANGED
+- Added /firefighter-career.html as the main Career destination.
+- Added an interactive Career Compass that remembers the visitor's current stage locally.
+- Career path now covers candidate, academy, probation, firefighter, driver/operator, company officer, instructor, specialty/prevention, and senior/mentor stages.
+- Added clear cross-site handoffs to FireOpsCalc, EMSCodeSim, and FirePumpSim.
+- Reworked the homepage around the visitor's current fire-service career stage.
+- Added a connected-ecosystem section to the homepage.
+- Added the Career Path to the main tool directory.
+- Added EMSCodeSim to the Apps / project directory.
+- Main navigation now sends Career to the full career hub instead of only the candidate page.
+- Existing Become a Firefighter page remains intact as the dedicated candidate center.
+- Added the new career page to sitemap.xml.
+
+DESIGN DIRECTION
+FireOpsSim should remain the free front door for the firefighter's whole career. Deep EMS education belongs on EMSCodeSim. Deep field/engineer calculators belong on FireOpsCalc. Focused pump scenario practice can continue on FirePumpSim. FireOpsSim connects all of them by career stage.
+
+RECOMMENDED NEXT CONTENT BUILDS
+1. Probationary Firefighter / First 100 Shifts Center.
+2. Driver-Operator Learning Center using Teach -> Demonstrate -> Practice.
+3. Company Officer Development Center.
+4. Specialty career paths (HazMat, prevention, wildland, technical rescue).
+5. Late-career mentoring and retirement-transition resources.
+
+UPLOAD
+Upload the changed files to the repository root, preserving the js/ folder.

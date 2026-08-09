@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Firefighter Career Path | Training, Tools, Promotion & Wellness | FireOpsSim</title>
+  <meta name="description" content="Follow the firefighter career from candidate and academy through probation, company operations, driver/operator, officer, instructor, prevention, EMS, specialties, and career longevity. Free tools and training from FireOpsSim with links to FireOpsCalc and EMSCodeSim.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://fireopssim.com/firefighter-career.html">
+  <meta name="theme-color" content="#111820">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Firefighter Career Path | FireOpsSim">
+  <meta property="og:description" content="One practical fire-service hub from first application through senior firefighter, engineer, officer, instructor, specialties, and career longevity.">
+  <meta property="og:url" content="https://fireopssim.com/firefighter-career.html">
+  <meta property="og:site_name" content="FireOpsSim">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/styles.css">
+  <script defer src="/calc-tools.js"></script>
+  <script defer src="/js/firefighter-career-path.js"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Firefighter Career Path","url":"https://fireopssim.com/firefighter-career.html","description":"Free firefighter career tools and training from candidate preparation through operations, promotion, specialties, wellness, and mentoring.","isPartOf":{"@type":"WebSite","name":"FireOpsSim","url":"https://fireopssim.com/"}}</script>
+</head>
+<body class="site-refresh career-hub-page">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header" id="top">
+  <nav class="nav shell" aria-label="Main navigation">
+    <a class="brand" href="/" aria-label="FireOpsSim home"><span class="brand-mark" aria-hidden="true">FOS</span><span><strong>FireOpsSim</strong><small>Tools • Training • Career</small></span></a>
+    <input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Open navigation menu">
+    <label class="nav-toggle-label" for="nav-toggle"><span></span><span></span><span></span></label>
+    <div class="nav-links">
+      <a href="/tools.html">Tools</a>
+      <a href="/training.html">Training</a>
+      <a href="/firefighter-career.html" aria-current="page">Career</a>
+      <a href="/firefighter-wellness.html">Wellness</a>
+      <a href="/apps.html">Apps</a>
+      <a class="nav-cta" href="/daily-challenge.html">Daily Drill</a>
+    </div>
+  </nav>
+</header>
+<main id="main">
+  <section class="career-hub-hero">
+    <div class="shell career-hub-hero-grid">
+      <div>
+        <p class="section-kicker">A career-long fire service toolkit</p>
+        <h1>From “I want to be a firefighter” to the last shift.</h1>
+        <p>FireOpsSim connects free training, checklists, calculators, scenarios, wellness resources, and career tools to the stage you are in now—and the role you want next.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#career-compass">Find my starting point</a>
+          <a class="button secondary" href="/tools.html">Browse every free tool</a>
+        </div>
+        <div class="career-hero-tags" aria-label="Career stages covered">
+          <span>Candidate</span><span>Academy</span><span>Probation</span><span>Firefighter</span><span>Engineer</span><span>Officer</span><span>Instructor</span><span>Specialties</span>
+        </div>
+      </div>
+      <aside class="career-command-card" aria-label="FireOpsSim ecosystem">
+        <p class="section-kicker">One connected ecosystem</p>
+        <h2>Use the right project for the job.</h2>
+        <a href="/firefighter-career.html"><strong>FireOpsSim</strong><span>Career pathway, fireground training, drills, references, and wellness.</span></a>
+        <a href="https://fireopscalc.com/"><strong>FireOpsCalc</strong><span>Pump math, hydraulics, water supply, pump cards, and engineer tools.</span></a>
+        <a href="https://emscodesim.com/"><strong>EMSCodeSim</strong><span>EMT/paramedic learning, patient assessment, vitals, and EMS career development.</span></a>
+        <a href="https://firepumpsim.com/"><strong>FirePumpSim</strong><span>Focused pump-operator scenario practice and printable pump training.</span></a>
+      </aside>
+    </div>
+  </section>
+
+  <section id="career-compass" class="home-section shell career-compass-section">
+    <div class="section-title-row">
+      <div><p class="section-kicker">Career compass</p><h2>Where are you right now?</h2></div>
+      <p>Choose the closest stage. FireOpsSim will point you toward useful free resources and a logical next step. Your selection stays on this device.</p>
+    </div>
+    <div class="career-stage-buttons" role="list" aria-label="Firefighter career stages">
+      <button type="button" data-career-stage="candidate">Candidate</button>
+      <button type="button" data-career-stage="academy">Academy</button>
+      <button type="button" data-career-stage="probation">Probation</button>
+      <button type="button" data-career-stage="firefighter">Firefighter</button>
+      <button type="button" data-career-stage="driver">Driver / Operator</button>
+      <button type="button" data-career-stage="officer">Company Officer</button>
+      <button type="button" data-career-stage="instructor">Instructor</button>
+      <button type="button" data-career-stage="specialty">Specialty / Prevention</button>
+      <button type="button" data-career-stage="senior">Senior / Mentor</button>
+    </div>
+    <div class="career-stage-result" id="careerStageResult" aria-live="polite">
+      <div><p class="career-result-label">Recommended starting point</p><h3 id="careerStageTitle">Candidate / exploring the fire service</h3><p id="careerStageSummary">Learn what departments expect, build job-specific fitness, prepare for testing and interviews, and start building the EMS knowledge many departments need.</p></div>
+      <div class="career-result-priorities"><strong>Focus now</strong><ul id="careerStagePriorities"><li>Department research and minimum qualifications</li><li>Fitness and testing preparation</li><li>Interview examples and application readiness</li></ul></div>
+      <div class="career-result-actions" id="careerStageActions">
+        <a class="button primary" href="/become-a-firefighter.html">Candidate center</a>
+        <a class="button secondary" href="https://emscodesim.com/">EMS preparation</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section home-section-shaded">
+    <div class="shell">
+      <div class="section-title-row"><div><p class="section-kicker">Career road map</p><h2>Use FireOpsSim for the entire career.</h2></div><p>These are guideposts, not rigid ranks. Move between operations, EMS, prevention, training, leadership, and specialty roles as your department and interests change.</p></div>
+      <div class="career-roadmap">
+        <article id="stage-candidate" class="career-roadmap-card"><span class="career-step">01</span><div><p class="career-card-kicker">Enter the service</p><h3>Candidate & hiring</h3><p>Understand the process, train for the job, prepare for testing, find departments, and practice interview answers.</p><div class="career-link-row"><a href="/become-a-firefighter.html">Candidate center</a><a href="/firefighter-wellness.html">Start healthy habits</a><a href="https://emscodesim.com/">Explore EMS</a></div></div></article>
+        <article id="stage-academy" class="career-roadmap-card"><span class="career-step">02</span><div><p class="career-card-kicker">Build the foundation</p><h3>Academy & Firefighter I/II</h3><p>Practice core manipulative skills and connect classroom concepts to the actions expected on the training ground.</p><div class="career-link-row"><a href="/firefighter-1-2-tools.html">FF I/II center</a><a href="/firefighter-skills-checklist.html">Skills checklist</a><a href="/training.html">Training center</a></div></div></article>
+        <article id="stage-probation" class="career-roadmap-card"><span class="career-step">03</span><div><p class="career-card-kicker">Become reliable</p><h3>Probationary firefighter</h3><p>Reinforce fundamentals, build station habits, practice size-up and company skills, and learn your department’s equipment and expectations.</p><div class="career-link-row"><a href="/daily-challenge.html">Daily drill</a><a href="/hose-advancement-checklist.html">Hose advancement</a><a href="/firefighter-wellness.html">Recovery & sleep</a></div></div></article>
+        <article id="stage-firefighter" class="career-roadmap-card"><span class="career-step">04</span><div><p class="career-card-kicker">Master company operations</p><h3>Firefighter & senior firefighter</h3><p>Stay sharp on engine/truck work, search, ladders, ventilation, SCBA, HazMat awareness, preplans, and company-level drills.</p><div class="career-link-row"><a href="/fireground-tools.html">Fireground tools</a><a href="/search-and-rescue-sizeup.html">Search size-up</a><a href="/hazmat-tools.html">HazMat tools</a></div></div></article>
+        <article id="stage-driver" class="career-roadmap-card career-roadmap-feature"><span class="career-step">05</span><div><p class="career-card-kicker">Operate the apparatus</p><h3>Driver / operator / engineer</h3><p>Move from formulas to operational judgment: pump pressure, water supply, standpipes, master streams, relay, tenders, pump cards, and scenario practice.</p><div class="career-link-row"><a href="/driver-operator-practice.html">Driver/operator practice</a><a href="/scenario-player.html">Scenario player</a><a href="https://fireopscalc.com/">FireOpsCalc</a></div></div></article>
+        <article id="stage-officer" class="career-roadmap-card"><span class="career-step">06</span><div><p class="career-card-kicker">Lead a company</p><h3>Company officer</h3><p>Plan drills, improve size-up, develop members, build preplans, and make the transition from doing the task to leading the team.</p><div class="career-link-row"><a href="/company-officer-tools.html">Officer tools</a><a href="/firefighter-drill-builder.html">Drill builder</a><a href="/pre-incident-plan-builder.html">Preplan builder</a></div></div></article>
+        <article id="stage-instructor" class="career-roadmap-card"><span class="career-step">07</span><div><p class="career-card-kicker">Teach the next crew</p><h3>Instructor & training officer</h3><p>Turn short station drills into structured learning with objectives, checklists, scenarios, printable material, and skill remediation.</p><div class="career-link-row"><a href="/instructor-packs.html">Instructor packs</a><a href="/printable-scenarios.html">Printables</a><a href="/firefighter-drill-builder.html">Build a drill</a></div></div></article>
+        <article id="stage-specialty" class="career-roadmap-card"><span class="career-step">08</span><div><p class="career-card-kicker">Choose a specialty</p><h3>HazMat, prevention, inspection & other tracks</h3><p>Use focused tools for HazMat size-up and decon, inspection workflow, occupancy, hydrants, fire-load notes, and pre-incident planning.</p><div class="career-link-row"><a href="/hazmat-tools.html">HazMat center</a><a href="/fire-inspector-tools.html">Inspection center</a><a href="/tools.html#hazmat-inspection">All specialty tools</a></div></div></article>
+        <article id="stage-senior" class="career-roadmap-card"><span class="career-step">09</span><div><p class="career-card-kicker">Stay capable and pass it on</p><h3>Career longevity, mentoring & the next chapter</h3><p>Protect long-term health, keep skills current, mentor newer members, teach what you know, and preserve a career worth having outside the station too.</p><div class="career-link-row"><a href="/firefighter-wellness.html">Wellness center</a><a href="/training.html">Keep training</a><a href="/instructor-packs.html">Teach & mentor</a></div></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section shell">
+    <div class="section-title-row"><div><p class="section-kicker">Connected paths</p><h2>Fire and EMS should connect, not compete.</h2></div><p>For departments where EMS is a major part of the job, FireOpsSim hands off the medical side to EMSCodeSim instead of duplicating a second EMS training library here.</p></div>
+    <div class="career-ecosystem-grid">
+      <a class="career-ecosystem-card" href="https://emscodesim.com/"><span>EMSCodeSim</span><strong>EMT, paramedic & patient-care learning</strong><p>Use EMSCodeSim for vitals, patient assessment, EMT prep, scenarios, recertification, and EMS career development.</p><em>Open EMSCodeSim →</em></a>
+      <a class="career-ecosystem-card" href="https://fireopscalc.com/"><span>FireOpsCalc</span><strong>Engineer and pump-operator field tools</strong><p>Use FireOpsCalc when the career path reaches pump math, water supply, apparatus setup, and quick fireground calculations.</p><em>Open FireOpsCalc →</em></a>
+      <a class="career-ecosystem-card" href="https://firepumpsim.com/"><span>FirePumpSim</span><strong>Focused visual pump practice</strong><p>Use FirePumpSim for repeated scenario-based driver/operator practice and printable pump-training material.</p><em>Open FirePumpSim →</em></a>
+    </div>
+  </section>
+
+  <section class="home-section home-section-dark">
+    <div class="shell career-free-promise">
+      <div><p class="section-kicker">Core promise</p><h2>Make the free site useful enough to come back to.</h2></div>
+      <div class="career-free-list">
+        <p><strong>Free career navigation.</strong> A firefighter should be able to see what to learn now and where to go next without creating an account.</p>
+        <p><strong>Free working tools.</strong> Calculators, checklists, drills, references, and practice should solve real station and academy problems.</p>
+        <p><strong>Free pathways into the ecosystem.</strong> When FireOpsCalc, FirePumpSim, or EMSCodeSim is the better tool, send the user there clearly.</p>
+        <p><strong>Paid products can add depth—not block the basics.</strong> The website remains the front door and the career-long reference point.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section shell career-next-build">
+    <div><p class="section-kicker">What comes next</p><h2>Build the missing career layers over time.</h2><p>The structure is now ready for deeper free learning centers without changing the navigation again.</p></div>
+    <div class="career-next-grid">
+      <article><span>Next</span><strong>Probationary Firefighter Center</strong><p>First 100 shifts, station expectations, daily skills, radio habits, apparatus familiarization, and common rookie mistakes.</p></article>
+      <article><span>Next</span><strong>Driver / Operator Learning Center</strong><p>Teach → demonstrate → practice for hydraulics, water supply, apparatus placement, standpipes, relays, and tenders.</p></article>
+      <article><span>Next</span><strong>Company Officer Development</strong><p>Size-up, crew leadership, training, documentation, conflict, mentoring, and promotional preparation.</p></article>
+      <article><span>Later</span><strong>Retirement & Transition Center</strong><p>Mentoring, preserving certifications, second-career options, instructor roles, wellness, and transition planning.</p></article>
+    </div>
+  </section>
+</main>
+<footer class="footer site-footer-refresh">
+  <div class="shell footer-grid">
+    <div><a class="brand footer-brand" href="/"><span class="brand-mark" aria-hidden="true">FOS</span><span><strong>FireOpsSim</strong><small>Fire service tools and training</small></span></a><p>Practical tools, training, career development, and wellness resources for the full fire-service career.</p><p class="small">Training and reference only. Follow department SOPs, current standards, manufacturer guidance, and instructor direction.</p></div>
+    <div><h2>Use the site</h2><a href="/tools.html">Tool directory</a><a href="/training.html">Training center</a><a href="/printable-scenarios.html">Printables</a><a href="/daily-challenge.html">Daily drill</a></div>
+    <div><h2>Fire service</h2><a href="/firefighter-career.html">Career pathway</a><a href="/become-a-firefighter.html">Candidate center</a><a href="/firefighter-wellness.html">Firefighter wellness</a><a href="/hazmat-tools.html">HazMat tools</a></div>
+    <div><h2>Ecosystem</h2><a href="https://fireopscalc.com/">FireOpsCalc</a><a href="https://emscodesim.com/">EMSCodeSim</a><a href="https://firepumpsim.com/">FirePumpSim</a><a href="/apps.html">Apps</a></div>
+  </div>
+  <div class="shell legal"><p>© 2026 FireOpsSim. Built for the full fire-service career.</p></div>
+</footer>
+</body>
+</html>
