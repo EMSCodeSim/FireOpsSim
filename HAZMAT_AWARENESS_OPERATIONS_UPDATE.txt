@@ -1,0 +1,18 @@
+FIREOPSSIM HAZMAT AWARENESS + OPERATIONS LEARNING CENTER
+
+New page: hazmat-awareness-operations.html
+New script: js/hazmat-awareness-operations.js
+
+Includes:
+- 12 complete study modules
+- 96 flashcards with weak-card tracking
+- Larger original question bank; each mock exam builds exactly 25 Awareness + 75 Operations questions
+- 90-minute timer, flagging, separate section scoring, topic breakdown, and missed-question explanations
+- 2024 ERG section trainer
+- Operations practical/JPR preparation
+- 14-day and 3-day study plans
+- Saved readiness/progress
+- Links to existing FireOpsSim HazMat tools
+- Current standards note covering Colorado legacy public docs, NFPA 470, OSHA 1910.120(q), and 2024 ERG
+
+Safety: training/reference only; follow current DFPC authorization, AHJ SOPs, current ERG, technical guidance, and responder qualification limits.
