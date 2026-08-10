@@ -1,0 +1,22 @@
+FIREOPSSIM CAREER ROADMAP BUILDER UPDATE
+========================================
+
+Updated: certification-tracker.html
+
+New features:
+- Target-position selector with Engineer/Driver-Operator, Lieutenant/Company Officer,
+  Captain, chief-officer development, instructor/training, HazMat/specialty,
+  prevention/inspection, firefighter/EMS leadership, career firefighter, and custom goals.
+- Target-date planning with months remaining.
+- Personalized Do Now / Next / Later / Maintain-Renew timeline.
+- Core-path completion percentage for the selected goal.
+- Automatic flagging of current credentials that expire on or before the target date.
+- Urgency messaging when a target date is close and core-path gaps remain.
+- Saved career goal in localStorage.
+- Goal data included in Certification Tracker backup export/import (version 2).
+- One-click switch from the target goal to its matching certification path.
+
+Important:
+Roadmaps are planning aids only. Departments, states, AHJs, labor agreements,
+promotional processes, and certification bodies determine actual prerequisites,
+experience requirements, renewal rules, and accepted credentials.
