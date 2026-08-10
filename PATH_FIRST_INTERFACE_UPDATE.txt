@@ -1,0 +1,11 @@
+FireOpsSim Certification Tracker - Path-First Interface Update
+
+- Replaced the busy career-path toolbar with large role-selection cards.
+- Selecting a desired role immediately shows its certification/class checklist.
+- Previously completed/current certifications are automatically checked from existing local tracker data.
+- Core-path completion percentage appears beside the checklist.
+- Best next certification is highlighted automatically.
+- Optional development items are hidden by default and can be revealed with one button.
+- Certification detail editing remains available for issue/expiration dates.
+- Full library filters and backup tools are collapsed under Advanced sections to reduce clutter.
+- Existing localStorage keys/data remain unchanged for backward compatibility.
