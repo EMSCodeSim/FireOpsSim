@@ -1,54 +1,13 @@
-_redirects
-about.html
-calc-tools.js
-driver-operator-practice.html
-fire-load-calculator.html
-fire-pump-calculator.html
-hose-layout-planner.html
-index.html
-printable-scenarios.html
-scenario-library.html
-scenarios/advanced_portable_monitor_dual_supply.json
-scenarios/advanced_portable_monitor_dual_supply.webp
-scenarios/advanced_standpipe_floor5.json
-scenarios/advanced_standpipe_floor5.webp
-scenarios/car-fire-engine181-001.webp
-scenarios/car_fire_engine181_001.json
-scenarios/deck_gun_solid_bore_gpm_001.json
-scenarios/deck_gun_solid_bore_gpm_001.webp
-scenarios/hydrant_drop_add_lines_001.json
-scenarios/hydrant_drop_add_lines_001.webp
-scenarios/masterstream_181_001.json
-scenarios/masterstream_181_base.webp
-scenarios/nozzle_reaction_engine181_001.json
-scenarios/nozzle_reaction_engine181_001.webp
-scenarios/relay_ldh_supply_001.json
-scenarios/relay_ldh_supply_001.webp
-scenarios/single_line_extended_002.json
-scenarios/single_line_extended_002.webp
-scenarios/single_line_heavy_003.json
-scenarios/single_line_heavy_003.webp
-scenarios/single_line_preconnect_001.json
-scenarios/single_line_preconnect_001.webp
-scenarios/standpipe-engine181.webp
-scenarios/standpipe_engine181_multi.json
-scenarios/tender_shuttle_single_tender_001.json
-scenarios/tender_shuttle_single_tender_001.webp
-scenarios/wildland-structure-engine181-001.webp
-scenarios/wildland_structure_engine181_001.json
-scenarios/wye_residential_split_001.json
-scenarios/wye_residential_split_001.webp
-sitemap.xml
-standpipe-fdc-calculator.html
-styles.css
-tools.html
+FireOpsSim Career Roadmap Experience Milestones upgrade
 
-FIREFIGHTER WELLNESS UPDATE (2026-07-22)
-- firefighter-wellness.html
-- js/firefighter-wellness.js
-- styles.css
-- index.html
-- tools.html
-- become-a-firefighter.html
-- sitemap.xml
-- Footer links updated across HTML pages
+Changed files:
+- certification-tracker.html
+
+New capabilities:
+- Experience & qualification milestone tracking
+- Quantified hours/shifts/drills/sign-offs/qualifications
+- Default milestone sets by career path
+- Custom department-specific experience milestones
+- Experience progress integrated into target-position roadmap
+- Core certification and core experience readiness shown together
+- Export/import backup upgraded to include experience records
