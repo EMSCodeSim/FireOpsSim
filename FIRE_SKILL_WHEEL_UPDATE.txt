@@ -1,0 +1,24 @@
+FIREOPSSIM FIRE SKILL WHEEL UPDATE
+
+New page: fire-skill-wheel.html
+
+Features:
+- Animated random firefighter skill wheel
+- 30 built-in hands-on fire/EMS/company skills
+- Add custom skills and quick-drill instructions
+- Enable/disable or remove individual items
+- Restore defaults
+- Quick presets for engine, truck/rescue, SCBA/search, probation/academy, or all skills
+- No-Repeat Mode for company circuits
+- Current drill card with time, equipment/setup, and challenge
+- Spin/completion history saved locally
+- Mobile-friendly canvas wheel
+- Links to First 100 Shifts and Firefighter Drill Builder
+
+Updated integration files:
+- index.html
+- training.html
+- tools.html
+- styles.css
+- sitemap.xml
+- _redirects
