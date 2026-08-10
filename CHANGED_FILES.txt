@@ -1,13 +1,10 @@
-FireOpsSim Career Roadmap Experience Milestones upgrade
+My Fire Career Dashboard upgrade
 
-Changed files:
-- certification-tracker.html
-
-New capabilities:
-- Experience & qualification milestone tracking
-- Quantified hours/shifts/drills/sign-offs/qualifications
-- Default milestone sets by career path
-- Custom department-specific experience milestones
-- Experience progress integrated into target-position roadmap
-- Core certification and core experience readiness shown together
-- Export/import backup upgraded to include experience records
+my-fire-career.html
+index.html
+firefighter-career.html
+training.html
+tools.html
+certification-tracker.html
+_redirects
+sitemap.xml
