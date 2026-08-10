@@ -1,0 +1,16 @@
+CPAT PREPARATION CENTER UPDATE
+
+New: cpat-preparation.html
+New: js/cpat-preparation.js
+Updated: styles.css, index.html, become-a-firefighter.html, firefighter-career.html, training.html, tools.html, sitemap.xml, _redirects
+
+Features:
+- CPAT standard snapshot and eight-event overview
+- Interactive eight-week plan
+- Four reusable workout formats
+- Baseline markers
+- Practice/orientation log
+- Readiness score saved locally
+- 10-question knowledge check
+- Test-day readiness checklist
+- Safety and provider-authority notices
