@@ -1,0 +1,33 @@
+Daily Fire Quiz
+
+Purpose
+- Give FireOpsSim a repeat-use daily learning feature similar in spirit to DailyEMSQuiz, but built for the fire service.
+
+Daily experience
+- 5-question mixed fire-service quiz
+- One stage-weighted question when a Career Stage is saved
+- Immediate explanation after each answer
+- Daily fire-history fact with source link
+- Rotating random fire knowledge card
+- Current streak, best streak, completed days and lifetime accuracy saved locally
+- Existing Daily Fire Pump Challenge remains a separate math-focused companion
+
+Question mix
+- Fire behavior
+- Search
+- SCBA / Mayday
+- Ladders / hose
+- Water supply / pump operations
+- Apparatus placement
+- Building construction / size-up
+- Command / leadership / instructor development
+- HazMat
+- Cancer prevention / wellness
+- Fire prevention
+- Wildland awareness
+- Career development
+
+Source approach
+Operational content is written as general training principles and defers to department SOPs, adopted standards, manufacturer instructions and the AHJ. History and health facts link to authoritative sources including USFA/NFA, FSRI, NIOSH and the National Park Service.
+
+Added: August 11, 2026
