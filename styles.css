@@ -1,6 +1,6 @@
 @import url('/styles-base.css');
 
-/* FireOpsSim visual brand refresh — August 2026 */
+/* FireOpsSim visual brand refresh — August 2026. Production redeploy trigger: 2026-08-12 08:45 MT. */
 .brand-mark{
   font-size:0!important;
   color:transparent!important;
