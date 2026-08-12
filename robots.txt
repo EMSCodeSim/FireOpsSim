@@ -5,3 +5,4 @@ Disallow: /geophoto/admin
 Disallow: /geophoto/advanced-editor
 Disallow: /geophoto/instructor-view
 Sitemap: https://fireopssim.com/sitemap.xml
+Sitemap: https://fireopssim.com/sitemap-career.xml
