@@ -1,13 +1,13 @@
 @import url('/styles-base.css');
 
-/* FireOpsSim visual brand refresh — August 2026. Production redeploy trigger: 2026-08-12 08:45 MT. */
+/* FireOpsSim visual brand refresh — August 2026. */
 .brand-mark{
   font-size:0!important;
   color:transparent!important;
   text-indent:-9999px;
   overflow:hidden;
   background-color:#0b1722!important;
-  background-image:url('/assets/fireops-training-emblem.png')!important;
+  background-image:url('/assets/fireops-training-emblem.png?v=20260814b')!important;
   background-repeat:no-repeat!important;
   background-position:center!important;
   background-size:contain!important;
@@ -15,29 +15,47 @@
   box-shadow:0 8px 22px rgba(13,31,21,.2)!important;
 }
 
-/* Homepage: operational training image */
+/* Homepage: use the new artwork as a real image, not only a CSS background.
+   Keeping the background provides a graceful fallback while content:url makes
+   the artwork visible to the browser, accessibility tooling and image crawlers. */
 .home2-photo{
-  background:#111820 url('/assets/fireops-hero.webp') center center/cover no-repeat!important;
+  background:#111820 url('/assets/fireops-hero.webp?v=20260814b') center center/cover no-repeat!important;
 }
-.home2-photo>img{opacity:0!important;}
+.home2-photo>img{
+  content:url('/assets/fireops-hero.webp?v=20260814b');
+  opacity:1!important;
+  visibility:visible!important;
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+}
 
-/* Training Center: crew development / career learning */
+/* Training Center: same resilient real-image treatment. */
 .tr-photo{
-  background:#111820 url('/assets/fireops-career-training.webp') center center/cover no-repeat!important;
+  background:#111820 url('/assets/fireops-career-training.webp?v=20260814b') center center/cover no-repeat!important;
 }
-.tr-photo>img{opacity:0!important;}
+.tr-photo>img{
+  content:url('/assets/fireops-career-training.webp?v=20260814b');
+  opacity:1!important;
+  visibility:visible!important;
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+}
 
-/* Daily Fire: quiet station-learning image with a strong readability veil */
+/* Daily Fire: station-learning image with readability veil. */
 .df-hero{
   background:
     linear-gradient(90deg,rgba(17,24,32,.99) 0%,rgba(17,24,32,.95) 43%,rgba(17,24,32,.58) 72%,rgba(17,24,32,.28) 100%),
-    url('/assets/daily-fire-learning.webp') 72% center/cover no-repeat!important;
+    url('/assets/daily-fire-learning.webp?v=20260814b') 72% center/cover no-repeat!important;
 }
 .df-hero>.shell{position:relative;z-index:1;}
 
-/* Career stages: replace the old CSS/FOS illustration with a real career-development scene */
+/* Career stages: real career-development scene instead of the old CSS/FOS illustration. */
 .stage-hero-art{
-  background:#15212a url('/assets/fireops-career-training.webp') center center/cover no-repeat!important;
+  background:#15212a url('/assets/fireops-career-training.webp?v=20260814b') center center/cover no-repeat!important;
   box-shadow:0 22px 50px rgba(0,0,0,.2);
 }
 .stage-hero-art .helmet,.stage-hero-art .monitor-line{display:none!important;}
@@ -51,5 +69,9 @@
 
 @media(max-width:620px){
   .brand-mark{width:42px;height:42px;border-radius:13px;}
-  .df-hero{background:linear-gradient(rgba(17,24,32,.92),rgba(17,24,32,.92)),url('/assets/daily-fire-learning.webp') center/cover no-repeat!important;}
+  .df-hero{
+    background:
+      linear-gradient(rgba(17,24,32,.92),rgba(17,24,32,.92)),
+      url('/assets/daily-fire-learning.webp?v=20260814b') center/cover no-repeat!important;
+  }
 }
