@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="FireOpsSim">
+  <rect width="64" height="64" rx="14" fill="#111820"/>
+  <path d="M15 38c0-11 7.5-20 17-20s17 9 17 20v3H15z" fill="#d94a3a"/>
+  <path d="M20 38c0-8 5-15 12-15s12 7 12 15" fill="none" stroke="#f2b84b" stroke-width="4" stroke-linecap="round"/>
+  <path d="M12 42h40v6H12z" rx="3" fill="#eef2f4"/>
+  <path d="M32 11c5 6 7 10 2 15 1-5-3-7-2-15z" fill="#f2b84b"/>
+</svg>
