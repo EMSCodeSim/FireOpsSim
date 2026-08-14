@@ -1,1 +1,0 @@
-FireOpsSim favicon update: square SVG favicon and manifest icon declarations added August 14, 2026.
