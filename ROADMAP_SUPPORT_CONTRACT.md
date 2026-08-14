@@ -37,7 +37,6 @@ Supported query parameters:
 - `task` or `requirement` — accepted as topic fallbacks
 - `cert` or `certification` — accepted as level/context fallbacks
 - `goal` or `target` — active target role shown in the handoff context
-- `return` or `return_url` — optional `http`/`https` return URL
 
 Normalized `level` values currently supported:
 
@@ -48,7 +47,6 @@ Normalized `level` values currently supported:
 - `driver_operator`
 - `officer_1`
 - `instructor_1`
-- `general`
 
 Common names and abbreviations such as `FF2`, `Firefighter II`, `HazMat Ops`, `Engineer`, `FO1`, and `Fire Instructor I` are also normalized by the page when a normalized level is not supplied.
 
@@ -65,8 +63,7 @@ Examples:
 3. The `topic` is used to rank that level’s drill cards and select a recommended drill.
 4. The skill wheel contains only drills from the selected level.
 5. Changing the level changes both the drill library and wheel together.
-6. Unknown context falls back to the general Working Firefighter set rather than dead-ending.
-7. Career Road remains the source of truth for Task Book status, evidence, and completion. Completing or selecting a FireOpsSim drill never marks a Roadmap requirement complete automatically.
+6. Career Road remains the source of truth for Task Book status, evidence, and completion. Selecting or completing a FireOpsSim drill never marks a Roadmap requirement complete automatically.
 
 ## General support behavior
 
