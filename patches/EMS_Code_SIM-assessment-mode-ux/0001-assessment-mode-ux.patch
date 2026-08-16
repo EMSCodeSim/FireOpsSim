@@ -1,0 +1,1735 @@
+From f7a68affd63d8c3ebd30a4a29a144f9c69faf8d2 Mon Sep 17 00:00:00 2001
+From: Cursor Agent <cursoragent@cursor.com>
+Date: Sun, 16 Aug 2026 14:27:36 +0000
+Subject: [PATCH] Improve Assessment Mode UX for Visual Patient scenarios
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Add a generalizable Assessment Mode layer with onboarding guidance,
+interactive patient hotspots, decision discovery checklists, action-bar
+progress feedback, mobile polish, soft prompts, and lightweight progress
+reset—starting with the horse-crush hip injury case.
+---
+ netlify.toml                           |  10 +
+ package.json                           |   3 +-
+ tools/test-assessment-mode-ux.js       |  28 +
+ vitals/horse-crush-bootstrap.js        |   3 +-
+ vitals/scenario-assessment-mode-ux.css | 612 +++++++++++++++++
+ vitals/scenario-assessment-mode-ux.js  | 907 +++++++++++++++++++++++++
+ vitals/scenario-learning-upgrade.js    |  38 +-
+ vitals/visual-patient.html             |   3 +-
+ 8 files changed, 1599 insertions(+), 5 deletions(-)
+ create mode 100644 tools/test-assessment-mode-ux.js
+ create mode 100644 vitals/scenario-assessment-mode-ux.css
+ create mode 100644 vitals/scenario-assessment-mode-ux.js
+
+diff --git a/netlify.toml b/netlify.toml
+index 18e493a..092d631 100644
+--- a/netlify.toml
++++ b/netlify.toml
+@@ -34,6 +34,16 @@
+   [headers.values]
+     Cache-Control = "public, max-age=0, must-revalidate"
+ 
++[[headers]]
++  for = "/vitals/scenario-assessment-mode-ux.js"
++  [headers.values]
++    Cache-Control = "public, max-age=0, must-revalidate"
++
++[[headers]]
++  for = "/vitals/scenario-assessment-mode-ux.css"
++  [headers.values]
++    Cache-Control = "public, max-age=0, must-revalidate"
++
+ [[headers]]
+   for = "/vitals/scenario-learning-upgrade.js"
+   [headers.values]
+diff --git a/package.json b/package.json
+index 3aaef52..76a9beb 100644
+--- a/package.json
++++ b/package.json
+@@ -11,7 +11,7 @@
+     "build:public": "node tools/build-public.js",
+     "build:functions": "node tools/prepare-functions.js",
+     "verify:dist": "node tools/validate-site.js --root dist --deployment",
+-    "build": "npm run clean:retired && npm run validate && npm run verify:scenario-contracts && npm run test:scenario-deployment && npm run test:scenario-definitions && npm run test:scenario-images && npm run test:scenario-reasoning && npm run test:daily-protocol && npm run test:scenario-modes && npm run test:scenario-selection && npm run test:rapid-primary && npm run test:vitals-tab && npm run test:patient-interview && npm run test:treatment-workflow && npm run test:treatment-decision && npm run test:targeted-reassessment && npm run test:crash-recovery && npm run test:full-call-debrief && npm run test:persistence && npm run test:care-log && npm run test:scenario-phases && npm run test:scenario-history && npm run test:condition-engine && npm run build:public && npm run build:functions && npm run verify:dist",
++    "build": "npm run clean:retired && npm run validate && npm run verify:scenario-contracts && npm run test:scenario-deployment && npm run test:scenario-definitions && npm run test:scenario-images && npm run test:scenario-reasoning && npm run test:assessment-mode-ux && npm run test:daily-protocol && npm run test:scenario-modes && npm run test:scenario-selection && npm run test:rapid-primary && npm run test:vitals-tab && npm run test:patient-interview && npm run test:treatment-workflow && npm run test:treatment-decision && npm run test:targeted-reassessment && npm run test:crash-recovery && npm run test:full-call-debrief && npm run test:persistence && npm run test:care-log && npm run test:scenario-phases && npm run test:scenario-history && npm run test:condition-engine && npm run build:public && npm run build:functions && npm run verify:dist",
+     "serve:dist": "node tools/serve-dist.js",
+     "test:interaction": "npm run build && playwright test",
+     "test:interaction:headed": "npm run build && playwright test --headed",
+@@ -24,6 +24,7 @@
+     "test:scenario-definitions": "node tools/test-scenario-definitions.js",
+     "test:scenario-deployment": "node tools/test-scenario-deployment-contract.js",
+     "test:scenario-modes": "node tools/test-scenario-training-modes.js",
++    "test:assessment-mode-ux": "node tools/test-assessment-mode-ux.js",
+     "test:scenario-reasoning": "node tools/test-scenario-reasoning.js",
+     "test:rapid-primary": "node tools/test-rapid-primary-assessment.js",
+     "test:targeted-reassessment": "node tools/test-targeted-reassessment.js",
+diff --git a/tools/test-assessment-mode-ux.js b/tools/test-assessment-mode-ux.js
+new file mode 100644
+index 0000000..7935108
+--- /dev/null
++++ b/tools/test-assessment-mode-ux.js
+@@ -0,0 +1,28 @@
++'use strict';
++
++const fs = require('fs');
++const assert = require('assert');
++
++const ux = fs.readFileSync('vitals/scenario-assessment-mode-ux.js', 'utf8');
++const css = fs.readFileSync('vitals/scenario-assessment-mode-ux.css', 'utf8');
++const html = fs.readFileSync('vitals/visual-patient.html', 'utf8');
++const learning = fs.readFileSync('vitals/scenario-learning-upgrade.js', 'utf8');
++
++assert(html.includes('scenario-assessment-mode-ux.js'), 'visual-patient.html must load Assessment Mode UX');
++assert(ux.includes('assessmentModeBanner'), 'Onboarding banner is required');
++assert(ux.includes('Start here'), 'Banner must guide Assessment → Vitals → History');
++assert(ux.includes('patient-hotspot') && ux.includes('hotspots'), 'Interactive patient hotspots are required');
++assert(ux.includes('left_hip') && ux.includes('distal_csm') && ux.includes('pelvis_hip'), 'Horse-crush hotspot regions must cover hip/CMS/pelvis');
++assert(ux.includes('assessmentDecisionProgress') && ux.includes('Discovered so far'), 'Decision progress checklist is required');
++assert(ux.includes('Show required findings for next decision'), 'Optional required-findings control is required');
++assert(ux.includes('What am I missing') || ux.includes('WHAT AM I MISSING'), 'Soft prompt affordance is required');
++assert(ux.includes('nav-progress') && ux.includes('actionMiniResult'), 'Action bar progress and mini-result feedback are required');
++assert(ux.includes('resetAssessmentProgress'), 'Lightweight assessment progress reset is required');
++assert(ux.includes('Paused while reading') || ux.includes('clock-pause'), 'Patient clock pause-while-reading is required');
++assert(ux.includes('highlightLatestFinding'), 'New findings must scroll/highlight in the care feed');
++assert(css.includes('@media (max-width:767px)'), 'Mobile layout polish under 768px is required');
++assert(css.includes('min-height:44px') || css.includes('min-height:58px'), 'Touch targets must meet 44px guidance');
++assert(learning.includes('discoveryChecklist'), 'Assessment Mode locked cards must show discovery checklists');
++assert(!learning.includes('No assessment hints are shown in Assessment Mode.'), 'Generic Assessment Mode lock copy should be replaced with discovery progress');
++
++console.log('Assessment Mode UX contract checks passed.');
+diff --git a/vitals/horse-crush-bootstrap.js b/vitals/horse-crush-bootstrap.js
+index 74c1896..027676e 100644
+--- a/vitals/horse-crush-bootstrap.js
++++ b/vitals/horse-crush-bootstrap.js
+@@ -2,7 +2,7 @@
+   'use strict';
+ 
+   const CASE_ID = 'horse_crush';
+-  const BUILD = '2026.08.14.35';
++  const BUILD = '2026.08.16.1';
+ 
+   function loadOnce(attribute, src) {
+     if (document.querySelector(`script[${attribute}]`)) return;
+@@ -93,6 +93,7 @@
+   loadOnce('data-condition-alert-priority', '/vitals/scenario-condition-alert-priority.js');
+   loadOnce('data-horse-crush-ui-fix', '/vitals/horse-crush-ui-fix.js?v=2026.08.15.5');
+   loadOnce('data-horse-photo-layer-fix', '/vitals/horse-photo-layer-fix.js');
++  // Assessment Mode UX is loaded from visual-patient.html for all cases.
+   const defs = window.EMSCodeSimScenarioDefinitions;
+   const requiredGroups = ['CATALOG','PROFILES','PHASE_PLANS','PATIENT_CASES','CONDITION_STAGES','TREATMENT_PLANS'];
+   const missing = [];
+diff --git a/vitals/scenario-assessment-mode-ux.css b/vitals/scenario-assessment-mode-ux.css
+new file mode 100644
+index 0000000..ec13681
+--- /dev/null
++++ b/vitals/scenario-assessment-mode-ux.css
+@@ -0,0 +1,612 @@
++/* Assessment Mode UX — onboarding, hotspots, progress, mobile polish */
++
++.assessment-mode-banner{
++  position:relative;
++  z-index:28;
++  display:grid;
++  gap:8px;
++  margin:0 0 8px;
++  padding:11px 12px;
++  border:1px solid #3d7ea3;
++  border-radius:14px;
++  background:linear-gradient(135deg,#0d2a3d,#12384f 55%,#0f3146);
++  color:#e8f4fb;
++  box-shadow:0 10px 24px rgba(0,0,0,.22);
++}
++.assessment-mode-banner[hidden]{display:none!important}
++.assessment-mode-banner-head{
++  display:flex;
++  align-items:flex-start;
++  justify-content:space-between;
++  gap:10px;
++}
++.assessment-mode-banner-head small{
++  display:block;
++  font-size:.58rem;
++  font-weight:900;
++  letter-spacing:.1em;
++  color:#7fd0ff;
++}
++.assessment-mode-banner-head strong{
++  display:block;
++  margin-top:2px;
++  font-size:.92rem;
++  line-height:1.25;
++}
++.assessment-mode-banner-dismiss{
++  flex:0 0 auto;
++  min-width:44px;
++  min-height:44px;
++  border:1px solid #4b8caf;
++  border-radius:11px;
++  background:#173f5a;
++  color:#fff;
++  font:inherit;
++  font-weight:850;
++  cursor:pointer;
++}
++.assessment-mode-banner-steps{
++  display:flex;
++  flex-wrap:wrap;
++  gap:6px;
++  align-items:center;
++  font-size:.74rem;
++  line-height:1.35;
++  color:#c5dbe8;
++}
++.assessment-mode-banner-steps b{color:#fff}
++.assessment-mode-banner-steps .step-arrow{opacity:.55;font-weight:700}
++
++.assessment-flow-rail{
++  display:grid;
++  grid-template-columns:repeat(4,minmax(0,1fr));
++  gap:5px;
++  margin:0 0 8px;
++  padding:6px;
++  border:1px solid #31566d;
++  border-radius:13px;
++  background:#0a1f2e;
++}
++.assessment-flow-rail[hidden]{display:none!important}
++.assessment-flow-step{
++  appearance:none;
++  display:grid;
++  gap:2px;
++  min-height:44px;
++  padding:7px 6px;
++  border:1px solid transparent;
++  border-radius:10px;
++  background:transparent;
++  color:#9bb4c4;
++  text-align:center;
++  font:inherit;
++  cursor:pointer;
++  transition:background .2s,border-color .2s,color .2s,transform .2s;
++}
++.assessment-flow-step small{
++  font-size:.52rem;
++  font-weight:900;
++  letter-spacing:.08em;
++}
++.assessment-flow-step strong{
++  font-size:.68rem;
++  line-height:1.15;
++}
++.assessment-flow-step.is-current{
++  border-color:#67b9df;
++  background:#154867;
++  color:#fff;
++  box-shadow:0 0 0 1px rgba(103,185,223,.25);
++  transform:translateY(-1px);
++}
++.assessment-flow-step.is-done{
++  border-color:#3f8f6d;
++  background:#103a35;
++  color:#b7ead4;
++}
++.assessment-flow-step:focus-visible{
++  outline:2px solid #7fd0ff;
++  outline-offset:2px;
++}
++
++.patient-hotspot-layer{
++  position:absolute;
++  inset:0;
++  z-index:4;
++  pointer-events:none;
++}
++.patient-hotspot{
++  position:absolute;
++  pointer-events:auto;
++  min-width:44px;
++  min-height:44px;
++  border:1.5px solid rgba(127,208,255,.35);
++  border-radius:999px;
++  background:rgba(18,72,102,.18);
++  color:transparent;
++  font:inherit;
++  cursor:pointer;
++  touch-action:manipulation;
++  -webkit-tap-highlight-color:transparent;
++  transition:background .18s,border-color .18s,box-shadow .18s,transform .18s;
++}
++.patient-hotspot::after{
++  content:attr(data-label);
++  position:absolute;
++  left:50%;
++  bottom:calc(100% + 6px);
++  transform:translateX(-50%) translateY(4px);
++  padding:4px 8px;
++  border-radius:8px;
++  background:rgba(6,19,31,.94);
++  color:#e8f4fb;
++  font-size:.62rem;
++  font-weight:850;
++  white-space:nowrap;
++  opacity:0;
++  pointer-events:none;
++  transition:opacity .15s,transform .15s;
++}
++.patient-hotspot:hover,
++.patient-hotspot:focus-visible,
++.patient-hotspot.is-active{
++  background:rgba(79,179,255,.28);
++  border-color:#7fd0ff;
++  box-shadow:0 0 0 3px rgba(127,208,255,.2);
++  transform:scale(1.04);
++}
++.patient-hotspot:hover::after,
++.patient-hotspot:focus-visible::after,
++.patient-hotspot.is-active::after{
++  opacity:1;
++  transform:translateX(-50%) translateY(0);
++}
++.patient-hotspot.is-assessed{
++  border-color:#5fcf98;
++  background:rgba(46,148,109,.28);
++}
++.patient-hotspot.is-assessed::before{
++  content:'✓';
++  position:absolute;
++  right:-2px;
++  top:-2px;
++  display:grid;
++  place-items:center;
++  width:18px;
++  height:18px;
++  border-radius:50%;
++  background:#1f7a55;
++  color:#fff;
++  font-size:.65rem;
++  font-weight:900;
++  line-height:1;
++  box-shadow:0 2px 6px rgba(0,0,0,.35);
++}
++.patient-hotspot-chip-row{
++  position:absolute;
++  left:8px;
++  right:8px;
++  bottom:8px;
++  z-index:5;
++  display:flex;
++  flex-wrap:wrap;
++  gap:5px;
++  pointer-events:none;
++}
++.patient-finding-chip{
++  display:inline-flex;
++  align-items:center;
++  gap:4px;
++  max-width:100%;
++  padding:4px 8px;
++  border-radius:999px;
++  border:1px solid #3f8f6d;
++  background:rgba(16,58,53,.92);
++  color:#d7f5e7;
++  font-size:.62rem;
++  font-weight:850;
++  line-height:1.2;
++  animation:assessmentChipIn .35s ease;
++}
++.patient-finding-chip.abnormal{
++  border-color:#d99b19;
++  background:rgba(70,48,12,.92);
++  color:#ffe3a3;
++}
++@keyframes assessmentChipIn{
++  from{opacity:0;transform:translateY(6px)}
++  to{opacity:1;transform:translateY(0)}
++}
++
++.assessment-decision-progress{
++  margin:8px 0;
++  padding:10px 11px;
++  border:1px solid #31566d;
++  border-radius:13px;
++  background:#0b2231;
++  color:#d6e4ec;
++}
++.assessment-decision-progress[hidden]{display:none!important}
++.assessment-decision-progress>header{
++  display:flex;
++  align-items:flex-end;
++  justify-content:space-between;
++  gap:10px;
++  margin-bottom:8px;
++}
++.assessment-decision-progress>header small{
++  display:block;
++  color:#7fd0ff;
++  font-size:.58rem;
++  font-weight:900;
++  letter-spacing:.09em;
++}
++.assessment-decision-progress>header strong{
++  display:block;
++  margin-top:2px;
++  color:#fff;
++  font-size:.88rem;
++}
++.assessment-decision-progress>header span{
++  flex:0 0 auto;
++  min-width:42px;
++  padding:5px 8px;
++  border-radius:999px;
++  background:#173f5a;
++  color:#fff;
++  font-size:.68rem;
++  font-weight:900;
++  text-align:center;
++}
++.assessment-discovered-summary{
++  margin:0 0 8px;
++  padding:8px 9px;
++  border-radius:10px;
++  background:#10283a;
++  font-size:.72rem;
++  line-height:1.4;
++  color:#b8cad7;
++}
++.assessment-discovered-summary b{color:#eef8fd}
++.assessment-req-list{
++  display:grid;
++  gap:5px;
++  margin:0;
++  padding:0;
++  list-style:none;
++}
++.assessment-req-list li{
++  display:grid;
++  grid-template-columns:22px minmax(0,1fr);
++  gap:8px;
++  align-items:start;
++  padding:7px 8px;
++  border-radius:9px;
++  background:#10283a;
++  font-size:.72rem;
++  line-height:1.35;
++}
++.assessment-req-list li mark{
++  display:grid;
++  place-items:center;
++  width:18px;
++  height:18px;
++  margin-top:1px;
++  border-radius:50%;
++  background:#23475d;
++  color:#9bb4c4;
++  font-size:.65rem;
++  font-weight:900;
++}
++.assessment-req-list li.done{
++  background:#103a35;
++  color:#c8f0dc;
++}
++.assessment-req-list li.done mark{
++  background:#2e946d;
++  color:#fff;
++}
++.assessment-decision-unlock-toast{
++  position:fixed;
++  left:50%;
++  bottom:calc(86px + env(safe-area-inset-bottom));
++  z-index:80;
++  transform:translateX(-50%) translateY(8px);
++  width:min(420px,calc(100vw - 24px));
++  padding:12px 14px;
++  border:1px solid #67b9df;
++  border-radius:14px;
++  background:linear-gradient(135deg,#12384f,#0d2a3d);
++  color:#e8f4fb;
++  box-shadow:0 14px 30px rgba(0,0,0,.35);
++  opacity:0;
++  pointer-events:none;
++  transition:opacity .25s,transform .25s;
++}
++.assessment-decision-unlock-toast.is-visible{
++  opacity:1;
++  transform:translateX(-50%) translateY(0);
++  pointer-events:auto;
++  animation:assessmentUnlockPulse .7s ease;
++}
++.assessment-decision-unlock-toast small{
++  display:block;
++  color:#7fd0ff;
++  font-size:.58rem;
++  font-weight:900;
++  letter-spacing:.09em;
++}
++.assessment-decision-unlock-toast strong{
++  display:block;
++  margin-top:3px;
++  font-size:.9rem;
++}
++.assessment-decision-unlock-toast p{
++  margin:5px 0 0;
++  font-size:.74rem;
++  line-height:1.4;
++  color:#c5dbe8;
++}
++@keyframes assessmentUnlockPulse{
++  0%{box-shadow:0 0 0 0 rgba(127,208,255,.45)}
++  100%{box-shadow:0 14px 30px rgba(0,0,0,.35)}
++}
++
++.bottom-nav button .nav-progress{
++  display:inline-flex;
++  align-items:center;
++  justify-content:center;
++  min-width:28px;
++  margin-top:2px;
++  padding:1px 5px;
++  border-radius:999px;
++  background:#173f5a;
++  color:#b8cad7;
++  font-size:.52rem;
++  font-weight:900;
++  line-height:1.2;
++}
++.bottom-nav button .nav-progress.is-complete{
++  background:#1f7a55;
++  color:#e8fff4;
++}
++.bottom-nav button.is-complete-action{
++  opacity:.72;
++}
++.bottom-nav button.is-complete-action:not(.active){
++  border-color:#3f8f6d;
++}
++.action-mini-result{
++  position:fixed;
++  left:50%;
++  bottom:calc(78px + env(safe-area-inset-bottom));
++  z-index:78;
++  transform:translateX(-50%) translateY(10px);
++  width:min(440px,calc(100vw - 20px));
++  padding:11px 13px;
++  border:1px solid #4b8caf;
++  border-radius:13px;
++  background:#0d2232;
++  color:#e8f4fb;
++  box-shadow:0 12px 28px rgba(0,0,0,.32);
++  opacity:0;
++  pointer-events:none;
++  transition:opacity .2s,transform .2s;
++}
++.action-mini-result.is-visible{
++  opacity:1;
++  transform:translateX(-50%) translateY(0);
++  pointer-events:auto;
++}
++.action-mini-result small{
++  display:block;
++  color:#7fd0ff;
++  font-size:.56rem;
++  font-weight:900;
++  letter-spacing:.08em;
++}
++.action-mini-result strong{
++  display:block;
++  margin-top:2px;
++  font-size:.86rem;
++}
++.action-mini-result p{
++  margin:4px 0 0;
++  font-size:.74rem;
++  line-height:1.4;
++  color:#c5dbe8;
++}
++
++.assessment-soft-prompt{
++  margin:8px 0;
++  padding:10px 11px;
++  border:1px dashed #9a7130;
++  border-radius:12px;
++  background:#2b2414;
++  color:#ffe3a3;
++}
++.assessment-soft-prompt[hidden]{display:none!important}
++.assessment-soft-prompt small{
++  display:block;
++  font-size:.56rem;
++  font-weight:900;
++  letter-spacing:.08em;
++  color:#ffd77c;
++}
++.assessment-soft-prompt strong{
++  display:block;
++  margin-top:2px;
++  font-size:.84rem;
++  color:#fff4d4;
++}
++.assessment-soft-prompt p{
++  margin:5px 0 8px;
++  font-size:.74rem;
++  line-height:1.4;
++}
++.assessment-soft-prompt-actions{
++  display:flex;
++  flex-wrap:wrap;
++  gap:6px;
++}
++.assessment-soft-prompt-actions button{
++  min-height:44px;
++  padding:8px 12px;
++  border:1px solid #d99b19;
++  border-radius:10px;
++  background:#4c3817;
++  color:#ffe3a3;
++  font:inherit;
++  font-weight:850;
++  cursor:pointer;
++}
++.assessment-soft-prompt-actions button.secondary{
++  border-color:#6b5a35;
++  background:transparent;
++}
++
++.care-log-entry.is-highlighted,
++.finding-log-entry.is-highlighted,
++#findingsList > * .is-highlighted,
++.log-entry.is-highlighted{
++  animation:findingHighlight 1.4s ease;
++  outline:2px solid #67b9df;
++  outline-offset:1px;
++}
++@keyframes findingHighlight{
++  0%{background:rgba(103,185,223,.28)}
++  100%{background:transparent}
++}
++
++.vp-timer.is-paused{
++  border-color:#9a7130;
++  background:#2b2414;
++}
++.vp-timer.is-paused #timer{color:#ffe3a3}
++.vp-timer .clock-pause-label{
++  display:none;
++  margin-top:2px;
++  color:#ffd77c;
++  font-size:.52rem;
++  font-weight:850;
++  letter-spacing:.04em;
++}
++.vp-timer.is-paused .clock-pause-label{display:block}
++
++.assessment-reset-progress{
++  margin-top:8px;
++  width:100%;
++  min-height:44px;
++  padding:10px 12px;
++  border:1px solid #4b8caf;
++  border-radius:11px;
++  background:#12384d;
++  color:#e8f4fb;
++  font:inherit;
++  font-weight:850;
++  text-align:left;
++  cursor:pointer;
++}
++.assessment-reset-progress small{
++  display:block;
++  margin-top:2px;
++  color:#91b9cc;
++  font-size:.68rem;
++  font-weight:650;
++}
++
++body.assessment-mode-ux .reasoning-card.locked.assessment-hidden{
++  background:#0b2231;
++  border-color:#31566d;
++}
++body.assessment-mode-ux .reasoning-card.just-unlocked{
++  animation:decisionUnlockCard .85s ease;
++  border-color:#67b9df;
++}
++@keyframes decisionUnlockCard{
++  0%{transform:scale(.98);box-shadow:0 0 0 0 rgba(127,208,255,.5)}
++  60%{transform:scale(1.01);box-shadow:0 0 0 8px rgba(127,208,255,.12)}
++  100%{transform:scale(1);box-shadow:none}
++}
++
++/* Mobile / iOS: single-column + sticky action bar polish */
++@media (max-width:767px){
++  body.assessment-mode-ux.mobile-simulator-v3 .vp-shell{
++    padding-bottom:calc(96px + env(safe-area-inset-bottom));
++  }
++  body.assessment-mode-ux.mobile-simulator-v3 .patient-stage{
++    height:min(42dvh,420px);
++    min-height:280px;
++  }
++  body.assessment-mode-ux.mobile-simulator-v3 #infoUpdateWindow{
++    max-height:none;
++  }
++  body.assessment-mode-ux.mobile-simulator-v3 #infoUpdateWindow.is-collapsed{
++    max-height:52px;
++    overflow:hidden;
++  }
++  body.assessment-mode-ux.mobile-simulator-v3 #infoUpdateWindow.is-collapsible > p{
++    max-height:3.6em;
++  }
++  body.assessment-mode-ux.mobile-simulator-v3 .assessment-flow-rail{
++    position:sticky;
++    top:54px;
++    z-index:24;
++  }
++  body.assessment-mode-ux.mobile-simulator-v3 .bottom-nav{
++    padding-top:8px;
++  }
++  body.assessment-mode-ux.mobile-simulator-v3 .bottom-nav button{
++    min-height:58px;
++    font-size:.58rem;
++  }
++  body.assessment-mode-ux.mobile-simulator-v3 .vp-timer{
++    position:relative;
++    z-index:20;
++  }
++  body.assessment-mode-ux.mobile-simulator-v3 .patient-hotspot::after{
++    font-size:.58rem;
++  }
++  body.assessment-mode-ux.mobile-simulator-v3 .clinical-reasoning-board{
++    margin-bottom:calc(12px + env(safe-area-inset-bottom));
++  }
++}
++
++@media (max-width:979px){
++  body.assessment-mode-ux .assessment-mode-banner,
++  body.assessment-mode-ux .assessment-flow-rail,
++  body.assessment-mode-ux .assessment-decision-progress,
++  body.assessment-mode-ux .assessment-soft-prompt{
++    margin-left:0;
++    margin-right:0;
++  }
++}
++
++.reasoning-discovery-list{margin-top:8px}
++body.horse-current-emt-call .clinical-reasoning-board,
++body.desktop-scenario-layout .clinical-reasoning-board{
++  background:#0b2231;
++  border-color:#31566d;
++  color:#d6e4ec;
++}
++body.horse-current-emt-call .reasoning-board-head,
++body.desktop-scenario-layout .reasoning-board-head{
++  background:linear-gradient(135deg,#12384f,#0d2a3d);
++  border-bottom-color:#31566d;
++}
++body.horse-current-emt-call .reasoning-board-head small,
++body.desktop-scenario-layout .reasoning-board-head small{color:#7fd0ff}
++body.horse-current-emt-call .reasoning-board-head strong,
++body.desktop-scenario-layout .reasoning-board-head strong{color:#fff}
++body.horse-current-emt-call .reasoning-card,
++body.desktop-scenario-layout .reasoning-card{
++  background:#10283a;
++  border-color:#31566d;
++  color:#d6e4ec;
++}
++body.horse-current-emt-call .reasoning-card>p,
++body.desktop-scenario-layout .reasoning-card>p{color:#b8cad7}
++body.horse-current-emt-call .assessment-req-list li,
++body.desktop-scenario-layout .assessment-req-list li{
++  background:#0b2231;
++}
+diff --git a/vitals/scenario-assessment-mode-ux.js b/vitals/scenario-assessment-mode-ux.js
+new file mode 100644
+index 0000000..a090339
+--- /dev/null
++++ b/vitals/scenario-assessment-mode-ux.js
+@@ -0,0 +1,907 @@
++(() => {
++  'use strict';
++
++  const VERSION = '2026.08.16.1';
++  const STYLE_HREF = `/vitals/scenario-assessment-mode-ux.css?v=${VERSION}`;
++  const ONBOARD_KEY = caseId => `emscodesim_assessment_onboard_${caseId}`;
++  const PROMPT_COOLDOWN_MS = 75000;
++  const INACTIVITY_MS = 75000;
++
++  /** Case-specific interactive regions + action progress targets. Generalizable per scenario. */
++  const CASE_CONFIG = {
++    horse_crush: {
++      hotspots: [
++        { id: 'head', examKey: 'head_exam', label: 'Head', left: '40%', top: '6%', width: '20%', height: '11%' },
++        { id: 'cspine', examKey: 'neck_back', label: 'C-spine', left: '36%', top: '16%', width: '28%', height: '9%' },
++        { id: 'chest', examKey: 'chest_assessment', label: 'Chest', left: '34%', top: '26%', width: '32%', height: '12%' },
++        { id: 'abdomen', examKey: 'abdominal_assessment', label: 'Abdomen', left: '35%', top: '38%', width: '30%', height: '10%' },
++        { id: 'pelvis', examKey: 'pelvis_hip', label: 'Pelvis', left: '34%', top: '47%', width: '32%', height: '10%' },
++        { id: 'left_hip', examKey: 'left_leg', label: 'Left hip / leg', left: '18%', top: '52%', width: '24%', height: '18%' },
++        { id: 'distal', examKey: 'distal_csm', label: 'Distal CMS', left: '14%', top: '72%', width: '28%', height: '14%' },
++        { id: 'upper', examKey: 'upper_extremities', label: 'Arms', left: '62%', top: '30%', width: '22%', height: '16%' }
++      ],
++      primarySurveyKeys: ['airway', 'breathing', 'perfusion'],
++      assessmentKeys: ['airway', 'breathing', 'perfusion', 'head_exam', 'neck_back', 'chest_assessment', 'abdominal_assessment', 'pelvis_hip', 'upper_extremities', 'left_leg', 'distal_csm'],
++      vitalKeys: ['blood_pressure', 'pulse', 'respirations', 'spo2'],
++      historyKeys: ['pain', 'sample', 'opqrst', 'events'],
++      historyTarget: 4,
++      primarySurveyToast: 'Primary survey complete – airway patent, breathing adequate, circulation intact with isolated left-hip injury.',
++      vitalsToast: 'Vitals documented – use them with your exam findings for packaging and destination decisions.',
++      historyToast: 'History progressing – pain, mechanism, and SAMPLE details strengthen your clinical decisions.',
++      decisions: [
++        {
++          id: 'pre_move',
++          title: 'Packaging / move decision',
++          unlockRationale: 'You now have enough information to decide on packaging and movement.',
++          requirements: [
++            { id: 'left_leg', label: 'Left hip / lower-extremity exam', keys: ['left_leg'] },
++            { id: 'distal_csm', label: 'Distal circulation, sensation, movement', keys: ['distal_csm'] },
++            { id: 'pelvis', label: 'Pelvis / hip stability assessment', keys: ['pelvis_hip', 'trauma_assessment'], any: true }
++          ]
++        },
++        {
++          id: 'position',
++          title: 'Position / pain management',
++          unlockRationale: 'You now have enough information to decide on pain management and protected positioning.',
++          requirements: [
++            { id: 'left_leg', label: 'Inability / refusal to straighten or bear weight', keys: ['left_leg'] },
++            { id: 'pain', label: 'Pain assessment or comfort language documented', keys: ['pain'], orText: /straighten|lower the leg|position of comfort|pain/i }
++          ]
++        },
++        {
++          id: 'recheck',
++          title: 'Reassessment after treatment',
++          unlockRationale: 'You now have enough information to decide how to reassess after intervention.',
++          requirements: [
++            { id: 'intervention', label: 'Treatment or movement step performed', check: r => (r?.treatments?.length || 0) > 0 || (r?.reassessments?.length || 0) > 0 }
++          ]
++        }
++      ]
++    }
++  };
++
++  const GENERIC_DECISIONS = [
++    {
++      id: 'first',
++      title: 'First clinical decision',
++      unlockRationale: 'You now have enough information for the next clinical decision.',
++      requirements: [
++        { id: 'abc', label: 'Primary survey (ABC)', keys: ['airway', 'breathing', 'perfusion'] },
++        { id: 'vitals', label: 'Core vitals', keys: ['blood_pressure', 'pulse', 'respirations'], any: false }
++      ]
++    }
++  ];
++
++  const $ = id => document.getElementById(id);
++  const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
++
++  function caseId() {
++    return new URLSearchParams(location.search).get('case')
++      || window.EMSCodeSimPatientRecord?.active?.()?.scenarioId
++      || '';
++  }
++
++  function record() {
++    const id = caseId();
++    return window.EMSCodeSimScenarioSession?.active?.(id)
++      || window.EMSCodeSimPatientRecord?.active?.()
++      || {};
++  }
++
++  function trainingMode() {
++    return new URLSearchParams(location.search).get('training')
++      || record()?.documentation?.trainingMode
++      || 'learning';
++  }
++
++  function assessmentMode() {
++    return trainingMode() === 'assessment';
++  }
++
++  function config() {
++    return CASE_CONFIG[caseId()] || null;
++  }
++
++  function hasFinding(r, key) {
++    return Boolean(r?.findings?.[key]);
++  }
++
++  function recordText(r) {
++    try {
++      return JSON.stringify({
++        findings: r?.findings || {},
++        history: r?.history || {},
++        careLog: r?.careLog || [],
++        treatments: r?.treatments || []
++      });
++    } catch {
++      return '';
++    }
++  }
++
++  function requirementMet(r, req) {
++    if (typeof req.check === 'function') return Boolean(req.check(r));
++    if (req.orText && req.orText.test(recordText(r))) return true;
++    const keys = req.keys || [];
++    if (!keys.length) return false;
++    if (req.any) return keys.some(key => hasFinding(r, key));
++    return keys.every(key => hasFinding(r, key));
++  }
++
++  function decisionUnlocked(r, decision) {
++    return (decision.requirements || []).every(req => requirementMet(r, req));
++  }
++
++  function injectStyles() {
++    if (document.querySelector('link[data-assessment-mode-ux]')) return;
++    const link = document.createElement('link');
++    link.rel = 'stylesheet';
++    link.href = STYLE_HREF;
++    link.dataset.assessmentModeUx = VERSION;
++    document.head.appendChild(link);
++  }
++
++  function openPanel(panelId) {
++    const button = document.querySelector(`.bottom-nav button[data-panel="${panelId}"]`);
++    if (button) button.click();
++  }
++
++  /* ---------- Onboarding banner + flow rail ---------- */
++
++  function ensureBanner() {
++    if (!assessmentMode() || $('assessmentModeBanner')) return;
++    const host = document.querySelector('.patient-control-column')
++      || document.querySelector('.vp-shell')
++      || document.body;
++    const banner = document.createElement('section');
++    banner.id = 'assessmentModeBanner';
++    banner.className = 'assessment-mode-banner';
++    banner.setAttribute('role', 'region');
++    banner.setAttribute('aria-label', 'Assessment Mode start guide');
++    banner.innerHTML = `
++      <div class="assessment-mode-banner-head">
++        <div>
++          <small>ASSESSMENT MODE</small>
++          <strong>Start here → Assessment → Vitals → History</strong>
++        </div>
++        <button type="button" class="assessment-mode-banner-dismiss" data-dismiss-onboard aria-label="Dismiss guide">Got it</button>
++      </div>
++      <div class="assessment-mode-banner-steps">
++        <span><b>1. Assessment</b> (primary survey)</span>
++        <span class="step-arrow" aria-hidden="true">→</span>
++        <span><b>2. Vitals</b></span>
++        <span class="step-arrow" aria-hidden="true">→</span>
++        <span><b>3. History</b></span>
++        <span class="step-arrow" aria-hidden="true">→</span>
++        <span>then <b>Clinical Decisions</b> unlock</span>
++      </div>`;
++    banner.querySelector('[data-dismiss-onboard]')?.addEventListener('click', () => {
++      banner.hidden = true;
++      try { localStorage.setItem(ONBOARD_KEY(caseId()), '1'); } catch {}
++    });
++    const info = $('infoUpdateWindow');
++    if (info?.parentNode) info.insertAdjacentElement('beforebegin', banner);
++    else host.prepend(banner);
++    try {
++      if (localStorage.getItem(ONBOARD_KEY(caseId())) === '1') banner.hidden = true;
++    } catch {}
++  }
++
++  function ensureFlowRail() {
++    if ($('assessmentFlowRail')) return;
++    const cue = $('reasoningDiscoveryCue');
++    const rail = document.createElement('nav');
++    rail.id = 'assessmentFlowRail';
++    rail.className = 'assessment-flow-rail';
++    rail.setAttribute('aria-label', 'Clinical workflow steps');
++    rail.innerHTML = ['Discover', 'Decide', 'Treat', 'Reassess'].map((label, index) => `
++      <button type="button" class="assessment-flow-step" data-flow-step="${index}" aria-current="false">
++        <small>STEP ${index + 1}</small>
++        <strong>${label}</strong>
++      </button>`).join('');
++    if (cue?.parentNode) cue.insertAdjacentElement('afterend', rail);
++    else {
++      const info = $('infoUpdateWindow');
++      if (info?.parentNode) info.insertAdjacentElement('afterend', rail);
++      else document.querySelector('.patient-control-column')?.prepend(rail);
++    }
++    if (cue) {
++      cue.innerHTML = '<strong>Discover → Decide → Treat → Reassess</strong><span>Follow the highlighted step. Decisions unlock as you discover required information.</span>';
++    }
++    rail.addEventListener('click', event => {
++      const step = event.target.closest?.('[data-flow-step]');
++      if (!step) return;
++      const index = Number(step.dataset.flowStep);
++      if (index === 0) openPanel('assessmentPanel');
++      else if (index === 1) {
++        const board = $('clinicalReasoningBoard') || $('assessmentDecisionProgress');
++        board?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
++        openPanel('findingsPanel');
++      } else if (index === 2) openPanel('treatmentPanel');
++      else openPanel('assessmentPanel');
++    });
++  }
++
++  function currentFlowStep(r) {
++    const cfg = config();
++    const decisions = cfg?.decisions || GENERIC_DECISIONS;
++    const unlockedCount = decisions.filter(d => decisionUnlocked(r, d)).length;
++    const decidedCount = Object.keys(r?.documentation?.reasoningDecisions || {}).length;
++    const treated = (r?.treatments?.length || 0) > 0;
++    const reassessed = (r?.reassessments?.length || 0) > 0;
++    if (reassessed || (treated && decidedCount >= Math.min(2, decisions.length))) return 3;
++    if (treated || decidedCount > 0) return 2;
++    if (unlockedCount > 0) return 1;
++    return 0;
++  }
++
++  function refreshFlowRail(r) {
++    const rail = $('assessmentFlowRail');
++    if (!rail) return;
++    const current = currentFlowStep(r);
++    rail.querySelectorAll('[data-flow-step]').forEach(button => {
++      const index = Number(button.dataset.flowStep);
++      button.classList.toggle('is-current', index === current);
++      button.classList.toggle('is-done', index < current);
++      button.setAttribute('aria-current', index === current ? 'step' : 'false');
++    });
++  }
++
++  /* ---------- Patient hotspots ---------- */
++
++  function ensureHotspotLayer() {
++    const cfg = config();
++    const stage = document.querySelector('.patient-stage');
++    if (!cfg?.hotspots?.length || !stage) return null;
++    let layer = $('patientHotspotLayer');
++    if (!layer) {
++      layer = document.createElement('div');
++      layer.id = 'patientHotspotLayer';
++      layer.className = 'patient-hotspot-layer';
++      layer.setAttribute('aria-label', 'Interactive patient exam regions');
++      stage.appendChild(layer);
++    }
++    let chips = $('patientFindingChips');
++    if (!chips) {
++      chips = document.createElement('div');
++      chips.id = 'patientFindingChips';
++      chips.className = 'patient-hotspot-chip-row';
++      chips.setAttribute('aria-live', 'polite');
++      stage.appendChild(chips);
++    }
++    return layer;
++  }
++
++  function performHotspotExam(examKey) {
++    const horse = window.EMSCodeSimHorseCrush;
++    if (horse?.performExam && CASE_CONFIG[caseId()]) {
++      return horse.performExam(examKey);
++    }
++    const button = document.querySelector(`[data-assessment-item="${CSS.escape(examKey)}"], [data-horse-deep-key="${CSS.escape(examKey)}"]`);
++    if (button) {
++      button.click();
++      return true;
++    }
++    return false;
++  }
++
++  function refreshHotspots(r) {
++    const cfg = config();
++    const layer = ensureHotspotLayer();
++    if (!cfg || !layer) return;
++    const existing = new Map([...layer.querySelectorAll('[data-hotspot-id]')].map(node => [node.dataset.hotspotId, node]));
++    cfg.hotspots.forEach(spot => {
++      let button = existing.get(spot.id);
++      if (!button) {
++        button = document.createElement('button');
++        button.type = 'button';
++        button.className = 'patient-hotspot';
++        button.dataset.hotspotId = spot.id;
++        button.dataset.examKey = spot.examKey;
++        button.dataset.label = spot.label;
++        button.setAttribute('aria-label', `Assess ${spot.label}`);
++        button.style.left = spot.left;
++        button.style.top = spot.top;
++        button.style.width = spot.width;
++        button.style.height = spot.height;
++        const activate = event => {
++          event.preventDefault();
++          event.stopPropagation();
++          button.classList.add('is-active');
++          window.setTimeout(() => button.classList.remove('is-active'), 280);
++          const result = performHotspotExam(spot.examKey);
++          if (result) {
++            showMiniResult('Focused exam', spot.label, typeof result === 'object' && result.finding
++              ? String(result.finding).slice(0, 140)
++              : `${spot.label} assessed — finding added to the care record.`);
++            highlightLatestFinding();
++          }
++          markActivity();
++        };
++        button.addEventListener('click', activate);
++        layer.appendChild(button);
++      }
++      const assessed = hasFinding(r, spot.examKey);
++      button.classList.toggle('is-assessed', assessed);
++    });
++    refreshFindingChips(r, cfg);
++  }
++
++  function refreshFindingChips(r, cfg) {
++    const chips = $('patientFindingChips');
++    if (!chips || !cfg) return;
++    const assessed = cfg.hotspots.filter(spot => hasFinding(r, spot.examKey));
++    const abnormal = assessed.filter(spot => {
++      const finding = r?.findings?.[spot.examKey];
++      return finding?.normality === 'not-normal' || finding?.status === 'abnormal';
++    });
++    chips.innerHTML = assessed.slice(-4).map(spot => {
++      const finding = r?.findings?.[spot.examKey];
++      const isAbnormal = finding?.normality === 'not-normal' || finding?.status === 'abnormal';
++      return `<span class="patient-finding-chip${isAbnormal ? ' abnormal' : ''}">✓ ${esc(spot.label)}</span>`;
++    }).join('');
++    if (abnormal.length && !chips.dataset.seeded) chips.dataset.seeded = '1';
++  }
++
++  /* ---------- Decision progress checklist ---------- */
++
++  function ensureDecisionProgress() {
++    if ($('assessmentDecisionProgress')) return;
++    const board = $('clinicalReasoningBoard');
++    const host = document.createElement('section');
++    host.id = 'assessmentDecisionProgress';
++    host.className = 'assessment-decision-progress';
++    host.setAttribute('aria-label', 'Decision discovery progress');
++    if (board?.parentNode) board.insertAdjacentElement('beforebegin', host);
++    else document.querySelector('.patient-control-column')?.appendChild(host);
++  }
++
++  function discoveredSummary(r, cfg) {
++    const labels = [];
++    (cfg?.hotspots || []).forEach(spot => {
++      if (hasFinding(r, spot.examKey)) labels.push(spot.label);
++    });
++    (cfg?.primarySurveyKeys || []).forEach(key => {
++      if (hasFinding(r, key)) labels.push(key.replace(/_/g, ' '));
++    });
++    (cfg?.vitalKeys || []).forEach(key => {
++      if (hasFinding(r, key)) labels.push(key.replace(/_/g, ' '));
++    });
++    if (!labels.length) return 'Nothing clinical discovered yet beyond arrival. Start with Assessment, then Vitals and History.';
++    return `Discovered so far: ${labels.slice(0, 8).join(' · ')}${labels.length > 8 ? '…' : ''}`;
++  }
++
++  function nextLockedDecision(r, decisions) {
++    return decisions.find(decision => !decisionUnlocked(r, decision) && !r?.documentation?.reasoningDecisions?.[decision.id]) || null;
++  }
++
++  function refreshDecisionProgress(r) {
++    ensureDecisionProgress();
++    const host = $('assessmentDecisionProgress');
++    if (!host) return;
++    const cfg = config();
++    const decisions = cfg?.decisions || (assessmentMode() ? GENERIC_DECISIONS : null);
++    if (!decisions) {
++      host.hidden = true;
++      return;
++    }
++    host.hidden = false;
++    const next = nextLockedDecision(r, decisions) || decisions.find(d => decisionUnlocked(r, d) && !r?.documentation?.reasoningDecisions?.[d.id]) || decisions[decisions.length - 1];
++    const unlockedCount = decisions.filter(d => decisionUnlocked(r, d)).length;
++    const reqs = next?.requirements || [];
++    const showHints = !assessmentMode() || Boolean(host.dataset.forceHints === '1') || basicSurveyComplete(r, cfg);
++    host.innerHTML = `
++      <header>
++        <div>
++          <small>DECISION PROGRESS</small>
++          <strong>${esc(next?.title || 'Clinical decisions')}</strong>
++        </div>
++        <span>${unlockedCount}/${decisions.length}</span>
++      </header>
++      <p class="assessment-discovered-summary"><b>Discovered so far</b><br>${esc(discoveredSummary(r, cfg))}</p>
++      ${showHints ? `<ul class="assessment-req-list">${reqs.map(req => {
++        const done = requirementMet(r, req);
++        return `<li class="${done ? 'done' : ''}"><mark>${done ? '✓' : '○'}</mark><span>${esc(req.label)}</span></li>`;
++      }).join('')}</ul>` : `<p class="assessment-discovered-summary">Complete Assessment and Vitals to reveal the required-finding checklist for the next decision.</p>`}
++      ${assessmentMode() && basicSurveyComplete(r, cfg) ? `<div class="assessment-soft-prompt-actions" style="margin-top:8px"><button type="button" data-show-required-findings>Show required findings for next decision</button></div>` : ''}`;
++    host.querySelector('[data-show-required-findings]')?.addEventListener('click', () => {
++      host.dataset.forceHints = '1';
++      refreshDecisionProgress(record());
++      markActivity();
++    });
++  }
++
++  function basicSurveyComplete(r, cfg) {
++    if (!cfg) return false;
++    const primaryDone = (cfg.primarySurveyKeys || []).every(key => hasFinding(r, key))
++      || (cfg.assessmentKeys || []).filter(key => hasFinding(r, key)).length >= 3;
++    const vitalsDone = (cfg.vitalKeys || []).filter(key => hasFinding(r, key)).length >= 1;
++    return primaryDone && vitalsDone;
++  }
++
++  /* ---------- Unlock toast ---------- */
++
++  function ensureUnlockToast() {
++    if ($('assessmentUnlockToast')) return;
++    const toast = document.createElement('div');
++    toast.id = 'assessmentUnlockToast';
++    toast.className = 'assessment-decision-unlock-toast';
++    toast.setAttribute('role', 'status');
++    document.body.appendChild(toast);
++  }
++
++  function showUnlockToast(decision) {
++    ensureUnlockToast();
++    const toast = $('assessmentUnlockToast');
++    if (!toast || !decision) return;
++    toast.innerHTML = `<small>DECISION UNLOCKED</small><strong>${esc(decision.title)}</strong><p>${esc(decision.unlockRationale || 'You now have enough information to decide.')}</p>`;
++    toast.classList.add('is-visible');
++    clearTimeout(showUnlockToast.timer);
++    showUnlockToast.timer = setTimeout(() => toast.classList.remove('is-visible'), 4200);
++    const card = document.querySelector(`[data-reasoning-card="${CSS.escape(decision.id)}"]`);
++    if (card) {
++      card.classList.add('just-unlocked');
++      card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
++      window.setTimeout(() => card.classList.remove('just-unlocked'), 900);
++    }
++  }
++
++  function trackUnlocks(r) {
++    const cfg = config();
++    const decisions = cfg?.decisions || [];
++    if (!trackUnlocks.prev) trackUnlocks.prev = {};
++    decisions.forEach(decision => {
++      const unlocked = decisionUnlocked(r, decision);
++      if (unlocked && !trackUnlocks.prev[decision.id]) {
++        if (trackUnlocks.ready) showUnlockToast(decision);
++      }
++      trackUnlocks.prev[decision.id] = unlocked;
++    });
++    trackUnlocks.ready = true;
++  }
++
++  /* ---------- Action bar progress + mini results ---------- */
++
++  function countDone(r, keys) {
++    return (keys || []).filter(key => hasFinding(r, key)).length;
++  }
++
++  function historyDoneCount(r, cfg) {
++    const keyCount = countDone(r, cfg?.historyKeys || []);
++    const asked = Array.isArray(r?.documentation?.askedInterviewQuestions)
++      ? r.documentation.askedInterviewQuestions.length
++      : Array.isArray(r?.interview?.asked) ? r.interview.asked.length : 0;
++    return Math.max(keyCount, asked);
++  }
++
++  function ensureNavProgress() {
++    document.querySelectorAll('.bottom-nav button[data-panel]').forEach(button => {
++      if (button.querySelector('.nav-progress')) return;
++      const span = document.createElement('em');
++      span.className = 'nav-progress';
++      span.hidden = true;
++      button.appendChild(span);
++    });
++  }
++
++  function refreshNavProgress(r) {
++    ensureNavProgress();
++    const cfg = config();
++    if (!cfg) return;
++    const map = {
++      assessmentPanel: { done: countDone(r, cfg.assessmentKeys), total: cfg.assessmentKeys.length },
++      vitalsPanel: { done: countDone(r, cfg.vitalKeys), total: cfg.vitalKeys.length },
++      historyPanel: { done: Math.min(historyDoneCount(r, cfg), cfg.historyTarget), total: cfg.historyTarget }
++    };
++    Object.entries(map).forEach(([panel, stats]) => {
++      const button = document.querySelector(`.bottom-nav button[data-panel="${panel}"]`);
++      const badge = button?.querySelector('.nav-progress');
++      if (!button || !badge) return;
++      badge.hidden = false;
++      badge.textContent = `${stats.done}/${stats.total}`;
++      const complete = stats.done >= stats.total && stats.total > 0;
++      badge.classList.toggle('is-complete', complete);
++      button.classList.toggle('is-complete-action', complete);
++      if (complete) button.title = 'Completed — tap to re-assess if needed';
++    });
++  }
++
++  function ensureMiniResult() {
++    if ($('actionMiniResult')) return;
++    const node = document.createElement('div');
++    node.id = 'actionMiniResult';
++    node.className = 'action-mini-result';
++    node.setAttribute('role', 'status');
++    document.body.appendChild(node);
++  }
++
++  function showMiniResult(type, title, text) {
++    ensureMiniResult();
++    const node = $('actionMiniResult');
++    if (!node) return;
++    node.innerHTML = `<small>${esc(type)}</small><strong>${esc(title)}</strong><p>${esc(text)}</p>`;
++    node.classList.add('is-visible');
++    clearTimeout(showMiniResult.timer);
++    showMiniResult.timer = setTimeout(() => node.classList.remove('is-visible'), 3600);
++  }
++
++  function primarySurveyJustCompleted(r, prev) {
++    const cfg = config();
++    if (!cfg) return false;
++    const now = (cfg.primarySurveyKeys || []).every(key => hasFinding(r, key));
++    const before = (cfg.primarySurveyKeys || []).every(key => hasFinding(prev, key));
++    return now && !before;
++  }
++
++  function maybeActionFeedback(r, prev) {
++    const cfg = config();
++    if (!cfg || !prev) return;
++    if (primarySurveyJustCompleted(r, prev)) {
++      showMiniResult('Assessment', 'Primary survey complete', cfg.primarySurveyToast);
++      return;
++    }
++    const vitalsNow = countDone(r, cfg.vitalKeys);
++    const vitalsPrev = countDone(prev, cfg.vitalKeys);
++    if (vitalsNow >= cfg.vitalKeys.length && vitalsPrev < cfg.vitalKeys.length) {
++      showMiniResult('Vitals', 'Vitals complete', cfg.vitalsToast);
++      return;
++    }
++    if (vitalsNow > vitalsPrev && vitalsNow > 0) {
++      showMiniResult('Vitals', `Vitals ${vitalsNow}/${cfg.vitalKeys.length}`, 'Vital sign recorded and added to the care log.');
++      return;
++    }
++    const histNow = historyDoneCount(r, cfg);
++    const histPrev = historyDoneCount(prev, cfg);
++    if (histNow > histPrev) {
++      showMiniResult('History', `History ${Math.min(histNow, cfg.historyTarget)}/${cfg.historyTarget}`, cfg.historyToast);
++    }
++  }
++
++  /* ---------- Soft prompts ---------- */
++
++  function ensureSoftPrompt() {
++    if ($('assessmentSoftPrompt')) return;
++    const host = document.createElement('aside');
++    host.id = 'assessmentSoftPrompt';
++    host.className = 'assessment-soft-prompt';
++    host.hidden = true;
++    host.setAttribute('aria-live', 'polite');
++    const progress = $('assessmentDecisionProgress');
++    if (progress?.parentNode) progress.insertAdjacentElement('afterend', host);
++    else document.querySelector('.patient-control-column')?.appendChild(host);
++  }
++
++  function hideSoftPrompt() {
++    const node = $('assessmentSoftPrompt');
++    if (node) node.hidden = true;
++  }
++
++  function showSoftPrompt(kind) {
++    if (!assessmentMode()) return;
++    ensureSoftPrompt();
++    const node = $('assessmentSoftPrompt');
++    const cfg = config();
++    const r = record();
++    if (!node || !cfg) return;
++    const next = nextLockedDecision(r, cfg.decisions || []);
++    const missing = (next?.requirements || []).filter(req => !requirementMet(r, req)).map(req => req.label);
++    if (kind === 'required' && !basicSurveyComplete(r, cfg)) {
++      node.hidden = false;
++      node.innerHTML = `
++        <small>SOFT PROMPT</small>
++        <strong>Complete the basics first</strong>
++        <p>Finish primary Assessment and at least one set of Vitals before revealing the next decision checklist.</p>
++        <div class="assessment-soft-prompt-actions">
++          <button type="button" data-soft-open="assessmentPanel">Open Assessment</button>
++          <button type="button" class="secondary" data-soft-dismiss>Dismiss</button>
++        </div>`;
++    } else {
++      node.hidden = false;
++      node.innerHTML = `
++        <small>WHAT AM I MISSING?</small>
++        <strong>${esc(next ? next.title : 'Keep gathering information')}</strong>
++        <p>${missing.length
++          ? `Still needed for the next decision: ${esc(missing.join(' · '))}.`
++          : 'Required discoveries for the next decision look complete — open Clinical Reasoning to decide.'}</p>
++        <div class="assessment-soft-prompt-actions">
++          <button type="button" data-soft-open="assessmentPanel">Continue assessment</button>
++          ${basicSurveyComplete(r, cfg) ? '<button type="button" data-soft-show-required>Show required findings</button>' : ''}
++          <button type="button" class="secondary" data-soft-dismiss>Dismiss</button>
++        </div>`;
++    }
++    node.querySelector('[data-soft-dismiss]')?.addEventListener('click', hideSoftPrompt);
++    node.querySelector('[data-soft-open]')?.addEventListener('click', event => {
++      openPanel(event.currentTarget.dataset.softOpen);
++      hideSoftPrompt();
++    });
++    node.querySelector('[data-soft-show-required]')?.addEventListener('click', () => {
++      const progress = $('assessmentDecisionProgress');
++      if (progress) progress.dataset.forceHints = '1';
++      refreshDecisionProgress(record());
++      hideSoftPrompt();
++      progress?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
++    });
++    lastPromptAt = Date.now();
++  }
++
++  let lastActivityAt = Date.now();
++  let lastPromptAt = 0;
++  let actionsSinceUnlock = 0;
++
++  function markActivity() {
++    lastActivityAt = Date.now();
++    actionsSinceUnlock += 1;
++    const r = record();
++    const cfg = config();
++    if (!assessmentMode() || !cfg) return;
++    const next = nextLockedDecision(r, cfg.decisions || []);
++    if (next && actionsSinceUnlock >= 3 && Date.now() - lastPromptAt > PROMPT_COOLDOWN_MS) {
++      actionsSinceUnlock = 0;
++      showSoftPrompt('missing');
++    }
++  }
++
++  function checkInactivity() {
++    if (!assessmentMode()) return;
++    if (Date.now() - lastActivityAt < INACTIVITY_MS) return;
++    if (Date.now() - lastPromptAt < PROMPT_COOLDOWN_MS) return;
++    const r = record();
++    const cfg = config();
++    if (!cfg) return;
++    if (nextLockedDecision(r, cfg.decisions || [])) showSoftPrompt('missing');
++  }
++
++  /* ---------- Findings highlight + clock pause + reset ---------- */
++
++  function highlightLatestFinding() {
++    const selectors = [
++      '#findingsList .care-log-entry',
++      '#findingsList article',
++      '#findingsList li',
++      '#findingsPanel .log-entry',
++      '#desktopConcernList .desktop-concern-item',
++      '#infoUpdateWindow'
++    ];
++    let target = null;
++    for (const selector of selectors) {
++      const nodes = document.querySelectorAll(selector);
++      if (nodes.length) {
++        target = nodes[nodes.length - 1];
++        break;
++      }
++    }
++    if (!target) target = $('infoUpdateWindow');
++    if (!target) return;
++    target.classList.add('is-highlighted');
++    target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
++    window.setTimeout(() => target.classList.remove('is-highlighted'), 1400);
++  }
++
++  let pauseStartedAt = 0;
++  let pausedAccumMs = 0;
++  let clockPaused = false;
++
++  function setClockPaused(paused) {
++    const timerBox = document.querySelector('.vp-timer');
++    if (!timerBox) return;
++    let label = timerBox.querySelector('.clock-pause-label');
++    if (!label) {
++      label = document.createElement('span');
++      label.className = 'clock-pause-label';
++      label.textContent = 'Paused while reading';
++      timerBox.appendChild(label);
++    }
++    timerBox.classList.toggle('is-paused', paused);
++    if (paused && !clockPaused) {
++      pauseStartedAt = Date.now();
++      clockPaused = true;
++      document.body.dataset.clockPaused = '1';
++    } else if (!paused && clockPaused) {
++      pausedAccumMs += Math.max(0, Date.now() - pauseStartedAt);
++      clockPaused = false;
++      delete document.body.dataset.clockPaused;
++      const api = window.EMSCodeSimPatientRecord;
++      api?.setDocumentation?.({ clockPausedMs: pausedAccumMs, clockPauseUpdatedAt: new Date().toISOString() });
++    }
++  }
++
++  function installClockPauseHooks() {
++    const info = $('infoUpdateWindow');
++    if (!info || info.dataset.clockPauseBound === '1') return;
++    info.dataset.clockPauseBound = '1';
++    const maybePause = () => {
++      const text = info.querySelector('p');
++      const long = (text?.textContent || '').length > 160 || info.classList.contains('is-expanded');
++      const open = info.dataset.collapsed !== 'true' && !info.hidden;
++      setClockPaused(Boolean(open && long));
++    };
++    info.addEventListener('click', () => window.setTimeout(maybePause, 0));
++    const observer = new MutationObserver(maybePause);
++    observer.observe(info, { attributes: true, childList: true, subtree: true, characterData: true });
++  }
++
++  function syncPausedClockDisplay() {
++    if (!clockPaused) return;
++    const timer = $('timer');
++    const status = $('patientClockStatus');
++    if (status) status.textContent = 'Patient clock • paused while reading';
++    if (timer && !timer.dataset.baseWhilePaused) timer.dataset.baseWhilePaused = timer.textContent;
++  }
++
++  function resetAssessmentProgress() {
++    const api = window.EMSCodeSimPatientRecord;
++    const current = api?.active?.() || record() || {};
++    const keep = new Set(['arrival_parking', 'bls_handoff']);
++    const nextFindings = {};
++    Object.entries(current.findings || {}).forEach(([key, value]) => {
++      if (keep.has(key)) nextFindings[key] = value;
++    });
++    if (typeof api?.update === 'function') {
++      api.update(existing => {
++        const base = existing || current;
++        const careLog = (base.careLog || []).filter(event => {
++          const key = event?.key || event?.assessment || '';
++          if (!key) return event?.type === 'scene' || event?.source === 'scenario-start' || event?.source === 'bls-handoff';
++          return keep.has(key);
++        });
++        return {
++          ...base,
++          findings: nextFindings,
++          treatments: [],
++          reassessments: [],
++          careLog,
++          documentation: {
++            ...(base.documentation || {}),
++            reasoningDecisions: {},
++            assessmentProgressResetAt: new Date().toISOString(),
++            askedInterviewQuestions: []
++          }
++        };
++      });
++    } else {
++      Object.keys(current.findings || {}).forEach(key => {
++        if (!keep.has(key)) api?.setFinding?.(key, null);
++      });
++      api?.setDocumentation?.({
++        reasoningDecisions: {},
++        assessmentProgressResetAt: new Date().toISOString(),
++        askedInterviewQuestions: []
++      });
++    }
++    try {
++      localStorage.removeItem(ONBOARD_KEY(caseId()));
++    } catch {}
++    trackUnlocks.prev = {};
++    actionsSinceUnlock = 0;
++    const banner = $('assessmentModeBanner');
++    if (banner) banner.hidden = false;
++    const progress = $('assessmentDecisionProgress');
++    if (progress) delete progress.dataset.forceHints;
++    showMiniResult('Progress', 'Assessment progress reset', 'Findings and clinical decisions were cleared. Arrival context remains. Restart Assessment → Vitals → History.');
++    window.setTimeout(() => refreshAll(true), 80);
++  }
++
++  function ensureResetControl() {
++    const dialog = $('scenarioControlDialog');
++    if (!dialog || $('resetAssessmentProgress')) return;
++    const button = document.createElement('button');
++    button.id = 'resetAssessmentProgress';
++    button.type = 'button';
++    button.className = 'assessment-reset-progress';
++    button.innerHTML = `<strong>Reset assessment progress</strong><small>Clear exams, vitals, history answers, and clinical decisions without a full scenario restart.</small>`;
++    button.addEventListener('click', () => {
++      resetAssessmentProgress();
++      dialog.hidden = true;
++      const backdrop = $('scenarioControlBackdrop');
++      if (backdrop) backdrop.hidden = true;
++    });
++    const fullReset = $('resetScenario');
++    if (fullReset?.parentNode) fullReset.insertAdjacentElement('beforebegin', button);
++    else dialog.appendChild(button);
++  }
++
++  /* Learning-upgrade already renders discovery checklists on locked cards. */
++  function enhanceLockedReasoningCards() {
++    return;
++  }
++
++  /* ---------- Render loop ---------- */
++
++  let prevSignature = '';
++  let prevRecordSnapshot = null;
++
++  function snapshotForFeedback(r) {
++    return {
++      findings: { ...(r?.findings || {}) },
++      treatments: [...(r?.treatments || [])],
++      reassessments: [...(r?.reassessments || [])],
++      documentation: {
++        askedInterviewQuestions: [...(r?.documentation?.askedInterviewQuestions || [])],
++        reasoningDecisions: { ...(r?.documentation?.reasoningDecisions || {}) }
++      },
++      interview: r?.interview ? { asked: [...(r.interview.asked || [])] } : undefined
++    };
++  }
++
++  function refreshAll(force = false) {
++    if (!document.body) return;
++    const id = caseId();
++    if (!id) return;
++    const r = record();
++    const signature = [
++      Object.keys(r?.findings || {}).sort().join('|'),
++      (r?.treatments || []).length,
++      (r?.reassessments || []).length,
++      Object.keys(r?.documentation?.reasoningDecisions || {}).sort().join('|'),
++      historyDoneCount(r, config()),
++      trainingMode(),
++      document.body.classList.contains('mobile-simulator-v3') ? 'm' : 'd'
++    ].join('::');
++    if (!force && signature === prevSignature) return;
++
++    if (assessmentMode()) {
++      document.body.classList.add('assessment-mode-ux');
++      document.body.dataset.trainingMode = 'assessment';
++      ensureBanner();
++      ensureFlowRail();
++      ensureDecisionProgress();
++      ensureSoftPrompt();
++      ensureResetControl();
++      installClockPauseHooks();
++    } else {
++      document.body.classList.add('assessment-mode-ux');
++      ensureFlowRail();
++      if (config()) {
++        ensureDecisionProgress();
++      }
++    }
++
++    refreshFlowRail(r);
++    refreshHotspots(r);
++    refreshDecisionProgress(r);
++    refreshNavProgress(r);
++    enhanceLockedReasoningCards(r);
++    trackUnlocks(r);
++    if (prevRecordSnapshot) maybeActionFeedback(r, prevRecordSnapshot);
++    prevRecordSnapshot = snapshotForFeedback(r);
++    prevSignature = signature;
++  }
++
++  function onUserAction(event) {
++    if (event.target.closest?.('.bottom-nav button, .patient-hotspot, .horse-exam-button, [data-assessment-item], .history-category-list button, .tool-actions button, .tool-actions a')) {
++      markActivity();
++    }
++  }
++
++  function start() {
++    injectStyles();
++    refreshAll(true);
++    document.addEventListener('click', onUserAction, true);
++    window.setInterval(() => {
++      refreshAll(false);
++      checkInactivity();
++      syncPausedClockDisplay();
++    }, 700);
++    ['emscodesim:scenario-updated', 'emscodesim:scenario-finding-saved', 'emscodesim:assessment-saved', 'emscodesim:treatment-saved', 'emscodesim:patient-record-updated', 'ems-scenario-rendered'].forEach(name => {
++      window.addEventListener(name, () => {
++        markActivity();
++        window.setTimeout(() => {
++          refreshAll(true);
++          highlightLatestFinding();
++        }, 40);
++      });
++    });
++  }
++
++  window.EMSCodeSimAssessmentModeUx = Object.freeze({
++    version: VERSION,
++    caseConfig: CASE_CONFIG,
++    refresh: () => refreshAll(true),
++    showSoftPrompt,
++    resetAssessmentProgress,
++    showMiniResult
++  });
++
++  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, { once: true });
++  else start();
++})();
+diff --git a/vitals/scenario-learning-upgrade.js b/vitals/scenario-learning-upgrade.js
+index a418539..119b705 100644
+--- a/vitals/scenario-learning-upgrade.js
++++ b/vitals/scenario-learning-upgrade.js
+@@ -155,6 +155,35 @@
+     }
+   }
+ 
++  function discoveryChecklist(checkpoint,r){
++    const hints={
++      pre_move:[
++        ['left_leg','Left hip / lower-extremity exam'],
++        ['distal_csm','Distal circulation, sensation, movement'],
++        ['pelvis_or_trauma','Pelvis / hip assessment or complete trauma exam']
++      ],
++      position:[
++        ['left_leg','Inability / refusal to straighten or bear weight'],
++        ['pain_or_comfort','Pain assessment or comfort findings']
++      ],
++      recheck:[
++        ['intervention','Treatment or movement step performed']
++      ]
++    };
++    const items=hints[checkpoint[0]];
++    if(!items) return `<div class="reasoning-lock"><b>🔒</b><span>${esc(checkpoint[3])}</span></div>`;
++    const met=key=>{
++      if(key==='pelvis_or_trauma') return has(r,'pelvis_hip')||has(r,'trauma_assessment');
++      if(key==='pain_or_comfort') return has(r,'pain')||/straighten|lower the leg|position of comfort/i.test(text(r));
++      if(key==='intervention') return treatmentCount(r)>0||reassessmentCount(r)>0;
++      return has(r,key);
++    };
++    return `<ul class="assessment-req-list reasoning-discovery-list">${items.map(([key,label])=>{
++      const done=met(key);
++      return `<li class="${done?'done':''}"><mark>${done?'✓':'○'}</mark><span>${esc(label)}</span></li>`;
++    }).join('')}</ul>`;
++  }
++
+   function addCue(){
+     if($('reasoningDiscoveryCue')) return;
+     const info=$('infoUpdateWindow');
+@@ -172,7 +201,7 @@
+     const assessment=mode()==='assessment';
+     const reveal=reviewUnlocked();
+     if(assessment && !unlocked && !chosen){
+-      return `<article class="reasoning-card locked assessment-hidden"><div class="reasoning-card-top"><span>${index+1}</span><div><small>DISCOVER FIRST</small><strong>Clinical decision ${index+1}</strong></div></div><p>Gather relevant patient information before this decision point becomes available.</p><div class="reasoning-lock"><b>🔒</b><span>No assessment hints are shown in Assessment Mode.</span></div></article>`;
++      return `<article class="reasoning-card locked assessment-hidden" data-reasoning-card="${esc(checkpoint[0])}"><div class="reasoning-card-top"><span>${index+1}</span><div><small>DISCOVER FIRST</small><strong>${esc(checkpoint[1])}</strong></div></div><p>Complete the discoveries below. Answer correctness stays hidden until call review.</p>${discoveryChecklist(checkpoint,r)}</article>`;
+     }
+     const correct=Boolean(chosen?.[2]);
+     const state=chosen ? (assessment&&!reveal?'recorded':correct?'complete':'review') : unlocked?'ready':'locked';
+@@ -229,6 +258,11 @@
+     },700);
+   }
+ 
+-  window.EMSCodeSimScenarioLearningUpgrade=Object.freeze({version:'2.403',cases:Object.keys(CASES)});
++  window.EMSCodeSimScenarioLearningUpgrade=Object.freeze({
++    version:'2.404',
++    cases:Object.keys(CASES),
++    discoveryChecklist,
++    reviewUnlocked
++  });
+   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init,{once:true}); else init();
+ })();
+diff --git a/vitals/visual-patient.html b/vitals/visual-patient.html
+index b1fe4c5..5f1444e 100644
+--- a/vitals/visual-patient.html
++++ b/vitals/visual-patient.html
+@@ -410,9 +410,10 @@
+   <script src="/vitals/scenario-runtime.js?v=2223"></script>
+   <script src="/vitals/scenario-tool-registry.js?v=2221"></script>
+   <script src="/vitals/scenario-phase-model.js?v=2200"></script>
+-  <script src="/vitals/horse-crush-bootstrap.js?v=2237"></script>
++  <script src="/vitals/horse-crush-bootstrap.js?v=2238"></script>
+   <script src="/vitals/horse-crush-scenario.js?v=2223"></script>
+   <script src="/vitals/visual-patient.js?v=2339"></script>
+   <script src="/vitals/scenario-guided-start.js?v=2202"></script>
++  <script src="/vitals/scenario-assessment-mode-ux.js?v=2026.08.16.1"></script>
+ </body>
+ </html>
+-- 
+2.43.0
+
