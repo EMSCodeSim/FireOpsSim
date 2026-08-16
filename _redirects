@@ -63,6 +63,23 @@
 
 /fire-skill-wheel /fire-skill-wheel.html 200
 
+/focus-drills /focus-drills.html 200
+/focus /focus-drills.html 301
+/daily-training-wheel /focus-drills.html 301
+/training-wheel /focus-drills.html 301
+/workout-wheel /workout-wheel.html 200
+/fitness /firefighter-fitness.html 301
+/firefighter-fitness /firefighter-fitness.html 200
+/firehouse-fun /firehouse-fun.html 200
+/fun /firehouse-fun.html 301
+/firefighter-trivia /firefighter-trivia.html 200
+/firefighter-word /firefighter-word.html 200
+/firehouse-bingo /firehouse-bingo.html 200
+/would-you-rather /firehouse-would-you-rather.html 301
+/firehouse-would-you-rather /firehouse-would-you-rather.html 200
+/shift-challenge /shift-challenge.html 200
+/firehouse-meals /firehouse-meals.html 200
+
 /certifications /certification-tracker.html 301
 /certification-tracker /certification-tracker.html 301
 /my-certs /certification-tracker.html 301
