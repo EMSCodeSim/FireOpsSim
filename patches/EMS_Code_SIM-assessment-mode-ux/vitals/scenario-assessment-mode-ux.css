@@ -1,0 +1,612 @@
+/* Assessment Mode UX — onboarding, hotspots, progress, mobile polish */
+
+.assessment-mode-banner{
+  position:relative;
+  z-index:28;
+  display:grid;
+  gap:8px;
+  margin:0 0 8px;
+  padding:11px 12px;
+  border:1px solid #3d7ea3;
+  border-radius:14px;
+  background:linear-gradient(135deg,#0d2a3d,#12384f 55%,#0f3146);
+  color:#e8f4fb;
+  box-shadow:0 10px 24px rgba(0,0,0,.22);
+}
+.assessment-mode-banner[hidden]{display:none!important}
+.assessment-mode-banner-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:10px;
+}
+.assessment-mode-banner-head small{
+  display:block;
+  font-size:.58rem;
+  font-weight:900;
+  letter-spacing:.1em;
+  color:#7fd0ff;
+}
+.assessment-mode-banner-head strong{
+  display:block;
+  margin-top:2px;
+  font-size:.92rem;
+  line-height:1.25;
+}
+.assessment-mode-banner-dismiss{
+  flex:0 0 auto;
+  min-width:44px;
+  min-height:44px;
+  border:1px solid #4b8caf;
+  border-radius:11px;
+  background:#173f5a;
+  color:#fff;
+  font:inherit;
+  font-weight:850;
+  cursor:pointer;
+}
+.assessment-mode-banner-steps{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  align-items:center;
+  font-size:.74rem;
+  line-height:1.35;
+  color:#c5dbe8;
+}
+.assessment-mode-banner-steps b{color:#fff}
+.assessment-mode-banner-steps .step-arrow{opacity:.55;font-weight:700}
+
+.assessment-flow-rail{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:5px;
+  margin:0 0 8px;
+  padding:6px;
+  border:1px solid #31566d;
+  border-radius:13px;
+  background:#0a1f2e;
+}
+.assessment-flow-rail[hidden]{display:none!important}
+.assessment-flow-step{
+  appearance:none;
+  display:grid;
+  gap:2px;
+  min-height:44px;
+  padding:7px 6px;
+  border:1px solid transparent;
+  border-radius:10px;
+  background:transparent;
+  color:#9bb4c4;
+  text-align:center;
+  font:inherit;
+  cursor:pointer;
+  transition:background .2s,border-color .2s,color .2s,transform .2s;
+}
+.assessment-flow-step small{
+  font-size:.52rem;
+  font-weight:900;
+  letter-spacing:.08em;
+}
+.assessment-flow-step strong{
+  font-size:.68rem;
+  line-height:1.15;
+}
+.assessment-flow-step.is-current{
+  border-color:#67b9df;
+  background:#154867;
+  color:#fff;
+  box-shadow:0 0 0 1px rgba(103,185,223,.25);
+  transform:translateY(-1px);
+}
+.assessment-flow-step.is-done{
+  border-color:#3f8f6d;
+  background:#103a35;
+  color:#b7ead4;
+}
+.assessment-flow-step:focus-visible{
+  outline:2px solid #7fd0ff;
+  outline-offset:2px;
+}
+
+.patient-hotspot-layer{
+  position:absolute;
+  inset:0;
+  z-index:4;
+  pointer-events:none;
+}
+.patient-hotspot{
+  position:absolute;
+  pointer-events:auto;
+  min-width:44px;
+  min-height:44px;
+  border:1.5px solid rgba(127,208,255,.35);
+  border-radius:999px;
+  background:rgba(18,72,102,.18);
+  color:transparent;
+  font:inherit;
+  cursor:pointer;
+  touch-action:manipulation;
+  -webkit-tap-highlight-color:transparent;
+  transition:background .18s,border-color .18s,box-shadow .18s,transform .18s;
+}
+.patient-hotspot::after{
+  content:attr(data-label);
+  position:absolute;
+  left:50%;
+  bottom:calc(100% + 6px);
+  transform:translateX(-50%) translateY(4px);
+  padding:4px 8px;
+  border-radius:8px;
+  background:rgba(6,19,31,.94);
+  color:#e8f4fb;
+  font-size:.62rem;
+  font-weight:850;
+  white-space:nowrap;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .15s,transform .15s;
+}
+.patient-hotspot:hover,
+.patient-hotspot:focus-visible,
+.patient-hotspot.is-active{
+  background:rgba(79,179,255,.28);
+  border-color:#7fd0ff;
+  box-shadow:0 0 0 3px rgba(127,208,255,.2);
+  transform:scale(1.04);
+}
+.patient-hotspot:hover::after,
+.patient-hotspot:focus-visible::after,
+.patient-hotspot.is-active::after{
+  opacity:1;
+  transform:translateX(-50%) translateY(0);
+}
+.patient-hotspot.is-assessed{
+  border-color:#5fcf98;
+  background:rgba(46,148,109,.28);
+}
+.patient-hotspot.is-assessed::before{
+  content:'✓';
+  position:absolute;
+  right:-2px;
+  top:-2px;
+  display:grid;
+  place-items:center;
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  background:#1f7a55;
+  color:#fff;
+  font-size:.65rem;
+  font-weight:900;
+  line-height:1;
+  box-shadow:0 2px 6px rgba(0,0,0,.35);
+}
+.patient-hotspot-chip-row{
+  position:absolute;
+  left:8px;
+  right:8px;
+  bottom:8px;
+  z-index:5;
+  display:flex;
+  flex-wrap:wrap;
+  gap:5px;
+  pointer-events:none;
+}
+.patient-finding-chip{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  max-width:100%;
+  padding:4px 8px;
+  border-radius:999px;
+  border:1px solid #3f8f6d;
+  background:rgba(16,58,53,.92);
+  color:#d7f5e7;
+  font-size:.62rem;
+  font-weight:850;
+  line-height:1.2;
+  animation:assessmentChipIn .35s ease;
+}
+.patient-finding-chip.abnormal{
+  border-color:#d99b19;
+  background:rgba(70,48,12,.92);
+  color:#ffe3a3;
+}
+@keyframes assessmentChipIn{
+  from{opacity:0;transform:translateY(6px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+.assessment-decision-progress{
+  margin:8px 0;
+  padding:10px 11px;
+  border:1px solid #31566d;
+  border-radius:13px;
+  background:#0b2231;
+  color:#d6e4ec;
+}
+.assessment-decision-progress[hidden]{display:none!important}
+.assessment-decision-progress>header{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:8px;
+}
+.assessment-decision-progress>header small{
+  display:block;
+  color:#7fd0ff;
+  font-size:.58rem;
+  font-weight:900;
+  letter-spacing:.09em;
+}
+.assessment-decision-progress>header strong{
+  display:block;
+  margin-top:2px;
+  color:#fff;
+  font-size:.88rem;
+}
+.assessment-decision-progress>header span{
+  flex:0 0 auto;
+  min-width:42px;
+  padding:5px 8px;
+  border-radius:999px;
+  background:#173f5a;
+  color:#fff;
+  font-size:.68rem;
+  font-weight:900;
+  text-align:center;
+}
+.assessment-discovered-summary{
+  margin:0 0 8px;
+  padding:8px 9px;
+  border-radius:10px;
+  background:#10283a;
+  font-size:.72rem;
+  line-height:1.4;
+  color:#b8cad7;
+}
+.assessment-discovered-summary b{color:#eef8fd}
+.assessment-req-list{
+  display:grid;
+  gap:5px;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.assessment-req-list li{
+  display:grid;
+  grid-template-columns:22px minmax(0,1fr);
+  gap:8px;
+  align-items:start;
+  padding:7px 8px;
+  border-radius:9px;
+  background:#10283a;
+  font-size:.72rem;
+  line-height:1.35;
+}
+.assessment-req-list li mark{
+  display:grid;
+  place-items:center;
+  width:18px;
+  height:18px;
+  margin-top:1px;
+  border-radius:50%;
+  background:#23475d;
+  color:#9bb4c4;
+  font-size:.65rem;
+  font-weight:900;
+}
+.assessment-req-list li.done{
+  background:#103a35;
+  color:#c8f0dc;
+}
+.assessment-req-list li.done mark{
+  background:#2e946d;
+  color:#fff;
+}
+.assessment-decision-unlock-toast{
+  position:fixed;
+  left:50%;
+  bottom:calc(86px + env(safe-area-inset-bottom));
+  z-index:80;
+  transform:translateX(-50%) translateY(8px);
+  width:min(420px,calc(100vw - 24px));
+  padding:12px 14px;
+  border:1px solid #67b9df;
+  border-radius:14px;
+  background:linear-gradient(135deg,#12384f,#0d2a3d);
+  color:#e8f4fb;
+  box-shadow:0 14px 30px rgba(0,0,0,.35);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .25s,transform .25s;
+}
+.assessment-decision-unlock-toast.is-visible{
+  opacity:1;
+  transform:translateX(-50%) translateY(0);
+  pointer-events:auto;
+  animation:assessmentUnlockPulse .7s ease;
+}
+.assessment-decision-unlock-toast small{
+  display:block;
+  color:#7fd0ff;
+  font-size:.58rem;
+  font-weight:900;
+  letter-spacing:.09em;
+}
+.assessment-decision-unlock-toast strong{
+  display:block;
+  margin-top:3px;
+  font-size:.9rem;
+}
+.assessment-decision-unlock-toast p{
+  margin:5px 0 0;
+  font-size:.74rem;
+  line-height:1.4;
+  color:#c5dbe8;
+}
+@keyframes assessmentUnlockPulse{
+  0%{box-shadow:0 0 0 0 rgba(127,208,255,.45)}
+  100%{box-shadow:0 14px 30px rgba(0,0,0,.35)}
+}
+
+.bottom-nav button .nav-progress{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:28px;
+  margin-top:2px;
+  padding:1px 5px;
+  border-radius:999px;
+  background:#173f5a;
+  color:#b8cad7;
+  font-size:.52rem;
+  font-weight:900;
+  line-height:1.2;
+}
+.bottom-nav button .nav-progress.is-complete{
+  background:#1f7a55;
+  color:#e8fff4;
+}
+.bottom-nav button.is-complete-action{
+  opacity:.72;
+}
+.bottom-nav button.is-complete-action:not(.active){
+  border-color:#3f8f6d;
+}
+.action-mini-result{
+  position:fixed;
+  left:50%;
+  bottom:calc(78px + env(safe-area-inset-bottom));
+  z-index:78;
+  transform:translateX(-50%) translateY(10px);
+  width:min(440px,calc(100vw - 20px));
+  padding:11px 13px;
+  border:1px solid #4b8caf;
+  border-radius:13px;
+  background:#0d2232;
+  color:#e8f4fb;
+  box-shadow:0 12px 28px rgba(0,0,0,.32);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .2s,transform .2s;
+}
+.action-mini-result.is-visible{
+  opacity:1;
+  transform:translateX(-50%) translateY(0);
+  pointer-events:auto;
+}
+.action-mini-result small{
+  display:block;
+  color:#7fd0ff;
+  font-size:.56rem;
+  font-weight:900;
+  letter-spacing:.08em;
+}
+.action-mini-result strong{
+  display:block;
+  margin-top:2px;
+  font-size:.86rem;
+}
+.action-mini-result p{
+  margin:4px 0 0;
+  font-size:.74rem;
+  line-height:1.4;
+  color:#c5dbe8;
+}
+
+.assessment-soft-prompt{
+  margin:8px 0;
+  padding:10px 11px;
+  border:1px dashed #9a7130;
+  border-radius:12px;
+  background:#2b2414;
+  color:#ffe3a3;
+}
+.assessment-soft-prompt[hidden]{display:none!important}
+.assessment-soft-prompt small{
+  display:block;
+  font-size:.56rem;
+  font-weight:900;
+  letter-spacing:.08em;
+  color:#ffd77c;
+}
+.assessment-soft-prompt strong{
+  display:block;
+  margin-top:2px;
+  font-size:.84rem;
+  color:#fff4d4;
+}
+.assessment-soft-prompt p{
+  margin:5px 0 8px;
+  font-size:.74rem;
+  line-height:1.4;
+}
+.assessment-soft-prompt-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+}
+.assessment-soft-prompt-actions button{
+  min-height:44px;
+  padding:8px 12px;
+  border:1px solid #d99b19;
+  border-radius:10px;
+  background:#4c3817;
+  color:#ffe3a3;
+  font:inherit;
+  font-weight:850;
+  cursor:pointer;
+}
+.assessment-soft-prompt-actions button.secondary{
+  border-color:#6b5a35;
+  background:transparent;
+}
+
+.care-log-entry.is-highlighted,
+.finding-log-entry.is-highlighted,
+#findingsList > * .is-highlighted,
+.log-entry.is-highlighted{
+  animation:findingHighlight 1.4s ease;
+  outline:2px solid #67b9df;
+  outline-offset:1px;
+}
+@keyframes findingHighlight{
+  0%{background:rgba(103,185,223,.28)}
+  100%{background:transparent}
+}
+
+.vp-timer.is-paused{
+  border-color:#9a7130;
+  background:#2b2414;
+}
+.vp-timer.is-paused #timer{color:#ffe3a3}
+.vp-timer .clock-pause-label{
+  display:none;
+  margin-top:2px;
+  color:#ffd77c;
+  font-size:.52rem;
+  font-weight:850;
+  letter-spacing:.04em;
+}
+.vp-timer.is-paused .clock-pause-label{display:block}
+
+.assessment-reset-progress{
+  margin-top:8px;
+  width:100%;
+  min-height:44px;
+  padding:10px 12px;
+  border:1px solid #4b8caf;
+  border-radius:11px;
+  background:#12384d;
+  color:#e8f4fb;
+  font:inherit;
+  font-weight:850;
+  text-align:left;
+  cursor:pointer;
+}
+.assessment-reset-progress small{
+  display:block;
+  margin-top:2px;
+  color:#91b9cc;
+  font-size:.68rem;
+  font-weight:650;
+}
+
+body.assessment-mode-ux .reasoning-card.locked.assessment-hidden{
+  background:#0b2231;
+  border-color:#31566d;
+}
+body.assessment-mode-ux .reasoning-card.just-unlocked{
+  animation:decisionUnlockCard .85s ease;
+  border-color:#67b9df;
+}
+@keyframes decisionUnlockCard{
+  0%{transform:scale(.98);box-shadow:0 0 0 0 rgba(127,208,255,.5)}
+  60%{transform:scale(1.01);box-shadow:0 0 0 8px rgba(127,208,255,.12)}
+  100%{transform:scale(1);box-shadow:none}
+}
+
+/* Mobile / iOS: single-column + sticky action bar polish */
+@media (max-width:767px){
+  body.assessment-mode-ux.mobile-simulator-v3 .vp-shell{
+    padding-bottom:calc(96px + env(safe-area-inset-bottom));
+  }
+  body.assessment-mode-ux.mobile-simulator-v3 .patient-stage{
+    height:min(42dvh,420px);
+    min-height:280px;
+  }
+  body.assessment-mode-ux.mobile-simulator-v3 #infoUpdateWindow{
+    max-height:none;
+  }
+  body.assessment-mode-ux.mobile-simulator-v3 #infoUpdateWindow.is-collapsed{
+    max-height:52px;
+    overflow:hidden;
+  }
+  body.assessment-mode-ux.mobile-simulator-v3 #infoUpdateWindow.is-collapsible > p{
+    max-height:3.6em;
+  }
+  body.assessment-mode-ux.mobile-simulator-v3 .assessment-flow-rail{
+    position:sticky;
+    top:54px;
+    z-index:24;
+  }
+  body.assessment-mode-ux.mobile-simulator-v3 .bottom-nav{
+    padding-top:8px;
+  }
+  body.assessment-mode-ux.mobile-simulator-v3 .bottom-nav button{
+    min-height:58px;
+    font-size:.58rem;
+  }
+  body.assessment-mode-ux.mobile-simulator-v3 .vp-timer{
+    position:relative;
+    z-index:20;
+  }
+  body.assessment-mode-ux.mobile-simulator-v3 .patient-hotspot::after{
+    font-size:.58rem;
+  }
+  body.assessment-mode-ux.mobile-simulator-v3 .clinical-reasoning-board{
+    margin-bottom:calc(12px + env(safe-area-inset-bottom));
+  }
+}
+
+@media (max-width:979px){
+  body.assessment-mode-ux .assessment-mode-banner,
+  body.assessment-mode-ux .assessment-flow-rail,
+  body.assessment-mode-ux .assessment-decision-progress,
+  body.assessment-mode-ux .assessment-soft-prompt{
+    margin-left:0;
+    margin-right:0;
+  }
+}
+
+.reasoning-discovery-list{margin-top:8px}
+body.horse-current-emt-call .clinical-reasoning-board,
+body.desktop-scenario-layout .clinical-reasoning-board{
+  background:#0b2231;
+  border-color:#31566d;
+  color:#d6e4ec;
+}
+body.horse-current-emt-call .reasoning-board-head,
+body.desktop-scenario-layout .reasoning-board-head{
+  background:linear-gradient(135deg,#12384f,#0d2a3d);
+  border-bottom-color:#31566d;
+}
+body.horse-current-emt-call .reasoning-board-head small,
+body.desktop-scenario-layout .reasoning-board-head small{color:#7fd0ff}
+body.horse-current-emt-call .reasoning-board-head strong,
+body.desktop-scenario-layout .reasoning-board-head strong{color:#fff}
+body.horse-current-emt-call .reasoning-card,
+body.desktop-scenario-layout .reasoning-card{
+  background:#10283a;
+  border-color:#31566d;
+  color:#d6e4ec;
+}
+body.horse-current-emt-call .reasoning-card>p,
+body.desktop-scenario-layout .reasoning-card>p{color:#b8cad7}
+body.horse-current-emt-call .assessment-req-list li,
+body.desktop-scenario-layout .assessment-req-list li{
+  background:#0b2231;
+}
