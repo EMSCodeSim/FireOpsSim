@@ -4,28 +4,60 @@
 <meta name="description" content="Free stage-aware fire and EMS career guidance, study guides, flashcards, decision simulations, professional tracking, firefighter training, pump tools, HazMat, wellness and leadership development.">
 <meta name="robots" content="index, follow, max-image-preview:large"><link rel="canonical" href="https://fireopssim.com/"><meta name="theme-color" content="#0f172a"><link rel="stylesheet" href="/styles.css"><script defer src="/calc-tools.js"></script>
 <style>
-/* Modern homepage — clean, readable, mobile-first */
-.home2-hero{background:#0f172a;color:#fff;border-bottom:3px solid #dc2626}
-.home2-grid{display:grid;grid-template-columns:1.05fr .95fr;min-height:480px;gap:2.5rem;align-items:stretch}
-.home2-copy{padding:4.2rem 0;align-self:center}
-.home2-copy h1{font-size:clamp(2.35rem,4.8vw,4.1rem);line-height:1.05;letter-spacing:-.035em;margin:.3rem 0 1rem;max-width:720px;font-weight:800}
-.home2-copy>p{color:#94a3b8;font-size:1.08rem;max-width:560px;line-height:1.6}
-.home2-photo{position:relative;overflow:hidden;border-radius:0 0 0 24px}
-.home2-photo img{width:100%;height:100%;object-fit:cover;display:block}
-.home2-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0f172a 0%,transparent 45%),linear-gradient(0deg,rgba(15,23,42,.7),transparent 50%)}
-.photo-label{position:absolute;left:1.25rem;bottom:1.25rem;z-index:2;border-left:3px solid #dc2626;padding:.6rem .85rem;background:rgba(15,23,42,.85);backdrop-filter:blur(8px);border-radius:0 10px 10px 0}
-.photo-label strong{display:block;font-size:.95rem}
-.photo-label span{color:#94a3b8;font-size:.82rem}
-.quick-grid{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid #e2e8f0;border-radius:16px;overflow:hidden;background:#fff;margin-top:-1.5rem;position:relative;z-index:3;box-shadow:0 8px 30px rgba(15,23,42,.08)}
-.quick-grid a{padding:1.1rem 1rem;text-decoration:none;color:inherit;border-right:1px solid #f1f5f9;transition:background .15s ease}
-.quick-grid a:hover{background:#f8fafc}
+/* Ideal FireOpsSim homepage — matched to concept mockup */
+:root{--ideal-red:#dc2626;--ideal-slate:#0f172a;--ideal-muted:#94a3b8;--ideal-line:#e2e8f0}
+
+.site-header{background:#fff;border-bottom:none}
+.site-header .nav{padding:14px 0}
+.brand strong{font-size:1.15rem;font-weight:800;letter-spacing:-.02em;color:#0f172a}
+.brand small{display:none}
+.nav-links a{font-size:.9rem;font-weight:600;color:#334155;padding:8px 12px;border-radius:8px}
+.nav-links a:hover{background:#f1f5f9;color:#0f172a}
+.nav-cta{background:#dc2626!important;color:#fff!important;border-radius:10px!important;padding:10px 18px!important;font-weight:650!important;box-shadow:0 4px 12px rgba(220,38,38,.25)}
+.nav-cta:hover{background:#b91c1c!important}
+
+/* thin red accent under header */
+.site-header:after{content:"";display:block;height:3px;background:#dc2626;width:100%}
+
+/* Hero */
+.home2-hero{background:#0f172a;color:#fff;position:relative;overflow:hidden;min-height:520px;border-bottom:0}
+.home2-grid{display:grid;grid-template-columns:1.1fr .9fr;min-height:520px;align-items:center;gap:2rem}
+.home2-copy{padding:4.5rem 0 5.5rem;align-self:center;position:relative;z-index:2}
+.home2-copy .section-kicker{color:#f87171;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin:0 0 .75rem}
+.home2-copy h1{font-size:clamp(2.6rem,5vw,4.4rem);line-height:1.02;letter-spacing:-.04em;margin:0 0 1.1rem;max-width:640px;font-weight:800;color:#fff}
+.home2-copy>p{color:#94a3b8;font-size:1.1rem;max-width:520px;line-height:1.65;margin:0 0 1.8rem}
+.hero-actions{display:flex;gap:.85rem;flex-wrap:wrap}
+.button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 24px;border-radius:12px;font-weight:650;font-size:.95rem;border:1px solid transparent;transition:all .18s ease}
+.button.primary{background:#dc2626;color:#fff;box-shadow:0 6px 20px rgba(220,38,38,.35)}
+.button.primary:hover{background:#b91c1c;transform:translateY(-1px)}
+.button.secondary{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+.button.secondary:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.5)}
+
+/* Photo side */
+.home2-photo{position:relative;height:100%;min-height:520px;overflow:hidden}
+.home2-photo img{width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block}
+.home2-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0f172a 0%,rgba(15,23,42,.55) 40%,transparent 70%),linear-gradient(0deg,rgba(15,23,42,.5),transparent 45%)}
+.photo-label{display:none} /* cleaner look for ideal version */
+
+/* Floating quick path strip */
+.quick-wrap{position:relative;z-index:5;margin-top:-3.2rem;padding-bottom:1rem}
+.quick-grid{display:grid;grid-template-columns:repeat(5,1fr);background:#fff;border:1px solid #e2e8f0;border-radius:18px;overflow:hidden;box-shadow:0 12px 40px rgba(15,23,42,.1)}
+.quick-grid a{display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding:1.35rem 1.15rem;text-decoration:none;color:inherit;border-right:1px solid #f1f5f9;transition:background .15s ease}
 .quick-grid a:last-child{border-right:0}
-.quick-grid span{display:block;color:#dc2626;font-weight:700;font-size:.68rem;text-transform:uppercase;letter-spacing:.07em}
-.quick-grid strong{display:block;margin:.3rem 0;font-size:.95rem;font-weight:700}
+.quick-grid a:hover{background:#f8fafc}
+.quick-grid .q-icon{width:36px;height:36px;border-radius:10px;background:#fef2f2;display:grid;place-items:center;font-size:1.1rem;margin-bottom:4px}
+.quick-grid strong{display:block;font-size:.98rem;font-weight:700;color:#0f172a;margin:0}
 .quick-grid small{color:#64748b;font-size:.8rem;line-height:1.35}
-.home2-section{padding:3.5rem 0}
+.quick-grid span{display:none} /* hide old uppercase labels */
+
+/* Rest of page polish */
+.home2-section{padding:3.8rem 0}
+.section-kicker{color:#dc2626;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin:0 0 .5rem}
+.section-title-row{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin-bottom:1.6rem;flex-wrap:wrap}
+.section-title-row h2{font-size:clamp(1.7rem,3.2vw,2.35rem);margin:0;font-weight:800;letter-spacing:-.03em;line-height:1.15;color:#0f172a}
+.section-title-row>p{color:#64748b;margin:0;max-width:380px;font-size:.95rem}
 .stage-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
-.stage-card2{border:1px solid #e2e8f0;border-radius:14px;padding:1.15rem;text-decoration:none;color:inherit;background:#fff;display:flex;flex-direction:column;min-height:175px;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;box-shadow:0 2px 8px rgba(15,23,42,.04)}
+.stage-card2{border:1px solid #e2e8f0;border-radius:14px;padding:1.2rem;text-decoration:none;color:inherit;background:#fff;display:flex;flex-direction:column;min-height:180px;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;box-shadow:0 2px 8px rgba(15,23,42,.04)}
 .stage-card2:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(15,23,42,.1);border-color:#cbd5e1}
 .stage-card2 span{font-size:.68rem;text-transform:uppercase;letter-spacing:.07em;color:#dc2626;font-weight:700}
 .stage-card2 strong{font-size:1.05rem;margin:.35rem 0;font-weight:700}
@@ -34,57 +66,54 @@
 .learning-band{background:#0f172a;color:#fff}
 .learning-band .section-title-row>p{color:#94a3b8}
 .learning-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
-.learning-card{border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);border-radius:14px;padding:1.15rem;transition:background .15s ease}
-.learning-card:hover{background:rgba(255,255,255,.08)}
+.learning-card{border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);border-radius:14px;padding:1.2rem}
 .learning-card span{color:#f87171;font-size:.68rem;text-transform:uppercase;font-weight:700;letter-spacing:.07em}
 .learning-card strong{display:block;font-size:1.05rem;margin:.3rem 0;font-weight:700}
 .learning-card p{color:#94a3b8;font-size:.88rem;line-height:1.45}
-.learning-card a{color:#fff;font-weight:650;text-decoration:underline;text-underline-offset:3px}
+.learning-card a{color:#fff;font-weight:650}
 .tool-grid2{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-.tool-grid2 a{border:1px solid #e2e8f0;border-radius:12px;padding:1rem;text-decoration:none;color:inherit;background:#fff;transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}
-.tool-grid2 a:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(15,23,42,.08);border-color:#cbd5e1}
+.tool-grid2 a{border:1px solid #e2e8f0;border-radius:12px;padding:1rem;text-decoration:none;color:inherit;background:#fff;transition:transform .15s ease,box-shadow .15s ease}
+.tool-grid2 a:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(15,23,42,.08)}
 .tool-grid2 strong{display:block;font-weight:700;margin-bottom:.25rem}
 .tool-grid2 span{font-size:.84rem;color:#64748b;line-height:1.4}
-.section-kicker{color:#dc2626;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin:0 0 .5rem}
-.section-title-row{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin-bottom:1.5rem;flex-wrap:wrap}
-.section-title-row h2{font-size:clamp(1.6rem,3vw,2.2rem);margin:0;font-weight:800;letter-spacing:-.025em;line-height:1.15}
-.section-title-row>p{color:#64748b;margin:0;max-width:380px;font-size:.95rem}
-.home-section-shaded{background:#f1f5f9}
+.home-section-shaded{background:#f8fafc}
 .sources{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.2rem 0}
-.sources a{padding:.5rem .9rem;border:1px solid #e2e8f0;border-radius:999px;background:#fff;font-size:.85rem;font-weight:600;color:#334155;transition:all .15s}
+.sources a{padding:.5rem .9rem;border:1px solid #e2e8f0;border-radius:999px;background:#fff;font-size:.85rem;font-weight:600;color:#334155}
 .sources a:hover{border-color:#dc2626;color:#dc2626;background:#fef2f2}
 .hx-note{color:#94a3b8;font-size:.82rem;margin-top:1rem}
 .continue{display:none;margin-top:1.2rem;padding:1rem 1.2rem;border-radius:12px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12)}
-.continue.show{display:block}
+.continue.show{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 .continue strong{display:block;font-size:1.05rem}
 .continue p{color:#94a3b8;margin:.3rem 0 0;font-size:.9rem}
-.hero-actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.6rem}
-.button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 22px;border-radius:12px;font-weight:650;font-size:.95rem;border:1px solid transparent;transition:all .18s ease}
-.button.primary{background:#dc2626;color:#fff;box-shadow:0 4px 14px rgba(220,38,38,.3)}
-.button.primary:hover{background:#b91c1c;transform:translateY(-1px)}
-.button.secondary{background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.25)}
-.button.secondary:hover{background:rgba(255,255,255,.16)}
+
 @media(max-width:980px){
   .home2-grid{grid-template-columns:1fr;min-height:auto}
-  .home2-photo{min-height:280px;border-radius:0}
-  .home2-copy{padding:3rem 0 2rem}
-  .quick-grid{grid-template-columns:repeat(3,1fr);margin-top:0}
+  .home2-photo{min-height:300px;order:-1}
+  .home2-copy{padding:2.5rem 0 4rem}
+  .quick-grid{grid-template-columns:repeat(3,1fr)}
   .stage-cards,.learning-grid{grid-template-columns:repeat(2,1fr)}
   .tool-grid2{grid-template-columns:1fr 1fr}
 }
 @media(max-width:640px){
   .quick-grid{grid-template-columns:1fr 1fr}
   .stage-cards,.learning-grid,.tool-grid2{grid-template-columns:1fr}
-  .home2-copy h1{font-size:2.2rem}
-  .section-title-row{flex-direction:column;align-items:flex-start}
+  .home2-copy h1{font-size:2.25rem}
   .hero-actions .button{width:100%}
+  .quick-wrap{margin-top:-2rem}
+  .nav-links a:not(.nav-cta){display:none} /* simplify mobile nav for cleanliness */
 }
 </style></head>
 <body class="site-refresh"><a class="skip-link" href="#main">Skip to main content</a>
-<header class="site-header"><nav class="nav shell"><a class="brand" href="/"><span class="brand-mark">FOS</span><span><strong>FireOpsSim</strong><small>Fire • EMS • Career</small></span></a><div class="nav-links"><a href="/career-stages.html">Career Stages</a><a href="/study-center.html">Study</a><a href="/fireground-decision-sim.html">Fire Sims</a><a href="/tools.html">Tools</a><a href="/training.html">Training</a><a class="nav-cta" href="/my-fire-career.html">My Career</a></div></nav></header>
+<header class="site-header"><nav class="nav shell"><a class="brand" href="/"><span class="brand-mark">FOS</span><span><strong>FireOpsSim</strong><small>Fire • EMS • Career</small></span></a><div class="nav-links"><a href="/career-stages.html">Career Stages</a><a href="/study-center.html">Study</a><a href="/fireground-decision-sim.html">Fire Sims</a><a href="/tools.html">Tools</a><a href="/training.html">Training</a><a class="nav-cta" href="/my-fire-career.html" style="background:#dc2626;color:#fff">Continue</a></div></nav></header>
 <main id="main">
-<section class="home2-hero"><div class="shell home2-grid"><div class="home2-copy"><p class="section-kicker">Free career-long fire & EMS learning</p><h1>Learn the next job before you need it.</h1><p>FireOpsSim now connects your career stage to the right study guides, flashcards, decision simulations, hands-on drills, career direction, professional tracking and field tools—from the first application through EMT/paramedic, firefighter, engineer, officer, instructor and late career.</p><div class="hero-actions"><a class="button primary" href="/career-stages.html">Find my stage</a><a class="button secondary" href="/study-center.html">Start studying</a></div></div><div class="home2-photo"><img src="/scenarios/wye_residential_split_001.webp" alt="Residential fire training scenario"><div class="photo-label"><strong>Study → decide → practice → document</strong><span>Use short loops that connect knowledge to actual performance.</span></div></div></div></section>
-<section class="shell"><div class="quick-grid"><a href="/study-center.html"><span>Study</span><strong>Guides + flashcards</strong><small>Automatically starts near your saved career stage →</small></a><a href="/fireground-decision-sim.html"><span>Decisions</span><strong>Run a fire sim</strong><small>Residential, apartment, commercial and basement cases →</small></a><a href="/career-plan-builder.html"><span>Direction</span><strong>Build a 90-day plan</strong><small>Training, education, experience and CE →</small></a><a href="/tools.html"><span>On shift</span><strong>Open a field tool</strong><small>Pump, water, HazMat, SCBA, ladder and reference tools →</small></a><a href="/my-fire-career.html"><span>Record</span><strong>Track my career</strong><small>Skills, calls, training, awards, projects and credentials →</small></a></div></section>
+<section class="home2-hero"><div class="shell home2-grid"><div class="home2-copy"><p class="section-kicker">Free career-long fire &amp; EMS learning</p><h1>Learn the next job before you need it</h1><p>Realistic simulations and targeted training for firefighters and EMS professionals. Advance your skills. Lead with confidence.</p><div class="hero-actions"><a class="button primary" href="/career-stages.html">Find my stage →</a><a class="button secondary" href="/fireground-decision-sim.html">▶ Launch a simulation</a></div></div><div class="home2-photo"><img src="/assets/fireops-hero.webp" alt="Firefighter at a training scenario"><div class="photo-label"></div></div></div></section>
+<section class="shell quick-wrap"><div class="quick-grid">
+<a href="/study-center.html"><div class="q-icon">📖</div><strong>Study</strong><small>Lessons and quizzes</small></a>
+<a href="/fireground-decision-sim.html"><div class="q-icon">🔥</div><strong>Run a Sim</strong><small>Immersive scenarios</small></a>
+<a href="/career-plan-builder.html"><div class="q-icon">📋</div><strong>Build a Plan</strong><small>ICS and response plans</small></a>
+<a href="/tools.html"><div class="q-icon">🔧</div><strong>Field Tools</strong><small>Checklists and calculators</small></a>
+<a href="/my-fire-career.html"><div class="q-icon">📊</div><strong>Track Progress</strong><small>Measure and grow</small></a>
+</div></section>
 <section class="home2-section shell"><div id="continueStage" class="continue"><div><strong id="continueTitle">Continue your saved career stage</strong><p id="continueText"></p></div><a class="button primary" href="/career-stages.html">Continue</a></div><div class="section-title-row"><div><p class="section-kicker">Your stage changes what matters</p><h2>Use the site like the person you are today.</h2></div><p>The same site should not send an EMT student, probationary firefighter and acting lieutenant to the same checklist.</p></div><div class="stage-cards">
 <a class="stage-card2" href="/career-stages.html"><span>Candidate</span><strong>Exploring fire / EMS</strong><p>Compare paths, understand hiring and school requirements, prepare physically and choose the next concrete step.</p><em>Candidate direction →</em></a>
 <a class="stage-card2" href="/ems-career.html"><span>EMS path</span><strong>EMT / paramedic</strong><p>School, first field year, paramedic development, recertification and long-term EMS growth.</p><em>EMS career center →</em></a>
