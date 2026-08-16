@@ -1,25 +1,149 @@
 @import url('/styles-base.css');
 
-/* FireOpsSim visual brand refresh — August 2026. */
+/* ============================================================
+   FireOpsSim Modern Visual System — August 2026
+   Clean · Professional · User-friendly · Mobile-first
+   ============================================================ */
+
+/* Brand mark (logo) */
 .brand-mark{
   font-size:0!important;
   color:transparent!important;
   text-indent:-9999px;
   overflow:hidden;
-  background-color:#0b1722!important;
+  background-color:#0f172a!important;
   background-image:url('/assets/fireops-training-emblem.png?v=20260814b')!important;
   background-repeat:no-repeat!important;
   background-position:center!important;
   background-size:contain!important;
-  border:1px solid rgba(255,255,255,.12);
-  box-shadow:0 8px 22px rgba(13,31,21,.2)!important;
+  border:1px solid rgba(255,255,255,.1);
+  box-shadow:0 4px 16px rgba(15,23,42,.22)!important;
+  border-radius:12px!important;
 }
 
-/* Homepage: use the new artwork as a real image, not only a CSS background.
-   Keeping the background provides a graceful fallback while content:url makes
-   the artwork visible to the browser, accessibility tooling and image crawlers. */
+/* ---------- Global polish ---------- */
+body{
+  background:var(--bg);
+  color:var(--ink);
+}
+
+/* Soften heavy green heroes toward modern slate */
+.hero,
+.subhero,
+.tools-hero,
+.resource-hero,
+.career-hero,
+.daily-subhero,
+.scenario-home-hero,
+.tools-subhero,
+.home-hero{
+  background:linear-gradient(145deg,#0f172a 0%,#1e293b 55%,#0f172a 100%)!important;
+}
+
+.dark-section,
+.footer,
+.site-footer-refresh{
+  background:#0f172a!important;
+}
+
+/* Primary accent → strong red */
+.eyebrow,
+.section-kicker,
+.site-refresh .eyebrow,
+.site-refresh .section-kicker{
+  color:#dc2626!important;
+}
+
+.hero .eyebrow,
+.subhero .eyebrow,
+.dark-section .eyebrow{
+  color:#f87171!important;
+}
+
+/* Buttons — modern rectangular with soft radius */
+.button.primary,
+.nav-cta{
+  background:#dc2626!important;
+  color:#fff!important;
+  box-shadow:0 4px 14px rgba(220,38,38,.28)!important;
+}
+.button.primary:hover,
+.nav-cta:hover{
+  background:#b91c1c!important;
+}
+
+/* Cards — cleaner, lighter, better hover */
+.mission-card,
+.tool-card,
+.content-card,
+.quick-tool,
+.app-card,
+.path-card,
+.notice,
+.stage-card2,
+.career-command-grid>a,
+.resource-card-grid article,
+.resource-card-grid>a,
+.rail-card,
+.engagement-card,
+.quick-find-grid a{
+  border-radius:14px!important;
+  box-shadow:0 2px 10px rgba(15,23,42,.04)!important;
+  border-color:#e2e8f0!important;
+}
+.mission-card:hover,
+.tool-card:hover,
+.path-card:hover,
+.career-command-grid>a:hover,
+.resource-card-grid>a:hover,
+.engagement-card:hover,
+.quick-find-grid a:hover{
+  box-shadow:0 12px 28px rgba(15,23,42,.1)!important;
+  border-color:#cbd5e1!important;
+  transform:translateY(-3px);
+}
+
+/* Tag / pill colors */
+.mission-card span,
+.tool-card span,
+.path-card span,
+.metric-row span,
+.badge,
+.career-command-grid span,
+.resource-card-grid span{
+  background:#fef2f2!important;
+  color:#dc2626!important;
+}
+
+/* Focus states — accessible red ring */
+:focus-visible{
+  outline:3px solid #f87171!important;
+  outline-offset:3px;
+}
+
+/* Form controls */
+.fields input,
+.fields select,
+.tool-search,
+.daily-answer-row input,
+.location-search-row input,
+.job-search-fields input,
+.job-search-fields select{
+  border-radius:10px!important;
+  border-color:#e2e8f0!important;
+  background:#fff!important;
+}
+.fields input:focus,
+.fields select:focus,
+.tool-search:focus{
+  border-color:#dc2626!important;
+  box-shadow:0 0 0 3px rgba(220,38,38,.15)!important;
+  outline:none;
+}
+
+/* Homepage artwork */
 .home2-photo{
-  background:#111820 url('/assets/fireops-hero.webp?v=20260814b') center center/cover no-repeat!important;
+  background:#0f172a url('/assets/fireops-hero.webp?v=20260814b') center center/cover no-repeat!important;
 }
 .home2-photo>img{
   content:url('/assets/fireops-hero.webp?v=20260814b');
@@ -31,9 +155,9 @@
   object-fit:cover!important;
 }
 
-/* Training Center: same resilient real-image treatment. */
+/* Training Center */
 .tr-photo{
-  background:#111820 url('/assets/fireops-career-training.webp?v=20260814b') center center/cover no-repeat!important;
+  background:#0f172a url('/assets/fireops-career-training.webp?v=20260814b') center center/cover no-repeat!important;
 }
 .tr-photo>img{
   content:url('/assets/fireops-career-training.webp?v=20260814b');
@@ -45,33 +169,64 @@
   object-fit:cover!important;
 }
 
-/* Daily Fire: station-learning image with readability veil. */
+/* Daily Fire hero */
 .df-hero{
   background:
-    linear-gradient(90deg,rgba(17,24,32,.99) 0%,rgba(17,24,32,.95) 43%,rgba(17,24,32,.58) 72%,rgba(17,24,32,.28) 100%),
+    linear-gradient(90deg,rgba(15,23,42,.98) 0%,rgba(15,23,42,.92) 42%,rgba(15,23,42,.55) 70%,rgba(15,23,42,.25) 100%),
     url('/assets/daily-fire-learning.webp?v=20260814b') 72% center/cover no-repeat!important;
 }
 .df-hero>.shell{position:relative;z-index:1;}
 
-/* Career stages: real career-development scene instead of the old CSS/FOS illustration. */
+/* Career stages art */
 .stage-hero-art{
-  background:#15212a url('/assets/fireops-career-training.webp?v=20260814b') center center/cover no-repeat!important;
-  box-shadow:0 22px 50px rgba(0,0,0,.2);
+  background:#0f172a url('/assets/fireops-career-training.webp?v=20260814b') center center/cover no-repeat!important;
+  box-shadow:0 16px 40px rgba(0,0,0,.18);
 }
-.stage-hero-art .helmet,.stage-hero-art .monitor-line{display:none!important;}
+.stage-hero-art .helmet,
+.stage-hero-art .monitor-line{display:none!important;}
 .stage-hero-art:before{
   inset:auto 0 0!important;
   width:100%!important;
   height:42%!important;
   transform:none!important;
-  background:linear-gradient(0deg,rgba(11,18,23,.82),transparent)!important;
+  background:linear-gradient(0deg,rgba(15,23,42,.85),transparent)!important;
 }
 
+/* Soften remaining green-tinted panels */
+.calc-output{
+  background:linear-gradient(135deg,#0f172a,#1e293b)!important;
+}
+.priority-card{
+  background:linear-gradient(180deg,#1e293b,#0f172a)!important;
+  border-color:rgba(248,113,113,.35)!important;
+}
+.soft-app-band,
+.quiet-app-strip,
+.readiness-score-card,
+.research-card,
+.question-generator-card{
+  background:linear-gradient(145deg,#0f172a,#1e293b)!important;
+}
+
+/* Footer links */
+.footer a:not(.brand):hover,
+.site-footer-refresh a:hover{
+  color:#f87171!important;
+}
+
+/* Mobile refinements */
 @media(max-width:620px){
-  .brand-mark{width:42px;height:42px;border-radius:13px;}
+  .brand-mark{width:40px;height:40px;border-radius:11px;}
   .df-hero{
     background:
-      linear-gradient(rgba(17,24,32,.92),rgba(17,24,32,.92)),
+      linear-gradient(rgba(15,23,42,.93),rgba(15,23,42,.93)),
       url('/assets/daily-fire-learning.webp?v=20260814b') center/cover no-repeat!important;
   }
+  .shell{width:min(100% - 28px,1120px)}
+}
+
+/* Improved touch targets on small screens */
+@media(max-width:640px){
+  .nav-links a{padding:12px 16px}
+  .button{min-height:48px}
 }
