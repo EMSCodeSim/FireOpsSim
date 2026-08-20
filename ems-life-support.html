@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BLS, ACLS & PALS Companion | FireOpsSim</title>
+<meta name="description" content="FireOps Career Roadmap companion for BLS/CPR, ACLS and PALS: issuer-dependent credentials, accepted-provider links, and how to practice without treating FireOpsSim as a protocol authority.">
+<link rel="canonical" href="https://fireopssim.com/ems-life-support.html">
+<link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/seo-guide.css">
+</head>
+<body class="site-refresh">
+<header class="site-header"><nav class="nav shell"><a class="brand" href="/"><span class="brand-mark">FOS</span><span><strong>FireOpsSim</strong><small>EMS credentials</small></span></a><div class="nav-links"><a href="/ems-career.html">EMS Career</a><a href="/school-finder.html?path=ems">Find training</a><a href="/taskbook-resources.html">Task Book hub</a></div></nav></header>
+<main>
+<section class="seo-hero"><div class="shell">
+  <span class="seo-pill" id="pill">EMS life support</span>
+  <h1 id="heroTitle">BLS, ACLS, and PALS: use the provider your department accepts.</h1>
+  <p>Career Road tracks these as certifications. They are issuer-dependent cards (AHA, Red Cross, or another accepted program), not FireOpsSim courses. This page tells you what to verify, where to enroll, and how to practice around the card.</p>
+</div></section>
+<section class="seo-wrap shell">
+  <div class="seo-grid">
+    <div>
+      <article class="seo-card seo-note"><h2>Source of truth</h2>
+        <p>Your department, medical director, and the card issuer decide which program counts, how often it expires, and whether a skills session is required. FireOpsSim will not substitute for the provider manual or a skills test.</p>
+      </article>
+      <article class="seo-card"><h2 id="focusTitle">What to do next</h2>
+        <ul id="focusList">
+          <li>Confirm which issuer your agency accepts.</li>
+          <li>Enroll in a current instructor-led or blended course if the card is expired or missing.</li>
+          <li>Keep the eCard or paper card with expiration in Career Road evidence.</li>
+          <li>Practice assessment and decision-making separately in EMSCodeSim — that is not BLS/ACLS credit.</li>
+        </ul>
+      </article>
+    </div>
+    <aside>
+      <article class="seo-card"><h2>Official providers</h2>
+        <div class="seo-links">
+          <a class="seo-link" href="https://cpr.heart.org/" rel="noopener"><strong>American Heart Association</strong><span>BLS, ACLS, PALS provider search</span></a>
+          <a class="seo-link" href="https://www.redcross.org/take-a-class" rel="noopener"><strong>American Red Cross</strong><span>CPR / BLS / first aid class finder</span></a>
+          <a class="seo-link" href="https://www.nremt.org/" rel="noopener"><strong>National Registry</strong><span>How CPR/BLS relates to NREMT maintenance</span></a>
+          <a class="seo-link" href="/school-finder.html?path=ems"><strong>EMS school finder</strong><span>State EMS office and accredited programs</span></a>
+        </div>
+      </article>
+      <article class="seo-card"><h2>Practice around the card</h2>
+        <div class="seo-links">
+          <a class="seo-link" href="https://emscodesim.com/" rel="noopener"><strong>EMSCodeSim</strong><span>Patient assessment and clinical decisions</span></a>
+          <a class="seo-link" href="/ems-career.html"><strong>EMS Career Center</strong><span>School → certification → first job</span></a>
+          <a class="seo-link" href="/first-100-ems-shifts.html"><strong>First 100 EMS Shifts</strong><span>Deliberate field development</span></a>
+          <a class="seo-link" href="/study-center.html?track=emt"><strong>EMT / paramedic study tracks</strong><span>FireOpsSim review, not a skills card</span></a>
+        </div>
+      </article>
+    </aside>
+  </div>
+</section>
+</main>
+<script>
+(() => {
+  const cert = new URLSearchParams(location.search).get('cert') || '';
+  const copy = {
+    bls: {
+      title: 'BLS / CPR',
+      items: ['Confirm AHA, Red Cross, or another accepted BLS/CPR card.','Renew before expiration — most cards last about two years.','A skills session is usually required; watching a video is not enough.','Store the eCard in Career Road; this page is not a completion record.']
+    },
+    acls: {
+      title: 'ACLS',
+      items: ['Use the current AHA (or accepted equivalent) ACLS provider course.','Study local cardiac-arrest and peri-arrest protocols with medical direction.','BLS is typically a prerequisite.','Practice assessment and team roles in EMSCodeSim without treating it as ACLS credit.']
+    },
+    pals: {
+      title: 'PALS',
+      items: ['Use the current accepted PALS provider course.','Pair it with pediatric assessment, dosing safety, and local pediatric protocols.','BLS is typically a prerequisite.','Keep pediatric equipment and Broselow/length-based tools current on your apparatus — separately from the card.']
+    }
+  }[cert];
+  if (!copy) return;
+  document.getElementById('pill').textContent = copy.title;
+  document.getElementById('heroTitle').textContent = copy.title + ': complete the accepted provider course, then keep the card current.';
+  document.getElementById('focusTitle').textContent = copy.title + ' checklist';
+  document.getElementById('focusList').innerHTML = copy.items.map(x => `<li>${x}</li>`).join('');
+})();
+</script>
+</body>
+</html>

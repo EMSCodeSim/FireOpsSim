@@ -1,0 +1,1582 @@
+From ff8783c31053d91dbb89d545e1be4fdc88ba412b Mon Sep 17 00:00:00 2001
+From: Cursor Agent <cursoragent@cursor.com>
+Date: Thu, 20 Aug 2026 02:16:06 +0000
+Subject: [PATCH] Deepen FireOpsSim integration with return URLs, focus drills,
+ and expanded prep tasks
+
+Add centralized FireOpsSim link builders that pass source=roadmap and firepath://
+return_url on every outbound handoff. Wire Daily Focus practice sessions to
+focus-drills.html, expand built-in preparation tasks beyond pumper-only coverage,
+cache the FireOpsSim taskbook catalog for richer companion links, and register
+firepath:// deep links so users can return from FireOpsSim to record progress.
+---
+ android/app/src/main/AndroidManifest.xml      |   7 +
+ ios/Runner/Info.plist                         |  11 +
+ lib/nav.dart                                  |  11 +
+ lib/pages/career/daily_focus_page.dart        |  49 +++
+ lib/pages/requirement/get_started_page.dart   |   2 +
+ lib/pages/task_book/task_detail_page.dart     |  95 ++--
+ .../task_book/task_detail_return_page.dart    |  94 ++++
+ lib/services/fireops_sim_catalog.dart         | 103 +++++
+ lib/services/fireops_sim_links.dart           | 200 +++++++++
+ lib/services/task_book_library.dart           | 407 +++++++++++++++++-
+ lib/services/task_book_resource_composer.dart |  91 ++--
+ lib/state/app_state.dart                      |   5 +
+ pubspec.yaml                                  |   1 +
+ test/fireops_sim_integration_test.dart        | 104 +++++
+ 14 files changed, 1103 insertions(+), 77 deletions(-)
+ create mode 100644 lib/pages/task_book/task_detail_return_page.dart
+ create mode 100644 lib/services/fireops_sim_catalog.dart
+ create mode 100644 lib/services/fireops_sim_links.dart
+ create mode 100644 test/fireops_sim_integration_test.dart
+
+diff --git a/android/app/src/main/AndroidManifest.xml b/android/app/src/main/AndroidManifest.xml
+index 35f89de..3d83bde 100644
+--- a/android/app/src/main/AndroidManifest.xml
++++ b/android/app/src/main/AndroidManifest.xml
+@@ -1,4 +1,5 @@
+ <manifest xmlns:android="http://schemas.android.com/apk/res/android">
++    <uses-permission android:name="android.permission.INTERNET"/>
+     <application
+         android:label="FireOps Career Road"
+         android:name="${applicationName}"
+@@ -20,6 +21,12 @@
+                 <action android:name="android.intent.action.MAIN"/>
+                 <category android:name="android.intent.category.LAUNCHER"/>
+             </intent-filter>
++            <intent-filter>
++                <action android:name="android.intent.action.VIEW"/>
++                <category android:name="android.intent.category.DEFAULT"/>
++                <category android:name="android.intent.category.BROWSABLE"/>
++                <data android:scheme="firepath"/>
++            </intent-filter>
+         </activity>
+         <meta-data
+             android:name="flutterEmbedding"
+diff --git a/ios/Runner/Info.plist b/ios/Runner/Info.plist
+index b1a6cb6..e5dbf30 100644
+--- a/ios/Runner/Info.plist
++++ b/ios/Runner/Info.plist
+@@ -45,5 +45,16 @@
+ 	<true/>
+ 	<key>UIApplicationSupportsIndirectInputEvents</key>
+ 	<true/>
++	<key>CFBundleURLTypes</key>
++	<array>
++		<dict>
++			<key>CFBundleURLName</key>
++			<string>com.fireopssim.careerroadmap</string>
++			<key>CFBundleURLSchemes</key>
++			<array>
++				<string>firepath</string>
++			</array>
++		</dict>
++	</array>
+ </dict>
+ </plist>
+diff --git a/lib/nav.dart b/lib/nav.dart
+index b4df2a7..46710c6 100644
+--- a/lib/nav.dart
++++ b/lib/nav.dart
+@@ -32,6 +32,7 @@ import 'package:firepath/pages/certifications/certification_detail_page.dart';
+ import 'package:firepath/pages/certifications/certification_picker_page.dart';
+ import 'package:firepath/pages/task_book/qualification_task_book_page.dart';
+ import 'package:firepath/pages/task_book/task_detail_page.dart';
++import 'package:firepath/pages/task_book/task_detail_return_page.dart';
+ import 'package:firepath/models/prefill.dart';
+ 
+ class AppRouter {
+@@ -221,6 +222,15 @@ class AppRouter {
+         pageBuilder: (context, state) =>
+             MaterialPage(child: TaskDetailPage(extra: state.extra)),
+       ),
++      GoRoute(
++        path: AppRoutes.taskDetailReturn,
++        name: 'task_detail_return',
++        pageBuilder: (context, state) => MaterialPage(
++          child: TaskDetailReturnPage(
++            query: state.uri.queryParameters,
++          ),
++        ),
++      ),
+       GoRoute(
+         path: AppRoutes.myPathLegacy,
+         name: 'task_book_customize',
+@@ -305,4 +315,5 @@ class AppRoutes {
+   static const String customTaskBookBuilder = '/task-book/custom/builder';
+   static const String qualificationTaskBook = '/task-book/qualification';
+   static const String taskDetail = '/task-book/task';
++  static const String taskDetailReturn = '/return/task';
+ }
+diff --git a/lib/pages/career/daily_focus_page.dart b/lib/pages/career/daily_focus_page.dart
+index 9ad582f..7699e61 100644
+--- a/lib/pages/career/daily_focus_page.dart
++++ b/lib/pages/career/daily_focus_page.dart
+@@ -11,10 +11,12 @@ import 'package:firepath/nav.dart';
+ import 'package:firepath/pages/career/quick_log_launcher.dart';
+ import 'package:firepath/services/career_record_store.dart';
+ import 'package:firepath/services/ecosystem_recommendations.dart';
++import 'package:firepath/services/fireops_sim_links.dart';
+ import 'package:firepath/widgets/ecosystem_recommendation_card.dart';
+ import 'package:firepath/services/task_book_library.dart';
+ import 'package:firepath/state/app_state.dart';
+ import 'package:firepath/theme.dart';
++import 'package:url_launcher/url_launcher.dart';
+ 
+ enum DailyFocusMode { fifteen, thirty, sixty, crew }
+ 
+@@ -130,6 +132,8 @@ class _DailyFocusPageState extends State<DailyFocusPage> {
+                     goalId: goalId!,
+                     requirement: next,
+                     task: task,
++                    goalTitle: roadmap?.goal.title,
++                    certId: next.certificationDefinitionId,
+                     onOpenTask: task == null
+                         ? () => context.go(AppRoutes.myPath)
+                         : () => context.push(
+@@ -141,6 +145,11 @@ class _DailyFocusPageState extends State<DailyFocusPage> {
+                               'task': task,
+                             },
+                           ),
++                    onPracticeDrill: () => _openFocusDrills(
++                      certId: next.certificationDefinitionId,
++                      topic: task?.title ?? next.name,
++                      goal: roadmap?.goal.title,
++                    ),
+                     onRecord: () => QuickLogLauncher.open(
+                       context,
+                       prefill: LogPrefill(
+@@ -184,6 +193,21 @@ class _DailyFocusPageState extends State<DailyFocusPage> {
+     }
+     return tasks.isEmpty ? null : tasks.first;
+   }
++
++  static Future<void> _openFocusDrills({
++    String? certId,
++    required String topic,
++    String? goal,
++  }) async {
++    final uri = FireOpsSimLinks.focusDrillsUri(
++      certId: certId,
++      topic: topic,
++      goal: goal,
++      returnUrl: FireOpsSimLinks.dailyFocusReturnUri().toString(),
++    );
++    final ok = await launchUrl(uri, mode: LaunchMode.externalApplication);
++    if (!ok) debugPrint('launchUrl failed for $uri');
++  }
+ }
+ 
+ class _Hero extends StatelessWidget {
+@@ -276,7 +300,10 @@ class _FocusPlan extends StatelessWidget {
+   final String goalId;
+   final Requirement requirement;
+   final TaskBookTaskDefinition? task;
++  final String? goalTitle;
++  final String? certId;
+   final VoidCallback onOpenTask;
++  final VoidCallback onPracticeDrill;
+   final VoidCallback onRecord;
+ 
+   const _FocusPlan({
+@@ -284,7 +311,10 @@ class _FocusPlan extends StatelessWidget {
+     required this.goalId,
+     required this.requirement,
+     required this.task,
++    required this.goalTitle,
++    required this.certId,
+     required this.onOpenTask,
++    required this.onPracticeDrill,
+     required this.onRecord,
+   });
+ 
+@@ -364,6 +394,18 @@ class _FocusPlan extends StatelessWidget {
+             ),
+           ),
+           const SizedBox(height: 8),
++          if (_showsPracticeDrill) ...[
++            SizedBox(
++              width: double.infinity,
++              height: 48,
++              child: OutlinedButton.icon(
++                onPressed: onPracticeDrill,
++                icon: const Icon(Icons.fitness_center_outlined),
++                label: const Text('Practice on FireOpsSim'),
++              ),
++            ),
++            const SizedBox(height: 8),
++          ],
+           SizedBox(
+             width: double.infinity,
+             height: 48,
+@@ -414,6 +456,13 @@ class _FocusPlan extends StatelessWidget {
+       ],
+     };
+   }
++
++  bool get _showsPracticeDrill => switch (mode) {
++    DailyFocusMode.fifteen => false,
++    DailyFocusMode.thirty => true,
++    DailyFocusMode.sixty => true,
++    DailyFocusMode.crew => true,
++  };
+ }
+ 
+ class _EmptyFocus extends StatelessWidget {
+diff --git a/lib/pages/requirement/get_started_page.dart b/lib/pages/requirement/get_started_page.dart
+index dacb866..afee3d1 100644
+--- a/lib/pages/requirement/get_started_page.dart
++++ b/lib/pages/requirement/get_started_page.dart
+@@ -10,6 +10,7 @@ import 'package:firepath/models/certification.dart';
+ import 'package:firepath/models/resource.dart';
+ import 'package:firepath/nav.dart';
+ import 'package:firepath/services/catalog.dart';
++import 'package:firepath/services/fireops_sim_links.dart';
+ import 'package:firepath/services/task_book_resource_composer.dart';
+ import 'package:firepath/state/app_state.dart';
+ import 'package:firepath/theme.dart';
+@@ -63,6 +64,7 @@ class GetStartedPage extends StatelessWidget {
+             certId: certId,
+             stateCode: userState,
+             catalogCombined: combined,
++            returnUrl: FireOpsSimLinks.careerReturnUri(path: '/path').toString(),
+           );
+ 
+     final official = composed?.official ?? const <Resource>[];
+diff --git a/lib/pages/task_book/task_detail_page.dart b/lib/pages/task_book/task_detail_page.dart
+index 0c660fa..7454da0 100644
+--- a/lib/pages/task_book/task_detail_page.dart
++++ b/lib/pages/task_book/task_detail_page.dart
+@@ -12,6 +12,7 @@ import 'package:firepath/theme.dart';
+ import 'package:firepath/pages/career/quick_log_launcher.dart';
+ import 'package:firepath/models/resource.dart';
+ import 'package:firepath/services/catalog.dart';
++import 'package:firepath/services/fireops_sim_links.dart';
+ import 'package:firepath/services/task_book_resource_composer.dart';
+ 
+ Future<void> _openExternalUrl(String url) async {
+@@ -63,12 +64,19 @@ class TaskDetailPage extends StatelessWidget {
+       }
+     }
+ 
++    final returnUrl = FireOpsSimLinks.taskDetailReturnUri(
++      goalId: goalId,
++      requirementId: requirementId,
++      taskId: task.id,
++    ).toString();
++
+     final catalog = FireOpsCatalog.resources();
+     final combinedRefs = TaskBookResourceComposer.buildTaskDetailReferences(
+       certId: certificationDefinitionId,
+       taskId: task.id,
+       stateCode: FireOpsCatalog.stateCodeFromLegacyValue(state.profile.state),
+       catalogCombined: catalog,
++      returnUrl: returnUrl,
+     );
+ 
+     return Scaffold(
+@@ -127,8 +135,12 @@ class TaskDetailPage extends StatelessWidget {
+             ),
+             const SizedBox(height: AppSpacing.md),
+             _CompanionCard(
++              goalId: goalId,
++              requirementId: requirementId,
+               certificationDefinitionId: certificationDefinitionId,
++              requirementName: qualificationName,
+               taskId: task.id,
++              taskTitle: task.title,
+               stateCode: FireOpsCatalog.stateCodeFromLegacyValue(state.profile.state),
+             ),
+             const SizedBox(height: AppSpacing.md),
+@@ -400,13 +412,21 @@ class _ExpandableListCard extends StatelessWidget {
+ }
+ 
+ class _CompanionCard extends StatelessWidget {
++  final String goalId;
++  final String requirementId;
+   final String? certificationDefinitionId;
++  final String? requirementName;
+   final String taskId;
++  final String taskTitle;
+   final String? stateCode;
+ 
+   const _CompanionCard({
++    required this.goalId,
++    required this.requirementId,
+     required this.certificationDefinitionId,
++    required this.requirementName,
+     required this.taskId,
++    required this.taskTitle,
+     required this.stateCode,
+   });
+ 
+@@ -415,33 +435,48 @@ class _CompanionCard extends StatelessWidget {
+     final cs = Theme.of(context).colorScheme;
+     final cert = certificationDefinitionId?.trim();
+     final state = stateCode?.trim().toUpperCase();
+-
+-    final taskQuery = <String, String>{
+-      'task': taskId,
+-      'source': 'roadmap',
+-      if (cert != null && cert.isNotEmpty) 'cert': cert,
+-      if (state != null && state.isNotEmpty) 'state': state,
+-    };
+-    final taskUri = Uri.https(
+-      'fireopssim.com',
+-      '/taskbook-resources.html',
+-      taskQuery,
+-    );
++    final returnUrl = FireOpsSimLinks.taskDetailReturnUri(
++      goalId: goalId,
++      requirementId: requirementId,
++      taskId: taskId,
++    ).toString();
+ 
+     final studyUri = cert == null || cert.isEmpty
+-        ? taskUri
+-        : Uri.https('fireopssim.com', '/study-guides.html', {'cert': cert});
+-
+-    const emsCerts = {'emt', 'aemt', 'paramedic', 'bls', 'acls', 'pals'};
+-    final finderQuery = <String, String>{
+-      'path': emsCerts.contains(cert) ? 'ems' : 'fire',
+-      if (cert != null && cert.isNotEmpty) 'cert': cert,
+-      if (state != null && state.isNotEmpty) 'state': state,
+-    };
+-    final finderUri = Uri.https(
+-      'fireopssim.com',
+-      '/school-finder.html',
+-      finderQuery,
++        ? FireOpsSimLinks.taskbookResourcesUri(
++            certId: 'firefighter_1',
++            taskId: taskId,
++            stateCode: state,
++            returnUrl: returnUrl,
++          )
++        : FireOpsSimLinks.studyGuidesUri(certId: cert, returnUrl: returnUrl);
++
++    final taskUri = cert == null || cert.isEmpty
++        ? studyUri
++        : FireOpsSimLinks.taskbookResourcesUri(
++            certId: cert,
++            taskId: taskId,
++            stateCode: state,
++            returnUrl: returnUrl,
++            goal: requirementName,
++          );
++
++    final finderUri = cert == null || cert.isEmpty
++        ? FireOpsSimLinks.schoolFinderUri(
++            certId: 'firefighter_1',
++            stateCode: state,
++            returnUrl: returnUrl,
++          )
++        : FireOpsSimLinks.schoolFinderUri(
++            certId: cert,
++            stateCode: state,
++            returnUrl: returnUrl,
++          );
++
++    final focusUri = FireOpsSimLinks.focusDrillsUri(
++      certId: cert,
++      topic: taskTitle,
++      goal: requirementName,
++      returnUrl: returnUrl,
+     );
+ 
+     return Container(
+@@ -506,6 +541,16 @@ class _CompanionCard extends StatelessWidget {
+               label: const Text('Find a class'),
+             ),
+           ),
++          const SizedBox(height: AppSpacing.sm),
++          SizedBox(
++            width: double.infinity,
++            height: 50,
++            child: OutlinedButton.icon(
++              onPressed: () => _openExternalUrl(focusUri.toString()),
++              icon: const Icon(Icons.bolt_outlined),
++              label: const Text('Focus drills on FireOpsSim'),
++            ),
++          ),
+         ],
+       ),
+     );
+diff --git a/lib/pages/task_book/task_detail_return_page.dart b/lib/pages/task_book/task_detail_return_page.dart
+new file mode 100644
+index 0000000..397c3db
+--- /dev/null
++++ b/lib/pages/task_book/task_detail_return_page.dart
+@@ -0,0 +1,94 @@
++import 'package:flutter/material.dart';
++import 'package:go_router/go_router.dart';
++import 'package:provider/provider.dart';
++
++import 'package:firepath/models/requirement.dart';
++import 'package:firepath/models/task_book.dart';
++import 'package:firepath/nav.dart';
++import 'package:firepath/pages/task_book/task_detail_page.dart';
++import 'package:firepath/services/task_book_library.dart';
++import 'package:firepath/state/app_state.dart';
++
++/// Opens a Task Book task from a FireOpsSim `firepath://return/task` handoff.
++class TaskDetailReturnPage extends StatelessWidget {
++  final Map<String, String> query;
++  const TaskDetailReturnPage({super.key, required this.query});
++
++  @override
++  Widget build(BuildContext context) {
++    final goalId = query['goalId']?.trim() ?? '';
++    final requirementId = query['requirementId']?.trim() ?? '';
++    final taskId = query['taskId']?.trim() ?? '';
++
++    if (goalId.isEmpty || requirementId.isEmpty || taskId.isEmpty) {
++      WidgetsBinding.instance.addPostFrameCallback((_) {
++        if (context.mounted) context.go(AppRoutes.dailyFocus);
++      });
++      return const Scaffold(body: Center(child: CircularProgressIndicator()));
++    }
++
++    final state = context.watch<AppState>();
++    final roadmap = state.roadmap;
++    Requirement? requirement;
++    String? qualificationName;
++    if (roadmap != null) {
++      for (final item in roadmap.included) {
++        if (item.requirement.id == requirementId) {
++          requirement = item.requirement;
++          qualificationName = item.requirement.name;
++          break;
++        }
++      }
++    }
++
++    TaskBookTaskDefinition? task;
++    if (requirement != null) {
++      final tasks = <TaskBookTaskDefinition>[
++        ...TaskBookLibrary.tasksForRequirement(requirement),
++        ...state.customTasksFor(goalId: goalId, requirementId: requirementId),
++      ];
++      for (final candidate in tasks) {
++        if (candidate.id == taskId) {
++          task = candidate;
++          break;
++        }
++      }
++    }
++
++    if (task == null || requirement == null) {
++      return Scaffold(
++        appBar: AppBar(title: const Text('Return to Career Road')),
++        body: Padding(
++          padding: const EdgeInsets.all(24),
++          child: Column(
++            crossAxisAlignment: CrossAxisAlignment.stretch,
++            children: [
++              const Text(
++                'We could not reopen that exact preparation task. Your Career Road progress is still saved.',
++              ),
++              const SizedBox(height: 16),
++              FilledButton(
++                onPressed: () => context.go(AppRoutes.dailyFocus),
++                child: const Text('Open Daily Focus'),
++              ),
++              const SizedBox(height: 8),
++              OutlinedButton(
++                onPressed: () => context.go(AppRoutes.myPath),
++                child: const Text('Open Task Book'),
++              ),
++            ],
++          ),
++        ),
++      );
++    }
++
++    return TaskDetailPage(
++      extra: {
++        'goalId': goalId,
++        'requirementId': requirementId,
++        'qualificationName': qualificationName,
++        'task': task,
++      },
++    );
++  }
++}
+diff --git a/lib/services/fireops_sim_catalog.dart b/lib/services/fireops_sim_catalog.dart
+new file mode 100644
+index 0000000..4e5d8ff
+--- /dev/null
++++ b/lib/services/fireops_sim_catalog.dart
+@@ -0,0 +1,103 @@
++import 'dart:convert';
++
++import 'package:flutter/foundation.dart';
++import 'package:http/http.dart' as http;
++import 'package:shared_preferences/shared_preferences.dart';
++
++import 'package:firepath/services/fireops_sim_links.dart';
++
++/// Cached FireOpsSim taskbook catalog for richer companion links.
++class FireOpsSimCatalog {
++  FireOpsSimCatalog._();
++
++  static const String catalogUrl =
++      'https://fireopssim.com/data/taskbook-resources.json';
++  static const String _cacheKey = 'fireops_sim_catalog_v1';
++  static const String _cacheAtKey = 'fireops_sim_catalog_v1_at';
++  static const Duration _maxAge = Duration(days: 7);
++
++  static final FireOpsSimCatalog instance = FireOpsSimCatalog._();
++
++  Map<String, dynamic>? _memory;
++  DateTime? _memoryAt;
++
++  Future<Map<String, dynamic>?> load({bool refresh = false}) async {
++    if (!refresh && _memory != null) return _memory;
++
++    final prefs = await SharedPreferences.getInstance();
++    if (!refresh) {
++      final cached = prefs.getString(_cacheKey);
++      final cachedAtRaw = prefs.getString(_cacheAtKey);
++      if (cached != null && cachedAtRaw != null) {
++        final cachedAt = DateTime.tryParse(cachedAtRaw);
++        if (cachedAt != null &&
++            DateTime.now().difference(cachedAt) <= _maxAge) {
++          try {
++            _memory = jsonDecode(cached) as Map<String, dynamic>;
++            _memoryAt = cachedAt;
++            return _memory;
++          } catch (_) {
++            // fall through to network fetch
++          }
++        }
++      }
++    }
++
++    try {
++      final response = await http
++          .get(Uri.parse(catalogUrl))
++          .timeout(const Duration(seconds: 12));
++      if (response.statusCode != 200) return _memory;
++      final decoded = jsonDecode(response.body);
++      if (decoded is! Map<String, dynamic>) return _memory;
++      _memory = decoded;
++      _memoryAt = DateTime.now();
++      await prefs.setString(_cacheKey, response.body);
++      await prefs.setString(_cacheAtKey, _memoryAt!.toIso8601String());
++      return _memory;
++    } catch (e) {
++      debugPrint('FireOpsSimCatalog fetch failed: $e');
++      return _memory;
++    }
++  }
++
++  bool hasCertification(String certId, [Map<String, dynamic>? catalog]) {
++    final data = catalog ?? _memory;
++    if (data == null) return false;
++    final certs = data['certifications'];
++    if (certs is! Map) return false;
++    return certs.containsKey(certId);
++  }
++
++  bool hasTaskOverride(String taskId, [Map<String, dynamic>? catalog]) {
++    final data = catalog ?? _memory;
++    if (data == null) return false;
++    final overrides = data['taskOverrides'];
++    if (overrides is! Map) return false;
++    return overrides.containsKey(taskId);
++  }
++
++  Uri taskbookResourcesUri({
++    required String certId,
++    required String taskId,
++    String? stateCode,
++    String? goal,
++    String? returnUrl,
++    Map<String, dynamic>? catalog,
++  }) {
++    final data = catalog ?? _memory;
++    final resolvedCert =
++        hasCertification(certId, data) ? certId : certId.trim().toLowerCase();
++    return FireOpsSimLinks.taskbookResourcesUri(
++      certId: resolvedCert,
++      taskId: taskId,
++      stateCode: stateCode,
++      goal: goal,
++      returnUrl: returnUrl,
++    );
++  }
++
++  Future<void> warmCache() async {
++    await load();
++  }
++}
+diff --git a/lib/services/fireops_sim_links.dart b/lib/services/fireops_sim_links.dart
+new file mode 100644
+index 0000000..5dcde0f
+--- /dev/null
++++ b/lib/services/fireops_sim_links.dart
+@@ -0,0 +1,200 @@
++import 'package:flutter/foundation.dart';
++
++/// Stable FireOpsSim deep links with Career Road return handoff.
++@immutable
++class FireOpsSimLinks {
++  const FireOpsSimLinks._();
++
++  static const String host = 'fireopssim.com';
++  static const String returnScheme = 'firepath';
++
++  static const Set<String> _emsCerts = {
++    'emt',
++    'aemt',
++    'paramedic',
++    'bls',
++    'acls',
++    'pals',
++  };
++
++  static const Set<String> _icsCerts = {
++    'ics_100',
++    'ics_200',
++    'ics_300',
++    'ics_400',
++    'is_700',
++    'is_800',
++  };
++
++  static Uri careerReturnUri({
++    required String path,
++    Map<String, String>? query,
++  }) =>
++      Uri(
++        scheme: returnScheme,
++        path: path,
++        queryParameters: query?.isEmpty ?? true ? null : query,
++      );
++
++  static Uri dailyFocusReturnUri() => careerReturnUri(path: '/daily-focus');
++
++  static Uri taskDetailReturnUri({
++    required String goalId,
++    required String requirementId,
++    required String taskId,
++  }) =>
++      careerReturnUri(
++        path: '/return/task',
++        query: {
++          'goalId': goalId,
++          'requirementId': requirementId,
++          'taskId': taskId,
++        },
++      );
++
++  static String schoolFinderPath(String certId) {
++    if (_emsCerts.contains(certId)) return 'ems';
++    if (_icsCerts.contains(certId)) return 'ics';
++    return 'fire';
++  }
++
++  static String? focusLevelForCert(String? certId) {
++    switch (certId) {
++      case 'firefighter_1':
++        return 'firefighter_1';
++      case 'firefighter_2':
++        return 'firefighter_2';
++      case 'hazmat_awareness':
++      case 'hazmat_operations':
++      case 'hazmat_technician':
++        return 'hazmat_ops';
++      case 'driver_operator_pumper':
++      case 'driver_operator_aerial':
++        return 'driver_operator';
++      case 'fire_officer_1':
++      case 'fire_officer_2':
++      case 'fire_officer_3':
++      case 'fire_officer_4':
++      case 'fire_inspector_1':
++      case 'fire_inspector_2':
++      case 'fire_investigator':
++      case 'ics_100':
++      case 'ics_200':
++      case 'ics_300':
++      case 'ics_400':
++      case 'is_700':
++      case 'is_800':
++        return 'officer_1';
++      case 'fire_instructor_1':
++      case 'fire_instructor_2':
++        return 'instructor_1';
++      case 'emt':
++      case 'aemt':
++      case 'paramedic':
++      case 'bls':
++      case 'acls':
++      case 'pals':
++        return 'firefighter_2';
++      default:
++        return null;
++    }
++  }
++
++  static String? focusLevelForRequirementName(String? name) {
++    final n = (name ?? '').trim().toLowerCase();
++    if (n.isEmpty) return null;
++    if (n.contains('probation') || n.contains('academy') || n.contains('rookie')) {
++      return 'probationary';
++    }
++    if (n.contains('firefighter ii') || n.contains('firefighter 2') || n == 'ff2') {
++      return 'firefighter_2';
++    }
++    if (n.contains('firefighter i') || n.contains('firefighter 1') || n == 'ff1') {
++      return 'firefighter_1';
++    }
++    if (n.contains('hazmat')) return 'hazmat_ops';
++    if (n.contains('driver') || n.contains('operator') || n.contains('engineer')) {
++      return 'driver_operator';
++    }
++    if (n.contains('instructor')) return 'instructor_1';
++    if (n.contains('officer') || n.contains('lieutenant') || n.contains('captain')) {
++      return 'officer_1';
++    }
++    return null;
++  }
++
++  static Map<String, String> _sharedQuery({
++    String? returnUrl,
++    String? stateCode,
++    String? goal,
++  }) {
++    final state = stateCode?.trim().toUpperCase();
++    return {
++      'source': 'roadmap',
++      if (returnUrl != null && returnUrl.isNotEmpty) 'return_url': returnUrl,
++      if (state != null && state.isNotEmpty) 'state': state,
++      if (goal != null && goal.isNotEmpty) 'goal': goal,
++    };
++  }
++
++  static Uri taskbookResourcesUri({
++    required String certId,
++    String? taskId,
++    String? stateCode,
++    String? goal,
++    String? returnUrl,
++  }) {
++    final q = {
++      'cert': certId,
++      ..._sharedQuery(returnUrl: returnUrl, stateCode: stateCode, goal: goal),
++      if (taskId != null && taskId.isNotEmpty) 'task': taskId,
++    };
++    return Uri.https(host, '/taskbook-resources.html', q);
++  }
++
++  static Uri studyGuidesUri({
++    required String certId,
++    String? returnUrl,
++  }) =>
++      Uri.https(
++        host,
++        '/study-guides.html',
++        {
++          'cert': certId,
++          ..._sharedQuery(returnUrl: returnUrl),
++        },
++      );
++
++  static Uri schoolFinderUri({
++    required String certId,
++    String? stateCode,
++    String? returnUrl,
++  }) =>
++      Uri.https(
++        host,
++        '/school-finder.html',
++        {
++          'cert': certId,
++          'path': schoolFinderPath(certId),
++          ..._sharedQuery(returnUrl: returnUrl, stateCode: stateCode),
++        },
++      );
++
++  static Uri focusDrillsUri({
++    String? level,
++    String? topic,
++    String? certId,
++    String? goal,
++    String? returnUrl,
++  }) {
++    final resolvedLevel =
++        level ?? focusLevelForCert(certId) ?? focusLevelForRequirementName(topic);
++    final q = {
++      ..._sharedQuery(returnUrl: returnUrl, goal: goal),
++      if (resolvedLevel != null && resolvedLevel.isNotEmpty) 'level': resolvedLevel,
++      if (topic != null && topic.isNotEmpty) 'topic': topic,
++      if (certId != null && certId.isNotEmpty) 'cert': certId,
++    };
++    return Uri.https(host, '/focus-drills.html', q);
++  }
++}
+diff --git a/lib/services/task_book_library.dart b/lib/services/task_book_library.dart
+index a60a328..fa4c297 100644
+--- a/lib/services/task_book_library.dart
++++ b/lib/services/task_book_library.dart
+@@ -1,5 +1,6 @@
+ import 'package:firepath/models/requirement.dart';
+ import 'package:firepath/models/task_book.dart';
++import 'package:firepath/services/fireops_sim_links.dart';
+ 
+ /// Built-in FireOps Preparation Tasks.
+ ///
+@@ -17,6 +18,27 @@ class TaskBookLibrary {
+         certificationId: 'driver_operator_pumper',
+       );
+     }
++    if (defId == 'firefighter_1') {
++      return _withCompanionResources(_firefighter1(), certificationId: defId!);
++    }
++    if (defId == 'firefighter_2') {
++      return _withCompanionResources(_firefighter2(), certificationId: defId!);
++    }
++    if (defId == 'fire_officer_1') {
++      return _withCompanionResources(_fireOfficer1(), certificationId: defId!);
++    }
++    if (defId == 'hazmat_operations') {
++      return _withCompanionResources(_hazmatOperations(), certificationId: defId!);
++    }
++    if (defId == 'fire_investigator') {
++      return _withCompanionResources(_fireInvestigator(), certificationId: defId!);
++    }
++    if (defId == 'fire_inspector_1') {
++      return _withCompanionResources(_fireInspector1(), certificationId: defId!);
++    }
++    if (defId == 'emt') {
++      return _withCompanionResources(_emtBasics(), certificationId: defId!);
++    }
+     final name = r.name.trim().toLowerCase();
+     if (name.contains('driver operator') && name.contains('pumper')) {
+       return _withCompanionResources(
+@@ -24,6 +46,27 @@ class TaskBookLibrary {
+         certificationId: 'driver_operator_pumper',
+       );
+     }
++    if (name.contains('firefighter i') || name.contains('firefighter 1') || name == 'ff1') {
++      return _withCompanionResources(_firefighter1(), certificationId: 'firefighter_1');
++    }
++    if (name.contains('firefighter ii') || name.contains('firefighter 2') || name == 'ff2') {
++      return _withCompanionResources(_firefighter2(), certificationId: 'firefighter_2');
++    }
++    if (name.contains('fire officer i') || name.contains('company officer')) {
++      return _withCompanionResources(_fireOfficer1(), certificationId: 'fire_officer_1');
++    }
++    if (name.contains('hazmat') && name.contains('operations')) {
++      return _withCompanionResources(_hazmatOperations(), certificationId: 'hazmat_operations');
++    }
++    if (name.contains('investigator')) {
++      return _withCompanionResources(_fireInvestigator(), certificationId: 'fire_investigator');
++    }
++    if (name.contains('inspector i') || name.contains('inspector 1')) {
++      return _withCompanionResources(_fireInspector1(), certificationId: 'fire_inspector_1');
++    }
++    if (name.contains('emt') && !name.contains('paramedic')) {
++      return _withCompanionResources(_emtBasics(), certificationId: 'emt');
++    }
+     return const <TaskBookTaskDefinition>[];
+   }
+ 
+@@ -53,8 +96,11 @@ class TaskBookLibrary {
+               ...task.resources,
+               TaskBookResourceLink(
+                 title: 'FireOpsSim: study, practice, and training help',
+-                url:
+-                    'https://fireopssim.com/taskbook-resources.html?cert=$certificationId&task=${task.id}&source=roadmap',
++                url: FireOpsSimLinks.taskbookResourcesUri(
++                  certId: certificationId,
++                  taskId: task.id,
++                  returnUrl: FireOpsSimLinks.dailyFocusReturnUri().toString(),
++                ).toString(),
+                 type: TaskBookTaskResourceType.fireOpsGuide,
+                 issuingSource: 'FireOpsSim',
+                 notes:
+@@ -422,4 +468,361 @@ class TaskBookLibrary {
+       ),
+     ];
+   }
++
++  static List<TaskBookTaskDefinition> _firefighter1() {
++    const fireOps = 'FireOps Preparation Tasks';
++    return const [
++      TaskBookTaskDefinition(
++        id: 'ff1_ppe_scba',
++        title: 'PPE + SCBA readiness',
++        section: 'PERFORMANCE',
++        goalId: null,
++        requirementId: null,
++        isCustom: false,
++        fireOpsObjective: '$fireOps: Build a dependable ready-for-entry sequence with partner checks.',
++        whatToKnow: ['PPE layering order', 'SCBA donning/doffing sequence', 'PASS and low-air expectations'],
++        performanceTasks: ['Complete a full ready check with a partner', 'Explain one common interface failure point'],
++        safetyPoints: ['Never skip facepiece fit and PASS checks before entry.'],
++        commonMistakes: ['Rushing interfaces', 'Missing hood/glove overlap checks'],
++        practiceTools: [],
++        resources: [],
++      ),
++      TaskBookTaskDefinition(
++        id: 'ff1_tools',
++        title: 'Hand tools + forcible entry basics',
++        section: 'PERFORMANCE',
++        goalId: null,
++        requirementId: null,
++        isCustom: false,
++        fireOpsObjective: '$fireOps: Identify, carry, and use common hand tools safely.',
++        whatToKnow: ['Ax, halligan, pike pole, maul uses', 'Tool placement and striking safety'],
++        performanceTasks: ['Select tools for a simulated entry task', 'Demonstrate safe striking/ prying technique'],
++        safetyPoints: ['Maintain tool control and clear swing zones.'],
++        commonMistakes: ['Using the wrong tool for the task', 'Poor body position while forcing'],
++        practiceTools: [],
++        resources: [],
++      ),
++      TaskBookTaskDefinition(
++        id: 'ff1_hose',
++        title: 'Attack line deployment',
++        section: 'PERFORMANCE',
++        goalId: null,
++        requirementId: null,
++        isCustom: false,
++        fireOpsObjective: '$fireOps: Deploy a working attack line with good hose management.',
++        whatToKnow: ['Preconnect selection', 'Flaking/charging discipline', 'Nozzle team communication'],
++        performanceTasks: ['Deploy and charge a line to a simulated entry point', 'Manage kinks and door control'],
++        safetyPoints: ['Watch for hose movement and maintain door control.'],
++        commonMistakes: ['Charging before the line is set', 'Poor communication at the door'],
++        practiceTools: [],
++        resources: [],
++      ),
++    ];
++  }
++
++  static List<TaskBookTaskDefinition> _firefighter2() {
++    const fireOps = 'FireOps Preparation Tasks';
++    return const [
++      TaskBookTaskDefinition(
++        id: 'ff2_ventilation',
++        title: 'Horizontal ventilation coordination',
++        section: 'PERFORMANCE',
++        goalId: null,
++        requirementId: null,
++        isCustom: false,
++        fireOpsObjective: '$fireOps: Coordinate ventilation with fire attack and command.',
++        whatToKnow: ['Vent timing relative to attack', 'Coordination with interior crews', 'Reading smoke conditions'],
++        performanceTasks: ['Describe when and where you would vent for a given scenario', 'Practice coordinated radio communication'],
++        safetyPoints: ['Confirm location and accountability before opening up.'],
++        commonMistakes: ['Venting before water on fire', 'Poor coordination with interior crews'],
++        practiceTools: [],
++        resources: [],
++      ),
++      TaskBookTaskDefinition(
++        id: 'ff2_search',
++        title: 'Primary search fundamentals',
++        section: 'PERFORMANCE',
++        goalId: null,
++        requirementId: null,
++        isCustom: false,
++        fireOpsObjective: '$fireOps: Conduct a disciplined primary search with a partner.',
++        whatToKnow: ['Search patterns', 'Thermal imaging basics if available', 'Tagging and orientation'],
++        performanceTasks: ['Run a room-by-room search drill with a partner', 'Maintain contact and communication throughout'],
++        safetyPoints: ['Maintain crew integrity and a continuous hoseline or lifeline where required by SOP.'],
++        commonMistakes: ['Searching too fast without a system', 'Losing partner contact'],
++        practiceTools: [],
++        resources: [],
++      ),
++      TaskBookTaskDefinition(
++        id: 'ff2_rit',
++        title: 'RIT / rescue mindset',
++        section: 'PERFORMANCE',
++        goalId: null,
++        requirementId: null,
++        isCustom: false,
++        fireOpsObjective: '$fireOps: Understand rapid intervention preparation and packaging basics.',
++        whatToKnow: ['RIT staging expectations', 'Air supply and packaging priorities', 'Mayday basics'],
++        performanceTasks: ['Stage as RIT and rehearse a down-firefighter scenario', 'Practice air transfer / packaging steps per SOP'],
++        safetyPoints: ['RIT is not a secondary attack crew unless assigned.'],
++        commonMistakes: ['Staging without a plan', 'Skipping air/emergency priorities'],
++        practiceTools: [],
++        resources: [],
++      ),
++    ];
++  }
++
++  static List<TaskBookTaskDefinition> _fireOfficer1() {
++    const fireOps = 'FireOps Preparation Tasks';
++    return const [
++      TaskBookTaskDefinition(
++        id: 'fo1_sizeup',
++        title: 'Initial size-up',
++        section: 'KNOWLEDGE',
++        goalId: null,
++        requirementId: null,
++        isCustom: false,
++        fireOpsObjective: '$fireOps: Deliver a concise size-up that drives the first actions.',
++        whatToKnow: ['Building/use/occupancy clues', 'Smoke and fire conditions', 'Resource needs early'],
++        performanceTasks: ['Deliver a size-up for a simulated incident', 'Identify the first three tactical priorities'],
++        safetyPoints: ['Include life hazard and collapse/ egress concerns early.'],
++        commonMistakes: ['Too much detail before the first actions', 'Missing rear/sides conditions'],
++        practiceTools: [],
++        resources: [],
++      ),
++      TaskBookTaskDefinition(
++        id: 'fo1_crew_assign',
++        title: 'Crew assignments',
++        section: 'PERFORMANCE',
++        goalId: null,
++        requirementId: null,
++        isCustom: false,
++        fireOpsObjective: '$fireOps: Assign crews with clear objectives and accountability.',
++        whatToKnow: ['Span of control', 'PAR expectations', 'Staging and sector basics'],
++        performanceTasks: ['Assign crews for a small structure scenario', 'Conduct a PAR after simulated progress'],
++        safetyPoints: ['Every assignment needs a location, objective, and safety note.'],
++        commonMistakes: ['Vague assignments', 'Failing to track crew locations'],
++        practiceTools: [],
++        resources: [],
++      ),
++      TaskBookTaskDefinition(
++        id: 'fo1_radio',
++        title: 'Initial radio report',
++        section: 'PERFORMANCE',
++        goalId: null,
++        requirementId: null,
++        isCustom: false,
++        fireOpsObjective: '$fireOps: Give a clear first-on-scene report that sets command up for success.',
++        whatToKnow: ['Local report format', 'Command transfer expectations', 'Benchmark timing'],
++        performanceTasks: ['Deliver an arrival report on radio or simulated net', 'Request additional resources with justification'],
++        safetyPoints: ['Include working incident status and immediate hazards.'],
++        commonMistakes: ['Talking too long on the first report', 'Forgetting unit identification'],
++        practiceTools: [],
++        resources: [],
++      ),
++    ];
++  }
++
++  static List<TaskBookTaskDefinition> _hazmatOperations() {
++    const fireOps = 'FireOps Preparation Tasks';
++    return const [
++      TaskBookTaskDefinition(
++        id: 'hz_ops_isolation',
++        title: 'Isolation and zones',
++        section: 'KNOWLEDGE',
++        goalId: null,
++        requirementId: null,
++        isCustom: false,
++        fireOpsObjective: '$fireOps: Establish appropriate zones for a hazmat release.',
++        whatToKnow: ['Hot/warm/cold concepts', 'Wind and terrain effects', 'Evacuation/shelter basics'],
++        performanceTasks: ['Sketch zones for a simulated release', 'Explain entry team support needs'],
++        safetyPoints: ['Do not enter the hot zone without appropriate PPE and assignment.'],
++        commonMistakes: ['Underestimating downwind hazards', 'Poor access control'],
++        practiceTools: [],
++        resources: [],
++      ),
++      TaskBookTaskDefinition(
++        id: 'hz_ops_decon',
++        title: 'Emergency decontamination',
++        section: 'PERFORMANCE',
++        goalId: null,
++        requirementId: null,
++        isCustom: false,
++        fireOpsObjective: '$fireOps: Support gross and technical decon per local protocol.',
++        whatToKnow: ['Decon corridor setup', 'Contamination reduction priorities', 'Monitoring handoff'],
++        performanceTasks: ['Set up a basic decon corridor drill', 'Walk through responder decon steps'],
++        safetyPoints: ['Protect uncontaminated responders and the public.'],
++        commonMistakes: ['Cross-contamination at the cold line', 'Skipping monitoring'],
++        practiceTools: [],
++        resources: [],
++      ),
++      TaskBookTaskDefinition(
++        id: 'hz_ops_product_id',
++        title: 'Product identification support',
++        section: 'KNOWLEDGE',
++        goalId: null,
++        requirementId: null,
++        isCustom: false,
++        fireOpsObjective: '$fireOps: Gather and communicate clues for product identification.',
++        whatToKnow: ['Placards/labels/SDS basics', 'DOT guide use', 'Witness and container clues'],
++        performanceTasks: ['Use ERG/guide tools for a simulated product', 'Report findings to command clearly'],
++        safetyPoints: ['Treat unknown products as worst reasonable case until identified.'],
++        commonMistakes: ['Guessing without evidence', 'Poor documentation of clues'],
++        practiceTools: [],
++        resources: [],
++      ),
++    ];
++  }
++
++  static List<TaskBookTaskDefinition> _fireInvestigator() {
++    const fireOps = 'FireOps Preparation Tasks';
++    return const [
++      TaskBookTaskDefinition(
++        id: 'inv_cert',
++        title: 'Investigator certification path',
++        section: 'KNOWLEDGE',
++        goalId: null,
++        requirementId: null,
++        isCustom: false,
++        fireOpsObjective: '$fireOps: Confirm legal authority, training route, and documentation expectations.',
++        whatToKnow: ['State/agency investigator requirements', 'Legal authority limits', 'Training hour categories'],
++        performanceTasks: ['Map your agency investigator pathway', 'Identify required legal/training milestones'],
++        safetyPoints: ['Do not exceed your legal authority or agency assignment.'],
++        commonMistakes: ['Collecting evidence without authority', 'Skipping legal updates'],
++        practiceTools: [],
++        resources: [],
++      ),
++      TaskBookTaskDefinition(
++        id: 'inv_oc',
++        title: 'Origin and cause process',
++        section: 'PERFORMANCE',
++        goalId: null,
++        requirementId: null,
++        isCustom: false,
++        fireOpsObjective: '$fireOps: Follow a systematic origin-and-cause exam before forming conclusions.',
++        whatToKnow: ['Scene safety and legal hold', 'Area of origin concepts', 'Documentation sequence'],
++        performanceTasks: ['Walk through a mock scene using a systematic exam order', 'Document observations without conclusions first'],
++        safetyPoints: ['Scene safety and legal authority come before conclusions.'],
++        commonMistakes: ['Deciding cause too early', 'Poor scene documentation'],
++        practiceTools: [],
++        resources: [],
++      ),
++      TaskBookTaskDefinition(
++        id: 'inv_evidence',
++        title: 'Evidence awareness',
++        section: 'PERFORMANCE',
++        goalId: null,
++        requirementId: null,
++        isCustom: false,
++        fireOpsObjective: '$fireOps: Preserve and document evidence according to agency protocol.',
++        whatToKnow: ['Preservation priorities', 'Photography sequence', 'Chain-of-custody basics'],
++        performanceTasks: ['Photograph a mock scene with overall/mid/close views', 'Describe what you would preserve first'],
++        safetyPoints: ['Follow agency and prosecutor guidance for evidence handling.'],
++        commonMistakes: ['Disturbing evidence before documentation', 'Incomplete photo coverage'],
++        practiceTools: [],
++        resources: [],
++      ),
++    ];
++  }
++
++  static List<TaskBookTaskDefinition> _fireInspector1() {
++    const fireOps = 'FireOps Preparation Tasks';
++    return const [
++      TaskBookTaskDefinition(
++        id: 'prev_fi1',
++        title: 'Fire Inspector I walk-through',
++        section: 'PERFORMANCE',
++        goalId: null,
++        requirementId: null,
++        isCustom: false,
++        fireOpsObjective: '$fireOps: Conduct an organized occupancy inspection using local code references.',
++        whatToKnow: ['Inspection sequence', 'Common occupancy hazards', 'Documentation standards'],
++        performanceTasks: ['Perform a mock walk-through and note violations accurately', 'Explain corrective actions clearly'],
++        safetyPoints: ['Use appropriate PPE and follow agency inspection safety rules.'],
++        commonMistakes: ['Vague violation descriptions', 'Missing egress/extinguisher checks'],
++        practiceTools: [],
++        resources: [],
++      ),
++      TaskBookTaskDefinition(
++        id: 'prev_code',
++        title: 'Fire code navigation',
++        section: 'KNOWLEDGE',
++        goalId: null,
++        requirementId: null,
++        isCustom: false,
++        fireOpsObjective: '$fireOps: Practice finding requirements in the adopted code set.',
++        whatToKnow: ['Adopted code family in your AHJ', 'Common chapters for occupancies you inspect'],
++        performanceTasks: ['Locate code sections for a sample violation', 'Explain how local amendments apply'],
++        safetyPoints: ['Verify the AHJ-adopted edition before citing requirements.'],
++        commonMistakes: ['Citing the wrong code edition', 'Quoting from memory without verification'],
++        practiceTools: [],
++        resources: [],
++      ),
++      TaskBookTaskDefinition(
++        id: 'prev_bldg',
++        title: 'Building construction for inspectors',
++        section: 'KNOWLEDGE',
++        goalId: null,
++        requirementId: null,
++        isCustom: false,
++        fireOpsObjective: '$fireOps: Connect construction features to fire behavior and inspection comments.',
++        whatToKnow: ['Construction types', 'Compartmentation and openings', 'Protection systems basics'],
++        performanceTasks: ['Identify construction features in photos or a walk-through', 'Link features to likely fire spread concerns'],
++        safetyPoints: ['Do not guess construction type when documentation is available.'],
++        commonMistakes: ['Missing concealed spaces', 'Ignoring fire-resistance continuity'],
++        practiceTools: [],
++        resources: [],
++      ),
++    ];
++  }
++
++  static List<TaskBookTaskDefinition> _emtBasics() {
++    const fireOps = 'FireOps Preparation Tasks';
++    return const [
++      TaskBookTaskDefinition(
++        id: 'emt_assessment',
++        title: 'Primary patient assessment',
++        section: 'PERFORMANCE',
++        goalId: null,
++        requirementId: null,
++        isCustom: false,
++        fireOpsObjective: '$fireOps: Perform a systematic primary assessment and identify immediate threats.',
++        whatToKnow: ['Scene safety / BSI', 'ABCDE approach', 'Transport decision factors'],
++        performanceTasks: ['Run a primary assessment on a simulated patient', 'Verbalize findings and immediate interventions'],
++        safetyPoints: ['Scene safety and standard precautions first.'],
++        commonMistakes: ['Skipping scene size-up', 'Fixating on obvious injury and missing airway'],
++        practiceTools: [],
++        resources: [],
++      ),
++      TaskBookTaskDefinition(
++        id: 'emt_airway',
++        title: 'Airway and breathing support',
++        section: 'PERFORMANCE',
++        goalId: null,
++        requirementId: null,
++        isCustom: false,
++        fireOpsObjective: '$fireOps: Support airway and breathing within scope and medical direction.',
++        whatToKnow: ['Positioning', 'Basic adjuncts if authorized', 'Oxygen delivery basics'],
++        performanceTasks: ['Position and reassess a simulated airway problem', 'Select appropriate oxygen therapy per protocol'],
++        safetyPoints: ['Follow scope, protocol, and medical direction.'],
++        commonMistakes: ['Inadequate reassessment after intervention', 'Over-oxygenating without indication'],
++        practiceTools: [],
++        resources: [],
++      ),
++      TaskBookTaskDefinition(
++        id: 'emt_trauma',
++        title: 'Trauma assessment and immobilization',
++        section: 'PERFORMANCE',
++        goalId: null,
++        requirementId: null,
++        isCustom: false,
++        fireOpsObjective: '$fireOps: Identify life threats and perform basic trauma care within scope.',
++        whatToKnow: ['Mechanism of injury', 'Spine motion restriction concepts', 'Bleeding control priorities'],
++        performanceTasks: ['Complete a rapid trauma assessment', 'Demonstrate bleeding control and packaging steps per protocol'],
++        safetyPoints: ['Maintain spinal precautions when indicated by protocol.'],
++        commonMistakes: ['Missing hidden blood loss', 'Delayed transport for non-critical interventions'],
++        practiceTools: [],
++        resources: [],
++      ),
++    ];
++  }
+ }
+diff --git a/lib/services/task_book_resource_composer.dart b/lib/services/task_book_resource_composer.dart
+index f5996de..9f5d0ae 100644
+--- a/lib/services/task_book_resource_composer.dart
++++ b/lib/services/task_book_resource_composer.dart
+@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
+ 
+ import 'package:firepath/models/resource.dart';
+ import 'package:firepath/services/catalog.dart';
++import 'package:firepath/services/fireops_sim_links.dart';
+ 
+ /// Shared resource composition logic for Task Book flows.
+ ///
+@@ -14,36 +15,15 @@ import 'package:firepath/services/catalog.dart';
+ class TaskBookResourceComposer {
+   const TaskBookResourceComposer._();
+ 
+-  static const String _fireOpsSimHost = 'fireopssim.com';
+-
+-  static bool _isEmsCert(String? certId) {
+-    const emsCerts = {'emt', 'aemt', 'paramedic', 'bls', 'acls', 'pals'};
+-    final c = certId?.trim();
+-    if (c == null || c.isEmpty) return false;
+-    return emsCerts.contains(c);
+-  }
+-
+-  static Uri fireOpsSimSchoolFinderUri({required String certId, required String? stateCode}) {
+-    final state = stateCode?.trim().toUpperCase();
+-    final q = <String, String>{
+-      'cert': certId,
+-      'path': _isEmsCert(certId) ? 'ems' : 'fire',
+-      if (state != null && state.isNotEmpty && state != FireOpsCatalog.otherStateCode) 'state': state,
+-    };
+-    return Uri.https(_fireOpsSimHost, '/school-finder.html', q);
+-  }
+-
+-  static Uri fireOpsSimStudyGuidesUri({required String certId}) => Uri.https(_fireOpsSimHost, '/study-guides.html', {'cert': certId});
+-
+-  static Uri fireOpsSimTaskbookResourcesUri({required String certId, required String taskId, required String? stateCode}) {
+-    final state = stateCode?.trim().toUpperCase();
+-    final q = <String, String>{
+-      'cert': certId,
+-      'task': taskId,
+-      'source': 'roadmap',
+-      if (state != null && state.isNotEmpty && state != FireOpsCatalog.otherStateCode) 'state': state,
+-    };
+-    return Uri.https(_fireOpsSimHost, '/taskbook-resources.html', q);
++  static List<Resource> _dedupe(List<Resource> input) {
++    final seen = <String>{};
++    final out = <Resource>[];
++    for (final r in input) {
++      final key = (r.url ?? r.id).trim();
++      if (key.isEmpty) continue;
++      if (seen.add(key)) out.add(r);
++    }
++    return out;
+   }
+ 
+   static Resource _link({
+@@ -73,21 +53,11 @@ class TaskBookResourceComposer {
+     );
+   }
+ 
+-  static List<Resource> _dedupe(List<Resource> input) {
+-    final seen = <String>{};
+-    final out = <Resource>[];
+-    for (final r in input) {
+-      final key = (r.url ?? r.id).trim();
+-      if (key.isEmpty) continue;
+-      if (seen.add(key)) out.add(r);
+-    }
+-    return out;
+-  }
+-
+   static _Sections buildGetStartedSections({
+     required String certId,
+     required String? stateCode,
+     required List<Resource> catalogCombined,
++    String? returnUrl,
+   }) {
+     final normalizedState = FireOpsCatalog.stateCodeFromLegacyValue(stateCode);
+ 
+@@ -96,9 +66,6 @@ class TaskBookResourceComposer {
+       final filtered = catalogCombined
+           .where((r) {
+             if (!types.contains(r.type)) return false;
+-            // If the user hasn't selected a state yet, do NOT surface any
+-            // state-specific links (avoids silently defaulting to a random state
+-            // like CO).
+             if (state == null || state.isEmpty) return r.state == null;
+             return true;
+           })
+@@ -145,14 +112,17 @@ class TaskBookResourceComposer {
+     final study = pick({ResourceType.studyResource, ResourceType.credentialingOrganization});
+     final practice = pick({ResourceType.practiceResource, ResourceType.fireOpsTool});
+ 
+-    // --- Deterministic FireOpsSim fallbacks (always helpful) ---
+     final fireOpsFinder = _link(
+       id: 'fireopssim_school_finder_$certId',
+       title: 'FireOpsSim School Finder',
+       description: 'Find nearby and verified classes for this certification.',
+       type: ResourceType.courseFinder,
+       sourceType: ResourceSourceType.training,
+-      url: fireOpsSimSchoolFinderUri(certId: certId, stateCode: normalizedState),
++      url: FireOpsSimLinks.schoolFinderUri(
++        certId: certId,
++        stateCode: normalizedState,
++        returnUrl: returnUrl,
++      ),
+       certId: certId,
+     );
+ 
+@@ -162,14 +132,30 @@ class TaskBookResourceComposer {
+       description: 'Study guide focused on the certification’s JPRs and testing topics.',
+       type: ResourceType.studyResource,
+       sourceType: ResourceSourceType.study,
+-      url: fireOpsSimStudyGuidesUri(certId: certId),
++      url: FireOpsSimLinks.studyGuidesUri(
++        certId: certId,
++        returnUrl: returnUrl,
++      ),
++      certId: certId,
++    );
++
++    final fireOpsFocus = _link(
++      id: 'fireopssim_focus_drills_$certId',
++      title: 'FireOpsSim Focus Drills',
++      description: 'Hands-on certification-level drills and a skill wheel on FireOpsSim.',
++      type: ResourceType.practiceResource,
++      sourceType: ResourceSourceType.study,
++      url: FireOpsSimLinks.focusDrillsUri(
++        certId: certId,
++        returnUrl: returnUrl,
++      ),
+       certId: certId,
+     );
+ 
+     final trainingOut = _dedupe([fireOpsFinder, ...training]);
+     final studyOut = _dedupe([fireOpsStudy, ...study]);
+     final officialOut = _dedupe(official);
+-    final practiceOut = _dedupe(practice);
++    final practiceOut = _dedupe([fireOpsFocus, ...practice]);
+ 
+     return _Sections(
+       official: officialOut,
+@@ -184,13 +170,13 @@ class TaskBookResourceComposer {
+     required String taskId,
+     required String? stateCode,
+     required List<Resource> catalogCombined,
++    String? returnUrl,
+   }) {
+     final c = certId?.trim();
+     if (c == null || c.isEmpty) return const <Resource>[];
+ 
+     final normalizedState = FireOpsCatalog.stateCodeFromLegacyValue(stateCode);
+ 
+-    // Start with the best "official/skill sheet" style resources.
+     final officialDocs = catalogCombined
+         .where(
+           (r) => r.relatedCertificationDefinitionIds.contains(c) &&
+@@ -214,7 +200,12 @@ class TaskBookResourceComposer {
+       description: 'Skill sheets, JPR references, and tools mapped to this task.',
+       type: ResourceType.studyResource,
+       sourceType: ResourceSourceType.study,
+-      url: fireOpsSimTaskbookResourcesUri(certId: c, taskId: taskId, stateCode: normalizedState),
++      url: FireOpsSimLinks.taskbookResourcesUri(
++        certId: c,
++        taskId: taskId,
++        stateCode: normalizedState,
++        returnUrl: returnUrl,
++      ),
+       certId: c,
+     );
+ 
+diff --git a/lib/state/app_state.dart b/lib/state/app_state.dart
+index 8cb3213..6fb91da 100644
+--- a/lib/state/app_state.dart
++++ b/lib/state/app_state.dart
+@@ -11,6 +11,7 @@ import 'package:firepath/models/requirement.dart';
+ import 'package:firepath/models/roadmap_models.dart';
+ import 'package:firepath/models/user_profile.dart';
+ import 'package:firepath/services/catalog.dart';
++import 'package:firepath/services/fireops_sim_catalog.dart';
+ import 'package:firepath/services/local_store.dart';
+ import 'package:firepath/services/timeline_planner.dart';
+ import 'package:firepath/models/task_book.dart';
+@@ -168,6 +169,10 @@ class AppState extends ChangeNotifier {
+ 
+       await certificationController.bootstrap();
+ 
++      FireOpsSimCatalog.instance.warmCache().catchError(
++        (Object e) => debugPrint('FireOpsSimCatalog warmCache failed: $e'),
++      );
++
+       assert(() {
+         FireOpsCatalog.validateCatalog();
+         return true;
+diff --git a/pubspec.yaml b/pubspec.yaml
+index 8c522d2..32e2545 100644
+--- a/pubspec.yaml
++++ b/pubspec.yaml
+@@ -9,6 +9,7 @@ environment:
+   flutter: ">=3.32.0"
+ 
+ dependencies:
++  http: ^1.2.2
+   url_launcher: ^6.3.0
+   shared_preferences: ^2.3.2
+   pdf: ^3.11.3
+diff --git a/test/fireops_sim_integration_test.dart b/test/fireops_sim_integration_test.dart
+new file mode 100644
+index 0000000..eb4548f
+--- /dev/null
++++ b/test/fireops_sim_integration_test.dart
+@@ -0,0 +1,104 @@
++import 'package:flutter_test/flutter_test.dart';
++
++import 'package:firepath/models/requirement.dart';
++import 'package:firepath/services/fireops_sim_links.dart';
++import 'package:firepath/services/task_book_library.dart';
++
++Requirement _certRequirement({
++  required String id,
++  required String name,
++  required String certificationDefinitionId,
++}) {
++  final now = DateTime(2026, 8, 20);
++  return Requirement(
++    id: id,
++    name: name,
++    category: 'Certification',
++    priority: RequirementPriority.core,
++    description: name,
++    type: RequirementType.certification,
++    requirementSource: RequirementSource.commonlyRequired,
++    defaultRequired: true,
++    stateDependent: false,
++    departmentDependent: false,
++    completed: false,
++    progressCurrent: null,
++    progressRequired: null,
++    progressUnit: null,
++    experienceValue: null,
++    experienceUnit: null,
++    certificationReference: name,
++    certificationDefinitionId: certificationDefinitionId,
++    allowExpiredCertification: false,
++    prerequisiteRequirementIds: const [],
++    resourceIds: const [],
++    resourceLinks: const [],
++    sortOrder: 10,
++    estimatedDurationDays: null,
++    recommendedLeadTimeDays: null,
++    canRunConcurrent: true,
++    timelineCategory: TimelineCategory.certification,
++    suggestedStartDate: null,
++    suggestedCompletionDate: null,
++    createdAt: now,
++    updatedAt: now,
++  );
++}
++
++void main() {
++  test('FireOpsSim taskbook links include return_url and source=roadmap', () {
++    final uri = FireOpsSimLinks.taskbookResourcesUri(
++      certId: 'driver_operator_pumper',
++      taskId: 'do_pumper_hydrant_ops',
++      stateCode: 'CO',
++      goal: 'Engineer',
++      returnUrl:
++          'firepath:///return/task?goalId=g1&requirementId=r1&taskId=do_pumper_hydrant_ops',
++    );
++    expect(uri.host, 'fireopssim.com');
++    expect(uri.queryParameters['source'], 'roadmap');
++    expect(uri.queryParameters['cert'], 'driver_operator_pumper');
++    expect(uri.queryParameters['task'], 'do_pumper_hydrant_ops');
++    expect(uri.queryParameters['state'], 'CO');
++    expect(uri.queryParameters['return_url'], startsWith('firepath://'));
++  });
++
++  test('school finder uses ICS path for ICS certifications', () {
++    final uri = FireOpsSimLinks.schoolFinderUri(certId: 'ics_100');
++    expect(uri.queryParameters['path'], 'ics');
++    expect(uri.queryParameters['cert'], 'ics_100');
++  });
++
++  test('focus drills map certification to training level', () {
++    final uri = FireOpsSimLinks.focusDrillsUri(
++      certId: 'hazmat_operations',
++      topic: 'Isolation and zones',
++      returnUrl: FireOpsSimLinks.dailyFocusReturnUri().toString(),
++    );
++    expect(uri.path, '/focus-drills.html');
++    expect(uri.queryParameters['level'], 'hazmat_ops');
++    expect(uri.queryParameters['source'], 'roadmap');
++    expect(uri.queryParameters['return_url'], startsWith('firepath://'));
++  });
++
++  test('TaskBookLibrary serves expanded certification prep tasks', () {
++    final req = _certRequirement(
++      id: 'req_ff1',
++      name: 'Firefighter I',
++      certificationDefinitionId: 'firefighter_1',
++    );
++    final tasks = TaskBookLibrary.tasksForRequirement(req);
++    expect(tasks.length, greaterThanOrEqualTo(3));
++    expect(tasks.map((t) => t.id), contains('ff1_ppe_scba'));
++  });
++
++  test('investigator tasks use FireOpsSim-aligned task IDs', () {
++    final req = _certRequirement(
++      id: 'req_inv',
++      name: 'Fire Investigator',
++      certificationDefinitionId: 'fire_investigator',
++    );
++    final tasks = TaskBookLibrary.tasksForRequirement(req);
++    expect(tasks.map((t) => t.id), containsAll(['inv_cert', 'inv_oc', 'inv_evidence']));
++  });
++}
+-- 
+2.43.0
+
