@@ -1,1 +1,1207 @@
-{"schemaVersion":1,"updatedAt":"2026-08-12","purpose":"Stable FireOpsSim resource catalog for FireOps Career Roadmap Taskbooks.","disclaimer":"FireOpsSim content is training/reference material, not an official skill sheet or certification authority. Verify department SOPs, state requirements, medical direction, current standards, and issuing-agency rules.","officialSources":[{"id":"proboard","label":"Pro Board Accredited Agencies","url":"https://theproboard.org/accredited-agencies/","scope":"Fire certification agency directory"},{"id":"ifsac","label":"IFSAC","url":"https://ifsac.org/","scope":"Accredited certifying entities and programs"},{"id":"nfa","label":"National Fire Academy","url":"https://www.usfa.fema.gov/nfa/courses/","scope":"Fire and EMS professional development courses"},{"id":"fema_is","label":"FEMA Independent Study","url":"https://training.fema.gov/is/crslist.aspx","scope":"Free ICS/NIMS and emergency management courses"},{"id":"caahep","label":"CAAHEP Find an Accredited Program","url":"https://www.caahep.org/students/find-an-accredited-program","scope":"Accredited allied health education programs, including paramedic programs"},{"id":"nremt","label":"National Registry of EMTs","url":"https://www.nremt.org/","scope":"National EMS certification information"},{"id":"fsri","label":"FSRI Fire Safety Academy","url":"https://training.fsri.org/","scope":"Fire research-based training"},{"id":"niosh","label":"NIOSH Firefighter Resources","url":"https://www.cdc.gov/niosh/firefighters/","scope":"Firefighter safety and health resources"}],"certifications":{"firefighter_1":{"title":"Firefighter I","category":"Firefighting","summary":"Build the entry-level knowledge and hands-on foundation expected of a structural firefighter. Exact certification requirements vary by state and agency.","study":[{"label":"Firefighter I & II tools","url":"/firefighter-1-2-tools.html","type":"fireOpsGuide"},{"label":"Stage Study Center","url":"/study-center.html?track=academy","type":"trainingGuide"},{"label":"Firefighter skills checklist","url":"/firefighter-skills-checklist.html","type":"trainingGuide"},{"label":"Fire Skill Wheel","url":"/fire-skill-wheel.html","type":"practice"}],"finderPath":"fire"},"firefighter_2":{"title":"Firefighter II","category":"Firefighting","summary":"Build beyond Firefighter I into advanced company-level skills, operations, communications, and readiness. Requirements vary by certifying authority.","study":[{"label":"Firefighter I & II tools","url":"/firefighter-1-2-tools.html","type":"fireOpsGuide"},{"label":"Working Firefighter Study Track","url":"/study-center.html?track=firefighter","type":"trainingGuide"},{"label":"Fireground Decision Sim","url":"/fireground-decision-sim.html","type":"practice"},{"label":"Fire Skill Wheel","url":"/fire-skill-wheel.html","type":"practice"}],"finderPath":"fire"},"hazmat_awareness":{"title":"Hazardous Materials Awareness","category":"HazMat","summary":"Recognition, isolation, notification, protective actions, and safe initial decision-making. Use the requirements adopted by your agency/state.","study":[{"label":"HazMat Awareness & Operations Center","url":"/hazmat-awareness-operations.html","type":"fireOpsGuide"},{"label":"HazMat Tools","url":"/hazmat-tools.html","type":"practice"},{"label":"HazMat Placard Reference","url":"/hazmat-placard-reference.html","type":"trainingGuide"}],"finderPath":"fire"},"hazmat_operations":{"title":"Hazardous Materials Operations","category":"HazMat","summary":"Operations-level defensive actions, PPE, decontamination, control zones, and risk-based response. Scope varies by local adoption and certification authority.","study":[{"label":"HazMat Awareness & Operations Center","url":"/hazmat-awareness-operations.html","type":"fireOpsGuide"},{"label":"HazMat Size-Up Checklist","url":"/hazmat-sizeup-checklist.html","type":"trainingGuide"},{"label":"Decon Corridor Planner","url":"/decon-corridor-planner.html","type":"practice"},{"label":"HazMat Tools","url":"/hazmat-tools.html","type":"practice"}],"finderPath":"fire"},"hazmat_technician":{"title":"Hazardous Materials Technician","category":"HazMat","summary":"Advanced technician development should be anchored to the certifying authority, team SOPs, equipment, chemistry, monitoring, control, and decon requirements.","study":[{"label":"HazMat Tools","url":"/hazmat-tools.html","type":"practice"},{"label":"HazMat Isolation Planner","url":"/hazmat-isolation-planner.html","type":"practice"},{"label":"Decon Corridor Planner","url":"/decon-corridor-planner.html","type":"practice"}],"finderPath":"fire"},"driver_operator_pumper":{"title":"Driver Operator – Pumper","category":"Driver / Operator","summary":"Build apparatus, driving, pump, hydraulics, water-supply, and troubleshooting competence. Use apparatus-specific manufacturer guidance and department SOPs for actual operation.","study":[{"label":"Driver/Operator Practice Center","url":"/driver-operator-practice.html","type":"fireOpsGuide"},{"label":"Pumper Flashcards","url":"/driver-operator-pumper-flashcards.html","type":"trainingGuide"},{"label":"Fire Pump Training Scenarios","url":"/fire-pump-training-scenarios.html","type":"practice"},{"label":"Pump Pressure Calculator","url":"/fire-pump-calculator.html","type":"practice"},{"label":"Hydrant Flow Calculator","url":"/hydrant-flow-calculator.html","type":"practice"}],"finderPath":"fire"},"driver_operator_aerial":{"title":"Driver Operator – Aerial","category":"Driver / Operator","summary":"Develop safe driving, placement, stabilization, aerial-device operation, load awareness, communications, and apparatus-specific proficiency.","study":[{"label":"Driver/Operator Study Track","url":"/study-center.html?track=driver","type":"trainingGuide"},{"label":"Driver/Operator Practice Center","url":"/driver-operator-practice.html","type":"fireOpsGuide"},{"label":"Fireground Decision Sim","url":"/fireground-decision-sim.html","type":"practice"}],"finderPath":"fire"},"fire_officer_1":{"title":"Fire Officer I","category":"Officer","summary":"Company-officer development: leadership, supervision, communications, crew development, incident decision-making, documentation, and organizational responsibilities.","study":[{"label":"Officer Study Track","url":"/study-center.html?track=officer","type":"trainingGuide"},{"label":"Company Officer Tools","url":"/company-officer-tools.html","type":"fireOpsGuide"},{"label":"Leadership Development","url":"/leadership-development.html","type":"fireOpsGuide"},{"label":"Fireground Decision Sim","url":"/fireground-decision-sim.html","type":"practice"}],"finderPath":"fire"},"fire_officer_2":{"title":"Fire Officer II","category":"Officer","summary":"Advanced company-officer development emphasizing administration, personnel development, planning, policy application, incident leadership, and organizational performance.","study":[{"label":"Officer Study Track","url":"/study-center.html?track=officer","type":"trainingGuide"},{"label":"Company Officer Tools","url":"/company-officer-tools.html","type":"fireOpsGuide"},{"label":"Leadership Development","url":"/leadership-development.html","type":"fireOpsGuide"}],"finderPath":"fire"},"fire_instructor_1":{"title":"Fire Instructor I","category":"Instructor","summary":"Prepare to deliver safe, organized instruction from prepared lesson plans, coach skills, evaluate learners, and document training.","study":[{"label":"Fire Instructor I Center","url":"/fire-instructor-1.html","type":"fireOpsGuide"},{"label":"Instructor Study Track","url":"/study-center.html?track=instructor","type":"trainingGuide"},{"label":"Firefighter Drill Builder","url":"/firefighter-drill-builder.html","type":"practice"}],"finderPath":"fire"},"fire_instructor_2":{"title":"Fire Instructor II","category":"Instructor","summary":"Advance into lesson-plan development, evaluation, program coordination, instructional improvement, and more complex training responsibilities.","study":[{"label":"Instructor Study Track","url":"/study-center.html?track=instructor","type":"trainingGuide"},{"label":"Fire Instructor I Center","url":"/fire-instructor-1.html","type":"fireOpsGuide"},{"label":"Firefighter Drill Builder","url":"/firefighter-drill-builder.html","type":"practice"}],"finderPath":"fire"},"fire_inspector_1":{"title":"Fire Inspector I","category":"Prevention","summary":"Foundational inspection development: code navigation, occupancy hazards, documentation, communication, and local enforcement processes.","study":[{"label":"Fire Inspector Tools","url":"/fire-inspector-tools.html","type":"fireOpsGuide"},{"label":"Fire Inspection Checklist","url":"/fire-inspection-checklist.html","type":"trainingGuide"},{"label":"Fire Code Violation Notes","url":"/fire-code-violation-notes.html","type":"practice"}],"finderPath":"fire"},"emt":{"title":"EMT","category":"EMS","summary":"Use FireOpsSim for career direction and broad review, while your approved education program, state EMS office, medical direction, and current certification authority remain the source of truth.","study":[{"label":"EMT Study Track","url":"/study-center.html?track=emt","type":"trainingGuide"},{"label":"EMS Career Center","url":"/ems-career.html","type":"fireOpsGuide"}],"finderPath":"ems"},"aemt":{"title":"Advanced EMT","category":"EMS","summary":"Use approved education, current state scope, medical direction, and certifying-agency requirements. FireOpsSim provides career and study support rather than protocol authority.","study":[{"label":"EMS Career Center","url":"/ems-career.html","type":"fireOpsGuide"},{"label":"EMT Study Track","url":"/study-center.html?track=emt","type":"trainingGuide"}],"finderPath":"ems"},"paramedic":{"title":"Paramedic","category":"EMS","summary":"Paramedic education and licensure are jurisdiction-dependent. Use accredited-program, state EMS, medical-direction, and certification sources for authoritative requirements.","study":[{"label":"Paramedic Study Track","url":"/study-center.html?track=paramedic","type":"trainingGuide"},{"label":"EMS Career Center","url":"/ems-career.html","type":"fireOpsGuide"},{"label":"First 100 EMS Shifts","url":"/first-100-ems-shifts.html","type":"trainingGuide"}],"finderPath":"ems"}},"taskOverrides":{"do_pumper_pump_theory":{"title":"Pump theory","note":"Review centrifugal-pump basics, net pump pressure concepts, priming, cavitation, gauges, and apparatus-specific controls.","links":[{"label":"Driver/Operator Practice Center","url":"/driver-operator-practice.html"},{"label":"Pumper Flashcards","url":"/driver-operator-pumper-flashcards.html"},{"label":"Pump Pressure Calculator","url":"/fire-pump-calculator.html"}]},"do_pumper_apparatus_inspection":{"title":"Daily apparatus inspection","note":"Use your department inspection sheet and manufacturer information as the primary checklist; use FireOpsSim to organize the learning points.","links":[{"label":"Driver/Operator Practice Center","url":"/driver-operator-practice.html"}]},"do_pumper_engage_pump":{"title":"Engage pump","note":"Practice the decision sequence, but follow the exact manufacturer and department procedure for your apparatus.","links":[{"label":"Fire Pump Training Scenarios","url":"/fire-pump-training-scenarios.html"},{"label":"Driver/Operator Practice Center","url":"/driver-operator-practice.html"}]},"do_pumper_hydrant_ops":{"title":"Hydrant operations","note":"Connect water-supply decisions to intake pressure, demand changes, and controlled valve operation.","links":[{"label":"Hydrant Flow Calculator","url":"/hydrant-flow-calculator.html"},{"label":"Fire Pump Training Scenarios","url":"/fire-pump-training-scenarios.html"}]},"do_pumper_drafting":{"title":"Drafting","note":"Focus on airtight suction setup, priming, lift, strainer placement, cavitation recognition, and maintaining a stable supply.","links":[{"label":"Driver/Operator Practice Center","url":"/driver-operator-practice.html"},{"label":"Fire Pump Training Scenarios","url":"/fire-pump-training-scenarios.html"}]},"do_pumper_friction_loss":{"title":"Friction loss + PDP","note":"Practice the math, then compare the result with your department's hose/nozzle package and operational target pressures.","links":[{"label":"Friction Loss Calculator","url":"/friction-loss-calculator.html"},{"label":"Friction Loss Table","url":"/friction-loss-table.html"},{"label":"Pump Pressure Calculator","url":"/fire-pump-calculator.html"}]},"do_pumper_multiple_attack_lines":{"title":"Multiple attack lines","note":"Practice changes in demand, communication, pressure control, and water-supply awareness as lines open and close.","links":[{"label":"Fire Pump Training Scenarios","url":"/fire-pump-training-scenarios.html"},{"label":"Scenario Library","url":"/scenario-library.html"}]},"do_pumper_master_streams":{"title":"Master stream operations","note":"Review high-flow demand, supply limitations, device/nozzle requirements, appliance considerations, and safe deployment.","links":[{"label":"Master Stream Calculator","url":"/master-stream-calculator.html"},{"label":"Fire Pump Training Scenarios","url":"/fire-pump-training-scenarios.html"}]},"do_pumper_relay_pumping":{"title":"Relay pumping","note":"Practice source/intermediate/attack pumper roles, communications, pressure management, and failure recognition.","links":[{"label":"Relay Pumping Calculator","url":"/relay-pumping-calculator.html"},{"label":"Fire Pump Training Scenarios","url":"/fire-pump-training-scenarios.html"}]},"do_pumper_troubleshooting":{"title":"Pump/supply troubleshooting","note":"Work one variable at a time: supply, valve position, air leaks, restrictions, cavitation, governor/mode, then discharge-side causes.","links":[{"label":"Driver/Operator Practice Center","url":"/driver-operator-practice.html"},{"label":"Fire Pump Training Scenarios","url":"/fire-pump-training-scenarios.html"}]}}}
+{
+  "schemaVersion": 2,
+  "updatedAt": "2026-08-20",
+  "purpose": "Stable FireOpsSim resource catalog covering every FireOps Career Roadmap certificationDefinitionId plus task-level companion links.",
+  "disclaimer": "FireOpsSim content is training/reference material, not an official skill sheet or certification authority. Verify department SOPs, state requirements, medical direction, current standards, and issuing-agency rules.",
+  "officialSources": [
+    {
+      "id": "proboard",
+      "label": "Pro Board Accredited Agencies",
+      "url": "https://theproboard.org/accredited-agencies/",
+      "scope": "Fire certification agency directory"
+    },
+    {
+      "id": "ifsac",
+      "label": "IFSAC",
+      "url": "https://ifsac.org/",
+      "scope": "Accredited certifying entities and programs"
+    },
+    {
+      "id": "nfa",
+      "label": "National Fire Academy",
+      "url": "https://www.usfa.fema.gov/nfa/courses/",
+      "scope": "Fire and EMS professional development courses"
+    },
+    {
+      "id": "fema_is",
+      "label": "FEMA Independent Study",
+      "url": "https://training.fema.gov/is/crslist.aspx",
+      "scope": "Free ICS/NIMS and emergency management courses"
+    },
+    {
+      "id": "caahep",
+      "label": "CAAHEP Find an Accredited Program",
+      "url": "https://www.caahep.org/students/find-an-accredited-program",
+      "scope": "Accredited allied health education programs, including paramedic programs"
+    },
+    {
+      "id": "nremt",
+      "label": "National Registry of EMTs",
+      "url": "https://www.nremt.org/",
+      "scope": "National EMS certification information"
+    },
+    {
+      "id": "fsri",
+      "label": "FSRI Fire Safety Academy",
+      "url": "https://training.fsri.org/",
+      "scope": "Fire research-based training"
+    },
+    {
+      "id": "niosh",
+      "label": "NIOSH Firefighter Resources",
+      "url": "https://www.cdc.gov/niosh/firefighters/",
+      "scope": "Firefighter safety and health resources"
+    },
+    {
+      "id": "aha",
+      "label": "American Heart Association",
+      "url": "https://cpr.heart.org/",
+      "scope": "BLS, ACLS, PALS and other accepted CPR/ALS provider programs"
+    },
+    {
+      "id": "redcross",
+      "label": "American Red Cross",
+      "url": "https://www.redcross.org/take-a-class",
+      "scope": "CPR/BLS and first aid provider courses accepted by many agencies"
+    },
+    {
+      "id": "fema_emi",
+      "label": "FEMA Emergency Management Institute",
+      "url": "https://training.fema.gov/",
+      "scope": "ICS, NIMS, and emergency-management independent study and resident courses"
+    },
+    {
+      "id": "iaai",
+      "label": "IAAI",
+      "url": "https://www.firearson.com/",
+      "scope": "Fire investigation professional development (credentialing varies)"
+    },
+    {
+      "id": "icc",
+      "label": "ICC",
+      "url": "https://www.iccsafe.org/",
+      "scope": "Code, inspector, and plans-examiner credentialing information"
+    }
+  ],
+  "certifications": {
+    "firefighter_1": {
+      "title": "Firefighter I",
+      "category": "Firefighting",
+      "summary": "Build the entry-level knowledge and hands-on foundation expected of a structural firefighter. Exact certification requirements vary by state and agency.",
+      "study": [
+        {
+          "label": "Firefighter I & II tools",
+          "url": "/firefighter-1-2-tools.html",
+          "type": "fireOpsGuide"
+        },
+        {
+          "label": "Stage Study Center",
+          "url": "/study-center.html?track=academy",
+          "type": "trainingGuide"
+        },
+        {
+          "label": "Firefighter skills checklist",
+          "url": "/firefighter-skills-checklist.html",
+          "type": "trainingGuide"
+        },
+        {
+          "label": "Firefighter I/II study tools",
+          "url": "/firefighter-1-2-tools.html",
+          "type": "fireOpsGuide"
+        },
+        {
+          "label": "Fire Skill Wheel",
+          "url": "/fire-skill-wheel.html",
+          "type": "practice"
+        },
+        {
+          "label": "Focus Drills — Firefighter I",
+          "url": "/focus-drills.html?source=roadmap&level=firefighter_1",
+          "type": "practice"
+        }
+      ],
+      "finderPath": "fire"
+    },
+    "firefighter_2": {
+      "title": "Firefighter II",
+      "category": "Firefighting",
+      "summary": "Build beyond Firefighter I into advanced company-level skills, operations, communications, and readiness. Requirements vary by certifying authority.",
+      "study": [
+        {
+          "label": "Firefighter I & II tools",
+          "url": "/firefighter-1-2-tools.html",
+          "type": "fireOpsGuide"
+        },
+        {
+          "label": "Working Firefighter Study Track",
+          "url": "/study-center.html?track=firefighter",
+          "type": "trainingGuide"
+        },
+        {
+          "label": "Fireground Decision Sim",
+          "url": "/fireground-decision-sim.html",
+          "type": "practice"
+        },
+        {
+          "label": "Fire Skill Wheel",
+          "url": "/fire-skill-wheel.html",
+          "type": "practice"
+        }
+      ],
+      "finderPath": "fire"
+    },
+    "hazmat_awareness": {
+      "title": "Hazardous Materials Awareness",
+      "category": "HazMat",
+      "summary": "Recognition, isolation, notification, protective actions, and safe initial decision-making. Use the requirements adopted by your agency/state.",
+      "study": [
+        {
+          "label": "HazMat Awareness & Operations Center",
+          "url": "/hazmat-awareness-operations.html",
+          "type": "fireOpsGuide"
+        },
+        {
+          "label": "HazMat Tools",
+          "url": "/hazmat-tools.html",
+          "type": "practice"
+        },
+        {
+          "label": "HazMat Placard Reference",
+          "url": "/hazmat-placard-reference.html",
+          "type": "trainingGuide"
+        },
+        {
+          "label": "HazMat Awareness study guide",
+          "url": "/hazmat-awareness-study-guide.html",
+          "type": "trainingGuide"
+        }
+      ],
+      "finderPath": "fire"
+    },
+    "hazmat_operations": {
+      "title": "Hazardous Materials Operations",
+      "category": "HazMat",
+      "summary": "Operations-level defensive actions, PPE, decontamination, control zones, and risk-based response. Scope varies by local adoption and certification authority.",
+      "study": [
+        {
+          "label": "HazMat Awareness & Operations Center",
+          "url": "/hazmat-awareness-operations.html",
+          "type": "fireOpsGuide"
+        },
+        {
+          "label": "HazMat Size-Up Checklist",
+          "url": "/hazmat-sizeup-checklist.html",
+          "type": "trainingGuide"
+        },
+        {
+          "label": "Decon Corridor Planner",
+          "url": "/decon-corridor-planner.html",
+          "type": "practice"
+        },
+        {
+          "label": "HazMat Tools",
+          "url": "/hazmat-tools.html",
+          "type": "practice"
+        },
+        {
+          "label": "HazMat Operations study guide",
+          "url": "/hazmat-operations-study-guide.html",
+          "type": "trainingGuide"
+        }
+      ],
+      "finderPath": "fire"
+    },
+    "hazmat_technician": {
+      "title": "Hazardous Materials Technician",
+      "category": "HazMat",
+      "summary": "Advanced technician development should be anchored to the certifying authority, team SOPs, equipment, chemistry, monitoring, control, and decon requirements.",
+      "study": [
+        {
+          "label": "HazMat Tools",
+          "url": "/hazmat-tools.html",
+          "type": "practice"
+        },
+        {
+          "label": "HazMat Isolation Planner",
+          "url": "/hazmat-isolation-planner.html",
+          "type": "practice"
+        },
+        {
+          "label": "Decon Corridor Planner",
+          "url": "/decon-corridor-planner.html",
+          "type": "practice"
+        }
+      ],
+      "finderPath": "fire"
+    },
+    "driver_operator_pumper": {
+      "title": "Driver Operator – Pumper",
+      "category": "Driver / Operator",
+      "summary": "Build apparatus, driving, pump, hydraulics, water-supply, and troubleshooting competence. Use apparatus-specific manufacturer guidance and department SOPs for actual operation.",
+      "study": [
+        {
+          "label": "Driver/Operator Practice Center",
+          "url": "/driver-operator-practice.html",
+          "type": "fireOpsGuide"
+        },
+        {
+          "label": "Pumper Flashcards",
+          "url": "/driver-operator-pumper-flashcards.html",
+          "type": "trainingGuide"
+        },
+        {
+          "label": "Fire Pump Training Scenarios",
+          "url": "/fire-pump-training-scenarios.html",
+          "type": "practice"
+        },
+        {
+          "label": "Pump Pressure Calculator",
+          "url": "/fire-pump-calculator.html",
+          "type": "practice"
+        },
+        {
+          "label": "Hydrant Flow Calculator",
+          "url": "/hydrant-flow-calculator.html",
+          "type": "practice"
+        },
+        {
+          "label": "Driver Operator Pumper study guide",
+          "url": "/driver-operator-pumper-study-guide.html",
+          "type": "trainingGuide"
+        },
+        {
+          "label": "Focus Drills — Driver/Operator",
+          "url": "/focus-drills.html?source=roadmap&level=driver_operator",
+          "type": "practice"
+        }
+      ],
+      "finderPath": "fire"
+    },
+    "driver_operator_aerial": {
+      "title": "Driver Operator – Aerial",
+      "category": "Driver / Operator",
+      "summary": "Develop safe driving, placement, stabilization, aerial-device operation, load awareness, communications, and apparatus-specific proficiency.",
+      "study": [
+        {
+          "label": "Driver/Operator Study Track",
+          "url": "/study-center.html?track=driver",
+          "type": "trainingGuide"
+        },
+        {
+          "label": "Driver/Operator Practice Center",
+          "url": "/driver-operator-practice.html",
+          "type": "fireOpsGuide"
+        },
+        {
+          "label": "Fireground Decision Sim",
+          "url": "/fireground-decision-sim.html",
+          "type": "practice"
+        }
+      ],
+      "finderPath": "fire"
+    },
+    "fire_officer_1": {
+      "title": "Fire Officer I",
+      "category": "Officer",
+      "summary": "Company-officer development: leadership, supervision, communications, crew development, incident decision-making, documentation, and organizational responsibilities.",
+      "study": [
+        {
+          "label": "Officer Study Track",
+          "url": "/study-center.html?track=officer",
+          "type": "trainingGuide"
+        },
+        {
+          "label": "Company Officer Tools",
+          "url": "/company-officer-tools.html",
+          "type": "fireOpsGuide"
+        },
+        {
+          "label": "Leadership Development",
+          "url": "/leadership-development.html",
+          "type": "fireOpsGuide"
+        },
+        {
+          "label": "Fireground Decision Sim",
+          "url": "/fireground-decision-sim.html",
+          "type": "practice"
+        },
+        {
+          "label": "Fire Officer I study guide",
+          "url": "/fire-officer-1-study-guide.html",
+          "type": "trainingGuide"
+        },
+        {
+          "label": "Focus Drills — Company Officer",
+          "url": "/focus-drills.html?source=roadmap&level=officer_1",
+          "type": "practice"
+        }
+      ],
+      "finderPath": "fire"
+    },
+    "fire_officer_2": {
+      "title": "Fire Officer II",
+      "category": "Officer",
+      "summary": "Advanced company-officer development emphasizing administration, personnel development, planning, policy application, incident leadership, and organizational performance.",
+      "study": [
+        {
+          "label": "Officer Study Track",
+          "url": "/study-center.html?track=officer",
+          "type": "trainingGuide"
+        },
+        {
+          "label": "Company Officer Tools",
+          "url": "/company-officer-tools.html",
+          "type": "fireOpsGuide"
+        },
+        {
+          "label": "Leadership Development",
+          "url": "/leadership-development.html",
+          "type": "fireOpsGuide"
+        }
+      ],
+      "finderPath": "fire"
+    },
+    "fire_instructor_1": {
+      "title": "Fire Instructor I",
+      "category": "Instructor",
+      "summary": "Prepare to deliver safe, organized instruction from prepared lesson plans, coach skills, evaluate learners, and document training.",
+      "study": [
+        {
+          "label": "Fire Instructor I Center",
+          "url": "/fire-instructor-1.html",
+          "type": "fireOpsGuide"
+        },
+        {
+          "label": "Instructor Study Track",
+          "url": "/study-center.html?track=instructor",
+          "type": "trainingGuide"
+        },
+        {
+          "label": "Firefighter Drill Builder",
+          "url": "/firefighter-drill-builder.html",
+          "type": "practice"
+        },
+        {
+          "label": "Fire Instructor I study guide",
+          "url": "/fire-instructor-1-study-guide.html",
+          "type": "trainingGuide"
+        }
+      ],
+      "finderPath": "fire"
+    },
+    "fire_instructor_2": {
+      "title": "Fire Instructor II",
+      "category": "Instructor",
+      "summary": "Advance into lesson-plan development, evaluation, program coordination, instructional improvement, and more complex training responsibilities.",
+      "study": [
+        {
+          "label": "Instructor Study Track",
+          "url": "/study-center.html?track=instructor",
+          "type": "trainingGuide"
+        },
+        {
+          "label": "Fire Instructor I Center",
+          "url": "/fire-instructor-1.html",
+          "type": "fireOpsGuide"
+        },
+        {
+          "label": "Firefighter Drill Builder",
+          "url": "/firefighter-drill-builder.html",
+          "type": "practice"
+        }
+      ],
+      "finderPath": "fire"
+    },
+    "fire_inspector_1": {
+      "title": "Fire Inspector I",
+      "category": "Prevention",
+      "summary": "Foundational inspection development: code navigation, occupancy hazards, documentation, communication, and local enforcement processes.",
+      "study": [
+        {
+          "label": "Fire Inspector Tools",
+          "url": "/fire-inspector-tools.html",
+          "type": "fireOpsGuide"
+        },
+        {
+          "label": "Fire Inspection Checklist",
+          "url": "/fire-inspection-checklist.html",
+          "type": "trainingGuide"
+        },
+        {
+          "label": "Fire Code Violation Notes",
+          "url": "/fire-code-violation-notes.html",
+          "type": "practice"
+        }
+      ],
+      "finderPath": "fire"
+    },
+    "emt": {
+      "title": "EMT",
+      "category": "EMS",
+      "summary": "Use FireOpsSim for career direction and broad review, while your approved education program, state EMS office, medical direction, and current certification authority remain the source of truth.",
+      "study": [
+        {
+          "label": "EMT Study Track",
+          "url": "/study-center.html?track=emt",
+          "type": "trainingGuide"
+        },
+        {
+          "label": "EMS Career Center",
+          "url": "/ems-career.html",
+          "type": "fireOpsGuide"
+        },
+        {
+          "label": "EMSCodeSim patient practice",
+          "url": "https://emscodesim.com/",
+          "type": "practice"
+        },
+        {
+          "label": "First 100 EMS Shifts",
+          "url": "/first-100-ems-shifts.html",
+          "type": "trainingGuide"
+        }
+      ],
+      "finderPath": "ems"
+    },
+    "aemt": {
+      "title": "Advanced EMT",
+      "category": "EMS",
+      "summary": "Use approved education, current state scope, medical direction, and certifying-agency requirements. FireOpsSim provides career and study support rather than protocol authority.",
+      "study": [
+        {
+          "label": "EMS Career Center",
+          "url": "/ems-career.html",
+          "type": "fireOpsGuide"
+        },
+        {
+          "label": "EMT Study Track",
+          "url": "/study-center.html?track=emt",
+          "type": "trainingGuide"
+        },
+        {
+          "label": "EMSCodeSim patient practice",
+          "url": "https://emscodesim.com/",
+          "type": "practice"
+        }
+      ],
+      "finderPath": "ems"
+    },
+    "paramedic": {
+      "title": "Paramedic",
+      "category": "EMS",
+      "summary": "Paramedic education and licensure are jurisdiction-dependent. Use accredited-program, state EMS, medical-direction, and certification sources for authoritative requirements.",
+      "study": [
+        {
+          "label": "Paramedic Study Track",
+          "url": "/study-center.html?track=paramedic",
+          "type": "trainingGuide"
+        },
+        {
+          "label": "EMS Career Center",
+          "url": "/ems-career.html",
+          "type": "fireOpsGuide"
+        },
+        {
+          "label": "First 100 EMS Shifts",
+          "url": "/first-100-ems-shifts.html",
+          "type": "trainingGuide"
+        },
+        {
+          "label": "EMSCodeSim patient practice",
+          "url": "https://emscodesim.com/",
+          "type": "practice"
+        }
+      ],
+      "finderPath": "ems"
+    },
+    "fire_officer_3": {
+      "title": "Fire Officer III",
+      "category": "Officer",
+      "finderPath": "fire",
+      "summary": "Chief/staff-officer development: planning, programs, personnel systems, budget awareness, multi-company operations, and organizational communication. Requirements are state and agency dependent.",
+      "study": [
+        {
+          "label": "Officer Study Track",
+          "url": "/study-center.html?track=officer",
+          "type": "trainingGuide"
+        },
+        {
+          "label": "Leadership Development",
+          "url": "/leadership-development.html",
+          "type": "fireOpsGuide"
+        },
+        {
+          "label": "Career Plan Builder",
+          "url": "/career-plan-builder.html",
+          "type": "practice"
+        },
+        {
+          "label": "Company Officer Tools",
+          "url": "/company-officer-tools.html",
+          "type": "fireOpsGuide"
+        },
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/courses/",
+          "type": "trainingGuide"
+        }
+      ]
+    },
+    "fire_officer_4": {
+      "title": "Fire Officer IV",
+      "category": "Officer",
+      "finderPath": "nfa",
+      "summary": "Executive/chief-officer development: policy, organizational performance, community risk, labor/management awareness, and long-range planning. Confirm the exact FO IV path with your certifying authority.",
+      "study": [
+        {
+          "label": "Leadership Development",
+          "url": "/leadership-development.html",
+          "type": "fireOpsGuide"
+        },
+        {
+          "label": "Career Stage Finder",
+          "url": "/career-stages.html",
+          "type": "trainingGuide"
+        },
+        {
+          "label": "90-Day Career Plan",
+          "url": "/career-plan-builder.html",
+          "type": "practice"
+        },
+        {
+          "label": "National Fire Academy courses",
+          "url": "https://www.usfa.fema.gov/nfa/courses/",
+          "type": "trainingGuide"
+        },
+        {
+          "label": "My Career evidence vault",
+          "url": "/my-fire-career.html",
+          "type": "practice"
+        }
+      ]
+    },
+    "fire_inspector_2": {
+      "title": "Fire Inspector II",
+      "category": "Prevention",
+      "finderPath": "fire",
+      "summary": "Advanced inspection development: complex occupancies, plans-related issues, enforcement documentation, and coordination with investigators, plans examiners, and the AHJ.",
+      "study": [
+        {
+          "label": "Fire Inspector Tools",
+          "url": "/fire-inspector-tools.html",
+          "type": "fireOpsGuide"
+        },
+        {
+          "label": "Fire Inspection Checklist",
+          "url": "/fire-inspection-checklist.html",
+          "type": "trainingGuide"
+        },
+        {
+          "label": "Fire Code Violation Notes",
+          "url": "/fire-code-violation-notes.html",
+          "type": "practice"
+        },
+        {
+          "label": "Occupancy Load Calculator",
+          "url": "/occupancy-load-calculator.html",
+          "type": "practice"
+        },
+        {
+          "label": "Pre-Incident Plan Builder",
+          "url": "/pre-incident-plan-builder.html",
+          "type": "practice"
+        }
+      ]
+    },
+    "fire_investigator": {
+      "title": "Fire Investigator",
+      "category": "Prevention",
+      "finderPath": "fire",
+      "summary": "Origin-and-cause development should follow your agency, legal authority, scene-safety rules, and current investigation standards. FireOpsSim provides career direction and supporting references, not an investigation credential.",
+      "study": [
+        {
+          "label": "Specialty Career Paths",
+          "url": "/specialty-careers.html",
+          "type": "fireOpsGuide"
+        },
+        {
+          "label": "Fire Inspector Tools",
+          "url": "/fire-inspector-tools.html",
+          "type": "fireOpsGuide"
+        },
+        {
+          "label": "Building construction / fire behavior review",
+          "url": "/study-center.html?track=firefighter",
+          "type": "trainingGuide"
+        },
+        {
+          "label": "NIOSH Firefighter Resources",
+          "url": "https://www.cdc.gov/niosh/firefighters/",
+          "type": "trainingGuide"
+        }
+      ]
+    },
+    "bls": {
+      "title": "BLS / CPR",
+      "category": "EMS",
+      "finderPath": "ems",
+      "summary": "Basic Life Support and CPR credentials are issuer-dependent (AHA, Red Cross, or another provider your department accepts). Use the current provider manual and your agency’s accepted card.",
+      "study": [
+        {
+          "label": "EMS Life Support companion",
+          "url": "/ems-life-support.html?cert=bls",
+          "type": "fireOpsGuide"
+        },
+        {
+          "label": "EMS Career Center",
+          "url": "/ems-career.html",
+          "type": "trainingGuide"
+        },
+        {
+          "label": "EMSCodeSim patient practice",
+          "url": "https://emscodesim.com/",
+          "type": "practice"
+        }
+      ]
+    },
+    "acls": {
+      "title": "ACLS",
+      "category": "EMS",
+      "finderPath": "ems",
+      "summary": "Advanced Cardiovascular Life Support is issuer-dependent. Study current provider materials, local protocols, and medical-direction expectations—not a generic algorithm dump.",
+      "study": [
+        {
+          "label": "EMS Life Support companion",
+          "url": "/ems-life-support.html?cert=acls",
+          "type": "fireOpsGuide"
+        },
+        {
+          "label": "Paramedic Study Track",
+          "url": "/study-center.html?track=paramedic",
+          "type": "trainingGuide"
+        },
+        {
+          "label": "EMSCodeSim",
+          "url": "https://emscodesim.com/",
+          "type": "practice"
+        }
+      ]
+    },
+    "pals": {
+      "title": "PALS",
+      "category": "EMS",
+      "finderPath": "ems",
+      "summary": "Pediatric Advanced Life Support is issuer-dependent. Pair current provider materials with pediatric assessment practice and local pediatric protocols.",
+      "study": [
+        {
+          "label": "EMS Life Support companion",
+          "url": "/ems-life-support.html?cert=pals",
+          "type": "fireOpsGuide"
+        },
+        {
+          "label": "EMS Career Center",
+          "url": "/ems-career.html",
+          "type": "trainingGuide"
+        },
+        {
+          "label": "EMSCodeSim",
+          "url": "https://emscodesim.com/",
+          "type": "practice"
+        }
+      ]
+    },
+    "ics_100": {
+      "title": "ICS-100",
+      "category": "Incident Command",
+      "finderPath": "ics",
+      "summary": "Introduction to the Incident Command System. Complete the current FEMA Independent Study course, then connect the ICS language to company-level size-up and radio reports.",
+      "study": [
+        {
+          "label": "ICS / NIMS training hub",
+          "url": "/ics-nims-training.html?cert=ics_100",
+          "type": "fireOpsGuide"
+        },
+        {
+          "label": "FEMA IS-100",
+          "url": "https://training.fema.gov/is/courseoverview.aspx?code=IS-100.c",
+          "type": "trainingGuide"
+        },
+        {
+          "label": "Fireground Decision Sim",
+          "url": "/fireground-decision-sim.html",
+          "type": "practice"
+        }
+      ]
+    },
+    "ics_200": {
+      "title": "ICS-200",
+      "category": "Incident Command",
+      "finderPath": "ics",
+      "summary": "ICS for Single Resources and Initial Action Incidents. Use FEMA IS-200 plus company-officer decision practice for initial command, assignments, and transfers of command.",
+      "study": [
+        {
+          "label": "ICS / NIMS training hub",
+          "url": "/ics-nims-training.html?cert=ics_200",
+          "type": "fireOpsGuide"
+        },
+        {
+          "label": "FEMA IS-200",
+          "url": "https://training.fema.gov/is/courseoverview.aspx?code=IS-200.c",
+          "type": "trainingGuide"
+        },
+        {
+          "label": "Company Officer Tools",
+          "url": "/company-officer-tools.html",
+          "type": "practice"
+        },
+        {
+          "label": "Fireground Decision Sim",
+          "url": "/fireground-decision-sim.html",
+          "type": "practice"
+        }
+      ]
+    },
+    "ics_300": {
+      "title": "ICS-300",
+      "category": "Incident Command",
+      "finderPath": "ics",
+      "summary": "Intermediate ICS for Expanding Incidents is typically instructor-led. Use FEMA/state training systems for the official course; FireOpsSim supports planning, communications, and multi-company decision practice.",
+      "study": [
+        {
+          "label": "ICS / NIMS training hub",
+          "url": "/ics-nims-training.html?cert=ics_300",
+          "type": "fireOpsGuide"
+        },
+        {
+          "label": "FEMA Independent Study list",
+          "url": "https://training.fema.gov/is/crslist.aspx",
+          "type": "trainingGuide"
+        },
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/courses/",
+          "type": "trainingGuide"
+        },
+        {
+          "label": "Leadership Development",
+          "url": "/leadership-development.html",
+          "type": "fireOpsGuide"
+        }
+      ]
+    },
+    "ics_400": {
+      "title": "ICS-400",
+      "category": "Incident Command",
+      "finderPath": "ics",
+      "summary": "Advanced ICS for Command and General Staff is typically instructor-led. Confirm the current delivery path through FEMA EMI or your state training system.",
+      "study": [
+        {
+          "label": "ICS / NIMS training hub",
+          "url": "/ics-nims-training.html?cert=ics_400",
+          "type": "fireOpsGuide"
+        },
+        {
+          "label": "FEMA Independent Study list",
+          "url": "https://training.fema.gov/is/crslist.aspx",
+          "type": "trainingGuide"
+        },
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/courses/",
+          "type": "trainingGuide"
+        }
+      ]
+    },
+    "is_700": {
+      "title": "IS-700 / NIMS",
+      "category": "Incident Command",
+      "finderPath": "ics",
+      "summary": "An Introduction to the National Incident Management System. Complete the current FEMA IS-700 course and keep the certificate with your Career Road evidence.",
+      "study": [
+        {
+          "label": "ICS / NIMS training hub",
+          "url": "/ics-nims-training.html?cert=is_700",
+          "type": "fireOpsGuide"
+        },
+        {
+          "label": "FEMA IS-700",
+          "url": "https://training.fema.gov/is/courseoverview.aspx?code=IS-700.b",
+          "type": "trainingGuide"
+        }
+      ]
+    },
+    "is_800": {
+      "title": "IS-800 / National Response Framework",
+      "category": "Incident Command",
+      "finderPath": "ics",
+      "summary": "National Response Framework introduction. Complete the current FEMA IS-800 course; this is a federal independent-study requirement, not a FireOpsSim skill sheet.",
+      "study": [
+        {
+          "label": "ICS / NIMS training hub",
+          "url": "/ics-nims-training.html?cert=is_800",
+          "type": "fireOpsGuide"
+        },
+        {
+          "label": "FEMA IS-800",
+          "url": "https://training.fema.gov/is/courseoverview.aspx?code=IS-800.d",
+          "type": "trainingGuide"
+        }
+      ]
+    }
+  },
+  "taskOverrides": {
+    "do_pumper_pump_theory": {
+      "title": "Pump theory",
+      "note": "Review centrifugal-pump basics, net pump pressure concepts, priming, cavitation, gauges, and apparatus-specific controls.",
+      "links": [
+        {
+          "label": "Driver/Operator Practice Center",
+          "url": "/driver-operator-practice.html"
+        },
+        {
+          "label": "Pumper Flashcards",
+          "url": "/driver-operator-pumper-flashcards.html"
+        },
+        {
+          "label": "Pump Pressure Calculator",
+          "url": "/fire-pump-calculator.html"
+        }
+      ]
+    },
+    "do_pumper_apparatus_inspection": {
+      "title": "Daily apparatus inspection",
+      "note": "Use your department inspection sheet and manufacturer information as the primary checklist; use FireOpsSim to organize the learning points.",
+      "links": [
+        {
+          "label": "Driver/Operator Practice Center",
+          "url": "/driver-operator-practice.html"
+        }
+      ]
+    },
+    "do_pumper_engage_pump": {
+      "title": "Engage pump",
+      "note": "Practice the decision sequence, but follow the exact manufacturer and department procedure for your apparatus.",
+      "links": [
+        {
+          "label": "Fire Pump Training Scenarios",
+          "url": "/fire-pump-training-scenarios.html"
+        },
+        {
+          "label": "Driver/Operator Practice Center",
+          "url": "/driver-operator-practice.html"
+        }
+      ]
+    },
+    "do_pumper_hydrant_ops": {
+      "title": "Hydrant operations",
+      "note": "Connect water-supply decisions to intake pressure, demand changes, and controlled valve operation.",
+      "links": [
+        {
+          "label": "Hydrant Flow Calculator",
+          "url": "/hydrant-flow-calculator.html"
+        },
+        {
+          "label": "Fire Pump Training Scenarios",
+          "url": "/fire-pump-training-scenarios.html"
+        }
+      ]
+    },
+    "do_pumper_drafting": {
+      "title": "Drafting",
+      "note": "Focus on airtight suction setup, priming, lift, strainer placement, cavitation recognition, and maintaining a stable supply.",
+      "links": [
+        {
+          "label": "Driver/Operator Practice Center",
+          "url": "/driver-operator-practice.html"
+        },
+        {
+          "label": "Fire Pump Training Scenarios",
+          "url": "/fire-pump-training-scenarios.html"
+        }
+      ]
+    },
+    "do_pumper_friction_loss": {
+      "title": "Friction loss + PDP",
+      "note": "Practice the math, then compare the result with your department's hose/nozzle package and operational target pressures.",
+      "links": [
+        {
+          "label": "Friction Loss Calculator",
+          "url": "/friction-loss-calculator.html"
+        },
+        {
+          "label": "Friction Loss Table",
+          "url": "/friction-loss-table.html"
+        },
+        {
+          "label": "Pump Pressure Calculator",
+          "url": "/fire-pump-calculator.html"
+        }
+      ]
+    },
+    "do_pumper_multiple_attack_lines": {
+      "title": "Multiple attack lines",
+      "note": "Practice changes in demand, communication, pressure control, and water-supply awareness as lines open and close.",
+      "links": [
+        {
+          "label": "Fire Pump Training Scenarios",
+          "url": "/fire-pump-training-scenarios.html"
+        },
+        {
+          "label": "Scenario Library",
+          "url": "/scenario-library.html"
+        }
+      ]
+    },
+    "do_pumper_master_streams": {
+      "title": "Master stream operations",
+      "note": "Review high-flow demand, supply limitations, device/nozzle requirements, appliance considerations, and safe deployment.",
+      "links": [
+        {
+          "label": "Master Stream Calculator",
+          "url": "/master-stream-calculator.html"
+        },
+        {
+          "label": "Fire Pump Training Scenarios",
+          "url": "/fire-pump-training-scenarios.html"
+        }
+      ]
+    },
+    "do_pumper_relay_pumping": {
+      "title": "Relay pumping",
+      "note": "Practice source/intermediate/attack pumper roles, communications, pressure management, and failure recognition.",
+      "links": [
+        {
+          "label": "Relay Pumping Calculator",
+          "url": "/relay-pumping-calculator.html"
+        },
+        {
+          "label": "Fire Pump Training Scenarios",
+          "url": "/fire-pump-training-scenarios.html"
+        }
+      ]
+    },
+    "do_pumper_troubleshooting": {
+      "title": "Pump/supply troubleshooting",
+      "note": "Work one variable at a time: supply, valve position, air leaks, restrictions, cavitation, governor/mode, then discharge-side causes.",
+      "links": [
+        {
+          "label": "Driver/Operator Practice Center",
+          "url": "/driver-operator-practice.html"
+        },
+        {
+          "label": "Fire Pump Training Scenarios",
+          "url": "/fire-pump-training-scenarios.html"
+        }
+      ]
+    },
+    "do_pumper_water_supply": {
+      "title": "Water supply decisions",
+      "note": "Match hydrant, relay, or tender supply to demand. Practice residual monitoring and communications before adding complexity.",
+      "links": [
+        {
+          "label": "Hydrant Flow Calculator",
+          "url": "/hydrant-flow-calculator.html"
+        },
+        {
+          "label": "Tender Shuttle Calculator",
+          "url": "/tender-shuttle-calculator.html"
+        },
+        {
+          "label": "Relay Pumping Calculator",
+          "url": "/relay-pumping-calculator.html"
+        }
+      ]
+    },
+    "inv_cert": {
+      "title": "Investigator certification path",
+      "note": "Confirm the issuing authority, legal authority to investigate, and current course/test route before collecting hours.",
+      "links": [
+        {
+          "label": "Specialty Career Paths",
+          "url": "/specialty-careers.html"
+        },
+        {
+          "label": "School / course finder",
+          "url": "/school-finder.html?path=fire&cert=fire_investigator"
+        }
+      ]
+    },
+    "inv_oc": {
+      "title": "Origin and cause process",
+      "note": "Scene safety, legal authority, systematic exam, and documentation come before any conclusion. Follow your agency protocol.",
+      "links": [
+        {
+          "label": "Specialty Career Paths",
+          "url": "/specialty-careers.html"
+        },
+        {
+          "label": "Fire Inspector Tools",
+          "url": "/fire-inspector-tools.html"
+        }
+      ]
+    },
+    "inv_evidence": {
+      "title": "Evidence awareness",
+      "note": "Preserve, photograph, and document. Do not invent chain-of-custody procedures that conflict with your agency or prosecutor guidance.",
+      "links": [
+        {
+          "label": "Fire Code Violation Notes",
+          "url": "/fire-code-violation-notes.html"
+        }
+      ]
+    },
+    "inv_interview": {
+      "title": "Witness / party interviews",
+      "note": "Practice structured, non-leading questions and accurate notes. Legal limits vary by role and jurisdiction.",
+      "links": [
+        {
+          "label": "Leadership Development",
+          "url": "/leadership-development.html"
+        }
+      ]
+    },
+    "inv_photos": {
+      "title": "Scene photography",
+      "note": "Capture overall, mid-range, and close-up images with a scale and location context. Follow agency photo SOP.",
+      "links": [
+        {
+          "label": "Fire Inspection Checklist",
+          "url": "/fire-inspection-checklist.html"
+        }
+      ]
+    },
+    "inv_senior_training": {
+      "title": "Advanced investigator development",
+      "note": "Use IAAI, state investigator programs, and legal updates required by your agency.",
+      "links": [
+        {
+          "label": "IAAI",
+          "url": "https://www.firearson.com/"
+        },
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/courses/"
+        }
+      ]
+    },
+    "prev_fi1": {
+      "title": "Fire Inspector I requirement",
+      "note": "Use inspection tools and code-navigation practice, then verify the test route with your state/AHJ.",
+      "links": [
+        {
+          "label": "Fire Inspector Tools",
+          "url": "/fire-inspector-tools.html"
+        },
+        {
+          "label": "Fire Inspection Checklist",
+          "url": "/fire-inspection-checklist.html"
+        }
+      ]
+    },
+    "prev_fi2": {
+      "title": "Fire Inspector II requirement",
+      "note": "Move from occupancy walk-throughs into complex occupancies, documentation quality, and coordination with other prevention functions.",
+      "links": [
+        {
+          "label": "Fire Inspector Tools",
+          "url": "/fire-inspector-tools.html"
+        },
+        {
+          "label": "Occupancy Load Calculator",
+          "url": "/occupancy-load-calculator.html"
+        }
+      ]
+    },
+    "prev_code": {
+      "title": "Fire code education",
+      "note": "Adopted codes vary. Practice navigating a code family, then confirm what your AHJ actually enforces.",
+      "links": [
+        {
+          "label": "Fire Inspector Tools",
+          "url": "/fire-inspector-tools.html"
+        },
+        {
+          "label": "Fire Code Violation Notes",
+          "url": "/fire-code-violation-notes.html"
+        }
+      ]
+    },
+    "prev_bldg": {
+      "title": "Building construction knowledge",
+      "note": "Connect construction type, fire behavior, and protection systems before writing an inspection comment.",
+      "links": [
+        {
+          "label": "Study Center",
+          "url": "/study-center.html?track=firefighter"
+        },
+        {
+          "label": "Pre-Incident Plan Builder",
+          "url": "/pre-incident-plan-builder.html"
+        }
+      ]
+    }
+  },
+  "roadmapCertificationIds": [
+    "firefighter_1",
+    "firefighter_2",
+    "hazmat_awareness",
+    "hazmat_operations",
+    "hazmat_technician",
+    "driver_operator_pumper",
+    "driver_operator_aerial",
+    "fire_officer_1",
+    "fire_officer_2",
+    "fire_officer_3",
+    "fire_officer_4",
+    "fire_instructor_1",
+    "fire_instructor_2",
+    "fire_inspector_1",
+    "fire_inspector_2",
+    "fire_investigator",
+    "emt",
+    "aemt",
+    "paramedic",
+    "bls",
+    "acls",
+    "pals",
+    "ics_100",
+    "ics_200",
+    "ics_300",
+    "ics_400",
+    "is_700",
+    "is_800"
+  ],
+  "fallback": {
+    "title": "Career Road Task Book item",
+    "category": "General support",
+    "summary": "This Roadmap ID does not yet have a dedicated FireOpsSim lesson. Use the closest study, training, and official-source resources below instead of a dead end.",
+    "study": [
+      {
+        "label": "Stage Study Center",
+        "url": "/study-center.html",
+        "type": "trainingGuide"
+      },
+      {
+        "label": "Career Stage Finder",
+        "url": "/career-stages.html",
+        "type": "fireOpsGuide"
+      },
+      {
+        "label": "Training Center",
+        "url": "/training.html",
+        "type": "practice"
+      },
+      {
+        "label": "Fire Skill Wheel",
+        "url": "/fire-skill-wheel.html",
+        "type": "practice"
+      },
+      {
+        "label": "Roadmap support engine",
+        "url": "/roadmap-support.html",
+        "type": "fireOpsGuide"
+      }
+    ],
+    "finderPath": "fire"
+  }
+}

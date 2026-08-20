@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ICS / NIMS Training Hub | FireOpsSim</title>
+<meta name="description" content="Free ICS-100, ICS-200, ICS-300, ICS-400, IS-700 and IS-800 companion for FireOps Career Roadmap: FEMA course links, company-level practice, and how to record the certificate.">
+<link rel="canonical" href="https://fireopssim.com/ics-nims-training.html">
+<link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/seo-guide.css">
+</head>
+<body class="site-refresh">
+<header class="site-header"><nav class="nav shell"><a class="brand" href="/"><span class="brand-mark">FOS</span><span><strong>FireOpsSim</strong><small>ICS / NIMS</small></span></a><div class="nav-links"><a href="/study-guides.html">Study</a><a href="/school-finder.html?path=ics">Find training</a><a href="/taskbook-resources.html">Task Book hub</a></div></nav></header>
+<main>
+<section class="seo-hero"><div class="shell">
+  <span class="seo-pill" id="pill">Incident Command</span>
+  <h1 id="heroTitle">ICS / NIMS: finish the federal course, then use the language on the fireground.</h1>
+  <p id="heroText">Career Road tracks ICS-100, ICS-200, ICS-300, ICS-400, IS-700, and IS-800. FireOpsSim points you at the current FEMA Independent Study or instructor-led path, then gives company-level practice so the vocabulary is usable on the next run.</p>
+</div></section>
+<section class="seo-wrap shell">
+  <div class="seo-grid">
+    <div>
+      <article class="seo-card"><h2>What this requirement actually is</h2>
+        <p id="bodyText">ICS and NIMS credentials are federal/state training products. FireOpsSim does not issue the certificate. Complete the current FEMA or state-delivered course, save the completion record in Career Road, and then practice the same language in size-up, assignments, and radio reports.</p>
+        <ul>
+          <li>ICS-100 / ICS-200 and IS-700 / IS-800 are usually free Independent Study courses.</li>
+          <li>ICS-300 and ICS-400 are typically instructor-led through EMI or a state training system.</li>
+          <li>Course letters (IS-100.c, IS-700.b, etc.) change. Always open the current FEMA course page.</li>
+        </ul>
+      </article>
+      <article class="seo-card"><h2>Recommended sequence</h2>
+        <ol>
+          <li>IS-700 (NIMS) and ICS-100 for every operational firefighter path.</li>
+          <li>ICS-200 before company-officer / acting-officer work.</li>
+          <li>ICS-300 / ICS-400 when your department or target rank requires expanding-incident command.</li>
+          <li>IS-800 when the Task Book or AHJ lists National Response Framework awareness.</li>
+        </ol>
+      </article>
+    </div>
+    <aside>
+      <article class="seo-card"><h2>Open the official course</h2>
+        <div class="seo-links" id="courseLinks"></div>
+      </article>
+      <article class="seo-card"><h2>Practice the language</h2>
+        <div class="seo-links">
+          <a class="seo-link" href="/fireground-decision-sim.html"><strong>Fireground Decision Sim</strong><span>Size-up, priorities, and changing conditions</span></a>
+          <a class="seo-link" href="/company-officer-tools.html"><strong>Company Officer Tools</strong><span>Reports, assignments, accountability</span></a>
+          <a class="seo-link" href="/focus-drills.html?source=roadmap&level=officer_1&topic=ics"><strong>Officer Focus Drills</strong><span>Initial radio report and crew assignment</span></a>
+          <a class="seo-link" href="/school-finder.html?path=ics"><strong>ICS / NIMS school finder</strong><span>FEMA EMI and state training search</span></a>
+        </div>
+      </article>
+    </aside>
+  </div>
+  <p class="c-muted" style="color:#5f6d76">Training/reference only. Completion of a FireOpsSim page does not equal FEMA course credit or Task Book sign-off.</p>
+</section>
+</main>
+<script>
+(() => {
+  const courses = {
+    ics_100: { title: 'ICS-100', fema: 'https://training.fema.gov/is/courseoverview.aspx?code=IS-100.c', label: 'FEMA IS-100.c — Introduction to ICS' },
+    ics_200: { title: 'ICS-200', fema: 'https://training.fema.gov/is/courseoverview.aspx?code=IS-200.c', label: 'FEMA IS-200.c — ICS for Single Resources' },
+    ics_300: { title: 'ICS-300', fema: 'https://training.fema.gov/is/crslist.aspx', label: 'Find current ICS-300 delivery (usually instructor-led)' },
+    ics_400: { title: 'ICS-400', fema: 'https://training.fema.gov/is/crslist.aspx', label: 'Find current ICS-400 delivery (usually instructor-led)' },
+    is_700: { title: 'IS-700 / NIMS', fema: 'https://training.fema.gov/is/courseoverview.aspx?code=IS-700.b', label: 'FEMA IS-700.b — Introduction to NIMS' },
+    is_800: { title: 'IS-800 / NRF', fema: 'https://training.fema.gov/is/courseoverview.aspx?code=IS-800.d', label: 'FEMA IS-800.d — National Response Framework' }
+  };
+  const cert = new URLSearchParams(location.search).get('cert') || '';
+  const selected = courses[cert];
+  const links = selected
+    ? [selected, ...Object.entries(courses).filter(([id]) => id !== cert).slice(0, 3).map(([, v]) => v)]
+    : Object.values(courses);
+  if (selected) {
+    document.getElementById('pill').textContent = selected.title;
+    document.getElementById('heroTitle').textContent = selected.title + ': complete the current FEMA / state course, then apply it.';
+  }
+  document.getElementById('courseLinks').innerHTML = links.map(item =>
+    `<a class="seo-link" href="${item.fema}" rel="noopener"><strong>${item.label}</strong><span>Official FEMA EMI page — verify the current course code</span></a>`
+  ).join('') + '<a class="seo-link" href="https://training.fema.gov/is/crslist.aspx" rel="noopener"><strong>Full FEMA Independent Study list</strong><span>Search ICS, NIMS, and related courses</span></a>';
+})();
+</script>
+</body>
+</html>
