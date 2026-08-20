@@ -74,6 +74,18 @@ const focusHtml = fs.readFileSync(path.join(ROOT, 'focus-drills.html'), 'utf8');
 assert(finderHtml.includes("rec.finderPath){p.value=rec.finderPath"), 'school-finder must always prefer catalog finderPath');
 assert(!finderHtml.includes('officer_3|officer_4'), 'school-finder must not misroute fire_officer_3 to NFA');
 assert(studyHtml.includes("q.get('cert')") && studyHtml.includes('taskbook-resources.html'));
+assert(studyHtml.includes('cert-study.json'), 'Study guides must load interactive decks');
+assert(studyHtml.includes('id="flash"') && studyHtml.includes('id="quiz"'), 'Study guides must include flashcards and quiz');
+
+const decks = JSON.parse(fs.readFileSync(path.join(ROOT, 'study-data/cert-study.json'), 'utf8'));
+assert.strictEqual(Object.keys(decks.decks).length, ROADMAP_CERTS.length, 'Every Roadmap cert needs an interactive deck');
+for (const id of ROADMAP_CERTS) {
+  const deck = decks.decks[id];
+  assert(deck, `Missing interactive deck for ${id}`);
+  assert(deck.cards.length >= 6, `${id} needs flashcards`);
+  assert(deck.quiz.length >= 4, `${id} needs a mini exam`);
+  assert((catalog.certifications[id].study || []).some(s => (s.url || '').includes(`/study-guides.html?cert=${id}`)), `${id} catalog must link to interactive study`);
+}
 assert(taskHtml.includes('resolveCert') && taskHtml.includes('returnUrl'));
 assert(focusHtml.includes('returnUrl') && focusHtml.includes('returnRoadmap'));
 

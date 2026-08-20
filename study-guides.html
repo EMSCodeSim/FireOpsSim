@@ -1,1 +1,286 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Free Firefighter & EMS Study Guides | FireOpsSim Roadmap Companion</title><meta name="description" content="Free firefighter, driver/operator, HazMat, fire officer, instructor, inspector and EMS study resources mapped to FireOps Career Roadmap certifications."><link rel="canonical" href="https://fireopssim.com/study-guides.html"><link rel="stylesheet" href="/styles.css"><style>.companion-hero{background:#111820;color:#fff;padding:3.2rem 0;border-bottom:4px solid #c9362b}.companion-hero p{color:#d9e3e8;max-width:850px}.companion-wrap{padding:2rem 0 4rem}.c-card{background:#fff;border:1px solid #d9e0e5;border-radius:15px;padding:1rem}.c-muted{color:#64717a}.c-links{display:grid;gap:.55rem}.c-link{display:block;border:1px solid #d9e0e5;border-radius:11px;padding:.75rem;text-decoration:none;color:inherit;background:#fff}.c-link strong{display:block}.c-link span{color:#64717a;font-size:.88rem}.c-band{background:#f3f6f7;border-left:4px solid #c9362b;border-radius:10px;padding:.8rem;margin:1rem 0}.filters{display:flex;gap:.55rem;flex-wrap:wrap;align-items:end}.filters label{font-weight:800;font-size:.85rem}.filters select{display:block;min-width:210px;padding:.65rem;border:1px solid #cbd5db;border-radius:9px;background:#fff;font:inherit;margin-top:.25rem}.badge{display:inline-block;border:1px solid #d2dce1;border-radius:999px;padding:.25rem .55rem;font-size:.76rem;font-weight:800;background:#fff}.resource-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem}.resource-card{border:1px solid #d9e0e5;border-radius:13px;padding:1rem;background:#fff}.resource-card h3{margin:.2rem 0}.small{font-size:.86rem}.empty{padding:1rem;border:1px dashed #c8d2d8;border-radius:11px;color:#64717a}@media(max-width:900px){.resource-grid{grid-template-columns:1fr}.filters{display:grid}.filters select{min-width:0;width:100%}}</style></head><body class="site-refresh"><header class="site-header"><nav class="nav shell"><a class="brand" href="/"><span class="brand-mark">FOS</span><span><strong>FireOpsSim</strong><small>Roadmap Companion</small></span></a><div class="nav-links"><a href="/roadmap-companion.html">Taskbooks</a><a href="/study-guides.html">Study Guides</a><a href="/school-finder.html">Find Training</a><a href="/tools.html">Tools</a><a class="nav-cta" href="/study-center.html">Study Center</a></div></nav></header><main><section class="companion-hero"><div class="shell"><p class="section-kicker">Free Taskbook study library</p><h1>Study the certification or skill in your Roadmap.</h1><p>Choose a certification to see the FireOpsSim guides, flashcards, drills, scenarios and tools already available for that step. No account or paywall is required for this library.</p></div></section><section class="companion-wrap shell"><div class="filters c-card"><label>Certification<select id="certFilter"><option value="">All certifications</option></select></label><label>Category<select id="categoryFilter"><option value="">All categories</option></select></label><div><a class="button secondary" href="/taskbook-resources.html">Taskbook Resource Hub</a></div></div><div id="selected" class="c-band" hidden></div><div id="cards" class="resource-grid" style="margin-top:1rem"></div><p class="small c-muted">These are preparation resources, not official skill sheets or certification requirements. Verify your current state, department and issuing-agency requirements.</p></section></main><script>(async()=>{const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])),q=new URLSearchParams(location.search),cf=document.getElementById('certFilter'),gf=document.getElementById('categoryFilter'),cards=document.getElementById('cards');let data;try{const r=await fetch('/data/taskbook-resources.json');if(!r.ok)throw Error();data=await r.json()}catch{cards.innerHTML='<div class="empty">Study catalog could not load.</div>';return}const entries=Object.entries(data.certifications);entries.forEach(([id,c])=>cf.add(new Option(c.title,id)));[...new Set(entries.map(([,c])=>c.category))].sort().forEach(x=>gf.add(new Option(x,x)));cf.value=q.get('cert')||'';if(cf.value && !data.certifications[cf.value]){cf.add(new Option(cf.value.replace(/[_-]+/g,' '),cf.value));}if(cf.value){document.getElementById('selected').hidden=false;document.getElementById('selected').innerHTML='<strong>Opened for Roadmap certification:</strong> '+esc(data.certifications[cf.value]?.title||cf.value)}const humanize=id=>(id||'').replace(/[_-]+/g,' ').replace(/\b\w/g,c=>c.toUpperCase());function render(){let list=entries.filter(([id,c])=>(!cf.value||id===cf.value)&&(!gf.value||c.category===gf.value));if(!list.length && cf.value){const fb=data.fallback||{title:cf.value,category:'General',summary:'No dedicated guide yet.',study:[{label:'Study Center',url:'/study-center.html',type:'trainingGuide'},{label:'Task Book hub',url:'/taskbook-resources.html?cert='+encodeURIComponent(cf.value),type:'fireOpsGuide'}],finderPath:'fire'};list=[[cf.value,Object.assign({title:humanize(cf.value)},fb)]];}cards.innerHTML=list.length?list.map(([id,c])=>`<article class="resource-card"><span class="badge">${esc(c.category)}</span><h3>${esc(c.title)}</h3><p class="c-muted">${esc(c.summary)}</p><div class="c-links">${(c.study||[]).slice(0,4).map(x=>`<a class="c-link" href="${esc(x.url)}"><strong>${esc(x.label)}</strong><span>${esc(x.type==='practice'?'Practice':'Study')}</span></a>`).join('')}</div><div class="hero-actions"><a class="button primary" href="/taskbook-resources.html?cert=${encodeURIComponent(id)}">Open resource hub</a><a class="button secondary" href="/school-finder.html?path=${encodeURIComponent(c.finderPath||'fire')}&cert=${encodeURIComponent(id)}">Find training</a></div></article>`).join(''):'<div class="empty">No resources match these filters.</div>'}cf.onchange=render;gf.onchange=render;render()})();</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Interactive Study Guides | FireOpsSim</title>
+  <meta name="description" content="Free interactive firefighter and EMS study guides with flashcards and mini exams mapped to every FireOps Career Road certification.">
+  <link rel="canonical" href="https://fireopssim.com/study-guides.html">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .companion-hero{background:#111820;color:#fff;padding:3.2rem 0;border-bottom:4px solid #c9362b}
+    .companion-hero p{color:#d9e3e8;max-width:850px}
+    .companion-wrap{padding:2rem 0 4rem}
+    .c-card{background:#fff;border:1px solid #d9e0e5;border-radius:15px;padding:1rem}
+    .c-muted{color:#64717a}
+    .c-links{display:grid;gap:.55rem}
+    .c-link{display:block;border:1px solid #d9e0e5;border-radius:11px;padding:.75rem;text-decoration:none;color:inherit;background:#fff;min-height:44px}
+    .c-link strong{display:block}
+    .c-link span{color:#64717a;font-size:.88rem}
+    .c-band{background:#f3f6f7;border-left:4px solid #c9362b;border-radius:10px;padding:.8rem;margin:1rem 0}
+    .filters{display:flex;gap:.55rem;flex-wrap:wrap;align-items:end}
+    .filters label{font-weight:800;font-size:.85rem}
+    .filters select{display:block;min-width:210px;padding:.65rem;border:1px solid #cbd5db;border-radius:9px;background:#fff;font:inherit;margin-top:.25rem;min-height:44px}
+    .badge{display:inline-block;border:1px solid #d2dce1;border-radius:999px;padding:.25rem .55rem;font-size:.76rem;font-weight:800;background:#fff}
+    .resource-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem}
+    .resource-card{border:1px solid #d9e0e5;border-radius:13px;padding:1rem;background:#fff}
+    .resource-card h3{margin:.2rem 0}
+    .small{font-size:.86rem}
+    .empty{padding:1rem;border:1px dashed #c8d2d8;border-radius:11px;color:#64717a}
+    .study-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:1rem;margin-top:1rem}
+    .guide article{border-left:4px solid #c9362b;background:#f6f8f9;border-radius:9px;padding:.7rem;margin:.5rem 0}
+    .guide p{margin:.15rem 0;color:#65727b}
+    .flash{min-height:220px;background:#111820;color:#fff;border-radius:15px;padding:1.1rem;display:grid;align-content:center;cursor:pointer;touch-action:manipulation}
+    .flash p{color:#dce5e9}
+    .flash small{opacity:.75;text-transform:uppercase;letter-spacing:.06em;font-weight:800}
+    .actions{display:flex;justify-content:space-between;gap:.4rem;margin-top:.5rem}
+    .smallbtn{border:1px solid #ccd6dc;background:#fff;border-radius:8px;padding:.6rem 1rem;font:inherit;min-height:44px;min-width:44px;cursor:pointer}
+    .choice{display:block;width:100%;text-align:left;border:1px solid #d9e0e5;background:#fff;border-radius:9px;padding:.75rem;margin:.35rem 0;font:inherit;min-height:44px;cursor:pointer}
+    .choice.good{background:#edf8f2;border-color:#16794b}
+    .choice.bad{background:#fff1f0;border-color:#b5332a}
+    .quizitem{padding:.7rem 0;border-bottom:1px solid #eef1f3}
+    .hero-actions{display:flex;gap:.55rem;flex-wrap:wrap;margin-top:.8rem}
+    .button{min-height:44px}
+    @media(max-width:900px){.resource-grid,.study-grid{grid-template-columns:1fr}.filters{display:grid}.filters select{min-width:0;width:100%}}
+  </style>
+</head>
+<body class="site-refresh">
+<header class="site-header">
+  <nav class="nav shell">
+    <a class="brand" href="/"><span class="brand-mark">FOS</span><span><strong>FireOpsSim</strong><small>Roadmap Companion</small></span></a>
+    <div class="nav-links">
+      <a href="/roadmap-companion.html">Taskbooks</a>
+      <a href="/study-guides.html">Study Guides</a>
+      <a href="/school-finder.html">Find Training</a>
+      <a href="/tools.html">Tools</a>
+      <a class="nav-cta" href="/study-center.html">Study Center</a>
+    </div>
+  </nav>
+</header>
+<main>
+  <section class="companion-hero">
+    <div class="shell">
+      <p class="section-kicker">Interactive Taskbook study library</p>
+      <h1>Study the certification in your Roadmap.</h1>
+      <p>Every FireOps Career Road certification has a free study session with notes, flashcards, and a mini exam. No account or paywall. This is preparation only—not an official skill sheet or certificate.</p>
+    </div>
+  </section>
+  <section class="companion-wrap shell">
+    <div class="filters c-card">
+      <label>Certification
+        <select id="certFilter"><option value="">All certifications</option></select>
+      </label>
+      <label>Category
+        <select id="categoryFilter"><option value="">All categories</option></select>
+      </label>
+      <div>
+        <a class="button secondary" href="/taskbook-resources.html">Taskbook Resource Hub</a>
+      </div>
+    </div>
+    <div id="selected" class="c-band" hidden></div>
+    <div id="player" hidden>
+      <div class="study-grid" id="study">
+        <div>
+          <section class="c-card">
+            <p class="section-kicker">Study guide</p>
+            <h2 id="guideTitle">Study notes</h2>
+            <p id="guideSummary" class="c-muted"></p>
+            <div id="guide" class="guide"></div>
+          </section>
+          <section class="c-card" style="margin-top:1rem">
+            <h2>Mini exam</h2>
+            <p class="small c-muted">Tap an answer. Immediate feedback stays on-screen.</p>
+            <div id="quiz"></div>
+            <div class="hero-actions">
+              <button class="button secondary" id="reset" type="button">Reset exam</button>
+              <strong id="score"></strong>
+            </div>
+          </section>
+        </div>
+        <aside>
+          <section class="c-card">
+            <h2>Flashcards</h2>
+            <p class="small c-muted">Tap the card to flip. Swipe-sized buttons for phones.</p>
+            <div id="flash" class="flash" tabindex="0" role="button" aria-label="Study flashcard, tap to flip"></div>
+            <div class="actions">
+              <button class="smallbtn" id="prev" type="button">← Prev</button>
+              <button class="smallbtn" id="flip" type="button">Flip</button>
+              <button class="smallbtn" id="next" type="button">Next →</button>
+            </div>
+          </section>
+          <section class="c-card" style="margin-top:1rem">
+            <h2>Practice next</h2>
+            <ol id="nextList"></ol>
+            <div class="c-links" id="toolLinks"></div>
+            <div class="hero-actions">
+              <a class="button primary" id="hubLink" href="/taskbook-resources.html">Open resource hub</a>
+              <a class="button secondary" id="finderLink" href="/school-finder.html">Find training</a>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </div>
+    <div id="cards" class="resource-grid" style="margin-top:1rem"></div>
+    <p class="small c-muted">Preparation resources only. Verify current state, department, medical direction, adopted codes, manufacturer procedures, and issuing-agency requirements. FEMA Independent Study and CPR/ALS cards come from those issuers, not FireOpsSim.</p>
+  </section>
+</main>
+<script>
+(async () => {
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+  const q = new URLSearchParams(location.search);
+  const cf = document.getElementById('certFilter');
+  const gf = document.getElementById('categoryFilter');
+  const cards = document.getElementById('cards');
+  const player = document.getElementById('player');
+  let catalog, decks = {};
+  try {
+    const [catRes, deckRes] = await Promise.all([
+      fetch('/data/taskbook-resources.json', {cache:'no-store'}),
+      fetch('/study-data/cert-study.json', {cache:'no-store'})
+    ]);
+    if (!catRes.ok) throw Error('catalog');
+    catalog = await catRes.json();
+    if (deckRes.ok) decks = (await deckRes.json()).decks || {};
+  } catch {
+    cards.innerHTML = '<div class="empty">Study catalog could not load. Refresh or open the Study Center.</div>';
+    return;
+  }
+
+  const entries = Object.entries(catalog.certifications);
+  entries.forEach(([id, c]) => cf.add(new Option(c.title, id)));
+  [...new Set(entries.map(([, c]) => c.category))].sort().forEach(x => gf.add(new Option(x, x)));
+  const requested = (q.get('cert') || '').trim();
+  cf.value = catalog.certifications[requested] ? requested : '';
+  if (requested && !catalog.certifications[requested]) {
+    cf.add(new Option(requested.replace(/[_-]+/g, ' '), requested));
+    cf.value = requested;
+  }
+
+  let ci = 0, flipped = false, ans = {};
+
+  function currentDeck() {
+    return decks[cf.value] || null;
+  }
+
+  function flash() {
+    const d = currentDeck();
+    if (!d) return;
+    const c = d.cards[ci];
+    document.getElementById('flash').innerHTML = flipped
+      ? `<small>${ci + 1} / ${d.cards.length} • answer</small><p>${esc(c[1])}</p>`
+      : `<small>${ci + 1} / ${d.cards.length} • question</small><h3>${esc(c[0])}</h3>`;
+  }
+
+  function score() {
+    const d = currentDeck();
+    const e = Object.entries(ans);
+    const correct = e.filter(([i, c]) => d.quiz[+i][2] === c).length;
+    document.getElementById('score').textContent = e.length ? `${correct} / ${e.length} correct` : '';
+  }
+
+  function answer(qi, choice) {
+    const d = currentDeck();
+    if (ans[qi] != null) return;
+    ans[qi] = choice;
+    const item = d.quiz[qi];
+    const row = document.querySelectorAll('.quizitem')[qi];
+    row.querySelectorAll('.choice').forEach((b, i) => {
+      b.disabled = true;
+      if (i === item[2]) b.classList.add('good');
+      else if (i === choice) b.classList.add('bad');
+    });
+    document.getElementById('fb' + qi).textContent = item[3];
+    score();
+  }
+
+  function quiz() {
+    const d = currentDeck();
+    document.getElementById('quiz').innerHTML = d.quiz.map((x, i) =>
+      `<div class="quizitem"><strong>${i + 1}. ${esc(x[0])}</strong>${x[1].map((c, j) =>
+        `<button class="choice" type="button" data-q="${i}" data-c="${j}">${esc(c)}</button>`
+      ).join('')}<p id="fb${i}" class="small"></p></div>`
+    ).join('');
+    document.querySelectorAll('.choice').forEach(b => b.onclick = () => answer(+b.dataset.q, +b.dataset.c));
+    score();
+  }
+
+  function renderPlayer() {
+    const id = cf.value;
+    const rec = catalog.certifications[id];
+    const d = currentDeck();
+    const selected = document.getElementById('selected');
+    if (!id) {
+      player.hidden = true;
+      selected.hidden = true;
+      return;
+    }
+    selected.hidden = false;
+    selected.innerHTML = `<strong>Opened for Roadmap certification:</strong> ${esc(rec?.title || id)}`;
+    if (!d) {
+      player.hidden = true;
+      return;
+    }
+    player.hidden = false;
+    document.title = `${d.label} interactive study | FireOpsSim`;
+    document.getElementById('guideTitle').textContent = d.label;
+    document.getElementById('guideSummary').textContent = d.summary;
+    document.getElementById('guide').innerHTML = d.guide.map(x => `<article><strong>${esc(x[0])}</strong><p>${esc(x[1])}</p></article>`).join('');
+    document.getElementById('nextList').innerHTML = d.next.map(x => `<li>${esc(x)}</li>`).join('');
+    document.getElementById('toolLinks').innerHTML = (d.tools || []).map(([label, url]) =>
+      `<a class="c-link" href="${esc(url)}"><strong>${esc(label)}</strong><span>Continue practicing</span></a>`
+    ).join('');
+    document.getElementById('hubLink').href = '/taskbook-resources.html?cert=' + encodeURIComponent(id);
+    document.getElementById('finderLink').href = '/school-finder.html?path=' + encodeURIComponent(rec?.finderPath || 'fire') + '&cert=' + encodeURIComponent(id);
+    ci = 0; flipped = false; ans = {};
+    flash();
+    quiz();
+  }
+
+  function renderGrid() {
+    const humanize = id => (id || '').replace(/[_-]+/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+    let list = entries.filter(([id, c]) => (!cf.value || id === cf.value) && (!gf.value || c.category === gf.value));
+    if (!list.length && cf.value) {
+      const fb = catalog.fallback || {title: cf.value, category: 'General', summary: 'No dedicated guide yet.', study: [], finderPath: 'fire'};
+      list = [[cf.value, Object.assign({title: humanize(cf.value)}, fb)]];
+    }
+    cards.innerHTML = list.length ? list.map(([id, c]) => {
+      const interactive = decks[id] ? `<a class="button primary" href="/study-guides.html?cert=${encodeURIComponent(id)}#study">Open interactive study</a>` : '';
+      return `<article class="resource-card"><span class="badge">${esc(c.category)}</span><h3>${esc(c.title)}</h3><p class="c-muted">${esc(c.summary)}</p><div class="c-links">${(c.study || []).slice(0, 4).map(x => `<a class="c-link" href="${esc(x.url)}"><strong>${esc(x.label)}</strong><span>${esc(x.type === 'practice' ? 'Practice' : 'Study')}</span></a>`).join('')}</div><div class="hero-actions">${interactive}<a class="button secondary" href="/taskbook-resources.html?cert=${encodeURIComponent(id)}">Resource hub</a></div></article>`;
+    }).join('') : '<div class="empty">No resources match these filters.</div>';
+  }
+
+  function render() {
+    const u = new URL(location.href);
+    if (cf.value) u.searchParams.set('cert', cf.value); else u.searchParams.delete('cert');
+    history.replaceState(null, '', u);
+    renderPlayer();
+    renderGrid();
+    cards.style.display = cf.value && currentDeck() ? 'none' : '';
+    if (cf.value && currentDeck() && location.hash === '#study') {
+      document.getElementById('study')?.scrollIntoView({behavior:'auto', block:'start'});
+    }
+  }
+
+  document.getElementById('prev').onclick = () => {
+    const d = currentDeck(); if (!d) return;
+    ci = (ci - 1 + d.cards.length) % d.cards.length; flipped = false; flash();
+  };
+  document.getElementById('next').onclick = () => {
+    const d = currentDeck(); if (!d) return;
+    ci = (ci + 1) % d.cards.length; flipped = false; flash();
+  };
+  document.getElementById('flip').onclick = () => { flipped = !flipped; flash(); };
+  document.getElementById('flash').onclick = () => { flipped = !flipped; flash(); };
+  document.getElementById('flash').onkeydown = e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flipped = !flipped; flash(); }
+    if (e.key === 'ArrowRight') document.getElementById('next').click();
+    if (e.key === 'ArrowLeft') document.getElementById('prev').click();
+  };
+  document.getElementById('reset').onclick = () => { ans = {}; quiz(); };
+  cf.onchange = render;
+  gf.onchange = render;
+  render();
+})();
+</script>
+</body>
+</html>

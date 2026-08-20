@@ -90,6 +90,11 @@
       "summary": "Build the entry-level knowledge and hands-on foundation expected of a structural firefighter. Exact certification requirements vary by state and agency.",
       "study": [
         {
+          "label": "Interactive Firefighter I study",
+          "url": "/study-guides.html?cert=firefighter_1#study",
+          "type": "trainingGuide"
+        },
+        {
           "label": "Firefighter I & II tools",
           "url": "/firefighter-1-2-tools.html",
           "type": "fireOpsGuide"
@@ -115,7 +120,7 @@
           "type": "practice"
         },
         {
-          "label": "Focus Drills — Firefighter I",
+          "label": "Focus Drills \u2014 Firefighter I",
           "url": "/focus-drills.html?source=roadmap&level=firefighter_1",
           "type": "practice"
         }
@@ -127,6 +132,11 @@
       "category": "Firefighting",
       "summary": "Build beyond Firefighter I into advanced company-level skills, operations, communications, and readiness. Requirements vary by certifying authority.",
       "study": [
+        {
+          "label": "Interactive Firefighter II study",
+          "url": "/study-guides.html?cert=firefighter_2#study",
+          "type": "trainingGuide"
+        },
         {
           "label": "Firefighter I & II tools",
           "url": "/firefighter-1-2-tools.html",
@@ -156,6 +166,11 @@
       "summary": "Recognition, isolation, notification, protective actions, and safe initial decision-making. Use the requirements adopted by your agency/state.",
       "study": [
         {
+          "label": "Interactive Hazardous Materials Awareness study",
+          "url": "/study-guides.html?cert=hazmat_awareness#study",
+          "type": "trainingGuide"
+        },
+        {
           "label": "HazMat Awareness & Operations Center",
           "url": "/hazmat-awareness-operations.html",
           "type": "fireOpsGuide"
@@ -183,6 +198,11 @@
       "category": "HazMat",
       "summary": "Operations-level defensive actions, PPE, decontamination, control zones, and risk-based response. Scope varies by local adoption and certification authority.",
       "study": [
+        {
+          "label": "Interactive Hazardous Materials Operations study",
+          "url": "/study-guides.html?cert=hazmat_operations#study",
+          "type": "trainingGuide"
+        },
         {
           "label": "HazMat Awareness & Operations Center",
           "url": "/hazmat-awareness-operations.html",
@@ -217,6 +237,11 @@
       "summary": "Advanced technician development should be anchored to the certifying authority, team SOPs, equipment, chemistry, monitoring, control, and decon requirements.",
       "study": [
         {
+          "label": "Interactive Hazardous Materials Technician study",
+          "url": "/study-guides.html?cert=hazmat_technician#study",
+          "type": "trainingGuide"
+        },
+        {
           "label": "HazMat Tools",
           "url": "/hazmat-tools.html",
           "type": "practice"
@@ -235,10 +260,15 @@
       "finderPath": "fire"
     },
     "driver_operator_pumper": {
-      "title": "Driver Operator – Pumper",
+      "title": "Driver Operator \u2013 Pumper",
       "category": "Driver / Operator",
       "summary": "Build apparatus, driving, pump, hydraulics, water-supply, and troubleshooting competence. Use apparatus-specific manufacturer guidance and department SOPs for actual operation.",
       "study": [
+        {
+          "label": "Interactive Driver Operator \u2013 Pumper study",
+          "url": "/study-guides.html?cert=driver_operator_pumper#study",
+          "type": "trainingGuide"
+        },
         {
           "label": "Driver/Operator Practice Center",
           "url": "/driver-operator-practice.html",
@@ -270,7 +300,7 @@
           "type": "trainingGuide"
         },
         {
-          "label": "Focus Drills — Driver/Operator",
+          "label": "Focus Drills \u2014 Driver/Operator",
           "url": "/focus-drills.html?source=roadmap&level=driver_operator",
           "type": "practice"
         }
@@ -278,10 +308,15 @@
       "finderPath": "fire"
     },
     "driver_operator_aerial": {
-      "title": "Driver Operator – Aerial",
+      "title": "Driver Operator \u2013 Aerial",
       "category": "Driver / Operator",
       "summary": "Develop safe driving, placement, stabilization, aerial-device operation, load awareness, communications, and apparatus-specific proficiency.",
       "study": [
+        {
+          "label": "Interactive Driver Operator \u2013 Aerial study",
+          "url": "/study-guides.html?cert=driver_operator_aerial#study",
+          "type": "trainingGuide"
+        },
         {
           "label": "Driver/Operator Study Track",
           "url": "/study-center.html?track=driver",
@@ -305,6 +340,11 @@
       "category": "Officer",
       "summary": "Company-officer development: leadership, supervision, communications, crew development, incident decision-making, documentation, and organizational responsibilities.",
       "study": [
+        {
+          "label": "Interactive Fire Officer I study",
+          "url": "/study-guides.html?cert=fire_officer_1#study",
+          "type": "trainingGuide"
+        },
         {
           "label": "Officer Study Track",
           "url": "/study-center.html?track=officer",
@@ -331,7 +371,7 @@
           "type": "trainingGuide"
         },
         {
-          "label": "Focus Drills — Company Officer",
+          "label": "Focus Drills \u2014 Company Officer",
           "url": "/focus-drills.html?source=roadmap&level=officer_1",
           "type": "practice"
         }
@@ -343,6 +383,11 @@
       "category": "Officer",
       "summary": "Advanced company-officer development emphasizing administration, personnel development, planning, policy application, incident leadership, and organizational performance.",
       "study": [
+        {
+          "label": "Interactive Fire Officer II study",
+          "url": "/study-guides.html?cert=fire_officer_2#study",
+          "type": "trainingGuide"
+        },
         {
           "label": "Officer Study Track",
           "url": "/study-center.html?track=officer",
@@ -366,6 +411,11 @@
       "category": "Instructor",
       "summary": "Prepare to deliver safe, organized instruction from prepared lesson plans, coach skills, evaluate learners, and document training.",
       "study": [
+        {
+          "label": "Interactive Fire Instructor I study",
+          "url": "/study-guides.html?cert=fire_instructor_1#study",
+          "type": "trainingGuide"
+        },
         {
           "label": "Fire Instructor I Center",
           "url": "/fire-instructor-1.html",
@@ -395,6 +445,11 @@
       "summary": "Advance into lesson-plan development, evaluation, program coordination, instructional improvement, and more complex training responsibilities.",
       "study": [
         {
+          "label": "Interactive Fire Instructor II study",
+          "url": "/study-guides.html?cert=fire_instructor_2#study",
+          "type": "trainingGuide"
+        },
+        {
           "label": "Instructor Study Track",
           "url": "/study-center.html?track=instructor",
           "type": "trainingGuide"
@@ -418,6 +473,11 @@
       "summary": "Foundational inspection development: code navigation, occupancy hazards, documentation, communication, and local enforcement processes.",
       "study": [
         {
+          "label": "Interactive Fire Inspector I study",
+          "url": "/study-guides.html?cert=fire_inspector_1#study",
+          "type": "trainingGuide"
+        },
+        {
           "label": "Fire Inspector Tools",
           "url": "/fire-inspector-tools.html",
           "type": "fireOpsGuide"
@@ -440,6 +500,11 @@
       "category": "EMS",
       "summary": "Use FireOpsSim for career direction and broad review, while your approved education program, state EMS office, medical direction, and current certification authority remain the source of truth.",
       "study": [
+        {
+          "label": "Interactive EMT study",
+          "url": "/study-guides.html?cert=emt#study",
+          "type": "trainingGuide"
+        },
         {
           "label": "EMT Study Track",
           "url": "/study-center.html?track=emt",
@@ -469,6 +534,11 @@
       "summary": "Use approved education, current state scope, medical direction, and certifying-agency requirements. FireOpsSim provides career and study support rather than protocol authority.",
       "study": [
         {
+          "label": "Interactive Advanced EMT study",
+          "url": "/study-guides.html?cert=aemt#study",
+          "type": "trainingGuide"
+        },
+        {
           "label": "EMS Career Center",
           "url": "/ems-career.html",
           "type": "fireOpsGuide"
@@ -491,6 +561,11 @@
       "category": "EMS",
       "summary": "Paramedic education and licensure are jurisdiction-dependent. Use accredited-program, state EMS, medical-direction, and certification sources for authoritative requirements.",
       "study": [
+        {
+          "label": "Interactive Paramedic study",
+          "url": "/study-guides.html?cert=paramedic#study",
+          "type": "trainingGuide"
+        },
         {
           "label": "Paramedic Study Track",
           "url": "/study-center.html?track=paramedic",
@@ -520,6 +595,11 @@
       "finderPath": "fire",
       "summary": "Chief/staff-officer development: planning, programs, personnel systems, budget awareness, multi-company operations, and organizational communication. Requirements are state and agency dependent.",
       "study": [
+        {
+          "label": "Interactive Fire Officer III study",
+          "url": "/study-guides.html?cert=fire_officer_3#study",
+          "type": "trainingGuide"
+        },
         {
           "label": "Officer Study Track",
           "url": "/study-center.html?track=officer",
@@ -554,6 +634,11 @@
       "summary": "Executive/chief-officer development: policy, organizational performance, community risk, labor/management awareness, and long-range planning. Confirm the exact FO IV path with your certifying authority.",
       "study": [
         {
+          "label": "Interactive Fire Officer IV study",
+          "url": "/study-guides.html?cert=fire_officer_4#study",
+          "type": "trainingGuide"
+        },
+        {
           "label": "Leadership Development",
           "url": "/leadership-development.html",
           "type": "fireOpsGuide"
@@ -586,6 +671,11 @@
       "finderPath": "fire",
       "summary": "Advanced inspection development: complex occupancies, plans-related issues, enforcement documentation, and coordination with investigators, plans examiners, and the AHJ.",
       "study": [
+        {
+          "label": "Interactive Fire Inspector II study",
+          "url": "/study-guides.html?cert=fire_inspector_2#study",
+          "type": "trainingGuide"
+        },
         {
           "label": "Fire Inspector Tools",
           "url": "/fire-inspector-tools.html",
@@ -620,6 +710,11 @@
       "summary": "Origin-and-cause development should follow your agency, legal authority, scene-safety rules, and current investigation standards. FireOpsSim provides career direction and supporting references, not an investigation credential.",
       "study": [
         {
+          "label": "Interactive Fire Investigator study",
+          "url": "/study-guides.html?cert=fire_investigator#study",
+          "type": "trainingGuide"
+        },
+        {
           "label": "Specialty Career Paths",
           "url": "/specialty-careers.html",
           "type": "fireOpsGuide"
@@ -645,8 +740,13 @@
       "title": "BLS / CPR",
       "category": "EMS",
       "finderPath": "ems",
-      "summary": "Basic Life Support and CPR credentials are issuer-dependent (AHA, Red Cross, or another provider your department accepts). Use the current provider manual and your agency’s accepted card.",
+      "summary": "Basic Life Support and CPR credentials are issuer-dependent (AHA, Red Cross, or another provider your department accepts). Use the current provider manual and your agency\u2019s accepted card.",
       "study": [
+        {
+          "label": "Interactive BLS / CPR study",
+          "url": "/study-guides.html?cert=bls#study",
+          "type": "trainingGuide"
+        },
         {
           "label": "EMS Life Support companion",
           "url": "/ems-life-support.html?cert=bls",
@@ -668,8 +768,13 @@
       "title": "ACLS",
       "category": "EMS",
       "finderPath": "ems",
-      "summary": "Advanced Cardiovascular Life Support is issuer-dependent. Study current provider materials, local protocols, and medical-direction expectations—not a generic algorithm dump.",
+      "summary": "Advanced Cardiovascular Life Support is issuer-dependent. Study current provider materials, local protocols, and medical-direction expectations\u2014not a generic algorithm dump.",
       "study": [
+        {
+          "label": "Interactive ACLS study",
+          "url": "/study-guides.html?cert=acls#study",
+          "type": "trainingGuide"
+        },
         {
           "label": "EMS Life Support companion",
           "url": "/ems-life-support.html?cert=acls",
@@ -694,6 +799,11 @@
       "summary": "Pediatric Advanced Life Support is issuer-dependent. Pair current provider materials with pediatric assessment practice and local pediatric protocols.",
       "study": [
         {
+          "label": "Interactive PALS study",
+          "url": "/study-guides.html?cert=pals#study",
+          "type": "trainingGuide"
+        },
+        {
           "label": "EMS Life Support companion",
           "url": "/ems-life-support.html?cert=pals",
           "type": "fireOpsGuide"
@@ -717,6 +827,11 @@
       "summary": "Introduction to the Incident Command System. Complete the current FEMA Independent Study course, then connect the ICS language to company-level size-up and radio reports.",
       "study": [
         {
+          "label": "Interactive ICS-100 study",
+          "url": "/study-guides.html?cert=ics_100#study",
+          "type": "trainingGuide"
+        },
+        {
           "label": "ICS / NIMS training hub",
           "url": "/ics-nims-training.html?cert=ics_100",
           "type": "fireOpsGuide"
@@ -739,6 +854,11 @@
       "finderPath": "ics",
       "summary": "ICS for Single Resources and Initial Action Incidents. Use FEMA IS-200 plus company-officer decision practice for initial command, assignments, and transfers of command.",
       "study": [
+        {
+          "label": "Interactive ICS-200 study",
+          "url": "/study-guides.html?cert=ics_200#study",
+          "type": "trainingGuide"
+        },
         {
           "label": "ICS / NIMS training hub",
           "url": "/ics-nims-training.html?cert=ics_200",
@@ -768,6 +888,11 @@
       "summary": "Intermediate ICS for Expanding Incidents is typically instructor-led. Use FEMA/state training systems for the official course; FireOpsSim supports planning, communications, and multi-company decision practice.",
       "study": [
         {
+          "label": "Interactive ICS-300 study",
+          "url": "/study-guides.html?cert=ics_300#study",
+          "type": "trainingGuide"
+        },
+        {
           "label": "ICS / NIMS training hub",
           "url": "/ics-nims-training.html?cert=ics_300",
           "type": "fireOpsGuide"
@@ -796,6 +921,11 @@
       "summary": "Advanced ICS for Command and General Staff is typically instructor-led. Confirm the current delivery path through FEMA EMI or your state training system.",
       "study": [
         {
+          "label": "Interactive ICS-400 study",
+          "url": "/study-guides.html?cert=ics_400#study",
+          "type": "trainingGuide"
+        },
+        {
           "label": "ICS / NIMS training hub",
           "url": "/ics-nims-training.html?cert=ics_400",
           "type": "fireOpsGuide"
@@ -819,6 +949,11 @@
       "summary": "An Introduction to the National Incident Management System. Complete the current FEMA IS-700 course and keep the certificate with your Career Road evidence.",
       "study": [
         {
+          "label": "Interactive IS-700 / NIMS study",
+          "url": "/study-guides.html?cert=is_700#study",
+          "type": "trainingGuide"
+        },
+        {
           "label": "ICS / NIMS training hub",
           "url": "/ics-nims-training.html?cert=is_700",
           "type": "fireOpsGuide"
@@ -836,6 +971,11 @@
       "finderPath": "ics",
       "summary": "National Response Framework introduction. Complete the current FEMA IS-800 course; this is a federal independent-study requirement, not a FireOpsSim skill sheet.",
       "study": [
+        {
+          "label": "Interactive IS-800 / National Response Framework study",
+          "url": "/study-guides.html?cert=is_800#study",
+          "type": "trainingGuide"
+        },
         {
           "label": "ICS / NIMS training hub",
           "url": "/ics-nims-training.html?cert=is_800",

@@ -9,3 +9,8 @@
   Access-Control-Allow-Origin: *
   Access-Control-Allow-Methods: GET, OPTIONS
   Cache-Control: public, max-age=0, must-revalidate
+
+/study-data/*
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET, OPTIONS
+  Cache-Control: public, max-age=0, must-revalidate
