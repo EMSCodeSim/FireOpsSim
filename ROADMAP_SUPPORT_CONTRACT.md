@@ -69,23 +69,27 @@ Examples:
 
 The support page normalizes punctuation, underscores, hyphens, abbreviations, and common certification names. Known items map to a dedicated Learn → Practice → Record sequence. Unknown items fall back to the closest general study, training, career, and official-source resources instead of returning an empty page.
 
-Current first-class coverage includes:
+Current first-class coverage includes every FireOps Career Roadmap `certificationDefinitionId`:
 
-- EMT
-- Paramedic
 - Firefighter I / II
-- HazMat Operations
-- Driver / Operator — Pumper
-- Company Officer / Fire Officer I
-- Fire Officer II / advanced officer development
-- Fire Instructor I
+- HazMat Awareness / Operations / Technician
+- Driver / Operator — Pumper and Aerial
+- Fire Officer I–IV
+- Fire Instructor I / II
+- Fire Inspector I / II
+- Fire Investigator
+- EMT / AEMT / Paramedic
+- BLS / ACLS / PALS
+- ICS-100 / ICS-200 / ICS-300 / ICS-400
+- IS-700 / IS-800
 - CPAT / candidate physical readiness
 - Probation / first 100 fire shifts
-- Pump hydraulics
-- Water supply
-- SCBA / air management
-- Fireground decision-making
+- Pump hydraulics, water supply, SCBA / air management, fireground decision-making
 - General career advancement / promotion development
+
+Unknown task IDs still render certification-level Learn → Practice → Record links instead of an empty page. The machine-readable catalog is `https://fireopssim.com/data/taskbook-resources.json` and is CORS-enabled for the Roadmap app.
+
+Stable certification IDs answered by FireOpsSim include `ics_100`, `ics_200`, `is_700`, `bls`, `acls`, `pals`, `fire_officer_3`, `fire_officer_4`, `fire_inspector_2`, and `fire_investigator`.
 
 ## Record handoff
 
