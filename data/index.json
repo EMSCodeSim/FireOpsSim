@@ -1,6 +1,6 @@
 {
   "version": "2026.08.23",
-  "description": "FireOpsSim data hub index \u2014 national pathways and state overlays",
+  "description": "FireOpsSim data hub index — national pathways and state overlays",
   "hub": {
     "name": "FireOpsSim",
     "repo": "https://github.com/EMSCodeSim/FireOpsSim",
@@ -25,7 +25,7 @@
       },
       {
         "id": "national.driver_operator_pumper",
-        "title": "Driver/Operator \u2013 Pumper",
+        "title": "Driver/Operator – Pumper",
         "path": "national/pathways/driver-operator-pumper.json",
         "version": "2026.08.23",
         "status": "complete"
@@ -48,7 +48,18 @@
   },
   "states": {
     "note": "Add folders under data/states/{CODE}/ using the _template. List them here as they are curated.",
-    "available": []
+    "available": [
+      {
+        "code": "CO",
+        "name": "Colorado",
+        "path": "states/CO/",
+        "version": "2026.08.23",
+        "status": "initial",
+        "pathways": [
+          "firefighter-i"
+        ]
+      }
+    ]
   },
   "lastUpdated": "2026-08-23"
 }
