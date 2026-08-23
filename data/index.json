@@ -1,6 +1,6 @@
 {
   "version": "2026.08.23",
-  "description": "FireOpsSim data hub index — national pathways and state overlays",
+  "description": "FireOpsSim data hub index \u2014 national pathways and state overlays",
   "hub": {
     "name": "FireOpsSim",
     "repo": "https://github.com/EMSCodeSim/FireOpsSim",
@@ -21,28 +21,28 @@
         "title": "Firefighter II",
         "path": "national/pathways/firefighter-ii.json",
         "version": "2026.08.23",
-        "status": "stub"
+        "status": "complete"
       },
       {
         "id": "national.driver_operator_pumper",
-        "title": "Driver/Operator – Pumper",
+        "title": "Driver/Operator \u2013 Pumper",
         "path": "national/pathways/driver-operator-pumper.json",
         "version": "2026.08.23",
-        "status": "stub"
+        "status": "complete"
       },
       {
         "id": "national.fire_officer_i",
         "title": "Fire Officer I",
         "path": "national/pathways/fire-officer-i.json",
         "version": "2026.08.23",
-        "status": "stub"
+        "status": "complete"
       },
       {
         "id": "national.fire_instructor_i",
         "title": "Fire Instructor I",
         "path": "national/pathways/fire-instructor-i.json",
         "version": "2026.08.23",
-        "status": "stub"
+        "status": "complete"
       }
     ]
   },
