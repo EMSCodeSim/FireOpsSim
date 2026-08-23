@@ -1,0 +1,17 @@
+{
+  "id": "national.fire_officer_i",
+  "version": "2026.08.23",
+  "status": "stub",
+  "title": "Fire Officer I",
+  "shortTitle": "FO I",
+  "level": "company_officer",
+  "category": "Operations",
+  "description": "Stub — expand with NFPA 1021 Fire Officer I pathway (company-level leadership, tactics, admin, human resources, emergency service delivery).",
+  "outputsForCareerRoad": {
+    "primaryCertificationId": "fire_officer_1",
+    "suggestedRequirementIds": ["fo1"],
+    "taskBookChapters": []
+  },
+  "lastVerified": "2026-08-23",
+  "disclaimer": "Placeholder only. Replace with complete pathway content before production use."
+}

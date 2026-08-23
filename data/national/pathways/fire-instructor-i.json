@@ -1,0 +1,17 @@
+{
+  "id": "national.fire_instructor_i",
+  "version": "2026.08.23",
+  "status": "stub",
+  "title": "Fire Instructor I",
+  "shortTitle": "FI I",
+  "level": "instructor",
+  "category": "Training",
+  "description": "Stub — expand with NFPA 1041 Fire Instructor I pathway (instructional delivery, evaluation, safety in training, lesson support).",
+  "outputsForCareerRoad": {
+    "primaryCertificationId": "fire_instructor_1",
+    "suggestedRequirementIds": ["fi1"],
+    "taskBookChapters": []
+  },
+  "lastVerified": "2026-08-23",
+  "disclaimer": "Placeholder only. Replace with complete pathway content before production use."
+}

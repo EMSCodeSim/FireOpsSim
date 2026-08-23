@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fireopssim.com/schema/pathway.schema.json",
+  "title": "FireOpsSim National Pathway Pack",
+  "type": "object",
+  "required": ["id", "version", "title", "description", "lastVerified", "disclaimer"],
+  "properties": {
+    "id": {"type":"string","pattern":"^national\\.[a-z0-9_]+$"},
+    "version": {"type":"string"},
+    "status": {"type":"string","enum":["complete","stub","draft"]},
+    "title": {"type":"string"},
+    "shortTitle": {"type":"string"},
+    "level": {"type":"string"},
+    "category": {"type":"string"},
+    "description": {"type":"string"},
+    "audience": {"type":"array","items":{"type":"string"}},
+    "estimatedRange": {"type":"object"},
+    "prerequisites": {"type":"array"},
+    "corequisitesAndCommonCompanions": {"type":"array"},
+    "knowledgeDomains": {"type":"array"},
+    "jprSkillGroups": {"type":"array"},
+    "trainingSequence": {"type":"array"},
+    "assessment": {"type":"object"},
+    "outputsForCareerRoad": {
+      "type":"object",
+      "properties": {
+        "primaryCertificationId":{"type":"string"},
+        "suggestedRequirementIds":{"type":"array","items":{"type":"string"}},
+        "taskBookChapters":{"type":"array","items":{"type":"string"}}
+      }
+    },
+    "stateOverlayGuidance": {"type":"object"},
+    "sources": {"type":"array"},
+    "lastVerified": {"type":"string"},
+    "confidence": {"type":"string"},
+    "disclaimer": {"type":"string"}
+  }
+}

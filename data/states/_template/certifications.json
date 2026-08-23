@@ -1,0 +1,17 @@
+{
+  "stateCode": "XX",
+  "version": "2026.08.23",
+  "notes": "Only list differences from the national baseline, or map local names to stable catalog IDs.",
+  "certifications": [
+    {
+      "catalogId": "firefighter_1",
+      "localName": "Firefighter I (Example State)",
+      "requiredForStructuralInterior": true,
+      "hazmatAwarenessRequired": true,
+      "hazmatOperationsRequired": true,
+      "typicalHours": null,
+      "officialUrl": null,
+      "notes": "Example only — replace with real state rules."
+    }
+  ]
+}
