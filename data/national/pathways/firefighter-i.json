@@ -1,0 +1,89 @@
+{
+  "id": "national.firefighter_i",
+  "version": "2026.08.23",
+  "standard": {
+    "primary": "NFPA 1001",
+    "related": ["NFPA 1072 / 470 (HazMat)", "NFPA 1500 (safety context)"],
+    "notes": "Most U.S. state Firefighter I programs are built on NFPA 1001 JPRs. States may add hours, medical, or local modules. Always verify with the state fire training agency."
+  },
+  "title": "Firefighter I",
+  "shortTitle": "FF I",
+  "level": "entry",
+  "category": "Operations",
+  "description": "Complete entry-level structural firefighter qualification pathway: prerequisites, knowledge, practical JPRs, and certification readiness.",
+  "audience": [
+    "Recruit / academy candidate",
+    "Volunteer seeking structural qualification",
+    "Probationary firefighter working toward state/IFSAC/Pro Board seal"
+  ],
+  "estimatedRange": {
+    "typicalHours": "120–200+ instructional hours (varies widely by state/academy)",
+    "typicalDuration": "4–16 weeks full-time academy or longer part-time/volunteer path"
+  },
+  "prerequisites": [
+    {"id":"prereq.age","title":"Minimum age","type":"eligibility","required":true,"detail":"Usually 18 (some jurisdictions 17 with restrictions). Confirm local rule."},
+    {"id":"prereq.medical","title":"Medical / physical clearance","type":"eligibility","required":true,"detail":"Department or academy medical evaluation; often includes respiratory clearance for SCBA."},
+    {"id":"prereq.cpat_or_equivalent","title":"Physical ability assessment","type":"eligibility","required":"often","detail":"CPAT or department-equivalent physical ability test is commonly required for hire or academy entry, not always for the cert itself."},
+    {"id":"prereq.background","title":"Background / affiliation requirements","type":"eligibility","required":"varies","detail":"Some states require membership in an organized fire department or enrollment in an approved program before testing."}
+  ],
+  "corequisitesAndCommonCompanions": [
+    {"id":"cert.hazmat_awareness","title":"Hazardous Materials Awareness","type":"certification","relationship":"commonly required before or with FF I","standard":"NFPA 1072 / 470 Chapter for Awareness","catalogId":"hazmat_awareness","notes":"Many systems will not issue FF I without current HazMat Awareness (and often Operations)."},
+    {"id":"cert.hazmat_operations","title":"Hazardous Materials Operations","type":"certification","relationship":"very commonly required with or immediately after FF I","standard":"NFPA 1072 / 470 Operations","catalogId":"hazmat_operations","notes":"Treat as part of the complete entry package in most career departments."},
+    {"id":"cert.cpr_bls","title":"CPR / BLS","type":"certification","relationship":"commonly required","catalogId":"cpr_bls","notes":"Often required for academy entry or medical module completion."},
+    {"id":"training.first_aid_or_emt","title":"First Aid / Emergency Medical module or EMT","type":"training","relationship":"common","notes":"Some states embed basic medical; many departments expect EMT-Basic for career hire."}
+  ],
+  "knowledgeDomains": [
+    {"id":"know.orientation","title":"Fire department organization, culture, and safety","topics":["Chain of command and company roles","Firefighter health, safety, and wellness","Accountability and personnel safety systems","Mayday / firefighter survival concepts (intro)"]},
+    {"id":"know.fire_behavior","title":"Fire behavior and building construction","topics":["Fire chemistry and dynamics","Heat transfer and smoke behavior","Building construction types and collapse awareness","Reading smoke and changing conditions"]},
+    {"id":"know.ppe_scba","title":"PPE and SCBA","topics":["Structural PPE components and limitations","SCBA use, limitations, emergency procedures","Air management basics","Inspection, care, and readiness"]},
+    {"id":"know.tools_equipment","title":"Tools, equipment, and apparatus familiarization","topics":["Hand tools and power tools","Ladders theory","Hose, nozzles, and appliances overview","Basic apparatus and equipment locations"]},
+    {"id":"know.ops_basics","title":"Basic fireground operations concepts","topics":["Size-up awareness","Engine and truck company functions (intro)","Water supply concepts","Search and rescue principles","Ventilation principles","Overhaul and property conservation"]},
+    {"id":"know.comms_ics","title":"Communications and ICS orientation","topics":["Radio discipline and mayday language","ICS 100-level concepts","Scene organization and roles"]}
+  ],
+  "jprSkillGroups": [
+    {"id":"jpr.ppe","title":"PPE readiness and donning/doffing","standardRef":"NFPA 1001 – PPE related JPRs","skills":["Don structural PPE correctly and within expected time","Doff and prepare PPE for reuse","Perform basic PPE inspection and readiness check"]},
+    {"id":"jpr.scba","title":"SCBA operations","standardRef":"NFPA 1001 – SCBA related JPRs","skills":["Don and activate SCBA","Perform emergency procedures (e.g., low-air, malfunction awareness)","Control breathing and air management under work","Exit hazardous area while on air"]},
+    {"id":"jpr.ladders","title":"Ground ladders","standardRef":"NFPA 1001 – Ladder JPRs","skills":["Carry, position, raise, and extend ground ladders","Climb and work from ladders with tools","Assist victims / perform basic ladder rescues as trained","Inspect and maintain ladder readiness"]},
+    {"id":"jpr.hose","title":"Hose, nozzles, and water application","standardRef":"NFPA 1001 – Hose / fire streams JPRs","skills":["Advance charged and uncharged lines","Couple/uncouple hose and operate nozzles","Produce effective fire streams","Extend and replace hose sections","Load hose and prepare for response"]},
+    {"id":"jpr.water_supply","title":"Water supply support","standardRef":"NFPA 1001 – Water supply JPRs","skills":["Connect to hydrant / establish basic supply","Deploy supply line","Support engine operations as assigned"]},
+    {"id":"jpr.forcible_entry","title":"Forcible entry","standardRef":"NFPA 1001 – Forcible entry JPRs","skills":["Force entry through common door/window assemblies using appropriate tools","Select tools for the construction encountered","Work as part of a forcible-entry team"]},
+    {"id":"jpr.search_rescue","title":"Search and rescue","standardRef":"NFPA 1001 – Search & rescue JPRs","skills":["Conduct primary search in structure with limited visibility","Remove victims using appropriate carries/drags","Maintain orientation and team integrity","Recognize and communicate hazards during search"]},
+    {"id":"jpr.ventilation","title":"Ventilation support","standardRef":"NFPA 1001 – Ventilation JPRs","skills":["Perform horizontal ventilation","Support vertical ventilation operations as assigned","Recognize ventilation effects on fire behavior"]},
+    {"id":"jpr.fire_control","title":"Fire control / attack","standardRef":"NFPA 1001 – Fire control JPRs","skills":["Attack passenger vehicle fires","Attack exterior Class A fires","Attack interior structure fires as part of a team (as trained/authorized)","Operate hoselines under supervision"]},
+    {"id":"jpr.overhaul_salvage","title":"Overhaul, salvage, and property conservation","standardRef":"NFPA 1001 – Overhaul / salvage JPRs","skills":["Overhaul to find hidden fire","Protect property with salvage covers / water control","Recognize secondary hazards during overhaul"]},
+    {"id":"jpr.scene_ops","title":"Scene support and utilities awareness","standardRef":"NFPA 1001 – related scene JPRs","skills":["Illuminate the scene","Control utilities as trained and ordered","Maintain situational awareness and accountability"]},
+    {"id":"jpr.communications","title":"Communications and emergency procedures","standardRef":"NFPA 1001 – Communications / MAYDAY related","skills":["Operate portable radio correctly","Transmit required messages and mayday information","Follow company and department emergency procedures"]}
+  ],
+  "trainingSequence": [
+    {"step":1,"id":"seq.eligibility","title":"Confirm eligibility and medical readiness","actions":["Verify age and affiliation rules for your state/academy","Complete required medical / respiratory clearance","Complete any required physical ability test"]},
+    {"step":2,"id":"seq.safety_orientation","title":"Safety, culture, and PPE foundation","actions":["Department/academy orientation","PPE familiarization and inspection","SCBA introduction and confidence training"]},
+    {"step":3,"id":"seq.hazmat","title":"HazMat Awareness (and usually Operations)","actions":["Complete Awareness training/testing","Complete Operations if required by state or department","Document seals/certificates"]},
+    {"step":4,"id":"seq.core_skills","title":"Core practical skill blocks","actions":["Ladders","Hose and streams","Forcible entry","Search and rescue","Ventilation support","Fire attack evolutions","Overhaul and salvage"]},
+    {"step":5,"id":"seq.integrated_evolutions","title":"Integrated company evolutions","actions":["Multi-skill drills under supervision","Live-fire training only where authorized and compliant","Accountability and communication under stress"]},
+    {"step":6,"id":"seq.cognitive_prep","title":"Cognitive / written exam preparation","actions":["Study fire behavior, construction, PPE/SCBA, ops theory","Practice state or academy written exam format","Review local SOPs that will be tested"]},
+    {"step":7,"id":"seq.testing","title":"Skills testing + written testing","actions":["Pass practical skills evaluation (JPR-based)","Pass written examination","Submit required documentation to state / certifying entity"]},
+    {"step":8,"id":"seq.cert_issuance","title":"Certification issuance and seal","actions":["Receive state Firefighter I certification","Obtain IFSAC and/or Pro Board seal if offered by your entity","Store certificate images and numbers in Career Record"]}
+  ],
+  "assessment": {
+    "practical": "Pass/fail skill stations mapped to JPRs (state or academy skill sheets)",
+    "written": "Typically multiple-choice exam on knowledge objectives",
+    "passingCriteria": "Set by state certifying entity or accredited academy (commonly ~70% written; practical pass/fail)",
+    "documentationNeeded": ["Course completion record","Skills sign-offs","Exam scores","Prereq certificates (HazMat, CPR, etc.)","Application to state / IFSAC / Pro Board process if separate"]
+  },
+  "outputsForCareerRoad": {
+    "primaryCertificationId": "firefighter_1",
+    "suggestedRequirementIds": ["ff1","haz_awareness","haz_ops","cpr_bls"],
+    "taskBookChapters": ["Eligibility & medical","PPE & SCBA","Ladders","Hose & water supply","Forcible entry","Search & rescue","Ventilation","Fire control","Overhaul & salvage","Communications & mayday","HazMat companion certs","Written & practical testing","Certificate & seal filing"]
+  },
+  "stateOverlayGuidance": {
+    "howToUse": "Keep this file as the national baseline. Each state pack should only record differences: extra hours, required medical module, whether HazMat Ops is mandatory, testing entity, reciprocity rules, and official URLs.",
+    "alwaysVerifyWith": ["State fire training / certification agency","IFSAC or Pro Board accredited entity in that state","Hiring department academy standards"]
+  },
+  "sources": [
+    {"title":"NFPA 1001 (Firefighter professional qualifications)","type":"standard","note":"Purchase/access via NFPA; do not paste copyrighted JPR text verbatim into public materials."},
+    {"title":"State fire training agency directories (USFA / IFSAC member lists)","type":"directory"}
+  ],
+  "lastVerified": "2026-08-23",
+  "confidence": "high_for_national_structure",
+  "disclaimer": "This is a structured training roadmap for personal professional development. It is not a substitute for your state certifying agency, academy, or department requirements."
+}
