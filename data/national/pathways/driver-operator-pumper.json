@@ -1,0 +1,17 @@
+{
+  "id": "national.driver_operator_pumper",
+  "version": "2026.08.23",
+  "status": "stub",
+  "title": "Driver/Operator – Pumper",
+  "shortTitle": "D/O Pumper",
+  "level": "apparatus",
+  "category": "Operations",
+  "description": "Stub — expand with NFPA 1002-aligned pump operator pathway (hydraulics, water supply, apparatus inspection, driving, fireground pumping).",
+  "outputsForCareerRoad": {
+    "primaryCertificationId": "driver_operator_pumper",
+    "suggestedRequirementIds": ["do_pumper"],
+    "taskBookChapters": []
+  },
+  "lastVerified": "2026-08-23",
+  "disclaimer": "Placeholder only. Replace with complete pathway content before production use."
+}
