@@ -1,0 +1,19 @@
+{
+  "version": "2026.08.23",
+  "description": "Stable certification definition IDs shared by FireOpsSim hub and Career Road app catalog.",
+  "certifications": [
+    {"id":"firefighter_1","displayName":"Firefighter I","shortName":"FF1","category":"firefighting","relatedPathwayIds":["national.firefighter_i"]},
+    {"id":"firefighter_2","displayName":"Firefighter II","shortName":"FF2","category":"firefighting","relatedPathwayIds":["national.firefighter_ii"]},
+    {"id":"driver_operator_pumper","displayName":"Driver/Operator – Pumper","shortName":"D/O Pumper","category":"driverOperator","relatedPathwayIds":["national.driver_operator_pumper"]},
+    {"id":"hazmat_awareness","displayName":"Hazardous Materials Awareness","shortName":"HazMat Awareness","category":"hazmat","relatedPathwayIds":["national.firefighter_i"]},
+    {"id":"hazmat_operations","displayName":"Hazardous Materials Operations","shortName":"HazMat Operations","category":"hazmat","relatedPathwayIds":["national.firefighter_i"]},
+    {"id":"fire_officer_1","displayName":"Fire Officer I","shortName":"FO I","category":"officer","relatedPathwayIds":["national.fire_officer_i"]},
+    {"id":"fire_officer_2","displayName":"Fire Officer II","shortName":"FO II","category":"officer","relatedPathwayIds":[]},
+    {"id":"fire_officer_3","displayName":"Fire Officer III","shortName":"FO III","category":"officer","relatedPathwayIds":[]},
+    {"id":"fire_officer_4","displayName":"Fire Officer IV","shortName":"FO IV","category":"officer","relatedPathwayIds":[]},
+    {"id":"fire_instructor_1","displayName":"Fire Instructor I","shortName":"FI I","category":"instructor","relatedPathwayIds":["national.fire_instructor_i"]},
+    {"id":"cpr_bls","displayName":"CPR / BLS","shortName":"CPR/BLS","category":"ems","relatedPathwayIds":["national.firefighter_i"]},
+    {"id":"emt","displayName":"EMT","shortName":"EMT","category":"ems","relatedPathwayIds":[]},
+    {"id":"paramedic","displayName":"Paramedic","shortName":"Paramedic","category":"ems","relatedPathwayIds":[]}
+  ]
+}
