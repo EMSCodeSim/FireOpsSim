@@ -16,10 +16,10 @@ data/
   national/
     pathways/
       firefighter-i.json              # Complete FF I roadmap (JPRs, sequence, prereqs)
-      firefighter-ii.json             # Placeholder — expand next
-      driver-operator-pumper.json     # Placeholder
-      fire-officer-i.json             # Placeholder
-      fire-instructor-i.json          # Placeholder
+      firefighter-ii.json             # Complete FF II roadmap
+      driver-operator-pumper.json     # Complete Driver/Operator – Pumper roadmap
+      fire-officer-i.json             # Complete Fire Officer I roadmap
+      fire-instructor-i.json          # Complete Fire Instructor I roadmap
     baseline-certifications.json      # Stable cert IDs used by the app
   states/
     _template/                        # Copy this for each new state
@@ -44,15 +44,14 @@ docs/
 
 ## Quick start
 
-1. Copy this entire `data/` + `docs/` tree into the root of [EMSCodeSim/FireOpsSim](https://github.com/EMSCodeSim/FireOpsSim).
-2. Commit and push.
-3. Raw URLs become available, for example:
+1. Keep the `data/` + `docs/` tree in the FireOpsSim repository.
+2. Raw URLs are available after merge, for example:
 
 ```text
 https://raw.githubusercontent.com/EMSCodeSim/FireOpsSim/main/data/national/pathways/firefighter-i.json
 ```
 
-4. Point the Career Road app at `data/index.json` (bundled snapshot or remote fetch).
+3. Point the Career Road app at `data/index.json` using a bundled snapshot or remote fetch.
 
 ## Status
 
