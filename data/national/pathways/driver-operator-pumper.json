@@ -1,17 +1,308 @@
 {
   "id": "national.driver_operator_pumper",
   "version": "2026.08.23",
-  "status": "stub",
+  "status": "complete",
+  "standard": {
+    "primary": "NFPA 1002 (Fire Apparatus Driver/Operator) – Pumper",
+    "related": ["NFPA 1001 prerequisite context", "Department driving policies", "State CDL / emergency vehicle laws where applicable"],
+    "notes": "Driver/Operator – Pumper covers safe driving, apparatus inspection, water supply, pump theory, and fireground pumping. Exact legal driving credentials (CDL, EVOC, etc.) are state and department dependent."
+  },
   "title": "Driver/Operator – Pumper",
   "shortTitle": "D/O Pumper",
   "level": "apparatus",
   "category": "Operations",
-  "description": "Stub — expand with NFPA 1002-aligned pump operator pathway (hydraulics, water supply, apparatus inspection, driving, fireground pumping).",
+  "description": "Complete pump operator pathway: apparatus readiness, emergency driving foundation, hydraulics, water supply, and fireground pump operations.",
+  "audience": [
+    "Firefighters preparing for engineer / driver/operator roles",
+    "Members assigned to engine companies",
+    "Candidates for state or IFSAC/Pro Board driver/operator certification"
+  ],
+  "estimatedRange": {
+    "typicalHours": "40–80+ instructional hours plus documented driving/pumping time (varies widely)",
+    "typicalDuration": "1–8 weeks formal course plus supervised ride time"
+  },
+  "prerequisites": [
+    {
+      "id": "prereq.ff1_or_equivalent",
+      "title": "Firefighter I or department equivalent",
+      "type": "certification",
+      "required": "commonly",
+      "detail": "Most systems expect structural firefighter foundation before pump operator qualification.",
+      "catalogId": "firefighter_1"
+    },
+    {
+      "id": "prereq.license",
+      "title": "Valid driver’s license / required endorsements",
+      "type": "eligibility",
+      "required": true,
+      "detail": "Must meet state and department rules (may include CDL, air brake endorsement, or emergency vehicle authorization)."
+    },
+    {
+      "id": "prereq.driving_record",
+      "title": "Acceptable driving record",
+      "type": "eligibility",
+      "required": true,
+      "detail": "Department policy usually requires a clean or acceptable MVR."
+    },
+    {
+      "id": "prereq.medical_vision",
+      "title": "Medical / vision standards for driving",
+      "type": "eligibility",
+      "required": "often",
+      "detail": "Follow department and state commercial or emergency driver medical rules where applicable."
+    }
+  ],
+  "corequisitesAndCommonCompanions": [
+    {
+      "id": "training.evoc",
+      "title": "Emergency Vehicle Operator Course (EVOC) or equivalent",
+      "type": "training",
+      "relationship": "very commonly required by departments",
+      "notes": "Often separate from the pump certification itself but required to drive apparatus."
+    },
+    {
+      "id": "cert.ff2",
+      "title": "Firefighter II",
+      "type": "certification",
+      "relationship": "recommended / sometimes required",
+      "catalogId": "firefighter_2",
+      "notes": "Some promotional or engineer tracks expect FF II first."
+    }
+  ],
+  "knowledgeDomains": [
+    {
+      "id": "know.apparatus_systems",
+      "title": "Apparatus systems and inspection",
+      "topics": [
+        "Chassis, braking, and driveline awareness",
+        "Pump, tank, and plumbing overview",
+        "Intake/discharge valves and appliances",
+        "Daily/weekly apparatus checks and documentation"
+      ]
+    },
+    {
+      "id": "know.driving",
+      "title": "Emergency driving principles",
+      "topics": [
+        "Defensive driving and apparatus dynamics",
+        "Response laws and due regard",
+        "Spotter use, backing, and space management",
+        "Adverse weather and night driving considerations"
+      ]
+    },
+    {
+      "id": "know.hydraulics",
+      "title": "Fire service hydraulics",
+      "topics": [
+        "Pressure, flow, friction loss concepts",
+        "Nozzle pressures and handline calculations",
+        "Elevation and appliance loss",
+        "Pump discharge pressure determination methods used by the department"
+      ]
+    },
+    {
+      "id": "know.water_supply",
+      "title": "Water supply operations",
+      "topics": [
+        "Hydrant operations and supply line deployment",
+        "Static sources and drafting theory",
+        "Relay pumping concepts",
+        "Water supply problem-solving on the fireground"
+      ]
+    },
+    {
+      "id": "know.pump_ops",
+      "title": "Pump operations and troubleshooting",
+      "topics": [
+        "Priming, cavitation awareness, and overheating",
+        "Transition from tank to external supply",
+        "Multi-line operations",
+        "Pressure control devices and governor use"
+      ]
+    }
+  ],
+  "jprSkillGroups": [
+    {
+      "id": "jpr.inspection",
+      "title": "Apparatus inspection and readiness",
+      "standardRef": "NFPA 1002 – inspection related JPRs",
+      "skills": [
+        "Perform systematic apparatus check",
+        "Identify and report deficiencies",
+        "Verify pump, water, foam (if equipped), and safety systems readiness"
+      ]
+    },
+    {
+      "id": "jpr.driving",
+      "title": "Apparatus driving and positioning",
+      "standardRef": "NFPA 1002 – driving related JPRs",
+      "skills": [
+        "Drive apparatus on public ways under supervision per policy",
+        "Back apparatus with spotter discipline",
+        "Position apparatus for supply and attack effectiveness",
+        "Operate in restricted spaces safely"
+      ]
+    },
+    {
+      "id": "jpr.hydrant_supply",
+      "title": "Hydrant and supply operations",
+      "standardRef": "NFPA 1002 – water supply JPRs",
+      "skills": [
+        "Make hydrant connection and establish supply",
+        "Deploy supply lines correctly",
+        "Transition from booster tank to external source"
+      ]
+    },
+    {
+      "id": "jpr.drafting",
+      "title": "Drafting from static source",
+      "standardRef": "NFPA 1002 – drafting related JPRs",
+      "skills": [
+        "Set up for draft",
+        "Prime and obtain water",
+        "Maintain draft under load as trained"
+      ]
+    },
+    {
+      "id": "jpr.pumping_handlines",
+      "title": "Pumping handlines and master streams",
+      "standardRef": "NFPA 1002 – pumping JPRs",
+      "skills": [
+        "Produce effective handline flows at correct pressure",
+        "Operate multiple lines",
+        "Support master stream devices as equipped",
+        "Use pressure control systems correctly"
+      ]
+    },
+    {
+      "id": "jpr.hydraulics_calc",
+      "title": "Hydraulics calculation / rule-of-thumb application",
+      "standardRef": "NFPA 1002 – hydraulics related performance",
+      "skills": [
+        "Determine pump discharge pressure for assigned lines",
+        "Apply department calculation method or charts",
+        "Adjust for elevation, appliances, and layout changes"
+      ]
+    },
+    {
+      "id": "jpr.relay_and_problems",
+      "title": "Relay and problem-solving operations",
+      "standardRef": "NFPA 1002 – relay / water supply problem JPRs where included",
+      "skills": [
+        "Participate in relay pumping setups",
+        "Diagnose common pump/water supply problems",
+        "Communicate water supply status clearly"
+      ]
+    }
+  ],
+  "trainingSequence": [
+    {
+      "step": 1,
+      "id": "seq.eligibility_driving",
+      "title": "Confirm eligibility and driving authorization path",
+      "actions": [
+        "Verify license/endorsements and MVR",
+        "Complete required EVOC or department driving course",
+        "Review department apparatus driving SOPs"
+      ]
+    },
+    {
+      "step": 2,
+      "id": "seq.apparatus_systems",
+      "title": "Apparatus systems and daily checks",
+      "actions": [
+        "Learn local engine systems",
+        "Practice full inspection routines",
+        "Document readiness"
+      ]
+    },
+    {
+      "step": 3,
+      "id": "seq.hydraulics_classroom",
+      "title": "Hydraulics and pump theory",
+      "actions": [
+        "Friction loss and PDP methods",
+        "Nozzle and line combinations used by the department",
+        "Governor / pressure control theory"
+      ]
+    },
+    {
+      "step": 4,
+      "id": "seq.hands_on_pump",
+      "title": "Hands-on pump and water supply drills",
+      "actions": [
+        "Hydrant operations",
+        "Drafting",
+        "Single and multiple handlines",
+        "Master streams if equipped",
+        "Relay exercises"
+      ]
+    },
+    {
+      "step": 5,
+      "id": "seq.supervised_ops",
+      "title": "Supervised driving and fireground pumping time",
+      "actions": [
+        "Log supervised driving hours",
+        "Pump under supervision on drills and incidents as allowed",
+        "Receive engineer feedback and correct gaps"
+      ]
+    },
+    {
+      "step": 6,
+      "id": "seq.testing_cert",
+      "title": "Skills/written testing and certification",
+      "actions": [
+        "Pass practical pump and driving evaluations",
+        "Pass written exam if required",
+        "Obtain state / IFSAC / Pro Board driver/operator credential where offered",
+        "File records in Career Record"
+      ]
+    }
+  ],
+  "assessment": {
+    "practical": "Driving course, apparatus inspection, pump operations, water supply setups",
+    "written": "Hydraulics, apparatus systems, water supply, and policy knowledge",
+    "passingCriteria": "Set by state entity, accredited program, or department qualification process",
+    "documentationNeeded": [
+      "Driving authorization / EVOC record",
+      "Skills sign-offs",
+      "Pump operation evaluations",
+      "Certificate or department qualification letter"
+    ]
+  },
   "outputsForCareerRoad": {
     "primaryCertificationId": "driver_operator_pumper",
-    "suggestedRequirementIds": ["do_pumper"],
-    "taskBookChapters": []
+    "suggestedRequirementIds": ["do_pumper", "ff1", "evoc"],
+    "taskBookChapters": [
+      "License, MVR & driving authorization",
+      "EVOC / emergency driving",
+      "Apparatus inspection",
+      "Hydraulics & PDP methods",
+      "Hydrant & supply operations",
+      "Drafting",
+      "Pumping handlines & master streams",
+      "Relay & troubleshooting",
+      "Supervised driving/pump log",
+      "Testing & qualification filing"
+    ]
   },
+  "stateOverlayGuidance": {
+    "howToUse": "Capture CDL rules, state driver/operator certification names, required EVOC standards, and whether national seals are issued.",
+    "alwaysVerifyWith": [
+      "State fire training agency",
+      "Department driving policy",
+      "State DMV / CDL rules"
+    ]
+  },
+  "sources": [
+    {
+      "title": "NFPA 1002 Fire Apparatus Driver/Operator professional qualifications",
+      "type": "standard",
+      "note": "Do not paste copyrighted JPR text verbatim."
+    }
+  ],
   "lastVerified": "2026-08-23",
-  "disclaimer": "Placeholder only. Replace with complete pathway content before production use."
+  "confidence": "high_for_national_structure",
+  "disclaimer": "Structured training roadmap for personal professional development. Driving laws and department policies control actual authorization to operate apparatus."
 }
