@@ -1,0 +1,17 @@
+{
+  "id": "national.firefighter_ii",
+  "version": "2026.08.23",
+  "status": "stub",
+  "title": "Firefighter II",
+  "shortTitle": "FF II",
+  "level": "advanced_entry",
+  "category": "Operations",
+  "description": "Stub — expand with full NFPA 1001 Firefighter II knowledge domains, JPR skill groups, and training sequence (same shape as firefighter-i.json).",
+  "outputsForCareerRoad": {
+    "primaryCertificationId": "firefighter_2",
+    "suggestedRequirementIds": ["ff2"],
+    "taskBookChapters": []
+  },
+  "lastVerified": "2026-08-23",
+  "disclaimer": "Placeholder only. Replace with complete pathway content before production use."
+}
