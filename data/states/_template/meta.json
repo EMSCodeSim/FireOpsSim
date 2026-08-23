@@ -1,0 +1,20 @@
+{
+  "stateCode": "XX",
+  "stateName": "Example State",
+  "version": "2026.08.23",
+  "certifyingEntity": {
+    "name": "State Fire Training / Certification Agency Name",
+    "website": "https://example.gov/fire-training",
+    "certificationPortal": null,
+    "notes": "Replace with real agency details."
+  },
+  "accreditation": {
+    "ifsac": null,
+    "proBoard": null,
+    "notes": "Record whether the entity issues IFSAC and/or Pro Board seals."
+  },
+  "lastVerified": "2026-08-23",
+  "verifiedBy": "curator-initials-or-source",
+  "confidence": "medium",
+  "disclaimer": "State overlay only. Always confirm current requirements with the official agency."
+}
