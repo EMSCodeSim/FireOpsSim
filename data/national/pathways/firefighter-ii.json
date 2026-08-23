@@ -1,17 +1,308 @@
 {
   "id": "national.firefighter_ii",
   "version": "2026.08.23",
-  "status": "stub",
+  "status": "complete",
+  "standard": {
+    "primary": "NFPA 1001 (Firefighter II)",
+    "related": ["NFPA 1001 Level I prerequisite", "NFPA 1072 / 470 (HazMat context)", "ICS concepts"],
+    "notes": "Firefighter II builds on FF I with expanded fireground coordination, more complex fire control, rescue support, and limited company-level responsibilities. States may add local modules."
+  },
   "title": "Firefighter II",
   "shortTitle": "FF II",
   "level": "advanced_entry",
   "category": "Operations",
-  "description": "Stub — expand with full NFPA 1001 Firefighter II knowledge domains, JPR skill groups, and training sequence (same shape as firefighter-i.json).",
+  "description": "Complete advanced entry-level structural firefighter pathway: expanded knowledge, higher-level JPRs, coordinated evolutions, and certification readiness beyond Firefighter I.",
+  "audience": [
+    "Firefighter I certified members seeking FF II",
+    "Probationary firefighters completing advanced academy modules",
+    "Volunteers advancing toward full structural qualification"
+  ],
+  "estimatedRange": {
+    "typicalHours": "40–120+ additional instructional hours after FF I (varies by state/academy)",
+    "typicalDuration": "1–6 weeks full-time module or extended part-time path"
+  },
+  "prerequisites": [
+    {
+      "id": "prereq.ff1",
+      "title": "Firefighter I certification",
+      "type": "certification",
+      "required": true,
+      "detail": "Current or recognized Firefighter I (state / IFSAC / Pro Board as required by the certifying entity).",
+      "catalogId": "firefighter_1"
+    },
+    {
+      "id": "prereq.hazmat",
+      "title": "HazMat Awareness / Operations currency",
+      "type": "certification",
+      "required": "often",
+      "detail": "Many systems expect current HazMat Awareness and Operations before or with FF II."
+    },
+    {
+      "id": "prereq.affiliation",
+      "title": "Program or department affiliation",
+      "type": "eligibility",
+      "required": "varies",
+      "detail": "Some states require membership in an organized department or enrollment in an approved advanced program."
+    }
+  ],
+  "corequisitesAndCommonCompanions": [
+    {
+      "id": "cert.hazmat_operations",
+      "title": "Hazardous Materials Operations",
+      "type": "certification",
+      "relationship": "commonly expected to remain current",
+      "catalogId": "hazmat_operations",
+      "notes": "Often treated as part of the complete structural package."
+    },
+    {
+      "id": "training.ics200",
+      "title": "ICS 200 (or equivalent)",
+      "type": "training",
+      "relationship": "recommended / sometimes required",
+      "notes": "Supports multi-unit coordination concepts introduced at FF II."
+    }
+  ],
+  "knowledgeDomains": [
+    {
+      "id": "know.advanced_fire_behavior",
+      "title": "Advanced fire behavior and building systems",
+      "topics": [
+        "Fire dynamics in larger or more complex structures",
+        "Effects of ventilation and flow paths",
+        "Building systems and hazards (HVAC, elevators, utilities)",
+        "Coordinated attack concepts"
+      ]
+    },
+    {
+      "id": "know.company_ops",
+      "title": "Company operations and coordination",
+      "topics": [
+        "Engine and truck company integration",
+        "Assignment of roles within a company",
+        "Communications discipline during multi-company work",
+        "Accountability and personnel tracking"
+      ]
+    },
+    {
+      "id": "know.rescue_support",
+      "title": "Rescue support and specialized awareness",
+      "topics": [
+        "Vehicle extrication awareness / assist roles",
+        "Assisting technical rescue teams at the operations level as trained",
+        "Victim removal under more complex conditions"
+      ]
+    },
+    {
+      "id": "know.fire_control_ii",
+      "title": "Expanded fire control strategy awareness",
+      "topics": [
+        "Interior attack coordination",
+        "Exposure protection",
+        "Foam application basics where taught",
+        "Overhaul and origin/cause awareness support"
+      ]
+    },
+    {
+      "id": "know.public_assist",
+      "title": "Public assistance and non-fire emergencies",
+      "topics": [
+        "Assisting the public during non-fire incidents",
+        "Basic electrical / gas / water emergency awareness",
+        "Scene safety for mixed hazard responses"
+      ]
+    }
+  ],
+  "jprSkillGroups": [
+    {
+      "id": "jpr.coord_attack",
+      "title": "Coordinated fire attack and company evolution",
+      "standardRef": "NFPA 1001 – Firefighter II fire control related JPRs",
+      "skills": [
+        "Operate as part of a coordinated interior attack team",
+        "Support exposure protection assignments",
+        "Advance and operate hoselines in more complex layouts",
+        "Communicate conditions and needs to company officer"
+      ]
+    },
+    {
+      "id": "jpr.foam",
+      "title": "Foam application (where required by curriculum)",
+      "standardRef": "NFPA 1001 – foam related JPRs where adopted",
+      "skills": [
+        "Prepare and apply foam for Class B scenarios as trained",
+        "Select appropriate foam equipment and concentrate handling practices"
+      ]
+    },
+    {
+      "id": "jpr.vehicle_extrication_assist",
+      "title": "Vehicle extrication support",
+      "standardRef": "NFPA 1001 – vehicle rescue related JPRs",
+      "skills": [
+        "Stabilize a vehicle as trained",
+        "Assist with glass management and patient access",
+        "Operate common extrication tools under supervision",
+        "Maintain scene safety and tool discipline"
+      ]
+    },
+    {
+      "id": "jpr.assist_special_rescue",
+      "title": "Assist specialized rescue operations",
+      "standardRef": "NFPA 1001 – assist technical rescue related JPRs",
+      "skills": [
+        "Support rope, confined space, or trench awareness tasks only as trained and authorized",
+        "Establish exclusion zones and basic support functions",
+        "Recognize limits of FF II vs technician-level work"
+      ]
+    },
+    {
+      "id": "jpr.fire_cause_support",
+      "title": "Fire cause / origin support awareness",
+      "standardRef": "NFPA 1001 – related overhaul / evidence awareness",
+      "skills": [
+        "Protect potential evidence during overhaul",
+        "Recognize and report obvious indicators without disturbing scene beyond assignment"
+      ]
+    },
+    {
+      "id": "jpr.public_service",
+      "title": "Public service and utility control support",
+      "standardRef": "NFPA 1001 – public assist / utility related JPRs",
+      "skills": [
+        "Control utilities as trained and ordered",
+        "Assist civilians during non-fire emergencies",
+        "Illuminate and make safe common hazard scenes"
+      ]
+    },
+    {
+      "id": "jpr.communications_ii",
+      "title": "Expanded communications and reporting",
+      "standardRef": "NFPA 1001 – communications related JPRs",
+      "skills": [
+        "Deliver clear condition and progress reports",
+        "Operate within multi-unit radio plans",
+        "Support accountability systems"
+      ]
+    },
+    {
+      "id": "jpr.equipment_maintenance",
+      "title": "Equipment and hose service testing awareness",
+      "standardRef": "NFPA 1001 – service testing / maintenance related JPRs where included",
+      "skills": [
+        "Perform assigned equipment checks",
+        "Assist with hose service testing procedures as trained",
+        "Document deficiencies"
+      ]
+    }
+  ],
+  "trainingSequence": [
+    {
+      "step": 1,
+      "id": "seq.verify_ff1",
+      "title": "Verify Firefighter I and companion credentials",
+      "actions": [
+        "Confirm FF I is current and accepted by the testing entity",
+        "Confirm HazMat and medical requirements are current",
+        "Enroll in approved FF II program or module"
+      ]
+    },
+    {
+      "step": 2,
+      "id": "seq.advanced_theory",
+      "title": "Advanced theory block",
+      "actions": [
+        "Fire behavior and building systems",
+        "Company coordination and ICS support concepts",
+        "Rescue support and public assist theory"
+      ]
+    },
+    {
+      "step": 3,
+      "id": "seq.advanced_skills",
+      "title": "Advanced practical skill blocks",
+      "actions": [
+        "Coordinated attack evolutions",
+        "Vehicle extrication support",
+        "Foam operations if required",
+        "Utility control and public service tasks",
+        "Evidence awareness during overhaul"
+      ]
+    },
+    {
+      "step": 4,
+      "id": "seq.integrated",
+      "title": "Integrated multi-company style drills",
+      "actions": [
+        "Operate in realistic multi-assignment scenarios",
+        "Practice communications and accountability under load",
+        "Live-fire only where authorized and compliant"
+      ]
+    },
+    {
+      "step": 5,
+      "id": "seq.exam_prep",
+      "title": "Written and skills exam preparation",
+      "actions": [
+        "Review state/academy FF II objectives",
+        "Practice skill stations",
+        "Complete any required skill sheets"
+      ]
+    },
+    {
+      "step": 6,
+      "id": "seq.testing_cert",
+      "title": "Testing and certification",
+      "actions": [
+        "Pass practical evaluation",
+        "Pass written examination",
+        "Submit documentation and obtain FF II certificate / seals",
+        "File records in Career Record"
+      ]
+    }
+  ],
+  "assessment": {
+    "practical": "Pass/fail advanced skill stations and coordinated evolutions",
+    "written": "Multiple-choice exam on FF II knowledge objectives",
+    "passingCriteria": "Set by state certifying entity or accredited academy",
+    "documentationNeeded": [
+      "Proof of FF I",
+      "Course completion record",
+      "Skills sign-offs",
+      "Exam scores",
+      "Companion certs as required"
+    ]
+  },
   "outputsForCareerRoad": {
     "primaryCertificationId": "firefighter_2",
-    "suggestedRequirementIds": ["ff2"],
-    "taskBookChapters": []
+    "suggestedRequirementIds": ["ff2", "haz_ops"],
+    "taskBookChapters": [
+      "Verify FF I & companions",
+      "Advanced fire behavior & buildings",
+      "Company coordination",
+      "Coordinated fire attack",
+      "Vehicle extrication support",
+      "Foam operations (if required)",
+      "Public assist & utilities",
+      "Communications & accountability",
+      "Written & practical testing",
+      "Certificate & seal filing"
+    ]
   },
+  "stateOverlayGuidance": {
+    "howToUse": "Record only state differences: required hours, whether foam or extrication modules are mandatory, testing entity, and reciprocity.",
+    "alwaysVerifyWith": [
+      "State fire training / certification agency",
+      "IFSAC or Pro Board accredited entity",
+      "Department academy standards"
+    ]
+  },
+  "sources": [
+    {
+      "title": "NFPA 1001 Firefighter II professional qualifications",
+      "type": "standard",
+      "note": "Do not paste copyrighted JPR text verbatim."
+    }
+  ],
   "lastVerified": "2026-08-23",
-  "disclaimer": "Placeholder only. Replace with complete pathway content before production use."
+  "confidence": "high_for_national_structure",
+  "disclaimer": "Structured training roadmap for personal professional development. Not a substitute for state, academy, or department requirements."
 }
