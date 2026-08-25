@@ -45,8 +45,17 @@
 /printable-fire-pump-scenarios /printable-scenarios.html 301
 /printable-fire-pump-scenarios.html /printable-scenarios.html 301
 /driver-operator-flashcards /driver-operator-pumper-flashcards.html 301
-/career /firefighter-career.html 301
-/firefighter-career /firefighter-career.html 200
+
+# One career front door: choose stage first, then use My Career for records/progress.
+/career /career-stages.html 301
+/career-stages /career-stages.html 200
+/career-path /career-stages.html 301
+/firefighter-career /career-stages.html 301
+/firefighter-career.html /career-stages.html 301
+/career-record /my-fire-career.html 301
+/career-dashboard /my-fire-career.html 301
+/my-career /my-fire-career.html 301
+
 /daily /daily-challenge.html 301
 /challenge /daily-challenge.html 301
 /hazmat-study-guide /hazmat-awareness-operations.html 301
@@ -84,8 +93,6 @@
 /certification-tracker /certification-tracker.html 301
 /my-certs /certification-tracker.html 301
 
-/my-career /my-fire-career.html 301
-/career-dashboard /my-fire-career.html 301
 /leadership /leadership-development.html 301
 /officer-development /leadership-development.html 301
 /specialties /specialty-careers.html 301
