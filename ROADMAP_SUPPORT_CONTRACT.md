@@ -23,6 +23,27 @@ Examples:
 - `/roadmap-support.html?requirement=hazmat_ops`
 - `/roadmap-support.html?task=department_custom_ladder_evaluation&goal=Firefighter`
 
+## Skill Support Engine URL
+
+`https://fireopssim.com/skill-support.html`
+
+This is the reusable training session behind a Taskbook item or a standalone “what am I working on?” visit. The same query parameters as the general support URL are accepted, plus:
+
+- `source=roadmap` — shows the Taskbook support banner and a **Return to Roadmap & Log Training** action
+- `state` — optional state context (display only)
+- `q` — optional search query (hydrant, FO1, engineer, etc.)
+- `stage` — optional standalone picker stage (`candidate`, `probationary`, `firefighter`, `driver`, `officer`, `instructor`, `specialty`)
+
+Examples:
+
+- `/skill-support.html?cert=driver_operator_pumper&task=do_pumper_hydrant_ops&goal=Engineer&state=CO&source=roadmap&return_url=...`
+- `/roadmap-support.html?cert=driver_operator_pumper&task=do_pumper_hydrant_ops&source=roadmap` (stable Roadmap URL; hands off to Skill Support)
+- `/taskbook-resources.html?cert=driver_operator_pumper&task=do_pumper_hydrant_ops&source=roadmap` (catalog URL; hands off to Skill Support when a cert/task is present)
+
+Unknown Roadmap IDs never dead-end. Skill Support says a dedicated module is not available yet and offers the closest skills plus Study Center / Training / Focus Drills.
+
+FireOpsSim must **never** automatically mark an official Roadmap task complete. Roadmap remains the system of record.
+
 ## Today’s Focus drill URL
 
 `https://fireopssim.com/focus-drills.html`
@@ -69,23 +90,17 @@ Examples:
 
 The support page normalizes punctuation, underscores, hyphens, abbreviations, and common certification names. Known items map to a dedicated Learn → Practice → Record sequence. Unknown items fall back to the closest general study, training, career, and official-source resources instead of returning an empty page.
 
-Current first-class coverage includes:
+Current first-class Skill Support coverage includes:
 
-- EMT
-- Paramedic
-- Firefighter I / II
+- Firefighter I
+- Firefighter II
 - HazMat Operations
-- Driver / Operator — Pumper
-- Company Officer / Fire Officer I
-- Fire Officer II / advanced officer development
+- Driver / Operator — Pumper (including stable Roadmap task IDs such as `do_pumper_hydrant_ops`)
+- Fire Officer I
 - Fire Instructor I
-- CPAT / candidate physical readiness
 - Probation / first 100 fire shifts
-- Pump hydraulics
-- Water supply
-- SCBA / air management
-- Fireground decision-making
-- General career advancement / promotion development
+
+Additional matcher coverage still includes EMT, paramedic, CPAT, career growth, and general study/training fallbacks so a new Roadmap ID does not return an empty page.
 
 ## Record handoff
 

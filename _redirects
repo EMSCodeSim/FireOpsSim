@@ -72,7 +72,14 @@
 
 /fire-skill-wheel /fire-skill-wheel.html 200
 
+/skill-support /skill-support.html 200
+/train /skill-support.html 301
+/train-a-skill /skill-support.html 301
+/skills /skill-support.html 301
+/what-are-you-working-on /skill-support.html 301
+
 /focus-drills /focus-drills.html 200
+
 /focus /focus-drills.html 301
 /daily-training-wheel /focus-drills.html 301
 /training-wheel /focus-drills.html 301

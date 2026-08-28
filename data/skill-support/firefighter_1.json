@@ -1,0 +1,2078 @@
+{
+  "id": "firefighter_1",
+  "title": "Firefighter I",
+  "shortTitle": "FF I",
+  "careerStage": "firefighter",
+  "category": "Firefighting",
+  "aliases": [
+    "firefighter 1",
+    "firefighter i",
+    "ff1",
+    "ff i",
+    "academy"
+  ],
+  "summary": "Entry-level structural firefighter skills: PPE, SCBA, hose, ladders, search, ventilation, water supply, fire attack, and emergency communications.",
+  "skills": [
+    {
+      "id": "ff1_ppe",
+      "certificationId": "firefighter_1",
+      "title": "PPE Readiness and Donning",
+      "aliases": [
+        "ppe",
+        "turnout",
+        "bunker gear",
+        "donning"
+      ],
+      "category": "PPE",
+      "careerStage": "firefighter",
+      "summary": "Don complete structural PPE correctly, check interfaces, and be ready to go on air without skipping protection for speed.",
+      "whyItMatters": "Gear that is open, twisted, or incomplete is how firefighters get burned and inhale products of combustion on ‘ordinary’ jobs.",
+      "learningPoints": [
+        "Complete ensemble: helmet, hood, coat, pants, boots, gloves, SCBA as assigned.",
+        "Interfaces (hood/collar, gloves/wrist, waist) matter as much as the clock.",
+        "Inspect for damage, moisture, and missing parts before the tones.",
+        "Speed comes from repetition of the correct sequence, not from skipping straps."
+      ],
+      "beforeYouDo": [
+        "Use YOUR issued gear. Training gear should still be complete.",
+        "Know department donning standard and when SCBA is required."
+      ],
+      "terminology": [
+        {
+          "term": "Interface",
+          "meaning": "Where two pieces of PPE meet — a common failure point."
+        },
+        {
+          "term": "Ready-for-entry",
+          "meaning": "PPE and SCBA complete enough to make the assigned interior or IDLH task."
+        }
+      ],
+      "safetyNotes": [
+        "Damaged or contaminated gear is not a fashion problem — it is a barrier failure.",
+        "Do not store gear in living areas; follow department cancer-reduction practices."
+      ],
+      "practiceResources": [
+        {
+          "label": "Firefighter Skills Checklist",
+          "url": "/firefighter-skills-checklist.html",
+          "note": "Track PPE/SCBA reps.",
+          "type": "checklist"
+        },
+        {
+          "label": "Fire Skill Wheel",
+          "url": "/fire-skill-wheel.html",
+          "note": "Random PPE/SCBA drills.",
+          "type": "wheel"
+        },
+        {
+          "label": "Firefighter I/II Tools",
+          "url": "/firefighter-1-2-tools.html",
+          "note": "Core skill hub.",
+          "type": "guide"
+        },
+        {
+          "label": "Focus Drills — PPE",
+          "url": "/focus-drills.html?level=firefighter_1&topic=ppe",
+          "note": "Timed ready-check.",
+          "type": "drill"
+        }
+      ],
+      "drill": {
+        "objective": "Complete a correct PPE don and partner check without sacrificing interfaces for the clock.",
+        "equipment": "Issued structural PPE, SCBA as assigned, timer.",
+        "setup": "Start from a standard ready rack. Partner calls defects.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Name every interface and one common miss (open coat, hood gaps, glove wrists).",
+            "performancePoints": [
+              "Interfaces named"
+            ],
+            "commonMistakes": [
+              "Speed-only mindset"
+            ],
+            "debrief": [
+              "What would you reject on a partner?"
+            ]
+          },
+          "15": {
+            "title": "15-minute donning reps",
+            "instructions": "Three full dons with partner check. Time the third only after two correct ones.",
+            "performancePoints": [
+              "Correct sequence",
+              "Partner check"
+            ],
+            "commonMistakes": [
+              "Skipping hood",
+              "Unfastened collars"
+            ],
+            "debrief": [
+              "Did time improve after technique, or instead of it?"
+            ]
+          },
+          "30": {
+            "title": "30-minute ready circuit",
+            "instructions": "Don, short work (stairs or hose pull), doff/reset, repeat. Include a damaged-gear inject.",
+            "performancePoints": [
+              "Reset complete",
+              "Defect handled"
+            ],
+            "commonMistakes": [
+              "Leaving gloves in the cab"
+            ],
+            "debrief": [
+              "How do we catch gear problems before the next call?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "The most important part of fast donning is:",
+          "choices": [
+            "Skipping the hood",
+            "A correct, complete sequence repeated until it is smooth",
+            "Leaving the coat open for ventilation",
+            "Wearing street shoes in boots"
+          ],
+          "answer": 1,
+          "why": "Incorrect gear is not a pass, no matter the time."
+        },
+        {
+          "q": "A hood gap at the collar is:",
+          "choices": [
+            "Cosmetic",
+            "An interface failure that can burn or expose you",
+            "Required for radio mics",
+            "Only a problem on wildland gear"
+          ],
+          "answer": 1,
+          "why": "Interfaces are the weak points."
+        },
+        {
+          "q": "If you find a torn moisture barrier during a check, you should:",
+          "choices": [
+            "Wear it anyway",
+            "Follow department defective-PPE rules — do not make entry in failed gear",
+            "Tape it with electrical tape and go",
+            "Only tell the person who issued it next month"
+          ],
+          "answer": 1,
+          "why": "Failed PPE is an OOS problem."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "NIOSH Firefighter Center",
+          "url": "https://www.cdc.gov/niosh/firefighters/",
+          "scope": "Firefighter safety, exposure, and occupational health"
+        },
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Department PPE SOP and manufacturer care instructions",
+          "url": "/firefighter-1-2-tools.html",
+          "scope": "Donning standards, inspection, and retirement of gear are local and manufacturer-specific."
+        }
+      ],
+      "relatedSkills": [
+        "ff1_scba",
+        "probation_ppe_scba",
+        "ff1_communications_mayday"
+      ],
+      "searchKeywords": [
+        "ppe",
+        "turnout",
+        "donning",
+        "hood",
+        "gloves",
+        "cancer",
+        "gear check"
+      ],
+      "seeResources": []
+    },
+    {
+      "id": "ff1_scba",
+      "certificationId": "firefighter_1",
+      "title": "SCBA Operations",
+      "aliases": [
+        "scba",
+        "breathing apparatus",
+        "pack",
+        "on air",
+        "mask"
+      ],
+      "category": "SCBA",
+      "careerStage": "firefighter",
+      "summary": "Don and work on air, manage consumption, handle emergencies, and leave with a reserve — air is a tactical resource.",
+      "whyItMatters": "Most Maydays have an air problem attached. SCBA skill is survival, not just a test station.",
+      "learningPoints": [
+        "Don, seal, and check before you need the pack in smoke.",
+        "Know remaining air, workload, location, and exit time together.",
+        "Emergency procedures are department- and manufacturer-specific — practice yours.",
+        "A low-air alarm is a decision point, not a surprise."
+      ],
+      "beforeYouDo": [
+        "Use the assigned SCBA model.",
+        "Know cylinder rating vs actual work time — they are not the same."
+      ],
+      "terminology": [
+        {
+          "term": "IDLH",
+          "meaning": "Immediately dangerous to life or health atmosphere — SCBA territory."
+        },
+        {
+          "term": "Point of no return / turnaround",
+          "meaning": "The time/air decision to leave so you exit with reserve."
+        }
+      ],
+      "safetyNotes": [
+        "Never disable alarms.",
+        "Buddy check the cylinder, valves, and connections.",
+        "Entanglement and regulator emergencies need practiced responses, not creativity in the smoke."
+      ],
+      "seeResources": [
+        {
+          "label": "SCBA Air Management Calculator",
+          "url": "/scba-air-management-calculator.html",
+          "note": "Training estimates for work time and reserve.",
+          "type": "calculator"
+        }
+      ],
+      "practiceResources": [
+        {
+          "label": "SCBA Air Management Calculator",
+          "url": "/scba-air-management-calculator.html",
+          "note": "Plan consumption.",
+          "type": "calculator"
+        },
+        {
+          "label": "Fire Skill Wheel",
+          "url": "/fire-skill-wheel.html",
+          "note": "SCBA repetitions.",
+          "type": "wheel"
+        },
+        {
+          "label": "Focus Drills — SCBA emergencies",
+          "url": "/focus-drills.html?level=firefighter_1&topic=scba",
+          "note": "Emergency circuit.",
+          "type": "drill"
+        },
+        {
+          "label": "Study Center — academy track",
+          "url": "/study-center.html?track=academy",
+          "note": "Fundamentals review.",
+          "type": "guide"
+        }
+      ],
+      "drill": {
+        "objective": "Don SCBA, complete a partner check, work a short evolution, and practice the department low-air / emergency actions in a clear area.",
+        "equipment": "SCBA, full PPE, training area, radios, accountability tags as used.",
+        "setup": "No live fire required. Use reduced visibility only if the instructor controls the environment.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Buddy check: cylinder, valves, PASS, seal. State the low-air action.",
+            "performancePoints": [
+              "Complete check"
+            ],
+            "commonMistakes": [
+              "Skipping PASS"
+            ],
+            "debrief": [
+              "When do we leave vs fight?"
+            ]
+          },
+          "15": {
+            "title": "15-minute work cycle",
+            "instructions": "Don, short work, check gauges twice, exit on a simulated low-air. Time the exit walk.",
+            "performancePoints": [
+              "Gauge discipline",
+              "Team exit"
+            ],
+            "commonMistakes": [
+              "Ignoring the partner’s air"
+            ],
+            "debrief": [
+              "Did work time match what you expected?"
+            ]
+          },
+          "30": {
+            "title": "30-minute emergency circuit",
+            "instructions": "Low-air, reduced profile / entanglement talk-through, Mayday trigger criteria, and a controlled emergency breathing option per SOP.",
+            "performancePoints": [
+              "Emergency actions per SOP",
+              "Mayday criteria named"
+            ],
+            "commonMistakes": [
+              "Inventing a technique"
+            ],
+            "debrief": [
+              "What information goes in the Mayday?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "Air management means:",
+          "choices": [
+            "Using the cylinder until it is empty",
+            "Tracking consumption, location, work, team status, and exit reserve together",
+            "Opening the bypass for comfort",
+            "Removing the regulator to talk"
+          ],
+          "answer": 1,
+          "why": "Air is part of the tactical clock."
+        },
+        {
+          "q": "A low-air alarm should:",
+          "choices": [
+            "Be ignored if you can still see the fire",
+            "Trigger the department’s exit/emergency decision process",
+            "Always mean you have 15 minutes left",
+            "Be silenced as a first action"
+          ],
+          "answer": 1,
+          "why": "It is a decision point."
+        },
+        {
+          "q": "SCBA emergency procedures should come from:",
+          "choices": [
+            "A viral video",
+            "Your manufacturer instructions and department training",
+            "Whatever worked last year on another brand",
+            "Improvisation"
+          ],
+          "answer": 1,
+          "why": "Packs differ. Train yours."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "NIOSH Firefighter Center",
+          "url": "https://www.cdc.gov/niosh/firefighters/",
+          "scope": "Firefighter safety, exposure, and occupational health"
+        },
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "SCBA manufacturer instructions and department RIT/Mayday SOP",
+          "url": "/scba-air-management-calculator.html",
+          "scope": "Emergency breathing, skip-breathing myths, and RIT operations are AHJ- and equipment-specific."
+        }
+      ],
+      "relatedSkills": [
+        "ff1_search",
+        "ff1_communications_mayday",
+        "probation_ppe_scba",
+        "ff1_hose_advancement"
+      ],
+      "searchKeywords": [
+        "scba",
+        "air management",
+        "low air",
+        "pass device",
+        "idlh",
+        "cylinder"
+      ]
+    },
+    {
+      "id": "ff1_hose_advancement",
+      "certificationId": "firefighter_1",
+      "title": "Hose Advancement",
+      "aliases": [
+        "hose",
+        "attack line",
+        "advance the line",
+        "charged line",
+        "nozzle"
+      ],
+      "category": "Engine",
+      "careerStage": "firefighter",
+      "summary": "Deploy, charge, and advance an attack line as a team with nozzle control, communication, and a working backup firefighter.",
+      "whyItMatters": "Water at the right place, in a form you can still move, is the core engine-company product.",
+      "learningPoints": [
+        "Flake to feed. A pretty horseshoe that cannot move is a failure.",
+        "Charged vs uncharged advances have different problems — train both if you use both.",
+        "Nozzle, backup, and officer (or acting) need the same picture.",
+        "Door control and stream selection are part of advancement, not extras."
+      ],
+      "beforeYouDo": [
+        "Know the department’s standard line: diameter, length, nozzle type, target pressure.",
+        "Agree on who calls for water and who checks kinks."
+      ],
+      "terminology": [
+        {
+          "term": "Backup firefighter",
+          "meaning": "Moves hose, manages slack/kinks, and supports the nozzle firefighter."
+        },
+        {
+          "term": "Bleed / charge",
+          "meaning": "Getting air out and water to the nozzle before making the fire room."
+        }
+      ],
+      "safetyNotes": [
+        "Do not stand in the bight.",
+        "A charged line can knock people down — body position and door control matter.",
+        "Know the stream’s reach and reaction before you open in a hallway."
+      ],
+      "seeResources": [
+        {
+          "label": "Hose Advancement Checklist",
+          "url": "/hose-advancement-checklist.html",
+          "note": "Step review for deploy, charge, advance.",
+          "type": "checklist"
+        }
+      ],
+      "practiceResources": [
+        {
+          "label": "Hose Advancement Checklist",
+          "url": "/hose-advancement-checklist.html",
+          "note": "Sequence check.",
+          "type": "checklist"
+        },
+        {
+          "label": "Hose Layout Planner",
+          "url": "/hose-layout-planner.html",
+          "note": "Think before you pull.",
+          "type": "planner"
+        },
+        {
+          "label": "Attack Line Calculator",
+          "url": "/attack-line-calculator.html",
+          "note": "Know the pressure behind the line.",
+          "type": "calculator"
+        },
+        {
+          "label": "Fire Skill Wheel",
+          "url": "/fire-skill-wheel.html",
+          "note": "Hose reps.",
+          "type": "wheel"
+        },
+        {
+          "label": "Focus Drills — attack line",
+          "url": "/focus-drills.html?level=firefighter_1&topic=hose",
+          "note": "Deploy-charge-advance.",
+          "type": "drill"
+        }
+      ],
+      "drill": {
+        "objective": "Deploy the standard attack line to a simulated entry point, charge, bleed, advance a short distance, and reset.",
+        "equipment": "Attack line, nozzle, engine or hydrant/training water, PPE, radios.",
+        "setup": "Mark a doorway. Assign nozzle, backup, and operator. Safety for charged-line movement.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Walk the pull, flake, and ‘ready for water’ report without charging if needed.",
+            "performancePoints": [
+              "Ready-for-water meaning agreed"
+            ],
+            "commonMistakes": [
+              "Line piled at the door"
+            ],
+            "debrief": [
+              "Who checks the first kink?"
+            ]
+          },
+          "15": {
+            "title": "15-minute charged advance",
+            "instructions": "Pull, charge, bleed, hit a target, advance 25–50 ft, recover.",
+            "performancePoints": [
+              "Nozzle control",
+              "Backup feeding",
+              "Kinks cleared"
+            ],
+            "commonMistakes": [
+              "Opening before the backup is set",
+              "Uncontrolled stream"
+            ],
+            "debrief": [
+              "What would we do at a real door?"
+            ]
+          },
+          "30": {
+            "title": "30-minute company evolution",
+            "instructions": "Two-line or long-advance scenario: stairs or around an apparatus, communication with the pump operator, then reload for a true reset.",
+            "performancePoints": [
+              "Communication",
+              "Hose management",
+              "Serviceable reload"
+            ],
+            "commonMistakes": [
+              "Leaving a rats nest for the next crew"
+            ],
+            "debrief": [
+              "Did the operator know when we opened?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "The backup firefighter’s primary job during advancement is:",
+          "choices": [
+            "Take pictures",
+            "Feed hose, manage slack/kinks, and support the nozzle",
+            "Run the pump",
+            "Vent the roof immediately"
+          ],
+          "answer": 1,
+          "why": "The nozzle cannot fight the fire and the hose at the same time."
+        },
+        {
+          "q": "You should call for water:",
+          "choices": [
+            "After you are already in the fire room with a dry line",
+            "When the line is flaked to feed and the team is ready per department practice",
+            "Only from the cab",
+            "Never — the operator guesses"
+          ],
+          "answer": 1,
+          "why": "Ready-for-water is a crew condition, not a panic."
+        },
+        {
+          "q": "A charged line that cannot advance is often caused by:",
+          "choices": [
+            "Too much training",
+            "Kinks, poor flake, or no backup managing the drag",
+            "A hydrant that is too close",
+            "Using a smooth-bore"
+          ],
+          "answer": 1,
+          "why": "Hose management is the skill."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "FSRI Fire Safety Academy",
+          "url": "https://training.fsri.org/",
+          "scope": "Evidence-based structural firefighting education"
+        },
+        {
+          "label": "Department hose/nozzle SOP",
+          "url": "/hose-advancement-checklist.html",
+          "scope": "Line packages, nozzle types, and advancement methods are local."
+        }
+      ],
+      "relatedSkills": [
+        "ff1_fire_attack",
+        "ff1_water_supply",
+        "probation_hose_advancement",
+        "ff1_scba"
+      ],
+      "searchKeywords": [
+        "hose",
+        "attack line",
+        "nozzle",
+        "advance",
+        "kink",
+        "preconnect",
+        "engine company"
+      ]
+    },
+    {
+      "id": "ff1_ground_ladders",
+      "certificationId": "firefighter_1",
+      "title": "Ground Ladders",
+      "aliases": [
+        "ladders",
+        "ground ladder",
+        "raise a ladder",
+        "24 foot",
+        "extension ladder"
+      ],
+      "category": "Ladders",
+      "careerStage": "firefighter",
+      "summary": "Select, carry, raise, place, and climb a ground ladder for a stated objective: access, rescue, ventilation, or egress.",
+      "whyItMatters": "A ladder in the right place is a firefighter’s second staircase. A ladder in the wrong place is a trip hazard that helps no one.",
+      "learningPoints": [
+        "Objective first: rescue, ingress, egress, or ventilation changes placement.",
+        "Tip, heel, angle, and locking devices are not optional.",
+        "Climbing with tools requires a plan for three points of contact and tool control.",
+        "Inspect before and after — bent fly sections lie."
+      ],
+      "beforeYouDo": [
+        "Know the lengths on YOUR rig and what each is for.",
+        "Spot overhead wires every raise."
+      ],
+      "terminology": [
+        {
+          "term": "Fly / bed",
+          "meaning": "Moving and base sections of an extension ladder."
+        },
+        {
+          "term": "Heel",
+          "meaning": "The base — footing and placement start here."
+        }
+      ],
+      "safetyNotes": [
+        "Electrical contact can kill. Look up.",
+        "Do not overreach from the ladder.",
+        "Footing on ice, gravel, and slope needs a plan."
+      ],
+      "seeResources": [
+        {
+          "label": "Ground Ladder Angle Calculator",
+          "url": "/ground-ladder-angle-calculator.html",
+          "note": "Placement angle check.",
+          "type": "calculator"
+        }
+      ],
+      "practiceResources": [
+        {
+          "label": "Ground Ladder Angle Calculator",
+          "url": "/ground-ladder-angle-calculator.html",
+          "note": "Angle and reach.",
+          "type": "calculator"
+        },
+        {
+          "label": "Fire Skill Wheel",
+          "url": "/fire-skill-wheel.html",
+          "note": "Ladder raises.",
+          "type": "wheel"
+        },
+        {
+          "label": "Focus Drills — ladders",
+          "url": "/focus-drills.html?level=firefighter_1&topic=ladder",
+          "note": "Objective-based selection.",
+          "type": "drill"
+        },
+        {
+          "label": "Firefighter Skills Checklist",
+          "url": "/firefighter-skills-checklist.html",
+          "note": "Rep tracking.",
+          "type": "checklist"
+        }
+      ],
+      "drill": {
+        "objective": "Given an objective, select and place the correct department ladder, raise, make the climb, and recover.",
+        "equipment": "Department ground ladders, PPE, helmets, spotter, cones or a building face.",
+        "setup": "Clear overhead hazards. Assign tip and heel. State the objective before the raise.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Match three objectives to three ladder choices on your rig.",
+            "performancePoints": [
+              "Correct selection"
+            ],
+            "commonMistakes": [
+              "Always pulling the same ladder"
+            ],
+            "debrief": [
+              "Why not the roof ladder here?"
+            ]
+          },
+          "15": {
+            "title": "15-minute raise",
+            "instructions": "Carry, raise, extend, set hooks/locks, climb to a mark, recover.",
+            "performancePoints": [
+              "Locks set",
+              "Angle reasonable",
+              "Heel footed"
+            ],
+            "commonMistakes": [
+              "Fly inverted",
+              "No overhead check"
+            ],
+            "debrief": [
+              "Could a victim come down this?"
+            ]
+          },
+          "30": {
+            "title": "30-minute objective circuit",
+            "instructions": "Three placements: window rescue, roof access, and secondary egress. Time is secondary to correct placement.",
+            "performancePoints": [
+              "Objective-driven",
+              "Safe recover"
+            ],
+            "commonMistakes": [
+              "Leaving ladders as obstacles"
+            ],
+            "debrief": [
+              "Which placement would you change on a real building?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "Before raising any ladder, a required visual is:",
+          "choices": [
+            "The pump panel",
+            "Overhead wires and obstructions",
+            "The hydrant color",
+            "Social media"
+          ],
+          "answer": 1,
+          "why": "Look up."
+        },
+        {
+          "q": "Ladder selection should start with:",
+          "choices": [
+            "Whatever is on top",
+            "The objective: access, rescue, ventilation, or egress",
+            "The newest firefighter’s preference",
+            "Always the longest ladder"
+          ],
+          "answer": 1,
+          "why": "Length and type follow the job."
+        },
+        {
+          "q": "Climbing a ladder that is not locked/tied per department practice is:",
+          "choices": [
+            "Faster",
+            "Unacceptable",
+            "Fine for short climbs",
+            "Only an officer problem"
+          ],
+          "answer": 1,
+          "why": "Unsecured ladders move when you need them most."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Department ladder SOP and ladder manufacturer inspection guidance",
+          "url": "/ground-ladder-angle-calculator.html",
+          "scope": "Raise methods, tying, and inspection intervals are local and manufacturer-specific."
+        }
+      ],
+      "relatedSkills": [
+        "ff1_search",
+        "ff1_ventilation",
+        "probation_ladders",
+        "ff1_forcible_entry"
+      ],
+      "searchKeywords": [
+        "ladder",
+        "raise",
+        "extension",
+        "roof ladder",
+        "angle",
+        "heel",
+        "wires"
+      ]
+    },
+    {
+      "id": "ff1_forcible_entry",
+      "certificationId": "firefighter_1",
+      "title": "Forcible Entry",
+      "aliases": [
+        "forcible entry",
+        "irons",
+        "force the door",
+        "through the lock"
+      ],
+      "category": "Forcible Entry",
+      "careerStage": "firefighter",
+      "summary": "Read the door, pick tools, control the door after it opens, and force only as much as the objective requires.",
+      "whyItMatters": "The door is both an obstacle and a flow-path control device. How you force it changes the fire.",
+      "learningPoints": [
+        "Inward vs outward, metal vs wood, and multiple locks change the plan.",
+        "Gap, set, force — with door control as part of the plan.",
+        "Through-the-lock is a skill, not a slogan.",
+        "The objective might be search, attack, or ventilation — that changes how wide you open."
+      ],
+      "beforeYouDo": [
+        "Irons or the department’s assigned FE tools.",
+        "A training door if possible; otherwise a walk-through on a real (non-damage) door construction."
+      ],
+      "terminology": [
+        {
+          "term": "Gap / set / force",
+          "meaning": "Create a purchase, set the tool, then apply force."
+        },
+        {
+          "term": "Door control",
+          "meaning": "Managing the opening so you control flow path and entry."
+        }
+      ],
+      "safetyNotes": [
+        "Tools bounce. Eye protection and body position.",
+        "Do not force utilities or the wrong occupancy.",
+        "Glass and security bars are extra hazards."
+      ],
+      "practiceResources": [
+        {
+          "label": "Focus Drills — forcible entry",
+          "url": "/focus-drills.html?level=firefighter_1&topic=forcible",
+          "note": "Conventional FE reps.",
+          "type": "drill"
+        },
+        {
+          "label": "Fire Skill Wheel",
+          "url": "/fire-skill-wheel.html",
+          "note": "Tool work.",
+          "type": "wheel"
+        },
+        {
+          "label": "Firefighter I/II Tools",
+          "url": "/firefighter-1-2-tools.html",
+          "note": "Skill hub.",
+          "type": "guide"
+        }
+      ],
+      "drill": {
+        "objective": "Size up a door, state the plan, and complete conventional force on a training door — including door control after it opens.",
+        "equipment": "Training door, irons or assigned tools, PPE, eye protection.",
+        "setup": "If no prop, walk real doors and dry-run tool placement without damage.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Identify swing, likely locks, and first tool for three door photos or real doors.",
+            "performancePoints": [
+              "Correct swing",
+              "Tool choice"
+            ],
+            "commonMistakes": [
+              "Hitting the knob first every time"
+            ],
+            "debrief": [
+              "What is our door-control plan?"
+            ]
+          },
+          "15": {
+            "title": "15-minute force",
+            "instructions": "Gap-set-force reps with rotating roles. Control the door after it opens.",
+            "performancePoints": [
+              "Purchase",
+              "Control"
+            ],
+            "commonMistakes": [
+              "Widening for no reason"
+            ],
+            "debrief": [
+              "Would we have vented the fire by accident?"
+            ]
+          },
+          "30": {
+            "title": "30-minute FE problem set",
+            "instructions": "Metal door, inward wood, and a ‘through the lock’ talk-through. Include a failed first attempt and a tool change.",
+            "performancePoints": [
+              "Adapt",
+              "Communication"
+            ],
+            "commonMistakes": [
+              "Destroying the door past the objective"
+            ],
+            "debrief": [
+              "When do we go to a window instead?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "After the door is forced, a critical next thought is:",
+          "choices": [
+            "Walk away",
+            "Door control and what the opening does to the fire",
+            "Drop the irons in the yard",
+            "Turn on a fan immediately always"
+          ],
+          "answer": 1,
+          "why": "You just changed the building’s ventilation."
+        },
+        {
+          "q": "Forcible entry size-up starts with:",
+          "choices": [
+            "The biggest tool",
+            "Door swing, construction, locks, and the assignment",
+            "Kicking first",
+            "Waiting for a truck company even when you are the truck"
+          ],
+          "answer": 1,
+          "why": "Read the door."
+        },
+        {
+          "q": "Using more destruction than the objective needs:",
+          "choices": [
+            "Proves toughness",
+            "Can delay the job, create hazards, and worsen flow path",
+            "Is required by NFPA in all cases",
+            "Always makes search faster"
+          ],
+          "answer": 1,
+          "why": "Force to the objective."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "FSRI Fire Safety Academy",
+          "url": "https://training.fsri.org/",
+          "scope": "Evidence-based structural firefighting education"
+        },
+        {
+          "label": "Department forcible-entry and occupancy SOP",
+          "url": "/firefighter-1-2-tools.html",
+          "scope": "When and how to force, and who authorizes damage, are local."
+        }
+      ],
+      "relatedSkills": [
+        "ff1_search",
+        "ff1_fire_attack",
+        "ff1_ventilation"
+      ],
+      "searchKeywords": [
+        "forcible entry",
+        "irons",
+        "halligan",
+        "flathead",
+        "door control",
+        "through the lock"
+      ],
+      "seeResources": []
+    },
+    {
+      "id": "ff1_search",
+      "certificationId": "firefighter_1",
+      "title": "Primary Search",
+      "aliases": [
+        "search",
+        "primary search",
+        "oriented search",
+        "victim search"
+      ],
+      "category": "Search",
+      "careerStage": "firefighter",
+      "summary": "Search with team integrity, orientation, a purpose, and a way out — then communicate what you found or did not find.",
+      "whyItMatters": "Search is a life-saving assignment that also kills firefighters who lose the wall, the partner, or the exit.",
+      "learningPoints": [
+        "Stay oriented: wall, hose, thermal imager per department, and a partner.",
+        "The search pattern should match the occupancy and the fire location.",
+        "Victim removal is a different skill from locating — plan the path out.",
+        "A ‘clear’ room is a report, not a hope."
+      ],
+      "beforeYouDo": [
+        "SCBA, radio, light, tool, TIC if issued.",
+        "Know the entry point and the fire location as you understand it."
+      ],
+      "terminology": [
+        {
+          "term": "Oriented search",
+          "meaning": "Maintaining a known reference (wall, hose, partner) so you can leave."
+        },
+        {
+          "term": "Primary search",
+          "meaning": "Rapid search for savable lives given current conditions — not a leisurely inventory."
+        }
+      ],
+      "safetyNotes": [
+        "Do not search above an uncontrolled fire without a plan.",
+        "Holes in floors, wires, and collapse are search problems.",
+        "If you cannot find the exit, that is a Mayday problem — early."
+      ],
+      "seeResources": [
+        {
+          "label": "Search and Rescue Size-Up",
+          "url": "/search-and-rescue-sizeup.html",
+          "note": "Organize search factors before you enter.",
+          "type": "checklist"
+        }
+      ],
+      "practiceResources": [
+        {
+          "label": "Search and Rescue Size-Up",
+          "url": "/search-and-rescue-sizeup.html",
+          "note": "Size-up structure.",
+          "type": "checklist"
+        },
+        {
+          "label": "SCBA Air Management Calculator",
+          "url": "/scba-air-management-calculator.html",
+          "note": "Air vs search time.",
+          "type": "calculator"
+        },
+        {
+          "label": "Fireground Decision Sim",
+          "url": "/fireground-decision-sim.html",
+          "note": "Life hazard and coordination.",
+          "type": "simulator"
+        },
+        {
+          "label": "Focus Drills — search",
+          "url": "/focus-drills.html?level=firefighter_1&topic=search",
+          "note": "Oriented search.",
+          "type": "drill"
+        }
+      ],
+      "drill": {
+        "objective": "Complete an oriented primary search in a controlled environment, locate a training victim or a ‘clear,’ and exit as a team.",
+        "equipment": "SCBA, PPE, search line or hose as used, dummy or object, radios, optional TIC.",
+        "setup": "Use a training maze, darkened bay, or furnished room with instructor control. Set a time and air check.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "State pattern, team jobs, and Mayday triggers for a one-story bedroom search.",
+            "performancePoints": [
+              "Pattern named",
+              "Exit plan"
+            ],
+            "commonMistakes": [
+              "Split up to ‘cover more ground’"
+            ],
+            "debrief": [
+              "What do we say if we find a victim?"
+            ]
+          },
+          "15": {
+            "title": "15-minute search",
+            "instructions": "Enter, search two rooms, maintain contact, exit. Debrief orientation mistakes.",
+            "performancePoints": [
+              "Team integrity",
+              "Orientation"
+            ],
+            "commonMistakes": [
+              "Losing the wall",
+              "No radio"
+            ],
+            "debrief": [
+              "Where did we get disoriented?"
+            ]
+          },
+          "30": {
+            "title": "30-minute search + removal",
+            "instructions": "Find a dummy, choose a removal method, and get to the door. Include a lost-exit inject that is stopped before it is unsafe.",
+            "performancePoints": [
+              "Victim path",
+              "Air check",
+              "Mayday criteria"
+            ],
+            "commonMistakes": [
+              "Dragging without a path",
+              "Search past low air"
+            ],
+            "debrief": [
+              "Would we have called a Mayday soon enough?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "Losing contact with your partner during search is:",
+          "choices": [
+            "Efficient",
+            "A serious integrity failure — correct it immediately",
+            "Required in large buildings",
+            "Only a problem if there is fire"
+          ],
+          "answer": 1,
+          "why": "Team integrity is the search."
+        },
+        {
+          "q": "A primary search should be shaped by:",
+          "choices": [
+            "Furniture arrangement only",
+            "Fire location, occupancy, access, staffing, and conditions",
+            "Always starting at the basement",
+            "The newest map app"
+          ],
+          "answer": 1,
+          "why": "Search where savable lives are most likely, with a way out."
+        },
+        {
+          "q": "If you cannot find the exit and air is dropping:",
+          "choices": [
+            "Keep searching one more room",
+            "Treat it as an emergency — Mayday/self-rescue per SOP",
+            "Remove the mask to see better",
+            "Split up"
+          ],
+          "answer": 1,
+          "why": "Hope is not an orientation plan."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "NIOSH Firefighter Center",
+          "url": "https://www.cdc.gov/niosh/firefighters/",
+          "scope": "Firefighter safety, exposure, and occupational health"
+        },
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "FSRI Fire Safety Academy",
+          "url": "https://training.fsri.org/",
+          "scope": "Evidence-based structural firefighting education"
+        },
+        {
+          "label": "Department search, TIC, and Mayday SOP",
+          "url": "/search-and-rescue-sizeup.html",
+          "scope": "Search methods and RIT/Mayday language are local."
+        }
+      ],
+      "relatedSkills": [
+        "ff1_scba",
+        "ff1_communications_mayday",
+        "ff1_forcible_entry",
+        "ff1_hose_advancement"
+      ],
+      "searchKeywords": [
+        "search",
+        "primary",
+        "victim",
+        "orientation",
+        "tic",
+        "mayday",
+        "team integrity"
+      ]
+    },
+    {
+      "id": "ff1_ventilation",
+      "certificationId": "firefighter_1",
+      "title": "Ventilation Support",
+      "aliases": [
+        "ventilation",
+        "vent",
+        "horizontal vent",
+        "flow path"
+      ],
+      "category": "Ventilation",
+      "careerStage": "firefighter",
+      "summary": "Ventilation is a fire-behavior tool. Openings must match the attack, the search, and the chosen flow path — not habit.",
+      "whyItMatters": "Wrong ventilation makes the fire bigger, faster, and closer to people. Timing is the skill.",
+      "learningPoints": [
+        "Horizontal and vertical ventilation have different effects and risks.",
+        "Coordinate with suppression and search. Uncoordinated holes are extra doors for the fire.",
+        "Know what you are trying to do: limited visibility, heat, victim, or fire travel.",
+        "Read smoke. If you cannot explain the opening, do not make it."
+      ],
+      "beforeYouDo": [
+        "Know the fire location and the attack plan as briefed.",
+        "PPE/SCBA and fall protection as the assignment requires."
+      ],
+      "terminology": [
+        {
+          "term": "Flow path",
+          "meaning": "The route air and fire gases take from inlet to exhaust."
+        },
+        {
+          "term": "Horizontal ventilation",
+          "meaning": "Openings in walls/windows rather than the roof."
+        }
+      ],
+      "safetyNotes": [
+        "Roof operations need a sound roof, a ladder, and a reason.",
+        "Breaking glass injures people below.",
+        "Do not vent into a path that pushes fire over a search team."
+      ],
+      "seeResources": [
+        {
+          "label": "Ventilation Checklist",
+          "url": "/ventilation-checklist.html",
+          "note": "Planning and coordination points.",
+          "type": "checklist"
+        }
+      ],
+      "practiceResources": [
+        {
+          "label": "Ventilation Checklist",
+          "url": "/ventilation-checklist.html",
+          "note": "Before you cut or break.",
+          "type": "checklist"
+        },
+        {
+          "label": "Fireground Decision Sim",
+          "url": "/fireground-decision-sim.html",
+          "note": "Openings and fire behavior.",
+          "type": "simulator"
+        },
+        {
+          "label": "Focus Drills — ventilation",
+          "url": "/focus-drills.html?level=firefighter_1&topic=ventilation",
+          "note": "Opening selection.",
+          "type": "drill"
+        },
+        {
+          "label": "FSRI Fire Safety Academy",
+          "url": "https://training.fsri.org/",
+          "note": "Research-based fire dynamics.",
+          "type": "official"
+        }
+      ],
+      "drill": {
+        "objective": "Given a simple residential fire picture, choose whether, where, and when to ventilate, and coordinate it with a charged line.",
+        "equipment": "Building photos or a drill tower, charged line or tabletop, radios, ventilation tools as assigned.",
+        "setup": "No live fire required. Use FSRI-informed discussion: inlet, exhaust, and people.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Define the intended exhaust and who is on the line before any window comes out.",
+            "performancePoints": [
+              "Coordination named"
+            ],
+            "commonMistakes": [
+              "Vent for ‘fresh air’ with no plan"
+            ],
+            "debrief": [
+              "Who can stop the opening?"
+            ]
+          },
+          "15": {
+            "title": "15-minute decision drill",
+            "instructions": "Three photos: fire in a rear bedroom, basement, and kitchen. Pick openings and timing.",
+            "performancePoints": [
+              "Why/where/when",
+              "Search considered"
+            ],
+            "commonMistakes": [
+              "Roof-first always"
+            ],
+            "debrief": [
+              "What smoke change would you expect?"
+            ]
+          },
+          "30": {
+            "title": "30-minute coordinated evolution",
+            "instructions": "Line in place, then a horizontal opening on command. Debrief smoke/heat talk and a ‘too early’ inject.",
+            "performancePoints": [
+              "Wait for water",
+              "Communication"
+            ],
+            "commonMistakes": [
+              "Independent freelancing"
+            ],
+            "debrief": [
+              "Did we make it better for the search or worse?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "Ventilation without coordination with suppression/search can:",
+          "choices": [
+            "Only help",
+            "Create a flow path that grows the fire toward people",
+            "Never matter on single-family dwellings",
+            "Replace the need for water"
+          ],
+          "answer": 1,
+          "why": "Openings are tactical."
+        },
+        {
+          "q": "The first question before making an opening is:",
+          "choices": [
+            "Do I have the biggest saw?",
+            "What is the objective, and is water/search ready for the change?",
+            "Will it look good from the street?",
+            "Did someone already break the front window for no reason — should I copy?"
+          ],
+          "answer": 1,
+          "why": "Objective and timing."
+        },
+        {
+          "q": "Vertical ventilation is:",
+          "choices": [
+            "Always safer than windows",
+            "A high-risk assignment that needs a sound roof, staffing, and a reason",
+            "Required on every fire",
+            "The same as opening the front door"
+          ],
+          "answer": 1,
+          "why": "Roofs kill firefighters when the reason and the roof are wrong."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "FSRI Fire Safety Academy",
+          "url": "https://training.fsri.org/",
+          "scope": "Evidence-based structural firefighting education"
+        },
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "NIOSH Firefighter Center",
+          "url": "https://www.cdc.gov/niosh/firefighters/",
+          "scope": "Firefighter safety, exposure, and occupational health"
+        },
+        {
+          "label": "Department ventilation SOP",
+          "url": "/ventilation-checklist.html",
+          "scope": "When to vent, PPV policy, and roof ops are local."
+        }
+      ],
+      "relatedSkills": [
+        "ff2_ventilation",
+        "ff1_fire_attack",
+        "ff1_search",
+        "ff1_ground_ladders"
+      ],
+      "searchKeywords": [
+        "ventilation",
+        "flow path",
+        "horizontal",
+        "vertical",
+        "PPV",
+        "smoke",
+        "roof"
+      ]
+    },
+    {
+      "id": "ff1_water_supply",
+      "certificationId": "firefighter_1",
+      "title": "Water Supply Support",
+      "aliases": [
+        "water supply",
+        "hydrant catch",
+        "supply line",
+        "drop a line"
+      ],
+      "category": "Water Supply",
+      "careerStage": "firefighter",
+      "summary": "Catch a hydrant, manage supply hose, and support the engine as assigned — the pump operator cannot do this alone.",
+      "whyItMatters": "Firefighter I water-supply work is how the engineer gets a chance to be good.",
+      "learningPoints": [
+        "Know the department hydrant hookup from the ground person’s view.",
+        "Kinks, adapters, and a closed steamer cap are your problems.",
+        "Communicate when the hydrant is made — and when it is not.",
+        "Traffic and hose in the street are part of the skill."
+      ],
+      "beforeYouDo": [
+        "Hydrant kit locations on the assigned engine.",
+        "Which outlet and hose the department wants first."
+      ],
+      "terminology": [
+        {
+          "term": "Supply line",
+          "meaning": "Hose from source to the pump, often LDH."
+        },
+        {
+          "term": "Hydrant assist",
+          "meaning": "The firefighter making the hydrant while the engine spots."
+        }
+      ],
+      "safetyNotes": [
+        "You are in the street. Visibility and traffic control.",
+        "Charging LDH can move violently."
+      ],
+      "seeResources": [
+        {
+          "label": "Hydrant Flow Calculator",
+          "url": "/hydrant-flow-calculator.html",
+          "note": "Why residual will matter to the operator you are supporting.",
+          "type": "calculator"
+        }
+      ],
+      "practiceResources": [
+        {
+          "label": "Hose Advancement Checklist",
+          "url": "/hose-advancement-checklist.html",
+          "note": "Related hose handling.",
+          "type": "checklist"
+        },
+        {
+          "label": "Hydrant Inspection Log",
+          "url": "/hydrant-inspection-log.html",
+          "note": "Know the hydrants in first-due.",
+          "type": "log"
+        },
+        {
+          "label": "Focus Drills — hydrant",
+          "url": "/focus-drills.html?level=firefighter_1&topic=hydrant",
+          "note": "Connection reps.",
+          "type": "drill"
+        },
+        {
+          "label": "Hydrant Operations skill (engineer view)",
+          "url": "/skill-support.html?cert=driver_operator_pumper&task=do_pumper_hydrant_ops",
+          "note": "What the operator is watching.",
+          "type": "skill"
+        }
+      ],
+      "drill": {
+        "objective": "Complete a department hydrant catch, dress the hose, and report ‘water available’ with a meaning the operator shares.",
+        "equipment": "Hydrant kit, supply hose, engine or hydrant prop, PPE, traffic vests as required.",
+        "setup": "Use a training hydrant if live water is restricted. Agree on the radio words.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Lay out the kit and say the sequence including slow open.",
+            "performancePoints": [
+              "Sequence"
+            ],
+            "commonMistakes": [
+              "Opening wide immediately"
+            ],
+            "debrief": [
+              "What if the cap will not spin?"
+            ]
+          },
+          "15": {
+            "title": "15-minute catch",
+            "instructions": "Drop, wrap or connect per SOP, charge on command, clear kinks, report.",
+            "performancePoints": [
+              "Connection",
+              "Kinks",
+              "Report"
+            ],
+            "commonMistakes": [
+              "Standing over the hose"
+            ],
+            "debrief": [
+              "Did the operator actually have water?"
+            ]
+          },
+          "30": {
+            "title": "30-minute engine support",
+            "instructions": "Hydrant plus pulling the first attack line, then resetting both. Include a bad hydrant inject (cap, no water) and a move to a second hydrant talk-through.",
+            "performancePoints": [
+              "Problem reported early",
+              "Team reset"
+            ],
+            "commonMistakes": [
+              "Silent failure at the hydrant"
+            ],
+            "debrief": [
+              "When do we abandon this hydrant?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "A hydrant firefighter should open the valve:",
+          "choices": [
+            "As fast as possible",
+            "In a controlled manner per SOP, after the connection is made and the operator is ready",
+            "Only after the fire is out",
+            "With a power saw"
+          ],
+          "answer": 1,
+          "why": "Controlled water prevents hammer and surprises."
+        },
+        {
+          "q": "If the hydrant is dry or broken, you should:",
+          "choices": [
+            "Keep it a secret",
+            "Report immediately so the operator can change the plan",
+            "Wait five minutes",
+            "Connect anyway and hope"
+          ],
+          "answer": 1,
+          "why": "Early bad news is useful news."
+        },
+        {
+          "q": "Supply hose kinks:",
+          "choices": [
+            "Do not matter in LDH",
+            "Can starve the pump just like a closed valve",
+            "Increase residual pressure",
+            "Are the officer’s only job"
+          ],
+          "answer": 1,
+          "why": "Dress the line."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Department water-supply SOP",
+          "url": "/hydrant-inspection-log.html",
+          "scope": "Hydrant connections, LDH, and first-due hydrant programs are local."
+        }
+      ],
+      "relatedSkills": [
+        "do_pumper_hydrant_ops",
+        "ff1_hose_advancement",
+        "probation_hydrant"
+      ],
+      "searchKeywords": [
+        "hydrant",
+        "supply line",
+        "LDH",
+        "water supply",
+        "catch a hydrant"
+      ]
+    },
+    {
+      "id": "ff1_fire_attack",
+      "certificationId": "firefighter_1",
+      "title": "Fire Attack Fundamentals",
+      "aliases": [
+        "fire attack",
+        "fire control",
+        "stream",
+        "hit the fire",
+        "interior attack"
+      ],
+      "category": "Fire Control",
+      "careerStage": "firefighter",
+      "summary": "Apply an effective stream as part of a team: the right stream, the right place, coordinated with ventilation and search.",
+      "whyItMatters": "Cooling fuel and controlling the flow path is how room-and-contents fires stay room-and-contents fires.",
+      "learningPoints": [
+        "Direct, indirect, and combination streams are tools with reasons.",
+        "Gas cooling / hitting what you can see depends on conditions and training — follow department fire-dynamics doctrine.",
+        "A stream that never reaches the seat is noise.",
+        "Know when you are the attack line vs a backup/protection line."
+      ],
+      "beforeYouDo": [
+        "Charged line, SCBA, a defined fire problem (prop, picture, or simulator).",
+        "Agreement on the attack mode the officer wants."
+      ],
+      "terminology": [
+        {
+          "term": "Seat of the fire",
+          "meaning": "Where the bulk of the burning is — the target if you can reach it safely."
+        },
+        {
+          "term": "Backup line",
+          "meaning": "A second line protecting crew and egress, not a decoration."
+        }
+      ],
+      "safetyNotes": [
+        "Steam, collapse, and flashover cues are more important than ‘getting a good hit’ on video.",
+        "Do not pass fire if your department’s tactic and staffing say otherwise."
+      ],
+      "seeResources": [
+        {
+          "label": "Fireground Decision Sim",
+          "url": "/fireground-decision-sim.html",
+          "note": "Attack, water, and coordination cases.",
+          "type": "simulator"
+        }
+      ],
+      "practiceResources": [
+        {
+          "label": "Fireground Decision Sim",
+          "url": "/fireground-decision-sim.html",
+          "note": "Tactical choices.",
+          "type": "simulator"
+        },
+        {
+          "label": "Hose Advancement Checklist",
+          "url": "/hose-advancement-checklist.html",
+          "note": "Get the line there.",
+          "type": "checklist"
+        },
+        {
+          "label": "Nozzle Reaction Calculator",
+          "url": "/nozzle-reaction-calculator.html",
+          "note": "Why the line is hard to hold.",
+          "type": "calculator"
+        },
+        {
+          "label": "FSRI Fire Safety Academy",
+          "url": "https://training.fsri.org/",
+          "note": "Fire dynamics.",
+          "type": "official"
+        }
+      ],
+      "drill": {
+        "objective": "Given a residential fire problem, state the stream objective, advance, apply water on command, and report the effect.",
+        "equipment": "Attack line, nozzle, pictures or a burn building if authorized, radios.",
+        "setup": "No unauthorized live fire. Use a simulator, photos, or an acquired-structure program under instructors.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "From a photo, name fire location, stream choice, and one condition that would stop interior attack.",
+            "performancePoints": [
+              "Go/no-go named"
+            ],
+            "commonMistakes": [
+              "Always interior"
+            ],
+            "debrief": [
+              "What does dark turbulent smoke suggest to you?"
+            ]
+          },
+          "15": {
+            "title": "15-minute hit and report",
+            "instructions": "Advance to a door, apply water to a target, give a conditions report.",
+            "performancePoints": [
+              "Effective stream",
+              "CAN-style report"
+            ],
+            "commonMistakes": [
+              "Opening the nozzle down the hallway forever"
+            ],
+            "debrief": [
+              "Did the smoke behave as we expected?"
+            ]
+          },
+          "30": {
+            "title": "30-minute coordinated attack",
+            "instructions": "Line, a search assignment, and a ventilation decision. Debrief sequence.",
+            "performancePoints": [
+              "Coordination",
+              "Water before vent if that is the plan"
+            ],
+            "commonMistakes": [
+              "Freelancing"
+            ],
+            "debrief": [
+              "Who owned the fire room?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "An attack line that cannot reach the fire:",
+          "choices": [
+            "Still counts if it is loud",
+            "Needs a better position, more hose, or a different tactic",
+            "Should be opened to ‘cool the hallway’ forever without a plan",
+            "Means you should drop the nozzle and search alone"
+          ],
+          "answer": 1,
+          "why": "The stream has to do work on the problem."
+        },
+        {
+          "q": "Fire attack should be coordinated with:",
+          "choices": [
+            "Nothing — speed only",
+            "Search, ventilation, and water supply",
+            "Only the media",
+            "The second-due chief’s parking"
+          ],
+          "answer": 1,
+          "why": "It is a company problem."
+        },
+        {
+          "q": "If conditions worsen when you open a door:",
+          "choices": [
+            "Ignore it",
+            "Control the door, apply water as trained, and reassess — you may have changed the flow path",
+            "Vent the whole first floor immediately",
+            "Remove SCBA"
+          ],
+          "answer": 1,
+          "why": "The building will tell you."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "FSRI Fire Safety Academy",
+          "url": "https://training.fsri.org/",
+          "scope": "Evidence-based structural firefighting education"
+        },
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "NIOSH Firefighter Center",
+          "url": "https://www.cdc.gov/niosh/firefighters/",
+          "scope": "Firefighter safety, exposure, and occupational health"
+        },
+        {
+          "label": "Department fire-attack SOP",
+          "url": "/fireground-decision-sim.html",
+          "scope": "Interior vs exterior, stream type, and staffing model are local."
+        }
+      ],
+      "relatedSkills": [
+        "ff1_hose_advancement",
+        "ff1_ventilation",
+        "ff1_search",
+        "ff1_scba"
+      ],
+      "searchKeywords": [
+        "fire attack",
+        "stream",
+        "nozzle",
+        "interior",
+        "flashover",
+        "gas cooling"
+      ]
+    },
+    {
+      "id": "ff1_communications_mayday",
+      "certificationId": "firefighter_1",
+      "title": "Communications and Mayday",
+      "aliases": [
+        "mayday",
+        "radio",
+        "emergency traffic",
+        "lumans",
+        "who what where"
+      ],
+      "category": "Communications",
+      "careerStage": "firefighter",
+      "summary": "Use the radio so people can help you: routine traffic, progress, and a Mayday that includes location, unit, and the problem.",
+      "whyItMatters": "A silent firefighter in trouble is a body recovery. A clear Mayday is a rescue problem with a chance.",
+      "learningPoints": [
+        "Know the channel, how to key, and how to declare emergency traffic per SOP.",
+        "Mayday: who, what, where — and air/crew status if you can.",
+        "Practice before you need it. Stress shrinks vocabulary.",
+        "Routine radio discipline makes emergency radio possible."
+      ],
+      "beforeYouDo": [
+        "Department Mayday policy and portable radio layout.",
+        "Your riding assignment name (Engine 1 backup, etc.)."
+      ],
+      "terminology": [
+        {
+          "term": "Mayday",
+          "meaning": "Firefighter emergency — lost, trapped, injured, missing, or in imminent danger per department definition."
+        },
+        {
+          "term": "Emergency traffic",
+          "meaning": "Priority radio, not the same as a Mayday in every system — know the difference locally."
+        }
+      ],
+      "safetyNotes": [
+        "Do not wait until the last breath to call.",
+        "If you cannot talk, a PASS and a crew that notices your absence still matter — accountability is part of this skill."
+      ],
+      "practiceResources": [
+        {
+          "label": "Focus Drills — radio/Mayday",
+          "url": "/focus-drills.html?level=firefighter_1&topic=mayday",
+          "note": "Format practice.",
+          "type": "drill"
+        },
+        {
+          "label": "Search and Rescue Size-Up",
+          "url": "/search-and-rescue-sizeup.html",
+          "note": "Location language.",
+          "type": "checklist"
+        },
+        {
+          "label": "Fireground Decision Sim",
+          "url": "/fireground-decision-sim.html",
+          "note": "Communications under stress.",
+          "type": "simulator"
+        },
+        {
+          "label": "Study Center",
+          "url": "/study-center.html?track=academy",
+          "note": "Comms review.",
+          "type": "guide"
+        }
+      ],
+      "drill": {
+        "objective": "Deliver a correct Mayday on a training channel, then a routine CAN report, using department format.",
+        "equipment": "Training radios or a timer and a written format card, PPE/SCBA optional for realism.",
+        "setup": "Use a training talkgroup. Never practice Mayday on a live dispatch channel.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Recite the department Mayday format from memory.",
+            "performancePoints": [
+              "Who/what/where"
+            ],
+            "commonMistakes": [
+              "Rambling"
+            ],
+            "debrief": [
+              "What channel?"
+            ]
+          },
+          "15": {
+            "title": "15-minute radio reps",
+            "instructions": "Five Maydays from different locations (basement, floor 2 Charlie, yard). Crew acknowledges correctly.",
+            "performancePoints": [
+              "Format",
+              "Acknowledgement"
+            ],
+            "commonMistakes": [
+              "Talking over the Mayday"
+            ],
+            "debrief": [
+              "Did location make sense to the RIT?"
+            ]
+          },
+          "30": {
+            "title": "30-minute scenario",
+            "instructions": "Search evolution ends in a simulated lost-exit. Call the Mayday, then follow self-rescue/RIT talk-through per SOP.",
+            "performancePoints": [
+              "Timely call",
+              "Accountability"
+            ],
+            "commonMistakes": [
+              "Waiting too long"
+            ],
+            "debrief": [
+              "What would RIT need that we did not give?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "A Mayday should include at least:",
+          "choices": [
+            "A joke to stay calm",
+            "Who you are, what the problem is, and where you are — plus air/crew if you can",
+            "Only your first name",
+            "A complete autobiography"
+          ],
+          "answer": 1,
+          "why": "Rescuers cannot help a mystery."
+        },
+        {
+          "q": "You should call a Mayday:",
+          "choices": [
+            "Only when the cylinder is empty",
+            "When you are lost, trapped, injured, or in imminent danger per SOP — early",
+            "After you have already self-rescued",
+            "Never if you are a probationary firefighter"
+          ],
+          "answer": 1,
+          "why": "Early Maydays are successful Maydays."
+        },
+        {
+          "q": "Practice Maydays belong on:",
+          "choices": [
+            "The primary dispatch channel during dinner",
+            "A training channel or recorded drill per department rules",
+            "Social media live",
+            "No practice — it is bad luck"
+          ],
+          "answer": 1,
+          "why": "Do not create a real emergency to train."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "NIOSH Firefighter Center",
+          "url": "https://www.cdc.gov/niosh/firefighters/",
+          "scope": "Firefighter safety, exposure, and occupational health"
+        },
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Department Mayday / RIT / radio SOP",
+          "url": "/focus-drills.html?level=firefighter_1&topic=mayday",
+          "scope": "Mayday language and emergency-button behavior are local."
+        }
+      ],
+      "relatedSkills": [
+        "ff1_search",
+        "ff1_scba",
+        "fo1_initial_radio_report",
+        "probation_radio"
+      ],
+      "searchKeywords": [
+        "mayday",
+        "radio",
+        "emergency traffic",
+        "accountability",
+        "rit",
+        "pass"
+      ],
+      "seeResources": []
+    },
+    {
+      "id": "ff1_overhaul_salvage",
+      "certificationId": "firefighter_1",
+      "title": "Overhaul and Salvage",
+      "aliases": [
+        "overhaul",
+        "salvage",
+        "property conservation",
+        "hidden fire"
+      ],
+      "category": "Overhaul",
+      "careerStage": "firefighter",
+      "summary": "Find hidden fire without destroying evidence or people, and protect property that the fire did not already take.",
+      "whyItMatters": "Rekindle, injuries during overhaul, and ruined belongings are preventable company failures.",
+      "learningPoints": [
+        "Overhaul is still a hazardous atmosphere — respiratory protection per SOP.",
+        "Look for hidden fire with a purpose, not random demolition.",
+        "Salvage can happen during the fire, not only after.",
+        "Evidence and origin/cause need a thought before you toss the room."
+      ],
+      "beforeYouDo": [
+        "TIC if issued, tools, salvage covers as carried, lighting."
+      ],
+      "terminology": [
+        {
+          "term": "Overhaul",
+          "meaning": "Searching for and extinguishing hidden fire."
+        },
+        {
+          "term": "Salvage",
+          "meaning": "Protecting property from fire, smoke, and water."
+        }
+      ],
+      "safetyNotes": [
+        "Holes, wiring, and remaining collapse risk.",
+        "Do not remove SCBA just because flames are gone if policy says the atmosphere is still bad."
+      ],
+      "practiceResources": [
+        {
+          "label": "Focus Drills — overhaul",
+          "url": "/focus-drills.html?level=firefighter_1&topic=overhaul",
+          "note": "Hazard scan.",
+          "type": "drill"
+        },
+        {
+          "label": "Fire Skill Wheel",
+          "url": "/fire-skill-wheel.html",
+          "note": "Salvage cover work.",
+          "type": "wheel"
+        },
+        {
+          "label": "Firefighter Skills Checklist",
+          "url": "/firefighter-skills-checklist.html",
+          "note": "Salvage/overhaul items.",
+          "type": "checklist"
+        }
+      ],
+      "drill": {
+        "objective": "Scan a room for overhaul hazards, open a designated void, and deploy a salvage cover or water-control method.",
+        "equipment": "Training room, TIC if available, salvage cover, pike pole, lighting.",
+        "setup": "Instructor marks ‘do not open’ evidence items.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "List five overhaul hazards before any opening.",
+            "performancePoints": [
+              "Hazards named"
+            ],
+            "commonMistakes": [
+              "Yanking ceiling first"
+            ],
+            "debrief": [
+              "When do we stay on air?"
+            ]
+          },
+          "15": {
+            "title": "15-minute salvage + scan",
+            "instructions": "Cover a mock contents pile, then open one assigned void.",
+            "performancePoints": [
+              "Property protected",
+              "Controlled opening"
+            ],
+            "commonMistakes": [
+              "Trashing the room"
+            ],
+            "debrief": [
+              "What did we preserve for investigation?"
+            ]
+          },
+          "30": {
+            "title": "30-minute overhaul problem",
+            "instructions": "Hidden-fire hunt with a TIC talk-through, electrical hazard, and a rekindle checkpoint.",
+            "performancePoints": [
+              "Systematic",
+              "Respiratory protection"
+            ],
+            "commonMistakes": [
+              "Bare-face in junk"
+            ],
+            "debrief": [
+              "What would make us call the fire back?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "Overhaul atmospheres:",
+          "choices": [
+            "Are always safe when flames are gone",
+            "Can still be IDLH — follow department respiratory rules",
+            "Only need a dust mask",
+            "Are a civilian problem"
+          ],
+          "answer": 1,
+          "why": "Smoke and CO do not respect knockdown."
+        },
+        {
+          "q": "Salvage is:",
+          "choices": [
+            "Only for insurance adjusters",
+            "A firefighter skill that can run with attack",
+            "Unprofessional",
+            "Always after the investigation is done, never during"
+          ],
+          "answer": 1,
+          "why": "Throwing water on someone’s remaining property without a cover is optional, not inevitable."
+        },
+        {
+          "q": "If you might be in the origin area:",
+          "choices": [
+            "Start dumping drawers for fun",
+            "Minimize unnecessary disturbance and notify the officer/investigator path per SOP",
+            "Soak everything equally",
+            "Take souvenirs"
+          ],
+          "answer": 1,
+          "why": "Cause determination starts with what you did not destroy."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "NIOSH Firefighter Center",
+          "url": "https://www.cdc.gov/niosh/firefighters/",
+          "scope": "Firefighter safety, exposure, and occupational health"
+        },
+        {
+          "label": "Department overhaul, exposure, and investigation SOP",
+          "url": "/firefighter-1-2-tools.html",
+          "scope": "When to remove SCBA and how to protect origin areas are local."
+        }
+      ],
+      "relatedSkills": [
+        "ff2_evidence_overhaul",
+        "ff1_fire_attack",
+        "ff1_scba"
+      ],
+      "searchKeywords": [
+        "overhaul",
+        "salvage",
+        "rekindle",
+        "tic",
+        "property conservation",
+        "hidden fire"
+      ],
+      "seeResources": []
+    }
+  ]
+}

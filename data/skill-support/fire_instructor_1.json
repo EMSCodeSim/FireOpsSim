@@ -1,0 +1,1372 @@
+{
+  "id": "fire_instructor_1",
+  "title": "Fire Instructor I",
+  "shortTitle": "FI I",
+  "careerStage": "instructor",
+  "category": "Instructor",
+  "aliases": [
+    "fire instructor 1",
+    "fire instructor i",
+    "instructor 1",
+    "fi1",
+    "fi i",
+    "training officer"
+  ],
+  "summary": "Deliver prepared instruction: objectives, demonstration, coached practice, evaluation, safety, and records — without pretending to be the certification authority.",
+  "skills": [
+    {
+      "id": "fi1_objectives",
+      "certificationId": "fire_instructor_1",
+      "title": "Performance Objectives",
+      "aliases": [
+        "objective",
+        "lesson plan",
+        "learning objective",
+        "conditions and standard"
+      ],
+      "category": "Lesson Planning",
+      "careerStage": "instructor",
+      "summary": "Turn a station skill into one observable objective: who, does what, under what conditions, to what standard.",
+      "whyItMatters": "If the objective is ‘understand hose,’ nobody can teach it or test it. If it is ‘advance a charged 1¾-inch line to a marked door in full PPE,’ you can.",
+      "learningPoints": [
+        "Observable verbs: don, advance, report, calculate — not ‘know’ or ‘appreciate.’",
+        "Conditions: PPE, lighting, staffing, props.",
+        "Standard: time, completeness, safety behaviors.",
+        "Instructor I often delivers prepared objectives — still know how to read and, if allowed, adjust them without breaking the standard."
+      ],
+      "beforeYouDo": [
+        "A familiar company skill.",
+        "Department lesson-plan template if you have one."
+      ],
+      "terminology": [
+        {
+          "term": "Performance objective",
+          "meaning": "A measurable statement of what the learner will do."
+        },
+        {
+          "term": "Enabling objective",
+          "meaning": "A smaller step that supports the main performance."
+        }
+      ],
+      "safetyNotes": [
+        "An objective that requires unsafe speed is a bad objective.",
+        "Live-fire objectives have extra rules — do not write those casually."
+      ],
+      "practiceResources": [
+        {
+          "label": "Fire Instructor I Center",
+          "url": "/fire-instructor-1.html",
+          "note": "Instructor study hub.",
+          "type": "guide"
+        },
+        {
+          "label": "Firefighter Drill Builder",
+          "url": "/firefighter-drill-builder.html",
+          "note": "Objectives, setup, evaluation.",
+          "type": "planner"
+        },
+        {
+          "label": "Focus Drills — objectives",
+          "url": "/focus-drills.html?level=instructor_1&topic=objective",
+          "note": "Write one objective.",
+          "type": "drill"
+        },
+        {
+          "label": "Study Center — instructor",
+          "url": "/study-center.html?track=instructor",
+          "note": "Instructor track.",
+          "type": "guide"
+        }
+      ],
+      "drill": {
+        "objective": "Write one performance objective for a company skill with conditions and a standard, then check it with a partner: could you evaluate it without guessing?",
+        "equipment": "Lesson topic, template or whiteboard, timer.",
+        "setup": "Classroom. No live fire.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Rewrite ‘understand SCBA’ into a performance statement.",
+            "performancePoints": [
+              "Observable verb"
+            ],
+            "commonMistakes": [
+              "‘Understand’ remains"
+            ],
+            "debrief": [
+              "How would you fail someone fairly?"
+            ]
+          },
+          "15": {
+            "title": "15-minute write",
+            "instructions": "Three skills: knots, radio report, hydrant catch. One objective each.",
+            "performancePoints": [
+              "Conditions",
+              "Standard"
+            ],
+            "commonMistakes": [
+              "Vague ‘demonstrate knowledge’"
+            ],
+            "debrief": [
+              "Could a different instructor score this the same?"
+            ]
+          },
+          "30": {
+            "title": "30-minute micro-plan",
+            "instructions": "Take one objective and list demo, practice, and the evaluation instrument.",
+            "performancePoints": [
+              "Aligned"
+            ],
+            "commonMistakes": [
+              "Test that does not match the objective"
+            ],
+            "debrief": [
+              "What safety constraint belongs in the conditions?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "‘The student will understand ventilation’ is a weak objective because:",
+          "choices": [
+            "Ventilation is unimportant",
+            "You cannot observe ‘understand’ fairly",
+            "It is too specific",
+            "NFPA forbids verbs"
+          ],
+          "answer": 1,
+          "why": "Test what people do."
+        },
+        {
+          "q": "Conditions in an objective tell you:",
+          "choices": [
+            "The weather only",
+            "The environment and constraints of the performance (PPE, props, staffing)",
+            "The instructor’s mood",
+            "The budget"
+          ],
+          "answer": 1,
+          "why": "Conditions make the test fair."
+        },
+        {
+          "q": "Instructor I using a prepared lesson plan should:",
+          "choices": [
+            "Ignore the objectives",
+            "Teach to those objectives unless the AHJ allows a documented adjustment that still meets the standard",
+            "Invent a new JPR",
+            "Skip evaluation"
+          ],
+          "answer": 1,
+          "why": "Stay inside the plan’s standard."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Department training SOPs and the issued lesson plan",
+          "url": "/fire-instructor-1.html",
+          "scope": "Official JPRs and skill sheets belong to the certifying entity — do not treat FireOpsSim wording as NFPA text."
+        }
+      ],
+      "relatedSkills": [
+        "fi1_delivery",
+        "fi1_evaluation",
+        "fi1_demonstration"
+      ],
+      "searchKeywords": [
+        "objective",
+        "lesson plan",
+        "performance",
+        "conditions",
+        "standard",
+        "FI1"
+      ],
+      "seeResources": []
+    },
+    {
+      "id": "fi1_delivery",
+      "certificationId": "fire_instructor_1",
+      "title": "Deliver Prepared Instruction",
+      "aliases": [
+        "presentation",
+        "teach",
+        "lesson delivery",
+        "micro teach"
+      ],
+      "category": "Presentation",
+      "careerStage": "instructor",
+      "summary": "Open, explain, check for understanding, and close — without drowning learners in slides.",
+      "whyItMatters": "A brilliant skill can still fail if the instructor rambles, skips the check, or never tells people what success looks like.",
+      "learningPoints": [
+        "Open with the objective and why it matters on the job.",
+        "Chunk the explanation. Ask a real question.",
+        "Use the aid; do not read the aid.",
+        "Close by restating the performance they will do next."
+      ],
+      "beforeYouDo": [
+        "A prepared 8–10 minute micro-teach topic.",
+        "One visual aid max."
+      ],
+      "terminology": [
+        {
+          "term": "Check for understanding",
+          "meaning": "A question or task that reveals whether the explanation landed — not ‘any questions?’ silence."
+        }
+      ],
+      "safetyNotes": [
+        "Classroom delivery still needs a safety brief if you will move to a skill next.",
+        "Watch the clock. Fatigue creates accidents later on the drill ground."
+      ],
+      "practiceResources": [
+        {
+          "label": "Fire Instructor I Center",
+          "url": "/fire-instructor-1.html",
+          "note": "Micro-teach practice.",
+          "type": "guide"
+        },
+        {
+          "label": "Focus Drills — micro-teach",
+          "url": "/focus-drills.html?level=instructor_1&topic=teach",
+          "note": "10-minute teach.",
+          "type": "drill"
+        },
+        {
+          "label": "Instructor Packs",
+          "url": "/instructor-packs.html",
+          "note": "Grouped material.",
+          "type": "guide"
+        }
+      ],
+      "drill": {
+        "objective": "Teach one narrow concept in 10 minutes with an opening, explanation, learner check, and close.",
+        "equipment": "Simple visual aid, timer, 2–4 learners.",
+        "setup": "Pick a topic you already know. No new research rabbit holes.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Write the opening sentence and the check question only.",
+            "performancePoints": [
+              "Objective in the open"
+            ],
+            "commonMistakes": [
+              "Joke-only open"
+            ],
+            "debrief": [
+              "What will you ask?"
+            ]
+          },
+          "15": {
+            "title": "15-minute micro-teach",
+            "instructions": "Deliver 8 minutes plus 2 minutes of questions. Peer scores the four parts.",
+            "performancePoints": [
+              "All four parts"
+            ],
+            "commonMistakes": [
+              "Reading slides"
+            ],
+            "debrief": [
+              "Did anyone besides the instructor talk?"
+            ]
+          },
+          "30": {
+            "title": "30-minute two teaches",
+            "instructions": "Two instructors, two topics. Practice adapting when a learner is lost without abandoning the objective.",
+            "performancePoints": [
+              "Adaptation",
+              "Time"
+            ],
+            "commonMistakes": [
+              "Abandoning the objective"
+            ],
+            "debrief": [
+              "What will practice look like next?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "‘Any questions?’ after a lecture usually:",
+          "choices": [
+            "Guarantees learning",
+            "Gets silence — ask a specific application question instead",
+            "Replaces practice",
+            "Is required by law"
+          ],
+          "answer": 1,
+          "why": "Check with a prompt they can fail."
+        },
+        {
+          "q": "A visual aid should:",
+          "choices": [
+            "Contain the entire lesson in 40 bullets",
+            "Support one idea at a time",
+            "Replace the instructor",
+            "Be read verbatim"
+          ],
+          "answer": 1,
+          "why": "Aids aid."
+        },
+        {
+          "q": "If a learner is lost, Instructor I should:",
+          "choices": [
+            "Humiliate them",
+            "Adjust explanation/pacing inside the prepared lesson without changing the performance standard",
+            "Skip them",
+            "Change the JPR"
+          ],
+          "answer": 1,
+          "why": "Same standard, different path."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Issued lesson plan and department instructor SOP",
+          "url": "/fire-instructor-1.html",
+          "scope": "What you may alter in a prepared plan is an AHJ decision."
+        }
+      ],
+      "relatedSkills": [
+        "fi1_objectives",
+        "fi1_demonstration",
+        "fi1_adapt"
+      ],
+      "searchKeywords": [
+        "micro teach",
+        "presentation",
+        "lesson",
+        "delivery",
+        "instructor"
+      ],
+      "seeResources": []
+    },
+    {
+      "id": "fi1_demonstration",
+      "certificationId": "fire_instructor_1",
+      "title": "Demonstrate, Practice, Coach",
+      "aliases": [
+        "demonstration",
+        "skill instruction",
+        "coach the rep",
+        "show do"
+      ],
+      "category": "Skills Training",
+      "careerStage": "instructor",
+      "summary": "Show the skill correctly, let them practice, and coach the next rep with specific feedback — then fade the prompting.",
+      "whyItMatters": "Talking about a ladder raise is not a ladder raise. Bad demos become departmental folklore.",
+      "learningPoints": [
+        "Demonstrate at real speed, then slower if needed, with the same technique you will evaluate.",
+        "Learners need repetitions, not a second lecture.",
+        "Coach one or two things per rep, not twelve.",
+        "Safety stops the evolution immediately — then teach."
+      ],
+      "beforeYouDo": [
+        "A familiar psychomotor skill and a prop.",
+        "The evaluation checklist you will eventually use."
+      ],
+      "terminology": [
+        {
+          "term": "Whole-part-whole",
+          "meaning": "Show the whole skill, break it into parts, then put it back together — one common method."
+        }
+      ],
+      "safetyNotes": [
+        "Instructor demo must be the safe version, not the ‘street cheat.’",
+        "PPE for the skill is not optional because ‘it’s just training.’"
+      ],
+      "practiceResources": [
+        {
+          "label": "Focus Drills — demo/practice/coach",
+          "url": "/focus-drills.html?level=instructor_1&topic=demo",
+          "note": "Coached reps.",
+          "type": "drill"
+        },
+        {
+          "label": "Firefighter Drill Builder",
+          "url": "/firefighter-drill-builder.html",
+          "note": "Structure the evolution.",
+          "type": "planner"
+        },
+        {
+          "label": "Fire Skill Wheel",
+          "url": "/fire-skill-wheel.html",
+          "note": "Pick a skill to teach.",
+          "type": "wheel"
+        },
+        {
+          "label": "Fire Instructor I Center",
+          "url": "/fire-instructor-1.html",
+          "note": "Practical prep.",
+          "type": "guide"
+        }
+      ],
+      "drill": {
+        "objective": "Demonstrate a familiar skill, coach two learner reps with specific feedback, then watch a third rep with less talking.",
+        "equipment": "Familiar prop (knots, irons, packing a load), PPE as required, checklist.",
+        "setup": "Instructor is not the hero of the third rep.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "List the three errors you will watch for — only three.",
+            "performancePoints": [
+              "Focus"
+            ],
+            "commonMistakes": [
+              "Twelve-item rant"
+            ],
+            "debrief": [
+              "What is unsafe vs ugly?"
+            ]
+          },
+          "15": {
+            "title": "15-minute coach",
+            "instructions": "Demo once, two coached reps. Feedback = observed behavior + fix.",
+            "performancePoints": [
+              "Specific"
+            ],
+            "commonMistakes": [
+              "Doing it for them"
+            ],
+            "debrief": [
+              "Did the second rep improve the thing you named?"
+            ]
+          },
+          "30": {
+            "title": "30-minute small group",
+            "instructions": "Rotate learners. One safety officer. End with a standard-based pass/needs-more on the last rep (training only).",
+            "performancePoints": [
+              "Fairness",
+              "Safety stop used if needed"
+            ],
+            "commonMistakes": [
+              "Moving goalposts"
+            ],
+            "debrief": [
+              "Does the last rep match the objective?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "During practice the instructor should mostly:",
+          "choices": [
+            "Re-lecture",
+            "Watch and coach the actual performance",
+            "Check email",
+            "Perform the skill instead of the learner"
+          ],
+          "answer": 1,
+          "why": "They need the reps."
+        },
+        {
+          "q": "Feedback works best when it is:",
+          "choices": [
+            "Sarcastic",
+            "Specific, timely, and limited to what they can fix on the next rep",
+            "A personality review",
+            "Saved for annual evals only"
+          ],
+          "answer": 1,
+          "why": "Next rep is the test of the coaching."
+        },
+        {
+          "q": "If a learner is unsafe:",
+          "choices": [
+            "Keep going to build confidence",
+            "Stop the skill, make it safe, then teach",
+            "Film it",
+            "Blame the academy"
+          ],
+          "answer": 1,
+          "why": "Training injuries are still injuries."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Skill sheet / department training safety SOP",
+          "url": "/fire-instructor-1.html",
+          "scope": "Official evaluation instruments belong to the AHJ or certifying entity."
+        }
+      ],
+      "relatedSkills": [
+        "fi1_evaluation",
+        "fi1_feedback",
+        "fi1_training_safety",
+        "fi1_objectives"
+      ],
+      "searchKeywords": [
+        "demonstration",
+        "coach",
+        "psychomotor",
+        "skill instruction",
+        "practice"
+      ],
+      "seeResources": []
+    },
+    {
+      "id": "fi1_training_safety",
+      "certificationId": "fire_instructor_1",
+      "title": "Training Safety Brief",
+      "aliases": [
+        "training safety",
+        "safety brief",
+        "stop signal",
+        "live fire safety"
+      ],
+      "category": "Safety",
+      "careerStage": "instructor",
+      "summary": "Brief the evolution: objective, hazards, PPE, boundaries, stop signal, accountability, rehab, and the emergency plan.",
+      "whyItMatters": "Most training LODDs looked like ‘just a drill.’ The brief is how you refuse to be casual.",
+      "learningPoints": [
+        "If you cannot name the emergency plan, you are not ready to start.",
+        "Stop signal must be known to every person on the ground, including students.",
+        "Live fire has additional, non-negotiable programs — do not run it off a vibe.",
+        "Accountability in training is still accountability."
+      ],
+      "beforeYouDo": [
+        "The planned drill.",
+        "Department training-ground rules."
+      ],
+      "terminology": [
+        {
+          "term": "Stop signal",
+          "meaning": "How anyone halts the evolution for safety."
+        },
+        {
+          "term": "Control / safety officer",
+          "meaning": "The person watching the whole problem, not performing the skill."
+        }
+      ],
+      "safetyNotes": [
+        "NIOSH and USFA have documented training deaths. Read them. Do not copy the failures.",
+        "No unauthorized live fire. Ever."
+      ],
+      "practiceResources": [
+        {
+          "label": "Focus Drills — safety brief",
+          "url": "/focus-drills.html?level=instructor_1&topic=safety",
+          "note": "Build the brief.",
+          "type": "drill"
+        },
+        {
+          "label": "Firefighter Drill Builder",
+          "url": "/firefighter-drill-builder.html",
+          "note": "Safety block in the plan.",
+          "type": "planner"
+        },
+        {
+          "label": "NIOSH Firefighter Center",
+          "url": "https://www.cdc.gov/niosh/firefighters/",
+          "note": "Training and operational lessons.",
+          "type": "official"
+        },
+        {
+          "label": "Firefighter Safety & Health",
+          "url": "/firefighter-safety-health.html",
+          "note": "Occupational context.",
+          "type": "guide"
+        }
+      ],
+      "drill": {
+        "objective": "Deliver a 3-minute safety brief for a planned drill that includes stop signal, PPE, boundaries, and emergency action.",
+        "equipment": "Planned drill notes, cones for boundaries, radio.",
+        "setup": "Pick a non-live-fire drill unless you are in a compliant burn program — this product will not walk you into illegal live fire.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Write the stop signal and who can use it (answer: anyone).",
+            "performancePoints": [
+              "Anyone can stop"
+            ],
+            "commonMistakes": [
+              "Only the chief"
+            ],
+            "debrief": [
+              "Where is the medical plan?"
+            ]
+          },
+          "15": {
+            "title": "15-minute brief",
+            "instructions": "Give the brief. Peer checks for missing PPE, rehab, and accountability.",
+            "performancePoints": [
+              "Complete"
+            ],
+            "commonMistakes": [
+              "Casual ‘you know the drill’"
+            ],
+            "debrief": [
+              "What is the boundary?"
+            ]
+          },
+          "30": {
+            "title": "30-minute run",
+            "instructions": "Brief, run a short drill, then stop on a planted hazard. See if the stop actually works.",
+            "performancePoints": [
+              "Stop works",
+              "Accountability"
+            ],
+            "commonMistakes": [
+              "Pushing through the stop"
+            ],
+            "debrief": [
+              "Would this brief have been enough at night?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "Who may stop a training evolution?",
+          "choices": [
+            "Only the instructor",
+            "Anyone who sees an unsafe condition, using the briefed signal",
+            "Only students",
+            "Nobody once it starts"
+          ],
+          "answer": 1,
+          "why": "If only one person can stop it, it will not stop in time."
+        },
+        {
+          "q": "Live-fire training:",
+          "choices": [
+            "Can be improvised behind the station",
+            "Requires a compliant program, qualified instructors, and AHJ authorization — not a FireOpsSim drill card",
+            "Is the same as a kitchen fire",
+            "Does not need rehab"
+          ],
+          "answer": 1,
+          "why": "Do not freelance live fire."
+        },
+        {
+          "q": "Accountability on the training ground:",
+          "choices": [
+            "Is optional",
+            "Is still required — you must know who is in the evolution",
+            "Is only for real fires",
+            "Is a clipboard problem for someone else"
+          ],
+          "answer": 1,
+          "why": "Lost students are still lost firefighters."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "NIOSH Firefighter Center",
+          "url": "https://www.cdc.gov/niosh/firefighters/",
+          "scope": "Firefighter safety, exposure, and occupational health"
+        },
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "U.S. Fire Administration",
+          "url": "https://www.usfa.fema.gov/",
+          "scope": "National fire-service guidance and training"
+        },
+        {
+          "label": "Department training-ground / live-fire SOP",
+          "url": "/firefighter-drill-builder.html",
+          "scope": "Live-fire authorization and instructor qualifications are AHJ issues. FireOpsSim does not authorize live fire."
+        }
+      ],
+      "relatedSkills": [
+        "fi1_demonstration",
+        "fi1_evaluation",
+        "fo1_risk_management"
+      ],
+      "searchKeywords": [
+        "training safety",
+        "stop signal",
+        "live fire",
+        "safety brief",
+        "accountability"
+      ],
+      "seeResources": []
+    },
+    {
+      "id": "fi1_evaluation",
+      "certificationId": "fire_instructor_1",
+      "title": "Skill Evaluation",
+      "aliases": [
+        "evaluation",
+        "skill sheet",
+        "testing",
+        "scoring",
+        "practical exam"
+      ],
+      "category": "Evaluation",
+      "careerStage": "instructor",
+      "summary": "Give the same directions, watch the same points, score what you saw, and close professionally — this is not a popularity contest.",
+      "whyItMatters": "Inconsistent evaluators create unofficial standards and lawsuits. Fairness is a skill.",
+      "learningPoints": [
+        "Read the instrument as written. Do not add secret extra fail points.",
+        "Watch the performance, not the reputation.",
+        "If you missed it, you cannot score it.",
+        "Remediation is part of the system, not a favor.",
+        "FireOpsSim quizzes are educational — they are not certification exams."
+      ],
+      "beforeYouDo": [
+        "A sample skill sheet (department or training mock — not pirated NFPA text).",
+        "A learner to evaluate in a role-play."
+      ],
+      "terminology": [
+        {
+          "term": "Critical criterion",
+          "meaning": "A step that fails the skill if missed — per the issued sheet, not your mood."
+        }
+      ],
+      "safetyNotes": [
+        "Stop unsafe evaluation performances the same as drills.",
+        "Do not evaluate live fire unless you are in that authorized program."
+      ],
+      "practiceResources": [
+        {
+          "label": "Focus Drills — skill eval",
+          "url": "/focus-drills.html?level=instructor_1&topic=evaluation",
+          "note": "Role-play scoring.",
+          "type": "drill"
+        },
+        {
+          "label": "Fire Instructor I Center",
+          "url": "/fire-instructor-1.html",
+          "note": "Exam and practical prep.",
+          "type": "guide"
+        },
+        {
+          "label": "Firefighter Skills Checklist",
+          "url": "/firefighter-skills-checklist.html",
+          "note": "Practice tracking — not an official sheet.",
+          "type": "checklist"
+        }
+      ],
+      "drill": {
+        "objective": "Run a mock skill evaluation: standard directions, silent observation, score, and a professional pass/needs-more closeout.",
+        "equipment": "Mock skill sheet, prop, two role-players (evaluator + student).",
+        "setup": "Use a FireOpsSim or department training sheet. Do not paste copyrighted standards.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Read the sheet aloud. Highlight criticals. Agree you will not add extras.",
+            "performancePoints": [
+              "Instrument only"
+            ],
+            "commonMistakes": [
+              "Secret standards"
+            ],
+            "debrief": [
+              "What words start the eval?"
+            ]
+          },
+          "15": {
+            "title": "15-minute eval",
+            "instructions": "One performance. Two evaluators score independently, then compare. Differences are the lesson.",
+            "performancePoints": [
+              "Inter-rater"
+            ],
+            "commonMistakes": [
+              "Coaching during a test if the sheet forbids it"
+            ],
+            "debrief": [
+              "Did we score reputation?"
+            ]
+          },
+          "30": {
+            "title": "30-minute eval + remediation",
+            "instructions": "Fail a planted critical. Deliver the result, then a short remediation plan without rewriting the standard.",
+            "performancePoints": [
+              "Professional close",
+              "Remediation"
+            ],
+            "commonMistakes": [
+              "Arguing"
+            ],
+            "debrief": [
+              "When is this an official cert test vs a training check?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "During a scored evaluation, coaching the student:",
+          "choices": [
+            "Is always required",
+            "Depends on the rules of that test — many official tests forbid it",
+            "Is the same as instruction",
+            "Should be sarcastic"
+          ],
+          "answer": 1,
+          "why": "Instruction and evaluation are different modes. Know which you are in."
+        },
+        {
+          "q": "If two instructors score the same performance differently:",
+          "choices": [
+            "The louder one wins",
+            "The instrument or the training of evaluators needs work",
+            "Students should pick the better score",
+            "It does not matter"
+          ],
+          "answer": 1,
+          "why": "Reliability is part of fairness."
+        },
+        {
+          "q": "A FireOpsSim readiness quiz:",
+          "choices": [
+            "Is a Pro Board exam",
+            "Is educational feedback only — not an official examination",
+            "Replaces the skill sheet",
+            "Should be put in the personnel file as certification"
+          ],
+          "answer": 1,
+          "why": "Keep the boundary."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Pro Board",
+          "url": "https://theproboard.org/accredited-agencies/",
+          "scope": "Accredited fire certification agencies"
+        },
+        {
+          "label": "IFSAC",
+          "url": "https://ifsac.org/",
+          "scope": "Accredited certifying entities and programs"
+        },
+        {
+          "label": "Certifying agency skill sheets and department evaluation SOP",
+          "url": "/fire-instructor-1.html",
+          "scope": "Official pass/fail instruments are not FireOpsSim property and must not be reproduced here."
+        }
+      ],
+      "relatedSkills": [
+        "fi1_demonstration",
+        "fi1_documentation",
+        "fi1_feedback",
+        "fi1_objectives"
+      ],
+      "searchKeywords": [
+        "evaluation",
+        "skill sheet",
+        "scoring",
+        "practical",
+        "testing",
+        "critical"
+      ],
+      "seeResources": []
+    },
+    {
+      "id": "fi1_feedback",
+      "certificationId": "fire_instructor_1",
+      "title": "Specific Feedback",
+      "aliases": [
+        "feedback",
+        "coaching comments",
+        "corrective feedback"
+      ],
+      "category": "Coaching",
+      "careerStage": "instructor",
+      "summary": "Name the observed behavior, the standard, the effect, and the next repetition’s focus.",
+      "whyItMatters": "‘Do better’ is not feedback. Neither is a personality review.",
+      "learningPoints": [
+        "Observed > assumed.",
+        "One focus for the next rep.",
+        "Balance is not fake praise — it is accuracy.",
+        "Public feedback should not humiliate; safety stops are the exception."
+      ],
+      "beforeYouDo": [
+        "A just-watched skill rep."
+      ],
+      "terminology": [
+        {
+          "term": "Feedback sandwich",
+          "meaning": "A popular pattern that can hide the actual message — prefer clarity over ritual."
+        }
+      ],
+      "safetyNotes": [
+        "Do not use humor that targets a person.",
+        "Immediate safety feedback can be blunt. Teaching feedback can then be precise."
+      ],
+      "practiceResources": [
+        {
+          "label": "Focus Drills — feedback",
+          "url": "/focus-drills.html?level=instructor_1&topic=feedback",
+          "note": "Role-play.",
+          "type": "drill"
+        },
+        {
+          "label": "Fire Instructor I Center",
+          "url": "/fire-instructor-1.html",
+          "note": "Coaching practice.",
+          "type": "guide"
+        },
+        {
+          "label": "Fire Officer I — coaching",
+          "url": "/skill-support.html?cert=fire_officer_1&task=fo1_coaching",
+          "note": "Same conversation, different hat.",
+          "type": "skill"
+        }
+      ],
+      "drill": {
+        "objective": "After watching a skill, give 20-second feedback that names behavior, standard, and next-rep focus.",
+        "equipment": "Role-play cards, timer.",
+        "setup": "Switch roles. No real subordinates’ names.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Rewrite ‘that was sloppy’ into an observed-behavior sentence.",
+            "performancePoints": [
+              "Specific"
+            ],
+            "commonMistakes": [
+              "Trait attack"
+            ],
+            "debrief": [
+              "What should they do next?"
+            ]
+          },
+          "15": {
+            "title": "15-minute rounds",
+            "instructions": "Six mini-reps. Peer flags judgmental language.",
+            "performancePoints": [
+              "Behavior",
+              "Next rep"
+            ],
+            "commonMistakes": [
+              "Sarcasm"
+            ],
+            "debrief": [
+              "Could they use it immediately?"
+            ]
+          },
+          "30": {
+            "title": "30-minute stubborn case",
+            "instructions": "Learner repeats the same error. Practice escalating clarity without contempt, then a remediation decision.",
+            "performancePoints": [
+              "Patience + standard"
+            ],
+            "commonMistakes": [
+              "Giving up or mocking"
+            ],
+            "debrief": [
+              "Is this still instruction or is it evaluation?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "The most useful feedback unit is:",
+          "choices": [
+            "The person’s character",
+            "A specific observable action tied to the standard",
+            "A long story about when you were a recruit",
+            "Silence"
+          ],
+          "answer": 1,
+          "why": "They can only change what they can see."
+        },
+        {
+          "q": "‘Good job’ with no detail:",
+          "choices": [
+            "Builds champions",
+            "Does not tell them what to repeat",
+            "Is enough for high-risk skills",
+            "Replaces the skill sheet"
+          ],
+          "answer": 1,
+          "why": "They do not know which part was good."
+        },
+        {
+          "q": "If the error is unsafe:",
+          "choices": [
+            "Save it for the survey",
+            "Stop, make it safe, then give the teaching feedback",
+            "Tweet it",
+            "Ignore it to protect feelings"
+          ],
+          "answer": 1,
+          "why": "Safety first, then learning."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Department instructor / workplace SOP",
+          "url": "/fire-instructor-1.html",
+          "scope": "What may be said in front of a group is also an HR/culture issue."
+        }
+      ],
+      "relatedSkills": [
+        "fi1_demonstration",
+        "fi1_evaluation",
+        "fo1_coaching",
+        "fo1_after_action"
+      ],
+      "searchKeywords": [
+        "feedback",
+        "coaching",
+        "corrective",
+        "next rep",
+        "instructor"
+      ],
+      "seeResources": []
+    },
+    {
+      "id": "fi1_documentation",
+      "certificationId": "fire_instructor_1",
+      "title": "Training Records",
+      "aliases": [
+        "training records",
+        "attendance",
+        "roster",
+        "documentation audit"
+      ],
+      "category": "Documentation",
+      "careerStage": "instructor",
+      "summary": "Complete attendance, objective, instructor, date/time, evaluation, and remediation fields so the record would survive an audit.",
+      "whyItMatters": "If it is not recorded, the organization cannot prove the training happened. That becomes a legal and ISO/accreditation problem.",
+      "learningPoints": [
+        "Who was there, what was taught, who taught, when, and how it was evaluated.",
+        "Remediation and make-up sessions need the same dignity as the original.",
+        "Do not invent signatures.",
+        "FireOpsSim is not the department training record."
+      ],
+      "beforeYouDo": [
+        "A de-identified sample roster.",
+        "Department required fields."
+      ],
+      "terminology": [
+        {
+          "term": "Training record",
+          "meaning": "The official proof of instruction and evaluation — owned by the AHJ."
+        }
+      ],
+      "safetyNotes": [
+        "Do not store student private data in FireOpsSim.",
+        "Live-fire and high-risk evolutions often have extra documentation — follow policy."
+      ],
+      "practiceResources": [
+        {
+          "label": "Focus Drills — records",
+          "url": "/focus-drills.html?level=instructor_1&topic=documentation",
+          "note": "Audit a sample.",
+          "type": "drill"
+        },
+        {
+          "label": "Firefighter Drill Builder",
+          "url": "/firefighter-drill-builder.html",
+          "note": "Plan fields you will later record.",
+          "type": "planner"
+        },
+        {
+          "label": "Fire Instructor I Center",
+          "url": "/fire-instructor-1.html",
+          "note": "Closeout habits.",
+          "type": "guide"
+        }
+      ],
+      "drill": {
+        "objective": "Audit a messy de-identified training record and list every missing required field, then rewrite a clean closeout.",
+        "equipment": "Sample roster (fiction), department field list if available.",
+        "setup": "No real names or employee IDs.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "List the fields you would want if this became a lawsuit.",
+            "performancePoints": [
+              "Who/what/when/eval"
+            ],
+            "commonMistakes": [
+              "Vibes"
+            ],
+            "debrief": [
+              "Where is the instructor name?"
+            ]
+          },
+          "15": {
+            "title": "15-minute audit",
+            "instructions": "Find five defects in a bad record. Write the corrected line.",
+            "performancePoints": [
+              "Defects found"
+            ],
+            "commonMistakes": [
+              "Forging a signature ‘to help’"
+            ],
+            "debrief": [
+              "What about the person who left at lunch?"
+            ]
+          },
+          "30": {
+            "title": "30-minute closeout",
+            "instructions": "Build a complete fictional record for today’s drill including one remediation.",
+            "performancePoints": [
+              "Complete",
+              "Remediation"
+            ],
+            "commonMistakes": [
+              "Optional fields skipped that policy requires"
+            ],
+            "debrief": [
+              "Which system does this actually get entered into on your job?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "Attendance that is ‘everyone was there’ with no roster:",
+          "choices": [
+            "Is fine",
+            "Will not survive an audit",
+            "Is preferred",
+            "Is only for NFA"
+          ],
+          "answer": 1,
+          "why": "Names and times."
+        },
+        {
+          "q": "If a student failed and later passed a make-up:",
+          "choices": [
+            "Hide the fail",
+            "Record both per policy — the history is part of the record",
+            "Only keep the pass",
+            "Put it in FireOpsSim as official"
+          ],
+          "answer": 1,
+          "why": "Honesty in records is a legal skill."
+        },
+        {
+          "q": "FireOpsSim training notes are:",
+          "choices": [
+            "The ISO record",
+            "A learning aid — the AHJ system is the record",
+            "A certification",
+            "A substitute for signatures"
+          ],
+          "answer": 1,
+          "why": "Keep systems of record straight."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Department training-records SOP / accreditation rules",
+          "url": "/fire-instructor-1.html",
+          "scope": "Retention, signatures, and required fields are local and legal."
+        }
+      ],
+      "relatedSkills": [
+        "fi1_evaluation",
+        "fi1_objectives",
+        "fo1_documentation"
+      ],
+      "searchKeywords": [
+        "training records",
+        "attendance",
+        "roster",
+        "audit",
+        "remediation",
+        "ISO"
+      ],
+      "seeResources": []
+    },
+    {
+      "id": "fi1_adapt",
+      "certificationId": "fire_instructor_1",
+      "title": "Adapt Delivery, Keep the Standard",
+      "aliases": [
+        "learning styles",
+        "adapt the lesson",
+        "different learners"
+      ],
+      "category": "Instruction",
+      "careerStage": "instructor",
+      "summary": "Change explanation, pace, or demo for the learner in front of you without lowering the performance standard.",
+      "whyItMatters": "The job does not grade on a curve when the line is charged. Instruction can flex; the standard should not quietly disappear.",
+      "learningPoints": [
+        "Some people need another demo. Some need to talk it. Some need a slower first rep.",
+        "Language, experience, and physical ability differ. The objective still stands unless the AHJ changes it.",
+        "Accommodation vs exemption is a policy issue — know when to refer.",
+        "Do not confuse being nice with being unclear."
+      ],
+      "beforeYouDo": [
+        "Two learner profiles (e.g., experienced lateral vs brand-new recruit)."
+      ],
+      "terminology": [
+        {
+          "term": "Accommodation",
+          "meaning": "A allowed change in how they learn or demonstrate, not a secret easier standard — per policy."
+        }
+      ],
+      "safetyNotes": [
+        "Do not adapt by removing PPE or skipping a safety step.",
+        "Fatigue adaptations still need the emergency plan."
+      ],
+      "practiceResources": [
+        {
+          "label": "Focus Drills — adapt the lesson",
+          "url": "/focus-drills.html?level=instructor_1&topic=adapt",
+          "note": "Two-learner tabletop.",
+          "type": "drill"
+        },
+        {
+          "label": "Fire Instructor I Center",
+          "url": "/fire-instructor-1.html",
+          "note": "Instructional adjustment.",
+          "type": "guide"
+        },
+        {
+          "label": "Study Center — instructor",
+          "url": "/study-center.html?track=instructor",
+          "note": "Instructor track.",
+          "type": "guide"
+        }
+      ],
+      "drill": {
+        "objective": "Teach the same objective two ways for two learner profiles, then evaluate both against the same standard.",
+        "equipment": "Learner profile cards, one skill objective, prop.",
+        "setup": "Do not invent medical accommodations — refer those.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "List three legal/safe adaptations (more demo, more reps, simpler language) and three illegal ones (skip PPE, skip criticals).",
+            "performancePoints": [
+              "Boundary"
+            ],
+            "commonMistakes": [
+              "Easier secret test"
+            ],
+            "debrief": [
+              "When do we call the training officer?"
+            ]
+          },
+          "15": {
+            "title": "15-minute two-path",
+            "instructions": "Plan A for a nervous new member, plan B for a bored veteran. Same evaluation points.",
+            "performancePoints": [
+              "Same standard"
+            ],
+            "commonMistakes": [
+              "Letting the veteran skip the critical"
+            ],
+            "debrief": [
+              "Did both still get practice?"
+            ]
+          },
+          "30": {
+            "title": "30-minute live adapt",
+            "instructions": "During a micro-teach, one learner is lost and one is ahead. Adjust without splitting the class into chaos.",
+            "performancePoints": [
+              "Check both",
+              "Keep the objective"
+            ],
+            "commonMistakes": [
+              "Teaching only the loud one"
+            ],
+            "debrief": [
+              "What did we record for makeup?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "Adapting a lesson means:",
+          "choices": [
+            "Changing the pass criteria quietly",
+            "Changing how you teach while keeping the required performance",
+            "Skipping safety",
+            "Giving everyone an A"
+          ],
+          "answer": 1,
+          "why": "Path can change. Destination should not vanish."
+        },
+        {
+          "q": "A veteran firefighter in class:",
+          "choices": [
+            "Should be exempt from fundamentals",
+            "Still owes the objective — they may need a different pace, not a free pass",
+            "Should teach instead of the instructor always",
+            "Cannot be coached"
+          ],
+          "answer": 1,
+          "why": "Experience is not a waiver."
+        },
+        {
+          "q": "If a documented disability accommodation might apply:",
+          "choices": [
+            "Ignore it",
+            "Follow department/academy official process — do not freelance medical decisions",
+            "Make them do extra PT as punishment",
+            "Discuss it with the whole class"
+          ],
+          "answer": 1,
+          "why": "Refer, do not invent."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Academy / department training and accommodation policy",
+          "url": "/fire-instructor-1.html",
+          "scope": "ADA/accommodation and exemption rules are legal/HR issues for the AHJ."
+        }
+      ],
+      "relatedSkills": [
+        "fi1_delivery",
+        "fi1_demonstration",
+        "fi1_evaluation"
+      ],
+      "searchKeywords": [
+        "adapt",
+        "learning",
+        "accommodation",
+        "pace",
+        "different learners"
+      ],
+      "seeResources": []
+    }
+  ]
+}

@@ -1,0 +1,1441 @@
+{
+  "id": "hazmat_operations",
+  "title": "Hazardous Materials Operations",
+  "shortTitle": "HazMat Ops",
+  "careerStage": "specialty",
+  "category": "HazMat",
+  "aliases": [
+    "hazmat",
+    "hazmat ops",
+    "hazardous materials operations",
+    "hm ops",
+    "haz ops",
+    "operations level hazmat"
+  ],
+  "summary": "Recognize, isolate, deny entry, use current references, and take defensive actions within operations-level training — not technician work.",
+  "skills": [
+    {
+      "id": "hazmat_ops_recognition",
+      "certificationId": "hazmat_operations",
+      "title": "Recognition and Identification",
+      "aliases": [
+        "placard",
+        "container",
+        "erg",
+        "recognition",
+        "what is it"
+      ],
+      "category": "Recognition",
+      "careerStage": "specialty",
+      "summary": "Use clues, markings, occupancy, and current references to identify likely hazards without becoming part of the release.",
+      "whyItMatters": "Wrong ID produces wrong isolation and dead firefighters. Guessing a product from a smell is not a tactic.",
+      "learningPoints": [
+        "Occupancy, container shape, placards/labels, shipping papers, and people are clues — not certainties.",
+        "Stay out of the product. Binoculars beat footsteps.",
+        "The ERG is a starting reference, not a chemistry degree.",
+        "If clues conflict, isolate wider and call resources."
+      ],
+      "beforeYouDo": [
+        "Current ERG or department-approved reference.",
+        "Binoculars / spotting scope if carried."
+      ],
+      "terminology": [
+        {
+          "term": "Placard",
+          "meaning": "Diamond marking on bulk transport giving hazard class clues."
+        },
+        {
+          "term": "Shipping papers",
+          "meaning": "Documents that may name the product — obtained without becoming a victim."
+        }
+      ],
+      "safetyNotes": [
+        "Do not walk into a cloud to read a 4-digit number.",
+        "Terrorism/WMD clues change isolation and notifications."
+      ],
+      "seeResources": [
+        {
+          "label": "HazMat Placard Reference",
+          "url": "/hazmat-placard-reference.html",
+          "note": "Class clues for training — verify with a current official source.",
+          "type": "reference"
+        }
+      ],
+      "practiceResources": [
+        {
+          "label": "HazMat Placard Reference",
+          "url": "/hazmat-placard-reference.html",
+          "note": "Class recognition.",
+          "type": "reference"
+        },
+        {
+          "label": "HazMat Tools",
+          "url": "/hazmat-tools.html",
+          "note": "Recognition hub.",
+          "type": "guide"
+        },
+        {
+          "label": "HazMat Awareness & Operations Center",
+          "url": "/hazmat-awareness-operations.html",
+          "note": "Study and drills.",
+          "type": "guide"
+        },
+        {
+          "label": "PHMSA ERG",
+          "url": "https://www.phmsa.dot.gov/hazmat/erg/emergency-response-guidebook-erg",
+          "note": "Current guidebook.",
+          "type": "official"
+        }
+      ],
+      "drill": {
+        "objective": "From photos or a training trailer, list clues, state what you will not do, and locate the correct ERG guide concept without entering the hot zone.",
+        "equipment": "Current ERG, photos or props, binoculars if available.",
+        "setup": "Stay at a conservative distance. No product.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Name five clue categories before you mention a chemical name.",
+            "performancePoints": [
+              "Clues first"
+            ],
+            "commonMistakes": [
+              "Running in"
+            ],
+            "debrief": [
+              "What if there is no placard?"
+            ]
+          },
+          "15": {
+            "title": "15-minute ERG drill",
+            "instructions": "Three IDs: UN number, placard-only, occupancy-only. Find the guide page idea and isolation concept.",
+            "performancePoints": [
+              "Reference used",
+              "Distance mindset"
+            ],
+            "commonMistakes": [
+              "Memorized old numbers"
+            ],
+            "debrief": [
+              "When do we upgrade to a tech team?"
+            ]
+          },
+          "30": {
+            "title": "30-minute scene problem",
+            "instructions": "Mixed clues (facility + vehicle). Build a notification and isolation recommendation.",
+            "performancePoints": [
+              "Conflict handled",
+              "Notifications"
+            ],
+            "commonMistakes": [
+              "Declaring the product from a smell"
+            ],
+            "debrief": [
+              "What did we still not know?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "The safest way to get a 4-digit ID is often:",
+          "choices": [
+            "Walk up to the tanker",
+            "Use optics, papers from a safe person, or facility staff — not your lungs",
+            "Taste the product",
+            "Wait for the news"
+          ],
+          "answer": 1,
+          "why": "Distance is a tactic."
+        },
+        {
+          "q": "If occupancy says pesticide and the placard says flammable liquid:",
+          "choices": [
+            "Pick the more exciting one",
+            "Treat the uncertainty as a reason for wider isolation and specialist help",
+            "Ignore the occupancy",
+            "Assume it is water"
+          ],
+          "answer": 1,
+          "why": "Conflicting clues are a warning."
+        },
+        {
+          "q": "FireOpsSim placard pages are:",
+          "choices": [
+            "A replacement for the current ERG",
+            "Training aids — confirm with the current official ERG and SOP",
+            "Legal ID",
+            "Only for technicians"
+          ],
+          "answer": 1,
+          "why": "References go out of date."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "PHMSA ERG",
+          "url": "https://www.phmsa.dot.gov/hazmat/erg/emergency-response-guidebook-erg",
+          "scope": "Current Emergency Response Guidebook"
+        },
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Department HazMat SOP and current ERG",
+          "url": "/hazmat-awareness-operations.html",
+          "scope": "Product ID methods and notifications are local plus current federal/state references."
+        }
+      ],
+      "relatedSkills": [
+        "hazmat_ops_erg",
+        "hazmat_ops_isolation",
+        "hazmat_ops_radio_brief"
+      ],
+      "searchKeywords": [
+        "placard",
+        "UN number",
+        "container",
+        "ERG",
+        "recognition",
+        "hazmat"
+      ]
+    },
+    {
+      "id": "hazmat_ops_isolation",
+      "certificationId": "hazmat_operations",
+      "title": "Isolation and Protective Actions",
+      "aliases": [
+        "isolation",
+        "deny entry",
+        "evacuate",
+        "shelter in place",
+        "protective action"
+      ],
+      "category": "Isolation",
+      "careerStage": "specialty",
+      "summary": "Establish initial isolation, deny entry, and choose protective actions from current references and the AHJ plan.",
+      "whyItMatters": "Most lives at a HazMat scene are saved by keeping people out of the product, not by heroic entries.",
+      "learningPoints": [
+        "Initial isolation is a conservative guess you can enlarge.",
+        "Evacuate vs shelter-in-place depends on the material, building, and time.",
+        "Control the people problem: spectators, employees, and your own crews.",
+        "Weather (wind) is part of the geometry."
+      ],
+      "beforeYouDo": [
+        "Current ERG isolation/protective action tables as applicable.",
+        "Map or intersection."
+      ],
+      "terminology": [
+        {
+          "term": "Deny entry",
+          "meaning": "Stop additional people from walking into the problem."
+        },
+        {
+          "term": "Protective action",
+          "meaning": "Evacuate or shelter-in-place decisions for the public."
+        }
+      ],
+      "safetyNotes": [
+        "Do not place engines in the plume to ‘block the road.’",
+        "Your isolation is not a technician’s hot-zone tape — but it must still be real."
+      ],
+      "seeResources": [
+        {
+          "label": "HazMat Isolation Planner",
+          "url": "/hazmat-isolation-planner.html",
+          "note": "Distance and geometry practice.",
+          "type": "planner"
+        }
+      ],
+      "practiceResources": [
+        {
+          "label": "HazMat Isolation Planner",
+          "url": "/hazmat-isolation-planner.html",
+          "note": "Lay out distances.",
+          "type": "planner"
+        },
+        {
+          "label": "HazMat Size-Up Checklist",
+          "url": "/hazmat-sizeup-checklist.html",
+          "note": "Initial observations.",
+          "type": "checklist"
+        },
+        {
+          "label": "Focus Drills — isolation",
+          "url": "/focus-drills.html?level=hazmat_ops&topic=isolation",
+          "note": "Tabletop map.",
+          "type": "drill"
+        }
+      ],
+      "drill": {
+        "objective": "On a map, set an initial isolation polygon using wind and a current reference concept, then identify who is still inside it.",
+        "equipment": "Map, cones if outdoor, current ERG, radios.",
+        "setup": "Tabletop is fine. Use today’s wind if outdoors.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Upwind, uphill, upstream — say it and place the first engine.",
+            "performancePoints": [
+              "Positioning"
+            ],
+            "commonMistakes": [
+              "Downwind ‘to see better’"
+            ],
+            "debrief": [
+              "Who do we move first?"
+            ]
+          },
+          "15": {
+            "title": "15-minute map problem",
+            "instructions": "School, highway, and a small leak. Pick evacuate vs shelter for one building.",
+            "performancePoints": [
+              "Protective action reasoned"
+            ],
+            "commonMistakes": [
+              "One-size isolation"
+            ],
+            "debrief": [
+              "What changed when the wind shifted?"
+            ]
+          },
+          "30": {
+            "title": "30-minute expanding incident",
+            "instructions": "Start small, then a larger release inject. Re-draw isolation and notifications.",
+            "performancePoints": [
+              "Expand early",
+              "Public protection"
+            ],
+            "commonMistakes": [
+              "Holding a tiny circle for pride"
+            ],
+            "debrief": [
+              "When is this bigger than Ops-level?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "Initial isolation should be:",
+          "choices": [
+            "Exact to the inch",
+            "Conservative and adjustable as information improves",
+            "Always 1 mile",
+            "Only for explosives"
+          ],
+          "answer": 1,
+          "why": "You can shrink later more easily than you can un-expose people."
+        },
+        {
+          "q": "Shelter-in-place can be better than evacuation when:",
+          "choices": [
+            "You want to ignore the public",
+            "The atmosphere outside is worse and buildings can protect people for a time",
+            "It is always better",
+            "The product is guaranteed harmless"
+          ],
+          "answer": 1,
+          "why": "It is a timed, informed choice — not a default."
+        },
+        {
+          "q": "The first engine should generally stage:",
+          "choices": [
+            "In the visible cloud",
+            "Upwind/uphill/upstream of the problem as conditions allow",
+            "Against the tank for a good photo",
+            "On the downhill side to ‘catch runoff’ with the crew"
+          ],
+          "answer": 1,
+          "why": "Apparatus are not plugs for a plume."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "PHMSA ERG",
+          "url": "https://www.phmsa.dot.gov/hazmat/erg/emergency-response-guidebook-erg",
+          "scope": "Current Emergency Response Guidebook"
+        },
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Department / LEPC emergency response plan",
+          "url": "/hazmat-isolation-planner.html",
+          "scope": "Public protective actions are AHJ decisions using current references."
+        }
+      ],
+      "relatedSkills": [
+        "hazmat_ops_zones",
+        "hazmat_ops_recognition",
+        "hazmat_ops_radio_brief"
+      ],
+      "searchKeywords": [
+        "isolation",
+        "evacuate",
+        "shelter in place",
+        "deny entry",
+        "upwind",
+        "ERG"
+      ]
+    },
+    {
+      "id": "hazmat_ops_erg",
+      "certificationId": "hazmat_operations",
+      "title": "ERG Navigation",
+      "aliases": [
+        "erg",
+        "guidebook",
+        "orange guide",
+        "green section"
+      ],
+      "category": "Reference Use",
+      "careerStage": "specialty",
+      "summary": "Find the material, the guide, isolation information, and emergency contacts quickly in the current ERG.",
+      "whyItMatters": "A reference you cannot navigate under stress is a paperweight.",
+      "learningPoints": [
+        "Know yellow/blue lookup vs orange guides vs green isolation table — in the current edition.",
+        "Tablets and apps are fine if they are the current official content.",
+        "The ERG is first-responder general guidance, not a site-specific plan.",
+        "Practice timed lookups."
+      ],
+      "beforeYouDo": [
+        "A current ERG (print or official digital)."
+      ],
+      "terminology": [
+        {
+          "term": "Guide page",
+          "meaning": "The orange-bordered general hazard and action information in the ERG."
+        }
+      ],
+      "safetyNotes": [
+        "Do not use a 10-year-old book in the cab as if it were current.",
+        "Apps must be the real current data, not a random screenshot."
+      ],
+      "practiceResources": [
+        {
+          "label": "PHMSA ERG",
+          "url": "https://www.phmsa.dot.gov/hazmat/erg/emergency-response-guidebook-erg",
+          "note": "Get the current book/app.",
+          "type": "official"
+        },
+        {
+          "label": "HazMat Awareness & Operations Center",
+          "url": "/hazmat-awareness-operations.html",
+          "note": "ERG drills.",
+          "type": "guide"
+        },
+        {
+          "label": "Focus Drills — ERG",
+          "url": "/focus-drills.html?level=hazmat_ops&topic=erg",
+          "note": "5-minute navigation.",
+          "type": "drill"
+        }
+      ],
+      "drill": {
+        "objective": "Complete timed ERG lookups: name, UN number, placard, and a rail/highway ID — then state the isolation concept.",
+        "equipment": "Current ERG for every participant, timer, ID list.",
+        "setup": "Classroom. No product.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Open to the how-to-use section and point to lookup paths.",
+            "performancePoints": [
+              "Book orientation"
+            ],
+            "commonMistakes": [
+              "Memorizing old guides"
+            ],
+            "debrief": [
+              "Print or digital — is it current?"
+            ]
+          },
+          "15": {
+            "title": "15-minute timed lookups",
+            "instructions": "Ten IDs. Score accuracy, not swagger.",
+            "performancePoints": [
+              "Correct guide",
+              "Isolation noted"
+            ],
+            "commonMistakes": [
+              "Guessing without the book"
+            ],
+            "debrief": [
+              "Which lookup was slowest?"
+            ]
+          },
+          "30": {
+            "title": "30-minute mixed traffic",
+            "instructions": "Combine ERG with a map isolation for two incidents, including a ‘not in the book’ facility chemical.",
+            "performancePoints": [
+              "When ERG is not enough"
+            ],
+            "commonMistakes": [
+              "Forcing a UN number"
+            ],
+            "debrief": [
+              "Who do we call next?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "If the chemical is a facility product not in the ERG:",
+          "choices": [
+            "Invent a UN number",
+            "Use occupancy procedures, SDS/facility staff, and specialists — do not fake an ERG ID",
+            "Treat it as gasoline",
+            "Leave"
+          ],
+          "answer": 1,
+          "why": "The ERG is not every chemical on earth."
+        },
+        {
+          "q": "Green-section isolation ideas are:",
+          "choices": [
+            "Always exact",
+            "A starting protective-action tool for certain listed materials/scenarios in the current book",
+            "Only for officers",
+            "A replacement for wind"
+          ],
+          "answer": 1,
+          "why": "Read the current table’s conditions."
+        },
+        {
+          "q": "Using last decade’s ERG is:",
+          "choices": [
+            "Fine",
+            "A risk — isolation and guides change; use the current official edition",
+            "Required for Pro Board",
+            "Better because you marked it up"
+          ],
+          "answer": 1,
+          "why": "Currency is part of competence."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "PHMSA ERG",
+          "url": "https://www.phmsa.dot.gov/hazmat/erg/emergency-response-guidebook-erg",
+          "scope": "Current Emergency Response Guidebook"
+        },
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        }
+      ],
+      "relatedSkills": [
+        "hazmat_ops_recognition",
+        "hazmat_ops_isolation",
+        "hazmat_ops_radio_brief"
+      ],
+      "searchKeywords": [
+        "ERG",
+        "guidebook",
+        "UN",
+        "orange guide",
+        "green table",
+        "PHMSA"
+      ],
+      "seeResources": []
+    },
+    {
+      "id": "hazmat_ops_zones",
+      "certificationId": "hazmat_operations",
+      "title": "Control Zones",
+      "aliases": [
+        "hot zone",
+        "warm zone",
+        "cold zone",
+        "control zones"
+      ],
+      "category": "Control Zones",
+      "careerStage": "specialty",
+      "summary": "Lay out hot/warm/cold concepts so work, decon, and command do not share the same puddle.",
+      "whyItMatters": "If the cold zone is in the product, everyone is in the hot zone and nobody admitted it.",
+      "learningPoints": [
+        "Zones are about contamination control and access, not pretty tape.",
+        "Decon usually lives in the warm zone conceptually.",
+        "Command and staging belong out of the product and preferably upwind.",
+        "Zones move if the plume or spill moves."
+      ],
+      "beforeYouDo": [
+        "Tape/cones, a map, wind indication."
+      ],
+      "terminology": [
+        {
+          "term": "Hot zone",
+          "meaning": "Where the hazard is — entry limited to appropriate PPE and mission."
+        },
+        {
+          "term": "Warm zone",
+          "meaning": "Contamination reduction / limited access."
+        },
+        {
+          "term": "Cold zone",
+          "meaning": "Support — should remain uncontaminated."
+        }
+      ],
+      "safetyNotes": [
+        "Do not put rehab in the vapor.",
+        "Spectators will walk through tape. Staff the control points."
+      ],
+      "seeResources": [
+        {
+          "label": "Decon Corridor Planner",
+          "url": "/decon-corridor-planner.html",
+          "note": "Warm-zone work layout.",
+          "type": "planner"
+        }
+      ],
+      "practiceResources": [
+        {
+          "label": "Decon Corridor Planner",
+          "url": "/decon-corridor-planner.html",
+          "note": "Decon in the warm zone.",
+          "type": "planner"
+        },
+        {
+          "label": "HazMat Isolation Planner",
+          "url": "/hazmat-isolation-planner.html",
+          "note": "Geometry.",
+          "type": "planner"
+        },
+        {
+          "label": "Focus Drills — zones",
+          "url": "/focus-drills.html?level=hazmat_ops&topic=zones",
+          "note": "Cone layout.",
+          "type": "drill"
+        }
+      ],
+      "drill": {
+        "objective": "Using cones or a map, lay out operational zones, access control, decon placement, and command for a defensive incident.",
+        "equipment": "Cones/tape, map, wind flag, radios.",
+        "setup": "Parking lot or tabletop.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Place command, staging, and a public control point on a sketch.",
+            "performancePoints": [
+              "Upwind support"
+            ],
+            "commonMistakes": [
+              "Command next to the leak"
+            ],
+            "debrief": [
+              "Where do ambulances park?"
+            ]
+          },
+          "15": {
+            "title": "15-minute cone drill",
+            "instructions": "Hot/warm/cold with one access corridor.",
+            "performancePoints": [
+              "Corridor obvious"
+            ],
+            "commonMistakes": [
+              "Tape with no staffing"
+            ],
+            "debrief": [
+              "How does a victim get to EMS without contaminating the cold zone?"
+            ]
+          },
+          "30": {
+            "title": "30-minute moving plume",
+            "instructions": "Shift wind 90 degrees. Move zones and explain who is now contaminated.",
+            "performancePoints": [
+              "Zones move",
+              "Accountability"
+            ],
+            "commonMistakes": [
+              "Pride in the original tape line"
+            ],
+            "debrief": [
+              "Who got exposed during the move?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "Command post in the visible vapor is:",
+          "choices": [
+            "Leadership",
+            "A zone failure",
+            "Required",
+            "Fine if windows are up"
+          ],
+          "answer": 1,
+          "why": "Support belongs in the cold zone."
+        },
+        {
+          "q": "Decon is conceptually part of:",
+          "choices": [
+            "The hot zone picnic",
+            "Contamination reduction — typically the warm-zone function",
+            "The next day’s problem",
+            "Only technician work never ops"
+          ],
+          "answer": 1,
+          "why": "Ops-level decon support still needs a place to exist."
+        },
+        {
+          "q": "If the spill grows, zones should:",
+          "choices": [
+            "Stay for consistency",
+            "Expand and be re-briefed",
+            "Be ignored",
+            "Only be drawn on a whiteboard downtown"
+          ],
+          "answer": 1,
+          "why": "Geometry follows the product."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "PHMSA ERG",
+          "url": "https://www.phmsa.dot.gov/hazmat/erg/emergency-response-guidebook-erg",
+          "scope": "Current Emergency Response Guidebook"
+        },
+        {
+          "label": "Department HazMat zone / ICS SOP",
+          "url": "/decon-corridor-planner.html",
+          "scope": "Zone distances and PPE for each zone are AHJ- and product-specific."
+        }
+      ],
+      "relatedSkills": [
+        "hazmat_ops_decon",
+        "hazmat_ops_isolation",
+        "hazmat_ops_defensive"
+      ],
+      "searchKeywords": [
+        "hot zone",
+        "warm zone",
+        "cold zone",
+        "control zones",
+        "decon placement"
+      ]
+    },
+    {
+      "id": "hazmat_ops_decon",
+      "certificationId": "hazmat_operations",
+      "title": "Emergency Decontamination",
+      "aliases": [
+        "decon",
+        "decontamination",
+        "corridor",
+        "gross decon"
+      ],
+      "category": "Decon",
+      "careerStage": "specialty",
+      "summary": "Set up operations-level emergency/gross decon so people and equipment do not spread the problem.",
+      "whyItMatters": "The second incident is the contaminated ambulance and the exposed firefighter who ‘only stepped in it.’",
+      "learningPoints": [
+        "Emergency decon for life safety vs technical decon for a planned entry — know which you are doing.",
+        "Flow: dirty to cleaner, not a maze.",
+        "Protect decon members with appropriate PPE and a plan for their own decon.",
+        "Runoff is a secondary release."
+      ],
+      "beforeYouDo": [
+        "Department decon cache and SOP.",
+        "Water source and runoff plan."
+      ],
+      "terminology": [
+        {
+          "term": "Gross / emergency decon",
+          "meaning": "Rapid contamination reduction, often for victims or unexpectedly contaminated responders."
+        }
+      ],
+      "safetyNotes": [
+        "Do not send contaminated patients through a normal ED entrance without notice.",
+        "Hypothermia and privacy still matter."
+      ],
+      "seeResources": [
+        {
+          "label": "Decon Corridor Planner",
+          "url": "/decon-corridor-planner.html",
+          "note": "Layout practice.",
+          "type": "planner"
+        }
+      ],
+      "practiceResources": [
+        {
+          "label": "Decon Corridor Planner",
+          "url": "/decon-corridor-planner.html",
+          "note": "Build the corridor on paper.",
+          "type": "planner"
+        },
+        {
+          "label": "HazMat Tools",
+          "url": "/hazmat-tools.html",
+          "note": "Decon and isolation tools.",
+          "type": "guide"
+        },
+        {
+          "label": "Focus Drills — decon",
+          "url": "/focus-drills.html?level=hazmat_ops&topic=decon",
+          "note": "Hands-on layout.",
+          "type": "drill"
+        }
+      ],
+      "drill": {
+        "objective": "Lay out an operations-level decon corridor with zones, flow, assignments, and a runoff/containment idea.",
+        "equipment": "Department decon cache or cones/tarp stand-ins, water if authorized, radios.",
+        "setup": "Do not create a real environmental release. Contain training water.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Sketch dirty-to-clean flow and where EMS waits.",
+            "performancePoints": [
+              "Flow direction"
+            ],
+            "commonMistakes": [
+              "EMS in the hot zone"
+            ],
+            "debrief": [
+              "Where do clothes go?"
+            ]
+          },
+          "15": {
+            "title": "15-minute corridor",
+            "instructions": "Build it with cones. Assign wash, bagging, and a medic in the cold zone.",
+            "performancePoints": [
+              "Assignments",
+              "Access control"
+            ],
+            "commonMistakes": [
+              "No bag for PPE"
+            ],
+            "debrief": [
+              "How do we decon the decon team?"
+            ]
+          },
+          "30": {
+            "title": "30-minute victim flow",
+            "instructions": "Two ambulatory and one non-ambulatory cards. Keep contamination out of the ambulance.",
+            "performancePoints": [
+              "Triage vs decon",
+              "Notifications"
+            ],
+            "commonMistakes": [
+              "Loading a dirty patient because it is faster"
+            ],
+            "debrief": [
+              "What does the hospital need to hear?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "The point of emergency decon is:",
+          "choices": [
+            "A perfect lab-clean responder",
+            "Rapidly reduce contamination to protect life and keep the rest of the system clean",
+            "Only for technicians",
+            "To wash the street"
+          ],
+          "answer": 1,
+          "why": "Speed and isolation, not spa day."
+        },
+        {
+          "q": "A contaminated patient in an unprotected ambulance:",
+          "choices": [
+            "Saves time",
+            "Spreads the incident into the hospital system",
+            "Is required by EMTALA always",
+            "Is fine if windows are down"
+          ],
+          "answer": 1,
+          "why": "Notify and protect the chain of care."
+        },
+        {
+          "q": "Runoff from decon:",
+          "choices": [
+            "Is always potable water",
+            "Can be a secondary contamination problem — plan containment per SOP",
+            "Should go to storm drains by default",
+            "Does not matter with soap"
+          ],
+          "answer": 1,
+          "why": "You can make a second spill."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "NIOSH Firefighter Center",
+          "url": "https://www.cdc.gov/niosh/firefighters/",
+          "scope": "Firefighter safety, exposure, and occupational health"
+        },
+        {
+          "label": "Department decon SOP and hospital notification plan",
+          "url": "/decon-corridor-planner.html",
+          "scope": "Decon methods, solutions, and EMS transport rules are local."
+        }
+      ],
+      "relatedSkills": [
+        "hazmat_ops_zones",
+        "hazmat_ops_ppe",
+        "hazmat_ops_defensive"
+      ],
+      "searchKeywords": [
+        "decon",
+        "gross decon",
+        "corridor",
+        "contamination",
+        "runoff"
+      ]
+    },
+    {
+      "id": "hazmat_ops_defensive",
+      "certificationId": "hazmat_operations",
+      "title": "Defensive Control Options",
+      "aliases": [
+        "dike",
+        "dam",
+        "divert",
+        "defensive",
+        "remote shutoff",
+        "vapor suppression"
+      ],
+      "category": "Operations",
+      "careerStage": "specialty",
+      "summary": "Choose defensive actions you are trained and authorized to do: dike, dam, divert, remote valve, vapor suppression — and stop at the ops boundary.",
+      "whyItMatters": "Operations level is not ‘almost a technician.’ Leaving your level is how people die in product.",
+      "learningPoints": [
+        "Defensive means you are not plugging the hole with your body in a Level A suit unless that is actually your qualification.",
+        "Remote shutoff and product control that does not require entering the release are the usual wins.",
+        "Diking buys time for people who own the product.",
+        "If you cannot explain the action inside your SOP, do not do it."
+      ],
+      "beforeYouDo": [
+        "AHJ ops-level action list.",
+        "Absorbents/booms as carried."
+      ],
+      "terminology": [
+        {
+          "term": "Defensive",
+          "meaning": "Preventing spread and protecting people/environment without offensive leak control beyond your training."
+        },
+        {
+          "term": "Offensive/technician",
+          "meaning": "Entry and leak control requiring higher qualification and PPE."
+        }
+      ],
+      "safetyNotes": [
+        "A boom in a fast sewer can become a drowning/confined hazard.",
+        "Vapor suppression foam is a foam problem plus a HazMat problem."
+      ],
+      "practiceResources": [
+        {
+          "label": "Spill Volume Calculator",
+          "url": "/spill-volume-calculator.html",
+          "note": "How big is the puddle?",
+          "type": "calculator"
+        },
+        {
+          "label": "HazMat Incident Notes",
+          "url": "/hazmat-incident-notes.html",
+          "note": "Document actions.",
+          "type": "notes"
+        },
+        {
+          "label": "Focus Drills — defensive",
+          "url": "/focus-drills.html?level=hazmat_ops&topic=defensive",
+          "note": "Option tabletop.",
+          "type": "drill"
+        },
+        {
+          "label": "Foam Operations skill",
+          "url": "/skill-support.html?cert=firefighter_2&task=ff2_foam",
+          "note": "If vapor suppression is the tool.",
+          "type": "skill"
+        }
+      ],
+      "drill": {
+        "objective": "For a spill scenario, pick defensive options within ops-level authorization, list required equipment, and name the stop point.",
+        "equipment": "Scenario cards, cones for a dike line, department absorbent/boom if available.",
+        "setup": "No real product. Discuss environmental notifications.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "List five defensive options and one action that would be technician-only on your team.",
+            "performancePoints": [
+              "Boundary named"
+            ],
+            "commonMistakes": [
+              "‘Just go cap it’"
+            ],
+            "debrief": [
+              "Who owns the facility valve?"
+            ]
+          },
+          "15": {
+            "title": "15-minute spill",
+            "instructions": "50-gallon drum leak toward a drain. Plan dike/divert and notifications.",
+            "performancePoints": [
+              "Drain protected",
+              "PPE honest"
+            ],
+            "commonMistakes": [
+              "Standing in the product to place a pad"
+            ],
+            "debrief": [
+              "Do we have enough boom?"
+            ]
+          },
+          "30": {
+            "title": "30-minute mixed incident",
+            "instructions": "Leak plus fire plus a crowd. Prioritize life, isolation, then product. Call the boundary when the problem needs a team.",
+            "performancePoints": [
+              "Priorities",
+              "Upgrade"
+            ],
+            "commonMistakes": [
+              "Freelancing a plug"
+            ],
+            "debrief": [
+              "What did we tell the technician team?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "An operations-level firefighter should:",
+          "choices": [
+            "Enter any cloud if the officer is excited",
+            "Take defensive actions they are trained and authorized for, and request technicians when the job exceeds that",
+            "Always plug the leak",
+            "Never touch a valve even if it is a labeled remote shutoff they are trained to use"
+          ],
+          "answer": 1,
+          "why": "Train and SOP define the box."
+        },
+        {
+          "q": "Stopping product from entering a storm drain is usually:",
+          "choices": [
+            "Technician-only always",
+            "A common defensive goal using dikes/covers you are trained to use",
+            "Impossible",
+            "A police problem only"
+          ],
+          "answer": 1,
+          "why": "Keep it out of the water system."
+        },
+        {
+          "q": "If the only ‘fix’ requires entering the release in chemical PPE you do not have:",
+          "choices": [
+            "Improvise with structural gear",
+            "Hold isolation, protect people, and get the right team",
+            "Send the probationary firefighter",
+            "Spray water on every chemical"
+          ],
+          "answer": 1,
+          "why": "Structural firefighting gear is not a chemically resistant suit."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "PHMSA ERG",
+          "url": "https://www.phmsa.dot.gov/hazmat/erg/emergency-response-guidebook-erg",
+          "scope": "Current Emergency Response Guidebook"
+        },
+        {
+          "label": "Department HazMat operations SOP",
+          "url": "/hazmat-awareness-operations.html",
+          "scope": "Authorized defensive tasks and PPE are local."
+        }
+      ],
+      "relatedSkills": [
+        "hazmat_ops_ppe",
+        "hazmat_ops_decon",
+        "ff2_foam",
+        "hazmat_ops_zones"
+      ],
+      "searchKeywords": [
+        "dike",
+        "dam",
+        "divert",
+        "defensive",
+        "shutoff",
+        "spill",
+        "ops level"
+      ],
+      "seeResources": []
+    },
+    {
+      "id": "hazmat_ops_ppe",
+      "certificationId": "hazmat_operations",
+      "title": "PPE Limitations",
+      "aliases": [
+        "chemical ppe",
+        "level a",
+        "level b",
+        "structural gear hazmat",
+        "encapsulation"
+      ],
+      "category": "PPE",
+      "careerStage": "specialty",
+      "summary": "Know what department HazMat PPE actually protects against — and when structural firefighting gear is the wrong answer.",
+      "whyItMatters": "The wrong suit is a costume. Breakthrough, heat stress, and training limits kill.",
+      "learningPoints": [
+        "Structural PPE is for fire, not a chemical catalog.",
+        "Chemical protective clothing is chemical- and manufacturer-specific.",
+        "Heat stress in encapsulating suits is a medical problem.",
+        "If you are not trained and medically cleared for the ensemble, you do not wear it to ‘help.’"
+      ],
+      "beforeYouDo": [
+        "What CPC/SCBA combinations YOUR department actually fields at ops level.",
+        "Manufacturer lookup culture — do not memorize a 1990s chart as gospel."
+      ],
+      "terminology": [
+        {
+          "term": "Breakthrough",
+          "meaning": "When a chemical moves through a material — time is not infinite."
+        },
+        {
+          "term": "CPC",
+          "meaning": "Chemical protective clothing."
+        }
+      ],
+      "safetyNotes": [
+        "Never assume dish soap and a rain coat are chemical PPE.",
+        "Decon the people who wore the suits."
+      ],
+      "practiceResources": [
+        {
+          "label": "HazMat Awareness & Operations Center",
+          "url": "/hazmat-awareness-operations.html",
+          "note": "PPE modules.",
+          "type": "guide"
+        },
+        {
+          "label": "Focus Drills — PPE limits",
+          "url": "/focus-drills.html?level=hazmat_ops&topic=ppe",
+          "note": "Capability review.",
+          "type": "drill"
+        },
+        {
+          "label": "NIOSH Firefighter Center",
+          "url": "https://www.cdc.gov/niosh/firefighters/",
+          "note": "Health context.",
+          "type": "official"
+        }
+      ],
+      "drill": {
+        "objective": "Review department PPE: what it is for, what it is not for, and when specialist guidance is required.",
+        "equipment": "Department HazMat PPE (display), manufacturer info, scenario cards.",
+        "setup": "Do not make untrained members don technician ensembles.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Name three chemicals or conditions where structural gear is the wrong answer.",
+            "performancePoints": [
+              "Limits named"
+            ],
+            "commonMistakes": [
+              "‘Bunker gear is fine for everything’"
+            ],
+            "debrief": [
+              "Who is medically cleared to wear CPC?"
+            ]
+          },
+          "15": {
+            "title": "15-minute ensemble talk",
+            "instructions": "Match three scenarios to no-entry vs ops PPE vs tech team.",
+            "performancePoints": [
+              "Honest matching"
+            ],
+            "commonMistakes": [
+              "Dressing the volunteer in Level A for photos"
+            ],
+            "debrief": [
+              "What is our heat-stress plan?"
+            ]
+          },
+          "30": {
+            "title": "30-minute don/doff if authorized",
+            "instructions": "Only for members already in the program: inspect, don, walk, emergency doff concept, decon path.",
+            "performancePoints": [
+              "Inspection",
+              "Decon path"
+            ],
+            "commonMistakes": [
+              "Untrained donning"
+            ],
+            "debrief": [
+              "Where does contaminated CPC go?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "Structural firefighting clothing in a chemical vapor:",
+          "choices": [
+            "Is usually excellent chemical PPE",
+            "Is generally the wrong ensemble unless the AHJ and the hazard say otherwise",
+            "Is Level A",
+            "Stops all gases"
+          ],
+          "answer": 1,
+          "why": "It is fire gear."
+        },
+        {
+          "q": "Chemical suit selection must consider:",
+          "choices": [
+            "Color only",
+            "The chemical, concentration, manufacturer data, and mission time",
+            "Whatever is closest",
+            "Only the cost"
+          ],
+          "answer": 1,
+          "why": "There is no universal suit."
+        },
+        {
+          "q": "If you are not trained in the ensemble:",
+          "choices": [
+            "Wear it anyway to be brave",
+            "Do not wear it — request qualified members",
+            "Put it on the patient",
+            "Cut holes for comfort"
+          ],
+          "answer": 1,
+          "why": "Untrained CPC is a hazard."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "NIOSH Firefighter Center",
+          "url": "https://www.cdc.gov/niosh/firefighters/",
+          "scope": "Firefighter safety, exposure, and occupational health"
+        },
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "CPC manufacturer data and department PPE program",
+          "url": "/hazmat-awareness-operations.html",
+          "scope": "Suit selection, medical clearance, and duration limits are manufacturer- and AHJ-specific."
+        }
+      ],
+      "relatedSkills": [
+        "hazmat_ops_defensive",
+        "hazmat_ops_decon",
+        "ff1_ppe"
+      ],
+      "searchKeywords": [
+        "ppe",
+        "level a",
+        "level b",
+        "chemical suit",
+        "breakthrough",
+        "structural gear"
+      ],
+      "seeResources": []
+    },
+    {
+      "id": "hazmat_ops_radio_brief",
+      "certificationId": "hazmat_operations",
+      "title": "HazMat Initial Radio Brief",
+      "aliases": [
+        "hazmat size up",
+        "initial report",
+        "hazmat radio"
+      ],
+      "category": "Communications",
+      "careerStage": "specialty",
+      "summary": "Give a concise first report: location, clues, wind, exposures, actions, resources, and a safe approach.",
+      "whyItMatters": "The second-due company will drive into the product if your first report was ‘we have a smell.’",
+      "learningPoints": [
+        "Name the problem class if known, and the uncertainty if not.",
+        "Give an approach/staging instruction.",
+        "Say what you are doing (isolate, deny entry) and what you need (HazMat team, PD, public works).",
+        "Keep it short enough to hear."
+      ],
+      "beforeYouDo": [
+        "Department size-up format.",
+        "Training channel."
+      ],
+      "terminology": [
+        {
+          "term": "Safe approach",
+          "meaning": "Where later units should come from — usually upwind/uphill."
+        }
+      ],
+      "safetyNotes": [
+        "Do not transmit guesses as facts.",
+        "If people are down, say so — that changes everything."
+      ],
+      "practiceResources": [
+        {
+          "label": "HazMat Size-Up Checklist",
+          "url": "/hazmat-sizeup-checklist.html",
+          "note": "Build the report from a list.",
+          "type": "checklist"
+        },
+        {
+          "label": "HazMat Incident Notes",
+          "url": "/hazmat-incident-notes.html",
+          "note": "Capture clues.",
+          "type": "notes"
+        },
+        {
+          "label": "Focus Drills — HazMat radio",
+          "url": "/focus-drills.html?level=hazmat_ops&topic=radio",
+          "note": "Timed briefs.",
+          "type": "drill"
+        },
+        {
+          "label": "Fire Officer I — initial radio report",
+          "url": "/skill-support.html?cert=fire_officer_1&task=fo1_initial_radio_report",
+          "note": "Same muscle, different hazard.",
+          "type": "skill"
+        }
+      ],
+      "drill": {
+        "objective": "Deliver a 20–30 second HazMat initial report from a photo, including approach instructions.",
+        "equipment": "Photos, radios or timer, size-up checklist.",
+        "setup": "Training talkgroup.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "List the must-have pieces of the first transmission.",
+            "performancePoints": [
+              "Staging named"
+            ],
+            "commonMistakes": [
+              "‘Odor in the area’ only"
+            ],
+            "debrief": [
+              "Where should Engine 2 stop?"
+            ]
+          },
+          "15": {
+            "title": "15-minute photo reports",
+            "instructions": "Five photos, 25 seconds each. Partner scores missing pieces.",
+            "performancePoints": [
+              "Clues",
+              "Actions",
+              "Needs"
+            ],
+            "commonMistakes": [
+              "Chemical name invented"
+            ],
+            "debrief": [
+              "Would you have driven into it?"
+            ]
+          },
+          "30": {
+            "title": "30-minute evolving leak",
+            "instructions": "Report, then a wind shift and a victim. Second report and resource request.",
+            "performancePoints": [
+              "Update",
+              "Life hazard"
+            ],
+            "commonMistakes": [
+              "Forgetting staging"
+            ],
+            "debrief": [
+              "When does this become a mass-casualty problem?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "The most important extra in a HazMat first report vs a house fire is often:",
+          "choices": [
+            "The color of the engine",
+            "Safe approach/staging and isolation picture",
+            "Your years on the job",
+            "A joke"
+          ],
+          "answer": 1,
+          "why": "Later units need a place to not die."
+        },
+        {
+          "q": "If you do not know the product, you should:",
+          "choices": [
+            "Make up a UN number to sound sure",
+            "Say what clues you have and what you do not know",
+            "Say nothing",
+            "Call it gasoline"
+          ],
+          "answer": 1,
+          "why": "Uncertainty is useful information."
+        },
+        {
+          "q": "‘People down’ in the first report:",
+          "choices": [
+            "Can wait",
+            "Is a priority piece of information",
+            "Is only for EMS",
+            "Means you should enter immediately in bunker gear"
+          ],
+          "answer": 1,
+          "why": "Life hazard changes the whole response — still do not create more victims."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "PHMSA ERG",
+          "url": "https://www.phmsa.dot.gov/hazmat/erg/emergency-response-guidebook-erg",
+          "scope": "Current Emergency Response Guidebook"
+        },
+        {
+          "label": "Department radio / HazMat SOP",
+          "url": "/hazmat-sizeup-checklist.html",
+          "scope": "Report format and resource lists are local."
+        }
+      ],
+      "relatedSkills": [
+        "hazmat_ops_recognition",
+        "hazmat_ops_isolation",
+        "fo1_initial_radio_report"
+      ],
+      "searchKeywords": [
+        "hazmat size up",
+        "radio report",
+        "staging",
+        "approach",
+        "notifications"
+      ],
+      "seeResources": []
+    }
+  ]
+}
