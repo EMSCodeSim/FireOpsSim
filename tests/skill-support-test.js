@@ -82,8 +82,9 @@ const fo1search = SS.search(catalog, 'FO1', 8);
 ok(fo1search.skills.some((s) => s.cert.id === 'fire_officer_1'), 'FO1 search');
 
 const unknown = SS.match(catalog, { cert: 'driver_operator_pumper', task: 'department_custom_ladder_evaluation', goal: 'Engineer' });
-ok(unknown.kind === 'fallback' || (unknown.kind === 'skill' && /ladder/i.test(unknown.skill.title)), 'unknown custom task is not empty');
-ok((unknown.closest || []).length > 0 || unknown.kind === 'skill', 'unknown has closest skills');
+ok(unknown.kind === 'fallback', 'unknown custom task uses fallback, got ' + unknown.kind + (unknown.skill ? ' ' + unknown.skill.id : ''));
+ok((unknown.closest || []).length > 0, 'unknown has closest skills');
+ok(unknown.cert && unknown.cert.id === 'driver_operator_pumper', 'unknown keeps D/O cert context');
 
 const certOnly = SS.match(catalog, { cert: 'driver_operator_pumper' });
 ok(certOnly.kind === 'cert', 'cert-only lands on cert picker');

@@ -132,7 +132,8 @@
     const nq = expandQuery(query);
     if (!nq || !hay) return 0;
     if (hay === nq) return 100;
-    if (hay.includes(nq) || nq.includes(hay)) return 72 + Math.min(nq.length, 18);
+    if (nq.length >= 4 && hay.includes(nq)) return 72 + Math.min(nq.length, 18);
+    if (hay.includes(' ') && hay.length >= 10 && nq.includes(hay)) return 72 + Math.min(hay.length, 18);
     const qTokens = nq.split(' ').filter((t) => t.length > 1);
     const hSet = new Set(hay.split(' '));
     let hits = 0;
@@ -204,6 +205,44 @@
       }
     }
     return bestScore >= 28 ? best : null;
+  }
+
+  function looksLikeStableId(value) {
+    return /^[a-z][a-z0-9]*(?:_[a-z0-9]+)+$/i.test(String(value || '').trim());
+  }
+
+  function exactSkill(catalog, value) {
+    if (!value) return null;
+    if (catalog.byId[value]) return catalog.byId[value];
+    const n = normalize(value);
+    if (!n) return null;
+    for (const rec of catalog.skills) {
+      if (normalize(rec.skill.id) === n) return rec;
+    }
+    return null;
+  }
+
+  function nameScore(record, query) {
+    const n = expandQuery(query);
+    if (!n) return 0;
+    const names = [record.skill.id, record.skill.title, ...(record.skill.aliases || [])];
+    let score = 0;
+    for (const name of names) score = Math.max(score, scoreText(normalize(name), n));
+    return score;
+  }
+
+  function findByName(catalog, value, cert, minScore) {
+    let best = null;
+    let bestScore = 0;
+    for (const record of catalog.skills) {
+      if (cert && record.cert.id !== cert.id) continue;
+      const score = nameScore(record, value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = record;
+      }
+    }
+    return bestScore >= (minScore || 50) ? best : null;
   }
 
   function findSkillInCert(catalog, cert, value) {
@@ -286,11 +325,18 @@
     const certHint = ctx.cert || '';
     const skillHint = [ctx.task, ctx.requirement, ctx.id, ctx.title].filter(Boolean).join(' ');
     const allHint = [skillHint, certHint, ctx.goal, ctx.q].filter(Boolean).join(' ');
+    const taskId = ctx.task || ctx.requirement || ctx.id || '';
     const cert = findCert(catalog, certHint, ctx) || findCert(catalog, allHint, ctx);
 
-    let record = null;
-    if (skillHint && cert) record = findSkillInCert(catalog, cert, skillHint);
-    if (!record && skillHint) record = findSkillGlobal(catalog, skillHint);
+    let record = exactSkill(catalog, ctx.task) || exactSkill(catalog, ctx.requirement) || exactSkill(catalog, ctx.id);
+    if (!record && skillHint) {
+      if (looksLikeStableId(taskId)) {
+        record = findByName(catalog, skillHint, cert, 56) || findByName(catalog, skillHint, null, 72);
+      } else {
+        if (cert) record = findSkillInCert(catalog, cert, skillHint);
+        if (!record) record = findSkillGlobal(catalog, skillHint);
+      }
+    }
     if (!record && ctx.q) record = findSkillGlobal(catalog, ctx.q);
     if (!record && cert && !skillHint) {
       return {
@@ -314,13 +360,21 @@
     }
 
     const closest = closestSkills(catalog, allHint || ctx.goal, 6);
-    const fallbackCert = cert || (closest[0] && closest[0].cert) || null;
+    const fromCert = cert ? catalog.skills.filter((s) => s.cert.id === cert.id).slice(0, 6) : [];
+    const merged = [];
+    const seen = new Set();
+    for (const rec of [...closest, ...fromCert]) {
+      if (!rec || seen.has(rec.skill.id)) continue;
+      seen.add(rec.skill.id);
+      merged.push(rec);
+    }
+    const fallbackCert = cert || (merged[0] && merged[0].cert) || null;
     return {
       kind: 'fallback',
       cert: fallbackCert,
       skill: null,
       fallback: true,
-      closest,
+      closest: merged.slice(0, 8),
       context: ctx,
       requested: allHint || 'this Taskbook item'
     };
