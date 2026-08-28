@@ -85,6 +85,7 @@ const unknown = SS.match(catalog, { cert: 'driver_operator_pumper', task: 'depar
 ok(unknown.kind === 'fallback', 'unknown custom task uses fallback, got ' + unknown.kind + (unknown.skill ? ' ' + unknown.skill.id : ''));
 ok((unknown.closest || []).length > 0, 'unknown has closest skills');
 ok(unknown.cert && unknown.cert.id === 'driver_operator_pumper', 'unknown keeps D/O cert context');
+ok(unknown.requested === 'department_custom_ladder_evaluation', 'unknown requested id is the task, got ' + unknown.requested);
 
 const certOnly = SS.match(catalog, { cert: 'driver_operator_pumper' });
 ok(certOnly.kind === 'cert', 'cert-only lands on cert picker');

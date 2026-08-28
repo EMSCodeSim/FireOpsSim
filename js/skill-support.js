@@ -376,7 +376,7 @@
       fallback: true,
       closest: merged.slice(0, 8),
       context: ctx,
-      requested: allHint || 'this Taskbook item'
+      requested: ctx.task || ctx.requirement || ctx.id || ctx.title || allHint || 'this Taskbook item'
     };
   }
 

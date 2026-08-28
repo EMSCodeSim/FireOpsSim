@@ -76,7 +76,7 @@
   .ss-stages{grid-template-columns:1fr}
   .ss-hero{padding:1.6rem 0 1.2rem}
   .ss-skill{grid-template-columns:1fr}
-  .ss-sticky .button{width:100%}
+  .ss-sticky .button{white-space:normal;text-align:center;line-height:1.25}
 }
 </style>
 </head>
@@ -450,8 +450,11 @@ document.addEventListener('DOMContentLoaded', async () => {
       box.innerHTML += `<a class="ss-skill" href="${esc(SS.sessionUrl(rec.skill.id, rec.cert.id, ctx))}"><div><strong>${esc(rec.skill.title)}</strong><span>${esc(rec.cert.title)} · ${esc(rec.skill.summary)}</span></div><b>→</b></a>`;
     });
     if (!closest.length) box.innerHTML = '<p class="ss-empty">Open Firefighter I, Driver/Operator, or Focus Drills while this ID is mapped.</p>';
+    const fromRoadmap = ctx.source === 'roadmap';
     const safeReturn = returnHref();
-    sticky('Use the closest resources, then return to log training.', safeReturn || '/skill-support.html', safeReturn ? 'Return to Roadmap & Log Training' : 'Choose a skill');
+    const nextHref = fromRoadmap ? (safeReturn || '/roadmap-companion.html') : '/skill-support.html';
+    const nextLabel = fromRoadmap ? 'Return to Roadmap & Log Training' : 'Choose a skill';
+    sticky('Use the closest resources, then return to log training.', nextHref, nextLabel);
   }
 
   searchBox();
