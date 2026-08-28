@@ -139,6 +139,32 @@
       "skillId": "do_pumper_friction_loss"
     },
     {
+      "title": "Standpipe / FDC Calculator",
+      "url": "/standpipe-fdc-calculator.html",
+      "keywords": [
+        "standpipe",
+        "fdc",
+        "high rise",
+        "elevation"
+      ],
+      "type": "calculator",
+      "certificationId": "driver_operator_pumper",
+      "skillId": "do_pumper_standpipe_fdc"
+    },
+    {
+      "title": "Tender Shuttle Calculator",
+      "url": "/tender-shuttle-calculator.html",
+      "keywords": [
+        "tender",
+        "tanker",
+        "shuttle",
+        "rural water"
+      ],
+      "type": "calculator",
+      "certificationId": "driver_operator_pumper",
+      "skillId": "do_pumper_rural_tender"
+    },
+    {
       "title": "SCBA Air Management Calculator",
       "url": "/scba-air-management-calculator.html",
       "keywords": [
@@ -152,6 +178,20 @@
     },
     {
       "title": "Fireground Decision Sim",
+      "url": "/fireground-decision-sim.html",
+      "keywords": [
+        "size up",
+        "strategy",
+        "tactics",
+        "FO1",
+        "placement"
+      ],
+      "type": "simulator",
+      "certificationId": "driver_operator_pumper",
+      "skillId": "do_pumper_apparatus_placement"
+    },
+    {
+      "title": "Fireground Decision Sim (officer)",
       "url": "/fireground-decision-sim.html",
       "keywords": [
         "size up",

@@ -1,0 +1,476 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-08-28",
+  "purpose": "Stable FireOpsSim Skill Support URLs for FireOps Career Road Taskbook and Daily Focus handoffs. Completing a session never marks a Roadmap task complete.",
+  "sessionPage": "/skill-support.html",
+  "dailyFocus": {
+    "currentRoadmapUrl": "/focus-drills.html",
+    "behavior": "When source=roadmap, FireOpsSim redirects Daily Focus links to Skill Support. Skill Support accepts task, task_id, cert, certification, qualification, level, requirement, requirement_id, topic/title, goal, state, and return_url.",
+    "levelToCert": {
+      "probationary": "probationary_firefighter",
+      "firefighter_1": "firefighter_1",
+      "firefighter_2": "firefighter_2",
+      "hazmat_ops": "hazmat_operations",
+      "driver_operator": "driver_operator_pumper",
+      "officer_1": "fire_officer_1",
+      "instructor_1": "fire_instructor_1"
+    }
+  },
+  "skills": [
+    {
+      "certificationId": "probationary_firefighter",
+      "certificationTitle": "Probation",
+      "skillId": "probation_hose_advancement",
+      "title": "Hose Advancement (Probation)",
+      "url": "/skill-support.html?cert=probationary_firefighter&task=probation_hose_advancement"
+    },
+    {
+      "certificationId": "probationary_firefighter",
+      "certificationTitle": "Probation",
+      "skillId": "probation_ppe_scba",
+      "title": "PPE and SCBA Ready Check",
+      "url": "/skill-support.html?cert=probationary_firefighter&task=probation_ppe_scba"
+    },
+    {
+      "certificationId": "probationary_firefighter",
+      "certificationTitle": "Probation",
+      "skillId": "probation_apparatus",
+      "title": "Apparatus Familiarity",
+      "url": "/skill-support.html?cert=probationary_firefighter&task=probation_apparatus"
+    },
+    {
+      "certificationId": "probationary_firefighter",
+      "certificationTitle": "Probation",
+      "skillId": "probation_radio",
+      "title": "Portable Radio and Mayday Format",
+      "url": "/skill-support.html?cert=probationary_firefighter&task=probation_radio"
+    },
+    {
+      "certificationId": "probationary_firefighter",
+      "certificationTitle": "Probation",
+      "skillId": "probation_hydrant",
+      "title": "Hydrant Connection",
+      "url": "/skill-support.html?cert=probationary_firefighter&task=probation_hydrant"
+    },
+    {
+      "certificationId": "probationary_firefighter",
+      "certificationTitle": "Probation",
+      "skillId": "probation_ladders",
+      "title": "Ground Ladder Basics",
+      "url": "/skill-support.html?cert=probationary_firefighter&task=probation_ladders"
+    },
+    {
+      "certificationId": "probationary_firefighter",
+      "certificationTitle": "Probation",
+      "skillId": "probation_reset",
+      "title": "Post-Call Reset",
+      "url": "/skill-support.html?cert=probationary_firefighter&task=probation_reset"
+    },
+    {
+      "certificationId": "probationary_firefighter",
+      "certificationTitle": "Probation",
+      "skillId": "probation_company_life",
+      "title": "Company Life and Feedback",
+      "url": "/skill-support.html?cert=probationary_firefighter&task=probation_company_life"
+    },
+    {
+      "certificationId": "firefighter_1",
+      "certificationTitle": "FF I",
+      "skillId": "ff1_ppe",
+      "title": "PPE Readiness and Donning",
+      "url": "/skill-support.html?cert=firefighter_1&task=ff1_ppe"
+    },
+    {
+      "certificationId": "firefighter_1",
+      "certificationTitle": "FF I",
+      "skillId": "ff1_scba",
+      "title": "SCBA Operations",
+      "url": "/skill-support.html?cert=firefighter_1&task=ff1_scba"
+    },
+    {
+      "certificationId": "firefighter_1",
+      "certificationTitle": "FF I",
+      "skillId": "ff1_hose_advancement",
+      "title": "Hose Advancement",
+      "url": "/skill-support.html?cert=firefighter_1&task=ff1_hose_advancement"
+    },
+    {
+      "certificationId": "firefighter_1",
+      "certificationTitle": "FF I",
+      "skillId": "ff1_ground_ladders",
+      "title": "Ground Ladders",
+      "url": "/skill-support.html?cert=firefighter_1&task=ff1_ground_ladders"
+    },
+    {
+      "certificationId": "firefighter_1",
+      "certificationTitle": "FF I",
+      "skillId": "ff1_forcible_entry",
+      "title": "Forcible Entry",
+      "url": "/skill-support.html?cert=firefighter_1&task=ff1_forcible_entry"
+    },
+    {
+      "certificationId": "firefighter_1",
+      "certificationTitle": "FF I",
+      "skillId": "ff1_search",
+      "title": "Primary Search",
+      "url": "/skill-support.html?cert=firefighter_1&task=ff1_search"
+    },
+    {
+      "certificationId": "firefighter_1",
+      "certificationTitle": "FF I",
+      "skillId": "ff1_ventilation",
+      "title": "Ventilation Support",
+      "url": "/skill-support.html?cert=firefighter_1&task=ff1_ventilation"
+    },
+    {
+      "certificationId": "firefighter_1",
+      "certificationTitle": "FF I",
+      "skillId": "ff1_water_supply",
+      "title": "Water Supply Support",
+      "url": "/skill-support.html?cert=firefighter_1&task=ff1_water_supply"
+    },
+    {
+      "certificationId": "firefighter_1",
+      "certificationTitle": "FF I",
+      "skillId": "ff1_fire_attack",
+      "title": "Fire Attack Fundamentals",
+      "url": "/skill-support.html?cert=firefighter_1&task=ff1_fire_attack"
+    },
+    {
+      "certificationId": "firefighter_1",
+      "certificationTitle": "FF I",
+      "skillId": "ff1_communications_mayday",
+      "title": "Communications and Mayday",
+      "url": "/skill-support.html?cert=firefighter_1&task=ff1_communications_mayday"
+    },
+    {
+      "certificationId": "firefighter_1",
+      "certificationTitle": "FF I",
+      "skillId": "ff1_overhaul_salvage",
+      "title": "Overhaul and Salvage",
+      "url": "/skill-support.html?cert=firefighter_1&task=ff1_overhaul_salvage"
+    },
+    {
+      "certificationId": "firefighter_2",
+      "certificationTitle": "FF II",
+      "skillId": "ff2_ventilation",
+      "title": "Coordinated Ventilation",
+      "url": "/skill-support.html?cert=firefighter_2&task=ff2_ventilation"
+    },
+    {
+      "certificationId": "firefighter_2",
+      "certificationTitle": "FF II",
+      "skillId": "ff2_vehicle_extrication",
+      "title": "Vehicle Extrication Support",
+      "url": "/skill-support.html?cert=firefighter_2&task=ff2_vehicle_extrication"
+    },
+    {
+      "certificationId": "firefighter_2",
+      "certificationTitle": "FF II",
+      "skillId": "ff2_foam",
+      "title": "Foam Operations",
+      "url": "/skill-support.html?cert=firefighter_2&task=ff2_foam"
+    },
+    {
+      "certificationId": "firefighter_2",
+      "certificationTitle": "FF II",
+      "skillId": "ff2_preplan",
+      "title": "Preincident Survey",
+      "url": "/skill-support.html?cert=firefighter_2&task=ff2_preplan"
+    },
+    {
+      "certificationId": "firefighter_2",
+      "certificationTitle": "FF II",
+      "skillId": "ff2_company_tactics",
+      "title": "Company-Level Tactics",
+      "url": "/skill-support.html?cert=firefighter_2&task=ff2_company_tactics"
+    },
+    {
+      "certificationId": "firefighter_2",
+      "certificationTitle": "FF II",
+      "skillId": "ff2_radio_reports",
+      "title": "Condition and Progress Reports",
+      "url": "/skill-support.html?cert=firefighter_2&task=ff2_radio_reports"
+    },
+    {
+      "certificationId": "firefighter_2",
+      "certificationTitle": "FF II",
+      "skillId": "ff2_evidence_overhaul",
+      "title": "Evidence-Aware Overhaul",
+      "url": "/skill-support.html?cert=firefighter_2&task=ff2_evidence_overhaul"
+    },
+    {
+      "certificationId": "firefighter_2",
+      "certificationTitle": "FF II",
+      "skillId": "ff2_hose_testing",
+      "title": "Hose and Equipment Service Testing",
+      "url": "/skill-support.html?cert=firefighter_2&task=ff2_hose_testing"
+    },
+    {
+      "certificationId": "hazmat_operations",
+      "certificationTitle": "HazMat Ops",
+      "skillId": "hazmat_ops_recognition",
+      "title": "Recognition and Identification",
+      "url": "/skill-support.html?cert=hazmat_operations&task=hazmat_ops_recognition"
+    },
+    {
+      "certificationId": "hazmat_operations",
+      "certificationTitle": "HazMat Ops",
+      "skillId": "hazmat_ops_isolation",
+      "title": "Isolation and Protective Actions",
+      "url": "/skill-support.html?cert=hazmat_operations&task=hazmat_ops_isolation"
+    },
+    {
+      "certificationId": "hazmat_operations",
+      "certificationTitle": "HazMat Ops",
+      "skillId": "hazmat_ops_erg",
+      "title": "ERG Navigation",
+      "url": "/skill-support.html?cert=hazmat_operations&task=hazmat_ops_erg"
+    },
+    {
+      "certificationId": "hazmat_operations",
+      "certificationTitle": "HazMat Ops",
+      "skillId": "hazmat_ops_zones",
+      "title": "Control Zones",
+      "url": "/skill-support.html?cert=hazmat_operations&task=hazmat_ops_zones"
+    },
+    {
+      "certificationId": "hazmat_operations",
+      "certificationTitle": "HazMat Ops",
+      "skillId": "hazmat_ops_decon",
+      "title": "Emergency Decontamination",
+      "url": "/skill-support.html?cert=hazmat_operations&task=hazmat_ops_decon"
+    },
+    {
+      "certificationId": "hazmat_operations",
+      "certificationTitle": "HazMat Ops",
+      "skillId": "hazmat_ops_defensive",
+      "title": "Defensive Control Options",
+      "url": "/skill-support.html?cert=hazmat_operations&task=hazmat_ops_defensive"
+    },
+    {
+      "certificationId": "hazmat_operations",
+      "certificationTitle": "HazMat Ops",
+      "skillId": "hazmat_ops_ppe",
+      "title": "PPE Limitations",
+      "url": "/skill-support.html?cert=hazmat_operations&task=hazmat_ops_ppe"
+    },
+    {
+      "certificationId": "hazmat_operations",
+      "certificationTitle": "HazMat Ops",
+      "skillId": "hazmat_ops_radio_brief",
+      "title": "HazMat Initial Radio Brief",
+      "url": "/skill-support.html?cert=hazmat_operations&task=hazmat_ops_radio_brief"
+    },
+    {
+      "certificationId": "driver_operator_pumper",
+      "certificationTitle": "D/O Pumper",
+      "skillId": "do_pumper_hydrant_ops",
+      "title": "Hydrant Operations",
+      "url": "/skill-support.html?cert=driver_operator_pumper&task=do_pumper_hydrant_ops"
+    },
+    {
+      "certificationId": "driver_operator_pumper",
+      "certificationTitle": "D/O Pumper",
+      "skillId": "do_pumper_pump_theory",
+      "title": "Pump Theory",
+      "url": "/skill-support.html?cert=driver_operator_pumper&task=do_pumper_pump_theory"
+    },
+    {
+      "certificationId": "driver_operator_pumper",
+      "certificationTitle": "D/O Pumper",
+      "skillId": "do_pumper_apparatus_inspection",
+      "title": "Daily Apparatus Inspection",
+      "url": "/skill-support.html?cert=driver_operator_pumper&task=do_pumper_apparatus_inspection"
+    },
+    {
+      "certificationId": "driver_operator_pumper",
+      "certificationTitle": "D/O Pumper",
+      "skillId": "do_pumper_engage_pump",
+      "title": "Engage Pump",
+      "url": "/skill-support.html?cert=driver_operator_pumper&task=do_pumper_engage_pump"
+    },
+    {
+      "certificationId": "driver_operator_pumper",
+      "certificationTitle": "D/O Pumper",
+      "skillId": "do_pumper_friction_loss",
+      "title": "Friction Loss and PDP",
+      "url": "/skill-support.html?cert=driver_operator_pumper&task=do_pumper_friction_loss"
+    },
+    {
+      "certificationId": "driver_operator_pumper",
+      "certificationTitle": "D/O Pumper",
+      "skillId": "do_pumper_multiple_attack_lines",
+      "title": "Multiple Attack Lines",
+      "url": "/skill-support.html?cert=driver_operator_pumper&task=do_pumper_multiple_attack_lines"
+    },
+    {
+      "certificationId": "driver_operator_pumper",
+      "certificationTitle": "D/O Pumper",
+      "skillId": "do_pumper_master_streams",
+      "title": "Master Stream Operations",
+      "url": "/skill-support.html?cert=driver_operator_pumper&task=do_pumper_master_streams"
+    },
+    {
+      "certificationId": "driver_operator_pumper",
+      "certificationTitle": "D/O Pumper",
+      "skillId": "do_pumper_relay_pumping",
+      "title": "Relay Pumping",
+      "url": "/skill-support.html?cert=driver_operator_pumper&task=do_pumper_relay_pumping"
+    },
+    {
+      "certificationId": "driver_operator_pumper",
+      "certificationTitle": "D/O Pumper",
+      "skillId": "do_pumper_drafting",
+      "title": "Drafting",
+      "url": "/skill-support.html?cert=driver_operator_pumper&task=do_pumper_drafting"
+    },
+    {
+      "certificationId": "driver_operator_pumper",
+      "certificationTitle": "D/O Pumper",
+      "skillId": "do_pumper_standpipe_fdc",
+      "title": "Standpipe and FDC Operations",
+      "url": "/skill-support.html?cert=driver_operator_pumper&task=do_pumper_standpipe_fdc"
+    },
+    {
+      "certificationId": "driver_operator_pumper",
+      "certificationTitle": "D/O Pumper",
+      "skillId": "do_pumper_rural_tender",
+      "title": "Rural Water and Tender Shuttle",
+      "url": "/skill-support.html?cert=driver_operator_pumper&task=do_pumper_rural_tender"
+    },
+    {
+      "certificationId": "driver_operator_pumper",
+      "certificationTitle": "D/O Pumper",
+      "skillId": "do_pumper_apparatus_placement",
+      "title": "Apparatus Placement",
+      "url": "/skill-support.html?cert=driver_operator_pumper&task=do_pumper_apparatus_placement"
+    },
+    {
+      "certificationId": "driver_operator_pumper",
+      "certificationTitle": "D/O Pumper",
+      "skillId": "do_pumper_troubleshooting",
+      "title": "Pump and Supply Troubleshooting",
+      "url": "/skill-support.html?cert=driver_operator_pumper&task=do_pumper_troubleshooting"
+    },
+    {
+      "certificationId": "fire_officer_1",
+      "certificationTitle": "FO I",
+      "skillId": "fo1_initial_radio_report",
+      "title": "Initial Radio Report",
+      "url": "/skill-support.html?cert=fire_officer_1&task=fo1_initial_radio_report"
+    },
+    {
+      "certificationId": "fire_officer_1",
+      "certificationTitle": "FO I",
+      "skillId": "fo1_size_up",
+      "title": "Size-Up and Risk",
+      "url": "/skill-support.html?cert=fire_officer_1&task=fo1_size_up"
+    },
+    {
+      "certificationId": "fire_officer_1",
+      "certificationTitle": "FO I",
+      "skillId": "fo1_strategy_tactics",
+      "title": "Strategy and Tactics",
+      "url": "/skill-support.html?cert=fire_officer_1&task=fo1_strategy_tactics"
+    },
+    {
+      "certificationId": "fire_officer_1",
+      "certificationTitle": "FO I",
+      "skillId": "fo1_accountability",
+      "title": "Assignments and Accountability",
+      "url": "/skill-support.html?cert=fire_officer_1&task=fo1_accountability"
+    },
+    {
+      "certificationId": "fire_officer_1",
+      "certificationTitle": "FO I",
+      "skillId": "fo1_transfer_of_command",
+      "title": "Transfer of Command",
+      "url": "/skill-support.html?cert=fire_officer_1&task=fo1_transfer_of_command"
+    },
+    {
+      "certificationId": "fire_officer_1",
+      "certificationTitle": "FO I",
+      "skillId": "fo1_coaching",
+      "title": "Coaching and Crew Performance",
+      "url": "/skill-support.html?cert=fire_officer_1&task=fo1_coaching"
+    },
+    {
+      "certificationId": "fire_officer_1",
+      "certificationTitle": "FO I",
+      "skillId": "fo1_documentation",
+      "title": "Incident Documentation",
+      "url": "/skill-support.html?cert=fire_officer_1&task=fo1_documentation"
+    },
+    {
+      "certificationId": "fire_officer_1",
+      "certificationTitle": "FO I",
+      "skillId": "fo1_risk_management",
+      "title": "Risk Management",
+      "url": "/skill-support.html?cert=fire_officer_1&task=fo1_risk_management"
+    },
+    {
+      "certificationId": "fire_officer_1",
+      "certificationTitle": "FO I",
+      "skillId": "fo1_after_action",
+      "title": "After-Action Review",
+      "url": "/skill-support.html?cert=fire_officer_1&task=fo1_after_action"
+    },
+    {
+      "certificationId": "fire_instructor_1",
+      "certificationTitle": "FI I",
+      "skillId": "fi1_objectives",
+      "title": "Performance Objectives",
+      "url": "/skill-support.html?cert=fire_instructor_1&task=fi1_objectives"
+    },
+    {
+      "certificationId": "fire_instructor_1",
+      "certificationTitle": "FI I",
+      "skillId": "fi1_delivery",
+      "title": "Deliver Prepared Instruction",
+      "url": "/skill-support.html?cert=fire_instructor_1&task=fi1_delivery"
+    },
+    {
+      "certificationId": "fire_instructor_1",
+      "certificationTitle": "FI I",
+      "skillId": "fi1_demonstration",
+      "title": "Demonstrate, Practice, Coach",
+      "url": "/skill-support.html?cert=fire_instructor_1&task=fi1_demonstration"
+    },
+    {
+      "certificationId": "fire_instructor_1",
+      "certificationTitle": "FI I",
+      "skillId": "fi1_training_safety",
+      "title": "Training Safety Brief",
+      "url": "/skill-support.html?cert=fire_instructor_1&task=fi1_training_safety"
+    },
+    {
+      "certificationId": "fire_instructor_1",
+      "certificationTitle": "FI I",
+      "skillId": "fi1_evaluation",
+      "title": "Skill Evaluation",
+      "url": "/skill-support.html?cert=fire_instructor_1&task=fi1_evaluation"
+    },
+    {
+      "certificationId": "fire_instructor_1",
+      "certificationTitle": "FI I",
+      "skillId": "fi1_feedback",
+      "title": "Specific Feedback",
+      "url": "/skill-support.html?cert=fire_instructor_1&task=fi1_feedback"
+    },
+    {
+      "certificationId": "fire_instructor_1",
+      "certificationTitle": "FI I",
+      "skillId": "fi1_documentation",
+      "title": "Training Records",
+      "url": "/skill-support.html?cert=fire_instructor_1&task=fi1_documentation"
+    },
+    {
+      "certificationId": "fire_instructor_1",
+      "certificationTitle": "FI I",
+      "skillId": "fi1_adapt",
+      "title": "Adapt Delivery, Keep the Standard",
+      "url": "/skill-support.html?cert=fire_instructor_1&task=fi1_adapt"
+    }
+  ]
+}

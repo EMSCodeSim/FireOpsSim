@@ -24,7 +24,8 @@
         "arrival report",
         "on scene report",
         "irr",
-        "size up radio"
+        "size up radio",
+        "officer radio report"
       ],
       "category": "Command",
       "careerStage": "officer",

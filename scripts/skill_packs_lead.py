@@ -20,7 +20,7 @@ def cert_fo1():
                 id="fo1_initial_radio_report",
                 certificationId="fire_officer_1",
                 title="Initial Radio Report",
-                aliases=["initial radio report", "arrival report", "on scene report", "irr", "size up radio"],
+                aliases=["initial radio report", "arrival report", "on scene report", "irr", "size up radio", "officer radio report"],
                 category="Command",
                 careerStage="officer",
                 summary="From the seat, paint a picture: occupancy, conditions, actions, strategy, and what you need next — in a format later units can use.",

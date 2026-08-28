@@ -33,12 +33,18 @@ This is the reusable training session behind a Taskbook item or a standalone “
 - `state` — optional state context (display only)
 - `q` — optional search query (hydrant, FO1, engineer, etc.)
 - `stage` — optional standalone picker stage (`candidate`, `probationary`, `firefighter`, `driver`, `officer`, `instructor`, `specialty`)
+- `task_id` — Daily Focus alias for `task`
+- `requirement_id` — treated as a certification when it is a known cert ID; otherwise used as a skill/requirement hint
+- `topic` — Daily Focus alias for `title`
+- `qualification` — Daily Focus certification name (e.g. `Fire Officer I`)
+- `level` — Roadmap training level (`driver_operator`, `officer_1`, `hazmat_ops`, …) mapped to a Skill Support cert
 
 Examples:
 
 - `/skill-support.html?cert=driver_operator_pumper&task=do_pumper_hydrant_ops&goal=Engineer&state=CO&source=roadmap&return_url=...`
 - `/roadmap-support.html?cert=driver_operator_pumper&task=do_pumper_hydrant_ops&source=roadmap` (stable Roadmap URL; hands off to Skill Support)
 - `/taskbook-resources.html?cert=driver_operator_pumper&task=do_pumper_hydrant_ops&source=roadmap` (catalog URL; hands off to Skill Support when a cert/task is present)
+- `/focus-drills.html?source=roadmap&level=officer_1&topic=Initial%20radio%20report&qualification=Fire%20Officer%20I&goal=Lieutenant&task_id=officer-radio-report&requirement_id=fire_officer_1` (Daily Focus URL; redirects to Skill Support)
 
 Unknown Roadmap IDs never dead-end. Skill Support says a dedicated module is not available yet and offers the closest skills plus Study Center / Training / Focus Drills.
 
@@ -48,43 +54,47 @@ FireOpsSim must **never** automatically mark an official Roadmap task complete. 
 
 `https://fireopssim.com/focus-drills.html`
 
-Career Road should use this endpoint when the user is intentionally starting a hands-on Daily Focus / Today’s Focus training session. The page loads a drill library and a random skill wheel for the same training level so the user does not lose context after leaving Roadmap.
+Career Road should keep using this endpoint for Daily Focus / Today’s Focus. When `source=roadmap` is present, FireOpsSim **redirects to Skill Support** so the firefighter lands on a Know → Practice → Drill session instead of the drill wheel. The wheel and drill library remain at this URL for standalone visits (no `source=roadmap`).
 
 Supported query parameters:
 
-- `source=roadmap` — identifies a Career Road handoff and displays the context banner
-- `level` — preferred normalized training level
-- `topic` — current Task Book task or preparation topic used to rank the best drill
-- `task` or `requirement` — accepted as topic fallbacks
-- `cert` or `certification` — accepted as level/context fallbacks
+- `source=roadmap` — identifies a Career Road handoff; **redirects to `/skill-support.html` with the same query string**
+- `level` — preferred normalized training level (mapped to a Skill Support certification)
+- `topic` — current Task Book task or preparation topic (Skill Support reads this as `title`)
+- `task` or `task_id` — skill or task identifier
+- `requirement` or `requirement_id` — requirement hint; known certification IDs are treated as cert context, not as a skill
+- `cert`, `certification`, or `qualification` — certification ID or display name
 - `goal` or `target` — active target role shown in the handoff context
+- `return` or `return_url` — optional URL to return to Career Road
 
 Normalized `level` values currently supported:
 
-- `probationary`
+- `probationary` → `probationary_firefighter`
 - `firefighter_1`
 - `firefighter_2`
-- `hazmat_ops`
-- `driver_operator`
-- `officer_1`
-- `instructor_1`
+- `hazmat_ops` → `hazmat_operations`
+- `driver_operator` → `driver_operator_pumper`
+- `officer_1` → `fire_officer_1`
+- `instructor_1` → `fire_instructor_1`
 
-Common names and abbreviations such as `FF2`, `Firefighter II`, `HazMat Ops`, `Engineer`, `FO1`, and `Fire Instructor I` are also normalized by the page when a normalized level is not supplied.
+Common names and abbreviations such as `FF2`, `Firefighter II`, `HazMat Ops`, `Engineer`, `FO1`, and `Fire Instructor I` are also normalized.
 
 Examples:
 
 - `/focus-drills.html?source=roadmap&level=firefighter_2&topic=ventilation&goal=Firefighter%20II`
-- `/focus-drills.html?source=roadmap&level=driver_operator&topic=hydrant%20supply&goal=Engineer`
-- `/focus-drills.html?source=roadmap&cert=fire%20officer%201&topic=initial%20radio%20report`
+- `/focus-drills.html?source=roadmap&level=driver_operator&topic=hydrant%20supply&task_id=do_pumper_hydrant_ops&goal=Engineer`
+- `/focus-drills.html?source=roadmap&level=officer_1&topic=initial%20radio%20report&qualification=Fire%20Officer%20I&task_id=officer-radio-report&requirement_id=fire_officer_1`
+
+A machine-readable list of session URLs lives at `/data/skill-support/handoff.json`.
 
 ### Focus Drill behavior
 
-1. The explicit `level` wins when present.
-2. Otherwise the page normalizes certification/requirement/task/goal text to the closest supported training level.
-3. The `topic` is used to rank that level’s drill cards and select a recommended drill.
+1. If `source=roadmap`, the page hands off to Skill Support immediately. Skill Support then matches the cert/task/topic as it would for a Taskbook deep link.
+2. Without `source=roadmap`, the explicit `level` wins when present and the page keeps the drill library and skill wheel.
+3. The `topic` is used to rank that level’s drill cards and select a recommended drill on standalone visits.
 4. The skill wheel contains only drills from the selected level.
 5. Changing the level changes both the drill library and wheel together.
-6. Career Road remains the source of truth for Task Book status, evidence, and completion. Selecting or completing a FireOpsSim drill never marks a Roadmap requirement complete automatically.
+6. Career Road remains the source of truth for Task Book status, evidence, and completion. Selecting or completing a FireOpsSim drill or Skill Support session never marks a Roadmap requirement complete automatically.
 
 ## General support behavior
 
@@ -95,7 +105,7 @@ Current first-class Skill Support coverage includes:
 - Firefighter I
 - Firefighter II
 - HazMat Operations
-- Driver / Operator — Pumper (including stable Roadmap task IDs such as `do_pumper_hydrant_ops`)
+- Driver / Operator — Pumper (including stable Roadmap task IDs such as `do_pumper_hydrant_ops`, plus standpipe/FDC, rural tender shuttle, and apparatus placement)
 - Fire Officer I
 - Fire Instructor I
 - Probation / first 100 fire shifts

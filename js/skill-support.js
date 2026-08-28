@@ -15,6 +15,32 @@
       .trim();
   }
 
+  const LEVEL_TO_CERT = {
+    driver_operator: 'driver_operator_pumper',
+    driver: 'driver_operator_pumper',
+    hazmat_ops: 'hazmat_operations',
+    hazmat: 'hazmat_operations',
+    officer_1: 'fire_officer_1',
+    officer: 'fire_officer_1',
+    instructor_1: 'fire_instructor_1',
+    instructor: 'fire_instructor_1',
+    probationary: 'probationary_firefighter',
+    firefighter_1: 'firefighter_1',
+    firefighter_2: 'firefighter_2',
+    fire_officer_i: 'fire_officer_1',
+    fire_officer_ii: 'fire_officer_2',
+    fire_instructor_i: 'fire_instructor_1',
+    fire_instructor_ii: 'fire_instructor_2',
+    firefighter_i: 'firefighter_1',
+    firefighter_ii: 'firefighter_2'
+  };
+
+  const KNOWN_CERT_IDS = new Set([
+    'firefighter_1', 'firefighter_2', 'hazmat_awareness', 'hazmat_operations',
+    'driver_operator_pumper', 'driver_operator_aerial', 'fire_officer_1', 'fire_officer_2',
+    'fire_instructor_1', 'fire_instructor_2', 'fire_inspector_1', 'probationary_firefighter'
+  ]);
+
   const ALIAS_EXPAND = [
     ['fo1', 'fire officer 1'],
     ['fo 1', 'fire officer 1'],
@@ -86,6 +112,19 @@
     }
   }
 
+  function canonCertKey(value) {
+    const raw = String(value || '').trim();
+    if (!raw) return '';
+    const underscored = raw.toLowerCase().replace(/[\s-]+/g, '_');
+    const roman = underscored.replace(/_ii$/, '_2').replace(/_i$/, '_1');
+    if (LEVEL_TO_CERT[underscored]) return LEVEL_TO_CERT[underscored];
+    if (LEVEL_TO_CERT[roman]) return LEVEL_TO_CERT[roman];
+    if (KNOWN_CERT_IDS.has(roman)) return roman;
+    if (KNOWN_CERT_IDS.has(underscored)) return underscored;
+    if (KNOWN_CERT_IDS.has(raw)) return raw;
+    return '';
+  }
+
   function parseContext(search) {
     const params = search instanceof URLSearchParams ? search : new URLSearchParams(search || '');
     const get = (...keys) => {
@@ -95,18 +134,32 @@
       }
       return '';
     };
+    const level = get('level');
+    const requirementId = get('requirement_id');
+    let cert = canonCertKey(get('cert', 'certification', 'qualification')) || canonCertKey(level);
+    let requirement = get('requirement');
+    if (requirementId) {
+      const mappedReq = canonCertKey(requirementId);
+      if (mappedReq) {
+        if (!cert) cert = mappedReq;
+      } else if (!requirement) {
+        requirement = requirementId;
+      }
+    }
+    if (!cert) cert = get('cert', 'certification', 'qualification') || '';
     return {
-      cert: get('cert', 'certification'),
-      task: get('task'),
-      requirement: get('requirement'),
+      cert,
+      task: get('task', 'task_id'),
+      requirement,
       id: get('id'),
-      title: get('title'),
+      title: get('title', 'topic'),
       goal: get('goal', 'target'),
       state: (get('state') || '').toUpperCase(),
       source: (get('source') || '').toLowerCase(),
       returnUrl: get('return_url', 'return'),
       q: get('q', 'query', 'search'),
-      stage: get('stage')
+      stage: get('stage'),
+      level
     };
   }
 
@@ -188,6 +241,10 @@
   }
 
   function findCert(catalog, value, context) {
+    const raw = String(value || '').trim();
+    const mapped = canonCertKey(raw);
+    if (mapped && catalog.certifications[mapped]) return catalog.certifications[mapped];
+    if (catalog.certifications[raw]) return catalog.certifications[raw];
     const n = expandQuery(value);
     if (!n && !(context && context.goal)) return null;
     let best = null;
@@ -475,6 +532,8 @@
     parseContext,
     buildCatalog,
     findCert,
+    LEVEL_TO_CERT,
+    canonCertKey,
     match,
     search,
     relatedRecords,

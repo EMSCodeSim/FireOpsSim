@@ -265,6 +265,8 @@
         "do_pumper_friction_loss",
         "do_pumper_multiple_attack_lines",
         "do_pumper_relay_pumping",
+        "do_pumper_standpipe_fdc",
+        "do_pumper_apparatus_placement",
         "do_pumper_troubleshooting"
       ],
       "searchKeywords": [
@@ -1569,6 +1571,7 @@
       "relatedSkills": [
         "do_pumper_hydrant_ops",
         "do_pumper_drafting",
+        "do_pumper_rural_tender",
         "do_pumper_troubleshooting",
         "do_pumper_friction_loss"
       ],
@@ -1751,6 +1754,7 @@
       "relatedSkills": [
         "do_pumper_pump_theory",
         "do_pumper_relay_pumping",
+        "do_pumper_rural_tender",
         "do_pumper_troubleshooting"
       ],
       "searchKeywords": [
@@ -1763,6 +1767,757 @@
         "rural"
       ],
       "seeResources": []
+    },
+    {
+      "id": "do_pumper_standpipe_fdc",
+      "certificationId": "driver_operator_pumper",
+      "title": "Standpipe and FDC Operations",
+      "aliases": [
+        "standpipe",
+        "fdc",
+        "fire department connection",
+        "high rise pump",
+        "standpipe support",
+        "sprinkler fdc"
+      ],
+      "category": "High-Rise / FDC",
+      "careerStage": "driver",
+      "summary": "Supply a standpipe or sprinkler FDC with the right hose, the right pressure method, and a clear communication loop with the interior crew.",
+      "whyItMatters": "High-rise and sprinklered buildings fail the first engine when the operator treats an FDC like a hydrant with extra hose. Elevation, system loss, and the people on the standpipe outlet all have to be in the same picture.",
+      "learningPoints": [
+        "An FDC is a building fire-protection inlet. You are pushing water into a system with its own pipes, valves, and losses — not just a long attack line.",
+        "Standpipe PDP is nozzle pressure plus hose on the floor plus elevation plus system/FDC loss. Department charts and the building’s system beat a generic number.",
+        "Confirm the connection: Siamese vs storz, caps, clapper, and whether this FDC actually feeds the standpipe or sprinkler zone you think it does.",
+        "Place the engine so later trucks can still work, LDH can reach, and you are not blocking the building’s only access.",
+        "Talk to the interior/standpipe crew before large pressure changes. They feel your panel before you hear their radio."
+      ],
+      "beforeYouDo": [
+        "Know this apparatus’ FDC hose, adapters, and whether you pump sprinkler and standpipe from the same inlet.",
+        "Agree who owns pressure: pump operator, officer, or the crew at the standpipe outlet.",
+        "Have a backup if the FDC is damaged, capped wrong, or the system is isolated."
+      ],
+      "terminology": [
+        {
+          "term": "FDC",
+          "meaning": "Fire department connection — the inlet on the building (or nearby) where the engine supplies the system."
+        },
+        {
+          "term": "Standpipe",
+          "meaning": "Fixed piping that delivers water to hose outlets on upper floors or remote areas."
+        },
+        {
+          "term": "System / FDC loss",
+          "meaning": "Pressure lost in the building piping, valves, and connection — often a department or building-specific allowance."
+        },
+        {
+          "term": "Elevation loss",
+          "meaning": "Pressure needed to lift water to the fire floor. Floor count is a training estimate; the building and SOP win."
+        },
+        {
+          "term": "Siamese",
+          "meaning": "A two-inlet FDC body. Pump both sides unless the system and SOP say otherwise."
+        }
+      ],
+      "safetyNotes": [
+        "Do not assume an FDC is in service. Caps, debris, a closed OS&Y, or a broken clapper can give you a beautiful discharge gauge and no water upstairs.",
+        "Overpressure can damage the system and the hose on the floor. Follow department max PDP and relief/governor practice.",
+        "LDH and charged FDC lines in a driveway are a trip and vehicle hazard. Place, chock, and light as SOP requires.",
+        "If the interior crew reports no water, treat it as a water emergency — not an argument about your math."
+      ],
+      "seeResources": [
+        {
+          "label": "Standpipe / FDC Calculator",
+          "url": "/standpipe-fdc-calculator.html",
+          "note": "Practice NP, hose FL, system loss, and floor elevation as one PDP.",
+          "type": "calculator"
+        },
+        {
+          "label": "Sprinkler FDC reference",
+          "url": "/sprinkler-fdc-calculator.html",
+          "note": "Sprinkler-support landing page and department-pressure reminder.",
+          "type": "calculator"
+        }
+      ],
+      "practiceResources": [
+        {
+          "label": "Standpipe / FDC Calculator",
+          "url": "/standpipe-fdc-calculator.html",
+          "note": "Estimate FDC pressure from NP, FL, system loss, and floors.",
+          "type": "calculator"
+        },
+        {
+          "label": "Sprinkler / FDC page",
+          "url": "/sprinkler-fdc-calculator.html",
+          "note": "Separate sprinkler-support searches from standpipe work.",
+          "type": "calculator"
+        },
+        {
+          "label": "Pump Pressure Calculator",
+          "url": "/fire-pump-calculator.html",
+          "note": "Same hydraulics building blocks used on the panel.",
+          "type": "calculator"
+        },
+        {
+          "label": "Scenario Library",
+          "url": "/scenario-library.html",
+          "note": "Standpipe and high-rise practice problems.",
+          "type": "scenario"
+        },
+        {
+          "label": "Driver / Operator Practice",
+          "url": "/driver-operator-practice.html",
+          "note": "Engineer study hub.",
+          "type": "guide"
+        }
+      ],
+      "drill": {
+        "objective": "Connect and pump an FDC (live or tabletop), state the pressure method, and communicate before changing PDP.",
+        "equipment": "Engine, LDH/supply to FDC, adapters/caps wrench, radios, standpipe/FDC calculator or department chart, building photo or training FDC.",
+        "setup": "Use a training FDC or a tabletop building. Brief: operator, hydrant/supply firefighter, interior/standpipe voice. Name the stop signal and max PDP.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Walk the FDC: caps, inlets, what it feeds, hose choice, and who talks. Name every term in the PDP stack for this building without charging if water is not available.",
+            "performancePoints": [
+              "Correct FDC identification",
+              "PDP stack named",
+              "Interior communication named",
+              "Backup if FDC is dead"
+            ],
+            "commonMistakes": [
+              "Calling it ‘just another hydrant’",
+              "No plan if the connection is clogged",
+              "Vague ‘I usually pump 150’"
+            ],
+            "debrief": [
+              "What does this FDC actually supply?",
+              "What is the first radio sentence if upstairs reports no water?"
+            ]
+          },
+          "15": {
+            "title": "15-minute supply evolution",
+            "instructions": "Make the FDC, establish supply, and set an initial PDP from the calculator or chart. Then change floors or add a second line (tabletop the second line if the site cannot support it). Operator reports PDP, intake/residual, and what changed.",
+            "performancePoints": [
+              "Connection per SOP",
+              "Pressure method stated",
+              "Supply watched while PDP changed",
+              "Interior told before the change"
+            ],
+            "commonMistakes": [
+              "Pumping a number with no floor or hose story",
+              "Ignoring intake while chasing PDP",
+              "No confirmation water is in the system"
+            ],
+            "debrief": [
+              "What would you do if PDP is correct and the floor still has no water?",
+              "When would you refuse a higher-pressure request?"
+            ]
+          },
+          "30": {
+            "title": "30-minute high-rise / sprinkler scenario",
+            "instructions": "Run a building scenario: first connection, a clogged or one-sided FDC inject, then a floor change or sprinkler vs standpipe question. Operator must keep supply, PDP, and the interior picture together. Include a later-arriving truck that needs the spot you took.",
+            "performancePoints": [
+              "Placement leaves later access",
+              "FDC problem diagnosed without guessing",
+              "Clear PDP and water reports",
+              "Crew told before major pressure changes"
+            ],
+            "commonMistakes": [
+              "Blocking the aerial or the only driveway",
+              "Raising PDP instead of checking the connection",
+              "Silent panel while the standpipe crew is dry"
+            ],
+            "debrief": [
+              "How do we tell standpipe support from sprinkler support on this building?",
+              "Who owns the decision to abandon this FDC?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "Pump discharge pressure for a standpipe assignment is best thought of as:",
+          "choices": [
+            "Whatever residual the hydrant showed",
+            "Nozzle pressure plus hose on the fire floor plus elevation plus system/FDC loss, using the department method",
+            "Always 150 psi because that is a common classroom number",
+            "Intake pressure times two"
+          ],
+          "answer": 1,
+          "why": "Stack the pieces. The building, the hose package, and SOP decide the number — not a slogan."
+        },
+        {
+          "q": "If the interior crew reports no water at the standpipe outlet while your discharge gauge looks healthy, a useful first thought is:",
+          "choices": [
+            "Tell them to open the nozzle more",
+            "Check the FDC/path into the system, valves, and whether you are actually supplying that zone",
+            "Double RPM immediately",
+            "Shut down and leave"
+          ],
+          "answer": 1,
+          "why": "A pretty panel does not prove water is in the riser. Find the break in the path."
+        },
+        {
+          "q": "Many FDCs are two-inlet bodies. Unless SOP and the system say otherwise, engines should usually:",
+          "choices": [
+            "Pump one inlet so the other stays pretty",
+            "Supply both inlets",
+            "Avoid FDC work and draft from a planter",
+            "Cap both inlets after charging"
+          ],
+          "answer": 1,
+          "why": "Two inlets exist to move volume into the system and to have a backup path. Follow the local connection rule."
+        },
+        {
+          "q": "Before a large PDP increase to an FDC, the operator should:",
+          "choices": [
+            "Wait until hose bursts",
+            "Tell the interior/standpipe crew and watch supply gauges",
+            "Open every discharge on the panel",
+            "Switch to tank water"
+          ],
+          "answer": 1,
+          "why": "People on the line feel your change. Supply has to support it."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Pro Board",
+          "url": "https://theproboard.org/accredited-agencies/",
+          "scope": "Accredited fire certification agencies"
+        },
+        {
+          "label": "IFSAC",
+          "url": "https://ifsac.org/",
+          "scope": "Accredited certifying entities and programs"
+        },
+        {
+          "label": "Department high-rise / FDC SOP and apparatus pump chart",
+          "url": "/driver-operator-practice.html",
+          "scope": "FDC hose, adapters, max PDP, and standpipe vs sprinkler assignments are AHJ- and building-specific."
+        },
+        {
+          "label": "Building fire-protection information / preplan",
+          "url": "/scenario-library.html",
+          "scope": "Which FDC feeds which system, and whether a connection is in service, is local building data."
+        }
+      ],
+      "relatedSkills": [
+        "do_pumper_hydrant_ops",
+        "do_pumper_friction_loss",
+        "do_pumper_apparatus_placement",
+        "do_pumper_multiple_attack_lines",
+        "do_pumper_troubleshooting"
+      ],
+      "searchKeywords": [
+        "standpipe",
+        "FDC",
+        "high rise",
+        "sprinkler",
+        "elevation",
+        "siamese",
+        "fire department connection",
+        "engineer"
+      ]
+    },
+    {
+      "id": "do_pumper_rural_tender",
+      "certificationId": "driver_operator_pumper",
+      "title": "Rural Water and Tender Shuttle",
+      "aliases": [
+        "tender shuttle",
+        "tanker shuttle",
+        "rural water",
+        "fill site",
+        "dump site",
+        "nurse tanker",
+        "portable tank"
+      ],
+      "category": "Water Supply",
+      "careerStage": "driver",
+      "summary": "Keep fire flow coming when there is no hydrant: tank duration, fill and dump sites, shuttle math, and the radio loop that actually delivers water.",
+      "whyItMatters": "Rural fires run out of water in minutes if the first engine treats tank water as infinite. Shuttle success is cycle time and jobs — not how many tenders are ‘en route.’",
+      "learningPoints": [
+        "Tank duration is working water divided by flow. Reserve exists so you can still move the engine or protect a crew when the shuttle hiccups.",
+        "Sustained shuttle GPM is usable gallons per tender divided by cycle time, times the number of tenders actually completing the loop.",
+        "Cycle time is fill + travel + dump + travel + turnaround. The slowest step, not the fastest truck, sets the flow.",
+        "Fill site, dump site, nurse, and attack pumper are different jobs. Mixing them on the radio is how water stops.",
+        "Drafting, a relay, or a second fill site may beat adding another tender that has nowhere to dump."
+      ],
+      "beforeYouDo": [
+        "Know this engine’s tank size, usable water, and the department reserve rule.",
+        "Name the fill site, dump method (portable tank, nurse, jet dump), and who owns traffic at each end.",
+        "Agree the radio words for ‘hold dump,’ ‘need water,’ and ‘fill site delay.’"
+      ],
+      "terminology": [
+        {
+          "term": "Cycle time",
+          "meaning": "Minutes for one tender to fill, travel, dump, return, and turn around."
+        },
+        {
+          "term": "Dump site",
+          "meaning": "Where tenders offload — portable tanks, a nurse pumper, or a jet-dump into a tank."
+        },
+        {
+          "term": "Fill site",
+          "meaning": "Hydrant, draft, or other source where tenders reload."
+        },
+        {
+          "term": "Nurse",
+          "meaning": "A pumper (or tender/pumper) that stays and supplies the attack engine while others shuttle."
+        },
+        {
+          "term": "Working tank water",
+          "meaning": "Usable tank gallons minus the reserve you refuse to burn."
+        }
+      ],
+      "safetyNotes": [
+        "Dump sites and fill sites are vehicle, drop-off, and drowning hazards. Spotters and lighting matter at night.",
+        "Do not dump into a collapsing tank or onto charged hose.",
+        "Traffic control is part of water supply. A wrecked tender is zero GPM.",
+        "If tank water is about to die, the officer needs that sentence immediately — interior crews are using water they think they have."
+      ],
+      "seeResources": [
+        {
+          "label": "Tender Shuttle Calculator",
+          "url": "/tender-shuttle-calculator.html",
+          "note": "Tank, fill, dump, travel, and tender count to sustained GPM.",
+          "type": "calculator"
+        },
+        {
+          "label": "Tender Timer",
+          "url": "/tender-timer.html",
+          "note": "Cycle time, delivered GPM, and tenders needed for a target flow.",
+          "type": "calculator"
+        }
+      ],
+      "practiceResources": [
+        {
+          "label": "Tender Shuttle Calculator",
+          "url": "/tender-shuttle-calculator.html",
+          "note": "Estimate shuttle flow from cycle pieces.",
+          "type": "calculator"
+        },
+        {
+          "label": "Tender Timer",
+          "url": "/tender-timer.html",
+          "note": "Distance, speed, and target-flow planning.",
+          "type": "calculator"
+        },
+        {
+          "label": "Tank Duration Calculator",
+          "url": "/tank-duration.html",
+          "note": "How long this engine’s tank lasts at the current flow.",
+          "type": "calculator"
+        },
+        {
+          "label": "Relay Pumping Calculator",
+          "url": "/relay-pumping-calculator.html",
+          "note": "When a long LDH lay beats a weak shuttle.",
+          "type": "calculator"
+        },
+        {
+          "label": "Driver / Operator Practice",
+          "url": "/driver-operator-practice.html",
+          "note": "Engineer study hub.",
+          "type": "guide"
+        }
+      ],
+      "drill": {
+        "objective": "Plan a rural water supply: tank duration, shuttle or relay choice, fill/dump jobs, and the radio loop before the tank hits reserve.",
+        "equipment": "Engine tank figure, radios, tender/shuttle calculator, map or cones for fill and dump, optional portable tank.",
+        "setup": "Tabletop is enough if you cannot move tenders. Assign attack pump, dump-site boss, and at least one tender driver. State the stop signal.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Given tank size and a fire flow, compute working time with a reserve. Name fill site, dump site, and the first radio sentence when time is short.",
+            "performancePoints": [
+              "Duration computed",
+              "Reserve named",
+              "Jobs named",
+              "Shortage radio sentence ready"
+            ],
+            "commonMistakes": [
+              "Ignoring reserve",
+              "Calling every truck a ‘tanker’ with no job",
+              "Waiting until the tank is empty to talk"
+            ],
+            "debrief": [
+              "How many minutes of working water do we have?",
+              "Who do we call first for more water?"
+            ]
+          },
+          "15": {
+            "title": "15-minute shuttle plan",
+            "instructions": "Use the tender calculators to build a cycle: fill, dump, travel, tender count, target GPM. Compare to tank duration. Decide shuttle vs draft/relay. Brief the radio words.",
+            "performancePoints": [
+              "Cycle time stated",
+              "Sustained GPM vs need",
+              "Fill and dump jobs clear",
+              "Backup method named"
+            ],
+            "commonMistakes": [
+              "Counting tenders that have not been given a fill site",
+              "No dump-site plan",
+              "Math with no radio plan"
+            ],
+            "debrief": [
+              "What step in the cycle is the bottleneck?",
+              "When would we switch to a relay or a second fill site?"
+            ]
+          },
+          "30": {
+            "title": "30-minute rural scenario",
+            "instructions": "Run or tabletop a working fire: initial tank attack, first tender dump, a fill-site delay inject, then a flow increase. Operator must keep tank duration honest and say when the shuttle cannot meet demand. Include a portable-tank or nurse decision.",
+            "performancePoints": [
+              "Tank time watched",
+              "Shuttle jobs held under stress",
+              "Shortage reported early",
+              "Plan B used without chaos"
+            ],
+            "commonMistakes": [
+              "Silent tank death",
+              "Tenders circling with no dump site",
+              "Raising fire flow with no water math"
+            ],
+            "debrief": [
+              "What would make you tell the officer to cut flow?",
+              "How do we keep one tender from blocking the dump site?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "The most useful first rural-water question on arrival is:",
+          "choices": [
+            "How shiny are the tenders?",
+            "How long will this tank last at the flow we are about to use, and what is the next water?",
+            "What is static hydrant pressure in town?",
+            "Should we wait to stretch until every tender arrives?"
+          ],
+          "answer": 1,
+          "why": "Tank duration plus a next-water plan is the rural clock."
+        },
+        {
+          "q": "Shuttle flow goes up most honestly when you:",
+          "choices": [
+            "Count every apparatus on the printout as a working tender",
+            "Shorten real cycle time or add tenders that can actually complete the loop",
+            "Open a second attack line with no dump site",
+            "Idle the fill site to ‘save the hydrant’"
+          ],
+          "answer": 1,
+          "why": "GPM is gallons that finish the cycle, divided by minutes. Fantasy units do not dump."
+        },
+        {
+          "q": "If fill time doubles because the fill site is poorly staffed, shuttle GPM will:",
+          "choices": [
+            "Stay the same because travel did not change",
+            "Fall, because cycle time got longer",
+            "Double",
+            "Only affect the attack engine’s intake color"
+          ],
+          "answer": 1,
+          "why": "Every slow step is in the denominator."
+        },
+        {
+          "q": "The officer should hear that tank water is short:",
+          "choices": [
+            "At the critique",
+            "As soon as working time will not cover the next stretch of the fire",
+            "Only after the pump sucks air",
+            "Never — handle it on the panel"
+          ],
+          "answer": 1,
+          "why": "Interior decisions assume water that may already be gone."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Department rural water / tender SOP",
+          "url": "/tender-shuttle-calculator.html",
+          "scope": "Fill sites, dump methods, portable-tank rules, and reserve gallons are AHJ-specific."
+        },
+        {
+          "label": "Apparatus tank and dump-valve manufacturer data",
+          "url": "/tank-duration.html",
+          "scope": "Usable tank gallons and dump rates are apparatus-specific."
+        }
+      ],
+      "relatedSkills": [
+        "do_pumper_drafting",
+        "do_pumper_relay_pumping",
+        "do_pumper_hydrant_ops",
+        "do_pumper_troubleshooting",
+        "do_pumper_apparatus_placement"
+      ],
+      "searchKeywords": [
+        "tender",
+        "tanker",
+        "shuttle",
+        "rural",
+        "fill site",
+        "dump site",
+        "portable tank",
+        "nurse",
+        "tank duration",
+        "engineer"
+      ]
+    },
+    {
+      "id": "do_pumper_apparatus_placement",
+      "certificationId": "driver_operator_pumper",
+      "title": "Apparatus Placement",
+      "aliases": [
+        "engine placement",
+        "spot the rig",
+        "where to park",
+        "first due placement",
+        "arrival position",
+        "don't block"
+      ],
+      "category": "Placement",
+      "careerStage": "driver",
+      "summary": "Stop the engine where the hose, water, rescue path, later units, and a way out all still work — then set the brake and own that decision.",
+      "whyItMatters": "A bad spot is a permanent tactical problem. You can recut a line. You cannot un-park a blocked aerial or a hydrant you drove past with no plan.",
+      "learningPoints": [
+        "Placement is a size-up skill: occupancy, fire location, access, water, collapse/overhead, and who is coming after you.",
+        "First engine usually owns a working spot for attack and water — not the front door selfie. Leave the aerial, ambulance, and later engines a path.",
+        "Hydrant vs fire: know whether this department lays in, lays out, or spots at the building and waits for water. Do not invent a third method in the driveway.",
+        "Once the parking brake is set, you still own wheel chocks, pump engagement setup, and a way to move if command orders it.",
+        "Say the placement out loud if it is non-obvious: ‘taking the hydrant side, leaving the front for the truck.’"
+      ],
+      "beforeYouDo": [
+        "Know first-due hose loads, LDH, and whether you are expected to hit a hydrant before the building.",
+        "Know typical later-arriving apparatus for this alarm (truck, rescue, second engine) and what they need.",
+        "Have a backup spot if the driveway, wires, or parked cars steal the textbook position."
+      ],
+      "terminology": [
+        {
+          "term": "Working spot",
+          "meaning": "A position that lets this company do its job without stealing the next company’s job."
+        },
+        {
+          "term": "Lay in / lay out",
+          "meaning": "Department water-supply driving pattern — hydrant first vs building first. Follow yours."
+        },
+        {
+          "term": "Collapse zone",
+          "meaning": "Area to keep clear of people and apparatus if the building or wall can come down."
+        },
+        {
+          "term": "Egress for apparatus",
+          "meaning": "A way to get this rig or later rigs out — not a dead-end jammed with hose."
+        }
+      ],
+      "safetyNotes": [
+        "Do not spot under wires, dying walls, or on known collapse sides just to be close.",
+        "Never leave the apparatus in drive on a grade. Brake, chock, and follow department wheel-chock rules.",
+        "Personnel in the street while you spot: the hydrant firefighter and later units. Slow is part of the skill.",
+        "Do not block hydrants, FDCs, or the only aerial corner because the address felt urgent."
+      ],
+      "seeResources": [
+        {
+          "label": "Fireground Decision Sim",
+          "url": "/fireground-decision-sim.html",
+          "note": "Arrival scenes that include first-engine placement choices.",
+          "type": "simulator"
+        },
+        {
+          "label": "Focus Drills — placement",
+          "url": "/focus-drills.html?level=driver_operator&topic=placement",
+          "note": "Tabletop spotting reps.",
+          "type": "drill"
+        }
+      ],
+      "practiceResources": [
+        {
+          "label": "Fireground Decision Sim",
+          "url": "/fireground-decision-sim.html",
+          "note": "Read the scene, then defend where the engine would stop.",
+          "type": "simulator"
+        },
+        {
+          "label": "Hydrant Operations skill",
+          "url": "/skill-support.html?cert=driver_operator_pumper&task=do_pumper_hydrant_ops",
+          "note": "Water supply is why many spots exist.",
+          "type": "skill"
+        },
+        {
+          "label": "Standpipe / FDC skill",
+          "url": "/skill-support.html?cert=driver_operator_pumper&task=do_pumper_standpipe_fdc",
+          "note": "High-rise spots must leave FDC and later trucks.",
+          "type": "skill"
+        },
+        {
+          "label": "Driver / Operator Practice",
+          "url": "/driver-operator-practice.html",
+          "note": "Engineer hub.",
+          "type": "guide"
+        },
+        {
+          "label": "Focus Drills — Driver/Operator",
+          "url": "/focus-drills.html?level=driver_operator&topic=placement",
+          "note": "Placement tabletop in the drill library.",
+          "type": "drill"
+        }
+      ],
+      "drill": {
+        "objective": "Choose and defend an engine spot for three different arrivals, including water, later units, and a way out.",
+        "equipment": "Printed or projected arrival photos, cones or a parking lot, radios, department hose/hydrant SOP.",
+        "setup": "No live pumping required. Use photos first, then walk a station apron or training lot if available. Officer or instructor plays later-arriving truck.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "From one photo, point to where this engine stops, where the hydrant or FDC is, and what you left for the truck. Say it in one radio sentence.",
+            "performancePoints": [
+              "Spot named",
+              "Water plan named",
+              "Later unit considered",
+              "One-sentence report"
+            ],
+            "commonMistakes": [
+              "Nose on the front door with no water story",
+              "Blocking the aerial corner",
+              "Silent ‘I just park’"
+            ],
+            "debrief": [
+              "What would make you take a worse-looking spot that is actually better?",
+              "Who is coming after us?"
+            ]
+          },
+          "15": {
+            "title": "15-minute three-spot tabletop",
+            "instructions": "Three scenes: house fire with a hydrant past the address, garden apartment narrow lane, and a standpipe building. Operator spots each, then the instructor steals one option (parked car, wires, blocked hydrant). Adjust without losing water or later access.",
+            "performancePoints": [
+              "Three defensible spots",
+              "Adjustment when the first choice dies",
+              "Hose/water method matches SOP"
+            ],
+            "commonMistakes": [
+              "Same spot for every building",
+              "No collapse or overhead look",
+              "Hydrant forgotten until the line is dry"
+            ],
+            "debrief": [
+              "Which scene would you hydrant first?",
+              "What do you tell command if you cannot get the textbook spot?"
+            ]
+          },
+          "30": {
+            "title": "30-minute lot or scenario",
+            "instructions": "On a training lot or with cones, spot for attack, then a second engine and a truck arrive. Include a ‘move up’ order and a hose that will trap you if you dump it in the only egress. Debrief with the decision sim on a similar occupancy.",
+            "performancePoints": [
+              "Chocks/brake called",
+              "Later units can work",
+              "Egress not suicided with hose",
+              "Spot explained, not guessed"
+            ],
+            "commonMistakes": [
+              "Final parking wherever the bumper stopped",
+              "No chocks",
+              "Arguing instead of taking the next best hole"
+            ],
+            "debrief": [
+              "When is a farther spot the safer pump position?",
+              "How do we move if command needs the hole?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "A good first-engine spot is one that:",
+          "choices": [
+            "Looks closest to the fire in the windshield",
+            "Lets this company work water and hose while leaving a path for later units and a way out",
+            "Blocks the driveway so nobody else can mess it up",
+            "Always sits on the address side regardless of hydrant or wires"
+          ],
+          "answer": 1,
+          "why": "You are parking a water-and-hose platform inside a larger incident, not winning a closeness contest."
+        },
+        {
+          "q": "If the only close spot sits under wires on a working fire side, the operator should:",
+          "choices": [
+            "Take it anyway because seconds matter more than overhead",
+            "Choose the next working spot that does not put the crew and rig under that hazard, and say so",
+            "Wait in the street with the pump in road",
+            "Park on the sidewalk and leave the brake off"
+          ],
+          "answer": 1,
+          "why": "A burned windshield is slower than fifty extra feet of hose from a survivable hole."
+        },
+        {
+          "q": "Department lay-in / lay-out / hydrant-then-building patterns exist so that:",
+          "choices": [
+            "Every driver can freelance",
+            "Water and hose get to the fire the way this agency trained",
+            "The aerial always has to wait",
+            "You never need a hydrant firefighter"
+          ],
+          "answer": 1,
+          "why": "Placement and water supply are one SOP. Do not invent a third pattern in the dark."
+        },
+        {
+          "q": "After the brake is set, apparatus placement is:",
+          "choices": [
+            "Finished forever",
+            "Still your problem if command needs the hole, hose traps the rig, or the spot is unsafe",
+            "The officer’s alone",
+            "Only about how it photographs"
+          ],
+          "answer": 1,
+          "why": "You can be asked to move. Chocks, hose, and a remaining path make that possible."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Department apparatus placement / first-due SOP",
+          "url": "/driver-operator-practice.html",
+          "scope": "Hydrant sequence, spotting rules, and later-unit access are AHJ-specific."
+        },
+        {
+          "label": "Apparatus manufacturer parking-brake and chock instructions",
+          "url": "/driver-operator-practice.html",
+          "scope": "How this rig is secured on a grade is apparatus-specific."
+        }
+      ],
+      "relatedSkills": [
+        "do_pumper_hydrant_ops",
+        "do_pumper_standpipe_fdc",
+        "do_pumper_engage_pump",
+        "do_pumper_rural_tender"
+      ],
+      "searchKeywords": [
+        "placement",
+        "spot",
+        "park",
+        "first due",
+        "don't block",
+        "aerial access",
+        "hydrant lay",
+        "engineer"
+      ]
     },
     {
       "id": "do_pumper_troubleshooting",
@@ -1931,6 +2686,7 @@
         "do_pumper_hydrant_ops",
         "do_pumper_engage_pump",
         "do_pumper_drafting",
+        "do_pumper_standpipe_fdc",
         "do_pumper_multiple_attack_lines"
       ],
       "searchKeywords": [

@@ -7,6 +7,10 @@ Structured training sessions used by `/skill-support.html`, `/roadmap-support.ht
 
 Skill IDs reuse Roadmap IDs when they already exist (`do_pumper_hydrant_ops`, `driver_operator_pumper`, `firefighter_1`, `fire_officer_1`, …).
 
+`handoff.json` lists every `cert` + `task` session URL plus the Daily Focus `level` map for Roadmap to consume later.
+
+Query parameters accepted by `/skill-support.html` include Roadmap Daily Focus names: `task_id`, `requirement_id`, `topic`, `qualification`, and `level`. `/focus-drills.html?source=roadmap…` redirects to Skill Support.
+
 Regenerate from the authoring scripts:
 
 ```bash

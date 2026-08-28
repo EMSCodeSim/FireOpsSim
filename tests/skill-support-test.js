@@ -121,10 +121,41 @@ for (const rec of catalog.skills) {
 ok(counts.firefighter_1 >= 8, 'FF1 coverage');
 ok(counts.firefighter_2 >= 6, 'FF2 coverage');
 ok(counts.hazmat_operations >= 6, 'HazMat Ops coverage');
-ok(counts.driver_operator_pumper >= 8, 'D/O pumper coverage');
+ok(SS.canonCertKey('officer_1') === 'fire_officer_1', 'level officer_1 maps to FO1');
+ok(SS.canonCertKey('Fire Officer I') === 'fire_officer_1', 'roman Fire Officer I maps');
+ok(SS.canonCertKey('driver_operator') === 'driver_operator_pumper', 'level driver_operator maps');
+
+const dailyFo1Ctx = SS.parseContext('source=roadmap&level=officer_1&topic=Initial%20radio%20report&qualification=Fire%20Officer%20I&goal=Lieutenant&task_id=officer-radio-report&requirement_id=fire_officer_1');
+ok(dailyFo1Ctx.task === 'officer-radio-report', 'Daily Focus task_id, got ' + dailyFo1Ctx.task);
+ok(dailyFo1Ctx.title === 'Initial radio report', 'Daily Focus topic as title, got ' + dailyFo1Ctx.title);
+ok(dailyFo1Ctx.cert === 'fire_officer_1', 'Daily Focus cert from qualification/level, got ' + dailyFo1Ctx.cert);
+ok(dailyFo1Ctx.requirement === '', 'requirement_id that is a cert is not treated as a skill, got ' + dailyFo1Ctx.requirement);
+const dailyFo1 = SS.match(catalog, dailyFo1Ctx);
+ok(dailyFo1.kind === 'skill' && dailyFo1.skill.id === 'fo1_initial_radio_report', 'Daily Focus FO1 radio, got ' + (dailyFo1.skill && dailyFo1.skill.id));
+
+const dailyHydrantCtx = SS.parseContext('source=roadmap&level=driver_operator&topic=hydrant%20supply&task_id=do_pumper_hydrant_ops&goal=Engineer');
+ok(dailyHydrantCtx.cert === 'driver_operator_pumper', 'Daily Focus D/O level maps, got ' + dailyHydrantCtx.cert);
+ok(dailyHydrantCtx.task === 'do_pumper_hydrant_ops', 'Daily Focus hydrant task_id');
+const dailyHydrant = SS.match(catalog, dailyHydrantCtx);
+ok(dailyHydrant.kind === 'skill' && dailyHydrant.skill.id === 'do_pumper_hydrant_ops', 'Daily Focus hydrant session');
+
+const standpipe = matchTask('driver_operator_pumper', 'do_pumper_standpipe_fdc');
+ok(standpipe.kind === 'skill' && standpipe.skill.id === 'do_pumper_standpipe_fdc', 'standpipe skill');
+const tender = matchTask('driver_operator_pumper', 'tender shuttle');
+ok(tender.kind === 'skill' && tender.skill.id === 'do_pumper_rural_tender', 'tender skill, got ' + (tender.skill && tender.skill.id));
+const placement = SS.match(catalog, { cert: 'driver_operator_pumper', title: 'apparatus placement', goal: 'Engineer' });
+ok(placement.kind === 'skill' && placement.skill.id === 'do_pumper_apparatus_placement', 'placement skill, got ' + (placement.skill && placement.skill.id));
 ok(counts.fire_officer_1 >= 7, 'FO1 coverage');
 ok(counts.fire_instructor_1 >= 6, 'FI1 coverage');
 ok(counts.probationary_firefighter >= 6, 'probation coverage');
+
+const focusHtml = fs.readFileSync(path.join(ROOT, 'focus-drills.html'), 'utf8');
+ok(/source=roadmap/.test(focusHtml) === false || /skill-support\.html/.test(focusHtml), 'focus-drills mentions Skill Support');
+ok(focusHtml.includes("location.replace('/skill-support.html'"), 'focus-drills redirects Roadmap Daily Focus');
+ok(fs.existsSync(path.join(DATA, 'handoff.json')), 'handoff.json exists');
+const handoff = readJson(path.join(DATA, 'handoff.json'));
+ok(Array.isArray(handoff.skills) && handoff.skills.length === catalog.skills.length, 'handoff lists every skill');
+ok(handoff.dailyFocus && handoff.dailyFocus.levelToCert.driver_operator === 'driver_operator_pumper', 'handoff maps Daily Focus levels');
 
 if (errors.length) {
   console.error('FAIL\n' + errors.map((e) => ' - ' + e).join('\n'));
