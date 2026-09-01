@@ -21,34 +21,45 @@
         "title": "Firefighter II",
         "path": "national/pathways/firefighter-ii.json",
         "version": "2026.08.23",
-        "status": "stub"
+        "status": "complete"
       },
       {
         "id": "national.driver_operator_pumper",
         "title": "Driver/Operator – Pumper",
         "path": "national/pathways/driver-operator-pumper.json",
         "version": "2026.08.23",
-        "status": "stub"
+        "status": "complete"
       },
       {
         "id": "national.fire_officer_i",
         "title": "Fire Officer I",
         "path": "national/pathways/fire-officer-i.json",
         "version": "2026.08.23",
-        "status": "stub"
+        "status": "complete"
       },
       {
         "id": "national.fire_instructor_i",
         "title": "Fire Instructor I",
         "path": "national/pathways/fire-instructor-i.json",
         "version": "2026.08.23",
-        "status": "stub"
+        "status": "complete"
       }
     ]
   },
   "states": {
     "note": "Add folders under data/states/{CODE}/ using the _template. List them here as they are curated.",
-    "available": []
+    "available": [
+      {
+        "code": "CO",
+        "name": "Colorado",
+        "path": "states/CO/",
+        "version": "2026.08.23",
+        "status": "initial",
+        "pathways": [
+          "firefighter-i"
+        ]
+      }
+    ]
   },
   "lastUpdated": "2026-08-23"
 }
