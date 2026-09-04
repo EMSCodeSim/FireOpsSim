@@ -1,0 +1,1403 @@
+{
+  "id": "probationary_firefighter",
+  "title": "Probationary / First 100 Shifts",
+  "shortTitle": "Probation",
+  "careerStage": "probationary",
+  "category": "Probation",
+  "aliases": [
+    "probation",
+    "probationary firefighter",
+    "first 100 shifts",
+    "rookie",
+    "new firefighter",
+    "recruit"
+  ],
+  "summary": "Become easy to trust: PPE/SCBA, hose, ladders, hydrant, radio, apparatus knowledge, and a reset after every run.",
+  "skills": [
+    {
+      "id": "probation_hose_advancement",
+      "certificationId": "probationary_firefighter",
+      "title": "Hose Advancement (Probation)",
+      "aliases": [
+        "hose",
+        "attack line",
+        "advance the line",
+        "hose drill"
+      ],
+      "category": "Engine",
+      "careerStage": "probationary",
+      "summary": "A short, correct attack-line evolution you can run on a quiet morning: pull, flake, charge, advance, reload.",
+      "whyItMatters": "Probation is where the company decides if you can be the backup firefighter without thinking.",
+      "learningPoints": [
+        "Learn YOUR engine’s standard pull, not a generic academy story.",
+        "Flake so it can move. Pretty piles that trap the nozzle are wrong.",
+        "Talk to the operator: ready for water, kinks, shut down.",
+        "Reload is part of the skill. The next run is coming."
+      ],
+      "beforeYouDo": [
+        "Ask which preconnect is first-due standard.",
+        "PPE as the company wears it for this drill."
+      ],
+      "terminology": [
+        {
+          "term": "Backup",
+          "meaning": "Your usual probationary job on the line — feed hose, clear kinks, watch the nozzle."
+        }
+      ],
+      "safetyNotes": [
+        "Charged lines knock people down. Body position.",
+        "Do not stand in bights."
+      ],
+      "seeResources": [
+        {
+          "label": "Hose Advancement Checklist",
+          "url": "/hose-advancement-checklist.html",
+          "note": "Sequence for deploy-charge-advance.",
+          "type": "checklist"
+        }
+      ],
+      "practiceResources": [
+        {
+          "label": "Hose Advancement Checklist",
+          "url": "/hose-advancement-checklist.html",
+          "note": "Do not skip steps.",
+          "type": "checklist"
+        },
+        {
+          "label": "Fire Skill Wheel",
+          "url": "/fire-skill-wheel.html",
+          "note": "Short reps.",
+          "type": "wheel"
+        },
+        {
+          "label": "Focus Drills — probation attack line",
+          "url": "/focus-drills.html?level=probationary&topic=attack%20line",
+          "note": "Basic deployment.",
+          "type": "drill"
+        },
+        {
+          "label": "Firefighter I — hose advancement",
+          "url": "/skill-support.html?cert=firefighter_1&task=ff1_hose_advancement",
+          "note": "Fuller FF I session.",
+          "type": "skill"
+        },
+        {
+          "label": "First 100 Shifts",
+          "url": "/probationary-firefighter.html",
+          "note": "Track the year.",
+          "type": "guide"
+        }
+      ],
+      "drill": {
+        "objective": "Complete one standard attack-line pull to a door, charge, short advance, and a serviceable reload in the time your officer sets.",
+        "equipment": "Assigned engine, attack line, water if authorized, PPE.",
+        "setup": "Ask permission. Use tank water only if allowed. Safety for charged line.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Walk the bed and name the pull, the nozzle, and who calls for water.",
+            "performancePoints": [
+              "Engine-specific"
+            ],
+            "commonMistakes": [
+              "Academy-generic only"
+            ],
+            "debrief": [
+              "Where are the kinks going to be?"
+            ]
+          },
+          "15": {
+            "title": "15-minute evolution",
+            "instructions": "Pull, charge, advance 25 ft, shut, drain, reload. Officer watches backup work.",
+            "performancePoints": [
+              "Feed the nozzle",
+              "Reload"
+            ],
+            "commonMistakes": [
+              "Leaving a bird’s nest"
+            ],
+            "debrief": [
+              "What would you do differently on stairs?"
+            ]
+          },
+          "30": {
+            "title": "30-minute two-reps + teaching",
+            "instructions": "Two full evolutions, then you teach the next newer person (or talk it to the officer) to prove you know it.",
+            "performancePoints": [
+              "Can teach it",
+              "Consistent"
+            ],
+            "commonMistakes": [
+              "One lucky pull"
+            ],
+            "debrief": [
+              "Are you ready to be the backup at 0200?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "On most engine companies the probationary firefighter on the line is primarily:",
+          "choices": [
+            "The IC",
+            "Backup: hose, kinks, supporting the nozzle",
+            "The pump operator",
+            "The investigator"
+          ],
+          "answer": 1,
+          "why": "Be excellent at the unglamorous job."
+        },
+        {
+          "q": "A reload that will not come off the bed next time:",
+          "choices": [
+            "Is fine",
+            "Is an incomplete drill",
+            "Is the operator’s problem only",
+            "Looks professional"
+          ],
+          "answer": 1,
+          "why": "Reset is the last step."
+        },
+        {
+          "q": "If you are not sure this engine’s pull matches academy:",
+          "choices": [
+            "Improvise proudly",
+            "Ask and then drill THIS bed",
+            "Post a video",
+            "Skip hose until you promote"
+          ],
+          "answer": 1,
+          "why": "Local hose beds win."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Company SOP and your FTO/officer",
+          "url": "/probationary-firefighter.html",
+          "scope": "The task book and company standards outrank a website."
+        }
+      ],
+      "relatedSkills": [
+        "ff1_hose_advancement",
+        "probation_hydrant",
+        "probation_ppe_scba",
+        "probation_reset"
+      ],
+      "searchKeywords": [
+        "hose",
+        "probation",
+        "rookie",
+        "attack line",
+        "backup",
+        "preconnect",
+        "first 100"
+      ]
+    },
+    {
+      "id": "probation_ppe_scba",
+      "certificationId": "probationary_firefighter",
+      "title": "PPE and SCBA Ready Check",
+      "aliases": [
+        "ppe",
+        "scba",
+        "donning",
+        "ready for entry"
+      ],
+      "category": "PPE / SCBA",
+      "careerStage": "probationary",
+      "summary": "Be dressed correctly, on air when required, with a partner check — every time, not only when someone is watching.",
+      "whyItMatters": "Companies notice who is still clipping a coat at the curb.",
+      "learningPoints": [
+        "Your hooks and pockets should be the same every shift.",
+        "Buddy check is not optional because you are late.",
+        "Know how THIS pack turns on, not the academy rental.",
+        "After the run, gear comes back ready — not in a wet pile."
+      ],
+      "beforeYouDo": [
+        "Issued gear and SCBA on the assigned seat."
+      ],
+      "terminology": [
+        {
+          "term": "Seat assignment",
+          "meaning": "Where you ride and which pack/tools are yours this shift."
+        }
+      ],
+      "safetyNotes": [
+        "Cancer reduction: dirty gear is not a locker-room flex.",
+        "Do not disable PASS."
+      ],
+      "seeResources": [
+        {
+          "label": "SCBA Air Management Calculator",
+          "url": "/scba-air-management-calculator.html",
+          "note": "Why the bottle is not ‘20 minutes of work.’",
+          "type": "calculator"
+        }
+      ],
+      "practiceResources": [
+        {
+          "label": "Focus Drills — PPE/SCBA",
+          "url": "/focus-drills.html?level=probationary&topic=ppe",
+          "note": "Ready check.",
+          "type": "drill"
+        },
+        {
+          "label": "SCBA Air Management Calculator",
+          "url": "/scba-air-management-calculator.html",
+          "note": "Air planning.",
+          "type": "calculator"
+        },
+        {
+          "label": "Firefighter I — SCBA",
+          "url": "/skill-support.html?cert=firefighter_1&task=ff1_scba",
+          "note": "Fuller SCBA session.",
+          "type": "skill"
+        },
+        {
+          "label": "First 100 Shifts",
+          "url": "/probationary-firefighter.html",
+          "note": "Daily habits.",
+          "type": "guide"
+        }
+      ],
+      "drill": {
+        "objective": "From the tones, complete a correct PPE/SCBA don and partner check, then reset the gear for the next run.",
+        "equipment": "Issued PPE, SCBA, timer.",
+        "setup": "Do it in the bay. Officer or FTO watches interfaces.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Show where everything lives on your seat and name two interface fails.",
+            "performancePoints": [
+              "Seat knowledge"
+            ],
+            "commonMistakes": [
+              "Borrowing someone’s gloves"
+            ],
+            "debrief": [
+              "Where is the spare hood?"
+            ]
+          },
+          "15": {
+            "title": "15-minute don/reset",
+            "instructions": "Three dons. Third is timed only if the first two were correct. Reset after each.",
+            "performancePoints": [
+              "Correct then fast",
+              "Reset"
+            ],
+            "commonMistakes": [
+              "Speed with an open coat"
+            ],
+            "debrief": [
+              "Would you enter like this?"
+            ]
+          },
+          "30": {
+            "title": "30-minute work + air",
+            "instructions": "Don, short work (stairs), gauge check, simulated low-air exit, full reset including cylinder policy.",
+            "performancePoints": [
+              "Air discipline",
+              "Reset complete"
+            ],
+            "commonMistakes": [
+              "Leaving a used bottle for the next crew"
+            ],
+            "debrief": [
+              "What is our cylinder change rule?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "A partner check is for:",
+          "choices": [
+            "Academy only",
+            "Every IDLH-ready don — including busy nights",
+            "Officers only",
+            "Photos"
+          ],
+          "answer": 1,
+          "why": "You will not see your own open coat."
+        },
+        {
+          "q": "After a working fire, wet contaminated gear should be:",
+          "choices": [
+            "Hung in the bedroom",
+            "Handled per department cancer/decon rules — not worn to the store",
+            "A badge of honor in the kitchen",
+            "Thrown on the apparatus seat forever"
+          ],
+          "answer": 1,
+          "why": "Probation is when habits lock in."
+        },
+        {
+          "q": "Your SCBA should be:",
+          "choices": [
+            "Whoever’s pack is closest",
+            "The one assigned to your seat, checked at the start of shift",
+            "Left off to save air",
+            "Set to disable PASS"
+          ],
+          "answer": 1,
+          "why": "Start-of-shift check is a probationary essential."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "NIOSH Firefighter Center",
+          "url": "https://www.cdc.gov/niosh/firefighters/",
+          "scope": "Firefighter safety, exposure, and occupational health"
+        },
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Department PPE/SCBA SOP",
+          "url": "/probationary-firefighter.html",
+          "scope": "Donning times and decon rules are local."
+        }
+      ],
+      "relatedSkills": [
+        "ff1_ppe",
+        "ff1_scba",
+        "probation_reset",
+        "ff1_communications_mayday"
+      ],
+      "searchKeywords": [
+        "ppe",
+        "scba",
+        "probation",
+        "donning",
+        "partner check",
+        "cancer"
+      ]
+    },
+    {
+      "id": "probation_apparatus",
+      "certificationId": "probationary_firefighter",
+      "title": "Apparatus Familiarity",
+      "aliases": [
+        "apparatus",
+        "where is it",
+        "inventory",
+        "compartment",
+        "truck check"
+      ],
+      "category": "Apparatus",
+      "careerStage": "probationary",
+      "summary": "Find the tool in the dark, explain what it is for, and put it back where the next person expects it.",
+      "whyItMatters": "‘I don’t know this rig’ expires after about two shifts.",
+      "learningPoints": [
+        "Inventory is a scavenger hunt with a standard.",
+        "Tools have a home. Inventing a new home creates missing tools.",
+        "Ask ‘when would we pull this?’ not just ‘what is this called.’",
+        "Know fuel, DEF, pump panel basics at a probationary level even if you are not the driver."
+      ],
+      "beforeYouDo": [
+        "Assigned apparatus and the company’s inventory list if they have one."
+      ],
+      "terminology": [
+        {
+          "term": "Compartment discipline",
+          "meaning": "Everything returns to the labeled place."
+        }
+      ],
+      "safetyNotes": [
+        "Watch overhead doors, exhaust, and moving apparatus in the bay.",
+        "Do not start, pump, or drive unless you are authorized."
+      ],
+      "practiceResources": [
+        {
+          "label": "Focus Drills — apparatus inventory",
+          "url": "/focus-drills.html?level=probationary&topic=apparatus",
+          "note": "Locate and restore.",
+          "type": "drill"
+        },
+        {
+          "label": "First 100 Shifts",
+          "url": "/probationary-firefighter.html",
+          "note": "Apparatus knowledge tracking.",
+          "type": "guide"
+        },
+        {
+          "label": "Driver / Operator inspection",
+          "url": "/skill-support.html?cert=driver_operator_pumper&task=do_pumper_apparatus_inspection",
+          "note": "What engineers are checking.",
+          "type": "skill"
+        }
+      ],
+      "drill": {
+        "objective": "Locate ten assigned tools against a timer, state a use for each, and restore the compartments to service.",
+        "equipment": "Assigned apparatus, inventory list, flashlight.",
+        "setup": "Do not remove equipment from service for a scavenger hunt if the company is the only in-service engine — use a training night.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Name the three tools you still cannot find. Go find them.",
+            "performancePoints": [
+              "Honesty"
+            ],
+            "commonMistakes": [
+              "Fake confidence"
+            ],
+            "debrief": [
+              "What is in the officer’s door?"
+            ]
+          },
+          "15": {
+            "title": "15-minute hunt",
+            "instructions": "Officer names tools; you produce them and put them back.",
+            "performancePoints": [
+              "Restore"
+            ],
+            "commonMistakes": [
+              "Leaving compartment rolls open"
+            ],
+            "debrief": [
+              "What would we need for a car fire?"
+            ]
+          },
+          "30": {
+            "title": "30-minute teach-back",
+            "instructions": "You give the next person a five-tool tour. Officer scores completeness.",
+            "performancePoints": [
+              "Can teach",
+              "Homes correct"
+            ],
+            "commonMistakes": [
+              "Tour of trivia only"
+            ],
+            "debrief": [
+              "Are you faster in the dark?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "If you used a tool, you should:",
+          "choices": [
+            "Leave it where it is convenient",
+            "Clean/inspect per SOP and return it to its home",
+            "Hide it in your gear",
+            "Toss it in the bed"
+          ],
+          "answer": 1,
+          "why": "The next alarm is the test."
+        },
+        {
+          "q": "Not knowing the rig after weeks on it is:",
+          "choices": [
+            "Charming",
+            "A trust problem",
+            "The engineer’s failure only",
+            "Fine on a busy department"
+          ],
+          "answer": 1,
+          "why": "Study the truck on purpose."
+        },
+        {
+          "q": "Opening every compartment at a scene:",
+          "choices": [
+            "Is always required",
+            "Should be based on the assignment — know what you need and where it lives",
+            "Is how you look busy",
+            "Replaces size-up"
+          ],
+          "answer": 1,
+          "why": "Purpose, then compartment."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Company apparatus inventory and check SOP",
+          "url": "/probationary-firefighter.html",
+          "scope": "What must be on the rig is local."
+        }
+      ],
+      "relatedSkills": [
+        "probation_reset",
+        "do_pumper_apparatus_inspection",
+        "probation_hydrant"
+      ],
+      "searchKeywords": [
+        "apparatus",
+        "inventory",
+        "compartment",
+        "tools",
+        "probation",
+        "where is"
+      ],
+      "seeResources": []
+    },
+    {
+      "id": "probation_radio",
+      "certificationId": "probationary_firefighter",
+      "title": "Portable Radio and Mayday Format",
+      "aliases": [
+        "radio",
+        "mayday",
+        "portable",
+        "emergency button"
+      ],
+      "category": "Communications",
+      "careerStage": "probationary",
+      "summary": "Turn it on, get the right channel, talk short, and know the Mayday format before you need it.",
+      "whyItMatters": "A probationary firefighter with a dead radio is invisible. A probationary firefighter who cannot call a Mayday is in extra danger.",
+      "learningPoints": [
+        "Battery, channel, volume, emergency button — every shift.",
+        "Listen before you talk.",
+        "Practice the Mayday on a training channel.",
+        "Know your riding name (Engine 4 nozzle, etc.)."
+      ],
+      "beforeYouDo": [
+        "Assigned portable. Department Mayday card."
+      ],
+      "terminology": [
+        {
+          "term": "Emergency button",
+          "meaning": "Radio emergency feature — know what it actually does on YOUR radios."
+        }
+      ],
+      "safetyNotes": [
+        "Do not test Mayday on a live dispatch channel.",
+        "If the radio is not yours, do not change everyone else’s scan list as a joke."
+      ],
+      "practiceResources": [
+        {
+          "label": "Focus Drills — radio/Mayday",
+          "url": "/focus-drills.html?level=probationary&topic=radio",
+          "note": "Format practice.",
+          "type": "drill"
+        },
+        {
+          "label": "Firefighter I — Mayday",
+          "url": "/skill-support.html?cert=firefighter_1&task=ff1_communications_mayday",
+          "note": "Fuller session.",
+          "type": "skill"
+        },
+        {
+          "label": "First 100 Shifts",
+          "url": "/probationary-firefighter.html",
+          "note": "Comms milestones.",
+          "type": "guide"
+        }
+      ],
+      "drill": {
+        "objective": "Demonstrate radio ready-check, a short routine message, and a correct Mayday on a training talkgroup.",
+        "equipment": "Training radio or a taped-out radio with a timer, Mayday card.",
+        "setup": "Training channel only.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Point to power, channel, mic, emergency button. Recite Mayday format.",
+            "performancePoints": [
+              "Hardware",
+              "Format"
+            ],
+            "commonMistakes": [
+              "Mumbling"
+            ],
+            "debrief": [
+              "What is your unit/assignment name?"
+            ]
+          },
+          "15": {
+            "title": "15-minute reps",
+            "instructions": "Five Maydays from different locations. Officer answers as command.",
+            "performancePoints": [
+              "Location",
+              "Air if you can"
+            ],
+            "commonMistakes": [
+              "Novels"
+            ],
+            "debrief": [
+              "Did command know where you were?"
+            ]
+          },
+          "30": {
+            "title": "30-minute scenario",
+            "instructions": "Search drill ends in lost-exit. Call it, then follow the company self-rescue talk-through.",
+            "performancePoints": [
+              "Timely",
+              "Follow SOP"
+            ],
+            "commonMistakes": [
+              "Waiting for permission to be in trouble"
+            ],
+            "debrief": [
+              "When would you have called sooner?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "A portable radio at the start of the shift should be:",
+          "choices": [
+            "Dead in the charger forever",
+            "On, correct channel, charged, emergency feature understood",
+            "In your POV",
+            "Turned off so it does not bother you"
+          ],
+          "answer": 1,
+          "why": "Ready means ready."
+        },
+        {
+          "q": "Mayday practice belongs on:",
+          "choices": [
+            "Dispatch 1 during dinner",
+            "A training channel per department rules",
+            "TikTok live",
+            "No practice"
+          ],
+          "answer": 1,
+          "why": "Do not create a real emergency."
+        },
+        {
+          "q": "If you are lost, you should:",
+          "choices": [
+            "Stay quiet to avoid looking bad",
+            "Call a Mayday per SOP — early",
+            "Wait for the bottle to empty",
+            "Leave the partner"
+          ],
+          "answer": 1,
+          "why": "Pride is not air management."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "NIOSH Firefighter Center",
+          "url": "https://www.cdc.gov/niosh/firefighters/",
+          "scope": "Firefighter safety, exposure, and occupational health"
+        },
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Department radio / Mayday SOP",
+          "url": "/probationary-firefighter.html",
+          "scope": "Channel plans and emergency-button behavior are local."
+        }
+      ],
+      "relatedSkills": [
+        "ff1_communications_mayday",
+        "probation_ppe_scba",
+        "ff1_search"
+      ],
+      "searchKeywords": [
+        "radio",
+        "mayday",
+        "portable",
+        "probation",
+        "emergency button"
+      ],
+      "seeResources": []
+    },
+    {
+      "id": "probation_hydrant",
+      "certificationId": "probationary_firefighter",
+      "title": "Hydrant Connection",
+      "aliases": [
+        "hydrant",
+        "catch the plug",
+        "supply line",
+        "water supply"
+      ],
+      "category": "Water Supply",
+      "careerStage": "probationary",
+      "summary": "Make the hydrant the way THIS company makes it: adapters, slow open, kinks dressed, a real ‘water available’ report.",
+      "whyItMatters": "If the hydrant person fails, the whole engine fails. Probation often owns this job.",
+      "learningPoints": [
+        "Know the kit: wrench, gate, adapter, steamer cap.",
+        "The operator needs water at the pump, not a heroic pose at the plug.",
+        "Traffic will try to kill you. Be visible.",
+        "If it is dry or broken, say so immediately."
+      ],
+      "beforeYouDo": [
+        "Watch one catch, then do the next with coaching."
+      ],
+      "terminology": [
+        {
+          "term": "Steamer",
+          "meaning": "Large hydrant outlet commonly used for LDH."
+        }
+      ],
+      "safetyNotes": [
+        "Charging LDH. Street traffic. Do not straddle hose."
+      ],
+      "seeResources": [
+        {
+          "label": "Hydrant Operations (engineer)",
+          "url": "/skill-support.html?cert=driver_operator_pumper&task=do_pumper_hydrant_ops",
+          "note": "What the operator is watching while you work.",
+          "type": "skill"
+        }
+      ],
+      "practiceResources": [
+        {
+          "label": "Focus Drills — hydrant",
+          "url": "/focus-drills.html?level=probationary&topic=hydrant",
+          "note": "Connection reps.",
+          "type": "drill"
+        },
+        {
+          "label": "Firefighter I — water supply",
+          "url": "/skill-support.html?cert=firefighter_1&task=ff1_water_supply",
+          "note": "FF I support session.",
+          "type": "skill"
+        },
+        {
+          "label": "Hydrant Flow Calculator",
+          "url": "/hydrant-flow-calculator.html",
+          "note": "Why residual will matter later.",
+          "type": "calculator"
+        }
+      ],
+      "drill": {
+        "objective": "Complete a department hydrant catch and a meaningful water-available report, then dress the supply line.",
+        "equipment": "Hydrant kit, supply hose, engine or prop, vest, PPE.",
+        "setup": "Training hydrant if needed. Agree on radio words with the operator.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Lay out the kit in order. Name the slow-open rule.",
+            "performancePoints": [
+              "Order"
+            ],
+            "commonMistakes": [
+              "Yanking the valve"
+            ],
+            "debrief": [
+              "What if the cap is stuck?"
+            ]
+          },
+          "15": {
+            "title": "15-minute catch",
+            "instructions": "Make it, open on command, kink check, report.",
+            "performancePoints": [
+              "Connection",
+              "Report"
+            ],
+            "commonMistakes": [
+              "Standing over the hose"
+            ],
+            "debrief": [
+              "Did the panel actually have water?"
+            ]
+          },
+          "30": {
+            "title": "30-minute engine support",
+            "instructions": "Hydrant plus first line pull, then a full reset of both.",
+            "performancePoints": [
+              "Two jobs",
+              "Reset"
+            ],
+            "commonMistakes": [
+              "Forgetting the hydrant bag"
+            ],
+            "debrief": [
+              "Can you do this in the rain at night?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "Your report at the hydrant should mean:",
+          "choices": [
+            "You touched the hydrant",
+            "The operator has a usable supply at the pump — or you are telling them they do not",
+            "The cap is off",
+            "You are tired"
+          ],
+          "answer": 1,
+          "why": "Shared meaning with the engineer."
+        },
+        {
+          "q": "A dry hydrant is:",
+          "choices": [
+            "A secret",
+            "An immediate radio problem for the operator/officer",
+            "Fine",
+            "Always the next hydrant’s issue later"
+          ],
+          "answer": 1,
+          "why": "Early bad news."
+        },
+        {
+          "q": "LDH kinks:",
+          "choices": [
+            "Do not matter",
+            "Can starve the pump",
+            "Increase flow",
+            "Are decorative"
+          ],
+          "answer": 1,
+          "why": "Dress the line."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Company hydrant SOP",
+          "url": "/probationary-firefighter.html",
+          "scope": "Outlets, gates, and wrap vs forward lay are local."
+        }
+      ],
+      "relatedSkills": [
+        "do_pumper_hydrant_ops",
+        "ff1_water_supply",
+        "probation_hose_advancement",
+        "probation_reset"
+      ],
+      "searchKeywords": [
+        "hydrant",
+        "probation",
+        "LDH",
+        "supply",
+        "catch",
+        "plug"
+      ]
+    },
+    {
+      "id": "probation_ladders",
+      "certificationId": "probationary_firefighter",
+      "title": "Ground Ladder Basics",
+      "aliases": [
+        "ladder",
+        "raise",
+        "ground ladder"
+      ],
+      "category": "Ladders",
+      "careerStage": "probationary",
+      "summary": "Carry, heel, raise, and lock a ladder for a simple objective without hitting wires.",
+      "whyItMatters": "You will be the heel person. If you cannot heel, the tip person is in trouble.",
+      "learningPoints": [
+        "Look up for wires every time.",
+        "Know which ladders are on THIS truck.",
+        "Locks and footing before anyone climbs.",
+        "Throwing ladders as a personality is how people get hurt."
+      ],
+      "beforeYouDo": [
+        "Company raise method. Helmets on."
+      ],
+      "terminology": [
+        {
+          "term": "Heel",
+          "meaning": "Footing the base so the ladder can be raised and climbed."
+        }
+      ],
+      "safetyNotes": [
+        "Overhead power. Unstable footing. Do not over-climb."
+      ],
+      "seeResources": [
+        {
+          "label": "Ground Ladder Angle Calculator",
+          "url": "/ground-ladder-angle-calculator.html",
+          "note": "Why the angle matters.",
+          "type": "calculator"
+        }
+      ],
+      "practiceResources": [
+        {
+          "label": "Ground Ladder Angle Calculator",
+          "url": "/ground-ladder-angle-calculator.html",
+          "note": "Placement check.",
+          "type": "calculator"
+        },
+        {
+          "label": "Focus Drills — ladders",
+          "url": "/focus-drills.html?level=probationary&topic=ladder",
+          "note": "Carry and place.",
+          "type": "drill"
+        },
+        {
+          "label": "Firefighter I — ladders",
+          "url": "/skill-support.html?cert=firefighter_1&task=ff1_ground_ladders",
+          "note": "Fuller session.",
+          "type": "skill"
+        }
+      ],
+      "drill": {
+        "objective": "Select, carry, raise, lock, climb to a mark, and recover one department ground ladder.",
+        "equipment": "Ground ladder, PPE, spotter, cones.",
+        "setup": "Clear overhead hazards. Officer names the objective.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Match three jobs to three sticks on the rig.",
+            "performancePoints": [
+              "Selection"
+            ],
+            "commonMistakes": [
+              "Always the 24"
+            ],
+            "debrief": [
+              "Wires?"
+            ]
+          },
+          "15": {
+            "title": "15-minute raise",
+            "instructions": "One clean raise and climb. Heel work scored.",
+            "performancePoints": [
+              "Locks",
+              "Heel"
+            ],
+            "commonMistakes": [
+              "Fly backwards"
+            ],
+            "debrief": [
+              "Could a victim use this?"
+            ]
+          },
+          "30": {
+            "title": "30-minute two objectives",
+            "instructions": "Window and a second-story egress. Recover both.",
+            "performancePoints": [
+              "Two placements",
+              "Safe recover"
+            ],
+            "commonMistakes": [
+              "Leaving a ladder as a trap"
+            ],
+            "debrief": [
+              "What would you ask the officer next time?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "Before the ladder goes up, look for:",
+          "choices": [
+            "The camera",
+            "Wires and obstructions",
+            "The hydrant color",
+            "Lunch"
+          ],
+          "answer": 1,
+          "why": "Look up."
+        },
+        {
+          "q": "Your usual probationary job on a raise is often:",
+          "choices": [
+            "IC",
+            "Heel / footing and locking as trained",
+            "The saw",
+            "The pump"
+          ],
+          "answer": 1,
+          "why": "Be the best heel person they have."
+        },
+        {
+          "q": "Climbing before it is locked/footed:",
+          "choices": [
+            "Saves time",
+            "Is unacceptable",
+            "Is fine on grass",
+            "Is an officer-only rule"
+          ],
+          "answer": 1,
+          "why": "Unsecured ladders move."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Department ladder SOP",
+          "url": "/probationary-firefighter.html",
+          "scope": "Raise methods are local."
+        }
+      ],
+      "relatedSkills": [
+        "ff1_ground_ladders",
+        "probation_apparatus",
+        "ff1_search"
+      ],
+      "searchKeywords": [
+        "ladder",
+        "heel",
+        "raise",
+        "probation",
+        "wires"
+      ]
+    },
+    {
+      "id": "probation_reset",
+      "certificationId": "probationary_firefighter",
+      "title": "Post-Call Reset",
+      "aliases": [
+        "reset",
+        "make up",
+        "back in service",
+        "ready the rig"
+      ],
+      "category": "Readiness",
+      "careerStage": "probationary",
+      "summary": "After the run: people, air, hose, tools, and a ready apparatus — before anyone sits down for a hero sandwich.",
+      "whyItMatters": "The next tones will not wait for your recap. Probationary firefighters who reset without being asked get trusted.",
+      "learningPoints": [
+        "SCBA/cylinders first if you used air.",
+        "Hose and tools back to a deployable state.",
+        "Fuel, water tank, and warning lights as the engineer directs.",
+        "If something broke or went missing, say it before the next dispatch.",
+        "Rehab and decon still count as part of reset."
+      ],
+      "beforeYouDo": [
+        "Company make-up SOP.",
+        "Who signs the rig back in service."
+      ],
+      "terminology": [
+        {
+          "term": "Make-up / reset",
+          "meaning": "Returning crew and apparatus to response-ready."
+        }
+      ],
+      "safetyNotes": [
+        "Do not rush into traffic to pick up hose without a spotter.",
+        "Contaminated PPE follows decon rules even when you are tired."
+      ],
+      "practiceResources": [
+        {
+          "label": "Focus Drills — post-call reset",
+          "url": "/focus-drills.html?level=probationary&topic=reset",
+          "note": "Readiness drill.",
+          "type": "drill"
+        },
+        {
+          "label": "First 100 Shifts",
+          "url": "/probationary-firefighter.html",
+          "note": "After-call habits.",
+          "type": "guide"
+        },
+        {
+          "label": "Firefighter Wellness",
+          "url": "/firefighter-wellness.html",
+          "note": "You are part of the reset.",
+          "type": "guide"
+        }
+      ],
+      "drill": {
+        "objective": "After a mock run, complete a reset checklist: air, hose, tools, personnel, and a defect report.",
+        "equipment": "Apparatus, used (training) hose, spare cylinder as policy allows, checklist.",
+        "setup": "Seed a missing tool and an empty cylinder.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "List the order your company wants: people/air vs hose vs water.",
+            "performancePoints": [
+              "Order"
+            ],
+            "commonMistakes": [
+              "Sitting first"
+            ],
+            "debrief": [
+              "Who tells dispatch we are available?"
+            ]
+          },
+          "15": {
+            "title": "15-minute reset",
+            "instructions": "Mock call then reset against the clock without skipping defects.",
+            "performancePoints": [
+              "Defect reported",
+              "Deployable hose"
+            ],
+            "commonMistakes": [
+              "Hiding the missing halligan"
+            ],
+            "debrief": [
+              "Are we actually in service?"
+            ]
+          },
+          "30": {
+            "title": "30-minute dirty-fire reset",
+            "instructions": "Include a decon/PPE step and a rehab drink. Do not skip cancer/CO habits because it was ‘just training.’",
+            "performancePoints": [
+              "Decon",
+              "Rehab"
+            ],
+            "commonMistakes": [
+              "Dirty gear in the cab"
+            ],
+            "debrief": [
+              "What would we do at 0330?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "The best time to mention a missing tool is:",
+          "choices": [
+            "Next month",
+            "Before you mark up available",
+            "Never",
+            "On social media"
+          ],
+          "answer": 1,
+          "why": "The next fire needs that tool."
+        },
+        {
+          "q": "Used SCBA cylinders:",
+          "choices": [
+            "Can wait until tomorrow",
+            "Follow department change/fill rules as part of reset",
+            "Are a souvenir",
+            "Stay on your back in the kitchen"
+          ],
+          "answer": 1,
+          "why": "Air is a tool."
+        },
+        {
+          "q": "Reset includes:",
+          "choices": [
+            "Only the pump panel",
+            "Crew, air, hose, tools, apparatus, and problems found",
+            "Only what the officer sees",
+            "A nap"
+          ],
+          "answer": 1,
+          "why": "Whole company ready."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "NIOSH Firefighter Center",
+          "url": "https://www.cdc.gov/niosh/firefighters/",
+          "scope": "Firefighter safety, exposure, and occupational health"
+        },
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Company make-up / decon SOP",
+          "url": "/probationary-firefighter.html",
+          "scope": "In-service criteria are local."
+        }
+      ],
+      "relatedSkills": [
+        "probation_apparatus",
+        "probation_ppe_scba",
+        "probation_hose_advancement",
+        "do_pumper_apparatus_inspection"
+      ],
+      "searchKeywords": [
+        "reset",
+        "make up",
+        "in service",
+        "probation",
+        "after the fire",
+        "decon"
+      ],
+      "seeResources": []
+    },
+    {
+      "id": "probation_company_life",
+      "certificationId": "probationary_firefighter",
+      "title": "Company Life and Feedback",
+      "aliases": [
+        "probation",
+        "fto",
+        "how to not get fired",
+        "company expectations",
+        "ask for feedback"
+      ],
+      "category": "Probation",
+      "careerStage": "probationary",
+      "summary": "Be on time, ask for one correction, take it without drama, and keep a private learning log — no patient identifiers.",
+      "whyItMatters": "Skill without coachability still fails probation. Coachability without skill fails the fire.",
+      "learningPoints": [
+        "Show up ready: sleep, gear, attitude.",
+        "Ask ‘what should I do better on the next one?’ after ordinary calls.",
+        "Write it down. You will forget.",
+        "The officer is not your enemy. The street is.",
+        "Do not put HIPPA/PHI or crew gossip in FireOpsSim."
+      ],
+      "beforeYouDo": [
+        "A notebook or My Career log with no names of patients/victims."
+      ],
+      "terminology": [
+        {
+          "term": "FTO / training officer / assigned mentor",
+          "meaning": "The person whose standard you are actually being measured against."
+        }
+      ],
+      "safetyNotes": [
+        "Harassment and unsafe orders have reporting paths — coachability does not mean accepting abuse or illegal acts.",
+        "Fatigue is a safety issue. Say when you are not safe to work."
+      ],
+      "practiceResources": [
+        {
+          "label": "First 100 Shifts",
+          "url": "/probationary-firefighter.html",
+          "note": "Structured first-year tracker.",
+          "type": "guide"
+        },
+        {
+          "label": "My Career",
+          "url": "/my-fire-career.html",
+          "note": "Private learning log — no PHI.",
+          "type": "record"
+        },
+        {
+          "label": "Study Center — probation",
+          "url": "/study-center.html?track=probation",
+          "note": "Study track.",
+          "type": "guide"
+        },
+        {
+          "label": "Career Stages",
+          "url": "/career-stages.html",
+          "note": "What this stage is for.",
+          "type": "guide"
+        }
+      ],
+      "drill": {
+        "objective": "After a drill or shift, ask for one keep and one improve, write it in a de-identified log, and pick tomorrow’s 15-minute skill.",
+        "equipment": "Notebook or My Career, a willing officer/FTO, a 15-minute skill already on FireOpsSim.",
+        "setup": "No real patient information. Ever.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Write the question you will actually ask: keep + improve.",
+            "performancePoints": [
+              "Question ready"
+            ],
+            "commonMistakes": [
+              "‘How did I do?’ only"
+            ],
+            "debrief": [
+              "When will you ask — not in front of a customer?"
+            ]
+          },
+          "15": {
+            "title": "15-minute loop",
+            "instructions": "Do a skill, ask, log, schedule the next rep.",
+            "performancePoints": [
+              "Closed loop"
+            ],
+            "commonMistakes": [
+              "Defensiveness"
+            ],
+            "debrief": [
+              "What is tomorrow’s skill?"
+            ]
+          },
+          "30": {
+            "title": "30-minute week plan",
+            "instructions": "Pick three probation skills for the next three shifts and put them on a card. Share with the officer.",
+            "performancePoints": [
+              "Plan",
+              "Officer aligned"
+            ],
+            "commonMistakes": [
+              "Secret curriculum"
+            ],
+            "debrief": [
+              "Does this match the task book they actually use?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "The most useful question after a routine call is:",
+          "choices": [
+            "Did I look cool?",
+            "What should I repeat and what should I change next time?",
+            "When do I promote?",
+            "Can I leave early?"
+          ],
+          "answer": 1,
+          "why": "Ordinary calls are where you get calibrated."
+        },
+        {
+          "q": "Patient names and addresses belong in:",
+          "choices": [
+            "My Career notes",
+            "Official department/EMS records only — never in FireOpsSim",
+            "Group texts",
+            "Your public Instagram"
+          ],
+          "answer": 1,
+          "why": "No PHI in this product."
+        },
+        {
+          "q": "If an order is unsafe or illegal:",
+          "choices": [
+            "Coachability means obey anyway",
+            "Use department reporting/safety paths — you are not required to get killed to pass probation",
+            "Post it",
+            "Ignore all orders forever"
+          ],
+          "answer": 1,
+          "why": "There is a line. Know it."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "NIOSH Firefighter Center",
+          "url": "https://www.cdc.gov/niosh/firefighters/",
+          "scope": "Firefighter safety, exposure, and occupational health"
+        },
+        {
+          "label": "Department probation / FTO task book",
+          "url": "/probationary-firefighter.html",
+          "scope": "Official sign-off lives in the department or Roadmap Taskbook — not here."
+        }
+      ],
+      "relatedSkills": [
+        "probation_hose_advancement",
+        "probation_reset",
+        "fo1_coaching",
+        "ff1_hose_advancement"
+      ],
+      "searchKeywords": [
+        "probation",
+        "fto",
+        "feedback",
+        "first 100 shifts",
+        "rookie",
+        "company life"
+      ],
+      "seeResources": []
+    }
+  ]
+}

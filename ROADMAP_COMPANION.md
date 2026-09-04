@@ -19,6 +19,12 @@ Certification hub:
 Task-specific hub:
 `https://fireopssim.com/taskbook-resources.html?cert=<roadmap_certification_id>&task=<roadmap_task_id>`
 
+Skill Support session (preferred training experience):
+`https://fireopssim.com/skill-support.html?cert=<roadmap_certification_id>&task=<roadmap_task_id>&source=roadmap`
+
+The Taskbook hub and `/roadmap-support.html` hand off to Skill Support when a certification or task is present so the firefighter lands on a session instead of a directory.
+
+
 Optional context:
 `&state=CO&source=roadmap`
 

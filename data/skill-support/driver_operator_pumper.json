@@ -1,0 +1,2703 @@
+{
+  "id": "driver_operator_pumper",
+  "title": "Driver / Operator — Pumper",
+  "shortTitle": "D/O Pumper",
+  "careerStage": "driver",
+  "category": "Driver / Operator",
+  "aliases": [
+    "driver operator",
+    "driver operator pumper",
+    "do pumper",
+    "dop",
+    "engineer",
+    "pump operator",
+    "pumper operator",
+    "driver operator 1",
+    "apparatus operator",
+    "chauffeur"
+  ],
+  "summary": "Safe apparatus operation, placement, water supply, pump systems, hydraulics, troubleshooting, and fireground communication as one integrated role.",
+  "skills": [
+    {
+      "id": "do_pumper_hydrant_ops",
+      "certificationId": "driver_operator_pumper",
+      "title": "Hydrant Operations",
+      "aliases": [
+        "hydrant",
+        "hydrant supply",
+        "hydrant connection",
+        "pressurized water supply",
+        "hydrant to engine"
+      ],
+      "category": "Water Supply",
+      "careerStage": "driver",
+      "summary": "Connect a reliable hydrant supply, manage intake pressure, watch residual, and communicate before changing demand.",
+      "whyItMatters": "Most urban structure fires succeed or fail on whether the first engine actually has the water the fire needs. Hydrant work is not just hooking a hose — it is reading the system while the incident changes.",
+      "learningPoints": [
+        "A hydrant is a connection to a water system with limits. Static pressure is not available flow.",
+        "Residual pressure is the best early warning that the system is being asked for more than it can comfortably give.",
+        "Intake pressure, gated intake control, and valve speed protect the pump, the water main, and the people on the lines.",
+        "Communicate before opening additional lines, starting a master stream, or making a large change in supply.",
+        "Department SOP, hydrant wrench/adapter package, and local water-system quirks beat any generic sequence."
+      ],
+      "beforeYouDo": [
+        "Know which hydrant is the assigned source and whether it is on the same main as nearby hydrants.",
+        "Confirm the apparatus intake, gated valve, LDH/supply hose, and steamer/outlet adapters for this engine.",
+        "Agree who works the hydrant, who watches the panel, and how you will say “hold,” “open,” and “shut down.”"
+      ],
+      "terminology": [
+        {
+          "term": "Static pressure",
+          "meaning": "Hydrant/system pressure with no fire-department flow yet."
+        },
+        {
+          "term": "Residual pressure",
+          "meaning": "Pressure remaining while water is flowing. A falling residual means demand is catching up to supply."
+        },
+        {
+          "term": "Intake / compound gauge",
+          "meaning": "What the pump is seeing on the supply side. Watch it as lines open."
+        },
+        {
+          "term": "Steamer outlet",
+          "meaning": "The large hydrant outlet usually used for LDH supply."
+        },
+        {
+          "term": "Gate the intake",
+          "meaning": "Control water into the pump instead of slamming the system open or shut."
+        }
+      ],
+      "safetyNotes": [
+        "Never straddle hose that may charge. Charge and valve movement can injure.",
+        "Open and close hydrant valves slowly to limit water-hammer and main damage.",
+        "Do not assume a charged supply line is a completed water supply. Confirm intake and residual.",
+        "If residual is falling hard, do not add large additional demand until supply is improved or attack is adjusted.",
+        "Follow department traffic, hydrant-location, and apparatus-placement rules. The hydrant firefighter is in the street."
+      ],
+      "seeResources": [
+        {
+          "label": "Hydrant Flow Calculator",
+          "url": "/hydrant-flow-calculator.html",
+          "note": "Practice static/residual/available-flow relationships.",
+          "type": "calculator"
+        },
+        {
+          "label": "Pump Training Scenarios",
+          "url": "/fire-pump-training-scenarios.html",
+          "note": "Water-supply and demand-change problems.",
+          "type": "scenario"
+        }
+      ],
+      "practiceResources": [
+        {
+          "label": "Hydrant Flow Calculator",
+          "url": "/hydrant-flow-calculator.html",
+          "note": "Estimate available flow from test data.",
+          "type": "calculator"
+        },
+        {
+          "label": "Pump Pressure Calculator",
+          "url": "/fire-pump-calculator.html",
+          "note": "Connect supply decisions to discharge pressure.",
+          "type": "calculator"
+        },
+        {
+          "label": "Fire Pump Training Scenarios",
+          "url": "/fire-pump-training-scenarios.html",
+          "note": "Changing fire-flow demand.",
+          "type": "scenario"
+        },
+        {
+          "label": "Driver / Operator Practice",
+          "url": "/driver-operator-practice.html",
+          "note": "Engineer study hub.",
+          "type": "guide"
+        },
+        {
+          "label": "Visual Scenario Player",
+          "url": "/scenario-player.html",
+          "note": "Pump-panel decision practice.",
+          "type": "simulator"
+        }
+      ],
+      "drill": {
+        "objective": "Establish hydrant-to-engine water, monitor residual/intake, and communicate before changing demand.",
+        "equipment": "Engine, hydrant kit, supply hose/LDH, hydrant wrench, gated intake as equipped, radios.",
+        "setup": "Use an approved hydrant or a training hydrant/sim. Brief roles: hydrant firefighter, pump operator, officer. State the objective and the stop signal.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Walk the hydrant connection and communication sequence without charging if water is not available. Name who talks, what is confirmed, and what “open it” actually means for your department.",
+            "performancePoints": [
+              "Correct hose/outlet choice",
+              "Slow valve operation named",
+              "Intake confirmation named",
+              "Radio words agreed"
+            ],
+            "commonMistakes": [
+              "Skipping the gated intake",
+              "No confirmation that water is at the pump",
+              "Vague ‘you got it’ instead of a clear report"
+            ],
+            "debrief": [
+              "What is the first thing the pump operator should see after the hydrant is opened?",
+              "When would we not open a second large discharge?"
+            ]
+          },
+          "15": {
+            "title": "15-minute supply evolution",
+            "instructions": "Deploy the supply line, make the hydrant, establish water to the engine, and place one attack line in service. Operator reports static, residual, and intake. Then add or shut a second line and report what changed.",
+            "performancePoints": [
+              "Hydrant made per SOP",
+              "Slow valve operation",
+              "Intake established",
+              "Residual reported",
+              "Demand change communicated"
+            ],
+            "commonMistakes": [
+              "Opening the hydrant wide immediately",
+              "Kinks in LDH ignored",
+              "No one watching residual when the second line opens"
+            ],
+            "debrief": [
+              "What did residual do when the second line opened?",
+              "What would you do if residual dropped below your department’s comfort number?"
+            ]
+          },
+          "30": {
+            "title": "30-minute company scenario",
+            "instructions": "Run an engine-company scenario with changing fire flow: initial attack line, second line, then a high-flow request (deck gun or two more lines — tabletop the high flow if the site cannot support it). Operator must keep a water-supply picture and say when the system is approaching its limit. Include a communication failure and a kink/intake problem to troubleshoot.",
+            "performancePoints": [
+              "Placement supports supply and later units",
+              "Supply established before high demand",
+              "Clear residual/intake reports",
+              "Crew told before major water changes",
+              "Problem identified without guessing"
+            ],
+            "commonMistakes": [
+              "Treating hydrant connection as ‘done’ and walking away",
+              "Adding a master stream on a weak residual",
+              "No plan if this hydrant is a dog"
+            ],
+            "debrief": [
+              "When should we take a second hydrant or start a relay?",
+              "Who owns the decision to refuse additional flow?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "A residual pressure that is falling while you add lines most likely means:",
+          "choices": [
+            "The pump is overheating",
+            "The water system is approaching the flow it can give at that hydrant",
+            "The attack line nozzle is too small",
+            "The hydrant is a dry barrel and cannot be used"
+          ],
+          "answer": 1,
+          "why": "Residual is the live picture of remaining system capacity. Falling residual while demand rises is the warning to stop adding large flow or improve supply."
+        },
+        {
+          "q": "Before making a major change in water supply or adding a large discharge, the operator should:",
+          "choices": [
+            "Wait until someone complains about low pressure",
+            "Communicate the change and check intake/residual",
+            "Open every gated intake at once",
+            "Increase RPM first, then look at gauges"
+          ],
+          "answer": 1,
+          "why": "People on the line, later-arriving apparatus, and the water system all need a heads-up. Look at supply gauges, then act."
+        },
+        {
+          "q": "Which sign suggests the water system is approaching available flow?",
+          "choices": [
+            "Rising residual with stable RPM",
+            "Intake climbing with no discharge open",
+            "Rapidly falling residual, hunting intake, or cavitation signs as flow increases",
+            "A warm pump panel in cold weather"
+          ],
+          "answer": 2,
+          "why": "The system tells you through residual, intake, and pump noise/feel. Do not wait for a line to go flat."
+        },
+        {
+          "q": "Hydrant valves should generally be operated:",
+          "choices": [
+            "As fast as possible to get water",
+            "Slowly, to limit water hammer and control intake",
+            "Only by the officer",
+            "Only after the fire is knocked down"
+          ],
+          "answer": 1,
+          "why": "Controlled valve movement protects mains, hydrants, hose, and the pump."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Pro Board",
+          "url": "https://theproboard.org/accredited-agencies/",
+          "scope": "Accredited fire certification agencies"
+        },
+        {
+          "label": "IFSAC",
+          "url": "https://ifsac.org/",
+          "scope": "Accredited certifying entities and programs"
+        },
+        {
+          "label": "Department SOP/SOG and apparatus manual",
+          "url": "/driver-operator-practice.html",
+          "scope": "Your hydrant sequence, valve package, and pump panel are apparatus- and department-specific."
+        },
+        {
+          "label": "Local water authority / hydrant records",
+          "url": "/hydrant-inspection-log.html",
+          "scope": "Flow tests, main sizes, and out-of-service hydrants are local data, not FireOpsSim estimates."
+        }
+      ],
+      "relatedSkills": [
+        "do_pumper_engage_pump",
+        "do_pumper_friction_loss",
+        "do_pumper_multiple_attack_lines",
+        "do_pumper_relay_pumping",
+        "do_pumper_standpipe_fdc",
+        "do_pumper_apparatus_placement",
+        "do_pumper_troubleshooting"
+      ],
+      "searchKeywords": [
+        "hydrant",
+        "residual",
+        "intake",
+        "water supply",
+        "LDH",
+        "steamer",
+        "available flow",
+        "engineer"
+      ]
+    },
+    {
+      "id": "do_pumper_pump_theory",
+      "certificationId": "driver_operator_pumper",
+      "title": "Pump Theory",
+      "aliases": [
+        "pump theory",
+        "centrifugal pump",
+        "net pump pressure",
+        "cavitation",
+        "priming"
+      ],
+      "category": "Hydraulics",
+      "careerStage": "driver",
+      "summary": "Understand how a centrifugal fire pump makes pressure, why it needs water at the eye of the impeller, and what gauges are telling you.",
+      "whyItMatters": "Formulas fail in the street if the operator does not know what the machine is doing. Pump theory is how you recognize cavitation, loss of prime, and useless RPM.",
+      "learningPoints": [
+        "A centrifugal pump moves water with an impeller. It does not ‘suck’ well if air is in the impeller eye.",
+        "Net pump pressure is about the work the pump is doing between intake and discharge — not a single magic number on one gauge.",
+        "Cavitation is water turning to vapor at the impeller because intake conditions cannot feed the pump. It damages the pump and starves lines.",
+        "Priming is for drafting/air at the impeller. A pressurized hydrant supply is a different problem than a dry pump.",
+        "Manufacturer and department pump-mode procedures (transfer valve, pressure/volume, governor/relief) outrank generic diagrams."
+      ],
+      "beforeYouDo": [
+        "Identify transfer valve, primer, intake, tank-to-pump, and governor/relief on THIS apparatus.",
+        "Know whether you are on tank, hydrant, or draft before changing RPM."
+      ],
+      "terminology": [
+        {
+          "term": "Impeller",
+          "meaning": "Rotating component that adds energy to the water."
+        },
+        {
+          "term": "Prime",
+          "meaning": "Removing air so the impeller is water-filled and can pump."
+        },
+        {
+          "term": "Cavitation",
+          "meaning": "Vapor bubbles forming and collapsing at the impeller from inadequate intake conditions."
+        },
+        {
+          "term": "Pressure vs volume mode",
+          "meaning": "How some two-stage pumps are set for higher pressure or higher volume."
+        }
+      ],
+      "safetyNotes": [
+        "Do not run a dry pump. Follow apparatus limits for tank water and primer use.",
+        "Unusual noise, vibration, or a discharge gauge that will not rise with RPM is a stop-and-diagnose cue."
+      ],
+      "seeResources": [
+        {
+          "label": "Driver / Operator Practice",
+          "url": "/driver-operator-practice.html",
+          "note": "Engineer concepts and scenarios.",
+          "type": "guide"
+        }
+      ],
+      "practiceResources": [
+        {
+          "label": "Pumper Flashcards",
+          "url": "/driver-operator-pumper-flashcards.html",
+          "note": "Active recall on pump and hydraulics terms.",
+          "type": "flashcards"
+        },
+        {
+          "label": "Pump Pressure Calculator",
+          "url": "/fire-pump-calculator.html",
+          "note": "Connect theory to PDP practice.",
+          "type": "calculator"
+        },
+        {
+          "label": "Fire Pump Training Scenarios",
+          "url": "/fire-pump-training-scenarios.html",
+          "note": "Apply theory to problems.",
+          "type": "scenario"
+        }
+      ],
+      "drill": {
+        "objective": "Explain pump mode, priming, and cavitation signs on the assigned apparatus, then diagnose two common failures.",
+        "equipment": "Assigned pumper (or pump panel trainer), department pump chart, radios.",
+        "setup": "Walk around the panel. No live pumping required for the 5-minute version. Use tank water only if authorized.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Point to primer, tank-to-pump, intakes, transfer valve, and governor/relief. State when each is used.",
+            "performancePoints": [
+              "Correct identification",
+              "Correct ‘when’ for primer vs hydrant"
+            ],
+            "commonMistakes": [
+              "Calling every problem ‘cavitation’",
+              "Priming on a hydrant supply by habit"
+            ],
+            "debrief": [
+              "When do we prime? When do we not?"
+            ]
+          },
+          "15": {
+            "title": "15-minute panel talk-through",
+            "instructions": "Give three conditions: tank water to a preconnect, hydrant supply, then a noisy pump with falling intake. Operator states actions in order.",
+            "performancePoints": [
+              "Correct first action",
+              "Gauge interpretation",
+              "When to stop adding RPM"
+            ],
+            "commonMistakes": [
+              "Revving the engine to ‘make pressure’ with no water",
+              "Ignoring intake"
+            ],
+            "debrief": [
+              "What would you tell the officer?"
+            ]
+          },
+          "30": {
+            "title": "30-minute diagnosis drill",
+            "instructions": "Run or tabletop: loss of prime, gated intake left closed, and a weak hydrant. Operator must change one variable at a time.",
+            "performancePoints": [
+              "Systematic troubleshooting",
+              "Communication",
+              "No dry-pump operation"
+            ],
+            "commonMistakes": [
+              "Changing three things at once",
+              "Leaving the crew uninformed"
+            ],
+            "debrief": [
+              "Which clue separated cavitation from a closed valve?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "A centrifugal fire pump generally needs which condition at the impeller to work?",
+          "choices": [
+            "Air in the impeller eye",
+            "Water filling the impeller",
+            "The relief valve fully open",
+            "The parking brake released"
+          ],
+          "answer": 1,
+          "why": "No water at the impeller means no reliable pumping. That is why prime and intake matter."
+        },
+        {
+          "q": "Cavitation is best understood as:",
+          "choices": [
+            "Too much foam in the tank",
+            "Vapor forming at the impeller because the pump is being asked for more than intake can supply",
+            "A hydrant that is a wet barrel",
+            "Normal governor hunting"
+          ],
+          "answer": 1,
+          "why": "Fix supply/intake or reduce demand. More RPM often makes cavitation worse."
+        },
+        {
+          "q": "Priming is typically associated with:",
+          "choices": [
+            "A charged hydrant supply that already fills the pump",
+            "Removing air so a dry or drafting pump can move water",
+            "Setting the aerial outriggers",
+            "Opening the tank fill"
+          ],
+          "answer": 1,
+          "why": "Do not treat priming as a generic ‘start the pump’ step on a pressurized supply unless your apparatus procedure says so."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Apparatus manufacturer pump manual",
+          "url": "/driver-operator-practice.html",
+          "scope": "Pump mode, primer, and cavitation limits are apparatus-specific."
+        }
+      ],
+      "relatedSkills": [
+        "do_pumper_engage_pump",
+        "do_pumper_drafting",
+        "do_pumper_troubleshooting",
+        "do_pumper_friction_loss"
+      ],
+      "searchKeywords": [
+        "pump theory",
+        "impeller",
+        "cavitation",
+        "prime",
+        "net pump pressure",
+        "two stage"
+      ]
+    },
+    {
+      "id": "do_pumper_apparatus_inspection",
+      "certificationId": "driver_operator_pumper",
+      "title": "Daily Apparatus Inspection",
+      "aliases": [
+        "apparatus check",
+        "daily check",
+        "truck check",
+        "morning checks",
+        "pump panel check"
+      ],
+      "category": "Readiness",
+      "careerStage": "driver",
+      "summary": "Find the problem in the bay, not on the fireground. Fluids, warning systems, pump, tires, equipment, and documentation.",
+      "whyItMatters": "Most ‘it died on the call’ stories started as a skipped check. Inspection is an operator skill, not busywork.",
+      "learningPoints": [
+        "Use the department sheet as the legal/operational checklist.",
+        "Look, listen, feel, and function-test what policy allows.",
+        "Out-of-service criteria must be known before you need them.",
+        "Document defects. A verbal ‘it’s fine’ is not a record."
+      ],
+      "beforeYouDo": [
+        "Get the department inspection form for this apparatus.",
+        "Know who you notify for a defect and what takes the rig out of service."
+      ],
+      "terminology": [
+        {
+          "term": "OOS",
+          "meaning": "Out of service — the apparatus or a system cannot be safely used."
+        },
+        {
+          "term": "Deficiency vs OOS",
+          "meaning": "Some defects are noted and monitored; others park the rig. Policy decides."
+        }
+      ],
+      "safetyNotes": [
+        "Chock, park brake, and exhaust/CO awareness in the bay.",
+        "Do not disable warning systems to ‘pass’ a check.",
+        "High-voltage hybrid/electric apparatus follow manufacturer rules."
+      ],
+      "practiceResources": [
+        {
+          "label": "Driver / Operator Practice",
+          "url": "/driver-operator-practice.html",
+          "note": "Organize inspection learning points.",
+          "type": "guide"
+        },
+        {
+          "label": "Focus Drills — apparatus check",
+          "url": "/focus-drills.html?level=driver_operator&topic=apparatus%20check",
+          "note": "Timed daily-check drill.",
+          "type": "drill"
+        }
+      ],
+      "drill": {
+        "objective": "Complete a documented daily check emphasizing pump, water, warning systems, and equipment readiness.",
+        "equipment": "Assigned apparatus, department inspection sheet, flashlight, PPE as required.",
+        "setup": "Start from a known ‘ready’ or intentionally seeded training defect if the training officer allows.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "List the five things that would park THIS rig this morning.",
+            "performancePoints": [
+              "Department OOS items named"
+            ],
+            "commonMistakes": [
+              "Generic internet checklist"
+            ],
+            "debrief": [
+              "What is our notification path?"
+            ]
+          },
+          "15": {
+            "title": "15-minute walk-around",
+            "instructions": "Run the department sheet. Report one finding, even if ‘no defects.’",
+            "performancePoints": [
+              "Form complete",
+              "Pump/water items checked",
+              "Defects documented"
+            ],
+            "commonMistakes": [
+              "Skipping top-side or pump panel",
+              "Signing without looking"
+            ],
+            "debrief": [
+              "What did you actually function-test?"
+            ]
+          },
+          "30": {
+            "title": "30-minute readiness drill",
+            "instructions": "Full check plus a ‘missing tool / low oil / inop warning light’ inject. Crew restores or correctly OOS’s the unit.",
+            "performancePoints": [
+              "Correct OOS decision",
+              "Communication",
+              "Equipment restored or tagged"
+            ],
+            "commonMistakes": [
+              "Hiding a defect to stay in service"
+            ],
+            "debrief": [
+              "Who has authority to OOS?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "The primary checklist for a daily apparatus inspection is:",
+          "choices": [
+            "A generic social-media list",
+            "The department form plus manufacturer/out-of-service rules",
+            "Whatever the last driver remembered",
+            "Only the pump panel"
+          ],
+          "answer": 1,
+          "why": "Liability and readiness live on the department sheet."
+        },
+        {
+          "q": "A warning-system defect should be:",
+          "choices": [
+            "Ignored if the engine starts",
+            "Documented and handled per OOS/notification policy",
+            "Reset by pulling a fuse",
+            "Left for the next shift without comment"
+          ],
+          "answer": 1,
+          "why": "Warning systems are how the public and the crew get a chance to see you."
+        },
+        {
+          "q": "Why document a minor deficiency that does not OOS the rig?",
+          "choices": [
+            "To fill the log",
+            "So the next operator and maintenance see the trend before it fails on a call",
+            "It is not necessary",
+            "Only if an officer asks"
+          ],
+          "answer": 1,
+          "why": "Trends are how pumps, tires, and governors fail ‘suddenly.’"
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Department inspection SOP and manufacturer manual",
+          "url": "/driver-operator-practice.html",
+          "scope": "Inspection content and OOS criteria are local and apparatus-specific."
+        }
+      ],
+      "relatedSkills": [
+        "do_pumper_engage_pump",
+        "do_pumper_troubleshooting"
+      ],
+      "searchKeywords": [
+        "inspection",
+        "daily check",
+        "apparatus",
+        "out of service",
+        "fluids",
+        "warning lights"
+      ],
+      "seeResources": []
+    },
+    {
+      "id": "do_pumper_engage_pump",
+      "certificationId": "driver_operator_pumper",
+      "title": "Engage Pump",
+      "aliases": [
+        "pump engagement",
+        "put it in pump",
+        "pump shift",
+        "pump mode"
+      ],
+      "category": "Pump Operations",
+      "careerStage": "driver",
+      "summary": "Position, shift to pump, confirm pump mode, tank-to-pump or supply, and a charged first line without guessing.",
+      "whyItMatters": "The first 60 seconds of pumping set up everything that follows. A missed shift confirmation is a dry line at the door.",
+      "learningPoints": [
+        "Follow the exact manufacturer/department sequence for THIS transmission and pump.",
+        "Confirm pump mode with indicators, not hope.",
+        "Know whether the first water is tank or hydrant.",
+        "Set a pressure control device before the line gets away from you."
+      ],
+      "beforeYouDo": [
+        "Spot the apparatus so pump panel, intakes, and later units can work.",
+        "Know the first-line package (length, GPM, nozzle pressure)."
+      ],
+      "terminology": [
+        {
+          "term": "Pump shift",
+          "meaning": "Transferring driveline power to the fire pump per apparatus design."
+        },
+        {
+          "term": "Tank-to-pump",
+          "meaning": "Onboard water feeding the pump until a supply is established."
+        }
+      ],
+      "safetyNotes": [
+        "Parking brake and wheel chocks per SOP before pumping.",
+        "Do not leave the cab until the shift is confirmed if that is your procedure.",
+        "Watch for open discharges and personnel in front of lines."
+      ],
+      "seeResources": [
+        {
+          "label": "Fire Pump Training Scenarios",
+          "url": "/fire-pump-training-scenarios.html",
+          "note": "Engage-and-supply problems.",
+          "type": "scenario"
+        }
+      ],
+      "practiceResources": [
+        {
+          "label": "Pump Training Scenarios",
+          "url": "/fire-pump-training-scenarios.html",
+          "note": "Decision sequence practice.",
+          "type": "scenario"
+        },
+        {
+          "label": "Pump Pressure Calculator",
+          "url": "/fire-pump-calculator.html",
+          "note": "First-line PDP.",
+          "type": "calculator"
+        },
+        {
+          "label": "Visual Scenario Player",
+          "url": "/scenario-player.html",
+          "note": "Panel decisions under a picture.",
+          "type": "simulator"
+        }
+      ],
+      "drill": {
+        "objective": "Engage the pump per department procedure and place the standard first line in service with a pressure-control setting.",
+        "equipment": "Assigned pumper, attack line, water source authorized for training.",
+        "setup": "Chocks, radio, and a safety officer. Use tank water only if the site and policy allow.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Say the engage-pump sequence out loud, including confirmation cues.",
+            "performancePoints": [
+              "Order correct",
+              "Confirmation named"
+            ],
+            "commonMistakes": [
+              "Skipping chock/brake",
+              "Assuming the light means water is at the nozzle"
+            ],
+            "debrief": [
+              "What tells you the pump is actually in pump?"
+            ]
+          },
+          "15": {
+            "title": "15-minute first line",
+            "instructions": "Engage pump, tank-to-pump, charge the standard preconnect, set governor/relief, report pressures.",
+            "performancePoints": [
+              "Sequence",
+              "Pressure control on",
+              "Clear report"
+            ],
+            "commonMistakes": [
+              "Charging before the nozzle firefighter is ready",
+              "No relief/governor"
+            ],
+            "debrief": [
+              "What pressure did you choose and why?"
+            ]
+          },
+          "30": {
+            "title": "30-minute transition",
+            "instructions": "First line on tank, then transition to hydrant without losing the line. Include a failed pump-shift inject if training-safe.",
+            "performancePoints": [
+              "Transition without interruption",
+              "Communication",
+              "Intake watched"
+            ],
+            "commonMistakes": [
+              "Dumping the tank with no supply plan",
+              "Leaving RPM unmanaged"
+            ],
+            "debrief": [
+              "When do we leave tank water and why?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "The safest way to know the pump is engaged is:",
+          "choices": [
+            "The parking brake is set",
+            "Follow apparatus indicators/procedure, not assumption",
+            "The siren still works",
+            "Someone yelled ‘pump’"
+          ],
+          "answer": 1,
+          "why": "Each apparatus has confirmation cues. Learn them."
+        },
+        {
+          "q": "Pressure control (governor/relief) should be:",
+          "choices": [
+            "Set after a line already surged",
+            "Part of placing the first line in service",
+            "Only used on relays",
+            "Left off so you can ‘feel’ the pump"
+          ],
+          "answer": 1,
+          "why": "It is how you keep a firefighter from being launched by a sudden pressure spike."
+        },
+        {
+          "q": "Tank-to-pump is used to:",
+          "choices": [
+            "Fill the booster tank from a hydrant only",
+            "Supply the pump from onboard water until a source is established",
+            "Prime a hydrant",
+            "Cool the transmission"
+          ],
+          "answer": 1,
+          "why": "Have a supply plan before the tank is gone."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Apparatus manufacturer operating instructions",
+          "url": "/driver-operator-practice.html",
+          "scope": "Pump-shift steps differ by make, model, and transmission."
+        }
+      ],
+      "relatedSkills": [
+        "do_pumper_hydrant_ops",
+        "do_pumper_friction_loss",
+        "do_pumper_apparatus_inspection",
+        "do_pumper_troubleshooting"
+      ],
+      "searchKeywords": [
+        "engage pump",
+        "pump shift",
+        "tank to pump",
+        "governor",
+        "relief valve",
+        "preconnect"
+      ]
+    },
+    {
+      "id": "do_pumper_friction_loss",
+      "certificationId": "driver_operator_pumper",
+      "title": "Friction Loss and PDP",
+      "aliases": [
+        "friction loss",
+        "pdp",
+        "pump discharge pressure",
+        "hydraulics",
+        "c value"
+      ],
+      "category": "Hydraulics",
+      "careerStage": "driver",
+      "summary": "Estimate pump discharge pressure from nozzle pressure, hose friction, elevation, and appliances — then sanity-check the number.",
+      "whyItMatters": "A wrong PDP either starves the nozzle or overpressures people and hose. The math is a starting point; the gauges and the nozzle firefighter tell you if it is working.",
+      "learningPoints": [
+        "PDP ≈ NP + FL + elevation + appliance (department formula may vary).",
+        "Friction loss rises with flow and length and depends on hose diameter/C-value.",
+        "Your department hose/nozzle package matters more than a textbook example.",
+        "If the number does not match what the gauges and the line are doing, believe the fireground."
+      ],
+      "beforeYouDo": [
+        "Know the target NP and GPM for the line you are pumping.",
+        "Know department C-values or pump chart for assigned hose."
+      ],
+      "terminology": [
+        {
+          "term": "PDP",
+          "meaning": "Pump discharge pressure — what you are trying to produce for that line."
+        },
+        {
+          "term": "FL",
+          "meaning": "Friction loss in the hose/appliances between pump and nozzle/device."
+        },
+        {
+          "term": "C-value",
+          "meaning": "Coefficient used in common training formulas for a hose diameter at a given flow."
+        }
+      ],
+      "safetyNotes": [
+        "Do not chase a formula into an unsafe pressure.",
+        "Elevation and long lays change everything — re-calculate when the layout changes."
+      ],
+      "seeResources": [
+        {
+          "label": "Friction Loss Calculator",
+          "url": "/friction-loss-calculator.html",
+          "note": "Work FL from flow, length, and C.",
+          "type": "calculator"
+        },
+        {
+          "label": "Friction Loss Table",
+          "url": "/friction-loss-table.html",
+          "note": "See how diameter and flow change FL.",
+          "type": "calculator"
+        }
+      ],
+      "practiceResources": [
+        {
+          "label": "Friction Loss Calculator",
+          "url": "/friction-loss-calculator.html",
+          "note": "Line-specific FL practice.",
+          "type": "calculator"
+        },
+        {
+          "label": "Pump Pressure Calculator",
+          "url": "/fire-pump-calculator.html",
+          "note": "Full PDP practice.",
+          "type": "calculator"
+        },
+        {
+          "label": "Attack Line Calculator",
+          "url": "/attack-line-calculator.html",
+          "note": "Single-line layouts.",
+          "type": "calculator"
+        },
+        {
+          "label": "Friction Loss Practice Problems",
+          "url": "/friction-loss-practice-problems.html",
+          "note": "Reps.",
+          "type": "practice"
+        },
+        {
+          "label": "Pumper Flashcards",
+          "url": "/driver-operator-pumper-flashcards.html",
+          "note": "Recall.",
+          "type": "flashcards"
+        }
+      ],
+      "drill": {
+        "objective": "Calculate PDP for the department’s standard lines, then compare the estimate to a pump-chart or instructor target.",
+        "equipment": "Calculator or pump chart, sample hose layouts, radios optional.",
+        "setup": "Classroom or bay. Use actual department line packages, not random textbook numbers.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Compute PDP for the standard 1¾ preconnect. Say each component.",
+            "performancePoints": [
+              "NP, FL, elevation, appliance named"
+            ],
+            "commonMistakes": [
+              "Skipping elevation",
+              "Using the wrong GPM"
+            ],
+            "debrief": [
+              "What would 100 more feet do?"
+            ]
+          },
+          "15": {
+            "title": "15-minute chart vs calc",
+            "instructions": "Three layouts: preconnect, 2½, and a long lay. Compare calculator to department chart.",
+            "performancePoints": [
+              "Correct GPM/NP",
+              "Reasonable FL",
+              "Difference explained"
+            ],
+            "commonMistakes": [
+              "Mixing diameters in one formula blindly"
+            ],
+            "debrief": [
+              "When do we trust the chart over the calculator?"
+            ]
+          },
+          "30": {
+            "title": "30-minute live or tabletop pump",
+            "instructions": "Pump a training line if authorized; otherwise tabletop gauge pictures. Match PDP to nozzle performance and adjust.",
+            "performancePoints": [
+              "Estimate then verify",
+              "Communication with nozzle"
+            ],
+            "commonMistakes": [
+              "Never looking at the gauge after the math"
+            ],
+            "debrief": [
+              "What told you the formula was off?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "If hose length doubles and flow stays the same, friction loss generally:",
+          "choices": [
+            "Stays the same",
+            "Approximately doubles",
+            "Drops by half",
+            "Depends only on RPM"
+          ],
+          "answer": 1,
+          "why": "FL is proportional to length in the common training model."
+        },
+        {
+          "q": "A calculated PDP is:",
+          "choices": [
+            "An official required discharge pressure",
+            "A training estimate to be checked against gauges, nozzle, and SOP",
+            "Always higher than 200 psi",
+            "Only for relay pumping"
+          ],
+          "answer": 1,
+          "why": "FireOpsSim calculators are training tools, not policy."
+        },
+        {
+          "q": "Increasing GPM on the same hose will generally:",
+          "choices": [
+            "Lower friction loss",
+            "Raise friction loss sharply",
+            "Never affect PDP",
+            "Only affect elevation"
+          ],
+          "answer": 1,
+          "why": "Flow has a large effect (often modeled with a square relationship)."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Department pump chart / hose-nozzle package",
+          "url": "/pump-card-builder.html",
+          "scope": "Operational target pressures come from the AHJ and the hose you actually carry."
+        }
+      ],
+      "relatedSkills": [
+        "do_pumper_engage_pump",
+        "do_pumper_multiple_attack_lines",
+        "do_pumper_hydrant_ops",
+        "do_pumper_master_streams"
+      ],
+      "searchKeywords": [
+        "friction loss",
+        "pdp",
+        "hydraulics",
+        "c value",
+        "nozzle pressure",
+        "engineer math"
+      ]
+    },
+    {
+      "id": "do_pumper_multiple_attack_lines",
+      "certificationId": "driver_operator_pumper",
+      "title": "Multiple Attack Lines",
+      "aliases": [
+        "multiple lines",
+        "second line",
+        "two lines",
+        "adding a line"
+      ],
+      "category": "Pump Operations",
+      "careerStage": "driver",
+      "summary": "Keep pressure, supply, and communication stable when a second or third line opens or shuts.",
+      "whyItMatters": "The fire does not wait while you re-do math. Opening another line changes flow, residual, and every existing discharge.",
+      "learningPoints": [
+        "Each additional line is more GPM from the same pump and the same water system.",
+        "Tell the officer and the lines before you change a lot of water.",
+        "Watch residual and intake as much as discharge.",
+        "Know which line is which on the panel."
+      ],
+      "beforeYouDo": [
+        "Know estimated GPM of each line in service.",
+        "Have supply established or a tank plan that can survive the extra line."
+      ],
+      "terminology": [
+        {
+          "term": "Discharge",
+          "meaning": "A gated outlet on the pump panel feeding a specific line or device."
+        },
+        {
+          "term": "Pressure governor",
+          "meaning": "Can hold pressure as flow changes — still watch supply."
+        }
+      ],
+      "safetyNotes": [
+        "A sudden shut-down of one line can spike pressure on another if pressure control is wrong or off.",
+        "Do not steal the attack line’s water to feed a vanity layout."
+      ],
+      "seeResources": [
+        {
+          "label": "Wye / Siamese Calculator",
+          "url": "/wye-siamese-calculator.html",
+          "note": "Split-flow layouts.",
+          "type": "calculator"
+        }
+      ],
+      "practiceResources": [
+        {
+          "label": "Fire Pump Training Scenarios",
+          "url": "/fire-pump-training-scenarios.html",
+          "note": "Demand changes.",
+          "type": "scenario"
+        },
+        {
+          "label": "Scenario Player",
+          "url": "/scenario-player.html",
+          "note": "Visual multi-line problems.",
+          "type": "simulator"
+        },
+        {
+          "label": "Wye / Siamese Calculator",
+          "url": "/wye-siamese-calculator.html",
+          "note": "Branch lines.",
+          "type": "calculator"
+        },
+        {
+          "label": "Attack Line Calculator",
+          "url": "/attack-line-calculator.html",
+          "note": "Per-line PDP.",
+          "type": "calculator"
+        }
+      ],
+      "drill": {
+        "objective": "Place two attack lines in service, report what residual/intake did, then shut one down without surprising the remaining line.",
+        "equipment": "Pumper, two attack lines, authorized water, radios.",
+        "setup": "Brief who calls for the second line and how the operator acknowledges.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Talk through adding a second line: supply check, communication, then open.",
+            "performancePoints": [
+              "Order of actions"
+            ],
+            "commonMistakes": [
+              "Opening first, talking later"
+            ],
+            "debrief": [
+              "What do we tell the first nozzle?"
+            ]
+          },
+          "15": {
+            "title": "15-minute two-line pump",
+            "instructions": "One line, then second line, then one shutdown. Operator reports gauges each time.",
+            "performancePoints": [
+              "Pressure control used",
+              "Supply watched",
+              "Clear IDs of lines"
+            ],
+            "commonMistakes": [
+              "Mixing discharges",
+              "No residual check"
+            ],
+            "debrief": [
+              "Which gauge moved first?"
+            ]
+          },
+          "30": {
+            "title": "30-minute fire-flow scenario",
+            "instructions": "Changing request: second line, then a third or a high-flow device (tabletop if needed). Operator must say when supply cannot support it.",
+            "performancePoints": [
+              "Limit recognized",
+              "Officer informed",
+              "Lines labeled"
+            ],
+            "commonMistakes": [
+              "Silent panel while the fire grows"
+            ],
+            "debrief": [
+              "What is our next water move?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "When a second attack line opens, the operator should first be thinking about:",
+          "choices": [
+            "Siren use",
+            "Additional flow vs remaining supply and existing line pressures",
+            "Only foam",
+            "Turning off the first line automatically"
+          ],
+          "answer": 1,
+          "why": "Flow has to come from somewhere."
+        },
+        {
+          "q": "Shutting down one of two lines can:",
+          "choices": [
+            "Never affect the other line",
+            "Spike pressure on the remaining line if pressure control is not managing it",
+            "Always drop residual",
+            "Prime the pump"
+          ],
+          "answer": 1,
+          "why": "Pressure control and communication exist for this moment."
+        },
+        {
+          "q": "The officer asks for a third line while residual is already falling. Best operator action:",
+          "choices": [
+            "Open it immediately to be a team player",
+            "Report the supply picture and the risk, then follow the officer’s informed decision / improve supply",
+            "Leave the panel to pull the line",
+            "Increase RPM only"
+          ],
+          "answer": 1,
+          "why": "Give the officer the water facts. Do not silently exceed the system."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Department pumping SOP",
+          "url": "/fire-pump-training-scenarios.html",
+          "scope": "Line designations, color codes, and target pressures are local."
+        }
+      ],
+      "relatedSkills": [
+        "do_pumper_hydrant_ops",
+        "do_pumper_friction_loss",
+        "do_pumper_master_streams",
+        "do_pumper_troubleshooting"
+      ],
+      "searchKeywords": [
+        "multiple lines",
+        "second line",
+        "discharge",
+        "governor",
+        "flow demand"
+      ]
+    },
+    {
+      "id": "do_pumper_master_streams",
+      "certificationId": "driver_operator_pumper",
+      "title": "Master Stream Operations",
+      "aliases": [
+        "master stream",
+        "deck gun",
+        "monitor",
+        "elevated stream"
+      ],
+      "category": "High Flow",
+      "careerStage": "driver",
+      "summary": "High-flow devices need water, reaction awareness, supply, and a reason — not just a bigger nozzle.",
+      "whyItMatters": "A master stream can overwhelm a hydrant, a pump, and a building. It is a tactical tool with a supply problem attached.",
+      "learningPoints": [
+        "Know the device GPM and NP before you open it.",
+        "Confirm supply can support that flow.",
+        "Reaction, collapse, and stream direction are safety problems, not decorations.",
+        "Transitioning to or from handlines changes everything on the panel."
+      ],
+      "beforeYouDo": [
+        "Estimate needed flow vs hydrant/tank reality.",
+        "Know whether this is deck gun, portable monitor, or aerial waterway — they are not the same."
+      ],
+      "terminology": [
+        {
+          "term": "Master stream",
+          "meaning": "High-capacity stream from a monitor, deck gun, or waterway — typically hundreds of GPM."
+        },
+        {
+          "term": "Reaction",
+          "meaning": "Force trying to push the device/apparatus."
+        }
+      ],
+      "safetyNotes": [
+        "Do not staff an unsafe portable monitor.",
+        "Watch collapse zones and electrical hazards.",
+        "Do not take the handline’s last water to feed a gun without a plan."
+      ],
+      "seeResources": [
+        {
+          "label": "Master Stream Calculator",
+          "url": "/master-stream-calculator.html",
+          "note": "Supply-line and NP planning.",
+          "type": "calculator"
+        },
+        {
+          "label": "Deck Gun Calculator",
+          "url": "/deck-gun-calculator.html",
+          "note": "Apparatus-mounted stream pressure and reaction.",
+          "type": "calculator"
+        }
+      ],
+      "practiceResources": [
+        {
+          "label": "Master Stream Calculator",
+          "url": "/master-stream-calculator.html",
+          "note": "High-flow PDP practice.",
+          "type": "calculator"
+        },
+        {
+          "label": "Deck Gun Calculator",
+          "url": "/deck-gun-calculator.html",
+          "note": "Deck-gun specific.",
+          "type": "calculator"
+        },
+        {
+          "label": "Hydrant Flow Calculator",
+          "url": "/hydrant-flow-calculator.html",
+          "note": "Can this hydrant support the gun?",
+          "type": "calculator"
+        },
+        {
+          "label": "Pump Training Scenarios",
+          "url": "/fire-pump-training-scenarios.html",
+          "note": "High-flow demand.",
+          "type": "scenario"
+        }
+      ],
+      "drill": {
+        "objective": "Decide whether a master stream is supply-supported, then tabletop or flow a training stream if authorized.",
+        "equipment": "Flow data, calculators, apparatus if authorized, radios.",
+        "setup": "If you cannot flow a gun, tabletop the numbers and the placement.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Name GPM, supply need, and one reason you would refuse the gun.",
+            "performancePoints": [
+              "Number named",
+              "Safety named"
+            ],
+            "commonMistakes": [
+              "‘Open it and see’"
+            ],
+            "debrief": [
+              "What hydrant picture do we need first?"
+            ]
+          },
+          "15": {
+            "title": "15-minute calc + placement",
+            "instructions": "Work a 500–1000 GPM request against a hydrant estimate. Place the rig for later units.",
+            "performancePoints": [
+              "Supply vs demand",
+              "Placement"
+            ],
+            "commonMistakes": [
+              "Ignoring reaction"
+            ],
+            "debrief": [
+              "If residual is 25 psi while flowing 250, do we add 750?"
+            ]
+          },
+          "30": {
+            "title": "30-minute evolution",
+            "instructions": "Authorized flow or full tabletop: handline, then gun request, then back. Operator keeps a water narrative.",
+            "performancePoints": [
+              "Transition",
+              "Communication",
+              "Limit recognized"
+            ],
+            "commonMistakes": [
+              "Silent high-flow"
+            ],
+            "debrief": [
+              "When does the gun become a liability?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "Before opening a master stream, the operator needs:",
+          "choices": [
+            "Only the officer’s enthusiasm",
+            "A flow target, a supply that can support it, and a safe device/crew setup",
+            "The tank fill open",
+            "Foam in every case"
+          ],
+          "answer": 1,
+          "why": "High flow without supply is a show, then a failure."
+        },
+        {
+          "q": "A portable monitor should be:",
+          "choices": [
+            "Staffed in the collapse zone to ‘aim better’",
+            "Set and operated per department/manufacturer rules, with reaction considered",
+            "Supplied by a garden hose",
+            "Opened before the supply line is charged"
+          ],
+          "answer": 1,
+          "why": "Uncontrolled reaction injures people."
+        },
+        {
+          "q": "If residual collapses when the gun opens, you should:",
+          "choices": [
+            "Keep it open to ‘win’",
+            "Reduce demand and/or improve supply and tell command",
+            "Close the hydrant completely",
+            "Switch to tank water only and hope"
+          ],
+          "answer": 1,
+          "why": "Give command the water facts immediately."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Device and apparatus manufacturer instructions",
+          "url": "/master-stream-calculator.html",
+          "scope": "Flow, NP, and reaction limits are equipment-specific."
+        }
+      ],
+      "relatedSkills": [
+        "do_pumper_multiple_attack_lines",
+        "do_pumper_hydrant_ops",
+        "do_pumper_friction_loss"
+      ],
+      "searchKeywords": [
+        "master stream",
+        "deck gun",
+        "monitor",
+        "high flow",
+        "reaction"
+      ]
+    },
+    {
+      "id": "do_pumper_relay_pumping",
+      "certificationId": "driver_operator_pumper",
+      "title": "Relay Pumping",
+      "aliases": [
+        "relay",
+        "ldh relay",
+        "source pumper",
+        "in-line pumping"
+      ],
+      "category": "Water Supply",
+      "careerStage": "driver",
+      "summary": "Move water a long distance with more than one pump: roles, intake targets, communications, and failure recognition.",
+      "whyItMatters": "Relays fail from silence and ego, not from math. Every engine needs a role, an intake target, and a way to say ‘hold.’",
+      "learningPoints": [
+        "Source, relay, and attack pumpers have different jobs.",
+        "Intake pressure at the next engine is the product, not dump pressure for sport.",
+        "Talk before you change RPM a lot.",
+        "Plan for a burst, a kink, or a dropped hydrant."
+      ],
+      "beforeYouDo": [
+        "Know LDH diameter, lay length, and target flow.",
+        "Assign radio words for increase/decrease/hold."
+      ],
+      "terminology": [
+        {
+          "term": "Source pumper",
+          "meaning": "The engine at the water source."
+        },
+        {
+          "term": "Relay / in-line pumper",
+          "meaning": "Boosts pressure in the supply line toward the fire."
+        },
+        {
+          "term": "Attack pumper",
+          "meaning": "The engine supplying fire streams."
+        }
+      ],
+      "safetyNotes": [
+        "Do not overpressure LDH.",
+        "Traffic and hose crossings on long lays.",
+        "Never assume the next engine saw your gauge."
+      ],
+      "seeResources": [
+        {
+          "label": "Relay Pumping Calculator",
+          "url": "/relay-pumping-calculator.html",
+          "note": "Spacing and FL estimates.",
+          "type": "calculator"
+        }
+      ],
+      "practiceResources": [
+        {
+          "label": "Relay Pumping Calculator",
+          "url": "/relay-pumping-calculator.html",
+          "note": "Segment planning.",
+          "type": "calculator"
+        },
+        {
+          "label": "Relay Pumping Training",
+          "url": "/relay-pumping-training.html",
+          "note": "Role-based practice.",
+          "type": "guide"
+        },
+        {
+          "label": "Pump Training Scenarios",
+          "url": "/fire-pump-training-scenarios.html",
+          "note": "Relay problems.",
+          "type": "scenario"
+        }
+      ],
+      "drill": {
+        "objective": "Assign source/relay/attack roles, set an intake target, and practice the communication loop for a pressure change.",
+        "equipment": "Map or cones, radios, calculators, two or more engines if available — otherwise tabletop.",
+        "setup": "Even a tabletop with three people works: source, relay, attack.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Name the three roles and one radio phrase for ‘hold.’",
+            "performancePoints": [
+              "Roles correct"
+            ],
+            "commonMistakes": [
+              "Everyone pumping ‘as hard as they can’"
+            ],
+            "debrief": [
+              "Who owns intake at the attack engine?"
+            ]
+          },
+          "15": {
+            "title": "15-minute tabletop relay",
+            "instructions": "Given a long lay and a flow, pick spacing with the calculator and brief the comms plan.",
+            "performancePoints": [
+              "Spacing reasonable",
+              "Intake target named"
+            ],
+            "commonMistakes": [
+              "No failure plan"
+            ],
+            "debrief": [
+              "What if the middle engine dies?"
+            ]
+          },
+          "30": {
+            "title": "30-minute evolution or full tabletop",
+            "instructions": "Change flow twice. Each pumper reports intake/discharge. Inject a kink or lost source.",
+            "performancePoints": [
+              "Comms before RPM",
+              "Failure handled"
+            ],
+            "commonMistakes": [
+              "Silent pressure wars"
+            ],
+            "debrief": [
+              "What would make you abort the relay?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "The attack pumper in a relay primarily cares about:",
+          "choices": [
+            "How impressive the source RPM looks",
+            "Stable intake and enough flow for the fire streams",
+            "Closing all discharges",
+            "Drafting on a hydrant"
+          ],
+          "answer": 1,
+          "why": "Intake at the fire engine is the point of the relay."
+        },
+        {
+          "q": "Before increasing RPM significantly in a relay, operators should:",
+          "choices": [
+            "Wait 10 minutes",
+            "Communicate the change so the next engine is not surprised",
+            "Shut the hydrant",
+            "Switch to tank water"
+          ],
+          "answer": 1,
+          "why": "Silence creates overpressure and cavitation."
+        },
+        {
+          "q": "A relay is a good tool when:",
+          "choices": [
+            "The fire is small and a preconnect would do",
+            "The source is far and one engine cannot deliver the needed flow/pressure alone",
+            "You want to avoid hydrants in town",
+            "The officer is not on scene"
+          ],
+          "answer": 1,
+          "why": "Match the water method to the distance and demand."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Department LDH / relay SOP",
+          "url": "/relay-pumping-training.html",
+          "scope": "Hose ratings, intake targets, and engine spacing are AHJ-specific."
+        }
+      ],
+      "relatedSkills": [
+        "do_pumper_hydrant_ops",
+        "do_pumper_drafting",
+        "do_pumper_rural_tender",
+        "do_pumper_troubleshooting",
+        "do_pumper_friction_loss"
+      ],
+      "searchKeywords": [
+        "relay",
+        "LDH",
+        "source pumper",
+        "in-line",
+        "rural water",
+        "long lay"
+      ]
+    },
+    {
+      "id": "do_pumper_drafting",
+      "certificationId": "driver_operator_pumper",
+      "title": "Drafting",
+      "aliases": [
+        "draft",
+        "static source",
+        "hard suction",
+        "prime from pond"
+      ],
+      "category": "Water Supply",
+      "careerStage": "driver",
+      "summary": "Build an airtight suction path, prime, lift water from a static source, and recognize cavitation and air leaks.",
+      "whyItMatters": "Drafting is unforgiving. One air leak or a fouled strainer turns a rural fire into a tank of regrets.",
+      "learningPoints": [
+        "Hard suction must be airtight. Connections and gaskets matter.",
+        "Lift, strainer placement, and primer use follow physics and the manual.",
+        "Watch intake: vacuum that is too high is a warning.",
+        "Have a plan for a lost prime during pumping."
+      ],
+      "beforeYouDo": [
+        "Site the engine for lift, hose, and later tenders if used.",
+        "Inspect gaskets and strainer before you need them."
+      ],
+      "terminology": [
+        {
+          "term": "Lift",
+          "meaning": "Vertical distance from water surface to the pump."
+        },
+        {
+          "term": "Strainer",
+          "meaning": "Keeps debris out of the suction hose; must stay submerged and unobstructed."
+        },
+        {
+          "term": "Vacuum / compound",
+          "meaning": "Intake-side reading while drafting."
+        }
+      ],
+      "safetyNotes": [
+        "Drowning, drop-offs, and ice at static sources.",
+        "Carbon monoxide if idling in a hole or against a wall.",
+        "Do not walk the suction hose once it is under vacuum in an unsafe way."
+      ],
+      "practiceResources": [
+        {
+          "label": "Drafting Fire Pump Training",
+          "url": "/drafting-fire-pump-training.html",
+          "note": "Draft concepts.",
+          "type": "guide"
+        },
+        {
+          "label": "Pump Training Scenarios",
+          "url": "/fire-pump-training-scenarios.html",
+          "note": "Prime and draft problems.",
+          "type": "scenario"
+        },
+        {
+          "label": "Driver / Operator Practice",
+          "url": "/driver-operator-practice.html",
+          "note": "Engineer hub.",
+          "type": "guide"
+        },
+        {
+          "label": "Tender Shuttle Calculator",
+          "url": "/tender-shuttle-calculator.html",
+          "note": "When draft is not enough, plan rural water.",
+          "type": "calculator"
+        }
+      ],
+      "drill": {
+        "objective": "Set up a draft (live or walk-through), prime, and name three failure clues.",
+        "equipment": "Pumper, hard suction, strainer, approved static source or dry setup, PPE.",
+        "setup": "Use a training pond/draft pit if available. Otherwise complete a dry airtight setup and primer talk-through.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Show gasket, strainer, and primer. State max practical lift as a concept, not a brag.",
+            "performancePoints": [
+              "Parts identified"
+            ],
+            "commonMistakes": [
+              "‘It always primes’"
+            ],
+            "debrief": [
+              "Where do air leaks hide?"
+            ]
+          },
+          "15": {
+            "title": "15-minute setup",
+            "instructions": "Make all connections, strainer in water (or simulated), primer sequence verbalized, failure clues listed.",
+            "performancePoints": [
+              "Airtight path",
+              "Strainer submerged conceptually"
+            ],
+            "commonMistakes": [
+              "Dry strainer",
+              "Kinked suction"
+            ],
+            "debrief": [
+              "What does a rising vacuum with no water mean?"
+            ]
+          },
+          "30": {
+            "title": "30-minute draft evolution",
+            "instructions": "Live draft if authorized; else full tabletop with a lost-prime inject and a tender backup plan.",
+            "performancePoints": [
+              "Prime achieved or correctly simulated",
+              "Cavitation recognized",
+              "Backup water named"
+            ],
+            "commonMistakes": [
+              "Revving through cavitation"
+            ],
+            "debrief": [
+              "When do we abandon the draft for a shuttle?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "The most common practical enemy of a draft is:",
+          "choices": [
+            "Too much residual pressure",
+            "Air leaks or a strainer that cannot feed the pump",
+            "A wet-barrel hydrant",
+            "Foam"
+          ],
+          "answer": 1,
+          "why": "Air and starved intake stop centrifugal pumps."
+        },
+        {
+          "q": "Hard suction hose is used because:",
+          "choices": [
+            "It looks traditional",
+            "It can handle vacuum without collapsing like soft hose",
+            "It has less friction than LDH always",
+            "It stores water"
+          ],
+          "answer": 1,
+          "why": "Soft supply hose is not a substitute for suction hose in a true draft."
+        },
+        {
+          "q": "If the pump cavitates while drafting, a useful first thought is:",
+          "choices": [
+            "More RPM",
+            "Reduce demand and check lift, strainer, and air leaks",
+            "Open every discharge",
+            "Turn off the primer forever"
+          ],
+          "answer": 1,
+          "why": "Fix the intake side; do not bully the impeller."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Apparatus primer / pump manufacturer instructions",
+          "url": "/drafting-fire-pump-training.html",
+          "scope": "Primer type, lift limits, and recommended vacuum are apparatus-specific."
+        }
+      ],
+      "relatedSkills": [
+        "do_pumper_pump_theory",
+        "do_pumper_relay_pumping",
+        "do_pumper_rural_tender",
+        "do_pumper_troubleshooting"
+      ],
+      "searchKeywords": [
+        "draft",
+        "hard suction",
+        "static source",
+        "primer",
+        "strainer",
+        "lift",
+        "rural"
+      ],
+      "seeResources": []
+    },
+    {
+      "id": "do_pumper_standpipe_fdc",
+      "certificationId": "driver_operator_pumper",
+      "title": "Standpipe and FDC Operations",
+      "aliases": [
+        "standpipe",
+        "fdc",
+        "fire department connection",
+        "high rise pump",
+        "standpipe support",
+        "sprinkler fdc"
+      ],
+      "category": "High-Rise / FDC",
+      "careerStage": "driver",
+      "summary": "Supply a standpipe or sprinkler FDC with the right hose, the right pressure method, and a clear communication loop with the interior crew.",
+      "whyItMatters": "High-rise and sprinklered buildings fail the first engine when the operator treats an FDC like a hydrant with extra hose. Elevation, system loss, and the people on the standpipe outlet all have to be in the same picture.",
+      "learningPoints": [
+        "An FDC is a building fire-protection inlet. You are pushing water into a system with its own pipes, valves, and losses — not just a long attack line.",
+        "Standpipe PDP is nozzle pressure plus hose on the floor plus elevation plus system/FDC loss. Department charts and the building’s system beat a generic number.",
+        "Confirm the connection: Siamese vs storz, caps, clapper, and whether this FDC actually feeds the standpipe or sprinkler zone you think it does.",
+        "Place the engine so later trucks can still work, LDH can reach, and you are not blocking the building’s only access.",
+        "Talk to the interior/standpipe crew before large pressure changes. They feel your panel before you hear their radio."
+      ],
+      "beforeYouDo": [
+        "Know this apparatus’ FDC hose, adapters, and whether you pump sprinkler and standpipe from the same inlet.",
+        "Agree who owns pressure: pump operator, officer, or the crew at the standpipe outlet.",
+        "Have a backup if the FDC is damaged, capped wrong, or the system is isolated."
+      ],
+      "terminology": [
+        {
+          "term": "FDC",
+          "meaning": "Fire department connection — the inlet on the building (or nearby) where the engine supplies the system."
+        },
+        {
+          "term": "Standpipe",
+          "meaning": "Fixed piping that delivers water to hose outlets on upper floors or remote areas."
+        },
+        {
+          "term": "System / FDC loss",
+          "meaning": "Pressure lost in the building piping, valves, and connection — often a department or building-specific allowance."
+        },
+        {
+          "term": "Elevation loss",
+          "meaning": "Pressure needed to lift water to the fire floor. Floor count is a training estimate; the building and SOP win."
+        },
+        {
+          "term": "Siamese",
+          "meaning": "A two-inlet FDC body. Pump both sides unless the system and SOP say otherwise."
+        }
+      ],
+      "safetyNotes": [
+        "Do not assume an FDC is in service. Caps, debris, a closed OS&Y, or a broken clapper can give you a beautiful discharge gauge and no water upstairs.",
+        "Overpressure can damage the system and the hose on the floor. Follow department max PDP and relief/governor practice.",
+        "LDH and charged FDC lines in a driveway are a trip and vehicle hazard. Place, chock, and light as SOP requires.",
+        "If the interior crew reports no water, treat it as a water emergency — not an argument about your math."
+      ],
+      "seeResources": [
+        {
+          "label": "Standpipe / FDC Calculator",
+          "url": "/standpipe-fdc-calculator.html",
+          "note": "Practice NP, hose FL, system loss, and floor elevation as one PDP.",
+          "type": "calculator"
+        },
+        {
+          "label": "Sprinkler FDC reference",
+          "url": "/sprinkler-fdc-calculator.html",
+          "note": "Sprinkler-support landing page and department-pressure reminder.",
+          "type": "calculator"
+        }
+      ],
+      "practiceResources": [
+        {
+          "label": "Standpipe / FDC Calculator",
+          "url": "/standpipe-fdc-calculator.html",
+          "note": "Estimate FDC pressure from NP, FL, system loss, and floors.",
+          "type": "calculator"
+        },
+        {
+          "label": "Sprinkler / FDC page",
+          "url": "/sprinkler-fdc-calculator.html",
+          "note": "Separate sprinkler-support searches from standpipe work.",
+          "type": "calculator"
+        },
+        {
+          "label": "Pump Pressure Calculator",
+          "url": "/fire-pump-calculator.html",
+          "note": "Same hydraulics building blocks used on the panel.",
+          "type": "calculator"
+        },
+        {
+          "label": "Scenario Library",
+          "url": "/scenario-library.html",
+          "note": "Standpipe and high-rise practice problems.",
+          "type": "scenario"
+        },
+        {
+          "label": "Driver / Operator Practice",
+          "url": "/driver-operator-practice.html",
+          "note": "Engineer study hub.",
+          "type": "guide"
+        }
+      ],
+      "drill": {
+        "objective": "Connect and pump an FDC (live or tabletop), state the pressure method, and communicate before changing PDP.",
+        "equipment": "Engine, LDH/supply to FDC, adapters/caps wrench, radios, standpipe/FDC calculator or department chart, building photo or training FDC.",
+        "setup": "Use a training FDC or a tabletop building. Brief: operator, hydrant/supply firefighter, interior/standpipe voice. Name the stop signal and max PDP.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Walk the FDC: caps, inlets, what it feeds, hose choice, and who talks. Name every term in the PDP stack for this building without charging if water is not available.",
+            "performancePoints": [
+              "Correct FDC identification",
+              "PDP stack named",
+              "Interior communication named",
+              "Backup if FDC is dead"
+            ],
+            "commonMistakes": [
+              "Calling it ‘just another hydrant’",
+              "No plan if the connection is clogged",
+              "Vague ‘I usually pump 150’"
+            ],
+            "debrief": [
+              "What does this FDC actually supply?",
+              "What is the first radio sentence if upstairs reports no water?"
+            ]
+          },
+          "15": {
+            "title": "15-minute supply evolution",
+            "instructions": "Make the FDC, establish supply, and set an initial PDP from the calculator or chart. Then change floors or add a second line (tabletop the second line if the site cannot support it). Operator reports PDP, intake/residual, and what changed.",
+            "performancePoints": [
+              "Connection per SOP",
+              "Pressure method stated",
+              "Supply watched while PDP changed",
+              "Interior told before the change"
+            ],
+            "commonMistakes": [
+              "Pumping a number with no floor or hose story",
+              "Ignoring intake while chasing PDP",
+              "No confirmation water is in the system"
+            ],
+            "debrief": [
+              "What would you do if PDP is correct and the floor still has no water?",
+              "When would you refuse a higher-pressure request?"
+            ]
+          },
+          "30": {
+            "title": "30-minute high-rise / sprinkler scenario",
+            "instructions": "Run a building scenario: first connection, a clogged or one-sided FDC inject, then a floor change or sprinkler vs standpipe question. Operator must keep supply, PDP, and the interior picture together. Include a later-arriving truck that needs the spot you took.",
+            "performancePoints": [
+              "Placement leaves later access",
+              "FDC problem diagnosed without guessing",
+              "Clear PDP and water reports",
+              "Crew told before major pressure changes"
+            ],
+            "commonMistakes": [
+              "Blocking the aerial or the only driveway",
+              "Raising PDP instead of checking the connection",
+              "Silent panel while the standpipe crew is dry"
+            ],
+            "debrief": [
+              "How do we tell standpipe support from sprinkler support on this building?",
+              "Who owns the decision to abandon this FDC?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "Pump discharge pressure for a standpipe assignment is best thought of as:",
+          "choices": [
+            "Whatever residual the hydrant showed",
+            "Nozzle pressure plus hose on the fire floor plus elevation plus system/FDC loss, using the department method",
+            "Always 150 psi because that is a common classroom number",
+            "Intake pressure times two"
+          ],
+          "answer": 1,
+          "why": "Stack the pieces. The building, the hose package, and SOP decide the number — not a slogan."
+        },
+        {
+          "q": "If the interior crew reports no water at the standpipe outlet while your discharge gauge looks healthy, a useful first thought is:",
+          "choices": [
+            "Tell them to open the nozzle more",
+            "Check the FDC/path into the system, valves, and whether you are actually supplying that zone",
+            "Double RPM immediately",
+            "Shut down and leave"
+          ],
+          "answer": 1,
+          "why": "A pretty panel does not prove water is in the riser. Find the break in the path."
+        },
+        {
+          "q": "Many FDCs are two-inlet bodies. Unless SOP and the system say otherwise, engines should usually:",
+          "choices": [
+            "Pump one inlet so the other stays pretty",
+            "Supply both inlets",
+            "Avoid FDC work and draft from a planter",
+            "Cap both inlets after charging"
+          ],
+          "answer": 1,
+          "why": "Two inlets exist to move volume into the system and to have a backup path. Follow the local connection rule."
+        },
+        {
+          "q": "Before a large PDP increase to an FDC, the operator should:",
+          "choices": [
+            "Wait until hose bursts",
+            "Tell the interior/standpipe crew and watch supply gauges",
+            "Open every discharge on the panel",
+            "Switch to tank water"
+          ],
+          "answer": 1,
+          "why": "People on the line feel your change. Supply has to support it."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Pro Board",
+          "url": "https://theproboard.org/accredited-agencies/",
+          "scope": "Accredited fire certification agencies"
+        },
+        {
+          "label": "IFSAC",
+          "url": "https://ifsac.org/",
+          "scope": "Accredited certifying entities and programs"
+        },
+        {
+          "label": "Department high-rise / FDC SOP and apparatus pump chart",
+          "url": "/driver-operator-practice.html",
+          "scope": "FDC hose, adapters, max PDP, and standpipe vs sprinkler assignments are AHJ- and building-specific."
+        },
+        {
+          "label": "Building fire-protection information / preplan",
+          "url": "/scenario-library.html",
+          "scope": "Which FDC feeds which system, and whether a connection is in service, is local building data."
+        }
+      ],
+      "relatedSkills": [
+        "do_pumper_hydrant_ops",
+        "do_pumper_friction_loss",
+        "do_pumper_apparatus_placement",
+        "do_pumper_multiple_attack_lines",
+        "do_pumper_troubleshooting"
+      ],
+      "searchKeywords": [
+        "standpipe",
+        "FDC",
+        "high rise",
+        "sprinkler",
+        "elevation",
+        "siamese",
+        "fire department connection",
+        "engineer"
+      ]
+    },
+    {
+      "id": "do_pumper_rural_tender",
+      "certificationId": "driver_operator_pumper",
+      "title": "Rural Water and Tender Shuttle",
+      "aliases": [
+        "tender shuttle",
+        "tanker shuttle",
+        "rural water",
+        "fill site",
+        "dump site",
+        "nurse tanker",
+        "portable tank"
+      ],
+      "category": "Water Supply",
+      "careerStage": "driver",
+      "summary": "Keep fire flow coming when there is no hydrant: tank duration, fill and dump sites, shuttle math, and the radio loop that actually delivers water.",
+      "whyItMatters": "Rural fires run out of water in minutes if the first engine treats tank water as infinite. Shuttle success is cycle time and jobs — not how many tenders are ‘en route.’",
+      "learningPoints": [
+        "Tank duration is working water divided by flow. Reserve exists so you can still move the engine or protect a crew when the shuttle hiccups.",
+        "Sustained shuttle GPM is usable gallons per tender divided by cycle time, times the number of tenders actually completing the loop.",
+        "Cycle time is fill + travel + dump + travel + turnaround. The slowest step, not the fastest truck, sets the flow.",
+        "Fill site, dump site, nurse, and attack pumper are different jobs. Mixing them on the radio is how water stops.",
+        "Drafting, a relay, or a second fill site may beat adding another tender that has nowhere to dump."
+      ],
+      "beforeYouDo": [
+        "Know this engine’s tank size, usable water, and the department reserve rule.",
+        "Name the fill site, dump method (portable tank, nurse, jet dump), and who owns traffic at each end.",
+        "Agree the radio words for ‘hold dump,’ ‘need water,’ and ‘fill site delay.’"
+      ],
+      "terminology": [
+        {
+          "term": "Cycle time",
+          "meaning": "Minutes for one tender to fill, travel, dump, return, and turn around."
+        },
+        {
+          "term": "Dump site",
+          "meaning": "Where tenders offload — portable tanks, a nurse pumper, or a jet-dump into a tank."
+        },
+        {
+          "term": "Fill site",
+          "meaning": "Hydrant, draft, or other source where tenders reload."
+        },
+        {
+          "term": "Nurse",
+          "meaning": "A pumper (or tender/pumper) that stays and supplies the attack engine while others shuttle."
+        },
+        {
+          "term": "Working tank water",
+          "meaning": "Usable tank gallons minus the reserve you refuse to burn."
+        }
+      ],
+      "safetyNotes": [
+        "Dump sites and fill sites are vehicle, drop-off, and drowning hazards. Spotters and lighting matter at night.",
+        "Do not dump into a collapsing tank or onto charged hose.",
+        "Traffic control is part of water supply. A wrecked tender is zero GPM.",
+        "If tank water is about to die, the officer needs that sentence immediately — interior crews are using water they think they have."
+      ],
+      "seeResources": [
+        {
+          "label": "Tender Shuttle Calculator",
+          "url": "/tender-shuttle-calculator.html",
+          "note": "Tank, fill, dump, travel, and tender count to sustained GPM.",
+          "type": "calculator"
+        },
+        {
+          "label": "Tender Timer",
+          "url": "/tender-timer.html",
+          "note": "Cycle time, delivered GPM, and tenders needed for a target flow.",
+          "type": "calculator"
+        }
+      ],
+      "practiceResources": [
+        {
+          "label": "Tender Shuttle Calculator",
+          "url": "/tender-shuttle-calculator.html",
+          "note": "Estimate shuttle flow from cycle pieces.",
+          "type": "calculator"
+        },
+        {
+          "label": "Tender Timer",
+          "url": "/tender-timer.html",
+          "note": "Distance, speed, and target-flow planning.",
+          "type": "calculator"
+        },
+        {
+          "label": "Tank Duration Calculator",
+          "url": "/tank-duration.html",
+          "note": "How long this engine’s tank lasts at the current flow.",
+          "type": "calculator"
+        },
+        {
+          "label": "Relay Pumping Calculator",
+          "url": "/relay-pumping-calculator.html",
+          "note": "When a long LDH lay beats a weak shuttle.",
+          "type": "calculator"
+        },
+        {
+          "label": "Driver / Operator Practice",
+          "url": "/driver-operator-practice.html",
+          "note": "Engineer study hub.",
+          "type": "guide"
+        }
+      ],
+      "drill": {
+        "objective": "Plan a rural water supply: tank duration, shuttle or relay choice, fill/dump jobs, and the radio loop before the tank hits reserve.",
+        "equipment": "Engine tank figure, radios, tender/shuttle calculator, map or cones for fill and dump, optional portable tank.",
+        "setup": "Tabletop is enough if you cannot move tenders. Assign attack pump, dump-site boss, and at least one tender driver. State the stop signal.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Given tank size and a fire flow, compute working time with a reserve. Name fill site, dump site, and the first radio sentence when time is short.",
+            "performancePoints": [
+              "Duration computed",
+              "Reserve named",
+              "Jobs named",
+              "Shortage radio sentence ready"
+            ],
+            "commonMistakes": [
+              "Ignoring reserve",
+              "Calling every truck a ‘tanker’ with no job",
+              "Waiting until the tank is empty to talk"
+            ],
+            "debrief": [
+              "How many minutes of working water do we have?",
+              "Who do we call first for more water?"
+            ]
+          },
+          "15": {
+            "title": "15-minute shuttle plan",
+            "instructions": "Use the tender calculators to build a cycle: fill, dump, travel, tender count, target GPM. Compare to tank duration. Decide shuttle vs draft/relay. Brief the radio words.",
+            "performancePoints": [
+              "Cycle time stated",
+              "Sustained GPM vs need",
+              "Fill and dump jobs clear",
+              "Backup method named"
+            ],
+            "commonMistakes": [
+              "Counting tenders that have not been given a fill site",
+              "No dump-site plan",
+              "Math with no radio plan"
+            ],
+            "debrief": [
+              "What step in the cycle is the bottleneck?",
+              "When would we switch to a relay or a second fill site?"
+            ]
+          },
+          "30": {
+            "title": "30-minute rural scenario",
+            "instructions": "Run or tabletop a working fire: initial tank attack, first tender dump, a fill-site delay inject, then a flow increase. Operator must keep tank duration honest and say when the shuttle cannot meet demand. Include a portable-tank or nurse decision.",
+            "performancePoints": [
+              "Tank time watched",
+              "Shuttle jobs held under stress",
+              "Shortage reported early",
+              "Plan B used without chaos"
+            ],
+            "commonMistakes": [
+              "Silent tank death",
+              "Tenders circling with no dump site",
+              "Raising fire flow with no water math"
+            ],
+            "debrief": [
+              "What would make you tell the officer to cut flow?",
+              "How do we keep one tender from blocking the dump site?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "The most useful first rural-water question on arrival is:",
+          "choices": [
+            "How shiny are the tenders?",
+            "How long will this tank last at the flow we are about to use, and what is the next water?",
+            "What is static hydrant pressure in town?",
+            "Should we wait to stretch until every tender arrives?"
+          ],
+          "answer": 1,
+          "why": "Tank duration plus a next-water plan is the rural clock."
+        },
+        {
+          "q": "Shuttle flow goes up most honestly when you:",
+          "choices": [
+            "Count every apparatus on the printout as a working tender",
+            "Shorten real cycle time or add tenders that can actually complete the loop",
+            "Open a second attack line with no dump site",
+            "Idle the fill site to ‘save the hydrant’"
+          ],
+          "answer": 1,
+          "why": "GPM is gallons that finish the cycle, divided by minutes. Fantasy units do not dump."
+        },
+        {
+          "q": "If fill time doubles because the fill site is poorly staffed, shuttle GPM will:",
+          "choices": [
+            "Stay the same because travel did not change",
+            "Fall, because cycle time got longer",
+            "Double",
+            "Only affect the attack engine’s intake color"
+          ],
+          "answer": 1,
+          "why": "Every slow step is in the denominator."
+        },
+        {
+          "q": "The officer should hear that tank water is short:",
+          "choices": [
+            "At the critique",
+            "As soon as working time will not cover the next stretch of the fire",
+            "Only after the pump sucks air",
+            "Never — handle it on the panel"
+          ],
+          "answer": 1,
+          "why": "Interior decisions assume water that may already be gone."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Department rural water / tender SOP",
+          "url": "/tender-shuttle-calculator.html",
+          "scope": "Fill sites, dump methods, portable-tank rules, and reserve gallons are AHJ-specific."
+        },
+        {
+          "label": "Apparatus tank and dump-valve manufacturer data",
+          "url": "/tank-duration.html",
+          "scope": "Usable tank gallons and dump rates are apparatus-specific."
+        }
+      ],
+      "relatedSkills": [
+        "do_pumper_drafting",
+        "do_pumper_relay_pumping",
+        "do_pumper_hydrant_ops",
+        "do_pumper_troubleshooting",
+        "do_pumper_apparatus_placement"
+      ],
+      "searchKeywords": [
+        "tender",
+        "tanker",
+        "shuttle",
+        "rural",
+        "fill site",
+        "dump site",
+        "portable tank",
+        "nurse",
+        "tank duration",
+        "engineer"
+      ]
+    },
+    {
+      "id": "do_pumper_apparatus_placement",
+      "certificationId": "driver_operator_pumper",
+      "title": "Apparatus Placement",
+      "aliases": [
+        "engine placement",
+        "spot the rig",
+        "where to park",
+        "first due placement",
+        "arrival position",
+        "don't block"
+      ],
+      "category": "Placement",
+      "careerStage": "driver",
+      "summary": "Stop the engine where the hose, water, rescue path, later units, and a way out all still work — then set the brake and own that decision.",
+      "whyItMatters": "A bad spot is a permanent tactical problem. You can recut a line. You cannot un-park a blocked aerial or a hydrant you drove past with no plan.",
+      "learningPoints": [
+        "Placement is a size-up skill: occupancy, fire location, access, water, collapse/overhead, and who is coming after you.",
+        "First engine usually owns a working spot for attack and water — not the front door selfie. Leave the aerial, ambulance, and later engines a path.",
+        "Hydrant vs fire: know whether this department lays in, lays out, or spots at the building and waits for water. Do not invent a third method in the driveway.",
+        "Once the parking brake is set, you still own wheel chocks, pump engagement setup, and a way to move if command orders it.",
+        "Say the placement out loud if it is non-obvious: ‘taking the hydrant side, leaving the front for the truck.’"
+      ],
+      "beforeYouDo": [
+        "Know first-due hose loads, LDH, and whether you are expected to hit a hydrant before the building.",
+        "Know typical later-arriving apparatus for this alarm (truck, rescue, second engine) and what they need.",
+        "Have a backup spot if the driveway, wires, or parked cars steal the textbook position."
+      ],
+      "terminology": [
+        {
+          "term": "Working spot",
+          "meaning": "A position that lets this company do its job without stealing the next company’s job."
+        },
+        {
+          "term": "Lay in / lay out",
+          "meaning": "Department water-supply driving pattern — hydrant first vs building first. Follow yours."
+        },
+        {
+          "term": "Collapse zone",
+          "meaning": "Area to keep clear of people and apparatus if the building or wall can come down."
+        },
+        {
+          "term": "Egress for apparatus",
+          "meaning": "A way to get this rig or later rigs out — not a dead-end jammed with hose."
+        }
+      ],
+      "safetyNotes": [
+        "Do not spot under wires, dying walls, or on known collapse sides just to be close.",
+        "Never leave the apparatus in drive on a grade. Brake, chock, and follow department wheel-chock rules.",
+        "Personnel in the street while you spot: the hydrant firefighter and later units. Slow is part of the skill.",
+        "Do not block hydrants, FDCs, or the only aerial corner because the address felt urgent."
+      ],
+      "seeResources": [
+        {
+          "label": "Fireground Decision Sim",
+          "url": "/fireground-decision-sim.html",
+          "note": "Arrival scenes that include first-engine placement choices.",
+          "type": "simulator"
+        },
+        {
+          "label": "Focus Drills — placement",
+          "url": "/focus-drills.html?level=driver_operator&topic=placement",
+          "note": "Tabletop spotting reps.",
+          "type": "drill"
+        }
+      ],
+      "practiceResources": [
+        {
+          "label": "Fireground Decision Sim",
+          "url": "/fireground-decision-sim.html",
+          "note": "Read the scene, then defend where the engine would stop.",
+          "type": "simulator"
+        },
+        {
+          "label": "Hydrant Operations skill",
+          "url": "/skill-support.html?cert=driver_operator_pumper&task=do_pumper_hydrant_ops",
+          "note": "Water supply is why many spots exist.",
+          "type": "skill"
+        },
+        {
+          "label": "Standpipe / FDC skill",
+          "url": "/skill-support.html?cert=driver_operator_pumper&task=do_pumper_standpipe_fdc",
+          "note": "High-rise spots must leave FDC and later trucks.",
+          "type": "skill"
+        },
+        {
+          "label": "Driver / Operator Practice",
+          "url": "/driver-operator-practice.html",
+          "note": "Engineer hub.",
+          "type": "guide"
+        },
+        {
+          "label": "Focus Drills — Driver/Operator",
+          "url": "/focus-drills.html?level=driver_operator&topic=placement",
+          "note": "Placement tabletop in the drill library.",
+          "type": "drill"
+        }
+      ],
+      "drill": {
+        "objective": "Choose and defend an engine spot for three different arrivals, including water, later units, and a way out.",
+        "equipment": "Printed or projected arrival photos, cones or a parking lot, radios, department hose/hydrant SOP.",
+        "setup": "No live pumping required. Use photos first, then walk a station apron or training lot if available. Officer or instructor plays later-arriving truck.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "From one photo, point to where this engine stops, where the hydrant or FDC is, and what you left for the truck. Say it in one radio sentence.",
+            "performancePoints": [
+              "Spot named",
+              "Water plan named",
+              "Later unit considered",
+              "One-sentence report"
+            ],
+            "commonMistakes": [
+              "Nose on the front door with no water story",
+              "Blocking the aerial corner",
+              "Silent ‘I just park’"
+            ],
+            "debrief": [
+              "What would make you take a worse-looking spot that is actually better?",
+              "Who is coming after us?"
+            ]
+          },
+          "15": {
+            "title": "15-minute three-spot tabletop",
+            "instructions": "Three scenes: house fire with a hydrant past the address, garden apartment narrow lane, and a standpipe building. Operator spots each, then the instructor steals one option (parked car, wires, blocked hydrant). Adjust without losing water or later access.",
+            "performancePoints": [
+              "Three defensible spots",
+              "Adjustment when the first choice dies",
+              "Hose/water method matches SOP"
+            ],
+            "commonMistakes": [
+              "Same spot for every building",
+              "No collapse or overhead look",
+              "Hydrant forgotten until the line is dry"
+            ],
+            "debrief": [
+              "Which scene would you hydrant first?",
+              "What do you tell command if you cannot get the textbook spot?"
+            ]
+          },
+          "30": {
+            "title": "30-minute lot or scenario",
+            "instructions": "On a training lot or with cones, spot for attack, then a second engine and a truck arrive. Include a ‘move up’ order and a hose that will trap you if you dump it in the only egress. Debrief with the decision sim on a similar occupancy.",
+            "performancePoints": [
+              "Chocks/brake called",
+              "Later units can work",
+              "Egress not suicided with hose",
+              "Spot explained, not guessed"
+            ],
+            "commonMistakes": [
+              "Final parking wherever the bumper stopped",
+              "No chocks",
+              "Arguing instead of taking the next best hole"
+            ],
+            "debrief": [
+              "When is a farther spot the safer pump position?",
+              "How do we move if command needs the hole?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "A good first-engine spot is one that:",
+          "choices": [
+            "Looks closest to the fire in the windshield",
+            "Lets this company work water and hose while leaving a path for later units and a way out",
+            "Blocks the driveway so nobody else can mess it up",
+            "Always sits on the address side regardless of hydrant or wires"
+          ],
+          "answer": 1,
+          "why": "You are parking a water-and-hose platform inside a larger incident, not winning a closeness contest."
+        },
+        {
+          "q": "If the only close spot sits under wires on a working fire side, the operator should:",
+          "choices": [
+            "Take it anyway because seconds matter more than overhead",
+            "Choose the next working spot that does not put the crew and rig under that hazard, and say so",
+            "Wait in the street with the pump in road",
+            "Park on the sidewalk and leave the brake off"
+          ],
+          "answer": 1,
+          "why": "A burned windshield is slower than fifty extra feet of hose from a survivable hole."
+        },
+        {
+          "q": "Department lay-in / lay-out / hydrant-then-building patterns exist so that:",
+          "choices": [
+            "Every driver can freelance",
+            "Water and hose get to the fire the way this agency trained",
+            "The aerial always has to wait",
+            "You never need a hydrant firefighter"
+          ],
+          "answer": 1,
+          "why": "Placement and water supply are one SOP. Do not invent a third pattern in the dark."
+        },
+        {
+          "q": "After the brake is set, apparatus placement is:",
+          "choices": [
+            "Finished forever",
+            "Still your problem if command needs the hole, hose traps the rig, or the spot is unsafe",
+            "The officer’s alone",
+            "Only about how it photographs"
+          ],
+          "answer": 1,
+          "why": "You can be asked to move. Chocks, hose, and a remaining path make that possible."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Department apparatus placement / first-due SOP",
+          "url": "/driver-operator-practice.html",
+          "scope": "Hydrant sequence, spotting rules, and later-unit access are AHJ-specific."
+        },
+        {
+          "label": "Apparatus manufacturer parking-brake and chock instructions",
+          "url": "/driver-operator-practice.html",
+          "scope": "How this rig is secured on a grade is apparatus-specific."
+        }
+      ],
+      "relatedSkills": [
+        "do_pumper_hydrant_ops",
+        "do_pumper_standpipe_fdc",
+        "do_pumper_engage_pump",
+        "do_pumper_rural_tender"
+      ],
+      "searchKeywords": [
+        "placement",
+        "spot",
+        "park",
+        "first due",
+        "don't block",
+        "aerial access",
+        "hydrant lay",
+        "engineer"
+      ]
+    },
+    {
+      "id": "do_pumper_troubleshooting",
+      "certificationId": "driver_operator_pumper",
+      "title": "Pump and Supply Troubleshooting",
+      "aliases": [
+        "troubleshooting",
+        "no water",
+        "cavitation",
+        "loss of prime",
+        "pressure problem"
+      ],
+      "category": "Troubleshooting",
+      "careerStage": "driver",
+      "summary": "Change one variable at a time: supply, valves, air, restrictions, cavitation, governor, then the discharge side.",
+      "whyItMatters": "Panic makes operators twist everything. Method makes water come back.",
+      "learningPoints": [
+        "Start with: do I have water at the pump?",
+        "Then: is a valve wrong?",
+        "Then: is the pump cavitating or out of prime?",
+        "Then: is the problem on the discharge/hose/nozzle side?",
+        "Tell the officer what you know, not a novel."
+      ],
+      "beforeYouDo": [
+        "Know the panel well enough to find tank-to-pump, intakes, and discharges in the dark.",
+        "Keep a light and a hydrant wrench where you always keep them."
+      ],
+      "terminology": [
+        {
+          "term": "Intake restriction",
+          "meaning": "Kink, closed gate, debris, or a weak source starving the pump."
+        },
+        {
+          "term": "Discharge problem",
+          "meaning": "Closed gate, kink, burst, or nozzle issue after the pump."
+        }
+      ],
+      "safetyNotes": [
+        "Do not stand over charged lines while ‘fixing’ blindly.",
+        "A burst LDH is a violent event."
+      ],
+      "practiceResources": [
+        {
+          "label": "Pump Training Scenarios",
+          "url": "/fire-pump-training-scenarios.html",
+          "note": "Failure injects.",
+          "type": "scenario"
+        },
+        {
+          "label": "Scenario Player",
+          "url": "/scenario-player.html",
+          "note": "Visual troubleshooting.",
+          "type": "simulator"
+        },
+        {
+          "label": "Driver / Operator Practice",
+          "url": "/driver-operator-practice.html",
+          "note": "Structured study.",
+          "type": "guide"
+        },
+        {
+          "label": "Focus Drills — troubleshooting",
+          "url": "/focus-drills.html?level=driver_operator&topic=troubleshooting",
+          "note": "Panel cards.",
+          "type": "drill"
+        }
+      ],
+      "drill": {
+        "objective": "Diagnose three seeded problems using a one-variable-at-a-time method and a short radio report.",
+        "equipment": "Pump panel or training cards, radios, optional live pump.",
+        "setup": "Instructor seeds: closed intake, kink, wrong discharge, weak residual, or primer issue.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Recite the order: water at pump → valves → cavitation/prime → discharge.",
+            "performancePoints": [
+              "Order correct"
+            ],
+            "commonMistakes": [
+              "Guessing foam first"
+            ],
+            "debrief": [
+              "What is your first gauge glance?"
+            ]
+          },
+          "15": {
+            "title": "15-minute cards",
+            "instructions": "Three scenario cards. Operator states first check and the radio sentence.",
+            "performancePoints": [
+              "Method",
+              "Concise report"
+            ],
+            "commonMistakes": [
+              "Changing three valves at once"
+            ],
+            "debrief": [
+              "What did you tell command?"
+            ]
+          },
+          "30": {
+            "title": "30-minute live or panel",
+            "instructions": "Seeded faults on an authorized evolution or a full tabletop with time pressure.",
+            "performancePoints": [
+              "Correct diagnosis",
+              "Crew not left dry without a warning"
+            ],
+            "commonMistakes": [
+              "Silent failure"
+            ],
+            "debrief": [
+              "How fast should the officer hear there is a water problem?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "Best first question when a line goes soft:",
+          "choices": [
+            "Is the radio on scan?",
+            "Do I still have water at the pump (intake/tank) and an open path to that discharge?",
+            "Should I add foam?",
+            "Should I pull a second engine immediately without looking?"
+          ],
+          "answer": 1,
+          "why": "Locate the failure. Supply and valves first."
+        },
+        {
+          "q": "Changing several controls at once is a problem because:",
+          "choices": [
+            "It looks decisive",
+            "You cannot tell what actually fixed or broke the situation",
+            "Pumps require it",
+            "Officers prefer it"
+          ],
+          "answer": 1,
+          "why": "One variable at a time is how you learn and how you recover."
+        },
+        {
+          "q": "The officer needs to hear a water problem:",
+          "choices": [
+            "At the critique tomorrow",
+            "As soon as you know attack water is in doubt",
+            "Only if the tank is empty",
+            "Never — handle it quietly"
+          ],
+          "answer": 1,
+          "why": "Interior crews make life decisions based on water they think they have."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Apparatus troubleshooting section / department pumping SOP",
+          "url": "/driver-operator-practice.html",
+          "scope": "Governor modes, primer faults, and valve layouts are apparatus-specific."
+        }
+      ],
+      "relatedSkills": [
+        "do_pumper_pump_theory",
+        "do_pumper_hydrant_ops",
+        "do_pumper_engage_pump",
+        "do_pumper_drafting",
+        "do_pumper_standpipe_fdc",
+        "do_pumper_multiple_attack_lines"
+      ],
+      "searchKeywords": [
+        "troubleshoot",
+        "no pressure",
+        "cavitation",
+        "kink",
+        "closed valve",
+        "loss of water"
+      ],
+      "seeResources": []
+    }
+  ]
+}

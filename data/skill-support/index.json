@@ -1,0 +1,268 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-08-28",
+  "purpose": "FireOpsSim Skill Support Engine catalog. Learning and practice only — not official Taskbook completion.",
+  "disclaimer": "FireOpsSim training guidance is not an official skill sheet, NFPA standard, state certification requirement, or department policy. Completing a session never marks a Roadmap task complete. Verify current SOPs, manufacturer instructions, and the issuing authority.",
+  "catalogFiles": [
+    "probationary_firefighter.json",
+    "firefighter_1.json",
+    "firefighter_2.json",
+    "hazmat_operations.json",
+    "driver_operator_pumper.json",
+    "fire_officer_1.json",
+    "fire_instructor_1.json"
+  ],
+  "stages": [
+    {
+      "id": "candidate",
+      "label": "Candidate",
+      "blurb": "Hiring, CPAT, and academy prep",
+      "certIds": []
+    },
+    {
+      "id": "probationary",
+      "label": "Probationary",
+      "blurb": "First 100 shifts",
+      "certIds": [
+        "probationary_firefighter"
+      ]
+    },
+    {
+      "id": "firefighter",
+      "label": "Firefighter",
+      "blurb": "Firefighter I and II",
+      "certIds": [
+        "firefighter_1",
+        "firefighter_2"
+      ]
+    },
+    {
+      "id": "driver",
+      "label": "Driver/Operator",
+      "blurb": "Pumper operations",
+      "certIds": [
+        "driver_operator_pumper"
+      ]
+    },
+    {
+      "id": "officer",
+      "label": "Company Officer",
+      "blurb": "Fire Officer I",
+      "certIds": [
+        "fire_officer_1"
+      ]
+    },
+    {
+      "id": "instructor",
+      "label": "Instructor",
+      "blurb": "Fire Instructor I",
+      "certIds": [
+        "fire_instructor_1"
+      ]
+    },
+    {
+      "id": "specialty",
+      "label": "Specialty",
+      "blurb": "HazMat Operations",
+      "certIds": [
+        "hazmat_operations"
+      ]
+    }
+  ],
+  "sharedSources": [
+    {
+      "label": "National Fire Academy",
+      "url": "https://www.usfa.fema.gov/nfa/",
+      "scope": "Free federal fire-service training and professional development"
+    },
+    {
+      "label": "FSRI Fire Safety Academy",
+      "url": "https://training.fsri.org/",
+      "scope": "Evidence-based structural firefighting education"
+    },
+    {
+      "label": "NIOSH Firefighter Center",
+      "url": "https://www.cdc.gov/niosh/firefighters/",
+      "scope": "Firefighter safety, exposure, and occupational health"
+    },
+    {
+      "label": "Pro Board",
+      "url": "https://theproboard.org/accredited-agencies/",
+      "scope": "Accredited fire certification agencies"
+    },
+    {
+      "label": "IFSAC",
+      "url": "https://ifsac.org/",
+      "scope": "Accredited certifying entities and programs"
+    },
+    {
+      "label": "FEMA Independent Study",
+      "url": "https://training.fema.gov/is/crslist.aspx",
+      "scope": "ICS/NIMS and emergency management courses"
+    },
+    {
+      "label": "PHMSA ERG",
+      "url": "https://www.phmsa.dot.gov/hazmat/erg/emergency-response-guidebook-erg",
+      "scope": "Current Emergency Response Guidebook"
+    },
+    {
+      "label": "U.S. Fire Administration",
+      "url": "https://www.usfa.fema.gov/",
+      "scope": "National fire-service guidance and training"
+    }
+  ],
+  "practiceCatalog": [
+    {
+      "title": "Hydrant Flow Calculator",
+      "url": "/hydrant-flow-calculator.html",
+      "keywords": [
+        "hydrant",
+        "flow",
+        "residual",
+        "water supply"
+      ],
+      "type": "calculator",
+      "certificationId": "driver_operator_pumper",
+      "skillId": "do_pumper_hydrant_ops"
+    },
+    {
+      "title": "Pump Pressure Calculator",
+      "url": "/fire-pump-calculator.html",
+      "keywords": [
+        "pdp",
+        "pump",
+        "friction loss",
+        "engineer"
+      ],
+      "type": "calculator",
+      "certificationId": "driver_operator_pumper",
+      "skillId": "do_pumper_friction_loss"
+    },
+    {
+      "title": "Standpipe / FDC Calculator",
+      "url": "/standpipe-fdc-calculator.html",
+      "keywords": [
+        "standpipe",
+        "fdc",
+        "high rise",
+        "elevation"
+      ],
+      "type": "calculator",
+      "certificationId": "driver_operator_pumper",
+      "skillId": "do_pumper_standpipe_fdc"
+    },
+    {
+      "title": "Tender Shuttle Calculator",
+      "url": "/tender-shuttle-calculator.html",
+      "keywords": [
+        "tender",
+        "tanker",
+        "shuttle",
+        "rural water"
+      ],
+      "type": "calculator",
+      "certificationId": "driver_operator_pumper",
+      "skillId": "do_pumper_rural_tender"
+    },
+    {
+      "title": "SCBA Air Management Calculator",
+      "url": "/scba-air-management-calculator.html",
+      "keywords": [
+        "scba",
+        "air",
+        "cylinder"
+      ],
+      "type": "calculator",
+      "certificationId": "firefighter_1",
+      "skillId": "ff1_scba"
+    },
+    {
+      "title": "Fireground Decision Sim",
+      "url": "/fireground-decision-sim.html",
+      "keywords": [
+        "size up",
+        "strategy",
+        "tactics",
+        "FO1",
+        "placement"
+      ],
+      "type": "simulator",
+      "certificationId": "driver_operator_pumper",
+      "skillId": "do_pumper_apparatus_placement"
+    },
+    {
+      "title": "Fireground Decision Sim (officer)",
+      "url": "/fireground-decision-sim.html",
+      "keywords": [
+        "size up",
+        "strategy",
+        "tactics",
+        "FO1"
+      ],
+      "type": "simulator",
+      "certificationId": "fire_officer_1",
+      "skillId": "fo1_size_up"
+    },
+    {
+      "title": "Focus Drills + Skill Wheel",
+      "url": "/focus-drills.html",
+      "keywords": [
+        "drill",
+        "wheel",
+        "15 minute",
+        "company drill"
+      ],
+      "type": "drill"
+    },
+    {
+      "title": "Hose Advancement Checklist",
+      "url": "/hose-advancement-checklist.html",
+      "keywords": [
+        "hose",
+        "attack line",
+        "probation"
+      ],
+      "type": "checklist",
+      "skillId": "probation_hose_advancement"
+    },
+    {
+      "title": "Ventilation Checklist",
+      "url": "/ventilation-checklist.html",
+      "keywords": [
+        "ventilation",
+        "ff2",
+        "flow path"
+      ],
+      "type": "checklist",
+      "skillId": "ff2_ventilation"
+    },
+    {
+      "title": "Driver/Operator Practice Hub",
+      "url": "/driver-operator-practice.html",
+      "keywords": [
+        "engineer",
+        "pumper",
+        "driver operator"
+      ],
+      "type": "guide",
+      "certificationId": "driver_operator_pumper"
+    }
+  ],
+  "candidateResources": [
+    {
+      "label": "Become a Firefighter",
+      "url": "/become-a-firefighter.html",
+      "note": "Hiring path and academy prep"
+    },
+    {
+      "label": "CPAT Preparation",
+      "url": "/cpat-preparation.html",
+      "note": "Physical ability prep"
+    },
+    {
+      "label": "Firefighter I skills",
+      "url": "/skill-support.html?cert=firefighter_1",
+      "note": "Academy fundamentals"
+    }
+  ]
+}

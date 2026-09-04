@@ -1,0 +1,1615 @@
+{
+  "id": "fire_officer_1",
+  "title": "Fire Officer I",
+  "shortTitle": "FO I",
+  "careerStage": "officer",
+  "category": "Officer",
+  "aliases": [
+    "fire officer 1",
+    "fire officer i",
+    "fo1",
+    "fo i",
+    "company officer",
+    "lieutenant",
+    "acting officer"
+  ],
+  "summary": "Company-officer skills: size-up, initial radio report, assignments, accountability, risk, coaching, documentation, and transfer of command.",
+  "skills": [
+    {
+      "id": "fo1_initial_radio_report",
+      "certificationId": "fire_officer_1",
+      "title": "Initial Radio Report",
+      "aliases": [
+        "initial radio report",
+        "arrival report",
+        "on scene report",
+        "irr",
+        "size up radio",
+        "officer radio report"
+      ],
+      "category": "Command",
+      "careerStage": "officer",
+      "summary": "From the seat, paint a picture: occupancy, conditions, actions, strategy, and what you need next — in a format later units can use.",
+      "whyItMatters": "The rest of the incident will copy your first 20 seconds. A vague ‘we have fire showing’ wastes staffing.",
+      "learningPoints": [
+        "Say what you see: building, occupancy, fire/smoke location and extent, obvious life hazard.",
+        "Say what you are doing: investigation, attack, command mode.",
+        "Say what you need: next companies, water, special resources.",
+        "Leave room for the next unit’s assignment.",
+        "Department format wins over any textbook script."
+      ],
+      "beforeYouDo": [
+        "Know your department’s arrival-report template.",
+        "Practice with photos — not just live chaos."
+      ],
+      "terminology": [
+        {
+          "term": "Initial radio report",
+          "meaning": "The first structured on-scene transmission that orients the response."
+        },
+        {
+          "term": "Command mode",
+          "meaning": "Investigating, fast-attack, or command from a fixed position — per local ICS habits."
+        }
+      ],
+      "safetyNotes": [
+        "Do not commit crews in the report you have not actually assigned.",
+        "If you are wrong, correct it on the next transmission — do not defend a bad picture."
+      ],
+      "seeResources": [
+        {
+          "label": "Fireground Decision Sim",
+          "url": "/fireground-decision-sim.html",
+          "note": "Arrival problems with decisions attached.",
+          "type": "simulator"
+        }
+      ],
+      "practiceResources": [
+        {
+          "label": "Fireground Decision Sim",
+          "url": "/fireground-decision-sim.html",
+          "note": "Talk while you decide.",
+          "type": "simulator"
+        },
+        {
+          "label": "Focus Drills — initial report",
+          "url": "/focus-drills.html?level=officer_1&topic=radio%20report",
+          "note": "Timed arrival reports.",
+          "type": "drill"
+        },
+        {
+          "label": "Company Officer Tools",
+          "url": "/company-officer-tools.html",
+          "note": "Officer development hub.",
+          "type": "guide"
+        },
+        {
+          "label": "Study Center — officer track",
+          "url": "/study-center.html?track=officer",
+          "note": "Officer study.",
+          "type": "guide"
+        }
+      ],
+      "drill": {
+        "objective": "Deliver a complete initial radio report from an arrival image in 20–30 seconds, then assign the first arriving engine.",
+        "equipment": "Arrival images, timer, training radio or partner.",
+        "setup": "Training talkgroup. One person scores missing elements.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Recite your department template from memory.",
+            "performancePoints": [
+              "Template complete"
+            ],
+            "commonMistakes": [
+              "Poetry"
+            ],
+            "debrief": [
+              "What does later-arriving Truck need to hear?"
+            ]
+          },
+          "15": {
+            "title": "15-minute photo reps",
+            "instructions": "Six images: house, garden apartment, strip mall, car, dumpster, nothing showing. 25 seconds each.",
+            "performancePoints": [
+              "Occupancy",
+              "Conditions",
+              "Actions/needs"
+            ],
+            "commonMistakes": [
+              "Same report for every building"
+            ],
+            "debrief": [
+              "Did you declare a strategy?"
+            ]
+          },
+          "30": {
+            "title": "30-minute evolving arrival",
+            "instructions": "Give the IRR, then a 60-second later update after a condition card (victim at window / basement / wires down).",
+            "performancePoints": [
+              "Correction",
+              "Assignments"
+            ],
+            "commonMistakes": [
+              "Never updating"
+            ],
+            "debrief": [
+              "When do you move from fast-attack to a command post?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "An initial radio report should help later units:",
+          "choices": [
+            "Feel inspired",
+            "Know occupancy, conditions, your actions, and where to go/work",
+            "Hear your entire career history",
+            "Stay on the original dispatch until they see it themselves"
+          ],
+          "answer": 1,
+          "why": "It is a working picture, not a vibe."
+        },
+        {
+          "q": "If your first report was wrong:",
+          "choices": [
+            "Never admit it",
+            "Correct it as soon as you know — pride is not a strategy",
+            "Wait for the after-action",
+            "Blame dispatch"
+          ],
+          "answer": 1,
+          "why": "Bad information kills."
+        },
+        {
+          "q": "‘Fire showing’ without location or occupancy:",
+          "choices": [
+            "Is enough",
+            "Is incomplete — where, what building, and what are you doing?",
+            "Is only used at night",
+            "Replaces accountability"
+          ],
+          "answer": 1,
+          "why": "Show the problem, not just the color of the smoke."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "FEMA Independent Study",
+          "url": "https://training.fema.gov/is/crslist.aspx",
+          "scope": "ICS/NIMS and emergency management courses"
+        },
+        {
+          "label": "Department radio / ICS SOP",
+          "url": "/company-officer-tools.html",
+          "scope": "Arrival-report format and command modes are local."
+        }
+      ],
+      "relatedSkills": [
+        "fo1_size_up",
+        "fo1_accountability",
+        "fo1_strategy_tactics",
+        "fo1_transfer_of_command",
+        "ff2_radio_reports"
+      ],
+      "searchKeywords": [
+        "initial radio report",
+        "arrival",
+        "IRR",
+        "on scene",
+        "FO1",
+        "lieutenant",
+        "size up"
+      ]
+    },
+    {
+      "id": "fo1_size_up",
+      "certificationId": "fire_officer_1",
+      "title": "Size-Up and Risk",
+      "aliases": [
+        "size up",
+        "sizeup",
+        "risk benefit",
+        "go no go",
+        "360"
+      ],
+      "category": "Command",
+      "careerStage": "officer",
+      "summary": "Build a usable picture: life hazard, fire location, building, access, water, and what would change your mind.",
+      "whyItMatters": "Strategy without size-up is a guess with a radio.",
+      "learningPoints": [
+        "A 360 (or a delegated 360) is how you stop lying to yourself about the D side.",
+        "Life hazard drives risk. Vacant vs occupied is not a vibe — verify.",
+        "Name the construction/collapse problem in plain language.",
+        "Size-up continues after arrival. The fire gets a vote."
+      ],
+      "beforeYouDo": [
+        "First-due buildings and water.",
+        "Department risk-management language."
+      ],
+      "terminology": [
+        {
+          "term": "360",
+          "meaning": "A complete walk-around or equivalent view of all sides."
+        },
+        {
+          "term": "Risk/benefit",
+          "meaning": "What we are willing to risk, for whom, given what we know."
+        }
+      ],
+      "safetyNotes": [
+        "Do not send a member on a solo 360 into an unseen hazard without a plan.",
+        "Wires, holes, and dogs are size-up items too."
+      ],
+      "seeResources": [
+        {
+          "label": "Fireground Decision Sim",
+          "url": "/fireground-decision-sim.html",
+          "note": "Size-up then decide.",
+          "type": "simulator"
+        }
+      ],
+      "practiceResources": [
+        {
+          "label": "Fireground Decision Sim",
+          "url": "/fireground-decision-sim.html",
+          "note": "Four occupancy types.",
+          "type": "simulator"
+        },
+        {
+          "label": "Search and Rescue Size-Up",
+          "url": "/search-and-rescue-sizeup.html",
+          "note": "Life hazard structure.",
+          "type": "checklist"
+        },
+        {
+          "label": "Focus Drills — size-up",
+          "url": "/focus-drills.html?level=officer_1&topic=size%20up",
+          "note": "Arrival images.",
+          "type": "drill"
+        },
+        {
+          "label": "Leadership Development",
+          "url": "/leadership-development.html",
+          "note": "Officer growth.",
+          "type": "guide"
+        }
+      ],
+      "drill": {
+        "objective": "From an occupancy, complete a size-up that names life hazard, fire location, building concerns, water, and a go/hold/no-go for interior.",
+        "equipment": "Photos or a real drill site, radio, notepad.",
+        "setup": "If using a real building, stay outside unless it is a training burn under instructors.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "List the size-up factors you will not skip even when the fire looks ‘easy.’",
+            "performancePoints": [
+              "Life and rear named"
+            ],
+            "commonMistakes": [
+              "Front-only command"
+            ],
+            "debrief": [
+              "What would a basement change?"
+            ]
+          },
+          "15": {
+            "title": "15-minute 360 tabletop",
+            "instructions": "Image set missing the D side until you ask. Practice requesting the 360.",
+            "performancePoints": [
+              "You asked"
+            ],
+            "commonMistakes": [
+              "Assuming the rear is fine"
+            ],
+            "debrief": [
+              "Who did you send?"
+            ]
+          },
+          "30": {
+            "title": "30-minute risk drill",
+            "instructions": "Three occupancies: occupied night residential, vacant commercial, and a working fire with a report of a trapped person. State risk and what new info would change it.",
+            "performancePoints": [
+              "Risk stated",
+              "Change triggers"
+            ],
+            "commonMistakes": [
+              "Same strategy everywhere"
+            ],
+            "debrief": [
+              "When do we switch to defensive?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "A missing 360 most often hides:",
+          "choices": [
+            "The hydrant color",
+            "Fire in the rear, basement involvement, or a victim at the back",
+            "The pump panel",
+            "Dispatch notes"
+          ],
+          "answer": 1,
+          "why": "The D side is where surprises live."
+        },
+        {
+          "q": "Risk/benefit should be stated in terms of:",
+          "choices": [
+            "How it will look on video",
+            "Who is savable, what the building is doing, and what we can actually staff",
+            "Always interior",
+            "Never interior"
+          ],
+          "answer": 1,
+          "why": "It is a decision, not a slogan."
+        },
+        {
+          "q": "Size-up after water on the fire:",
+          "choices": [
+            "Is over",
+            "Continues — conditions and remaining risk change",
+            "Is only for the investigator",
+            "Should be deleted from the radio"
+          ],
+          "answer": 1,
+          "why": "The incident is not static."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "FSRI Fire Safety Academy",
+          "url": "https://training.fsri.org/",
+          "scope": "Evidence-based structural firefighting education"
+        },
+        {
+          "label": "NIOSH Firefighter Center",
+          "url": "https://www.cdc.gov/niosh/firefighters/",
+          "scope": "Firefighter safety, exposure, and occupational health"
+        },
+        {
+          "label": "Department operational / risk SOP",
+          "url": "/company-officer-tools.html",
+          "scope": "Go/no-go and 360 expectations are local."
+        }
+      ],
+      "relatedSkills": [
+        "fo1_initial_radio_report",
+        "fo1_strategy_tactics",
+        "fo1_accountability",
+        "fo1_transfer_of_command"
+      ],
+      "searchKeywords": [
+        "size up",
+        "360",
+        "risk",
+        "go no go",
+        "life hazard",
+        "FO1"
+      ]
+    },
+    {
+      "id": "fo1_strategy_tactics",
+      "certificationId": "fire_officer_1",
+      "title": "Strategy and Tactics",
+      "aliases": [
+        "strategy",
+        "tactics",
+        "offensive",
+        "defensive",
+        "incident action"
+      ],
+      "category": "Operations",
+      "careerStage": "officer",
+      "summary": "Pick a strategy you can staff, assign tactics that match it, and change both when the fire tells you to.",
+      "whyItMatters": "Offensive tactics under a defensive strategy (or the reverse) is how companies get stretched into bad air.",
+      "learningPoints": [
+        "Strategy is the overall plan (e.g., offensive interior vs defensive exterior) — local terms vary.",
+        "Tactics are the assigned tasks that make the strategy real.",
+        "If you do not have water, staffing, or a building that will take people, the strategy is a wish.",
+        "Announce strategy so later units do not freelance the opposite."
+      ],
+      "beforeYouDo": [
+        "Department command terminology.",
+        "A fire problem with a staffing limit."
+      ],
+      "terminology": [
+        {
+          "term": "Strategy",
+          "meaning": "The overall approach to the incident."
+        },
+        {
+          "term": "Tactics",
+          "meaning": "The specific assignments that implement the strategy."
+        }
+      ],
+      "safetyNotes": [
+        "Do not keep an interior strategy out of stubbornness when the building has declared otherwise.",
+        "Transitional attack is a tactic with rules — not a loophole to skip size-up."
+      ],
+      "seeResources": [
+        {
+          "label": "Fireground Decision Sim",
+          "url": "/fireground-decision-sim.html",
+          "note": "Strategy changes with conditions.",
+          "type": "simulator"
+        }
+      ],
+      "practiceResources": [
+        {
+          "label": "Fireground Decision Sim",
+          "url": "/fireground-decision-sim.html",
+          "note": "Branching cases.",
+          "type": "simulator"
+        },
+        {
+          "label": "Focus Drills — tactical pause",
+          "url": "/focus-drills.html?level=officer_1&topic=tactical",
+          "note": "Condition-change cards.",
+          "type": "drill"
+        },
+        {
+          "label": "Company Officer Tools",
+          "url": "/company-officer-tools.html",
+          "note": "Officer systems.",
+          "type": "guide"
+        }
+      ],
+      "drill": {
+        "objective": "State a strategy, give three tactical assignments, then change strategy when a condition card drops.",
+        "equipment": "Scenario cards, radios, optional board for ICS chart.",
+        "setup": "Tabletop. Cap staffing at a realistic first-alarm.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Define strategy vs tactics using one house fire.",
+            "performancePoints": [
+              "Terms correct"
+            ],
+            "commonMistakes": [
+              "Using them as synonyms"
+            ],
+            "debrief": [
+              "What do we tell the second engine?"
+            ]
+          },
+          "15": {
+            "title": "15-minute first alarm",
+            "instructions": "Assign engine, truck, and later engine. Keep it inside the strategy.",
+            "performancePoints": [
+              "Assignments match"
+            ],
+            "commonMistakes": [
+              "Interior search under defensive"
+            ],
+            "debrief": [
+              "Where is water coming from?"
+            ]
+          },
+          "30": {
+            "title": "30-minute change drill",
+            "instructions": "Two condition changes (collapse warning / victim / water loss). Show the radio announcement of the new strategy.",
+            "performancePoints": [
+              "Change announced",
+              "Accountability during the change"
+            ],
+            "commonMistakes": [
+              "Silent strategy shift"
+            ],
+            "debrief": [
+              "Who is still inside?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "If strategy is defensive, an interior search assignment:",
+          "choices": [
+            "Is always required",
+            "Must be justified by a specific savable life and a plan — not autopilot",
+            "Is the truck’s right regardless",
+            "Should be hidden from command"
+          ],
+          "answer": 1,
+          "why": "Match tactics to strategy unless you are making a deliberate, staffed exception."
+        },
+        {
+          "q": "The second-due company should learn the strategy from:",
+          "choices": [
+            "ESP",
+            "Your radio picture and assignments",
+            "Whatever they did last fire",
+            "Social media"
+          ],
+          "answer": 1,
+          "why": "Say it."
+        },
+        {
+          "q": "A strategy change requires:",
+          "choices": [
+            "Only a feeling",
+            "A reason, an announcement, and accountability for crews already committed",
+            "A written essay",
+            "Waiting for the news"
+          ],
+          "answer": 1,
+          "why": "People are already in motion."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "FSRI Fire Safety Academy",
+          "url": "https://training.fsri.org/",
+          "scope": "Evidence-based structural firefighting education"
+        },
+        {
+          "label": "Department command SOP",
+          "url": "/company-officer-tools.html",
+          "scope": "Strategy labels and transitional-attack rules are local."
+        }
+      ],
+      "relatedSkills": [
+        "fo1_size_up",
+        "fo1_accountability",
+        "fo1_transfer_of_command",
+        "ff2_company_tactics"
+      ],
+      "searchKeywords": [
+        "strategy",
+        "tactics",
+        "offensive",
+        "defensive",
+        "transitional",
+        "IAP"
+      ]
+    },
+    {
+      "id": "fo1_accountability",
+      "certificationId": "fire_officer_1",
+      "title": "Assignments and Accountability",
+      "aliases": [
+        "accountability",
+        "passport",
+        "crew assignment",
+        "par",
+        "personnel accountability"
+      ],
+      "category": "Leadership",
+      "careerStage": "officer",
+      "summary": "Every member has a task, a location, and a way to be counted — especially when the plan changes.",
+      "whyItMatters": "Unassigned firefighters invent jobs in the worst air. Unaccounted firefighters become Maydays with no last location.",
+      "learningPoints": [
+        "Closed-loop assignments: they repeat it back.",
+        "Know who is inside, doing what, on which hoseline or search.",
+        "PAR is a tool, not a ritual — use it when the incident needs it.",
+        "Freelancers are an officer problem, not a personality quirk."
+      ],
+      "beforeYouDo": [
+        "Department accountability system (tags, passport, electronic).",
+        "Riding lists for the drill."
+      ],
+      "terminology": [
+        {
+          "term": "PAR",
+          "meaning": "Personnel accountability report — a roll-call of assigned crews."
+        },
+        {
+          "term": "Span of control",
+          "meaning": "How many assignments one officer can actually track."
+        }
+      ],
+      "safetyNotes": [
+        "If you cannot name where a crew is, you do not have command of them.",
+        "Accountability during a Mayday is how RIT finds a starting point."
+      ],
+      "practiceResources": [
+        {
+          "label": "Focus Drills — accountability",
+          "url": "/focus-drills.html?level=officer_1&topic=accountability",
+          "note": "Assignment drill.",
+          "type": "drill"
+        },
+        {
+          "label": "Company Officer Tools",
+          "url": "/company-officer-tools.html",
+          "note": "Crew leadership.",
+          "type": "guide"
+        },
+        {
+          "label": "Fireground Decision Sim",
+          "url": "/fireground-decision-sim.html",
+          "note": "Keep people attached to tasks.",
+          "type": "simulator"
+        }
+      ],
+      "drill": {
+        "objective": "Assign a first-alarm, track locations on a simple chart, then run a PAR after a strategy change.",
+        "equipment": "Helmet shields or name cards, board, radios.",
+        "setup": "Tabletop with moving cards as ‘crews.’",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "From a riding list, give every member a job in 60 seconds.",
+            "performancePoints": [
+              "No leftovers"
+            ],
+            "commonMistakes": [
+              "‘Just go help’"
+            ],
+            "debrief": [
+              "Who is still in the cab?"
+            ]
+          },
+          "15": {
+            "title": "15-minute tracking",
+            "instructions": "Move crews through assignments. Officer must point to each crew’s location on demand.",
+            "performancePoints": [
+              "Chart matches radio"
+            ],
+            "commonMistakes": [
+              "Lost a crew on the board"
+            ],
+            "debrief": [
+              "Where is the backup line crew?"
+            ]
+          },
+          "30": {
+            "title": "30-minute PAR",
+            "instructions": "Working fire, then a collapse or Mayday inject. PAR in department format. Identify who is missing on purpose.",
+            "performancePoints": [
+              "PAR complete",
+              "Last known location"
+            ],
+            "commonMistakes": [
+              "Skipping PAR because it is awkward"
+            ],
+            "debrief": [
+              "What did RIT get from us?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "An unassigned firefighter on the fireground should be:",
+          "choices": [
+            "Admired for initiative",
+            "Given a job or staged — not left to freelance",
+            "Sent to the roof by default",
+            "Ignored"
+          ],
+          "answer": 1,
+          "why": "Initiative without an assignment is how extra holes and extra victims appear."
+        },
+        {
+          "q": "If you cannot say where a crew is:",
+          "choices": [
+            "It is fine if they have a radio",
+            "You have an accountability problem now",
+            "Wait for the critique",
+            "Assume they are at rehab"
+          ],
+          "answer": 1,
+          "why": "Location is the product."
+        },
+        {
+          "q": "PAR is most useful:",
+          "choices": [
+            "As background radio noise",
+            "When something changed or someone may be missing",
+            "Only on high-rise",
+            "Instead of assignments"
+          ],
+          "answer": 1,
+          "why": "It is a check against reality."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "NIOSH Firefighter Center",
+          "url": "https://www.cdc.gov/niosh/firefighters/",
+          "scope": "Firefighter safety, exposure, and occupational health"
+        },
+        {
+          "label": "Department accountability SOP",
+          "url": "/company-officer-tools.html",
+          "scope": "Tags, PAR triggers, and command worksheets are local."
+        }
+      ],
+      "relatedSkills": [
+        "fo1_strategy_tactics",
+        "fo1_transfer_of_command",
+        "ff1_communications_mayday",
+        "fo1_initial_radio_report"
+      ],
+      "searchKeywords": [
+        "accountability",
+        "PAR",
+        "passport",
+        "assignments",
+        "span of control",
+        "freelance"
+      ],
+      "seeResources": []
+    },
+    {
+      "id": "fo1_transfer_of_command",
+      "certificationId": "fire_officer_1",
+      "title": "Transfer of Command",
+      "aliases": [
+        "transfer of command",
+        "command transfer",
+        "pass command",
+        "brief the chief"
+      ],
+      "category": "Command",
+      "careerStage": "officer",
+      "summary": "Hand off a compact brief: situation, strategy, assignments, accountability, resources, hazards, and immediate needs.",
+      "whyItMatters": "A bad transfer creates two commanders and zero accountability.",
+      "learningPoints": [
+        "Face-to-face when you can. Radio when you must.",
+        "The incoming officer confirms they have command — on the air.",
+        "Do not dump a novel. Dump the picture.",
+        "Stay and help unless you are reassigned."
+      ],
+      "beforeYouDo": [
+        "Department transfer checklist.",
+        "A working-fire tabletop already in progress."
+      ],
+      "terminology": [
+        {
+          "term": "Transfer of command",
+          "meaning": "Formal handoff of IC responsibility."
+        }
+      ],
+      "safetyNotes": [
+        "Do not walk away before the other person actually has it.",
+        "If crews are in trouble, that is the first sentence, not the last."
+      ],
+      "practiceResources": [
+        {
+          "label": "Focus Drills — command transfer",
+          "url": "/focus-drills.html?level=officer_1&topic=transfer",
+          "note": "Briefing reps.",
+          "type": "drill"
+        },
+        {
+          "label": "Company Officer Tools",
+          "url": "/company-officer-tools.html",
+          "note": "Command habits.",
+          "type": "guide"
+        },
+        {
+          "label": "Fire Instructor I — briefing",
+          "url": "/skill-support.html?cert=fire_instructor_1&task=fi1_delivery",
+          "note": "Clear briefings transfer to the fireground too.",
+          "type": "skill"
+        }
+      ],
+      "drill": {
+        "objective": "Give a 45-second command transfer brief, then the incoming IC repeats the critical pieces on the radio.",
+        "equipment": "Scenario in progress, two officers, radios, worksheet.",
+        "setup": "Tabletop. Incoming IC may ask two questions only.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "List the seven items that must be in the brief.",
+            "performancePoints": [
+              "List complete"
+            ],
+            "commonMistakes": [
+              "Story about the drive over"
+            ],
+            "debrief": [
+              "What if a crew is missing?"
+            ]
+          },
+          "15": {
+            "title": "15-minute briefs",
+            "instructions": "Three incidents, three transfers. Score missing pieces.",
+            "performancePoints": [
+              "Strategy",
+              "Assignments",
+              "Needs"
+            ],
+            "commonMistakes": [
+              "No radio announcement"
+            ],
+            "debrief": [
+              "Did the new IC actually own it?"
+            ]
+          },
+          "30": {
+            "title": "30-minute messy transfer",
+            "instructions": "Mayday in progress during the handshake. Practice not dropping either ball.",
+            "performancePoints": [
+              "Mayday first",
+              "Then transfer"
+            ],
+            "commonMistakes": [
+              "Walking away"
+            ],
+            "debrief": [
+              "Who is IC during the Mayday?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "Command has transferred when:",
+          "choices": [
+            "The chief’s vehicle arrives",
+            "The incoming officer acknowledges command per department practice",
+            "You leave the scene",
+            "The news says so"
+          ],
+          "answer": 1,
+          "why": "Arrival is not transfer."
+        },
+        {
+          "q": "The brief should start with:",
+          "choices": [
+            "Your feelings",
+            "Life hazards / urgent problems, then strategy and assignments",
+            "A joke",
+            "The hydrant color"
+          ],
+          "answer": 1,
+          "why": "Lead with what can kill people in the next minute."
+        },
+        {
+          "q": "After transfer you should:",
+          "choices": [
+            "Disappear",
+            "Remain available as assigned — you still have crew knowledge",
+            "Countermand the new IC on the radio",
+            "Start a second command post"
+          ],
+          "answer": 1,
+          "why": "You are still a resource."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "FEMA Independent Study",
+          "url": "https://training.fema.gov/is/crslist.aspx",
+          "scope": "ICS/NIMS and emergency management courses"
+        },
+        {
+          "label": "Department ICS / command SOP",
+          "url": "/company-officer-tools.html",
+          "scope": "Who assumes command and the radio phrase are local."
+        }
+      ],
+      "relatedSkills": [
+        "fo1_accountability",
+        "fo1_strategy_tactics",
+        "fo1_initial_radio_report",
+        "fo1_after_action"
+      ],
+      "searchKeywords": [
+        "transfer of command",
+        "IC",
+        "briefing",
+        "command",
+        "ICS"
+      ],
+      "seeResources": []
+    },
+    {
+      "id": "fo1_coaching",
+      "certificationId": "fire_officer_1",
+      "title": "Coaching and Crew Performance",
+      "aliases": [
+        "coaching",
+        "counseling",
+        "performance",
+        "corrective",
+        "supervision"
+      ],
+      "category": "Supervision",
+      "careerStage": "officer",
+      "summary": "Correct a specific behavior with a private, factual conversation: what you saw, the standard, the impact, and the follow-up.",
+      "whyItMatters": "Officers who only yell in the bay never fix the thing that will hurt someone at 3 a.m.",
+      "learningPoints": [
+        "Public praise, private correction — as a default.",
+        "Behavior, not identity. ‘You skipped the 360’ not ‘you’re lazy.’",
+        "Tie it to a standard (SOP, safety, crew agreement).",
+        "Document when policy says to. Do not ambush with a file the person never saw.",
+        "If it is a policy/HR issue, use the actual process — do not freelance discipline."
+      ],
+      "beforeYouDo": [
+        "Department discipline/coaching SOP.",
+        "A realistic role-play card."
+      ],
+      "terminology": [
+        {
+          "term": "Coaching",
+          "meaning": "Improving performance toward a standard."
+        },
+        {
+          "term": "Counseling / discipline",
+          "meaning": "Formal steps when coaching is not enough — follow policy."
+        }
+      ],
+      "safetyNotes": [
+        "Safety violations may require immediate stop, then the conversation.",
+        "Do not humiliate people. It creates silent crews."
+      ],
+      "practiceResources": [
+        {
+          "label": "Focus Drills — coaching",
+          "url": "/focus-drills.html?level=officer_1&topic=coaching",
+          "note": "Role-play.",
+          "type": "drill"
+        },
+        {
+          "label": "Leadership Development",
+          "url": "/leadership-development.html",
+          "note": "People skills.",
+          "type": "guide"
+        },
+        {
+          "label": "Company Officer Tools",
+          "url": "/company-officer-tools.html",
+          "note": "Supervision resources.",
+          "type": "guide"
+        }
+      ],
+      "drill": {
+        "objective": "Run a 4-minute coaching conversation on a specific fireground miss, then agree on one observable next rep.",
+        "equipment": "Role-play cards, quiet room, optional note template.",
+        "setup": "No real personnel files. Fiction only.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Write the four parts: observed, standard, impact, ask.",
+            "performancePoints": [
+              "Structure"
+            ],
+            "commonMistakes": [
+              "Character attack"
+            ],
+            "debrief": [
+              "Where would this happen on shift?"
+            ]
+          },
+          "15": {
+            "title": "15-minute role-play",
+            "instructions": "Two rounds: skipped accountability tag, then a rude public complaint. Switch roles.",
+            "performancePoints": [
+              "Private",
+              "Specific"
+            ],
+            "commonMistakes": [
+              "Audience in the kitchen"
+            ],
+            "debrief": [
+              "What is the follow-up date?"
+            ]
+          },
+          "30": {
+            "title": "30-minute conflict",
+            "instructions": "Two members snapping at each other. Officer facilitates facts, expectations, and a boundary. Know when to escalate to the chief/HR path.",
+            "performancePoints": [
+              "Fairness",
+              "Escalation criteria"
+            ],
+            "commonMistakes": [
+              "Taking sides in the bay"
+            ],
+            "debrief": [
+              "Is this coaching or a formal complaint?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "The most useful coaching statement is:",
+          "choices": [
+            "‘You’re a problem’",
+            "A specific behavior plus the standard plus the effect on the crew",
+            "Sarcasm",
+            "A group text"
+          ],
+          "answer": 1,
+          "why": "People can fix what they can see."
+        },
+        {
+          "q": "Correcting a safety issue in front of the whole company:",
+          "choices": [
+            "Is always wrong",
+            "May be required to stop the danger — then take the teaching private",
+            "Should be filmed",
+            "Replaces policy"
+          ],
+          "answer": 1,
+          "why": "Stop the harm, then teach."
+        },
+        {
+          "q": "If the issue is harassment or a policy violation beyond your authority:",
+          "choices": [
+            "Handle it as a joke",
+            "Follow department reporting rules — do not bury it in ‘coaching’",
+            "Tell them to get over it",
+            "Ignore it until promotion season"
+          ],
+          "answer": 1,
+          "why": "Officers are a reporting path, not a lid."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Department HR / discipline / workplace SOP",
+          "url": "/leadership-development.html",
+          "scope": "What you may document and when you must escalate are local legal/HR rules."
+        }
+      ],
+      "relatedSkills": [
+        "fo1_documentation",
+        "fo1_after_action",
+        "fi1_feedback"
+      ],
+      "searchKeywords": [
+        "coaching",
+        "counseling",
+        "performance",
+        "supervision",
+        "conflict",
+        "lieutenant"
+      ],
+      "seeResources": []
+    },
+    {
+      "id": "fo1_documentation",
+      "certificationId": "fire_officer_1",
+      "title": "Incident Documentation",
+      "aliases": [
+        "report writing",
+        "narrative",
+        "nfirs",
+        "documentation",
+        "memo"
+      ],
+      "category": "Administration",
+      "careerStage": "officer",
+      "summary": "Write what happened in objective language: times, decisions, people (as required), and follow-up — without creative writing.",
+      "whyItMatters": "The report is how the organization learns, defends, and improves. A sloppy narrative becomes the official story.",
+      "learningPoints": [
+        "Facts vs opinions. Label them if you must include both.",
+        "Chronology helps. So do names/units per policy.",
+        "Do not put patient identifiers in a training log — and follow HIPAA/privacy on real EMS reports.",
+        "If you changed strategy, say why in plain language.",
+        "Complete required fields. ‘See narrative’ is not a strategy for checkboxes."
+      ],
+      "beforeYouDo": [
+        "A de-identified sample report or a fictional incident.",
+        "Department report system rules."
+      ],
+      "terminology": [
+        {
+          "term": "Objective language",
+          "meaning": "What was observed and done, not a novel about motives."
+        }
+      ],
+      "safetyNotes": [
+        "Training documentation is not an official NFIRS record. Do not treat FireOpsSim notes as the department system of record.",
+        "Never enter protected health information into FireOpsSim."
+      ],
+      "practiceResources": [
+        {
+          "label": "Focus Drills — documentation",
+          "url": "/focus-drills.html?level=officer_1&topic=documentation",
+          "note": "Quality check.",
+          "type": "drill"
+        },
+        {
+          "label": "Company Officer Tools",
+          "url": "/company-officer-tools.html",
+          "note": "Admin habits.",
+          "type": "guide"
+        },
+        {
+          "label": "HazMat Incident Notes",
+          "url": "/hazmat-incident-notes.html",
+          "note": "Structured observations.",
+          "type": "notes"
+        }
+      ],
+      "drill": {
+        "objective": "Edit a messy de-identified narrative into a clear chronology with decisions and follow-up, then list three missing official-system fields you would still need on a real report.",
+        "equipment": "Sample narrative (fiction), timer, department field list if available.",
+        "setup": "No real incident data, no patient names.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Strike opinions from a bad paragraph.",
+            "performancePoints": [
+              "Facts remain"
+            ],
+            "commonMistakes": [
+              "Blame language"
+            ],
+            "debrief": [
+              "What is still missing?"
+            ]
+          },
+          "15": {
+            "title": "15-minute rewrite",
+            "instructions": "Turn a 200-word rant into a 120-word chronology.",
+            "performancePoints": [
+              "Times",
+              "Actions"
+            ],
+            "commonMistakes": [
+              "Comedy"
+            ],
+            "debrief": [
+              "Would a later investigator understand the strategy change?"
+            ]
+          },
+          "30": {
+            "title": "30-minute complete package",
+            "instructions": "Narrative plus a list of notifications (investigation, exposure, injury) that policy might require — as a checklist, not a filing.",
+            "performancePoints": [
+              "Follow-up listed"
+            ],
+            "commonMistakes": [
+              "Inventing legal conclusions"
+            ],
+            "debrief": [
+              "Where does this actually get entered on shift?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "A good company-officer narrative emphasizes:",
+          "choices": [
+            "How brave everyone was",
+            "Observable conditions, actions, times, and decisions",
+            "Gossip",
+            "Who you dislike"
+          ],
+          "answer": 1,
+          "why": "The next reader was not there."
+        },
+        {
+          "q": "Protected health information belongs:",
+          "choices": [
+            "In FireOpsSim career logs",
+            "In the official EMS/hospital system per law and agency rules — not in this training product",
+            "On the whiteboard",
+            "In group chats"
+          ],
+          "answer": 1,
+          "why": "FireOpsSim is not a PCR."
+        },
+        {
+          "q": "If you are unsure whether an injury/exposure must be reported:",
+          "choices": [
+            "Hide it",
+            "Follow department occupational-reporting rules — do not guess it away",
+            "Wait a year",
+            "Only tell a friend"
+          ],
+          "answer": 1,
+          "why": "Reporting paths exist for a reason."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Department records / NFIRS / injury reporting SOP",
+          "url": "/company-officer-tools.html",
+          "scope": "Official systems of record are the department’s, not FireOpsSim."
+        }
+      ],
+      "relatedSkills": [
+        "fo1_after_action",
+        "fo1_coaching",
+        "fo1_risk_management"
+      ],
+      "searchKeywords": [
+        "documentation",
+        "narrative",
+        "NFIRS",
+        "report",
+        "memo",
+        "chronology"
+      ],
+      "seeResources": []
+    },
+    {
+      "id": "fo1_risk_management",
+      "certificationId": "fire_officer_1",
+      "title": "Risk Management",
+      "aliases": [
+        "risk management",
+        "safety officer",
+        "idlh",
+        "rehab",
+        "exposure"
+      ],
+      "category": "Risk Management",
+      "careerStage": "officer",
+      "summary": "Name the risk, reduce it if you can, refuse what you cannot staff, and take care of the crew after the work.",
+      "whyItMatters": "Company officers are the last people who can still say ‘we are not doing that’ before someone pays.",
+      "learningPoints": [
+        "Risk to firefighters must buy something: savable life, or a building that still has a reason.",
+        "Rehab, air, and rotation are risk controls, not comforts.",
+        "Near-misses are free lessons if you catch them.",
+        "Health/exposure reporting is part of the job, not weakness."
+      ],
+      "beforeYouDo": [
+        "Department risk/rehab/exposure SOP.",
+        "NIOSH mindset: what has killed officers’ crews before."
+      ],
+      "terminology": [
+        {
+          "term": "IDLH",
+          "meaning": "Atmosphere immediately dangerous to life and health — SCBA and staffing rules apply."
+        },
+        {
+          "term": "Rehab",
+          "meaning": "Rest, cooling/warming, medical watch, hydration — a control measure."
+        }
+      ],
+      "safetyNotes": [
+        "Do not mock members for sitting in rehab.",
+        "Cancer and cardiac events are occupational realities — policy exists; use it."
+      ],
+      "practiceResources": [
+        {
+          "label": "Focus Drills — risk",
+          "url": "/focus-drills.html?level=officer_1&topic=risk",
+          "note": "Go/no-go tabletop.",
+          "type": "drill"
+        },
+        {
+          "label": "Firefighter Safety & Health",
+          "url": "/firefighter-safety-health.html",
+          "note": "Occupational health.",
+          "type": "guide"
+        },
+        {
+          "label": "NIOSH Firefighter Center",
+          "url": "https://www.cdc.gov/niosh/firefighters/",
+          "note": "What is killing us.",
+          "type": "official"
+        },
+        {
+          "label": "Firefighter Wellness",
+          "url": "/firefighter-wellness.html",
+          "note": "Crew long-term risk.",
+          "type": "guide"
+        }
+      ],
+      "drill": {
+        "objective": "For three scenarios, state the risk, the control, and the condition that would make you refuse or withdraw.",
+        "equipment": "Scenario cards, optional rehab kit for a practical piece.",
+        "setup": "Include one heat-stress and one vacant-building problem.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Name five firefighter killers that are not ‘the fire.’",
+            "performancePoints": [
+              "Cardiac, collapse, apparatus, etc."
+            ],
+            "commonMistakes": [
+              "Only flames"
+            ],
+            "debrief": [
+              "What does NIOSH keep repeating?"
+            ]
+          },
+          "15": {
+            "title": "15-minute go/no-go",
+            "instructions": "Occupied vs vacant vs no water. Officer states the line they will not cross.",
+            "performancePoints": [
+              "Line stated"
+            ],
+            "commonMistakes": [
+              "Heroic vacant interiors"
+            ],
+            "debrief": [
+              "What did we still not know?"
+            ]
+          },
+          "30": {
+            "title": "30-minute company risk",
+            "instructions": "Working fire tabletop plus a rehab rotation and an exposure/near-miss report talk-through.",
+            "performancePoints": [
+              "Rehab used",
+              "Reporting path"
+            ],
+            "commonMistakes": [
+              "Skipping rehab to look tough"
+            ],
+            "debrief": [
+              "Who is watching the crew medically?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "Risking firefighters in a well-involved vacant with no reported life hazard:",
+          "choices": [
+            "Is always required",
+            "Should be hard to justify — match risk to benefit",
+            "Is a good training opportunity during the fire",
+            "Is an insurance decision only"
+          ],
+          "answer": 1,
+          "why": "Buildings can be written off. People cannot."
+        },
+        {
+          "q": "Rehab is:",
+          "choices": [
+            "Optional for the strong",
+            "A risk-management action",
+            "Only for recruits",
+            "A union issue unrelated to safety"
+          ],
+          "answer": 1,
+          "why": "Cardiac events happen after the fire too."
+        },
+        {
+          "q": "A near-miss should be:",
+          "choices": [
+            "Hidden so nobody looks bad",
+            "Captured through the department process so the next crew does not repeat it",
+            "Posted with names online",
+            "Forgotten"
+          ],
+          "answer": 1,
+          "why": "Free lessons expire if you bury them."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "NIOSH Firefighter Center",
+          "url": "https://www.cdc.gov/niosh/firefighters/",
+          "scope": "Firefighter safety, exposure, and occupational health"
+        },
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Department safety, rehab, and exposure SOP",
+          "url": "/firefighter-safety-health.html",
+          "scope": "Reporting and medical surveillance are local and legal."
+        }
+      ],
+      "relatedSkills": [
+        "fo1_size_up",
+        "fo1_strategy_tactics",
+        "fo1_after_action",
+        "ff1_scba"
+      ],
+      "searchKeywords": [
+        "risk",
+        "rehab",
+        "IDLH",
+        "near miss",
+        "exposure",
+        "safety officer"
+      ],
+      "seeResources": []
+    },
+    {
+      "id": "fo1_after_action",
+      "certificationId": "fire_officer_1",
+      "title": "After-Action Review",
+      "aliases": [
+        "aar",
+        "debrief",
+        "critique",
+        "hot wash"
+      ],
+      "category": "Leadership",
+      "careerStage": "officer",
+      "summary": "Run a short, blame-light review: what we intended, what happened, why, what to keep, and one change.",
+      "whyItMatters": "If the only review is yelling, the crew learns to hide. If there is no review, the next fire is a repeat.",
+      "learningPoints": [
+        "Do it close to the event while facts are fresh — and when people can hear.",
+        "Start with the plan vs the result.",
+        "Let the nozzle talk before the officer speech.",
+        "One or two takeaways beat twenty.",
+        "Serious policy/safety issues may need a separate official process."
+      ],
+      "beforeYouDo": [
+        "A recent training scenario, not a real sensitive personnel case."
+      ],
+      "terminology": [
+        {
+          "term": "AAR / hot wash",
+          "meaning": "A structured conversation about a just-completed event."
+        }
+      ],
+      "safetyNotes": [
+        "Do not use the AAR to humiliate.",
+        "If someone is injured or a Mayday occurred, follow official investigation rules — this drill is not that process."
+      ],
+      "practiceResources": [
+        {
+          "label": "Focus Drills — AAR",
+          "url": "/focus-drills.html?level=officer_1&topic=after%20action",
+          "note": "10-minute review.",
+          "type": "drill"
+        },
+        {
+          "label": "Leadership Development",
+          "url": "/leadership-development.html",
+          "note": "Learning culture.",
+          "type": "guide"
+        },
+        {
+          "label": "Fire Instructor I — feedback",
+          "url": "/skill-support.html?cert=fire_instructor_1&task=fi1_feedback",
+          "note": "Specific feedback skill.",
+          "type": "skill"
+        }
+      ],
+      "drill": {
+        "objective": "Facilitate a 10-minute AAR after a drill using intended vs actual, plus one sustain and one improve.",
+        "equipment": "Just-finished skill (hose, radio, search), timer, whiteboard optional.",
+        "setup": "Everyone stands unless rehab is needed. Officer facilitates, does not monopolize.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Write the four AAR questions on a card and stick to them.",
+            "performancePoints": [
+              "Questions"
+            ],
+            "commonMistakes": [
+              "Lecture"
+            ],
+            "debrief": [
+              "When do we not AAR in the street?"
+            ]
+          },
+          "15": {
+            "title": "15-minute facilitated AAR",
+            "instructions": "After a 10-minute hose drill, run the AAR. Lowest-rank speaks first.",
+            "performancePoints": [
+              "Voice from the line"
+            ],
+            "commonMistakes": [
+              "Officer monologue"
+            ],
+            "debrief": [
+              "What will we actually change tomorrow?"
+            ]
+          },
+          "30": {
+            "title": "30-minute train-the-facilitator",
+            "instructions": "Two AARs: one after a win, one after a mess. Practice stopping blame and extracting a system fix.",
+            "performancePoints": [
+              "System not soul"
+            ],
+            "commonMistakes": [
+              "Personal attacks"
+            ],
+            "debrief": [
+              "Does this need a formal report instead?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "The first useful AAR comparison is:",
+          "choices": [
+            "Who looked best",
+            "Intended plan vs what actually happened",
+            "How dispatch failed us",
+            "Neighboring department gossip"
+          ],
+          "answer": 1,
+          "why": "Reality vs plan."
+        },
+        {
+          "q": "If a member made a dangerous mistake, the AAR should:",
+          "choices": [
+            "Go viral",
+            "Address the action and the system that allowed it — not a public shaming session",
+            "Skip it",
+            "Only involve the chief"
+          ],
+          "answer": 1,
+          "why": "Fix the thing. Keep the human usable."
+        },
+        {
+          "q": "A 40-item improvement list:",
+          "choices": [
+            "Is impressive",
+            "Usually means nothing will change — pick one or two",
+            "Is required",
+            "Replaces training"
+          ],
+          "answer": 1,
+          "why": "Focus beats catalogs."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Department critique / investigation SOP",
+          "url": "/leadership-development.html",
+          "scope": "When a street AAR is not enough (injury, Mayday, civilian fatality) is a local official process."
+        }
+      ],
+      "relatedSkills": [
+        "fo1_coaching",
+        "fo1_documentation",
+        "fi1_feedback",
+        "fo1_accountability"
+      ],
+      "searchKeywords": [
+        "AAR",
+        "debrief",
+        "critique",
+        "hot wash",
+        "lessons learned"
+      ],
+      "seeResources": []
+    }
+  ]
+}

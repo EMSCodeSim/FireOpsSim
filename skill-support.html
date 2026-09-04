@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Train a Skill | FireOpsSim Skill Support</title>
+<meta name="description" content="Choose a fire-service skill and get a short practical session: know it, see it, practice it, drill it, and check yourself. Works standalone or from FireOps Career Roadmap.">
+<link rel="canonical" href="https://fireopssim.com/skill-support.html">
+<meta name="theme-color" content="#0f172a">
+<link rel="stylesheet" href="/styles.css">
+<script defer src="/calc-tools.js"></script>
+<script defer src="/js/fos-analytics.js"></script>
+<script defer src="/js/skill-support.js"></script>
+<style>
+.ss-hero{background:#0f172a;color:#fff;border-bottom:3px solid #dc2626;padding:2.4rem 0 1.8rem}
+.ss-hero h1{margin:.2rem 0 .7rem;font-size:clamp(1.7rem,4vw,2.5rem);letter-spacing:-.03em}
+.ss-hero p{color:#94a3b8;max-width:720px;margin:0}
+.ss-wrap{padding:1.2rem 0 5.5rem}
+.ss-banner{display:none;background:#fff7f6;border:1px solid #fecaca;border-left:5px solid #dc2626;border-radius:14px;padding:1rem;margin-bottom:1rem}
+.ss-banner.show{display:block}
+.ss-banner strong{display:block;margin-bottom:.2rem}
+.ss-search{position:relative;margin:1rem 0}
+.ss-search input{width:100%;min-height:52px;border:1px solid #e2e8f0;border-radius:12px;padding:.85rem 1rem;font:inherit;background:#fff}
+.ss-search input:focus{border-color:#dc2626;outline:none;box-shadow:0 0 0 3px #fecaca}
+.ss-results{display:none;position:absolute;left:0;right:0;top:100%;z-index:8;background:#fff;border:1px solid #e2e8f0;border-radius:12px;margin-top:.35rem;box-shadow:0 12px 32px #0f172a1a;max-height:340px;overflow:auto}
+.ss-results.show{display:block}
+.ss-results a,.ss-results button{display:block;width:100%;text-align:left;border:0;border-bottom:1px solid #f1f5f9;background:#fff;padding:.85rem 1rem;font:inherit;cursor:pointer;text-decoration:none;color:inherit}
+.ss-results a:last-child,.ss-results button:last-child{border-bottom:0}
+.ss-results strong{display:block}
+.ss-results span{font-size:.84rem;color:#64748b}
+.ss-stages{display:grid;grid-template-columns:repeat(4,1fr);gap:.65rem;margin:1rem 0}
+.ss-stage{border:1px solid #e2e8f0;background:#fff;border-radius:14px;padding:.95rem;min-height:92px;text-align:left;font:inherit;cursor:pointer}
+.ss-stage:hover,.ss-stage:focus-visible{border-color:#dc2626}
+.ss-stage.active{border:2px solid #dc2626;background:#fff7f6}
+.ss-stage span{display:block;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:#dc2626}
+.ss-stage strong{display:block;margin-top:.2rem}
+.ss-stage small{display:block;color:#64748b;margin-top:.2rem;line-height:1.35}
+.ss-certs{display:flex;gap:.45rem;flex-wrap:wrap;margin:.4rem 0 1rem}
+.ss-chip{border:1px solid #e2e8f0;background:#fff;border-radius:999px;padding:.55rem .85rem;font:inherit;font-weight:750;cursor:pointer;min-height:44px}
+.ss-chip.active{background:#0f172a;color:#fff;border-color:#0f172a}
+.ss-skills{display:grid;gap:.55rem}
+.ss-skill{display:grid;grid-template-columns:1fr auto;gap:.7rem;align-items:center;border:1px solid #e2e8f0;background:#fff;border-radius:14px;padding:1rem;text-decoration:none;color:inherit;min-height:72px}
+.ss-skill:hover{border-color:#cbd5e1;text-decoration:none}
+.ss-skill span{font-size:.84rem;color:#64748b}
+.ss-card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:1rem;margin:0 0 1rem}
+.ss-kicker{font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#dc2626;margin:0 0 .35rem}
+.ss-tabs{display:flex;gap:.4rem;overflow:auto;padding:.2rem 0 1rem;position:sticky;top:0;background:#f8fafc;z-index:5}
+.ss-tab{flex:0 0 auto;border:1px solid #e2e8f0;background:#fff;border-radius:999px;padding:.55rem .8rem;font:inherit;font-weight:750;min-height:44px;cursor:pointer}
+.ss-tab.active{background:#0f172a;color:#fff;border-color:#0f172a}
+.ss-list{margin:.4rem 0 .2rem;padding-left:1.1rem}
+.ss-list li{margin:.28rem 0}
+.ss-term{border-bottom:1px solid #f1f5f9;padding:.55rem 0}
+.ss-term strong{display:block}
+.ss-link{display:grid;grid-template-columns:1fr auto;gap:.6rem;align-items:center;border:1px solid #e2e8f0;border-radius:12px;padding:.85rem;margin:.45rem 0;text-decoration:none;color:inherit;background:#fff;min-height:56px}
+.ss-link:hover{border-color:#cbd5e1;text-decoration:none}
+.ss-link span{display:block;font-size:.84rem;color:#64748b}
+.ss-modes{display:flex;gap:.4rem;flex-wrap:wrap;margin:.6rem 0}
+.ss-mode{min-height:48px;border:1px solid #e2e8f0;background:#fff;border-radius:12px;padding:.6rem .9rem;font:inherit;font-weight:800;cursor:pointer}
+.ss-mode.active{background:#dc2626;color:#fff;border-color:#dc2626}
+.ss-drill h3{margin:.8rem 0 .35rem}
+.ss-q{border:1px solid #e2e8f0;border-radius:12px;padding:.85rem;margin:.6rem 0}
+.ss-choice{display:block;width:100%;text-align:left;border:1px solid #e2e8f0;background:#fff;border-radius:10px;padding:.75rem;margin:.35rem 0;font:inherit;min-height:48px;cursor:pointer}
+.ss-choice.good{background:#ecfdf5;border-color:#059669}
+.ss-choice.bad{background:#fef2f2;border-color:#dc2626}
+.ss-why{font-size:.9rem;color:#334155;margin:.4rem 0 0}
+.ss-callout{border-left:4px solid #dc2626;background:#fff7f6;border-radius:10px;padding:.85rem;margin:.7rem 0}
+.ss-official{border-left:4px solid #0369a1;background:#f0f9ff;border-radius:10px;padding:.85rem;margin:.7rem 0}
+.ss-sticky{position:fixed;left:0;right:0;bottom:0;background:#0f172a;color:#fff;padding:.75rem 0;z-index:20;box-shadow:0 -8px 24px #0f172a33}
+.ss-sticky .shell{display:flex;gap:.6rem;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.ss-sticky p{margin:0;color:#cbd5e1;font-size:.88rem}
+.ss-fallback{border-left:5px solid #0369a1;background:#f0f9ff}
+.ss-note{font-size:.84rem;color:#64748b}
+.ss-empty{padding:1rem;border:1px dashed #cbd5e1;border-radius:12px;color:#64748b}
+@media(max-width:900px){.ss-stages{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){
+  .ss-stages{grid-template-columns:1fr}
+  .ss-hero{padding:1.6rem 0 1.2rem}
+  .ss-skill{grid-template-columns:1fr}
+  .ss-sticky .button{white-space:normal;text-align:center;line-height:1.25}
+}
+</style>
+</head>
+<body class="site-refresh">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><nav class="nav shell" aria-label="Main navigation">
+  <a class="brand" href="/"><span class="brand-mark">FOS</span><span><strong>FireOpsSim</strong><small>Train a skill</small></span></a>
+  <input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Open navigation menu">
+  <label class="nav-toggle-label" for="nav-toggle"><span></span><span></span><span></span></label>
+  <div class="nav-links">
+    <a href="/skill-support.html" aria-current="page">Train a Skill</a>
+    <a href="/career-stages.html">Career Stages</a>
+    <a href="/training.html">Training</a>
+    <a href="/study-center.html">Study</a>
+    <a class="nav-cta" href="/my-fire-career.html">My Career</a>
+  </div>
+</nav></header>
+<main id="main">
+<section class="ss-hero"><div class="shell">
+  <p class="section-kicker" id="heroKicker">What are you working on?</p>
+  <h1 id="heroTitle">Train a skill. Get a short practical session.</h1>
+  <p id="heroText">Choose a career stage and a skill. FireOpsSim builds a Know it → Practice it → Drill it session from tools that already exist. No account required. Completing a session never marks an official Taskbook item complete.</p>
+</div></section>
+<section class="ss-wrap shell">
+  <div class="ss-banner" id="roadmapBanner" hidden>
+    <strong id="bannerTitle">Supporting your Taskbook</strong>
+    <p id="bannerText"></p>
+  </div>
+  <div class="ss-search">
+    <label class="ss-note" for="skillSearch">Search skills and tools</label>
+    <input id="skillSearch" type="search" placeholder="Try hydrant, FO1, engineer, SCBA, ventilation…" autocomplete="off" aria-label="Search skills and training resources">
+    <div class="ss-results" id="searchResults" role="listbox" hidden></div>
+  </div>
+  <div id="app"><p class="ss-empty">Loading skill catalog…</p></div>
+</section>
+</main>
+<div class="ss-sticky" id="stickyBar" hidden>
+  <div class="shell">
+    <p id="stickyText">Ready for the next step.</p>
+    <a class="button primary" id="stickyAction" href="/skill-support.html">Choose my next skill</a>
+  </div>
+</div>
+<footer class="footer site-footer-refresh"><div class="shell">
+  <p>© 2026 FireOpsSim. Training and reference only. FireOpsSim summaries are not NFPA text, official skill sheets, state certification standards, or department policy. Roadmap remains the system of record for Taskbook completion.</p>
+</div></footer>
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+  const SS = window.FireOpsSkillSupport;
+  const track = (window.FireOpsAnalytics && window.FireOpsAnalytics.track) || (()=>{});
+  const $ = (id) => document.getElementById(id);
+  const app = $('app');
+  let catalog;
+  try { catalog = await SS.loadCatalog(); }
+  catch (err) {
+    app.innerHTML = '<div class="ss-card ss-fallback"><h2>Catalog could not load</h2><p>Use the Study Center or Training Center while this page reloads.</p><p><a class="button primary" href="/study-center.html">Study Center</a> <a class="button secondary" href="/training.html">Training</a></p></div>';
+    return;
+  }
+  const ctx = SS.parseContext(location.search);
+  const params = new URLSearchParams(location.search);
+  const esc = SS.escapeHtml;
+  const disclaimer = catalog.index.disclaimer;
+
+  function go(url){ location.href = url; }
+
+  function searchBox(){
+    const input = $('skillSearch');
+    const box = $('searchResults');
+    const render = () => {
+      const q = input.value.trim();
+      if (!q) { box.hidden = true; box.classList.remove('show'); box.innerHTML=''; input.setAttribute('aria-expanded','false'); return; }
+      const found = SS.search(catalog, q, 8);
+      const rows = [];
+      found.skills.forEach(rec => {
+        rows.push(`<a role="option" href="${esc(SS.sessionUrl(rec.skill.id, rec.cert.id, ctx))}"><strong>${esc(rec.skill.title)}</strong><span>${esc(rec.cert.title)} · skill support</span></a>`);
+      });
+      found.resources.forEach(item => {
+        rows.push(`<a role="option" href="${esc(item.url)}"><strong>${esc(item.title)}</strong><span>${esc(item.note || item.type || 'Training resource')}</span></a>`);
+      });
+      box.innerHTML = rows.join('') || `<div class="ss-empty">No matches for “${esc(q)}”. Try FF1, hydrant, or FO1.</div>`;
+      box.hidden = false;
+      box.classList.add('show');
+      input.setAttribute('aria-expanded','true');
+    };
+    input.setAttribute('aria-expanded','false');
+    input.setAttribute('aria-controls','searchResults');
+    input.addEventListener('input', render);
+    input.addEventListener('focus', () => { if (input.value.trim()) render(); });
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') { box.hidden = true; box.classList.remove('show'); input.setAttribute('aria-expanded','false'); }
+      if (e.key === 'Enter') {
+        const first = box.querySelector('a');
+        if (first) { e.preventDefault(); first.click(); }
+      }
+    });
+    document.addEventListener('click', (e) => { if (!e.target.closest('.ss-search')) { box.hidden = true; box.classList.remove('show'); input.setAttribute('aria-expanded','false'); } });
+    if (ctx.q) { input.value = ctx.q; render(); }
+  }
+
+  function sticky(text, href, label){
+    $('stickyBar').hidden = false;
+    $('stickyText').textContent = text;
+    const a = $('stickyAction');
+    a.href = href;
+    a.textContent = label;
+  }
+
+  function resourceLinks(list, eventName){
+    return (list || []).map(item => {
+      const ext = /^https?:/.test(item.url);
+      return `<a class="ss-link" href="${esc(item.url)}"${ext?' rel="noopener"':''} data-practice="${esc(item.url)}"><div><strong>${esc(item.label)}</strong><span>${esc(item.note || '')}</span></div><b aria-hidden="true">→</b></a>`;
+    }).join('') || '<p class="ss-note">No extra tool is needed for this part — use the drill and readiness check.</p>';
+  }
+
+  function showRoadmapBanner(cert, skill){
+    if (ctx.source !== 'roadmap') return;
+    const banner = $('roadmapBanner');
+    banner.hidden = false;
+    banner.classList.add('show');
+    const certTitle = cert ? cert.title : 'Taskbook';
+    $('bannerTitle').textContent = `Supporting your ${certTitle} Taskbook`;
+    const bits = [
+      skill ? `Skill: ${skill.title}` : (ctx.task ? `Requested: ${ctx.task}` : ''),
+      ctx.goal ? `Goal: ${ctx.goal}` : '',
+      ctx.state ? `State: ${ctx.state}` : ''
+    ].filter(Boolean);
+    $('bannerText').textContent = (bits.join(' · ') || 'Opened from FireOps Career Road. Practice here, then return to Roadmap to log what you did.') + ' FireOpsSim will not mark the official task complete.';
+    if (ctx.source === 'roadmap') track('roadmap_support_open', {cert: ctx.cert, task: ctx.task || skill && skill.id, goal: ctx.goal, state: ctx.state});
+  }
+
+  function returnHref(){
+    if (SS.isSafeReturnUrl(ctx.returnUrl)) return ctx.returnUrl;
+    return '';
+  }
+
+  function picker(stageId, certId){
+    $('heroKicker').textContent = 'Standalone training';
+    $('heroTitle').textContent = 'What are you working on?';
+    $('heroText').textContent = 'Pick a stage, then a skill. Two or three taps to a real session — no account.';
+    const stages = catalog.index.stages || [];
+    const stage = stages.find(s => s.id === (stageId || ctx.stage)) || null;
+    let certs = Object.values(catalog.certifications);
+    if (stage) certs = certs.filter(c => (stage.certIds || []).includes(c.id));
+    const activeCert = catalog.certifications[certId] || (certs.length === 1 ? certs[0] : null);
+    const skills = activeCert ? catalog.skills.filter(s => s.cert.id === activeCert.id) : [];
+    let html = `<p class="ss-kicker">Career stage</p><div class="ss-stages">`;
+    stages.forEach(s => {
+      html += `<button type="button" class="ss-stage ${stage && stage.id===s.id ? 'active':''}" data-stage="${esc(s.id)}"><span>${esc(s.label)}</span><strong>${esc(s.blurb)}</strong></button>`;
+    });
+    html += `</div>`;
+    if (stage && stage.id === 'candidate') {
+      html += `<div class="ss-card"><p class="ss-kicker">Candidate</p><h2>Start with hiring prep, then academy skills.</h2>`;
+      (catalog.index.candidateResources || []).forEach(r => {
+        html += `<a class="ss-link" href="${esc(r.url)}"><div><strong>${esc(r.label)}</strong><span>${esc(r.note||'')}</span></div><b>→</b></a>`;
+      });
+      html += `</div>`;
+    }
+    if (certs.length) {
+      html += `<p class="ss-kicker">Certification / role</p><div class="ss-certs">`;
+      certs.forEach(c => {
+        html += `<button type="button" class="ss-chip ${activeCert && activeCert.id===c.id?'active':''}" data-cert="${esc(c.id)}">${esc(c.shortTitle || c.title)}</button>`;
+      });
+      html += `</div>`;
+    }
+    if (activeCert) {
+      html += `<div class="ss-card"><p class="ss-kicker">${esc(activeCert.title)}</p><h2>Choose a skill</h2><p class="ss-note">${esc(activeCert.summary)}</p><div class="ss-skills">`;
+      skills.forEach(rec => {
+        html += `<a class="ss-skill" href="${esc(SS.sessionUrl(rec.skill.id, rec.cert.id, ctx))}" data-select-skill="${esc(rec.skill.id)}"><div><strong>${esc(rec.skill.title)}</strong><span>${esc(rec.skill.summary)}</span></div><b>→</b></a>`;
+      });
+      html += `</div></div>`;
+    } else if (stage && stage.id !== 'candidate') {
+      html += `<p class="ss-note">Select a certification chip to see skills.</p>`;
+    }
+    app.innerHTML = html;
+    app.querySelectorAll('[data-stage]').forEach(btn => btn.onclick = () => picker(btn.dataset.stage, ''));
+    app.querySelectorAll('[data-cert]').forEach(btn => btn.onclick = () => picker(stage && stage.id, btn.dataset.cert));
+    app.querySelectorAll('[data-select-skill]').forEach(a => a.addEventListener('click', () => track('standalone_skill_selected', {skill: a.dataset.selectSkill, cert: activeCert && activeCert.id, stage: stage && stage.id})));
+    sticky('Pick a skill to start a short training session.', '/training.html', 'Browse all training');
+  }
+
+  function session(skill, cert, extra){
+    showRoadmapBanner(cert, skill);
+    $('heroKicker').textContent = cert.title;
+    $('heroTitle').textContent = skill.title;
+    $('heroText').textContent = skill.summary;
+    track('skill_support_open', {skill: skill.id, cert: cert.id, source: ctx.source || 'standalone'});
+    if (ctx.source === 'roadmap') SS.preserveContext(ctx, {itemId: skill.id, title: skill.title, category: cert.title});
+    const see = skill.seeResources || [];
+    const related = (extra && extra.closest) || SS.relatedRecords(catalog, skill);
+    const fromRoadmap = ctx.source === 'roadmap';
+    const safeReturn = returnHref();
+    const nextHref = fromRoadmap ? (safeReturn || '/roadmap-companion.html') : '/skill-support.html';
+    const nextLabel = fromRoadmap ? 'Return to Roadmap & Log Training' : 'Choose my next skill';
+
+    const terms = (skill.terminology || []).map(t => `<div class="ss-term"><strong>${esc(t.term)}</strong><span class="ss-note">${esc(t.meaning)}</span></div>`).join('');
+    const bullets = (arr) => `<ul class="ss-list">${(arr||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`;
+
+    app.innerHTML = `
+      <nav class="ss-tabs" aria-label="Session sections">
+        <a class="ss-tab" href="#know">Know</a>
+        ${see.length ? '<a class="ss-tab" href="#see">See</a>' : ''}
+        <a class="ss-tab" href="#practice">Practice</a>
+        <a class="ss-tab" href="#drill">Drill</a>
+        <a class="ss-tab" href="#check">Check</a>
+        <a class="ss-tab" href="#verify">Verify</a>
+        <a class="ss-tab" href="#next">Next</a>
+      </nav>
+      <section class="ss-card" id="know">
+        <p class="ss-kicker">1. Know it</p>
+        <h2>What is this skill?</h2>
+        <p>${esc(skill.summary)}</p>
+        <h3>Why it matters</h3>
+        <p>${esc(skill.whyItMatters || '')}</p>
+        <h3>Understand this before you do it</h3>
+        ${bullets(skill.beforeYouDo)}
+        ${bullets(skill.learningPoints)}
+        ${terms ? `<h3>Common terminology</h3>${terms}` : ''}
+        <h3>Safety</h3>
+        ${bullets(skill.safetyNotes)}
+      </section>
+      ${see.length ? `<section class="ss-card" id="see"><p class="ss-kicker">2. See it</p><h2>Use an existing visual or tool</h2><p class="ss-note">These are live FireOpsSim resources — not placeholder diagrams.</p>${resourceLinks(see)}</section>` : ''}
+      <section class="ss-card" id="practice">
+        <p class="ss-kicker">${see.length ? '3' : '2'}. Practice it</p>
+        <h2>The right existing tool</h2>
+        <p class="ss-note">If FireOpsSim already has a calculator, sim, checklist, or scenario for this skill, use it here instead of a duplicate.</p>
+        ${resourceLinks(skill.practiceResources)}
+      </section>
+      <section class="ss-card" id="drill">
+        <p class="ss-kicker">Drill it</p>
+        <h2>${esc((skill.drill && skill.drill.objective) || 'Company / station drill')}</h2>
+        <p><strong>Equipment:</strong> ${esc(skill.drill && skill.drill.equipment || '')}</p>
+        <p><strong>Setup:</strong> ${esc(skill.drill && skill.drill.setup || '')}</p>
+        <div class="ss-official">${esc((skill.drill && skill.drill.disclaimer) || 'Completing this drill does not satisfy an official certification task.')}</div>
+        <div class="ss-modes" id="drillModes"></div>
+        <div class="ss-drill" id="drillBody"></div>
+      </section>
+      <section class="ss-card" id="check">
+        <p class="ss-kicker">Check yourself</p>
+        <h2>Readiness check — not an official exam</h2>
+        <p class="ss-note">Immediate educational feedback. This does not certify you.</p>
+        <div id="quiz"></div>
+      </section>
+      <section class="ss-card" id="verify">
+        <p class="ss-kicker">Verify</p>
+        <h2>Training guidance vs official requirements</h2>
+        <div class="ss-callout"><strong>FireOpsSim training guidance</strong><p>The explanations, drills, and questions on this page are practical preparation. They are not NFPA text, official skill sheets, state certification standards, or department policy.</p></div>
+        <div class="ss-official"><strong>Official requirements</strong><p>${esc(disclaimer)}</p></div>
+        ${(skill.officialSources||[]).map(s => `<a class="ss-link" href="${esc(s.url)}" rel="noopener"><div><strong>${esc(s.label)}</strong><span>${esc(s.scope||'')}</span></div><b>↗</b></a>`).join('')}
+      </section>
+      <section class="ss-card" id="next">
+        <p class="ss-kicker">Next step</p>
+        <h2>${esc(nextLabel)}</h2>
+        <p>${ctx.source==='roadmap' ? 'Return to Roadmap and log what you actually practiced. FireOpsSim never auto-completes a Taskbook item.' : 'Pick a neighboring skill and keep the session short.'}</p>
+        <p><a class="button primary" id="nextCta" href="${esc(nextHref)}">${esc(nextLabel)}</a>
+           <a class="button secondary" href="/skill-support.html?cert=${esc(cert.id)}">More ${esc(cert.shortTitle || cert.title)} skills</a></p>
+        <h3>Related training</h3>
+        <div class="ss-skills" id="related"></div>
+      </section>`;
+
+    const modes = (skill.drill && skill.drill.modes) || {};
+    const modeBox = $('drillModes');
+    const body = $('drillBody');
+    const order = ['5','15','30'].filter(k => modes[k]);
+    function showMode(key, fromClick){
+      const m = modes[key];
+      if (!m) return;
+      if (fromClick) track('drill_started', {skill: skill.id, minutes: key});
+      modeBox.querySelectorAll('.ss-mode').forEach(b => b.classList.toggle('active', b.dataset.mode===key));
+      body.innerHTML = `<h3>${esc(m.title)} · ${esc(key)} minute</h3>
+        <p>${esc(m.instructions)}</p>
+        <h3>Instructor / crew</h3>${bullets(m.performancePoints)}
+        <h3>Common mistakes</h3>${bullets(m.commonMistakes)}
+        <h3>Debrief</h3>${bullets(m.debrief)}`;
+    }
+    modeBox.innerHTML = order.map(k => `<button type="button" class="ss-mode" data-mode="${k}">${k} min</button>`).join('');
+    modeBox.querySelectorAll('.ss-mode').forEach(b => b.onclick = () => showMode(b.dataset.mode, true));
+    const startMode = params.get('drill') || (order.includes('15') ? '15' : order[0]);
+    if (startMode) showMode(startMode, false);
+
+    const quiz = $('quiz');
+    let answered = 0, correct = 0;
+    (skill.readinessQuestions || []).forEach((item, qi) => {
+      const wrap = document.createElement('div');
+      wrap.className = 'ss-q';
+      wrap.innerHTML = `<strong>${qi+1}. ${esc(item.q)}</strong>`;
+      (item.choices || []).forEach((c, ci) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'ss-choice';
+        btn.textContent = c;
+        btn.onclick = () => {
+          if (wrap.dataset.done) return;
+          wrap.dataset.done = '1';
+          answered += 1;
+          wrap.querySelectorAll('.ss-choice').forEach((b, i) => {
+            b.disabled = true;
+            if (i === item.answer) b.classList.add('good');
+            else if (i === ci) b.classList.add('bad');
+          });
+          if (ci === item.answer) correct += 1;
+          const why = document.createElement('p');
+          why.className = 'ss-why';
+          why.textContent = item.why || '';
+          wrap.appendChild(why);
+          if (answered === (skill.readinessQuestions || []).length) {
+            track('readiness_check_completed', {skill: skill.id, correct, total: answered});
+          }
+        };
+        wrap.appendChild(btn);
+      });
+      quiz.appendChild(wrap);
+    });
+
+    app.querySelectorAll('[data-practice]').forEach(a => a.addEventListener('click', () => track('practice_tool_open', {skill: skill.id, url: a.getAttribute('href')})));
+    const rel = $('related');
+    (related || []).forEach(rec => {
+      const a = document.createElement('a');
+      a.className = 'ss-skill';
+      a.href = SS.sessionUrl(rec.skill.id, rec.cert.id, ctx);
+      a.innerHTML = `<div><strong>${esc(rec.skill.title)}</strong><span>${esc(rec.cert.title)}</span></div><b>→</b>`;
+      a.addEventListener('click', () => track('related_skill_open', {from: skill.id, to: rec.skill.id}));
+      rel.appendChild(a);
+    });
+    if (!related || !related.length) rel.innerHTML = '<p class="ss-note">Browse the same certification for the next skill.</p>';
+
+    const nextCta = $('nextCta');
+    nextCta.addEventListener('click', () => {
+      if (ctx.source === 'roadmap') track('return_to_roadmap', {skill: skill.id, cert: cert.id});
+      SS.preserveContext(ctx, {itemId: skill.id, title: skill.title, category: cert.title});
+    });
+    sticky(fromRoadmap ? 'When you finish, log the work in Roadmap.' : 'Keep going with a neighboring skill.', nextHref, nextLabel);
+    app.querySelectorAll('.ss-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        app.querySelectorAll('.ss-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+      });
+    });
+    const hash = location.hash;
+    if (hash) {
+      const target = document.querySelector(hash);
+      if (target) {
+        requestAnimationFrame(() => target.scrollIntoView({behavior:'auto', block:'start'}));
+        app.querySelectorAll('.ss-tab').forEach(t => t.classList.toggle('active', t.getAttribute('href') === hash));
+      }
+    } else {
+      const firstTab = app.querySelector('.ss-tab');
+      if (firstTab) firstTab.classList.add('active');
+    }
+  }
+
+  function fallback(match){
+    showRoadmapBanner(match.cert, null);
+    $('heroKicker').textContent = 'Support still available';
+    $('heroTitle').textContent = 'A dedicated module is not ready for that ID yet.';
+    $('heroText').textContent = 'Roadmap can send a new or custom task before FireOpsSim has a named session. Use the closest skills and tools below — this is not a dead end.';
+    track('skill_support_open', {skill: 'fallback', cert: match.cert && match.cert.id, requested: match.requested, source: ctx.source || 'standalone'});
+    const closest = match.closest || [];
+    app.innerHTML = `<div class="ss-card ss-fallback">
+      <p class="ss-kicker">Unknown or new Taskbook item</p>
+      <h2>${esc(match.requested || 'Requested item')}</h2>
+      <p>FireOpsSim does not yet have a dedicated support module for this ID. Closest useful training is below. Completing it still does not mark a Roadmap task complete.</p>
+      <p class="ss-note">${ctx.goal ? 'Goal: '+esc(ctx.goal)+'. ' : ''}${ctx.state ? 'State: '+esc(ctx.state)+'. ' : ''}${ctx.cert ? 'Certification: '+esc(ctx.cert)+'.' : ''}</p>
+    </div>
+    <div class="ss-card"><h2>Closest skills</h2><div class="ss-skills" id="closest"></div>
+      <p><a class="button secondary" href="/study-center.html">Study Center</a>
+         <a class="button secondary" href="/training.html">Training Center</a>
+         <a class="button secondary" href="/focus-drills.html">Focus Drills</a>
+         <a class="button secondary" href="/taskbook-resources.html${location.search}">Taskbook resource hub</a></p>
+    </div>`;
+    const box = $('closest');
+    closest.forEach(rec => {
+      box.innerHTML += `<a class="ss-skill" href="${esc(SS.sessionUrl(rec.skill.id, rec.cert.id, ctx))}"><div><strong>${esc(rec.skill.title)}</strong><span>${esc(rec.cert.title)} · ${esc(rec.skill.summary)}</span></div><b>→</b></a>`;
+    });
+    if (!closest.length) box.innerHTML = '<p class="ss-empty">Open Firefighter I, Driver/Operator, or Focus Drills while this ID is mapped.</p>';
+    const fromRoadmap = ctx.source === 'roadmap';
+    const safeReturn = returnHref();
+    const nextHref = fromRoadmap ? (safeReturn || '/roadmap-companion.html') : '/skill-support.html';
+    const nextLabel = fromRoadmap ? 'Return to Roadmap & Log Training' : 'Choose a skill';
+    sticky('Use the closest resources, then return to log training.', nextHref, nextLabel);
+  }
+
+  searchBox();
+  const hasRequest = !!(ctx.task || ctx.requirement || ctx.id || ctx.title || ctx.cert || ctx.q);
+  if (!hasRequest) { picker(ctx.stage, ''); return; }
+  const match = SS.match(catalog, ctx);
+  if (match.kind === 'skill') session(match.skill, match.cert, match);
+  else if (match.kind === 'cert') {
+    showRoadmapBanner(match.cert, null);
+    picker(SS.stageForCert(catalog, match.cert.id) && SS.stageForCert(catalog, match.cert.id).id, match.cert.id);
+  } else fallback(match);
+});
+</script>
+</body>
+</html>

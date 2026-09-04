@@ -1,0 +1,1428 @@
+{
+  "id": "firefighter_2",
+  "title": "Firefighter II",
+  "shortTitle": "FF II",
+  "careerStage": "firefighter",
+  "category": "Firefighting",
+  "aliases": [
+    "firefighter 2",
+    "firefighter ii",
+    "ff2",
+    "ff ii"
+  ],
+  "summary": "Coordinated company operations: ventilation decisions, extrication support, foam, preplanning, radio reports, and evidence-aware overhaul.",
+  "skills": [
+    {
+      "id": "ff2_ventilation",
+      "certificationId": "firefighter_2",
+      "title": "Coordinated Ventilation",
+      "aliases": [
+        "ventilation",
+        "vent",
+        "flow path",
+        "coordinated vent",
+        "vertical ventilation"
+      ],
+      "category": "Ventilation",
+      "careerStage": "firefighter",
+      "summary": "Choose opening location and timing with suppression and search — not as a separate sport.",
+      "whyItMatters": "Firefighter II is where you stop ‘taking the roof because we always do’ and start making the fire behave on purpose.",
+      "learningPoints": [
+        "State the exhaust, the inlet, and who is in the flow path before you cut or break.",
+        "Changing conditions can make yesterday’s good hole today’s blowtorch.",
+        "PPV/PPA is a coordinated tactic with rules, not a default.",
+        "Vertical ventilation needs a sound roof, staffing, and an objective."
+      ],
+      "beforeYouDo": [
+        "Fire location, attack progress, search status.",
+        "Department PPV and roof policy."
+      ],
+      "terminology": [
+        {
+          "term": "Coordination",
+          "meaning": "The opening happens when the line and search can use the change."
+        },
+        {
+          "term": "Flow path",
+          "meaning": "Inlet to exhaust route for air and fire gases."
+        }
+      ],
+      "safetyNotes": [
+        "Uncoordinated vertical vent can pull fire through crews.",
+        "Saw work on a roof is a fall/collapse problem first."
+      ],
+      "seeResources": [
+        {
+          "label": "Ventilation Checklist",
+          "url": "/ventilation-checklist.html",
+          "note": "Coordination checklist.",
+          "type": "checklist"
+        }
+      ],
+      "practiceResources": [
+        {
+          "label": "Ventilation Checklist",
+          "url": "/ventilation-checklist.html",
+          "note": "Plan the opening.",
+          "type": "checklist"
+        },
+        {
+          "label": "Fireground Decision Sim",
+          "url": "/fireground-decision-sim.html",
+          "note": "Changing conditions.",
+          "type": "simulator"
+        },
+        {
+          "label": "Focus Drills — FF2 vent",
+          "url": "/focus-drills.html?level=firefighter_2&topic=ventilation",
+          "note": "Decision drill.",
+          "type": "drill"
+        },
+        {
+          "label": "FSRI Fire Safety Academy",
+          "url": "https://training.fsri.org/",
+          "note": "Research-based dynamics.",
+          "type": "official"
+        }
+      ],
+      "drill": {
+        "objective": "Given changing fire conditions, coordinate ventilation timing, location, and assignments with suppression and search.",
+        "equipment": "Scenario images, radios, charged line or tabletop, ventilation tools as assigned.",
+        "setup": "Tabletop or tower. No freelance openings.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "From one photo, name inlet, intended exhaust, and who must be ready.",
+            "performancePoints": [
+              "Coordination named"
+            ],
+            "commonMistakes": [
+              "Roof by habit"
+            ],
+            "debrief": [
+              "Who can stop the cut?"
+            ]
+          },
+          "15": {
+            "title": "15-minute decision set",
+            "instructions": "Three evolving cards: kitchen fire with search, basement, and a wind-driven hint. Pick openings and timing.",
+            "performancePoints": [
+              "Why/where/when"
+            ],
+            "commonMistakes": [
+              "Vent opposite the crew"
+            ],
+            "debrief": [
+              "What smoke change confirms it worked?"
+            ]
+          },
+          "30": {
+            "title": "30-minute company drill",
+            "instructions": "Line in place, search assigned, then a ventilation order. Inject ‘too early’ and ‘wrong side.’",
+            "performancePoints": [
+              "Wait for water",
+              "Correct location"
+            ],
+            "commonMistakes": [
+              "Independent truck work"
+            ],
+            "debrief": [
+              "Did we help the search or the fire?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "The difference between FF I support vent and FF II coordinated vent is mainly:",
+          "choices": [
+            "Bigger saws",
+            "Owning the decision of whether, where, and when with the rest of the incident",
+            "Never using windows",
+            "Always cutting a trench"
+          ],
+          "answer": 1,
+          "why": "Judgment is the skill."
+        },
+        {
+          "q": "If search is in the planned exhaust path, you should:",
+          "choices": [
+            "Vent anyway for the video",
+            "Change the plan — do not push fire over people",
+            "Only use PPV",
+            "Wait for the news helicopter"
+          ],
+          "answer": 1,
+          "why": "People beat holes."
+        },
+        {
+          "q": "PPV without a coordinated exhaust and a charged line:",
+          "choices": [
+            "Always works",
+            "Can push fire and products into unburned spaces and people",
+            "Is required by every SOP",
+            "Replaces water"
+          ],
+          "answer": 1,
+          "why": "Fans change flow path on purpose — or by accident."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "FSRI Fire Safety Academy",
+          "url": "https://training.fsri.org/",
+          "scope": "Evidence-based structural firefighting education"
+        },
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "NIOSH Firefighter Center",
+          "url": "https://www.cdc.gov/niosh/firefighters/",
+          "scope": "Firefighter safety, exposure, and occupational health"
+        },
+        {
+          "label": "Department ventilation / PPV SOP",
+          "url": "/ventilation-checklist.html",
+          "scope": "Fan use and roof operations are local."
+        }
+      ],
+      "relatedSkills": [
+        "ff1_ventilation",
+        "ff2_company_tactics",
+        "fo1_size_up",
+        "ff1_fire_attack"
+      ],
+      "searchKeywords": [
+        "ventilation",
+        "flow path",
+        "PPV",
+        "roof",
+        "coordination",
+        "ff2"
+      ]
+    },
+    {
+      "id": "ff2_vehicle_extrication",
+      "certificationId": "firefighter_2",
+      "title": "Vehicle Extrication Support",
+      "aliases": [
+        "extrication",
+        "rescue",
+        "stabilize the car",
+        "jaws",
+        "vehicle rescue"
+      ],
+      "category": "Rescue",
+      "careerStage": "firefighter",
+      "summary": "Stabilize, create a work plan, and support patient access with approved tools — without becoming a victim of traffic or energy.",
+      "whyItMatters": "Cars store energy. Traffic keeps moving. The patient is not helped by a rushed, unstabilized cut.",
+      "learningPoints": [
+        "Scene size-up: traffic, fuel, hybrid/EV, airbags, occupants.",
+        "Stabilize before you cut, when that is the plan.",
+        "Tool staging and roles beat a pile of iron at the C-post.",
+        "Know operations-level limits vs technician rescue."
+      ],
+      "beforeYouDo": [
+        "Department vehicle-rescue SOP and the tools on YOUR rig.",
+        "PPE including eye/ear as required."
+      ],
+      "terminology": [
+        {
+          "term": "Stabilization",
+          "meaning": "Making the vehicle’s movement predictable before interior work."
+        },
+        {
+          "term": "Crib / strut",
+          "meaning": "Common stabilization methods — use what you carry and are trained on."
+        }
+      ],
+      "safetyNotes": [
+        "Traffic is the killer on many ‘simple’ wrecks.",
+        "Undeployed airbags and high-voltage systems are not guesses — follow current department/EV guidance.",
+        "Never crawl under an unstabilized vehicle."
+      ],
+      "practiceResources": [
+        {
+          "label": "Focus Drills — extrication",
+          "url": "/focus-drills.html?level=firefighter_2&topic=extrication",
+          "note": "Stabilize and stage.",
+          "type": "drill"
+        },
+        {
+          "label": "Search and Rescue Size-Up",
+          "url": "/search-and-rescue-sizeup.html",
+          "note": "Hazard organization.",
+          "type": "checklist"
+        },
+        {
+          "label": "Firefighter Drill Builder",
+          "url": "/firefighter-drill-builder.html",
+          "note": "Plan a company extrication drill.",
+          "type": "planner"
+        }
+      ],
+      "drill": {
+        "objective": "Size up a vehicle scenario, stabilize, stage tools, assign roles, and verbalize the access plan before any tool operation.",
+        "equipment": "Approved vehicle prop or tabletop car, rescue tools as authorized, traffic vests, cribbing/struts as carried.",
+        "setup": "No live traffic. Instructor controls tool use.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "From a wreck photo: traffic plan, energy sources, and first stabilization idea.",
+            "performancePoints": [
+              "Hazards named"
+            ],
+            "commonMistakes": [
+              "Running to the door"
+            ],
+            "debrief": [
+              "Where is the safest approach?"
+            ]
+          },
+          "15": {
+            "title": "15-minute stabilize + stage",
+            "instructions": "Crib/strut as trained, tool dump organized, roles assigned.",
+            "performancePoints": [
+              "Stable platform",
+              "Tool control"
+            ],
+            "commonMistakes": [
+              "Tools in the mud randomly"
+            ],
+            "debrief": [
+              "Is the vehicle done moving?"
+            ]
+          },
+          "30": {
+            "title": "30-minute access plan",
+            "instructions": "Full talk-through of glass, doors, and a plan B. Include EV/hybrid inject if relevant to your response area.",
+            "performancePoints": [
+              "Plan before cut",
+              "Patient path"
+            ],
+            "commonMistakes": [
+              "Cutting without a path"
+            ],
+            "debrief": [
+              "When do we call a tech team?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "Before operating hydraulic tools you should generally:",
+          "choices": [
+            "Pop the hood for fun",
+            "Control traffic, size up energy, and stabilize per the plan",
+            "Remove your helmet to see better",
+            "Cut the roof first always"
+          ],
+          "answer": 1,
+          "why": "Setup is the skill."
+        },
+        {
+          "q": "Hybrid/EV vehicles:",
+          "choices": [
+            "Can be treated exactly like 1998 Civics",
+            "Need current department/manufacturer guidance for power-down and extra hazards",
+            "Never wreck",
+            "Only matter on interstates"
+          ],
+          "answer": 1,
+          "why": "Do not invent high-voltage procedures."
+        },
+        {
+          "q": "If the rescue exceeds FF II operations-level training:",
+          "choices": [
+            "Freestyle it",
+            "Request the appropriate technical resource and protect the scene",
+            "Leave the patient",
+            "Turn off the radios"
+          ],
+          "answer": 1,
+          "why": "Know the boundary."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "NIOSH Firefighter Center",
+          "url": "https://www.cdc.gov/niosh/firefighters/",
+          "scope": "Firefighter safety, exposure, and occupational health"
+        },
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Department vehicle-rescue SOP and tool manufacturer instructions",
+          "url": "/focus-drills.html?level=firefighter_2&topic=extrication",
+          "scope": "Stabilization methods and EV procedures are local and equipment-specific."
+        }
+      ],
+      "relatedSkills": [
+        "ff2_company_tactics",
+        "ff1_forcible_entry",
+        "fo1_size_up"
+      ],
+      "searchKeywords": [
+        "extrication",
+        "stabilize",
+        "vehicle",
+        "jaws",
+        "cribbing",
+        "ev",
+        "hybrid"
+      ],
+      "seeResources": []
+    },
+    {
+      "id": "ff2_foam",
+      "certificationId": "firefighter_2",
+      "title": "Foam Operations",
+      "aliases": [
+        "foam",
+        "class b",
+        "eductor",
+        "afff",
+        "flammable liquid"
+      ],
+      "category": "Special Operations",
+      "careerStage": "firefighter",
+      "summary": "Match foam to the fuel, set up proportioning equipment correctly, and know when foam is the wrong tool.",
+      "whyItMatters": "Wrong foam, wrong percentage, or a starved eductor wastes concentrate and fails to extinguish.",
+      "learningPoints": [
+        "Fuel and foam type must match. Follow current department product guidance — formulations change.",
+        "Eductors have flow, hose-length, and nozzle constraints.",
+        "Finished-foam application is a blanket, not a stirring rod.",
+        "Environmental and runoff concerns are part of the decision."
+      ],
+      "beforeYouDo": [
+        "What concentrate is on YOUR engine and what it is for.",
+        "Manufacturer eductor/nozzle pairing."
+      ],
+      "terminology": [
+        {
+          "term": "Proportioning",
+          "meaning": "Mixing concentrate and water at the intended percentage."
+        },
+        {
+          "term": "Eductor",
+          "meaning": "A common device that pulls concentrate using water flow — picky about setup."
+        }
+      ],
+      "safetyNotes": [
+        "Flammable-liquid fire is a specialized problem. Do not treat it like a dumpster.",
+        "Runoff can spread product. Think containment."
+      ],
+      "seeResources": [
+        {
+          "label": "Foam Eductor Calculator",
+          "url": "/foam-operations-calculator.html",
+          "note": "Engine-to-eductor pressure planning.",
+          "type": "calculator"
+        }
+      ],
+      "practiceResources": [
+        {
+          "label": "Foam Eductor Calculator",
+          "url": "/foam-operations-calculator.html",
+          "note": "Setup pressures.",
+          "type": "calculator"
+        },
+        {
+          "label": "Spill Volume Calculator",
+          "url": "/spill-volume-calculator.html",
+          "note": "How much product might you be looking at?",
+          "type": "calculator"
+        },
+        {
+          "label": "Focus Drills — foam",
+          "url": "/focus-drills.html?level=firefighter_2&topic=foam",
+          "note": "Setup walk-through.",
+          "type": "drill"
+        }
+      ],
+      "drill": {
+        "objective": "Select foam for a stated fuel, assemble the department foam appliance correctly, and explain application and limitations.",
+        "equipment": "Department foam equipment, water if authorized, SDS/product sheet, radios.",
+        "setup": "Do not discharge foam into storm drains. Dry setup is acceptable.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Match two fuels to foam type/percentage per your product sheet.",
+            "performancePoints": [
+              "Correct product"
+            ],
+            "commonMistakes": [
+              "Any foam on any fire"
+            ],
+            "debrief": [
+              "What does the label actually say?"
+            ]
+          },
+          "15": {
+            "title": "15-minute setup",
+            "instructions": "Build eductor/nozzle layout, check flow arrow, hose lengths, and pickup tube.",
+            "performancePoints": [
+              "Manufacturer limits"
+            ],
+            "commonMistakes": [
+              "Hose too long for the eductor"
+            ],
+            "debrief": [
+              "What pressure at the eductor?"
+            ]
+          },
+          "30": {
+            "title": "30-minute scenario",
+            "instructions": "Small spill fire tabletop: water first? isolation? foam? runoff? When to stop.",
+            "performancePoints": [
+              "Tactical order",
+              "Environment"
+            ],
+            "commonMistakes": [
+              "Plunging the stream"
+            ],
+            "debrief": [
+              "When is this a HazMat problem, not a foam trick?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "An eductor that does not pick up concentrate is often caused by:",
+          "choices": [
+            "Too much training",
+            "Wrong flow, too much hose, kink, or a closed tube",
+            "The color of the pail",
+            "A wet hydrant"
+          ],
+          "answer": 1,
+          "why": "Eductors are fussy by design."
+        },
+        {
+          "q": "Foam application on a spill should generally:",
+          "choices": [
+            "Blast a hole in the middle",
+            "Build a blanket gently per training — do not churn the fuel",
+            "Use a straight stream from 3 feet",
+            "Always mix Class A and B in one pail"
+          ],
+          "answer": 1,
+          "why": "Do not stir the flammable liquid."
+        },
+        {
+          "q": "FireOpsSim foam calculators are:",
+          "choices": [
+            "Manufacturer law",
+            "Training estimates — confirm with the actual eductor/nozzle pair and SOP",
+            "Required for certification",
+            "Only for Class A"
+          ],
+          "answer": 1,
+          "why": "Equipment manuals win."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Foam concentrate and eductor manufacturer instructions",
+          "url": "/foam-operations-calculator.html",
+          "scope": "Percentages, environmental rules, and compatible hardware are product-specific."
+        }
+      ],
+      "relatedSkills": [
+        "ff1_fire_attack",
+        "hazmat_ops_defensive",
+        "do_pumper_friction_loss"
+      ],
+      "searchKeywords": [
+        "foam",
+        "eductor",
+        "class b",
+        "afff",
+        "proportioner",
+        "spill"
+      ]
+    },
+    {
+      "id": "ff2_preplan",
+      "certificationId": "firefighter_2",
+      "title": "Preincident Survey",
+      "aliases": [
+        "preplan",
+        "pre-incident",
+        "occupancy survey",
+        "target hazard"
+      ],
+      "category": "Preplanning",
+      "careerStage": "firefighter",
+      "summary": "Collect the information a company will wish it had at 2 a.m.: access, water, occupancy, systems, and special hazards.",
+      "whyItMatters": "First-due knowledge is a firefighting skill. Guessing a building in smoke is how people get trapped.",
+      "learningPoints": [
+        "Walk the occupancy with a purpose: access, forcible entry, water, utilities, fire protection, people.",
+        "Write what later crews can use — not a novel.",
+        "Note what you could not determine.",
+        "Preplans go stale. Date them."
+      ],
+      "beforeYouDo": [
+        "Department preplan form.",
+        "Permission/policy for occupancy visits."
+      ],
+      "terminology": [
+        {
+          "term": "Target hazard",
+          "meaning": "An occupancy whose risk, complexity, or consequence deserves extra study."
+        },
+        {
+          "term": "FDC",
+          "meaning": "Fire department connection for sprinkler/standpipe — location and condition matter."
+        }
+      ],
+      "safetyNotes": [
+        "You are a guest. Do not create a tactical secret that the occupant should have told the AHJ.",
+        "Do not enter hazardous process areas beyond your training."
+      ],
+      "seeResources": [
+        {
+          "label": "Pre-Incident Plan Builder",
+          "url": "/pre-incident-plan-builder.html",
+          "note": "Structured occupancy notes.",
+          "type": "planner"
+        }
+      ],
+      "practiceResources": [
+        {
+          "label": "Pre-Incident Plan Builder",
+          "url": "/pre-incident-plan-builder.html",
+          "note": "Capture the building.",
+          "type": "planner"
+        },
+        {
+          "label": "Occupancy Load Calculator",
+          "url": "/occupancy-load-calculator.html",
+          "note": "People vs space.",
+          "type": "calculator"
+        },
+        {
+          "label": "Hydrant Inspection Log",
+          "url": "/hydrant-inspection-log.html",
+          "note": "Water near the target.",
+          "type": "log"
+        },
+        {
+          "label": "Focus Drills — preplan",
+          "url": "/focus-drills.html?level=firefighter_2&topic=preplan",
+          "note": "Walk-through.",
+          "type": "drill"
+        }
+      ],
+      "drill": {
+        "objective": "Complete a rapid preplan of an assigned occupancy covering access, water, hazards, systems, and information gaps.",
+        "equipment": "Local occupancy or photos, preplan form, radio optional.",
+        "setup": "Stay in public/authorized areas.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "List the eight things you must know about your first-due big box.",
+            "performancePoints": [
+              "Water and access named"
+            ],
+            "commonMistakes": [
+              "Only the owner’s name"
+            ],
+            "debrief": [
+              "Where is the FDC?"
+            ]
+          },
+          "15": {
+            "title": "15-minute walk",
+            "instructions": "Fill the FireOpsSim preplan builder or department form for one building.",
+            "performancePoints": [
+              "Form complete",
+              "Gaps listed"
+            ],
+            "commonMistakes": [
+              "Copying last year’s guess"
+            ],
+            "debrief": [
+              "What would we do at 0200 in smoke?"
+            ]
+          },
+          "30": {
+            "title": "30-minute company preplan",
+            "instructions": "Whole crew walk, assignments (water, rear access, utilities), then a 2-minute arrival report from the notes.",
+            "performancePoints": [
+              "Shared picture",
+              "Usable notes"
+            ],
+            "commonMistakes": [
+              "One person did it all silently"
+            ],
+            "debrief": [
+              "What did we still not know?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "A useful preplan always includes:",
+          "choices": [
+            "The occupant’s favorite restaurant",
+            "Access, water, occupancy/hazard, systems, and what is still unknown",
+            "Only interior photos of desks",
+            "A guarantee the building will never change"
+          ],
+          "answer": 1,
+          "why": "Unknowns belong on the page."
+        },
+        {
+          "q": "Hydrants and FDCs near a target occupancy:",
+          "choices": [
+            "Are decorative",
+            "Should be verified — out-of-service and blocked connections are common",
+            "Never matter if you have a tank",
+            "Are only an engineer’s hobby"
+          ],
+          "answer": 1,
+          "why": "Water is a preplan item."
+        },
+        {
+          "q": "Preplans should be:",
+          "choices": [
+            "Written once in 1998",
+            "Reviewed and dated because occupancies change",
+            "Kept only in someone’s head",
+            "Classified so the next shift cannot see them"
+          ],
+          "answer": 1,
+          "why": "Stale preplans create false confidence."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Department preplan / target-hazard program",
+          "url": "/pre-incident-plan-builder.html",
+          "scope": "Required forms and inspection authority are local."
+        }
+      ],
+      "relatedSkills": [
+        "ff2_company_tactics",
+        "fo1_size_up",
+        "do_pumper_hydrant_ops"
+      ],
+      "searchKeywords": [
+        "preplan",
+        "occupancy",
+        "target hazard",
+        "fdc",
+        "standpipe",
+        "access"
+      ]
+    },
+    {
+      "id": "ff2_company_tactics",
+      "certificationId": "firefighter_2",
+      "title": "Company-Level Tactics",
+      "aliases": [
+        "tactics",
+        "company operations",
+        "assignments",
+        "benchmarks"
+      ],
+      "category": "Operations",
+      "careerStage": "firefighter",
+      "summary": "Turn an incident objective into firefighter tasks, benchmarks, and a radio update without pretending to be command.",
+      "whyItMatters": "Firefighter II is the working supervisor of a task — not the IC, not a freelancer.",
+      "learningPoints": [
+        "Repeat the assignment in your own words.",
+        "Name the benchmark that means you succeeded or failed.",
+        "Call for help early when the task is bigger than the staffing.",
+        "Stay inside the role: you can recommend; the IC decides strategy."
+      ],
+      "beforeYouDo": [
+        "A simple fire or rescue problem.",
+        "ICS language your department actually uses."
+      ],
+      "terminology": [
+        {
+          "term": "Benchmark",
+          "meaning": "An observable condition that shows progress (water on fire, primary complete, utilities controlled)."
+        },
+        {
+          "term": "Task vs strategy",
+          "meaning": "You own the task; command owns the overall plan."
+        }
+      ],
+      "safetyNotes": [
+        "Do not freelance a second strategy on the D side.",
+        "If you see a life hazard command missed, say it — that is not freelancing, that is communication."
+      ],
+      "seeResources": [
+        {
+          "label": "Fireground Decision Sim",
+          "url": "/fireground-decision-sim.html",
+          "note": "Company-level decisions inside a bigger plan.",
+          "type": "simulator"
+        }
+      ],
+      "practiceResources": [
+        {
+          "label": "Fireground Decision Sim",
+          "url": "/fireground-decision-sim.html",
+          "note": "Tactical cases.",
+          "type": "simulator"
+        },
+        {
+          "label": "Focus Drills — tactical support",
+          "url": "/focus-drills.html?level=firefighter_2&topic=tactics",
+          "note": "Assignment tabletop.",
+          "type": "drill"
+        },
+        {
+          "label": "Company Officer Tools",
+          "url": "/company-officer-tools.html",
+          "note": "How officers think about your assignment.",
+          "type": "guide"
+        }
+      ],
+      "drill": {
+        "objective": "Receive an assignment, restate it, execute a tabletop or practical task, and give a progress report with a benchmark.",
+        "equipment": "Scenario cards, radios, optional hose/ladder for a practical piece.",
+        "setup": "One person plays IC. Keep the FF II inside the assignment.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Practice restating: ‘You want us to… benchmark is…’",
+            "performancePoints": [
+              "Closed loop"
+            ],
+            "commonMistakes": [
+              "‘OK’ with no content"
+            ],
+            "debrief": [
+              "What is the benchmark for primary search?"
+            ]
+          },
+          "15": {
+            "title": "15-minute tabletop",
+            "instructions": "Three assignments: backup line, utilities, and a vent group. Give updates.",
+            "performancePoints": [
+              "Role discipline",
+              "Clear updates"
+            ],
+            "commonMistakes": [
+              "Inventing a new strategy"
+            ],
+            "debrief": [
+              "When do we tell IC we cannot do it?"
+            ]
+          },
+          "30": {
+            "title": "30-minute evolution",
+            "instructions": "Combined: stretch, search support, and a condition-change card. Stay in role.",
+            "performancePoints": [
+              "Benchmarks",
+              "Reassessment"
+            ],
+            "commonMistakes": [
+              "Freelancing the roof"
+            ],
+            "debrief": [
+              "Did IC actually know our progress?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "If an assignment is bigger than your crew, you should:",
+          "choices": [
+            "Quietly do half of it",
+            "Tell command what you can do and what you need",
+            "Ignore it",
+            "Take a second company without telling anyone"
+          ],
+          "answer": 1,
+          "why": "Staffing honesty is tactics."
+        },
+        {
+          "q": "A benchmark is useful because:",
+          "choices": [
+            "It fills the radio",
+            "It tells command whether the objective is actually happening",
+            "It replaces size-up",
+            "It is only for chiefs"
+          ],
+          "answer": 1,
+          "why": "‘Working on it’ is not a benchmark."
+        },
+        {
+          "q": "Seeing a serious unseen hazard as the assigned crew means:",
+          "choices": [
+            "Stay silent to avoid bothering IC",
+            "Report it — that is part of operations",
+            "Leave the scene",
+            "Post it online"
+          ],
+          "answer": 1,
+          "why": "Communication is not freelancing."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "FEMA Independent Study",
+          "url": "https://training.fema.gov/is/crslist.aspx",
+          "scope": "ICS/NIMS and emergency management courses"
+        },
+        {
+          "label": "Department ICS / tactical SOP",
+          "url": "/fireground-decision-sim.html",
+          "scope": "Assignment language and benchmarks are local."
+        }
+      ],
+      "relatedSkills": [
+        "fo1_initial_radio_report",
+        "fo1_accountability",
+        "ff2_radio_reports",
+        "ff1_fire_attack"
+      ],
+      "searchKeywords": [
+        "tactics",
+        "assignment",
+        "benchmark",
+        "company",
+        "ics",
+        "progress report"
+      ]
+    },
+    {
+      "id": "ff2_radio_reports",
+      "certificationId": "firefighter_2",
+      "title": "Condition and Progress Reports",
+      "aliases": [
+        "can report",
+        "progress report",
+        "radio report",
+        "conditions actions needs"
+      ],
+      "category": "Communications",
+      "careerStage": "firefighter",
+      "summary": "Give short CAN-style updates: conditions, actions, needs — so command can think.",
+      "whyItMatters": "Long stories clog the channel. Missing stories leave people in danger.",
+      "learningPoints": [
+        "Conditions: what is the fire/building/people doing now?",
+        "Actions: what are YOU doing?",
+        "Needs: what must happen next?",
+        "If nothing changed, a short ‘unchanged’ can still be useful when asked."
+      ],
+      "beforeYouDo": [
+        "Department radio report format.",
+        "Training channel."
+      ],
+      "terminology": [
+        {
+          "term": "CAN",
+          "meaning": "Conditions, Actions, Needs — a common training structure, not a law."
+        }
+      ],
+      "safetyNotes": [
+        "Do not bury a Mayday inside a casual update.",
+        "If you are in trouble, use the emergency format."
+      ],
+      "practiceResources": [
+        {
+          "label": "Focus Drills — radio reports",
+          "url": "/focus-drills.html?level=firefighter_2&topic=radio",
+          "note": "CAN reps.",
+          "type": "drill"
+        },
+        {
+          "label": "Fireground Decision Sim",
+          "url": "/fireground-decision-sim.html",
+          "note": "Talk while the problem changes.",
+          "type": "simulator"
+        },
+        {
+          "label": "Fire Officer I — initial radio report",
+          "url": "/skill-support.html?cert=fire_officer_1&task=fo1_initial_radio_report",
+          "note": "How command hears you.",
+          "type": "skill"
+        }
+      ],
+      "drill": {
+        "objective": "Deliver timed CAN reports from changing fireground assignments.",
+        "equipment": "Radio or timer, scenario cards, photos.",
+        "setup": "Training talkgroup only.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "One photo, one 15-second CAN.",
+            "performancePoints": [
+              "All three parts"
+            ],
+            "commonMistakes": [
+              "A 90-second story"
+            ],
+            "debrief": [
+              "What is the need?"
+            ]
+          },
+          "15": {
+            "title": "15-minute reps",
+            "instructions": "Six cards, 20 seconds each. Partner scores missing pieces.",
+            "performancePoints": [
+              "Brevity",
+              "Needs stated"
+            ],
+            "commonMistakes": [
+              "Filler words"
+            ],
+            "debrief": [
+              "Would IC know to send a second line?"
+            ]
+          },
+          "30": {
+            "title": "30-minute evolving fire",
+            "instructions": "A scenario with three condition changes. Reports at each change.",
+            "performancePoints": [
+              "Timely",
+              "Accurate"
+            ],
+            "commonMistakes": [
+              "Waiting for the perfect sentence"
+            ],
+            "debrief": [
+              "When should this have been a Mayday instead?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "‘Needs’ in a progress report should be:",
+          "choices": [
+            "A complaint about lunch",
+            "The next resource or action required for the assignment",
+            "Optional",
+            "Only water"
+          ],
+          "answer": 1,
+          "why": "Needs let command help you."
+        },
+        {
+          "q": "If conditions deteriorate rapidly, your radio should:",
+          "choices": [
+            "Stay silent until knockdown",
+            "Match the urgency — including emergency traffic/Mayday if that is the truth",
+            "Switch to cell phone",
+            "Ask dispatch for the weather"
+          ],
+          "answer": 1,
+          "why": "The radio exists for this."
+        },
+        {
+          "q": "CAN is:",
+          "choices": [
+            "Required NFPA text",
+            "A training pattern to keep reports complete and short",
+            "Only for chiefs",
+            "A type of foam"
+          ],
+          "answer": 1,
+          "why": "Departments may use a different acronym. The idea is completeness."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Department radio SOP",
+          "url": "/focus-drills.html?level=firefighter_2&topic=radio",
+          "scope": "Report format and channel use are local."
+        }
+      ],
+      "relatedSkills": [
+        "ff1_communications_mayday",
+        "fo1_initial_radio_report",
+        "ff2_company_tactics"
+      ],
+      "searchKeywords": [
+        "CAN",
+        "progress report",
+        "radio",
+        "conditions",
+        "needs",
+        "benchmark"
+      ],
+      "seeResources": []
+    },
+    {
+      "id": "ff2_evidence_overhaul",
+      "certificationId": "firefighter_2",
+      "title": "Evidence-Aware Overhaul",
+      "aliases": [
+        "evidence",
+        "origin cause",
+        "overhaul",
+        "investigation"
+      ],
+      "category": "Overhaul",
+      "careerStage": "firefighter",
+      "summary": "Expose hidden fire while disturbing origin indicators as little as the fire problem allows.",
+      "whyItMatters": "The investigation is often won or lost by the first companies with pike poles.",
+      "learningPoints": [
+        "Knock down hidden fire. That still comes first for life safety.",
+        "Do not shovel the origin out the window.",
+        "Photograph or report unusual things before they vanish if policy allows.",
+        "Chain of custody and legal rules are local — do not play detective beyond your role."
+      ],
+      "beforeYouDo": [
+        "Department origin/cause notification SOP.",
+        "Overhaul PPE/SCBA rules."
+      ],
+      "terminology": [
+        {
+          "term": "Origin area",
+          "meaning": "Where the fire is believed to have started — extra care."
+        },
+        {
+          "term": "Indicator",
+          "meaning": "A burn pattern or object that might help investigators — not proof by itself."
+        }
+      ],
+      "safetyNotes": [
+        "Overhaul injuries and respiratory exposure are still the job hazard.",
+        "Do not keep ‘souvenirs.’"
+      ],
+      "practiceResources": [
+        {
+          "label": "Focus Drills — evidence overhaul",
+          "url": "/focus-drills.html?level=firefighter_2&topic=evidence",
+          "note": "Decision photos.",
+          "type": "drill"
+        },
+        {
+          "label": "Firefighter I — overhaul",
+          "url": "/skill-support.html?cert=firefighter_1&task=ff1_overhaul_salvage",
+          "note": "Hazard scan first.",
+          "type": "skill"
+        },
+        {
+          "label": "Fire Inspection / notes tools",
+          "url": "/fire-code-violation-notes.html",
+          "note": "Objective notes practice.",
+          "type": "practice"
+        }
+      ],
+      "drill": {
+        "objective": "From scene photos, choose overhaul actions that find hidden fire and protect likely origin indicators.",
+        "equipment": "Scene photos, salvage cover, pike pole (optional), note sheet.",
+        "setup": "Tabletop is enough. Mark ‘do not toss’ items.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Name three things firefighters accidentally destroy.",
+            "performancePoints": [
+              "Indicators named"
+            ],
+            "commonMistakes": [
+              "Everything in the dumpster"
+            ],
+            "debrief": [
+              "Who do we notify?"
+            ]
+          },
+          "15": {
+            "title": "15-minute photo set",
+            "instructions": "Five photos: room-and-contents vs suspicious vs clearly accidental. Plan overhaul depth.",
+            "performancePoints": [
+              "Restrained demolition"
+            ],
+            "commonMistakes": [
+              "Same overhaul everywhere"
+            ],
+            "debrief": [
+              "What would you tell an investigator?"
+            ]
+          },
+          "30": {
+            "title": "30-minute practical",
+            "instructions": "Overhaul a training room with planted ‘evidence’ and a hidden smolder sim (or card). Find the fire, leave the clue.",
+            "performancePoints": [
+              "Hidden fire found",
+              "Clue preserved"
+            ],
+            "commonMistakes": [
+              "Souvenir hunting"
+            ],
+            "debrief": [
+              "Did we stay on air?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "If life safety and hidden fire conflict with preserving a room:",
+          "choices": [
+            "Preserve the room and let it rekindle",
+            "Life safety and extinguishment win — then protect what is left",
+            "Call the news first",
+            "Remove SCBA to smell for accelerants"
+          ],
+          "answer": 1,
+          "why": "People and rekindle first, then the scene."
+        },
+        {
+          "q": "Unusual containers, pour patterns you think you see, or multiple starts:",
+          "choices": [
+            "Should be posted online",
+            "Should be reported through the department investigation path — not diagnosed as a hobby",
+            "Mean you should interrogate the occupant",
+            "Are always arson"
+          ],
+          "answer": 1,
+          "why": "Stay in your lane; still speak up."
+        },
+        {
+          "q": "Taking a burned object home:",
+          "choices": [
+            "Is a training aid",
+            "Is not acceptable",
+            "Is fine if it is small",
+            "Helps the case"
+          ],
+          "answer": 1,
+          "why": "It can be evidence. It is not yours."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Department fire-investigation / overhaul SOP",
+          "url": "/firefighter-1-2-tools.html",
+          "scope": "Who investigates and how scenes are held are local and legal issues."
+        }
+      ],
+      "relatedSkills": [
+        "ff1_overhaul_salvage",
+        "fo1_documentation",
+        "ff2_company_tactics"
+      ],
+      "searchKeywords": [
+        "evidence",
+        "origin",
+        "cause",
+        "overhaul",
+        "investigation",
+        "arson"
+      ],
+      "seeResources": []
+    },
+    {
+      "id": "ff2_hose_testing",
+      "certificationId": "firefighter_2",
+      "title": "Hose and Equipment Service Testing",
+      "aliases": [
+        "hose test",
+        "service test",
+        "annual hose",
+        "out of service hose"
+      ],
+      "category": "Readiness",
+      "careerStage": "firefighter",
+      "summary": "Plan a safe hose/equipment service test: zones, documentation, failure criteria, and tagging out failures.",
+      "whyItMatters": "Burst hose on the fireground is a predictable maintenance failure. Testing is how you find it in the lot.",
+      "learningPoints": [
+        "Follow current department and manufacturer test pressures — FireOpsSim will not quote a standard as if it were the law.",
+        "Safety zone: a pressurized hose is a weapon.",
+        "Document pass/fail and remove failures from service.",
+        "Testing is not a pump-operator ego contest."
+      ],
+      "beforeYouDo": [
+        "Department hose-test SOP and the form.",
+        "Who may operate the test pump/gate."
+      ],
+      "terminology": [
+        {
+          "term": "Service test",
+          "meaning": "A scheduled pressure/function test of hose or equipment per AHJ procedure."
+        },
+        {
+          "term": "Out of service tag",
+          "meaning": "The hose/device may not go back on the rig."
+        }
+      ],
+      "safetyNotes": [
+        "Nobody stands over hose under test.",
+        "Slow fill. Watch couplings.",
+        "Hearing and eye protection as required."
+      ],
+      "practiceResources": [
+        {
+          "label": "Focus Drills — hose test",
+          "url": "/focus-drills.html?level=firefighter_2&topic=hose%20test",
+          "note": "Planning walk-through.",
+          "type": "drill"
+        },
+        {
+          "label": "Firefighter Drill Builder",
+          "url": "/firefighter-drill-builder.html",
+          "note": "Build a safe test-day plan.",
+          "type": "planner"
+        },
+        {
+          "label": "Driver / Operator inspection skill",
+          "url": "/skill-support.html?cert=driver_operator_pumper&task=do_pumper_apparatus_inspection",
+          "note": "Readiness mindset.",
+          "type": "skill"
+        }
+      ],
+      "drill": {
+        "objective": "Walk through a department hose-test workflow: layout, safety zone, documentation, and failure handling — without inventing test pressures.",
+        "equipment": "Department test records, cones for a safety zone, sample hose if authorized.",
+        "setup": "Do not pressurize hose unless a qualified instructor is running a real test.",
+        "disclaimer": "Completing this drill does not satisfy an official certification task, skill sheet, or Roadmap Taskbook item.",
+        "modes": {
+          "5": {
+            "title": "5-minute review",
+            "instructions": "Draw the safety zone and the ‘no-go’ line for people.",
+            "performancePoints": [
+              "Zone drawn"
+            ],
+            "commonMistakes": [
+              "Standing over hose"
+            ],
+            "debrief": [
+              "Who records pass/fail?"
+            ]
+          },
+          "15": {
+            "title": "15-minute paper drill",
+            "instructions": "Fill a mock record for 10 sections. Two fail. Tag and separate them.",
+            "performancePoints": [
+              "Docs",
+              "OOS handling"
+            ],
+            "commonMistakes": [
+              "Putting failed hose back on the bed ‘until next week’"
+            ],
+            "debrief": [
+              "Where does failed hose live?"
+            ]
+          },
+          "30": {
+            "title": "30-minute test-day plan",
+            "instructions": "Build a full evolution with the drill builder: staffing, water source, sequence, rehab, and emergency if a line bursts.",
+            "performancePoints": [
+              "Plan complete",
+              "Safety brief"
+            ],
+            "commonMistakes": [
+              "Rushing to finish before shift change"
+            ],
+            "debrief": [
+              "What is our burst-hose action?"
+            ]
+          }
+        }
+      },
+      "readinessQuestions": [
+        {
+          "q": "Test pressures and intervals should come from:",
+          "choices": [
+            "A forum post",
+            "Department SOP plus manufacturer/AHJ-adopted procedures",
+            "Whatever the pump can make",
+            "The last shift’s memory"
+          ],
+          "answer": 1,
+          "why": "Do not invent a standard."
+        },
+        {
+          "q": "Failed hose should be:",
+          "choices": [
+            "Folded on the engine anyway",
+            "Removed from service and documented",
+            "Repaired with electrical tape for one more fire",
+            "Given to another company"
+          ],
+          "answer": 1,
+          "why": "A known failure belongs off the rig."
+        },
+        {
+          "q": "People during a hose test should be:",
+          "choices": [
+            "Sitting on the hose",
+            "Outside the safety zone except as the procedure requires",
+            "Using the hose as a bench",
+            "Filming from the coupling"
+          ],
+          "answer": 1,
+          "why": "Pressurized hose kills."
+        }
+      ],
+      "officialSources": [
+        {
+          "label": "National Fire Academy",
+          "url": "https://www.usfa.fema.gov/nfa/",
+          "scope": "Free federal fire-service training and professional development"
+        },
+        {
+          "label": "Department hose-testing SOP and hose manufacturer instructions",
+          "url": "/firefighter-drill-builder.html",
+          "scope": "Pressures, intervals, and tagging are AHJ- and product-specific. FireOpsSim does not reproduce those numbers."
+        }
+      ],
+      "relatedSkills": [
+        "do_pumper_apparatus_inspection",
+        "fi1_training_safety",
+        "ff1_hose_advancement"
+      ],
+      "searchKeywords": [
+        "hose test",
+        "service test",
+        "annual test",
+        "out of service",
+        "coupling"
+      ],
+      "seeResources": []
+    }
+  ]
+}
