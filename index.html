@@ -69,6 +69,13 @@
 .roadmap-ad-copy strong{display:block;color:#fff;font-size:1.25rem;line-height:1.25;margin-bottom:.3rem}
 .roadmap-ad-copy p{margin:0;color:#cbd5e1;font-size:.92rem;line-height:1.5}
 .roadmap-ad .button{white-space:nowrap}
+.roadmap-ad-actions{display:flex;gap:.65rem;flex-wrap:wrap;justify-content:flex-end}
+.ecosystem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.ecosystem-card{border:1px solid #e2e8f0;border-radius:16px;padding:1.25rem;background:#fff;box-shadow:0 3px 12px rgba(15,23,42,.05)}
+.ecosystem-card span{color:#dc2626;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;font-weight:800}
+.ecosystem-card h3{margin:.35rem 0 .5rem;color:#0f172a;font-size:1.15rem}
+.ecosystem-card p{color:#64748b;font-size:.9rem;line-height:1.5;min-height:68px}
+.ecosystem-card a{font-weight:750;color:#b91c1c}
 .learning-band{background:#0f172a;color:#fff}
 .learning-band .section-title-row>p{color:#94a3b8}
 .learning-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
@@ -99,6 +106,7 @@
   .quick-grid{grid-template-columns:repeat(3,1fr)}
   .stage-cards,.learning-grid{grid-template-columns:repeat(2,1fr)}
   .tool-grid2{grid-template-columns:1fr 1fr}
+  .ecosystem-grid{grid-template-columns:1fr}
 }
 @media(max-width:640px){
   .quick-grid{grid-template-columns:1fr 1fr}
@@ -106,7 +114,8 @@
   .home2-copy h1{font-size:2.25rem}
   .hero-actions .button{width:100%}
   .roadmap-ad{grid-template-columns:auto 1fr;padding:1.15rem;gap:1rem}
-  .roadmap-ad .button{grid-column:1/-1;width:100%}
+  .roadmap-ad-actions{grid-column:1/-1;width:100%;justify-content:stretch}
+  .roadmap-ad-actions .button{width:100%}
   .quick-wrap{margin-top:-2rem}
   .nav-links a:not(.nav-cta){display:none} /* simplify mobile nav for cleanliness */
 }
@@ -135,9 +144,10 @@
 </div>
 <aside class="roadmap-ad" aria-label="Responder Roadmap app">
   <div class="roadmap-ad-mark" aria-hidden="true">RR</div>
-  <div class="roadmap-ad-copy"><span>Take your progress with you</span><strong>Build and document your career with Responder Roadmap</strong><p>Track training, experience, certifications, accomplishments, and assigned task books from your iPhone.</p></div>
-  <a class="button primary" href="https://apps.apple.com/us/app/repsonder-roadmap/id6800092347" target="_blank" rel="noopener">Download on the App Store →</a>
+  <div class="roadmap-ad-copy"><span>Take your progress with you</span><strong>Build personally. Connect when your department is ready.</strong><p>Use the iPhone app for your private Career Road and department assignments. Training Officers manage official Task Books, rosters, evaluations, and records in the dashboard.</p></div>
+  <div class="roadmap-ad-actions"><a class="button primary" href="https://apps.apple.com/us/app/repsonder-roadmap/id6800092347" target="_blank" rel="noopener">Download iPhone app →</a><a class="button secondary" href="https://responderroadmap.com/?source=fireopssim" target="_blank" rel="noopener">Department dashboard →</a></div>
 </aside></section>
+<section class="home2-section home-section-shaded"><div class="shell"><div class="section-title-row"><div><p class="section-kicker">One connected training journey</p><h2>Learn it. Track it. Prove it.</h2></div><p>Each product has one clear job, so practice never gets confused with an official department sign-off.</p></div><div class="ecosystem-grid"><article class="ecosystem-card"><span>1 · Learn and practice</span><h3>FireOpsSim</h3><p>Open study guides, drills, simulations, calculators, and career-development tools without an account.</p><a href="/roadmap-support.html?source=fireopssim">Open training support →</a></article><article class="ecosystem-card"><span>2 · Personal career</span><h3>Responder Roadmap app</h3><p>Keep a private Career Road, certifications, experience, and personal progress on your phone.</p><a href="https://apps.apple.com/us/app/repsonder-roadmap/id6800092347" target="_blank" rel="noopener">Download the app →</a></article><article class="ecosystem-card"><span>3 · Official department record</span><h3>ResponderRoadmap dashboard</h3><p>Departments assign Task Books and classes; members submit work; approved evaluators complete the official record.</p><a href="https://responderroadmap.com/join?source=fireopssim" target="_blank" rel="noopener">Enter a department code →</a></article></div></div></section>
 <section class="home2-section learning-band"><div class="shell"><div class="section-title-row"><div><p class="section-kicker">A learning system, not a link dump</p><h2>Four ways to get better.</h2></div><p>Use active recall, decision practice, hands-on repetition and a professional record together.</p></div><div class="learning-grid"><article class="learning-card"><span>01 · Learn</span><strong>Stage Study Center</strong><p>Focused guides, 40 stage-specific flashcards and role-specific mini exams across academy, probation, firefighter, engineer, officer and instructor tracks.</p><a href="/study-center.html">Open Study Center →</a></article><article class="learning-card"><span>02 · Decide</span><strong>Fireground Decision Sim</strong><p>Four branching tabletop fires built around size-up, coordination, life safety, water, placement, changing conditions and reassessment.</p><a href="/fireground-decision-sim.html">Run a simulation →</a></article><article class="learning-card"><span>03 · Practice</span><strong>Hands-on tools</strong><p>Certification Focus Drills, Daily Training Wheel, First 100 Shifts, pump scenarios, flashcards, CPAT, HazMat and company practice.</p><a href="/focus-drills.html">Open Focus Drills →</a></article><article class="learning-card"><span>04 · Grow</span><strong>90-Day Career Plan</strong><p>Balance training, education, relevant experience and continuing education around a real target role.</p><a href="/career-plan-builder.html">Build my plan →</a></article></div></div></section>
 <section class="home2-section shell"><div class="section-title-row"><div><p class="section-kicker">Fast operational access</p><h2>The field tools stay one click away.</h2></div><p>Career planning never blocks a quick operational reference or training calculator.</p></div><div class="tool-grid2"><a href="/fire-pump-calculator.html"><strong>Pump Pressure Calculator</strong><span>Pressure, friction loss, elevation and appliances</span></a><a href="/hydrant-flow-calculator.html"><strong>Hydrant Flow</strong><span>Static/residual flow estimation practice</span></a><a href="/scba-air-management-calculator.html"><strong>SCBA Air Management</strong><span>Training calculations and air planning</span></a><a href="/hazmat-tools.html"><strong>HazMat Center</strong><span>References, isolation, placards, notes and decon tools</span></a><a href="/focus-drills.html#wheel"><strong>Daily Training Wheel</strong><span>Certification-level random drills for today's focus</span></a><a href="/firehouse-fun.html"><strong>Firehouse Fun</strong><span>Trivia, word games, bingo, meals, fitness and crew challenges</span></a></div></section>
 <section class="home2-section home-section-shaded"><div class="shell"><div class="section-title-row"><div><p class="section-kicker">Keep learning current</p><h2>FireOpsSim points back to primary sources.</h2></div><p>Local SOPs, adopted standards, certification agencies and medical direction remain authoritative. FireOpsSim helps organize the work.</p></div><div class="sources"><a href="https://training.fsri.org/" rel="noopener">FSRI Fire Safety Academy</a><a href="https://www.usfa.fema.gov/nfa/" rel="noopener">National Fire Academy</a><a href="https://www.cdc.gov/niosh/firefighters/" rel="noopener">NIOSH Firefighter Center</a><a href="https://www.nremt.org/" rel="noopener">National Registry</a><a href="https://www.ems.gov/" rel="noopener">EMS.gov</a></div><p class="hx-note">Content reviewed August 16, 2026.</p></div></section>
