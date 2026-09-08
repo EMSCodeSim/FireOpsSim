@@ -266,4 +266,29 @@
     search.addEventListener('input',runSearch);
     runSearch();
   }
+
+  const roadmapHandoffPages = new Set([
+    '/training',
+    '/firefighter-drill-builder',
+    '/firefighter-skills-checklist',
+    '/taskbook-resources',
+    '/roadmap-support',
+    '/my-fire-career',
+    '/career-plan-builder',
+    '/career-stages',
+    '/firefighter-career',
+    '/department-setup'
+  ]);
+  const pagePath = (location.pathname === '/' ? '/index' : location.pathname)
+    .replace(/\/+$/, '')
+    .replace(/\.html$/, '');
+  const footer = document.querySelector('footer');
+  if(footer && roadmapHandoffPages.has(pagePath) && !document.querySelector('[data-roadmap-handoff]')){
+    const section = document.createElement('section');
+    section.className = 'roadmap-handoff';
+    section.dataset.roadmapHandoff = '';
+    section.setAttribute('aria-labelledby','roadmap-handoff-title');
+    section.innerHTML = `<div class="shell"><div class="roadmap-handoff-card"><div><p class="section-kicker">Continue in Responder Roadmap</p><h2 id="roadmap-handoff-title">Turn practice into organized progress.</h2><p>Use the iPhone app for your personal Career Road, certifications, and department assignments. Training Captains use the dashboard to assign task books, manage rosters, and complete official evaluations.</p><small class="roadmap-handoff-note">FireOpsSim practice stays separate and never marks an official requirement complete.</small></div><div class="roadmap-handoff-actions"><a class="button primary" href="https://apps.apple.com/us/app/repsonder-roadmap/id6800092347" rel="noopener">Open iPhone App</a><a class="button secondary" href="https://responderroadmap.com">Department Dashboard</a></div></div></div>`;
+    footer.before(section);
+  }
 })();
