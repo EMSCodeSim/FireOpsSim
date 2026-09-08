@@ -1,4 +1,22 @@
 (function () {
+  const GOOGLE_TAG_ID = 'G-ZG119QK9M2';
+
+  function initGoogleAnalytics() {
+    if (window.__fireOpsGoogleAnalyticsLoaded) return;
+    window.__fireOpsGoogleAnalyticsLoaded = true;
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function gtag() { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', GOOGLE_TAG_ID);
+
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GOOGLE_TAG_ID}`;
+    document.head.appendChild(script);
+  }
+
+  initGoogleAnalytics();
   const STAGE_KEY = 'fos-career-stage-v1';
   const PROMPT_KEY = 'fos-stage-prompt-seen-v1';
   const stages = [
