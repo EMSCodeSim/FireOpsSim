@@ -1,0 +1,39 @@
+.global-site-header{position:relative;z-index:1000;background:#fff;border-bottom:3px solid #dc2626;color:#0f172a;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.global-nav{width:min(1180px,calc(100% - 32px));min-height:72px;margin:auto;display:flex;align-items:center;gap:16px}
+.global-brand{display:inline-flex;align-items:center;gap:10px;color:#0f172a;text-decoration:none;font-size:1.08rem;font-weight:850;letter-spacing:-.02em;white-space:nowrap}
+.global-brand:hover{text-decoration:none}
+.global-brand-mark{width:40px;height:40px;display:grid;place-items:center;border-radius:11px;background:#0f172a url('/assets/fireops-training-emblem.png?v=20260814b') center/contain no-repeat;color:transparent;font-size:0;box-shadow:0 4px 14px rgba(15,23,42,.2)}
+.global-stage-button{display:grid;gap:1px;max-width:180px;margin-right:auto;padding:6px 10px;border:1px solid #dbe2e8;border-radius:9px;background:#f8fafc;color:#0f172a;text-align:left;cursor:pointer}
+.global-stage-button span{font-size:.63rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#64748b}
+.global-stage-button strong{overflow:hidden;text-overflow:ellipsis;font-size:.78rem;white-space:nowrap}
+.global-stage-button:hover{border-color:#dc2626;background:#fff}
+.global-nav-links{display:flex;align-items:center;gap:2px}
+.global-nav-links a{padding:10px 11px;border-radius:8px;color:#334155;text-decoration:none;font-size:.88rem;font-weight:750;white-space:nowrap}
+.global-nav-links a:hover,.global-nav-links a[aria-current="page"]{background:#f1f5f9;color:#0f172a;text-decoration:none}
+.global-nav-links a:last-child{background:#dc2626;color:#fff;box-shadow:0 4px 12px rgba(220,38,38,.2)}
+.global-nav-links a:last-child:hover,.global-nav-links a:last-child[aria-current="page"]{background:#b91c1c;color:#fff}
+.global-menu-button{display:none;border:0;background:transparent;color:#0f172a;font:inherit;font-weight:800;cursor:pointer}
+.global-menu-icon,.global-menu-icon:before,.global-menu-icon:after{display:block;width:24px;height:2px;background:currentColor;content:""}
+.global-menu-icon{position:relative}.global-menu-icon:before{position:absolute;top:-7px}.global-menu-icon:after{position:absolute;top:7px}
+
+.career-stage-dialog{width:min(760px,calc(100% - 28px));max-height:min(86vh,760px);padding:0;border:0;border-radius:18px;background:#fff;color:#0f172a;box-shadow:0 28px 90px rgba(2,6,23,.42)}
+.career-stage-dialog::backdrop{background:rgba(2,6,23,.78);backdrop-filter:blur(3px)}
+.career-stage-card{padding:28px}
+.career-stage-card h2{margin:.2rem 0 .65rem;font-size:clamp(1.7rem,4vw,2.4rem);line-height:1.1}
+.career-stage-card>p:not(.career-stage-kicker){margin:0;color:#52606d;max-width:640px;line-height:1.55}
+.career-stage-kicker{margin:0;color:#dc2626;font-size:.72rem;font-weight:900;letter-spacing:.11em;text-transform:uppercase}
+.career-stage-options{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:22px 0}
+.career-stage-options button{min-height:48px;padding:10px 13px;border:1px solid #d9e1e7;border-radius:10px;background:#f8fafc;color:#17202a;text-align:left;font:inherit;font-size:.92rem;font-weight:750;cursor:pointer}
+.career-stage-options button:hover,.career-stage-options button:focus-visible{border-color:#dc2626;background:#fff3f3;outline:0}
+.career-stage-options button.is-selected{border-color:#dc2626;background:#dc2626;color:#fff}
+.career-stage-footer{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:4px}
+.career-stage-footer a{color:#9f1d24;font-weight:750}
+.career-stage-skip{border:0;background:transparent;color:#52606d;font:inherit;font-weight:750;cursor:pointer}
+.career-stage-close{position:absolute;top:14px;right:16px;width:38px;height:38px;border:0;border-radius:50%;background:#eef2f5;color:#1e293b;font-size:1.55rem;line-height:1;cursor:pointer}
+
+@media(max-width:1050px){
+  .global-nav{flex-wrap:wrap;padding:10px 0}.global-stage-button{margin-left:auto;margin-right:0}.global-menu-button{display:flex;align-items:center;gap:9px;min-height:44px}.global-nav-links{display:none;flex:1 0 100%;padding:8px 0 3px;border-top:1px solid #e2e8f0}.global-nav-links.is-open{display:grid;grid-template-columns:repeat(3,1fr)}.global-nav-links a{text-align:center}
+}
+@media(max-width:640px){
+  .global-nav{width:min(100% - 24px,1180px);gap:9px}.global-brand>span:last-child{display:none}.global-stage-button{max-width:150px}.global-menu-label{display:none}.global-nav-links.is-open{grid-template-columns:1fr 1fr}.career-stage-card{padding:24px 18px 20px}.career-stage-options{grid-template-columns:1fr;max-height:50vh;overflow:auto}.career-stage-footer{align-items:flex-start;flex-direction:column}.career-stage-dialog{max-height:92vh}
+}
