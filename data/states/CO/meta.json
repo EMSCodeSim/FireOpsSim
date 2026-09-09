@@ -1,0 +1,46 @@
+{
+  "stateCode": "CO",
+  "stateName": "Colorado",
+  "version": "2026.08.23",
+  "certifyingEntity": {
+    "name": "Colorado Division of Fire Prevention and Control (DFPC)",
+    "parentAgency": "Colorado Department of Public Safety",
+    "website": "https://dfpc.colorado.gov/",
+    "certificationPortal": "https://dfpc.colorado.gov/sections/professional-qualifications-and-training/certification",
+    "jprPage": "https://dfpc.colorado.gov/sections/professional-qualifications-and-training/certification/job-performance-requirements",
+    "policyManualNote": "CDFPC Certification Policy and Procedure Manual (verify current revision on DFPC site)",
+    "notes": "Colorado operates a voluntary firefighter and emergency services certification program. There is no statewide statutory requirement that all firefighters hold DFPC certification; departments set their own hiring and qualification rules."
+  },
+  "accreditation": {
+    "ifsac": true,
+    "proBoard": true,
+    "notes": "DFPC is accredited by both IFSAC and the Pro Board for multiple levels including Firefighter I/II, Driver/Operator series, Fire Officer I–III, and Fire & Emergency Services Instructor I–III."
+  },
+  "programNotes": [
+    "Certification is voluntary at the state level.",
+    "Candidates for many levels must be affiliated with a Colorado Emergency Services Agency.",
+    "Certificates are typically issued for a five (5) year period (confirm current rule).",
+    "Written + practical testing is administered through DFPC processes; practicals use mandatory and randomly selected JPRs.",
+    "Firefighter I includes a live-burn practical examination component.",
+    "As of 2026, DFPC is transitioning several firefighter and driver/operator levels toward NFPA 1010 (2024 edition) with an effective date of 1 July 2026 — confirm current edition in force when testing."
+  ],
+  "reciprocity": {
+    "summary": "IFSAC or Pro Board accredited certifications from other entities may be eligible for Colorado recognition through DFPC reciprocity / non-accredited recognition processes.",
+    "notes": [
+      "Department head or applicant submits documentation through DFPC process.",
+      "Driver/Operator series reciprocity typically requires proof of a current driver’s license.",
+      "Fees and exact packet requirements change — always use the current DFPC reciprocity instructions."
+    ]
+  },
+  "lastVerified": "2026-08-23",
+  "verifiedBy": "hub-curation",
+  "confidence": "high",
+  "sources": [
+    "https://dfpc.colorado.gov/",
+    "https://dfpc.colorado.gov/sections/professional-qualifications-and-training/certification",
+    "https://dfpc.colorado.gov/sections/professional-qualifications-and-training/certification/job-performance-requirements",
+    "https://theproboard.org/ (Colorado Division of Fire Prevention and Control agency listing)",
+    "CDFPC Policy and Procedure Manual references (public revisions)"
+  ],
+  "disclaimer": "State overlay for personal professional development planning only. Requirements change. Always confirm with DFPC and your department before testing or claiming qualification."
+}

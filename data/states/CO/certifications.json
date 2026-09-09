@@ -1,0 +1,111 @@
+{
+  "stateCode": "CO",
+  "version": "2026.08.23",
+  "notes": "Maps Colorado DFPC certification titles and notable local rules onto stable national catalog IDs. Only differences and Colorado-specific conditions are recorded here.",
+  "certifications": [
+    {
+      "catalogId": "firefighter_1",
+      "localName": "Fire Fighter I",
+      "localAliases": ["Firefighter I", "FF I", "Colorado Fire Fighter I"],
+      "requiredForStructuralInterior": "department-dependent (state cert is voluntary)",
+      "affiliationRequired": true,
+      "affiliationDetail": "Must be affiliated with a Colorado Emergency Services Agency for initial certification pathway.",
+      "hazmatAwarenessRequired": true,
+      "hazmatOperationsRequired": true,
+      "hazmatNotes": "Colorado minimally requires Hazardous Materials Operations (not Awareness alone) in the Fire Fighter I certification path.",
+      "testing": {
+        "written": "100-question exam; historically 70% passing score (confirm current)",
+        "practical": "Mandatory and randomly selected JPRs; 100% practical pass standard",
+        "liveBurnPractical": true,
+        "liveBurnNotes": "Live Burn Practical Examination required for Fire Fighter I."
+      },
+      "certificateTermYears": 5,
+      "nationalSeals": ["IFSAC", "Pro Board"],
+      "standardBasis": "NFPA 1001 historically; transition activity toward NFPA 1010 (2024) noted for 1 July 2026 — verify edition in force",
+      "officialUrl": "https://dfpc.colorado.gov/sections/professional-qualifications-and-training/certification/job-performance-requirements",
+      "notes": "Complete written, practical, and live-burn components per DFPC process. HazMat Ops may be sequenced with FF I components under current policy timing rules."
+    },
+    {
+      "catalogId": "firefighter_2",
+      "localName": "Fire Fighter II",
+      "localAliases": ["Firefighter II", "FF II"],
+      "affiliationRequired": true,
+      "prerequisitesLocal": ["Colorado Fire Fighter I", "Hazardous Materials Operations (Colorado minimal)"],
+      "testing": {
+        "written": "100-question exam; historically 80% passing score (confirm current)",
+        "practical": "Mandatory and randomly selected JPRs; 100% practical pass standard",
+        "liveBurnPractical": false
+      },
+      "certificateTermYears": 5,
+      "nationalSeals": ["IFSAC", "Pro Board"],
+      "standardBasis": "NFPA 1001 / transition notes toward NFPA 1010 (2024) — verify",
+      "officialUrl": "https://dfpc.colorado.gov/sections/professional-qualifications-and-training/certification/job-performance-requirements",
+      "notes": "Must already hold Colorado Fire Fighter I."
+    },
+    {
+      "catalogId": "hazmat_awareness",
+      "localName": "Hazardous Materials – Awareness",
+      "localAliases": ["HazMat Awareness"],
+      "nationalSeals": ["IFSAC", "Pro Board"],
+      "standardBasis": "NFPA 470 / prior 472 editions as adopted",
+      "notes": "Available as a DFPC level; FF I path still centers on Operations as the minimum companion."
+    },
+    {
+      "catalogId": "hazmat_operations",
+      "localName": "Hazardous Materials – Awareness/Operations",
+      "localAliases": ["HazMat Operations", "HazMat Awareness/Operations"],
+      "requiredWithFirefighterI": true,
+      "nationalSeals": ["IFSAC", "Pro Board"],
+      "standardBasis": "NFPA 470 / prior 472 editions as adopted",
+      "notes": "Colorado Fire Fighter I path requires minimal certification at Hazardous Materials Operations."
+    },
+    {
+      "catalogId": "driver_operator_pumper",
+      "localName": "Driver Operator Pumper",
+      "localAliases": ["Driver/Operator – Pumper", "D/O Pumper"],
+      "relatedLocalLevels": ["Driver Operator", "Driver Operator Tender", "Driver Operator Aerial"],
+      "affiliationRequired": true,
+      "nationalSeals": ["IFSAC", "Pro Board"],
+      "standardBasis": "NFPA 1002 historically; DFPC notes transition activity involving NFPA 1010 (2024) for driver/operator series effective 1 July 2026 — verify",
+      "officialUrl": "https://dfpc.colorado.gov/sections/professional-qualifications-and-training/certification/job-performance-requirements",
+      "notes": "Colorado offers multiple driver/operator levels (Tender, Driver Operator, Pumper, Aerial). Reciprocity packets typically require proof of current driver’s license."
+    },
+    {
+      "catalogId": "fire_officer_1",
+      "localName": "Fire Officer I",
+      "localAliases": ["FO I", "Company Officer I"],
+      "affiliationRequired": true,
+      "nationalSeals": ["IFSAC", "Pro Board"],
+      "standardBasis": "NFPA 1021 (2020 edition referenced in DFPC materials; confirm current)",
+      "testingNotes": "Fire Officer levels commonly require a completed JPR / narrative skills packet with examination requests.",
+      "officialUrl": "https://dfpc.colorado.gov/sections/professional-qualifications-and-training/certification/job-performance-requirements",
+      "notes": "Promotional eligibility remains department-specific even when state FO I is held."
+    },
+    {
+      "catalogId": "fire_instructor_1",
+      "localName": "Fire and Emergency Services Instructor I",
+      "localAliases": ["Fire Instructor I", "FI I", "FESI I"],
+      "affiliationRequired": true,
+      "nationalSeals": ["IFSAC", "Pro Board"],
+      "standardBasis": "NFPA 1041",
+      "officialUrl": "https://dfpc.colorado.gov/sections/professional-qualifications-and-training/certification/job-performance-requirements",
+      "notes": "Live-burn evaluation proctor rules require appropriate instructor/proctor credentials and minimum Fire Fighter I — see current DFPC proctor policy."
+    }
+  ],
+  "additionalColoradoLevelsNotInNationalBaseline": [
+    "Driver Operator Tender",
+    "Driver Operator",
+    "Driver Operator Aerial",
+    "Fire Officer II",
+    "Fire Officer III",
+    "Fire and Emergency Services Instructor II",
+    "Fire and Emergency Services Instructor III",
+    "Airport Rescue Firefighter",
+    "Hazardous Materials Technician",
+    "Incident Safety Officer",
+    "Live Fire Training and Fixed Facility Instructor",
+    "Technical Rescue levels",
+    "Fire Inspector I (separate DFPC/registration pathways exist)"
+  ],
+  "lastVerified": "2026-08-23"
+}
