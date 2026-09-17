@@ -374,7 +374,6 @@
     });
 
     syncStage();
-    if (!readStage() && !promptWasSeen()) openDialog();
     initRoadmapAssignmentMode();
   }
 
