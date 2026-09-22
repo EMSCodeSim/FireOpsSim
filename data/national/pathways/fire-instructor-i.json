@@ -1,17 +1,267 @@
 {
   "id": "national.fire_instructor_i",
   "version": "2026.08.23",
-  "status": "stub",
+  "status": "complete",
+  "standard": {
+    "primary": "NFPA 1041 (Fire and Emergency Services Instructor I)",
+    "related": ["Department training policies", "Live-fire training safety standards where applicable"],
+    "notes": "Instructor I prepares members to deliver prepared lessons, evaluate students, and maintain a safe learning environment. It does not by itself authorize live-fire instructor-in-charge roles."
+  },
   "title": "Fire Instructor I",
   "shortTitle": "FI I",
   "level": "instructor",
   "category": "Training",
-  "description": "Stub — expand with NFPA 1041 Fire Instructor I pathway (instructional delivery, evaluation, safety in training, lesson support).",
+  "description": "Complete entry-level instructor pathway: instructional delivery, student evaluation, training safety, and documentation for company or academy support instruction.",
+  "audience": [
+    "Company officers and senior firefighters who run drills",
+    "Academy adjuncts and skill station proctors",
+    "Members seeking state or IFSAC/Pro Board Instructor I"
+  ],
+  "estimatedRange": {
+    "typicalHours": "32–40+ instructional hours plus practice teaching",
+    "typicalDuration": "1–2 weeks formal course plus documented teaching time"
+  },
+  "prerequisites": [
+    {
+      "id": "prereq.operational_foundation",
+      "title": "Operational foundation (typically FF I/II)",
+      "type": "certification",
+      "required": "commonly",
+      "detail": "Most systems expect instructors to already hold the subject-matter level they will teach.",
+      "catalogId": "firefighter_2"
+    },
+    {
+      "id": "prereq.affiliation",
+      "title": "Department or program affiliation",
+      "type": "eligibility",
+      "required": "varies",
+      "detail": "Some states require membership in an organized department or training organization."
+    }
+  ],
+  "corequisitesAndCommonCompanions": [
+    {
+      "id": "training.adult_learning",
+      "title": "Adult learning / instructional methods orientation",
+      "type": "training",
+      "relationship": "embedded in most Instructor I courses",
+      "notes": "Covers how adults learn, motivation, and basic instructional design support."
+    }
+  ],
+  "knowledgeDomains": [
+    {
+      "id": "know.instructional_roles",
+      "title": "Instructor roles and professional responsibilities",
+      "topics": [
+        "Ethics and professionalism as an instructor",
+        "Legal and safety responsibilities in training",
+        "Working from prepared lesson plans vs developing new curriculum (limits of Level I)"
+      ]
+    },
+    {
+      "id": "know.learning_environment",
+      "title": "Learning environment and classroom/drill-ground management",
+      "topics": [
+        "Setting expectations and managing student behavior",
+        "Inclusive and respectful learning climate",
+        "Adapting delivery to mixed experience levels"
+      ]
+    },
+    {
+      "id": "know.delivery_methods",
+      "title": "Instructional delivery methods",
+      "topics": [
+        "Lecture, demonstration, discussion, and practical coaching",
+        "Use of training aids and props",
+        "Questioning techniques and checking understanding"
+      ]
+    },
+    {
+      "id": "know.evaluation",
+      "title": "Student evaluation and feedback",
+      "topics": [
+        "Using skill sheets and checklists",
+        "Formative vs summative feedback",
+        "Remediation and documentation of results"
+      ]
+    },
+    {
+      "id": "know.safety_training",
+      "title": "Training safety",
+      "topics": [
+        "Risk management for drills",
+        "PPE and rehab expectations in training",
+        "When to stop an evolution",
+        "Limits of Instructor I authority for high-risk training"
+      ]
+    },
+    {
+      "id": "know.records",
+      "title": "Training records and reporting",
+      "topics": [
+        "Attendance and skill completion records",
+        "Reporting deficiencies and injuries",
+        "Maintaining confidentiality where required"
+      ]
+    }
+  ],
+  "jprSkillGroups": [
+    {
+      "id": "jpr.prepare_session",
+      "title": "Prepare to teach from a prepared lesson",
+      "standardRef": "NFPA 1041 – preparation related JPRs",
+      "skills": [
+        "Review lesson plan and objectives",
+        "Assemble aids, props, and safety equipment",
+        "Adapt examples to the audience without rewriting the curriculum beyond Level I scope"
+      ]
+    },
+    {
+      "id": "jpr.deliver_instruction",
+      "title": "Deliver instructional sessions",
+      "standardRef": "NFPA 1041 – delivery related JPRs",
+      "skills": [
+        "Present content clearly using appropriate methods",
+        "Demonstrate skills correctly",
+        "Maintain engagement and manage time",
+        "Maintain a safe and professional environment"
+      ]
+    },
+    {
+      "id": "jpr.evaluate_students",
+      "title": "Evaluate student performance",
+      "standardRef": "NFPA 1041 – evaluation related JPRs",
+      "skills": [
+        "Use skill sheets/checklists consistently",
+        "Provide timely, specific feedback",
+        "Document pass/fail or remediation needs"
+      ]
+    },
+    {
+      "id": "jpr.manage_safety",
+      "title": "Manage training safety",
+      "standardRef": "NFPA 1041 – safety related expectations",
+      "skills": [
+        "Conduct pre-drill safety briefing",
+        "Enforce PPE and operational limits",
+        "Stop unsafe activity and reset the evolution"
+      ]
+    },
+    {
+      "id": "jpr.records",
+      "title": "Complete training documentation",
+      "standardRef": "NFPA 1041 – records related JPRs",
+      "skills": [
+        "Record attendance and completions",
+        "Report injuries or near misses through proper channels",
+        "Maintain required training files"
+      ]
+    }
+  ],
+  "trainingSequence": [
+    {
+      "step": 1,
+      "id": "seq.eligibility",
+      "title": "Confirm eligibility and course enrollment",
+      "actions": [
+        "Verify prerequisite operational certifications",
+        "Enroll in approved Instructor I program",
+        "Review department training SOPs"
+      ]
+    },
+    {
+      "step": 2,
+      "id": "seq.classroom_methods",
+      "title": "Instructional methods and adult learning",
+      "actions": [
+        "Roles and ethics of an instructor",
+        "Delivery methods and training aids",
+        "Evaluation and feedback techniques"
+      ]
+    },
+    {
+      "step": 3,
+      "id": "seq.safety_block",
+      "title": "Training safety and risk management",
+      "actions": [
+        "Drill-ground safety practices",
+        "When and how to stop evolutions",
+        "Documentation of safety issues"
+      ]
+    },
+    {
+      "step": 4,
+      "id": "seq.practice_teach",
+      "title": "Practice teaching / micro-teaching",
+      "actions": [
+        "Deliver short prepared lessons",
+        "Demonstrate and coach a skill",
+        "Receive peer and instructor critique"
+      ]
+    },
+    {
+      "step": 5,
+      "id": "seq.evaluated_delivery",
+      "title": "Evaluated instructional delivery",
+      "actions": [
+        "Teach a graded session from a prepared plan",
+        "Evaluate students using skill sheets",
+        "Complete required records"
+      ]
+    },
+    {
+      "step": 6,
+      "id": "seq.testing_cert",
+      "title": "Testing and certification",
+      "actions": [
+        "Pass written exam if required",
+        "Pass practical instructional evaluation",
+        "Obtain Instructor I certificate / seals",
+        "File records and begin logging teaching hours"
+      ]
+    }
+  ],
+  "assessment": {
+    "practical": "Deliver instruction, evaluate students, manage safety, complete records",
+    "written": "Exam on instructional methods, safety, and Level I responsibilities",
+    "passingCriteria": "State certifying entity or accredited program standards",
+    "documentationNeeded": [
+      "Course completion",
+      "Practice teaching evaluations",
+      "Written/practical results",
+      "Instructor I certificate / seals"
+    ]
+  },
   "outputsForCareerRoad": {
     "primaryCertificationId": "fire_instructor_1",
-    "suggestedRequirementIds": ["fi1"],
-    "taskBookChapters": []
+    "suggestedRequirementIds": ["fi1", "ff2"],
+    "taskBookChapters": [
+      "Eligibility & prerequisites",
+      "Instructor roles & ethics",
+      "Lesson preparation",
+      "Delivery methods",
+      "Student evaluation & feedback",
+      "Training safety",
+      "Records & reporting",
+      "Practice teaching log",
+      "FI I testing & certificate filing"
+    ]
   },
+  "stateOverlayGuidance": {
+    "howToUse": "Note whether Instructor I is required for company drill leadership, academy work, or live-fire support roles, and list any extra state teaching-hour requirements.",
+    "alwaysVerifyWith": [
+      "State fire training agency",
+      "Department training division",
+      "IFSAC / Pro Board entity if seals are issued"
+    ]
+  },
+  "sources": [
+    {
+      "title": "NFPA 1041 Fire and Emergency Services Instructor professional qualifications",
+      "type": "standard",
+      "note": "Do not paste copyrighted JPR text verbatim."
+    }
+  ],
   "lastVerified": "2026-08-23",
-  "disclaimer": "Placeholder only. Replace with complete pathway content before production use."
+  "confidence": "high_for_national_structure",
+  "disclaimer": "Structured training roadmap for personal professional development. High-risk training authorizations (including live-fire instructor-in-charge) require additional qualifications beyond Instructor I."
 }

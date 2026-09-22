@@ -1,17 +1,294 @@
 {
   "id": "national.fire_officer_i",
   "version": "2026.08.23",
-  "status": "stub",
+  "status": "complete",
+  "standard": {
+    "primary": "NFPA 1021 (Fire Officer I)",
+    "related": ["NFPA 1001 / operational experience", "NFPA 1041 Instructor concepts often paired", "ICS 200/300 commonly expected"],
+    "notes": "Fire Officer I focuses on company-level leadership: supervision, emergency service delivery, admin, human resources, and community risk basics. Promotional processes are department-specific."
+  },
   "title": "Fire Officer I",
   "shortTitle": "FO I",
   "level": "company_officer",
   "category": "Operations",
-  "description": "Stub — expand with NFPA 1021 Fire Officer I pathway (company-level leadership, tactics, admin, human resources, emergency service delivery).",
+  "description": "Complete company officer pathway: leadership, tactics, crew management, administrative duties, and emergency service delivery at the company level.",
+  "audience": [
+    "Engineers / senior firefighters preparing for lieutenant or captain",
+    "Acting officers documenting readiness",
+    "Candidates for state or IFSAC/Pro Board Fire Officer I"
+  ],
+  "estimatedRange": {
+    "typicalHours": "40–80+ instructional hours plus documented leadership experience",
+    "typicalDuration": "2–12 weeks course plus acting/ride-up time"
+  },
+  "prerequisites": [
+    {
+      "id": "prereq.ff2_or_equivalent",
+      "title": "Firefighter II or equivalent operational foundation",
+      "type": "certification",
+      "required": "commonly",
+      "detail": "Most systems expect solid structural firefighter competence before company officer work.",
+      "catalogId": "firefighter_2"
+    },
+    {
+      "id": "prereq.experience",
+      "title": "Operational experience / time-in-grade",
+      "type": "experience",
+      "required": "often",
+      "detail": "Departments usually require minimum years of service and/or engine/truck experience before promotional eligibility."
+    },
+    {
+      "id": "prereq.instructor_recommended",
+      "title": "Fire Instructor I (recommended companion)",
+      "type": "certification",
+      "required": "recommended",
+      "detail": "Often expected for company officers who deliver drills.",
+      "catalogId": "fire_instructor_1"
+    }
+  ],
+  "corequisitesAndCommonCompanions": [
+    {
+      "id": "training.ics300",
+      "title": "ICS 300",
+      "type": "training",
+      "relationship": "commonly expected for supervisory officers",
+      "notes": "Supports expanding incident management and multi-unit supervision."
+    },
+    {
+      "id": "cert.fire_instructor_1",
+      "title": "Fire Instructor I",
+      "type": "certification",
+      "relationship": "strongly recommended",
+      "catalogId": "fire_instructor_1"
+    }
+  ],
+  "knowledgeDomains": [
+    {
+      "id": "know.human_resources",
+      "title": "Human resource management at company level",
+      "topics": [
+        "Supervision and performance expectations",
+        "Coaching, counseling, and documentation basics",
+        "Conflict awareness and professional conduct",
+        "Member safety and wellness leadership"
+      ]
+    },
+    {
+      "id": "know.community_risk",
+      "title": "Community and intergovernmental relations",
+      "topics": [
+        "Customer service and public interactions",
+        "Working with other agencies",
+        "Basic community risk reduction awareness"
+      ]
+    },
+    {
+      "id": "know.admin",
+      "title": "Administration and organization",
+      "topics": [
+        "Records, reports, and policy compliance",
+        "Budget awareness at company level",
+        "Station/company readiness systems"
+      ]
+    },
+    {
+      "id": "know.inspection_investigation_support",
+      "title": "Inspection and investigation support awareness",
+      "topics": [
+        "Pre-incident planning support",
+        "Scene preservation support for investigators",
+        "Recognizing hazards during company inspections"
+      ]
+    },
+    {
+      "id": "know.emergency_delivery",
+      "title": "Emergency service delivery / company tactics",
+      "topics": [
+        "Size-up and incident action fundamentals",
+        "Directing a company on scene",
+        "Risk management and personnel accountability",
+        "Post-incident review participation"
+      ]
+    },
+    {
+      "id": "know.health_safety",
+      "title": "Health and safety leadership",
+      "topics": [
+        "Implementing safety policies",
+        "Near-miss and injury reporting culture",
+        "Training safety for company drills"
+      ]
+    }
+  ],
+  "jprSkillGroups": [
+    {
+      "id": "jpr.supervise_members",
+      "title": "Supervise and develop company members",
+      "standardRef": "NFPA 1021 – HR / supervision related JPRs",
+      "skills": [
+        "Assign tasks and set expectations",
+        "Provide feedback and document performance issues appropriately",
+        "Lead daily readiness and training activities"
+      ]
+    },
+    {
+      "id": "jpr.reports_admin",
+      "title": "Administrative reports and policy application",
+      "standardRef": "NFPA 1021 – administration related JPRs",
+      "skills": [
+        "Complete required company reports",
+        "Apply department policies to routine situations",
+        "Maintain required records"
+      ]
+    },
+    {
+      "id": "jpr.preplan_inspect",
+      "title": "Pre-incident planning / company inspection support",
+      "standardRef": "NFPA 1021 – community / inspection related JPRs",
+      "skills": [
+        "Gather and organize pre-incident information",
+        "Identify obvious hazards during company-level surveys",
+        "Communicate findings through proper channels"
+      ]
+    },
+    {
+      "id": "jpr.scene_leadership",
+      "title": "Direct company emergency operations",
+      "standardRef": "NFPA 1021 – emergency service delivery JPRs",
+      "skills": [
+        "Conduct initial size-up and report",
+        "Direct company members on common incident types",
+        "Maintain accountability and safety",
+        "Coordinate with other companies / command"
+      ]
+    },
+    {
+      "id": "jpr.post_incident",
+      "title": "Post-incident review and improvement",
+      "standardRef": "NFPA 1021 – related review JPRs",
+      "skills": [
+        "Participate in or lead company-level after-action discussion",
+        "Identify training or equipment gaps",
+        "Document lessons for the company"
+      ]
+    },
+    {
+      "id": "jpr.training_delivery_support",
+      "title": "Company training leadership",
+      "standardRef": "NFPA 1021 / paired Instructor practices",
+      "skills": [
+        "Plan and run company drills",
+        "Ensure training safety",
+        "Evaluate basic skill performance"
+      ]
+    }
+  ],
+  "trainingSequence": [
+    {
+      "step": 1,
+      "id": "seq.eligibility_promo",
+      "title": "Confirm promotional / course eligibility",
+      "actions": [
+        "Verify time-in-grade and prerequisite certs",
+        "Review department promotional process",
+        "Enroll in approved Fire Officer I program if pursuing formal cert"
+      ]
+    },
+    {
+      "step": 2,
+      "id": "seq.leadership_classroom",
+      "title": "Leadership, HR, and admin classroom block",
+      "actions": [
+        "Supervision and documentation",
+        "Policy, reports, and ethics",
+        "Safety leadership and wellness"
+      ]
+    },
+    {
+      "step": 3,
+      "id": "seq.tactics_classroom",
+      "title": "Emergency service delivery / tactics block",
+      "actions": [
+        "Size-up and company command fundamentals",
+        "Common residential/commercial scenarios",
+        "Accountability and risk management"
+      ]
+    },
+    {
+      "step": 4,
+      "id": "seq.practical_leadership",
+      "title": "Practical leadership and scenario work",
+      "actions": [
+        "Tabletop and evolutions as company leader",
+        "Drill planning and delivery",
+        "Report writing practice"
+      ]
+    },
+    {
+      "step": 5,
+      "id": "seq.acting_time",
+      "title": "Documented acting / ride-up experience",
+      "actions": [
+        "Log supervised acting officer shifts",
+        "Collect feedback from officers",
+        "Close performance gaps"
+      ]
+    },
+    {
+      "step": 6,
+      "id": "seq.testing_promo",
+      "title": "Certification testing and promotional prep",
+      "actions": [
+        "Complete FO I written/practical requirements if applicable",
+        "Prepare assessment center / interview materials",
+        "File certificate and portfolio evidence in Career Record"
+      ]
+    }
+  ],
+  "assessment": {
+    "practical": "Scenario leadership, reports, and company-level task demonstrations",
+    "written": "Exam on FO I knowledge areas and local policy where required",
+    "passingCriteria": "State certifying entity and/or department promotional standards",
+    "documentationNeeded": [
+      "Prerequisite certifications",
+      "Course completion",
+      "Acting time logs",
+      "FO I certificate / seals if issued",
+      "Promotional process artifacts"
+    ]
+  },
   "outputsForCareerRoad": {
     "primaryCertificationId": "fire_officer_1",
-    "suggestedRequirementIds": ["fo1"],
-    "taskBookChapters": []
+    "suggestedRequirementIds": ["fo1", "fi1", "ics300"],
+    "taskBookChapters": [
+      "Eligibility & time-in-grade",
+      "Supervision & HR basics",
+      "Admin reports & policy",
+      "Pre-plans & inspections",
+      "Company scene leadership",
+      "Training leadership",
+      "ICS / multi-unit coordination",
+      "Acting officer log",
+      "FO I testing",
+      "Promotional portfolio prep"
+    ]
   },
+  "stateOverlayGuidance": {
+    "howToUse": "Record whether FO I is state-certified, required for lieutenant/captain, and any local assessment-center expectations.",
+    "alwaysVerifyWith": [
+      "State fire training agency",
+      "Department promotional policy",
+      "IFSAC / Pro Board entity if seals are issued"
+    ]
+  },
+  "sources": [
+    {
+      "title": "NFPA 1021 Fire Officer professional qualifications",
+      "type": "standard",
+      "note": "Do not paste copyrighted JPR text verbatim."
+    }
+  ],
   "lastVerified": "2026-08-23",
-  "disclaimer": "Placeholder only. Replace with complete pathway content before production use."
+  "confidence": "high_for_national_structure",
+  "disclaimer": "Structured training roadmap for personal professional development. Promotional authority remains with the hiring department and civil service rules."
 }
