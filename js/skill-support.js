@@ -490,6 +490,101 @@
     return '/skill-support.html?' + params.toString();
   }
 
+  const RECEIPT_DISCLAIMER = 'Practice receipt only. This is not a Taskbook sign-off, evaluator verification, or official certification record.';
+
+  function lookupSummary(summaries, context) {
+    const byId = (summaries && summaries.byId) || {};
+    const keys = [context && context.task, context && context.id, context && context.requirement].filter(Boolean);
+    for (const key of keys) {
+      if (byId[key]) return byId[key];
+    }
+    return null;
+  }
+
+  function buildPracticeReceipt(skill, cert, extras) {
+    const extra = extras || {};
+    return {
+      savedAt: extra.savedAt || new Date().toISOString(),
+      skillId: skill && skill.id,
+      title: skill && skill.title,
+      certId: cert && cert.id,
+      certTitle: cert && cert.title,
+      source: extra.source || '',
+      goal: extra.goal || '',
+      drillMinutes: extra.drillMinutes ? String(extra.drillMinutes) : '',
+      readinessCorrect: extra.readinessCorrect,
+      readinessTotal: extra.readinessTotal,
+      tools: unique(extra.tools || []),
+      disclaimer: RECEIPT_DISCLAIMER
+    };
+  }
+
+  function formatPracticeReceipt(receipt) {
+    if (!receipt) return '';
+    const lines = [
+      'FireOpsSim practice receipt',
+      receipt.title || receipt.skillId || 'Skill session',
+      receipt.certTitle ? 'Certification: ' + receipt.certTitle : '',
+      receipt.goal ? 'Goal: ' + receipt.goal : '',
+      receipt.drillMinutes ? 'Drill: ' + receipt.drillMinutes + ' minutes' : 'Drill: not started',
+      Number(receipt.readinessTotal) > 0
+        ? 'Check yourself: ' + (receipt.readinessCorrect || 0) + '/' + receipt.readinessTotal
+        : '',
+      receipt.tools && receipt.tools.length ? 'Tools: ' + receipt.tools.join(', ') : '',
+      receipt.savedAt ? 'When: ' + receipt.savedAt : '',
+      RECEIPT_DISCLAIMER
+    ];
+    return lines.filter(Boolean).join('\n');
+  }
+
+  function withReceiptParams(url, receipt) {
+    if (!url || !receipt || !isSafeReturnUrl(url)) return url || '';
+    try {
+      const absolute = url.startsWith('/') ? 'https://fireopssim.com' + url : url;
+      const parsed = new URL(absolute);
+      parsed.searchParams.set('practiced', '1');
+      if (receipt.skillId) parsed.searchParams.set('skill', receipt.skillId);
+      if (receipt.certId) parsed.searchParams.set('cert', receipt.certId);
+      if (receipt.drillMinutes) parsed.searchParams.set('minutes', String(receipt.drillMinutes));
+      if (receipt.savedAt) parsed.searchParams.set('when', receipt.savedAt);
+      if (url.startsWith('/')) return parsed.pathname + parsed.search + parsed.hash;
+      return parsed.toString();
+    } catch {
+      return url;
+    }
+  }
+
+  function savePracticeReceipt(receipt) {
+    if (!receipt) return [];
+    const key = 'fos-practice-receipts-v1';
+    let list = [];
+    try {
+      list = JSON.parse(localStorage.getItem(key) || '[]');
+    } catch {
+      list = [];
+    }
+    if (!Array.isArray(list)) list = [];
+    list.unshift(receipt);
+    list = list.slice(0, 12);
+    try {
+      localStorage.setItem(key, JSON.stringify(list));
+    } catch {
+      /* ignore */
+    }
+    preserveContext({
+      cert: receipt.certId,
+      task: receipt.skillId,
+      goal: receipt.goal,
+      source: receipt.source
+    }, {
+      itemId: receipt.skillId,
+      title: receipt.title,
+      category: receipt.certTitle,
+      receipt
+    });
+    return list;
+  }
+
   function preserveContext(context, extra) {
     const payload = {
       savedAt: new Date().toISOString(),
@@ -509,7 +604,7 @@
   }
 
   async function fetchJson(url) {
-    const res = await fetch(url, { cache: 'no-store' });
+    const res = await fetch(url);
     if (!res.ok) throw new Error('Failed to load ' + url);
     return res.json();
   }
@@ -541,6 +636,12 @@
     stageForCert,
     sessionUrl,
     preserveContext,
+    lookupSummary,
+    buildPracticeReceipt,
+    formatPracticeReceipt,
+    withReceiptParams,
+    savePracticeReceipt,
+    RECEIPT_DISCLAIMER,
     loadCatalog,
     applyGoalBoost
   };

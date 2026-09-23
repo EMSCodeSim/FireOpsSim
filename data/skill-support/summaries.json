@@ -1,0 +1,592 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-23",
+  "purpose": "Compact Skill Support summaries for first paint and no-JS deep links. Completing practice never marks a Roadmap task complete.",
+  "byId": {
+    "probation_hose_advancement": {
+      "id": "probation_hose_advancement",
+      "title": "Hose Advancement (Probation)",
+      "summary": "A short, correct attack-line evolution you can run on a quiet morning: pull, flake, charge, advance, reload.",
+      "why": "Probation is where the company decides if you can be the backup firefighter without thinking.",
+      "certId": "probationary_firefighter",
+      "certTitle": "Probationary / First 100 Shifts",
+      "shortTitle": "Probation"
+    },
+    "probation_ppe_scba": {
+      "id": "probation_ppe_scba",
+      "title": "PPE and SCBA Ready Check",
+      "summary": "Be dressed correctly, on air when required, with a partner check — every time, not only when someone is watching.",
+      "why": "Companies notice who is still clipping a coat at the curb.",
+      "certId": "probationary_firefighter",
+      "certTitle": "Probationary / First 100 Shifts",
+      "shortTitle": "Probation"
+    },
+    "probation_apparatus": {
+      "id": "probation_apparatus",
+      "title": "Apparatus Familiarity",
+      "summary": "Find the tool in the dark, explain what it is for, and put it back where the next person expects it.",
+      "why": "‘I don’t know this rig’ expires after about two shifts.",
+      "certId": "probationary_firefighter",
+      "certTitle": "Probationary / First 100 Shifts",
+      "shortTitle": "Probation"
+    },
+    "probation_radio": {
+      "id": "probation_radio",
+      "title": "Portable Radio and Mayday Format",
+      "summary": "Turn it on, get the right channel, talk short, and know the Mayday format before you need it.",
+      "why": "A probationary firefighter with a dead radio is invisible. A probationary firefighter who cannot call a Mayday is in extra danger.",
+      "certId": "probationary_firefighter",
+      "certTitle": "Probationary / First 100 Shifts",
+      "shortTitle": "Probation"
+    },
+    "probation_hydrant": {
+      "id": "probation_hydrant",
+      "title": "Hydrant Connection",
+      "summary": "Make the hydrant the way THIS company makes it: adapters, slow open, kinks dressed, a real ‘water available’ report.",
+      "why": "If the hydrant person fails, the whole engine fails. Probation often owns this job.",
+      "certId": "probationary_firefighter",
+      "certTitle": "Probationary / First 100 Shifts",
+      "shortTitle": "Probation"
+    },
+    "probation_ladders": {
+      "id": "probation_ladders",
+      "title": "Ground Ladder Basics",
+      "summary": "Carry, heel, raise, and lock a ladder for a simple objective without hitting wires.",
+      "why": "You will be the heel person. If you cannot heel, the tip person is in trouble.",
+      "certId": "probationary_firefighter",
+      "certTitle": "Probationary / First 100 Shifts",
+      "shortTitle": "Probation"
+    },
+    "probation_reset": {
+      "id": "probation_reset",
+      "title": "Post-Call Reset",
+      "summary": "After the run: people, air, hose, tools, and a ready apparatus — before anyone sits down for a hero sandwich.",
+      "why": "The next tones will not wait for your recap. Probationary firefighters who reset without being asked get trusted.",
+      "certId": "probationary_firefighter",
+      "certTitle": "Probationary / First 100 Shifts",
+      "shortTitle": "Probation"
+    },
+    "probation_company_life": {
+      "id": "probation_company_life",
+      "title": "Company Life and Feedback",
+      "summary": "Be on time, ask for one correction, take it without drama, and keep a private learning log — no patient identifiers.",
+      "why": "Skill without coachability still fails probation. Coachability without skill fails the fire.",
+      "certId": "probationary_firefighter",
+      "certTitle": "Probationary / First 100 Shifts",
+      "shortTitle": "Probation"
+    },
+    "ff1_ppe": {
+      "id": "ff1_ppe",
+      "title": "PPE Readiness and Donning",
+      "summary": "Don complete structural PPE correctly, check interfaces, and be ready to go on air without skipping protection for speed.",
+      "why": "Gear that is open, twisted, or incomplete is how firefighters get burned and inhale products of combustion on ‘ordinary’ jobs.",
+      "certId": "firefighter_1",
+      "certTitle": "Firefighter I",
+      "shortTitle": "FF I"
+    },
+    "ff1_scba": {
+      "id": "ff1_scba",
+      "title": "SCBA Operations",
+      "summary": "Don and work on air, manage consumption, handle emergencies, and leave with a reserve — air is a tactical resource.",
+      "why": "Most Maydays have an air problem attached. SCBA skill is survival, not just a test station.",
+      "certId": "firefighter_1",
+      "certTitle": "Firefighter I",
+      "shortTitle": "FF I"
+    },
+    "ff1_hose_advancement": {
+      "id": "ff1_hose_advancement",
+      "title": "Hose Advancement",
+      "summary": "Deploy, charge, and advance an attack line as a team with nozzle control, communication, and a working backup firefighter.",
+      "why": "Water at the right place, in a form you can still move, is the core engine-company product.",
+      "certId": "firefighter_1",
+      "certTitle": "Firefighter I",
+      "shortTitle": "FF I"
+    },
+    "ff1_ground_ladders": {
+      "id": "ff1_ground_ladders",
+      "title": "Ground Ladders",
+      "summary": "Select, carry, raise, place, and climb a ground ladder for a stated objective: access, rescue, ventilation, or egress.",
+      "why": "A ladder in the right place is a firefighter’s second staircase. A ladder in the wrong place is a trip hazard that helps no one.",
+      "certId": "firefighter_1",
+      "certTitle": "Firefighter I",
+      "shortTitle": "FF I"
+    },
+    "ff1_forcible_entry": {
+      "id": "ff1_forcible_entry",
+      "title": "Forcible Entry",
+      "summary": "Read the door, pick tools, control the door after it opens, and force only as much as the objective requires.",
+      "why": "The door is both an obstacle and a flow-path control device. How you force it changes the fire.",
+      "certId": "firefighter_1",
+      "certTitle": "Firefighter I",
+      "shortTitle": "FF I"
+    },
+    "ff1_search": {
+      "id": "ff1_search",
+      "title": "Primary Search",
+      "summary": "Search with team integrity, orientation, a purpose, and a way out — then communicate what you found or did not find.",
+      "why": "Search is a life-saving assignment that also kills firefighters who lose the wall, the partner, or the exit.",
+      "certId": "firefighter_1",
+      "certTitle": "Firefighter I",
+      "shortTitle": "FF I"
+    },
+    "ff1_ventilation": {
+      "id": "ff1_ventilation",
+      "title": "Ventilation Support",
+      "summary": "Ventilation is a fire-behavior tool. Openings must match the attack, the search, and the chosen flow path — not habit.",
+      "why": "Wrong ventilation makes the fire bigger, faster, and closer to people. Timing is the skill.",
+      "certId": "firefighter_1",
+      "certTitle": "Firefighter I",
+      "shortTitle": "FF I"
+    },
+    "ff1_water_supply": {
+      "id": "ff1_water_supply",
+      "title": "Water Supply Support",
+      "summary": "Catch a hydrant, manage supply hose, and support the engine as assigned — the pump operator cannot do this alone.",
+      "why": "Firefighter I water-supply work is how the engineer gets a chance to be good.",
+      "certId": "firefighter_1",
+      "certTitle": "Firefighter I",
+      "shortTitle": "FF I"
+    },
+    "ff1_fire_attack": {
+      "id": "ff1_fire_attack",
+      "title": "Fire Attack Fundamentals",
+      "summary": "Apply an effective stream as part of a team: the right stream, the right place, coordinated with ventilation and search.",
+      "why": "Cooling fuel and controlling the flow path is how room-and-contents fires stay room-and-contents fires.",
+      "certId": "firefighter_1",
+      "certTitle": "Firefighter I",
+      "shortTitle": "FF I"
+    },
+    "ff1_communications_mayday": {
+      "id": "ff1_communications_mayday",
+      "title": "Communications and Mayday",
+      "summary": "Use the radio so people can help you: routine traffic, progress, and a Mayday that includes location, unit, and the problem.",
+      "why": "A silent firefighter in trouble is a body recovery. A clear Mayday is a rescue problem with a chance.",
+      "certId": "firefighter_1",
+      "certTitle": "Firefighter I",
+      "shortTitle": "FF I"
+    },
+    "ff1_overhaul_salvage": {
+      "id": "ff1_overhaul_salvage",
+      "title": "Overhaul and Salvage",
+      "summary": "Find hidden fire without destroying evidence or people, and protect property that the fire did not already take.",
+      "why": "Rekindle, injuries during overhaul, and ruined belongings are preventable company failures.",
+      "certId": "firefighter_1",
+      "certTitle": "Firefighter I",
+      "shortTitle": "FF I"
+    },
+    "ff2_ventilation": {
+      "id": "ff2_ventilation",
+      "title": "Coordinated Ventilation",
+      "summary": "Choose opening location and timing with suppression and search — not as a separate sport.",
+      "why": "Firefighter II is where you stop ‘taking the roof because we always do’ and start making the fire behave on purpose.",
+      "certId": "firefighter_2",
+      "certTitle": "Firefighter II",
+      "shortTitle": "FF II"
+    },
+    "ff2_vehicle_extrication": {
+      "id": "ff2_vehicle_extrication",
+      "title": "Vehicle Extrication Support",
+      "summary": "Stabilize, create a work plan, and support patient access with approved tools — without becoming a victim of traffic or energy.",
+      "why": "Cars store energy. Traffic keeps moving. The patient is not helped by a rushed, unstabilized cut.",
+      "certId": "firefighter_2",
+      "certTitle": "Firefighter II",
+      "shortTitle": "FF II"
+    },
+    "ff2_foam": {
+      "id": "ff2_foam",
+      "title": "Foam Operations",
+      "summary": "Match foam to the fuel, set up proportioning equipment correctly, and know when foam is the wrong tool.",
+      "why": "Wrong foam, wrong percentage, or a starved eductor wastes concentrate and fails to extinguish.",
+      "certId": "firefighter_2",
+      "certTitle": "Firefighter II",
+      "shortTitle": "FF II"
+    },
+    "ff2_preplan": {
+      "id": "ff2_preplan",
+      "title": "Preincident Survey",
+      "summary": "Collect the information a company will wish it had at 2 a.m.: access, water, occupancy, systems, and special hazards.",
+      "why": "First-due knowledge is a firefighting skill. Guessing a building in smoke is how people get trapped.",
+      "certId": "firefighter_2",
+      "certTitle": "Firefighter II",
+      "shortTitle": "FF II"
+    },
+    "ff2_company_tactics": {
+      "id": "ff2_company_tactics",
+      "title": "Company-Level Tactics",
+      "summary": "Turn an incident objective into firefighter tasks, benchmarks, and a radio update without pretending to be command.",
+      "why": "Firefighter II is the working supervisor of a task — not the IC, not a freelancer.",
+      "certId": "firefighter_2",
+      "certTitle": "Firefighter II",
+      "shortTitle": "FF II"
+    },
+    "ff2_radio_reports": {
+      "id": "ff2_radio_reports",
+      "title": "Condition and Progress Reports",
+      "summary": "Give short CAN-style updates: conditions, actions, needs — so command can think.",
+      "why": "Long stories clog the channel. Missing stories leave people in danger.",
+      "certId": "firefighter_2",
+      "certTitle": "Firefighter II",
+      "shortTitle": "FF II"
+    },
+    "ff2_evidence_overhaul": {
+      "id": "ff2_evidence_overhaul",
+      "title": "Evidence-Aware Overhaul",
+      "summary": "Expose hidden fire while disturbing origin indicators as little as the fire problem allows.",
+      "why": "The investigation is often won or lost by the first companies with pike poles.",
+      "certId": "firefighter_2",
+      "certTitle": "Firefighter II",
+      "shortTitle": "FF II"
+    },
+    "ff2_hose_testing": {
+      "id": "ff2_hose_testing",
+      "title": "Hose and Equipment Service Testing",
+      "summary": "Plan a safe hose/equipment service test: zones, documentation, failure criteria, and tagging out failures.",
+      "why": "Burst hose on the fireground is a predictable maintenance failure. Testing is how you find it in the lot.",
+      "certId": "firefighter_2",
+      "certTitle": "Firefighter II",
+      "shortTitle": "FF II"
+    },
+    "hazmat_ops_recognition": {
+      "id": "hazmat_ops_recognition",
+      "title": "Recognition and Identification",
+      "summary": "Use clues, markings, occupancy, and current references to identify likely hazards without becoming part of the release.",
+      "why": "Wrong ID produces wrong isolation and dead firefighters. Guessing a product from a smell is not a tactic.",
+      "certId": "hazmat_operations",
+      "certTitle": "Hazardous Materials Operations",
+      "shortTitle": "HazMat Ops"
+    },
+    "hazmat_ops_isolation": {
+      "id": "hazmat_ops_isolation",
+      "title": "Isolation and Protective Actions",
+      "summary": "Establish initial isolation, deny entry, and choose protective actions from current references and the AHJ plan.",
+      "why": "Most lives at a HazMat scene are saved by keeping people out of the product, not by heroic entries.",
+      "certId": "hazmat_operations",
+      "certTitle": "Hazardous Materials Operations",
+      "shortTitle": "HazMat Ops"
+    },
+    "hazmat_ops_erg": {
+      "id": "hazmat_ops_erg",
+      "title": "ERG Navigation",
+      "summary": "Find the material, the guide, isolation information, and emergency contacts quickly in the current ERG.",
+      "why": "A reference you cannot navigate under stress is a paperweight.",
+      "certId": "hazmat_operations",
+      "certTitle": "Hazardous Materials Operations",
+      "shortTitle": "HazMat Ops"
+    },
+    "hazmat_ops_zones": {
+      "id": "hazmat_ops_zones",
+      "title": "Control Zones",
+      "summary": "Lay out hot/warm/cold concepts so work, decon, and command do not share the same puddle.",
+      "why": "If the cold zone is in the product, everyone is in the hot zone and nobody admitted it.",
+      "certId": "hazmat_operations",
+      "certTitle": "Hazardous Materials Operations",
+      "shortTitle": "HazMat Ops"
+    },
+    "hazmat_ops_decon": {
+      "id": "hazmat_ops_decon",
+      "title": "Emergency Decontamination",
+      "summary": "Set up operations-level emergency/gross decon so people and equipment do not spread the problem.",
+      "why": "The second incident is the contaminated ambulance and the exposed firefighter who ‘only stepped in it.’",
+      "certId": "hazmat_operations",
+      "certTitle": "Hazardous Materials Operations",
+      "shortTitle": "HazMat Ops"
+    },
+    "hazmat_ops_defensive": {
+      "id": "hazmat_ops_defensive",
+      "title": "Defensive Control Options",
+      "summary": "Choose defensive actions you are trained and authorized to do: dike, dam, divert, remote valve, vapor suppression — and stop at the ops boundary.",
+      "why": "Operations level is not ‘almost a technician.’ Leaving your level is how people die in product.",
+      "certId": "hazmat_operations",
+      "certTitle": "Hazardous Materials Operations",
+      "shortTitle": "HazMat Ops"
+    },
+    "hazmat_ops_ppe": {
+      "id": "hazmat_ops_ppe",
+      "title": "PPE Limitations",
+      "summary": "Know what department HazMat PPE actually protects against — and when structural firefighting gear is the wrong answer.",
+      "why": "The wrong suit is a costume. Breakthrough, heat stress, and training limits kill.",
+      "certId": "hazmat_operations",
+      "certTitle": "Hazardous Materials Operations",
+      "shortTitle": "HazMat Ops"
+    },
+    "hazmat_ops_radio_brief": {
+      "id": "hazmat_ops_radio_brief",
+      "title": "HazMat Initial Radio Brief",
+      "summary": "Give a concise first report: location, clues, wind, exposures, actions, resources, and a safe approach.",
+      "why": "The second-due company will drive into the product if your first report was ‘we have a smell.’",
+      "certId": "hazmat_operations",
+      "certTitle": "Hazardous Materials Operations",
+      "shortTitle": "HazMat Ops"
+    },
+    "do_pumper_hydrant_ops": {
+      "id": "do_pumper_hydrant_ops",
+      "title": "Hydrant Operations",
+      "summary": "Connect a reliable hydrant supply, manage intake pressure, watch residual, and communicate before changing demand.",
+      "why": "Most urban structure fires succeed or fail on whether the first engine actually has the water the fire needs. Hydrant work is not just hooking a hose — it is reading the system while the incident changes.",
+      "certId": "driver_operator_pumper",
+      "certTitle": "Driver / Operator — Pumper",
+      "shortTitle": "D/O Pumper"
+    },
+    "do_pumper_pump_theory": {
+      "id": "do_pumper_pump_theory",
+      "title": "Pump Theory",
+      "summary": "Understand how a centrifugal fire pump makes pressure, why it needs water at the eye of the impeller, and what gauges are telling you.",
+      "why": "Formulas fail in the street if the operator does not know what the machine is doing. Pump theory is how you recognize cavitation, loss of prime, and useless RPM.",
+      "certId": "driver_operator_pumper",
+      "certTitle": "Driver / Operator — Pumper",
+      "shortTitle": "D/O Pumper"
+    },
+    "do_pumper_apparatus_inspection": {
+      "id": "do_pumper_apparatus_inspection",
+      "title": "Daily Apparatus Inspection",
+      "summary": "Find the problem in the bay, not on the fireground. Fluids, warning systems, pump, tires, equipment, and documentation.",
+      "why": "Most ‘it died on the call’ stories started as a skipped check. Inspection is an operator skill, not busywork.",
+      "certId": "driver_operator_pumper",
+      "certTitle": "Driver / Operator — Pumper",
+      "shortTitle": "D/O Pumper"
+    },
+    "do_pumper_engage_pump": {
+      "id": "do_pumper_engage_pump",
+      "title": "Engage Pump",
+      "summary": "Position, shift to pump, confirm pump mode, tank-to-pump or supply, and a charged first line without guessing.",
+      "why": "The first 60 seconds of pumping set up everything that follows. A missed shift confirmation is a dry line at the door.",
+      "certId": "driver_operator_pumper",
+      "certTitle": "Driver / Operator — Pumper",
+      "shortTitle": "D/O Pumper"
+    },
+    "do_pumper_friction_loss": {
+      "id": "do_pumper_friction_loss",
+      "title": "Friction Loss and PDP",
+      "summary": "Estimate pump discharge pressure from nozzle pressure, hose friction, elevation, and appliances — then sanity-check the number.",
+      "why": "A wrong PDP either starves the nozzle or overpressures people and hose. The math is a starting point; the gauges and the nozzle firefighter tell you if it is working.",
+      "certId": "driver_operator_pumper",
+      "certTitle": "Driver / Operator — Pumper",
+      "shortTitle": "D/O Pumper"
+    },
+    "do_pumper_multiple_attack_lines": {
+      "id": "do_pumper_multiple_attack_lines",
+      "title": "Multiple Attack Lines",
+      "summary": "Keep pressure, supply, and communication stable when a second or third line opens or shuts.",
+      "why": "The fire does not wait while you re-do math. Opening another line changes flow, residual, and every existing discharge.",
+      "certId": "driver_operator_pumper",
+      "certTitle": "Driver / Operator — Pumper",
+      "shortTitle": "D/O Pumper"
+    },
+    "do_pumper_master_streams": {
+      "id": "do_pumper_master_streams",
+      "title": "Master Stream Operations",
+      "summary": "High-flow devices need water, reaction awareness, supply, and a reason — not just a bigger nozzle.",
+      "why": "A master stream can overwhelm a hydrant, a pump, and a building. It is a tactical tool with a supply problem attached.",
+      "certId": "driver_operator_pumper",
+      "certTitle": "Driver / Operator — Pumper",
+      "shortTitle": "D/O Pumper"
+    },
+    "do_pumper_relay_pumping": {
+      "id": "do_pumper_relay_pumping",
+      "title": "Relay Pumping",
+      "summary": "Move water a long distance with more than one pump: roles, intake targets, communications, and failure recognition.",
+      "why": "Relays fail from silence and ego, not from math. Every engine needs a role, an intake target, and a way to say ‘hold.’",
+      "certId": "driver_operator_pumper",
+      "certTitle": "Driver / Operator — Pumper",
+      "shortTitle": "D/O Pumper"
+    },
+    "do_pumper_drafting": {
+      "id": "do_pumper_drafting",
+      "title": "Drafting",
+      "summary": "Build an airtight suction path, prime, lift water from a static source, and recognize cavitation and air leaks.",
+      "why": "Drafting is unforgiving. One air leak or a fouled strainer turns a rural fire into a tank of regrets.",
+      "certId": "driver_operator_pumper",
+      "certTitle": "Driver / Operator — Pumper",
+      "shortTitle": "D/O Pumper"
+    },
+    "do_pumper_standpipe_fdc": {
+      "id": "do_pumper_standpipe_fdc",
+      "title": "Standpipe and FDC Operations",
+      "summary": "Supply a standpipe or sprinkler FDC with the right hose, the right pressure method, and a clear communication loop with the interior crew.",
+      "why": "High-rise and sprinklered buildings fail the first engine when the operator treats an FDC like a hydrant with extra hose. Elevation, system loss, and the people on the standpipe outlet all have to be in the same picture.",
+      "certId": "driver_operator_pumper",
+      "certTitle": "Driver / Operator — Pumper",
+      "shortTitle": "D/O Pumper"
+    },
+    "do_pumper_rural_tender": {
+      "id": "do_pumper_rural_tender",
+      "title": "Rural Water and Tender Shuttle",
+      "summary": "Keep fire flow coming when there is no hydrant: tank duration, fill and dump sites, shuttle math, and the radio loop that actually delivers water.",
+      "why": "Rural fires run out of water in minutes if the first engine treats tank water as infinite. Shuttle success is cycle time and jobs — not how many tenders are ‘en route.’",
+      "certId": "driver_operator_pumper",
+      "certTitle": "Driver / Operator — Pumper",
+      "shortTitle": "D/O Pumper"
+    },
+    "do_pumper_apparatus_placement": {
+      "id": "do_pumper_apparatus_placement",
+      "title": "Apparatus Placement",
+      "summary": "Stop the engine where the hose, water, rescue path, later units, and a way out all still work — then set the brake and own that decision.",
+      "why": "A bad spot is a permanent tactical problem. You can recut a line. You cannot un-park a blocked aerial or a hydrant you drove past with no plan.",
+      "certId": "driver_operator_pumper",
+      "certTitle": "Driver / Operator — Pumper",
+      "shortTitle": "D/O Pumper"
+    },
+    "do_pumper_troubleshooting": {
+      "id": "do_pumper_troubleshooting",
+      "title": "Pump and Supply Troubleshooting",
+      "summary": "Change one variable at a time: supply, valves, air, restrictions, cavitation, governor, then the discharge side.",
+      "why": "Panic makes operators twist everything. Method makes water come back.",
+      "certId": "driver_operator_pumper",
+      "certTitle": "Driver / Operator — Pumper",
+      "shortTitle": "D/O Pumper"
+    },
+    "fo1_initial_radio_report": {
+      "id": "fo1_initial_radio_report",
+      "title": "Initial Radio Report",
+      "summary": "From the seat, paint a picture: occupancy, conditions, actions, strategy, and what you need next — in a format later units can use.",
+      "why": "The rest of the incident will copy your first 20 seconds. A vague ‘we have fire showing’ wastes staffing.",
+      "certId": "fire_officer_1",
+      "certTitle": "Fire Officer I",
+      "shortTitle": "FO I"
+    },
+    "fo1_size_up": {
+      "id": "fo1_size_up",
+      "title": "Size-Up and Risk",
+      "summary": "Build a usable picture: life hazard, fire location, building, access, water, and what would change your mind.",
+      "why": "Strategy without size-up is a guess with a radio.",
+      "certId": "fire_officer_1",
+      "certTitle": "Fire Officer I",
+      "shortTitle": "FO I"
+    },
+    "fo1_strategy_tactics": {
+      "id": "fo1_strategy_tactics",
+      "title": "Strategy and Tactics",
+      "summary": "Pick a strategy you can staff, assign tactics that match it, and change both when the fire tells you to.",
+      "why": "Offensive tactics under a defensive strategy (or the reverse) is how companies get stretched into bad air.",
+      "certId": "fire_officer_1",
+      "certTitle": "Fire Officer I",
+      "shortTitle": "FO I"
+    },
+    "fo1_accountability": {
+      "id": "fo1_accountability",
+      "title": "Assignments and Accountability",
+      "summary": "Every member has a task, a location, and a way to be counted — especially when the plan changes.",
+      "why": "Unassigned firefighters invent jobs in the worst air. Unaccounted firefighters become Maydays with no last location.",
+      "certId": "fire_officer_1",
+      "certTitle": "Fire Officer I",
+      "shortTitle": "FO I"
+    },
+    "fo1_transfer_of_command": {
+      "id": "fo1_transfer_of_command",
+      "title": "Transfer of Command",
+      "summary": "Hand off a compact brief: situation, strategy, assignments, accountability, resources, hazards, and immediate needs.",
+      "why": "A bad transfer creates two commanders and zero accountability.",
+      "certId": "fire_officer_1",
+      "certTitle": "Fire Officer I",
+      "shortTitle": "FO I"
+    },
+    "fo1_coaching": {
+      "id": "fo1_coaching",
+      "title": "Coaching and Crew Performance",
+      "summary": "Correct a specific behavior with a private, factual conversation: what you saw, the standard, the impact, and the follow-up.",
+      "why": "Officers who only yell in the bay never fix the thing that will hurt someone at 3 a.m.",
+      "certId": "fire_officer_1",
+      "certTitle": "Fire Officer I",
+      "shortTitle": "FO I"
+    },
+    "fo1_documentation": {
+      "id": "fo1_documentation",
+      "title": "Incident Documentation",
+      "summary": "Write what happened in objective language: times, decisions, people (as required), and follow-up — without creative writing.",
+      "why": "The report is how the organization learns, defends, and improves. A sloppy narrative becomes the official story.",
+      "certId": "fire_officer_1",
+      "certTitle": "Fire Officer I",
+      "shortTitle": "FO I"
+    },
+    "fo1_risk_management": {
+      "id": "fo1_risk_management",
+      "title": "Risk Management",
+      "summary": "Name the risk, reduce it if you can, refuse what you cannot staff, and take care of the crew after the work.",
+      "why": "Company officers are the last people who can still say ‘we are not doing that’ before someone pays.",
+      "certId": "fire_officer_1",
+      "certTitle": "Fire Officer I",
+      "shortTitle": "FO I"
+    },
+    "fo1_after_action": {
+      "id": "fo1_after_action",
+      "title": "After-Action Review",
+      "summary": "Run a short, blame-light review: what we intended, what happened, why, what to keep, and one change.",
+      "why": "If the only review is yelling, the crew learns to hide. If there is no review, the next fire is a repeat.",
+      "certId": "fire_officer_1",
+      "certTitle": "Fire Officer I",
+      "shortTitle": "FO I"
+    },
+    "fi1_objectives": {
+      "id": "fi1_objectives",
+      "title": "Performance Objectives",
+      "summary": "Turn a station skill into one observable objective: who, does what, under what conditions, to what standard.",
+      "why": "If the objective is ‘understand hose,’ nobody can teach it or test it. If it is ‘advance a charged 1¾-inch line to a marked door in full PPE,’ you can.",
+      "certId": "fire_instructor_1",
+      "certTitle": "Fire Instructor I",
+      "shortTitle": "FI I"
+    },
+    "fi1_delivery": {
+      "id": "fi1_delivery",
+      "title": "Deliver Prepared Instruction",
+      "summary": "Open, explain, check for understanding, and close — without drowning learners in slides.",
+      "why": "A brilliant skill can still fail if the instructor rambles, skips the check, or never tells people what success looks like.",
+      "certId": "fire_instructor_1",
+      "certTitle": "Fire Instructor I",
+      "shortTitle": "FI I"
+    },
+    "fi1_demonstration": {
+      "id": "fi1_demonstration",
+      "title": "Demonstrate, Practice, Coach",
+      "summary": "Show the skill correctly, let them practice, and coach the next rep with specific feedback — then fade the prompting.",
+      "why": "Talking about a ladder raise is not a ladder raise. Bad demos become departmental folklore.",
+      "certId": "fire_instructor_1",
+      "certTitle": "Fire Instructor I",
+      "shortTitle": "FI I"
+    },
+    "fi1_training_safety": {
+      "id": "fi1_training_safety",
+      "title": "Training Safety Brief",
+      "summary": "Brief the evolution: objective, hazards, PPE, boundaries, stop signal, accountability, rehab, and the emergency plan.",
+      "why": "Most training LODDs looked like ‘just a drill.’ The brief is how you refuse to be casual.",
+      "certId": "fire_instructor_1",
+      "certTitle": "Fire Instructor I",
+      "shortTitle": "FI I"
+    },
+    "fi1_evaluation": {
+      "id": "fi1_evaluation",
+      "title": "Skill Evaluation",
+      "summary": "Give the same directions, watch the same points, score what you saw, and close professionally — this is not a popularity contest.",
+      "why": "Inconsistent evaluators create unofficial standards and lawsuits. Fairness is a skill.",
+      "certId": "fire_instructor_1",
+      "certTitle": "Fire Instructor I",
+      "shortTitle": "FI I"
+    },
+    "fi1_feedback": {
+      "id": "fi1_feedback",
+      "title": "Specific Feedback",
+      "summary": "Name the observed behavior, the standard, the effect, and the next repetition’s focus.",
+      "why": "‘Do better’ is not feedback. Neither is a personality review.",
+      "certId": "fire_instructor_1",
+      "certTitle": "Fire Instructor I",
+      "shortTitle": "FI I"
+    },
+    "fi1_documentation": {
+      "id": "fi1_documentation",
+      "title": "Training Records",
+      "summary": "Complete attendance, objective, instructor, date/time, evaluation, and remediation fields so the record would survive an audit.",
+      "why": "If it is not recorded, the organization cannot prove the training happened. That becomes a legal and ISO/accreditation problem.",
+      "certId": "fire_instructor_1",
+      "certTitle": "Fire Instructor I",
+      "shortTitle": "FI I"
+    },
+    "fi1_adapt": {
+      "id": "fi1_adapt",
+      "title": "Adapt Delivery, Keep the Standard",
+      "summary": "Change explanation, pace, or demo for the learner in front of you without lowering the performance standard.",
+      "why": "The job does not grade on a curve when the line is charged. Instruction can flex; the standard should not quietly disappear.",
+      "certId": "fire_instructor_1",
+      "certTitle": "Fire Instructor I",
+      "shortTitle": "FI I"
+    }
+  }
+}

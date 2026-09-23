@@ -3,6 +3,7 @@
 Structured training sessions used by `/skill-support.html`, `/roadmap-support.html`, and `/taskbook-resources.html`.
 
 - `index.json` — stages, catalog file list, shared official sources, extra search targets
+- `summaries.json` — compact title/summary map used for first paint on `/skill-support.html` deep links
 - One JSON file per certification/role (`firefighter_1.json`, `driver_operator_pumper.json`, …)
 
 Skill IDs reuse Roadmap IDs when they already exist (`do_pumper_hydrant_ops`, `driver_operator_pumper`, `firefighter_1`, `fire_officer_1`, …).

@@ -847,6 +847,45 @@ def build_index(certs):
     }
 
 
+def dump_summaries(certs):
+    by_id = {}
+    for cert in certs:
+        for item in cert.get("skills") or []:
+            by_id[item["id"]] = {
+                "id": item["id"],
+                "title": item["title"],
+                "summary": item["summary"],
+                "why": item.get("whyItMatters") or "",
+                "certId": cert["id"],
+                "certTitle": cert.get("title"),
+                "shortTitle": cert.get("shortTitle") or cert.get("title"),
+            }
+    payload = {
+        "schemaVersion": 1,
+        "updatedAt": "2026-09-23",
+        "purpose": "Compact Skill Support summaries for first paint and no-JS deep links. Completing practice never marks a Roadmap task complete.",
+        "byId": by_id,
+    }
+    dump("summaries.json", payload)
+    embed_summaries(payload)
+    print(f"summaries: {len(by_id)} skills")
+
+
+def embed_summaries(payload):
+    page = Path(__file__).resolve().parents[1] / "skill-support.html"
+    text = page.read_text(encoding="utf-8")
+    start = "<!-- SS-SUMMARIES-START -->"
+    end = "<!-- SS-SUMMARIES-END -->"
+    if start not in text or end not in text:
+        raise SystemExit("skill-support.html is missing SS-SUMMARIES markers")
+    blob = json.dumps({"byId": payload["byId"]}, ensure_ascii=False, separators=(",", ":"))
+    block = f'{start}\n<script type="application/json" id="ss-summaries">{blob}</script>\n{end}'
+    before, rest = text.split(start, 1)
+    _, after = rest.split(end, 1)
+    page.write_text(before + block + after, encoding="utf-8")
+    print("embedded summaries in skill-support.html")
+
+
 def dump_handoff(certs):
     skills = []
     for cert in certs:
@@ -865,7 +904,7 @@ def dump_handoff(certs):
         "sessionPage": "/skill-support.html",
         "dailyFocus": {
             "currentRoadmapUrl": "/focus-drills.html",
-            "behavior": "When source=roadmap, FireOpsSim redirects Daily Focus links to Skill Support. Skill Support accepts task, task_id, cert, certification, qualification, level, requirement, requirement_id, topic/title, goal, state, and return_url.",
+            "behavior": "When source=roadmap, FireOpsSim redirects Daily Focus links to Skill Support. Skill Support accepts task, task_id, cert, certification, qualification, level, requirement, requirement_id, topic/title, goal, state, and return_url. Return links may add practiced=1, skill, cert, minutes, and when as a practice receipt — never a sign-off.",
             "levelToCert": {
                 "probationary": "probationary_firefighter",
                 "firefighter_1": "firefighter_1",
@@ -895,6 +934,7 @@ def main():
         cert_fi1(),
     ]
     dump("index.json", build_index(certs))
+    dump_summaries(certs)
     dump_handoff(certs)
     for cert in certs:
         dump(f"{cert['id']}.json", cert)

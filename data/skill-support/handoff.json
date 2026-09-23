@@ -5,7 +5,7 @@
   "sessionPage": "/skill-support.html",
   "dailyFocus": {
     "currentRoadmapUrl": "/focus-drills.html",
-    "behavior": "When source=roadmap, FireOpsSim redirects Daily Focus links to Skill Support. Skill Support accepts task, task_id, cert, certification, qualification, level, requirement, requirement_id, topic/title, goal, state, and return_url.",
+    "behavior": "When source=roadmap, FireOpsSim redirects Daily Focus links to Skill Support. Skill Support accepts task, task_id, cert, certification, qualification, level, requirement, requirement_id, topic/title, goal, state, and return_url. Return links may add practiced=1, skill, cert, minutes, and when as a practice receipt — never a sign-off.",
     "levelToCert": {
       "probationary": "probationary_firefighter",
       "firefighter_1": "firefighter_1",

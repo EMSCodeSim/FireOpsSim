@@ -50,6 +50,18 @@ Unknown Roadmap IDs never dead-end. Skill Support says a dedicated module is not
 
 FireOpsSim must **never** automatically mark an official Roadmap task complete. Roadmap remains the system of record.
 
+### Practice receipt
+
+After a session, Skill Support shows a copyable practice receipt and may append these query keys to a safe `return_url`:
+
+- `practiced=1`
+- `skill` — Skill Support skill ID
+- `cert` — certification ID
+- `minutes` — 5, 15, or 30 if a drill mode was opened
+- `when` — ISO timestamp
+
+The receipt is a convenience for the firefighter to paste into Roadmap. It is **not** evaluator sign-off. A local ring buffer is stored as `fos-practice-receipts-v1`.
+
 ## Today’s Focus drill URL
 
 `https://fireopssim.com/focus-drills.html`

@@ -157,6 +157,38 @@ const handoff = readJson(path.join(DATA, 'handoff.json'));
 ok(Array.isArray(handoff.skills) && handoff.skills.length === catalog.skills.length, 'handoff lists every skill');
 ok(handoff.dailyFocus && handoff.dailyFocus.levelToCert.driver_operator === 'driver_operator_pumper', 'handoff maps Daily Focus levels');
 
+const summaries = readJson(path.join(DATA, 'summaries.json'));
+ok(summaries.byId && Object.keys(summaries.byId).length === catalog.skills.length, 'summaries cover every skill');
+const hydrantSummary = SS.lookupSummary(summaries, { task: 'do_pumper_hydrant_ops' });
+ok(hydrantSummary && hydrantSummary.title === 'Hydrant Operations', 'lookup hydrant summary');
+
+const receipt = SS.buildPracticeReceipt(hydrant.skill, hydrant.cert, {
+  source: 'roadmap',
+  goal: 'Engineer',
+  drillMinutes: '15',
+  readinessCorrect: 3,
+  readinessTotal: 4,
+  tools: ['Hydrant Flow Calculator']
+});
+const receiptText = SS.formatPracticeReceipt(receipt);
+ok(/Hydrant Operations/.test(receiptText), 'receipt names the skill');
+ok(/not a Taskbook sign-off/i.test(receiptText), 'receipt is not a sign-off');
+ok(SS.withReceiptParams('https://evil.example/log', receipt) === 'https://evil.example/log', 'receipt params blocked on unsafe URL');
+const receiptUrl = SS.withReceiptParams('https://fireopscareerroadmap.com/log?x=1', receipt);
+ok(/practiced=1/.test(receiptUrl) && /skill=do_pumper_hydrant_ops/.test(receiptUrl), 'receipt params on safe return URL');
+ok(SS.withReceiptParams('/task-book', receipt).startsWith('/task-book'), 'relative return keeps path');
+
+const page = fs.readFileSync(path.join(ROOT, 'skill-support.html'), 'utf8');
+ok(page.includes('id="ss-summaries"'), 'skill-support embeds summaries');
+ok(page.includes('firstPaint') && page.includes('ss-first-paint'), 'first-paint script present');
+ok(page.includes('practiceReceipt') && page.includes('Copy receipt'), 'practice receipt UI present');
+ok(fs.existsSync(path.join(ROOT, 'sw.js')), 'service worker exists');
+ok(fs.existsSync(path.join(ROOT, 'js', 'fos-pwa.js')), 'PWA helper exists');
+ok(fs.existsSync(path.join(ROOT, 'assets', 'icons', 'icon-192.png')), '192 icon');
+ok(fs.existsSync(path.join(ROOT, 'assets', 'icons', 'icon-512.png')), '512 icon');
+const manifest = readJson(path.join(ROOT, 'site.webmanifest'));
+ok(manifest.shortcuts && manifest.shortcuts.some((s) => /skill-support/.test(s.url)), 'manifest shortcuts');
+
 if (errors.length) {
   console.error('FAIL\n' + errors.map((e) => ' - ' + e).join('\n'));
   process.exit(1);
