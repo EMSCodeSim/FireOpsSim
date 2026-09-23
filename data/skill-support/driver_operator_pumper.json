@@ -2331,9 +2331,9 @@
       ],
       "seeResources": [
         {
-          "label": "Fireground Decision Sim",
-          "url": "/fireground-decision-sim.html",
-          "note": "Arrival scenes that include first-engine placement choices.",
+          "label": "Fireground Decision Sim — garden apartment",
+          "url": "/fireground-decision-sim.html?case=apartment",
+          "note": "Narrow-lane arrival. Place the first engine, then own the water story.",
           "type": "simulator"
         },
         {
@@ -2345,8 +2345,8 @@
       ],
       "practiceResources": [
         {
-          "label": "Fireground Decision Sim",
-          "url": "/fireground-decision-sim.html",
+          "label": "Fireground Decision Sim — garden apartment",
+          "url": "/fireground-decision-sim.html?case=apartment",
           "note": "Read the scene, then defend where the engine would stop.",
           "type": "simulator"
         },

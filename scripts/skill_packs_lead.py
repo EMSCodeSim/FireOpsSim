@@ -29,9 +29,9 @@ def cert_fo1():
                 beforeYouDo=["Know your department’s arrival-report template.", "Practice with photos — not just live chaos."],
                 terminology=[{"term": "Initial radio report", "meaning": "The first structured on-scene transmission that orients the response."}, {"term": "Command mode", "meaning": "Investigating, fast-attack, or command from a fixed position — per local ICS habits."}],
                 safetyNotes=["Do not commit crews in the report you have not actually assigned.", "If you are wrong, correct it on the next transmission — do not defend a bad picture."],
-                seeResources=[res("Fireground Decision Sim", "/fireground-decision-sim.html", "Arrival problems with decisions attached.", "simulator")],
+                seeResources=[res("Fireground Decision Sim — garden apartment", "/fireground-decision-sim.html?case=apartment", "Arrival with timed radio injects. Talk the first report.", "simulator")],
                 practiceResources=[
-                    res("Fireground Decision Sim", "/fireground-decision-sim.html", "Talk while you decide.", "simulator"),
+                    res("Fireground Decision Sim — garden apartment", "/fireground-decision-sim.html?case=apartment", "Give the IRR, then a CAN as injects land.", "simulator"),
                     res("Focus Drills — initial report", "/focus-drills.html?level=officer_1&topic=radio%20report", "Timed arrival reports.", "drill"),
                     res("Company Officer Tools", "/company-officer-tools.html", "Officer development hub.", "guide"),
                     res("Study Center — officer track", "/study-center.html?track=officer", "Officer study.", "guide"),

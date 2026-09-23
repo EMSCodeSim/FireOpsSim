@@ -703,11 +703,11 @@ def cert_do_pumper():
                     "Do not block hydrants, FDCs, or the only aerial corner because the address felt urgent.",
                 ],
                 seeResources=[
-                    res("Fireground Decision Sim", "/fireground-decision-sim.html", "Arrival scenes that include first-engine placement choices.", "simulator"),
+                    res("Fireground Decision Sim — garden apartment", "/fireground-decision-sim.html?case=apartment", "Narrow-lane arrival. Place the first engine, then own the water story.", "simulator"),
                     res("Focus Drills — placement", "/focus-drills.html?level=driver_operator&topic=placement", "Tabletop spotting reps.", "drill"),
                 ],
                 practiceResources=[
-                    res("Fireground Decision Sim", "/fireground-decision-sim.html", "Read the scene, then defend where the engine would stop.", "simulator"),
+                    res("Fireground Decision Sim — garden apartment", "/fireground-decision-sim.html?case=apartment", "Read the scene, then defend where the engine would stop.", "simulator"),
                     res("Hydrant Operations skill", "/skill-support.html?cert=driver_operator_pumper&task=do_pumper_hydrant_ops", "Water supply is why many spots exist.", "skill"),
                     res("Standpipe / FDC skill", "/skill-support.html?cert=driver_operator_pumper&task=do_pumper_standpipe_fdc", "High-rise spots must leave FDC and later trucks.", "skill"),
                     res("Driver / Operator Practice", "/driver-operator-practice.html", "Engineer hub.", "guide"),
@@ -823,7 +823,7 @@ def build_index(certs):
         {"title": "Standpipe / FDC Calculator", "url": "/standpipe-fdc-calculator.html", "keywords": ["standpipe", "fdc", "high rise", "elevation"], "type": "calculator", "certificationId": "driver_operator_pumper", "skillId": "do_pumper_standpipe_fdc"},
         {"title": "Tender Shuttle Calculator", "url": "/tender-shuttle-calculator.html", "keywords": ["tender", "tanker", "shuttle", "rural water"], "type": "calculator", "certificationId": "driver_operator_pumper", "skillId": "do_pumper_rural_tender"},
         {"title": "SCBA Air Management Calculator", "url": "/scba-air-management-calculator.html", "keywords": ["scba", "air", "cylinder"], "type": "calculator", "certificationId": "firefighter_1", "skillId": "ff1_scba"},
-        {"title": "Fireground Decision Sim", "url": "/fireground-decision-sim.html", "keywords": ["size up", "strategy", "tactics", "FO1", "placement"], "type": "simulator", "certificationId": "driver_operator_pumper", "skillId": "do_pumper_apparatus_placement"},
+        {"title": "Fireground Decision Sim", "url": "/fireground-decision-sim.html?case=apartment", "keywords": ["size up", "strategy", "tactics", "FO1", "placement"], "type": "simulator", "certificationId": "driver_operator_pumper", "skillId": "do_pumper_apparatus_placement"},
         {"title": "Fireground Decision Sim (officer)", "url": "/fireground-decision-sim.html", "keywords": ["size up", "strategy", "tactics", "FO1"], "type": "simulator", "certificationId": "fire_officer_1", "skillId": "fo1_size_up"},
         {"title": "Focus Drills + Skill Wheel", "url": "/focus-drills.html", "keywords": ["drill", "wheel", "15 minute", "company drill"], "type": "drill"},
         {"title": "Hose Advancement Checklist", "url": "/hose-advancement-checklist.html", "keywords": ["hose", "attack line", "probation"], "type": "checklist", "skillId": "probation_hose_advancement"},

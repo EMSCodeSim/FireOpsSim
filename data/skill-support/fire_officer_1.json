@@ -58,17 +58,17 @@
       ],
       "seeResources": [
         {
-          "label": "Fireground Decision Sim",
-          "url": "/fireground-decision-sim.html",
-          "note": "Arrival problems with decisions attached.",
+          "label": "Fireground Decision Sim — garden apartment",
+          "url": "/fireground-decision-sim.html?case=apartment",
+          "note": "Arrival with timed radio injects. Talk the first report.",
           "type": "simulator"
         }
       ],
       "practiceResources": [
         {
-          "label": "Fireground Decision Sim",
-          "url": "/fireground-decision-sim.html",
-          "note": "Talk while you decide.",
+          "label": "Fireground Decision Sim — garden apartment",
+          "url": "/fireground-decision-sim.html?case=apartment",
+          "note": "Give the IRR, then a CAN as injects land.",
           "type": "simulator"
         },
         {

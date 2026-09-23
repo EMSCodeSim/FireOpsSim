@@ -189,6 +189,61 @@ ok(fs.existsSync(path.join(ROOT, 'assets', 'icons', 'icon-512.png')), '512 icon'
 const manifest = readJson(path.join(ROOT, 'site.webmanifest'));
 ok(manifest.shortcuts && manifest.shortcuts.some((s) => /skill-support/.test(s.url)), 'manifest shortcuts');
 
+const FG = require('../js/fireground-decision-sim.js');
+ok(FG.parseCaseParam('?case=apartment') === 'apartment', 'case=apartment deep link');
+ok(FG.parseCaseParam('case=apartment') === 'apartment', 'case param without ?');
+ok(FG.parseCaseParam('?case=nope') === '', 'unknown case ignored');
+ok(FG.defaultCaseId('') === 'residential', 'default case is residential');
+ok(FG.injectsFor('apartment').length >= 2 && FG.injectsFor('apartment').length <= 3, 'apartment has 2–3 injects');
+ok(FG.injectsFor('residential').length === 0, 'residential has no timed injects');
+ok(FG.injectsFor('commercial').length === 0 && FG.injectsFor('basement').length === 0, 'other cases stay untimed');
+
+const dueBalcony = FG.dueInjects('apartment', { startedAtMs: 0, nowMs: 8000, step: 0, answeredCount: 0, shownIds: [] });
+ok(dueBalcony.some((i) => i.id === 'apt-balcony-radio'), 'balcony radio at 8s');
+ok(!FG.dueInjects('apartment', { startedAtMs: 0, nowMs: 7999, step: 0, answeredCount: 0, shownIds: [] }).some((i) => i.id === 'apt-balcony-radio'), 'balcony radio not early');
+
+const dueResidual = FG.dueInjects('apartment', { startedAtMs: 0, nowMs: 3000, step: 0, answeredCount: 1, shownIds: ['apt-balcony-radio'] });
+ok(dueResidual.some((i) => i.id === 'apt-residual-radio'), 'residual after first decision even before 22s');
+const dueResidualTime = FG.dueInjects('apartment', { startedAtMs: 0, nowMs: 22000, step: 0, answeredCount: 0, shownIds: ['apt-balcony-radio'] });
+ok(dueResidualTime.some((i) => i.id === 'apt-residual-radio'), 'residual at 22s even before first answer');
+
+const dueEaves = FG.dueInjects('apartment', { startedAtMs: 0, nowMs: 5000, step: 1, answeredCount: 1, shownIds: ['apt-balcony-radio', 'apt-residual-radio'] });
+ok(dueEaves.some((i) => i.kind === 'conditions'), 'eaves inject at placement step');
+ok(!FG.dueInjects('apartment', { startedAtMs: 0, nowMs: 5000, step: 0, answeredCount: 0, shownIds: [] }).some((i) => i.kind === 'conditions'), 'eaves waits for placement step');
+
+const canText = FG.formatCan({ conditions: 'smoke 2nd', actions: 'spot mid-lane', needs: 'truck' });
+ok(/Conditions: smoke 2nd/.test(canText) && /Needs: truck/.test(canText), 'CAN format');
+ok(FG.formatCan({}) === '', 'empty CAN is blank');
+
+const debriefModel = FG.buildDebriefModel({
+  caseId: 'apartment',
+  score: 6,
+  max: 9,
+  hist: [{ prompt: 'p', choice: 'c', debrief: 'd', good: true }],
+  injectLog: [{ id: 'apt-balcony-radio', acked: true, title: 'Additional callers', from: 'Dispatch', atMs: 8000 }],
+  can: { conditions: 'B-side balconies', actions: 'leave aerial', needs: 'second engine' },
+  elapsedMs: 45000
+});
+ok(debriefModel.timed && debriefModel.canText.includes('B-side'), 'debrief includes CAN');
+ok(debriefModel.missed.some((i) => i.id === 'apt-residual-radio'), 'debrief lists missed injects');
+
+const simHtml = fs.readFileSync(path.join(ROOT, 'fireground-decision-sim.html'), 'utf8');
+ok(simHtml.includes('id="canPanel"') && simHtml.includes('id="canConditions"'), 'CAN UI');
+ok(simHtml.includes('id="injectOverlay"'), 'inject overlay lives in the page');
+const simJs = fs.readFileSync(path.join(ROOT, 'js', 'fireground-decision-sim.js'), 'utf8');
+ok(simJs.includes('Heard / copy') && simJs.includes('apt-balcony-radio'), 'inject copy button and radio id');
+ok(/@media print/.test(simHtml), 'print CSS');
+ok(simHtml.includes('js/fireground-decision-sim.js'), 'sim engine script');
+ok(simHtml.includes('fo1_initial_radio_report'), 'hero links IRR Skill Support');
+
+const placementRec = catalog.byId.do_pumper_apparatus_placement;
+ok(placementRec && (placementRec.skill.seeResources || []).some((r) => /case=apartment/.test(r.url)), 'placement See → apartment case');
+ok(placementRec && (placementRec.skill.practiceResources || []).some((r) => /case=apartment/.test(r.url)), 'placement Practice → apartment case');
+const irrRec = catalog.byId.fo1_initial_radio_report;
+ok(irrRec && (irrRec.skill.seeResources || []).some((r) => /case=apartment/.test(r.url)), 'IRR See → apartment case');
+ok(irrRec && (irrRec.skill.practiceResources || []).some((r) => /case=apartment/.test(r.url)), 'IRR Practice → apartment case');
+ok((index.practiceCatalog || []).some((r) => r.skillId === 'do_pumper_apparatus_placement' && /case=apartment/.test(r.url)), 'practice catalog placement deep link');
+
 if (errors.length) {
   console.error('FAIL\n' + errors.map((e) => ' - ' + e).join('\n'));
   process.exit(1);
