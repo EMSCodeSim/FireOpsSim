@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "purpose": "Progressive FireOpsSim company training tracks. These are training aids, not certification or official department records.",
+  "tracks": [
+    {
+      "id":"fire-attack","title":"Fire Attack","description":"Progress from attack-line fundamentals to coordinated multi-company fire attack.","stages":[
+        {"level":1,"type":"Skill","title":"Attack Line Fundamentals","drillId":"attack-line-deployment","goal":"Build a repeatable stretch, water call, nozzle check and advancement process.","advanceWhen":"Crew completes two consistent repetitions without instructor step-by-step prompting."},
+        {"level":2,"type":"Applied Skill","title":"Flow & Hose Management","drillId":"hose-flow-kinks","goal":"Connect hose management and stream quality to delivered fire flow.","advanceWhen":"Crew recognizes and corrects introduced flow restrictions while maintaining communication."},
+        {"level":3,"type":"Decision Scenario","title":"Flow Path & Door Control","drillId":"flow-path-door-control","goal":"Integrate suppression timing with door/ventilation decisions.","advanceWhen":"Crew explains and coordinates actions based on changing fire conditions."},
+        {"level":4,"type":"Company Scenario","title":"Coordinated Interior Attack","drillId":"attack-line-deployment","goal":"Combine line selection, stretch, entry, advancement, communications and changing conditions.","advanceWhen":"Crew completes the scenario safely while adapting to at least one inject."},
+        {"level":5,"type":"Multi-Company","title":"Coordinated Attack","drillId":"multi-company-coordinated-attack","goal":"Coordinate suppression, search and ventilation as one incident plan.","advanceWhen":"Companies communicate and sequence actions without conflicting tactical effects."},
+        {"level":6,"type":"Practice Evaluation","title":"Fire Attack Performance Evaluation","drillId":"multi-company-coordinated-attack","goal":"Evaluate retained decision-making and crew performance without coaching during the evolution.","advanceWhen":"Evaluator documents locally defined performance criteria; official completion belongs in the department's approved record system."}
+      ]
+    },
+    {
+      "id":"search-rescue","title":"Search & Rescue","description":"Build from orientation and known-victim search to coordinated search under changing conditions.","stages":[
+        {"level":1,"type":"Skill","title":"Orientation & Crew Integrity","drillId":"search-known-victim","goal":"Establish a systematic search and reliable orientation method.","advanceWhen":"Crew searches a simple area while maintaining orientation and integrity."},
+        {"level":2,"type":"Applied Skill","title":"Known Victim Search","drillId":"search-known-victim","goal":"Choose entry and removal paths using victim information and conditions.","advanceWhen":"Crew completes the search and can explain entry, isolation and removal decisions."},
+        {"level":3,"type":"Decision Scenario","title":"Changing Conditions Search","drillId":"search-known-victim","goal":"Adapt search actions when suppression progress or conditions change.","advanceWhen":"Crew recognizes the change and modifies the plan rather than following a memorized sequence."},
+        {"level":4,"type":"Company Scenario","title":"Search + Suppression Coordination","drillId":"search-known-victim","goal":"Coordinate search decisions with a separate suppression assignment.","advanceWhen":"Search and suppression exchange operationally useful information and avoid conflicting actions."},
+        {"level":5,"type":"Practice Evaluation","title":"Search Performance Evaluation","drillId":"search-known-victim","goal":"Evaluate retained search decision-making with minimal coaching.","advanceWhen":"Evaluator documents locally defined criteria; official completion remains outside FireOpsSim."}
+      ]
+    },
+    {
+      "id":"firefighter-survival","title":"Firefighter Survival & Mayday","description":"Develop SCBA problem recognition, Mayday communication and rescue-team coordination.","stages":[
+        {"level":1,"type":"Skill","title":"SCBA Emergency Procedures","drillId":"scba-emergency","goal":"Recognize equipment/air problems and use department/manufacturer-approved responses.","advanceWhen":"Member identifies and communicates simulated problems without unsafe improvisation."},
+        {"level":2,"type":"Applied Skill","title":"Mayday Recognition","drillId":"mayday-recognition","goal":"Recognize locally defined Mayday triggers and transmit early.","advanceWhen":"Member initiates the local Mayday procedure without instructor prompting."},
+        {"level":3,"type":"Communication Scenario","title":"Mayday Under Radio Load","drillId":"scba-radio-communications","goal":"Maintain intelligible communications and radio discipline under controlled workload.","advanceWhen":"Critical messages remain understandable and member follows local radio procedure."},
+        {"level":4,"type":"Team Scenario","title":"RIT/RIC Deployment","drillId":"rit-firefighter-rescue","goal":"Coordinate rescue-team deployment, communications and removal decisions.","advanceWhen":"Team follows local deployment procedure and adapts to scenario information."},
+        {"level":5,"type":"Practice Evaluation","title":"Firefighter Emergency Evaluation","drillId":"rit-firefighter-rescue","goal":"Evaluate integrated recognition, communications and rescue-team actions.","advanceWhen":"Evaluator documents local criteria without unsafe stress or uncontrolled entrapment."}
+      ]
+    },
+    {
+      "id":"driver-operator","title":"Driver / Operator","description":"Progress from apparatus positioning and pump fundamentals to changing water-supply problems.","stages":[
+        {"level":1,"type":"Decision Skill","title":"Apparatus Placement","drillId":"apparatus-placement","goal":"Position apparatus for tactical function, access and later-arriving resources.","advanceWhen":"Operator explains placement decisions and identifies conflicts/hazards."},
+        {"level":2,"type":"Skill","title":"Tank-to-Supply Transition","drillId":"water-supply-transition","goal":"Transition from tank water to sustained supply while maintaining assigned flow.","advanceWhen":"Transition is repeatable and follows local apparatus procedure."},
+        {"level":3,"type":"Applied Skill","title":"Supply Complications","drillId":"water-supply-transition","goal":"Recognize and respond to controlled supply restrictions or changing demand.","advanceWhen":"Operator identifies the problem and communicates corrective action."},
+        {"level":4,"type":"Scenario","title":"Multi-Line Pump Operation","drillId":"water-supply-transition","goal":"Manage changing line demand while maintaining water-supply awareness.","advanceWhen":"Operator maintains situational awareness and stays within equipment/local training limits."},
+        {"level":5,"type":"Practice Evaluation","title":"Driver / Operator Evaluation","drillId":"water-supply-transition","goal":"Evaluate retained placement, supply and pump decision-making.","advanceWhen":"Evaluator documents department-defined performance; use FireOps Calc for supplemental hydraulics practice."}
+      ]
+    },
+    {
+      "id":"company-officer","title":"Company Officer / Command","description":"Develop size-up, initial command, resource coordination and adaptive decision-making.","stages":[
+        {"level":1,"type":"Tabletop","title":"First-Due Size-Up","drillId":"first-due-sizeup","goal":"Convert observable arrival information into a concise report and priorities.","advanceWhen":"Officer consistently communicates useful facts and identifies the highest-priority problem."},
+        {"level":2,"type":"Decision Scenario","title":"Initial Action Plan","drillId":"first-due-sizeup","goal":"Match assignments to staffing, conditions and available resources.","advanceWhen":"Assignments are clear, achievable and adjusted when information changes."},
+        {"level":3,"type":"Command Scenario","title":"Changing Conditions","drillId":"first-due-sizeup","goal":"Recognize tactical triggers and revise the incident plan.","advanceWhen":"Officer changes strategy/tactics when scenario conditions warrant it."},
+        {"level":4,"type":"Multi-Company","title":"Coordinated Attack Command","drillId":"multi-company-coordinated-attack","goal":"Coordinate suppression, search, ventilation and incoming resources.","advanceWhen":"Assignments support one incident plan and conflicting actions are identified early."},
+        {"level":5,"type":"Practice Evaluation","title":"Company Officer Evaluation","drillId":"multi-company-coordinated-attack","goal":"Evaluate retained command decision-making with scenario injects and minimal coaching.","advanceWhen":"Evaluator documents local command-performance criteria."}
+      ]
+    },
+    {
+      "id":"truck-operations","title":"Truck / Tools / Ladders","description":"Progress from tool and ladder decisions to integrated access and aerial positioning problems.","stages":[
+        {"level":1,"type":"Skill","title":"Ground Ladder Selection","drillId":"ground-ladder-decision","goal":"Select, raise and place ladders based on the tactical objective.","advanceWhen":"Crew repeatedly selects and places the appropriate ladder while identifying hazards."},
+        {"level":2,"type":"Applied Skill","title":"Forcible Entry Decisions","drillId":"forcible-entry-sizeup","goal":"Size up access problems and choose appropriate tools/techniques.","advanceWhen":"Crew explains construction clues, tool choice and backup plan."},
+        {"level":3,"type":"Decision Scenario","title":"Access + Ladder Coordination","drillId":"ground-ladder-decision","goal":"Coordinate access, secondary egress and ladder objectives under staffing limits.","advanceWhen":"Crew prioritizes tasks and communicates a workable plan."},
+        {"level":4,"type":"Aerial Scenario","title":"Aerial Positioning","drillId":"aerial-positioning","goal":"Choose aerial placement based on objective, access, scrub area and hazards.","advanceWhen":"Crew can explain tradeoffs and identify positioning conflicts."},
+        {"level":5,"type":"Practice Evaluation","title":"Truck Operations Evaluation","drillId":"aerial-positioning","goal":"Evaluate retained truck-company decision-making across tools, access and placement.","advanceWhen":"Evaluator documents local performance criteria."}
+      ]
+    }
+  ]
+}
