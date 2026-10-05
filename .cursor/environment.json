@@ -1,0 +1,6 @@
+{
+  "name": "FireOpsSim + EMS_Code_SIM",
+  "repositoryDependencies": [
+    "github.com/EMSCodeSim/EMS_Code_SIM"
+  ]
+}
