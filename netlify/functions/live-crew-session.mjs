@@ -150,6 +150,13 @@ export async function handler(event) {
   } catch (err) {
     console.error("Live crew session error", err);
     const missingDatabase = !process.env.DATABASE_URL;
+    const message = String(err?.message || "").toLowerCase();
+    const connection = String(process.env.DATABASE_URL || "");
+    const formatValid = /^postgres(?:ql)?:\/\//i.test(connection);
+    const isFetch = /fetch failed|failed to fetch|network|enotfound|econnreset|timeout|timed out|certificate|tls|ssl/i.test(message);
+    const isAuth = /password authentication|authentication failed|invalid password|unauthorized/i.test(message);
+    const isDatabase = /database .* does not exist|unknown database/i.test(message);
+    const isSchema = /relation .* does not exist|undefined table/i.test(message);
     const code = typeof err?.code === "string" && /^[A-Z0-9]{5}$/.test(err.code) ? err.code : null;
     const reason = code === "42P01" ? "Required database table is missing." :
       code === "42501" ? "Database user lacks required table permissions." :
@@ -157,7 +164,12 @@ export async function handler(event) {
       code === "3D000" ? "Database name in the connection string does not exist." :
       code === "28P01" ? "Database credentials were rejected." :
       code === "08006" ? "Database connection could not be established." :
+      !formatValid ? "DATABASE_URL is not a PostgreSQL connection string." :
+      isAuth ? "Neon rejected the database credentials." :
+      isDatabase ? "The database named in DATABASE_URL was not found." :
+      isSchema ? "The connected database is missing the Live Crew tables." :
+      isFetch ? "The serverless database network request failed." :
       "Database request failed.";
-    return json(503, { error: missingDatabase ? "DATABASE_URL is unavailable to this deployment." : reason + (code ? " (PostgreSQL " + code + ")" : " Check the Netlify function logs."), diagnosticCode: code });
+    return json(503, { error: missingDatabase ? "DATABASE_URL is unavailable to this deployment." : reason + (code ? " (PostgreSQL " + code + ")" : " Check the Netlify function logs."), diagnosticCode: code, diagnosticType: !formatValid ? "url-format" : isAuth ? "authentication" : isDatabase ? "database" : isSchema ? "schema" : isFetch ? "network" : "unknown" });
   }
 }
