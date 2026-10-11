@@ -1,161 +1,133 @@
-import { getStore } from "@netlify/blobs";
+import { neon } from "@neondatabase/serverless";
+import { createHash, randomBytes, timingSafeEqual } from "node:crypto";
 
-const store = getStore({ name: "live-crew-sessions", consistency: "strong" });
-const validRoles = ["command","engine","truck","rit","engine2"];
+const roles = ["command", "engine", "truck", "rit", "engine2"];
+const json = (statusCode, body) => ({ statusCode, headers: { "content-type": "application/json", "cache-control": "no-store" }, body: JSON.stringify(body) });
+const token = (bytes = 24) => randomBytes(bytes).toString("hex");
+const hash = value => createHash("sha256").update(String(value)).digest("hex");
+const equalHash = (secret, digest) => {
+  const a = Buffer.from(hash(secret), "hex"), b = Buffer.from(String(digest || ""), "hex");
+  return a.length === b.length && timingSafeEqual(a, b);
+};
+const validCode = code => /^[A-F0-9]{6}$/.test(code);
+const db = () => {
+  if (!process.env.DATABASE_URL) throw new Error("DATABASE_URL is not configured");
+  return neon(process.env.DATABASE_URL);
+};
+const eventRow = (session, type, text, role = null) =>
+  db()`INSERT INTO live_events (session_code, type, text, role) VALUES (${session}, ${type}, ${text}, ${role})`;
 
-const json = (statusCode, body) => ({
-  statusCode,
-  headers: {
-    "content-type": "application/json",
-    "cache-control": "no-store",
-    "access-control-allow-origin": "*",
-    "access-control-allow-headers": "content-type",
-    "access-control-allow-methods": "GET,POST,OPTIONS"
-  },
-  body: JSON.stringify(body)
-});
-
-const id = (n=18) => Array.from(crypto.getRandomValues(new Uint8Array(n)), b => (b % 36).toString(36)).join("");
-const makeCode = () => id(6).toUpperCase();
-
-async function getSession(code){
-  if(!code) return null;
-  return await store.get(`session:${code.toUpperCase()}`, { type: "json" });
+async function getSession(code) {
+  if (!validCode(code)) return null;
+  const sql = db();
+  const rows = await sql`SELECT code, instructor_key_hash, status, phase, branch, created_at, updated_at FROM live_sessions WHERE code = ${code}`;
+  if (!rows.length) return null;
+  const p = await sql`SELECT id, name, role, joined_at, last_action FROM live_participants WHERE session_code = ${code} ORDER BY joined_at`;
+  const events = await sql`SELECT at, type, text, role FROM (SELECT id, at, type, text, role FROM live_events WHERE session_code = ${code} ORDER BY id DESC LIMIT 120) recent ORDER BY id`;
+  return { ...rows[0], participants: p, events };
 }
-async function saveSession(session){
-  session.updatedAt = new Date().toISOString();
-  await store.setJSON(`session:${session.code}`, session);
-  return session;
-}
-function publicState(session, participantId, isInstructor=false){
-  const participant = session.participants?.[participantId] || null;
+function publicState(s, participantId, instructor) {
+  const own = s.participants.find(p => p.id === participantId);
   return {
-    code: session.code,
-    status: session.status,
-    phase: session.phase,
-    branch: session.branch,
-    participants: Object.values(session.participants || {}).map(p => ({name:p.name,role:p.role,joinedAt:p.joinedAt})),
-    timeline: isInstructor ? (session.timeline || []) : (session.timeline || []).filter(e => e.type === "system" || e.type === "instructor" || e.type === "inject"),
-    participant,
-    createdAt: session.createdAt,
-    updatedAt: session.updatedAt
+    code: s.code, status: s.status, phase: s.phase, branch: s.branch,
+    participants: s.participants.map(p => ({ name: p.name, role: p.role, joinedAt: p.joined_at })),
+    timeline: instructor ? s.events : s.events.filter(e => ["system", "instructor", "inject"].includes(e.type)),
+    participant: own ? { id: own.id, name: own.name, role: own.role, joinedAt: own.joined_at, lastAction: own.last_action } : null,
+    createdAt: s.created_at, updatedAt: s.updated_at
   };
 }
-function log(session, type, text, role=null){
-  session.timeline = session.timeline || [];
-  session.timeline.push({at:new Date().toISOString(),type,text,role});
-  if(session.timeline.length > 120) session.timeline = session.timeline.slice(-120);
-}
+const authorize = (s, body, query) => {
+  const instructor = equalHash(body.instructorKey || query.instructorKey || "", s.instructor_key_hash);
+  const participantId = body.participantId || query.participantId || "";
+  const participant = s.participants.find(p => p.id === participantId);
+  return { instructor, participantId, participant };
+};
 
-export async function handler(event){
-  if(event.httpMethod === "OPTIONS") return json(204,{});
-  try{
-    if(event.httpMethod === "GET"){
-      const code = event.queryStringParameters?.code?.toUpperCase();
-      const participantId = event.queryStringParameters?.participantId || "";
-      const session = await getSession(code);
-      if(!session) return json(404,{error:"Session not found"});
-      const isInstructor = event.queryStringParameters?.instructorKey === session.instructorKey;
-      if(!isInstructor && !session.participants?.[participantId]) return json(403,{error:"Participant authentication required"});
-      return json(200, publicState(session, participantId, isInstructor));
-    }
-    if(event.httpMethod !== "POST") return json(405,{error:"Method not allowed"});
-
-    const body = JSON.parse(event.body || "{}");
+export async function handler(event) {
+  if (event.httpMethod === "OPTIONS") return json(204, {});
+  if (!["GET", "POST"].includes(event.httpMethod)) return json(405, { error: "Method not allowed" });
+  try {
+    const sql = db();
+    const query = event.queryStringParameters || {};
+    const body = event.httpMethod === "POST" ? JSON.parse(event.body || "{}") : {};
     const action = body.action;
-
-    if(action === "create"){
-      let code = makeCode();
-      while(await getSession(code)) code = makeCode();
-      const instructorKey = id(24);
-      const session = {
-        code,
-        instructorKey,
-        status:"lobby",
-        phase:0,
-        branch:"initial",
-        createdAt:new Date().toISOString(),
-        updatedAt:new Date().toISOString(),
-        participants:{},
-        roleClaims:{},
-        timeline:[]
-      };
-      log(session,"system","Instructor created the live incident");
-      await saveSession(session);
-      return json(200,{code,instructorKey,state:publicState(session,"",true)});
+    if (action === "create" && event.httpMethod === "POST") {
+      const instructorKey = token();
+      let code;
+      for (let attempt = 0; attempt < 10; attempt++) {
+        const candidate = token(3).toUpperCase();
+        const inserted = await sql`INSERT INTO live_sessions (code, instructor_key_hash) VALUES (${candidate}, ${hash(instructorKey)}) ON CONFLICT DO NOTHING RETURNING code`;
+        if (inserted.length) { code = candidate; break; }
+      }
+      if (!code) return json(503, { error: "Could not allocate a session code" });
+      await eventRow(code, "system", "Instructor created the live incident");
+      return json(200, { code, instructorKey, state: publicState(await getSession(code), "", true) });
     }
-
-    const code = String(body.code || "").toUpperCase();
-    const session = await getSession(code);
-    if(!session) return json(404,{error:"Session not found"});
-
-    if(action === "join"){
-      const name = String(body.name || "").trim().slice(0,60);
+    const code = String(body.code || query.code || "").toUpperCase();
+    const s = await getSession(code);
+    if (!s) return json(404, { error: "Session not found" });
+    const auth = authorize(s, body, query);
+    if (event.httpMethod === "GET") {
+      if (!auth.instructor && !auth.participant) return json(403, { error: "Session authentication required" });
+      return json(200, publicState(s, auth.participantId, auth.instructor));
+    }
+    if (action === "join") {
+      if (s.status !== "lobby") return json(409, { error: "Session already started" });
+      const name = String(body.name || "").trim().slice(0, 60);
       const role = String(body.role || "");
-      if(!name) return json(400,{error:"Name/unit is required"});
-      if(!validRoles.includes(role)) return json(400,{error:"Choose a valid role"});
-      if(session.roleClaims?.[role]) return json(409,{error:"That role is already assigned"});
-      const participantId = id(20);
-      session.participants[participantId] = {id:participantId,name,role,joinedAt:new Date().toISOString(),lastAction:null};
-      session.roleClaims[role] = participantId;
-      log(session,"join",`${name} joined as ${role}`,role);
-      await saveSession(session);
-      return json(200,{participantId,state:publicState(session,participantId)});
+      if (!name || !roles.includes(role)) return json(400, { error: "Valid name and role required" });
+      const participantId = token(24);
+      const inserted = await sql`INSERT INTO live_participants (id, session_code, name, role)
+        SELECT ${participantId}, ${code}, ${name}, ${role}
+        WHERE EXISTS (SELECT 1 FROM live_sessions WHERE code = ${code} AND status = 'lobby')
+        ON CONFLICT DO NOTHING RETURNING id`;
+      if (!inserted.length) return json(409, { error: "Role taken or session started" });
+      await eventRow(code, "join", `${name} joined as ${role}`, role);
+      return json(200, { participantId, state: publicState(await getSession(code), participantId, false) });
     }
-
-    if(action === "instructor"){
-      if(body.instructorKey !== session.instructorKey) return json(403,{error:"Instructor key rejected"});
-      const cmd = body.command;
-      if(cmd === "start"){
-        session.status = "active";
-        session.phase = 0;
-        log(session,"instructor","Scenario started");
-      } else if(cmd === "next"){
-        session.status = "active";
-        session.phase = Math.min(4, Number(session.phase || 0) + 1);
-        log(session,"inject",`Instructor advanced scenario to phase ${session.phase + 1}`);
-      } else if(cmd === "previous"){
-        session.phase = Math.max(0, Number(session.phase || 0) - 1);
-        log(session,"instructor",`Instructor returned scenario to phase ${session.phase + 1}`);
-      } else if(cmd === "pause"){
-        session.status = "paused";
-        log(session,"instructor","Scenario paused");
-      } else if(cmd === "resume"){
-        session.status = "active";
-        log(session,"instructor","Scenario resumed");
-      } else if(cmd === "end"){
-        session.status = "ended";
-        log(session,"instructor","Scenario ended; begin AAR");
-      } else {
-        return json(400,{error:"Unknown instructor command"});
-      }
-      await saveSession(session);
-      return json(200,{state:publicState(session,"")});
+    if (action === "instructor") {
+      if (!auth.instructor) return json(403, { error: "Instructor authorization required" });
+      const command = String(body.command || "");
+      const transitions = {
+        start: ["active", 0], next: ["active", Math.min(4, s.phase + 1)],
+        previous: [s.status, Math.max(0, s.phase - 1)],
+        pause: ["paused", s.phase], resume: ["active", s.phase], end: ["ended", s.phase]
+      };
+      if (!transitions[command]) return json(400, { error: "Unknown instructor command" });
+      if (s.status === "ended") return json(409, { error: "Session ended" });
+      const [status, phase] = transitions[command];
+      await sql.transaction([
+        sql`UPDATE live_sessions SET status = ${status}, phase = ${phase}, updated_at = now() WHERE code = ${code}`,
+        sql`INSERT INTO live_events (session_code, type, text) VALUES (${code}, 'instructor', ${"Instructor: " + command + " (phase " + (phase + 1) + ")"})`
+      ]);
+      return json(200, { state: publicState(await getSession(code), "", true) });
     }
-
-    if(action === "participant"){
-      const participantId = String(body.participantId || "");
-      const p = session.participants?.[participantId];
-      if(!p) return json(403,{error:"Participant not recognized"});
-      const choice = String(body.choice || "").slice(0,120);
-      if(!choice) return json(400,{error:"Choice/action is required"});
-      p.lastAction = {phase:session.phase,choice,at:new Date().toISOString()};
-      log(session,"action",`${p.name}: ${choice}`,p.role);
-      if(p.role === "command"){
-        if(choice === "Send a second line to Division 2") session.branch = "reinforced-attack";
-        if(choice === "Continue current attack") session.branch = "delayed-reinforcement";
-        if(choice === "Order withdrawal") session.branch = "withdrawal";
-        if(choice === "Request additional alarm") session.branch = "additional-alarm";
-        if(choice === "Defensive operations") session.branch = "defensive";
-        if(choice === "Offensive operations") session.branch = "offensive";
-      }
-      await saveSession(session);
-      return json(200,{state:publicState(session,participantId)});
+    if (action === "participant") {
+      if (!auth.participant) return json(403, { error: "Participant authorization required" });
+      if (s.status !== "active") return json(409, { error: "Scenario is not active" });
+      const choice = String(body.choice || "").slice(0, 120);
+      if (!choice) return json(400, { error: "Choice required" });
+      const branchChoices = {
+        "Send a second line to Division 2": "reinforced-attack",
+        "Continue current attack": "delayed-reinforcement",
+        "Order withdrawal": "withdrawal",
+        "Request additional alarm": "additional-alarm",
+        "Defensive operations": "defensive",
+        "Offensive operations": "offensive"
+      };
+      const branch = auth.participant.role === "command" ? branchChoices[choice] : null;
+      const lastAction = JSON.stringify({ phase: s.phase, choice, at: new Date().toISOString() });
+      const updates = [
+        sql`UPDATE live_participants SET last_action = ${lastAction}::jsonb WHERE id = ${auth.participantId} AND session_code = ${code}`,
+        sql`INSERT INTO live_events (session_code, type, text, role) VALUES (${code}, 'action', ${auth.participant.name + ": " + choice}, ${auth.participant.role})`
+      ];
+      if (branch) updates.push(sql`UPDATE live_sessions SET branch = ${branch}, updated_at = now() WHERE code = ${code}`);
+      await sql.transaction(updates);
+      return json(200, { state: publicState(await getSession(code), auth.participantId, false) });
     }
-
-    return json(400,{error:"Unknown action"});
-  } catch(err){
-    console.error(err);
-    return json(500,{error:"Live session service error"});
+    return json(400, { error: "Unknown action" });
+  } catch (err) {
+    console.error("Live crew session error", err);
+    return json(500, { error: "Live session service error" });
   }
 }
