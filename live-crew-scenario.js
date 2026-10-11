@@ -1,0 +1,36 @@
+const API="/.netlify/functions/live-crew-session";
+const roles = {
+  command:{title:"Incident Command"}, engine:{title:"Engine 1 — Interior"},
+  truck:{title:"Truck / Search"}, rit:{title:"RIT"}, engine2:{title:"Engine 2"}
+};
+let sessionCode="",instructorKey="",participantId="",role="",pollTimer=null;
+document.addEventListener("DOMContentLoaded",()=>{renderRoleButtons();const q=new URLSearchParams(location.search);if(q.get("code")){showJoin();document.getElementById("joinCode").value=q.get("code").toUpperCase();}});
+function renderRoleButtons(){const el=document.getElementById("roles");el.innerHTML="";Object.entries(roles).forEach(([k,v])=>{const b=document.createElement("button");b.className="btn alt";b.textContent=v.title;b.onclick=()=>joinSession(k);el.appendChild(b);});}
+function showJoin(){document.getElementById("joinBox").classList.remove("hidden");}
+async function api(body){const r=await fetch(API,{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(body)});const data=await r.json().catch(()=>({}));if(!r.ok)throw new Error(data.error||"Session service error");return data;}
+async function createSession(){setError("");try{const d=await api({action:"create"});sessionCode=d.code;instructorKey=d.instructorKey;document.getElementById("entry").classList.add("hidden");document.getElementById("lobby").classList.remove("hidden");document.getElementById("instructorPanel").classList.remove("hidden");document.getElementById("sessionCode").textContent=sessionCode;history.replaceState(null,"","?code="+sessionCode);renderHost(d.state);startPolling(true);}catch(e){setError(e.message);}}
+async function joinSession(selectedRole){setError("");const code=document.getElementById("joinCode").value.trim().toUpperCase(),name=document.getElementById("name").value.trim();if(!code||!name){setError("Enter the session code and your name/unit first.");return;}try{const d=await api({action:"join",code,name,role:selectedRole});sessionCode=code;participantId=d.participantId;role=selectedRole;document.getElementById("entry").classList.add("hidden");document.getElementById("sim").classList.remove("hidden");document.getElementById("roleTitle").textContent=roles[role].title;document.getElementById("roleBrief").textContent="Follow your assigned role. Incident information will appear when the instructor starts.";renderPlayer(d.state);startPolling(false);}catch(e){setError(e.message);}}
+async function instructorCommand(command){try{const d=await api({action:"instructor",code:sessionCode,instructorKey,command});renderHost(d.state);}catch(e){alert(e.message);}}
+async function sendInject(){
+  const injectId=document.getElementById("injectType").value;
+  const targetRole=document.getElementById("injectRole").value;
+  const status=document.getElementById("injectResult");
+  try {
+    const d=await api({action:"inject",code:sessionCode,instructorKey,injectId,targetRole});
+    status.textContent="Update sent to "+(roles[targetRole]?.title||targetRole)+".";
+    renderHost(d.state);
+  } catch(e) {status.textContent=e.message;}
+}
+async function choose(choice){try{const d=await api({action:"participant",code:sessionCode,participantId,choice});renderPlayer(d.state);}catch(e){alert(e.message);}}
+function branchText(state,text){if(state.branch==="reinforced-attack"&&role==="engine")return text+" A second line is moving toward your division and fire growth is slowing.";if(state.branch==="withdrawal")return "Command has selected withdrawal. Use the department radio and accountability process to confirm your crew's movement and status.";return text;}
+function visualFor(state,r){return state.scene || ["Incident briefing","Awaiting information","Follow your assignment and use department radios."];}
+function renderScene(id,state,r){const el=document.getElementById(id);if(!el)return;const v=visualFor(state,r);const cls=state.branch==="reinforced-attack"?"branch-good":state.branch==="delayed-reinforcement"?"branch-bad":state.branch==="withdrawal"?"branch-withdraw":"";el.className="card scene "+cls;el.innerHTML='<div class="scene-visual"><div class="scene-copy"><div class="tag">Live visual perspective</div><div class="scene-state">'+escapeHtml(v[0])+'</div><h2>'+escapeHtml(v[1])+'</h2></div></div><div class="scene-caption">'+escapeHtml(v[2])+'</div>';}
+function renderPlayer(state){document.getElementById("playerStatus").textContent=state.status.toUpperCase();document.getElementById("syncState").textContent="Synced "+new Date().toLocaleTimeString();const e=state.event || ["Awaiting instructor","Wait for the instructor to start the scenario.",[]];renderScene("playerScene",state,role);document.getElementById("eventTitle").textContent=e[0];document.getElementById("eventText").textContent=branchText(state,e[1]);const inbox=document.getElementById("injectInbox");
+inbox.innerHTML=(state.injects||[]).map(x=>'<div class="card private"><b>Instructor update</b><p>'+escapeHtml(x.text)+'</p></div>').join("");
+const c=document.getElementById("choices");c.innerHTML="";if(state.status==="lobby")c.innerHTML='<p class="muted">Waiting for the instructor to start the incident.</p>';else if(state.status==="paused")c.innerHTML='<p class="muted">Scenario paused by instructor.</p>';else if(state.status==="ended")c.innerHTML='<p class="muted">Scenario ended. Keep your phone available for the AAR.</p>';else e[2].forEach(x=>{const b=document.createElement("button");b.className="btn";b.textContent=x;b.onclick=()=>choose(x);c.appendChild(b);});renderTimeline("timeline",state.timeline);}
+function renderHost(state){document.getElementById("hostStatus").textContent=state.status.toUpperCase();document.getElementById("hostPhase").textContent=(Number(state.phase||0)+1)+" / 5";document.getElementById("hostBranch").textContent=state.branch;renderScene("hostScene",state,"command");renderCrew("hostCrew",state.participants);renderCrew("lobbyCrew",state.participants);renderTimeline("hostTimeline",state.timeline);if(state.status!=="lobby")document.getElementById("lobby").classList.add("hidden");}
+function renderCrew(id,crew){const el=document.getElementById(id);if(!el)return;el.innerHTML=crew.length?crew.map(p=>'<div class="crew"><b>'+escapeHtml(p.name)+'</b> — '+escapeHtml(roles[p.role]?.title||p.role)+'</div>').join(""):'<p class="muted">Waiting for crew members to join.</p>';}
+function renderTimeline(id,items){const el=document.getElementById(id);if(el)el.textContent=(items||[]).slice().reverse().map(x=>new Date(x.at).toLocaleTimeString()+" — "+x.text).join("\n");}
+function startPolling(host){clearInterval(pollTimer);pollTimer=setInterval(async()=>{try{const qs=new URLSearchParams({code:sessionCode});if(host)qs.set("instructorKey",instructorKey);else qs.set("participantId",participantId);const r=await fetch(API+"?"+qs.toString(),{cache:"no-store"});if(!r.ok)return;const state=await r.json();host?renderHost(state):renderPlayer(state);}catch(e){}},2000);}
+function setError(t){document.getElementById("entryError").textContent=t;}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));}

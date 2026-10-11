@@ -1,0 +1,25 @@
+name: Live Crew checks
+on:
+  pull_request:
+    paths:
+      - 'live-crew-scenario.js'
+      - 'netlify/functions/live-crew-*.mjs'
+      - 'package.json'
+      - 'db/live-crew-schema.sql'
+      - '.github/workflows/live-crew-checks.yml'
+  push:
+    branches:
+      - feature/live-crew-communications-mvp
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: node --check live-crew-scenario.js
+      - run: node --check netlify/functions/live-crew-session.mjs
+      - run: node --check netlify/functions/live-crew-content.mjs
+      - run: node --input-type=module -e "import('./netlify/functions/live-crew-content.mjs').then(({roles}) => { if (Object.keys(roles).length !== 5) process.exit(1) })"
