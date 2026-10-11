@@ -1,5 +1,5 @@
 import { neon } from "@neondatabase/serverless";
-import { roles as scenarioRoles, visualCopy, resolveEvent, instructorInjects } from "./live-crew-content.mjs";
+import { roles as scenarioRoles, visualCopy, resolveEvent, instructorInjects, roleSceneImages, sceneSizeup } from "./live-crew-content.mjs";
 import { createHash, randomBytes, timingSafeEqual } from "node:crypto";
 
 const roles = ["command", "engine", "truck", "rit", "engine2"];
@@ -27,7 +27,7 @@ async function getSession(code) {
   const events = await sql`SELECT at, type, text, role FROM (SELECT id, at, type, text, role FROM live_events WHERE session_code = ${code} ORDER BY id DESC LIMIT 120) recent ORDER BY id`;
   return { ...rows[0], participants: p, events };
 }
-function publicState(s, participantId, instructor) {
+function publicState(s, participantId, instructor, includeSceneImage = false) {
   const own = s.participants.find(p => p.id === participantId);
   const role = instructor ? "command" : own?.role;
   const definition = role ? scenarioRoles[role] : null;
@@ -39,6 +39,8 @@ function publicState(s, participantId, instructor) {
     event,
     injects,
     scene,
+    sceneImage: includeSceneImage && role ? roleSceneImages[role] : null,
+    sceneSizeup: role ? sceneSizeup[role] : null,
     code: s.code, status: s.status, phase: s.phase, branch: s.branch,
     participants: instructor ? s.participants.map(p => ({ name: p.name, role: p.role, joinedAt: p.joined_at })) : [],
     timeline: instructor ? s.events : s.events.filter(e => ["system", "instructor"].includes(e.type) || (e.type === "inject" && (e.role === own?.role || e.role === null))),
@@ -71,7 +73,7 @@ export async function handler(event) {
       }
       if (!code) return json(503, { error: "Could not allocate a session code" });
       await eventRow(code, "system", "Instructor created the live incident");
-      return json(200, { code, instructorKey, state: publicState(await getSession(code), "", true) });
+      return json(200, { code, instructorKey, state: publicState(await getSession(code), "", true, true) });
     }
     const code = String(body.code || query.code || "").toUpperCase();
     const s = await getSession(code);
@@ -93,7 +95,7 @@ export async function handler(event) {
         ON CONFLICT DO NOTHING RETURNING id`;
       if (!inserted.length) return json(409, { error: "Role taken or session started" });
       await eventRow(code, "join", `${name} joined as ${role}`, role);
-      return json(200, { participantId, state: publicState(await getSession(code), participantId, false) });
+      return json(200, { participantId, state: publicState(await getSession(code), participantId, false, true) });
     }
     if (action === "inject") {
       if (!auth.instructor) return json(403, { error: "Instructor authorization required" });

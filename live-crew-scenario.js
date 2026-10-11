@@ -4,27 +4,60 @@ const roles = {
   truck:{title:"Truck / Search"}, rit:{title:"RIT"}, engine2:{title:"Engine 2"}
 };
 let sessionCode="",instructorKey="",participantId="",role="",pollTimer=null;
+let injectBusy=false,lastInjectKey="",lastInjectAt=0;
+let sceneImageData="",sceneImageAlt="";
 document.addEventListener("DOMContentLoaded",()=>{renderRoleButtons();const q=new URLSearchParams(location.search);if(q.get("code")){showJoin();document.getElementById("joinCode").value=q.get("code").toUpperCase();}});
 function renderRoleButtons(){const el=document.getElementById("roles");el.innerHTML="";Object.entries(roles).forEach(([k,v])=>{const b=document.createElement("button");b.className="btn alt";b.textContent=v.title;b.onclick=()=>joinSession(k);el.appendChild(b);});}
 function showJoin(){document.getElementById("joinBox").classList.remove("hidden");}
 async function api(body){const r=await fetch(API,{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(body)});const data=await r.json().catch(()=>({}));if(!r.ok)throw new Error(data.error||"Session service error");return data;}
-async function createSession(){setError("");try{const d=await api({action:"create"});sessionCode=d.code;instructorKey=d.instructorKey;document.getElementById("entry").classList.add("hidden");document.getElementById("lobby").classList.remove("hidden");document.getElementById("instructorPanel").classList.remove("hidden");document.getElementById("sessionCode").textContent=sessionCode;history.replaceState(null,"","?code="+sessionCode);renderHost(d.state);startPolling(true);}catch(e){setError(e.message);}}
-async function joinSession(selectedRole){setError("");const code=document.getElementById("joinCode").value.trim().toUpperCase(),name=document.getElementById("name").value.trim();if(!code||!name){setError("Enter the session code and your name/unit first.");return;}try{const d=await api({action:"join",code,name,role:selectedRole});sessionCode=code;participantId=d.participantId;role=selectedRole;document.getElementById("entry").classList.add("hidden");document.getElementById("sim").classList.remove("hidden");document.getElementById("roleTitle").textContent=roles[role].title;document.getElementById("roleBrief").textContent="Follow your assigned role. Incident information will appear when the instructor starts.";renderPlayer(d.state);startPolling(false);}catch(e){setError(e.message);}}
+async function createSession(){setError("");try{const d=await api({action:"create"});sessionCode=d.code;instructorKey=d.instructorKey;cacheSceneImage(d.state.sceneImage);document.getElementById("entry").classList.add("hidden");document.getElementById("lobby").classList.remove("hidden");document.getElementById("instructorPanel").classList.remove("hidden");document.getElementById("sessionCode").textContent=sessionCode;history.replaceState(null,"","?code="+sessionCode);renderHost(d.state);startPolling(true);}catch(e){setError(e.message);}}
+async function joinSession(selectedRole){setError("");const code=document.getElementById("joinCode").value.trim().toUpperCase(),name=document.getElementById("name").value.trim();if(!code||!name){setError("Enter the session code and your name/unit first.");return;}try{const d=await api({action:"join",code,name,role:selectedRole});sessionCode=code;participantId=d.participantId;role=selectedRole;cacheSceneImage(d.state.sceneImage);document.getElementById("entry").classList.add("hidden");document.getElementById("sim").classList.remove("hidden");document.getElementById("roleTitle").textContent=roles[role].title;document.getElementById("roleBrief").textContent="Follow your assigned role. Incident information will appear when the instructor starts.";renderPlayer(d.state);startPolling(false);}catch(e){setError(e.message);}}
 async function instructorCommand(command){try{const d=await api({action:"instructor",code:sessionCode,instructorKey,command});renderHost(d.state);}catch(e){alert(e.message);}}
 async function sendInject(){
+  const button=document.getElementById("sendInjectButton");
   const injectId=document.getElementById("injectType").value;
   const targetRole=document.getElementById("injectRole").value;
   const status=document.getElementById("injectResult");
+  const target=roles[targetRole]?.title||targetRole;
+  const key=targetRole+":"+injectId;
+  const now=Date.now();
+  if(injectBusy)return;
+  if(key===lastInjectKey&&now-lastInjectAt<2000){
+    status.textContent="That update was just sent to "+target+". Choose another update or wait before sending it again.";
+    return;
+  }
+  injectBusy=true;
+  button.disabled=true;
+  button.textContent="Sending update…";
+  status.textContent="Sending private update to "+target+"…";
   try {
     const d=await api({action:"inject",code:sessionCode,instructorKey,injectId,targetRole});
-    status.textContent="Update sent to "+(roles[targetRole]?.title||targetRole)+".";
+    lastInjectKey=key;
+    lastInjectAt=Date.now();
+    status.textContent="Private update sent to "+target+".";
     renderHost(d.state);
-  } catch(e) {status.textContent=e.message;}
+  } catch(e) {
+    status.textContent="Update not sent: "+e.message;
+  } finally {
+    injectBusy=false;
+    button.disabled=false;
+    button.textContent="Send private update";
+  }
 }
 async function choose(choice){try{const d=await api({action:"participant",code:sessionCode,participantId,choice});renderPlayer(d.state);}catch(e){alert(e.message);}}
 function branchText(state,text){if(state.branch==="reinforced-attack"&&role==="engine")return text+" A second line is moving toward your division and fire growth is slowing.";if(state.branch==="withdrawal")return "Command has selected withdrawal. Use the department radio and accountability process to confirm your crew's movement and status.";return text;}
 function visualFor(state,r){return state.scene || ["Incident briefing","Awaiting information","Follow your assignment and use department radios."];}
-function renderScene(id,state,r){const el=document.getElementById(id);if(!el)return;const v=visualFor(state,r);const cls=state.branch==="reinforced-attack"?"branch-good":state.branch==="delayed-reinforcement"?"branch-bad":state.branch==="withdrawal"?"branch-withdraw":"";el.className="card scene "+cls;el.innerHTML='<div class="scene-visual"><div class="scene-copy"><div class="tag">Live visual perspective</div><div class="scene-state">'+escapeHtml(v[0])+'</div><h2>'+escapeHtml(v[1])+'</h2></div></div><div class="scene-caption">'+escapeHtml(v[2])+'</div>';}
+function cacheSceneImage(image){if(image?.dataUrl){sceneImageData=image.dataUrl;sceneImageAlt=image.alt||"Assigned role scene view";}}
+function renderScene(id,state,r){
+  const el=document.getElementById(id);
+  if(!el)return;
+  const v=visualFor(state,r);
+  const cls=state.branch==="reinforced-attack"?"branch-good":state.branch==="delayed-reinforcement"?"branch-bad":state.branch==="withdrawal"?"branch-withdraw":"";
+  const photo=sceneImageData?'<img class="scene-photo" src="'+escapeHtml(sceneImageData)+'" alt="'+escapeHtml(sceneImageAlt)+'">':"";
+  const sizeup=state.sceneSizeup||"Observe your assigned view and report important changes over the radio.";
+  el.className="card scene "+cls;
+  el.innerHTML='<div class="scene-visual">'+photo+'<div class="scene-copy"><div class="tag">Assigned role view</div><div class="scene-state">'+escapeHtml(v[0])+'</div><h2>'+escapeHtml(v[1])+'</h2></div></div><div class="scene-caption"><strong>Scene size-up</strong><p>'+escapeHtml(sizeup)+'</p><p>'+escapeHtml(v[2])+'</p></div>';
+}
 function renderPlayer(state){document.getElementById("playerStatus").textContent=state.status.toUpperCase();document.getElementById("syncState").textContent="Synced "+new Date().toLocaleTimeString();const e=state.event || ["Awaiting instructor","Wait for the instructor to start the scenario.",[]];renderScene("playerScene",state,role);document.getElementById("eventTitle").textContent=e[0];document.getElementById("eventText").textContent=branchText(state,e[1]);const inbox=document.getElementById("injectInbox");
 inbox.innerHTML=(state.injects||[]).map(x=>'<div class="card private"><b>Instructor update</b><p>'+escapeHtml(x.text)+'</p></div>').join("");
 const c=document.getElementById("choices");c.innerHTML="";if(state.status==="lobby")c.innerHTML='<p class="muted">Waiting for the instructor to start the incident.</p>';else if(state.status==="paused")c.innerHTML='<p class="muted">Scenario paused by instructor.</p>';else if(state.status==="ended")c.innerHTML='<p class="muted">Scenario ended. Keep your phone available for the AAR.</p>';else e[2].forEach(x=>{const b=document.createElement("button");b.className="btn";b.textContent=x;b.onclick=()=>choose(x);c.appendChild(b);});renderTimeline("timeline",state.timeline);}
