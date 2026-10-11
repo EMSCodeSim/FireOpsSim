@@ -114,7 +114,8 @@ export async function handler(event) {
       if (!auth.participant) return json(403, { error: "Participant authorization required" });
       if (s.status !== "active") return json(409, { error: "Scenario is not active" });
       const choice = String(body.choice || "").slice(0, 120);
-      if (!choice) return json(400, { error: "Choice required" });
+      const available = resolveEvent(auth.participant.role, s.phase, s.branch)?.[2] || [];
+      if (!available.includes(choice)) return json(400, { error: "Choice is not available for your current role and phase" });
       const branchChoices = {
         "Send a second line to Division 2": "reinforced-attack",
         "Continue current attack": "delayed-reinforcement",
