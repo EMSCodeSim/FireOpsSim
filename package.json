@@ -3,6 +3,6 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "@netlify/blobs": "^9.1.2"
+    "@neondatabase/serverless": "^1.0.0"
   }
 }
