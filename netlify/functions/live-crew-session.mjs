@@ -149,6 +149,7 @@ export async function handler(event) {
     return json(400, { error: "Unknown action" });
   } catch (err) {
     console.error("Live crew session error", err);
-    return json(500, { error: "Live session service error" });
+    const missingDatabase = !process.env.DATABASE_URL;
+    return json(503, { error: missingDatabase ? "Database connection is not configured for this deployment. Check Netlify environment variable scopes and redeploy." : "Database request failed. Check Netlify function logs for the Live Crew database error." });
   }
 }
