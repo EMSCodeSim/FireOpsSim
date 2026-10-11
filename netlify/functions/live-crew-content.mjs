@@ -58,4 +58,11 @@ const resolveEvent = (role, phase, branch) => {
   const index = Math.max(0, Math.min(Number(phase) || 0, events.length - 1));
   return branchEvents[branch]?.[role]?.[index] || events[index] || null;
 };
-export { roles, visualCopy, branchEvents, resolveEvent };
+const instructorInjects = {
+  conditions: {label:"Conditions change", title:"New conditions", text:"You observe a change in conditions in your assigned area. Communicate what you can verify.", roles:["engine","truck","rit"]},
+  radio: {label:"Radio clarification", title:"Unclear radio traffic", text:"You heard a transmission that may concern your assignment, but some details were unclear. Confirm over the radio.", roles:["engine","truck","rit","engine2"]},
+  occupant: {label:"Occupant information", title:"New occupant report", text:"A bystander reports that someone may still be inside. This report is not confirmed. Share it with Command.", roles:["truck"]},
+  resources: {label:"Resource status", title:"Resource availability update", text:"Dispatch reports that an additional unit is responding but has not arrived. Confirm current assignments.", roles:["command","engine2"]},
+  accountability: {label:"Accountability check", title:"Crew accountability", text:"Command is requesting a status and location report from assigned crews.", roles:["engine","truck","rit","engine2"]}
+};
+export { instructorInjects, roles, visualCopy, branchEvents, resolveEvent };
