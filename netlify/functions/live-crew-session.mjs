@@ -1,5 +1,5 @@
 import { neon } from "@neondatabase/serverless";
-import { roles as scenarioRoles, visualCopy, resolveEvent } from "./live-crew-content.mjs";
+import { roles as scenarioRoles, visualCopy, resolveEvent, instructorInjects } from "./live-crew-content.mjs";
 import { createHash, randomBytes, timingSafeEqual } from "node:crypto";
 
 const roles = ["command", "engine", "truck", "rit", "engine2"];
@@ -32,14 +32,16 @@ function publicState(s, participantId, instructor) {
   const role = instructor ? "command" : own?.role;
   const definition = role ? scenarioRoles[role] : null;
   const event = instructor ? null : resolveEvent(role, s.phase, s.branch);
+  const injects = instructor ? [] : s.events.filter(e => e.type === "inject" && (e.role === role || e.role === null)).slice(-5).map(e => ({at:e.at,text:e.text}));
   const sceneKey = visualCopy[s.branch] ? s.branch : "initial";
   const scene = role ? (visualCopy[sceneKey]?.[role] || visualCopy.initial[role]) : null;
   return {
     event,
+    injects,
     scene,
     code: s.code, status: s.status, phase: s.phase, branch: s.branch,
     participants: instructor ? s.participants.map(p => ({ name: p.name, role: p.role, joinedAt: p.joined_at })) : [],
-    timeline: instructor ? s.events : s.events.filter(e => ["system", "instructor", "inject"].includes(e.type)),
+    timeline: instructor ? s.events : s.events.filter(e => ["system", "instructor"].includes(e.type) || (e.type === "inject" && (e.role === own?.role || e.role === null))),
     participant: own ? { id: own.id, name: own.name, role: own.role, joinedAt: own.joined_at, lastAction: own.last_action } : null,
     createdAt: s.created_at, updatedAt: s.updated_at
   };
@@ -92,6 +94,16 @@ export async function handler(event) {
       if (!inserted.length) return json(409, { error: "Role taken or session started" });
       await eventRow(code, "join", `${name} joined as ${role}`, role);
       return json(200, { participantId, state: publicState(await getSession(code), participantId, false) });
+    }
+    if (action === "inject") {
+      if (!auth.instructor) return json(403, { error: "Instructor authorization required" });
+      if (s.status === "ended" || s.status === "lobby") return json(409, { error: "Incident must be running or paused" });
+      const inject = instructorInjects[String(body.injectId || "")];
+      if (!inject) return json(400, { error: "Unknown inject" });
+      const target = String(body.targetRole || "");
+      if (!inject.roles.includes(target)) return json(400, { error: "Invalid target role" });
+      await eventRow(code, "inject", inject.title + ": " + inject.text, target);
+      return json(200, { state: publicState(await getSession(code), "", true) });
     }
     if (action === "instructor") {
       if (!auth.instructor) return json(403, { error: "Instructor authorization required" });
