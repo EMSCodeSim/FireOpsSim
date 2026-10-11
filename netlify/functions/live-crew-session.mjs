@@ -1,4 +1,5 @@
 import { neon } from "@neondatabase/serverless";
+import { roles as scenarioRoles, visualCopy } from "./live-crew-content.mjs";
 import { createHash, randomBytes, timingSafeEqual } from "node:crypto";
 
 const roles = ["command", "engine", "truck", "rit", "engine2"];
@@ -28,9 +29,16 @@ async function getSession(code) {
 }
 function publicState(s, participantId, instructor) {
   const own = s.participants.find(p => p.id === participantId);
+  const role = instructor ? "command" : own?.role;
+  const definition = role ? scenarioRoles[role] : null;
+  const event = definition?.events?.[Math.min(Number(s.phase || 0), (definition.events?.length || 1) - 1)] || null;
+  const sceneKey = visualCopy[s.branch] ? s.branch : "initial";
+  const scene = role ? (visualCopy[sceneKey]?.[role] || visualCopy.initial[role]) : null;
   return {
+    event: instructor ? null : event,
+    scene,
     code: s.code, status: s.status, phase: s.phase, branch: s.branch,
-    participants: s.participants.map(p => ({ name: p.name, role: p.role, joinedAt: p.joined_at })),
+    participants: instructor ? s.participants.map(p => ({ name: p.name, role: p.role, joinedAt: p.joined_at })) : [],
     timeline: instructor ? s.events : s.events.filter(e => ["system", "instructor", "inject"].includes(e.type)),
     participant: own ? { id: own.id, name: own.name, role: own.role, joinedAt: own.joined_at, lastAction: own.last_action } : null,
     createdAt: s.created_at, updatedAt: s.updated_at
