@@ -1,6 +1,6 @@
 import { getStore } from "@netlify/blobs";
 
-const store = getStore("live-crew-sessions");
+const store = getStore({ name: "live-crew-sessions", consistency: "strong" });
 const validRoles = ["command","engine","truck","rit","engine2"];
 
 const json = (statusCode, body) => ({
@@ -27,7 +27,7 @@ async function saveSession(session){
   await store.setJSON(`session:${session.code}`, session);
   return session;
 }
-function publicState(session, participantId){
+function publicState(session, participantId, isInstructor=false){
   const participant = session.participants?.[participantId] || null;
   return {
     code: session.code,
@@ -35,8 +35,7 @@ function publicState(session, participantId){
     phase: session.phase,
     branch: session.branch,
     participants: Object.values(session.participants || {}).map(p => ({name:p.name,role:p.role,joinedAt:p.joinedAt})),
-    roleClaims: session.roleClaims || {},
-    timeline: session.timeline || [],
+    timeline: isInstructor ? (session.timeline || []) : (session.timeline || []).filter(e => e.type === "system" || e.type === "instructor" || e.type === "inject"),
     participant,
     createdAt: session.createdAt,
     updatedAt: session.updatedAt
@@ -56,7 +55,9 @@ export async function handler(event){
       const participantId = event.queryStringParameters?.participantId || "";
       const session = await getSession(code);
       if(!session) return json(404,{error:"Session not found"});
-      return json(200, publicState(session, participantId));
+      const isInstructor = event.queryStringParameters?.instructorKey === session.instructorKey;
+      if(!isInstructor && !session.participants?.[participantId]) return json(403,{error:"Participant authentication required"});
+      return json(200, publicState(session, participantId, isInstructor));
     }
     if(event.httpMethod !== "POST") return json(405,{error:"Method not allowed"});
 
@@ -81,7 +82,7 @@ export async function handler(event){
       };
       log(session,"system","Instructor created the live incident");
       await saveSession(session);
-      return json(200,{code,instructorKey,state:publicState(session,"")});
+      return json(200,{code,instructorKey,state:publicState(session,"",true)});
     }
 
     const code = String(body.code || "").toUpperCase();
