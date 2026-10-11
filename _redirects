@@ -1,3 +1,4 @@
+/netlify/functions/* /404.html 404!
 /fire-pump-calculator /fire-pump-calculator.html 200
 /pump-pressure-calculator /fire-pump-calculator.html 301
 /pump-discharge-pressure-calculator /fire-pump-calculator.html 301

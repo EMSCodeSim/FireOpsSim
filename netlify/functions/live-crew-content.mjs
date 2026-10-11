@@ -1,4 +1,10 @@
 // Server-only scenario definitions. Do not publish this file as a static asset.
+import commandImage from "./live-crew-images/command.mjs";
+import engineImage from "./live-crew-images/engine.mjs";
+import truckImage from "./live-crew-images/truck.mjs";
+import ritImage from "./live-crew-images/rit.mjs";
+import engine2Image from "./live-crew-images/engine2.mjs";
+
 const roles={
 command:{title:"Incident Command",brief:"Build the incident picture from radio traffic. Your phone shows command-level decision points, but not every crew observation.",events:[["Arrival","Two-story residence with smoke showing from a Division 2 window. Crews are arriving.",["Offensive operations","Investigate before commitment","Defensive operations"]],["Interior update","Engine 1 is operating on Division 2. Use the radio reports you actually received to decide what to do next.",["Send a second line to Division 2","Continue current attack","Order withdrawal"]],["Resource decision","Dispatch advises additional resources are available if requested.",["Request additional alarm","Hold current assignment"]],["Changing incident","Review the radio picture, crew locations, and current conditions. Make the next command decision based on what your crews actually communicated.",["Continue offensive operations","Reassess strategy","Order withdrawal"]],["AAR","The incident is ending. Be ready to explain what information you had at each decision point and what information you never received.",[]]]},
 engine:{title:"Engine 1 — Interior",brief:"Attack line to Division 2. Use the department radio for communications. Command does not automatically see your private screen.",events:[["Prepare for interior","If approved by your instructor, don SCBA/facepiece and gloves. Keep your facepiece in place for radio traffic if instructed.",["Ready for assignment"]],["Workload","Complete the instructor-approved exertion task. Default low-equipment option: 20 jumping jacks. Immediately return to radio operations without a recovery period.",["Workload complete"]],["Division 2 conditions","At the top of the stairs you encounter heavy heat, poor visibility, and visible fire extending from a bedroom into the hallway. Command does NOT receive this automatically.",["Continue with line","Hold position","Withdraw"]],["Conditions change","Heat is increasing overhead. Your next action should reflect both conditions and whatever support Command has assigned.",["Advance","Request second line","Withdraw"]],["AAR","Incident segment complete. Be ready to identify what you observed, what you transmitted, and whether Command acknowledged it.",[]]]},
@@ -6,6 +12,22 @@ truck:{title:"Truck / Search",brief:"Primary search. You will receive informatio
 rit:{title:"RIT",brief:"Monitor conditions, crew status, and readiness. Your exterior observations may be information Command does not otherwise have.",events:[["Establish RIT","Stage with department-required equipment and monitor radio traffic.",["RIT ready"]],["Charlie-side observation","Smoke volume and velocity are increasing from the Charlie-side eaves. Command does not receive this automatically.",["Observation noted"]],["Deterioration","Charlie-side conditions continue to worsen while crews remain committed inside.",["Maintain position","Recommend reassessment"]],["Crew status concern","Interior radio traffic is becoming less frequent. Continue monitoring assignments, air, and conditions.",["Continue monitoring","Raise concern with Command"]],["AAR","Discuss which exterior observations were important enough to transmit and whether they changed Command's picture.",[]]]},
 engine2:{title:"Engine 2",brief:"Remain available for assignment and listen carefully. Your phone will sometimes test whether the assignment you heard matches Command's intent.",events:[["Staging","You are staged and awaiting an assignment. Do not self-deploy.",["Ready"]],["Assignment check","Based only on the radio traffic you heard, select the assignment you believe Command gave you.",["Second line to Division 2","Primary search","Remain staged"]],["Workload","If approved by the instructor, perform the assigned exertion task and then make required radio traffic while still breathing hard.",["Workload complete"]],["Deployment","Carry out the assignment you believe you received. If it is unclear, resolve that over the radio rather than guessing.",["Assignment understood","Request clarification"]],["AAR","Compare your understood assignment with Command's intended assignment.",[]]]}}
 ;
+
+const roleSceneImages = {
+  command: {dataUrl:commandImage,alt:"Street-front command view of a two-story residence with smoke venting from a Division 2 window."},
+  engine: {dataUrl:engineImage,alt:"Engine 1 interior approach showing a hose line, a dim hallway, and a smoky bedroom doorway."},
+  truck: {dataUrl:truckImage,alt:"Truck/Search view of a second-floor hallway with a closed rear bedroom door and a small backpack nearby."},
+  rit: {dataUrl:ritImage,alt:"RIT exterior view from the Charlie side showing smoke near the eaves and roofline."},
+  engine2: {dataUrl:engine2Image,alt:"Engine 2 staging view looking toward the residence from beside the staged fire engine."}
+};
+const sceneSizeup = {
+  command:"From the street: a two-story residence with smoke from a Division 2 window. Confirm conditions and assignments over the radio.",
+  engine:"At the interior approach: visibility is reduced on Division 2. The hose line leads toward a smoke-filled hall; conditions beyond the doorway are uncertain.",
+  truck:"Search view: a closed rear bedroom and a small backpack are visible on Division 2. No occupant has been located; treat the clue as unconfirmed.",
+  rit:"Charlie-side exterior: smoke is issuing near the eaves. No collapse is visible in this view; watch for change and report observations.",
+  engine2:"Staging view: the residence is visible from a safe standby position. No assignment is shown; remain staged until Command directs you."
+};
+
 const visualCopy={
 initial:{command:["Arrival view","Smoke showing Division 2","Your command view shows the overall incident. Crew phones may contain observations you do not have."],engine:["Interior approach","Limited visibility ahead","Your phone represents Engine 1's perspective; use the radio to move important information."],truck:["Search assignment","Division 2 search","Your search perspective may reveal occupant information unavailable to Command."],rit:["Exterior monitoring","RIT established","Watch exterior conditions and radio traffic for changes."],engine2:["Staging","Awaiting assignment","Listen for a clear assignment before deploying."]},
 offensive:{command:["Offensive strategy","Interior crews committed","Monitor progress reports and decide whether current resources match the conditions."],engine:["Interior advance","Heat and smoke increasing","Advance only within the scenario assignment and communicate meaningful changes."],truck:["Primary search","Search underway","Coordinate with Engine 1 while maintaining your search objective."],rit:["RIT ready","Interior crews committed","Maintain readiness and watch for exterior warning signs."],engine2:["Staged resource","Awaiting deployment","Listen for Command to give you a specific assignment."]},
@@ -65,4 +87,4 @@ const instructorInjects = {
   resources: {label:"Resource status", title:"Resource availability update", text:"Dispatch reports that an additional unit is responding but has not arrived. Confirm current assignments.", roles:["command","engine2"]},
   accountability: {label:"Accountability check", title:"Crew accountability", text:"Command is requesting a status and location report from assigned crews.", roles:["engine","truck","rit","engine2"]}
 };
-export { instructorInjects, roles, visualCopy, branchEvents, resolveEvent };
+export { instructorInjects, roles, visualCopy, branchEvents, resolveEvent, roleSceneImages, sceneSizeup };
