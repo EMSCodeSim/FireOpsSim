@@ -4,6 +4,7 @@ const roles = {
   truck:{title:"Truck / Search"}, rit:{title:"RIT"}, engine2:{title:"Engine 2"}
 };
 let sessionCode="",instructorKey="",participantId="",role="",pollTimer=null;
+let injectBusy=false,lastInjectKey="",lastInjectAt=0;
 document.addEventListener("DOMContentLoaded",()=>{renderRoleButtons();const q=new URLSearchParams(location.search);if(q.get("code")){showJoin();document.getElementById("joinCode").value=q.get("code").toUpperCase();}});
 function renderRoleButtons(){const el=document.getElementById("roles");el.innerHTML="";Object.entries(roles).forEach(([k,v])=>{const b=document.createElement("button");b.className="btn alt";b.textContent=v.title;b.onclick=()=>joinSession(k);el.appendChild(b);});}
 function showJoin(){document.getElementById("joinBox").classList.remove("hidden");}
@@ -12,14 +13,35 @@ async function createSession(){setError("");try{const d=await api({action:"creat
 async function joinSession(selectedRole){setError("");const code=document.getElementById("joinCode").value.trim().toUpperCase(),name=document.getElementById("name").value.trim();if(!code||!name){setError("Enter the session code and your name/unit first.");return;}try{const d=await api({action:"join",code,name,role:selectedRole});sessionCode=code;participantId=d.participantId;role=selectedRole;document.getElementById("entry").classList.add("hidden");document.getElementById("sim").classList.remove("hidden");document.getElementById("roleTitle").textContent=roles[role].title;document.getElementById("roleBrief").textContent="Follow your assigned role. Incident information will appear when the instructor starts.";renderPlayer(d.state);startPolling(false);}catch(e){setError(e.message);}}
 async function instructorCommand(command){try{const d=await api({action:"instructor",code:sessionCode,instructorKey,command});renderHost(d.state);}catch(e){alert(e.message);}}
 async function sendInject(){
+  const button=document.getElementById("sendInjectButton");
   const injectId=document.getElementById("injectType").value;
   const targetRole=document.getElementById("injectRole").value;
   const status=document.getElementById("injectResult");
+  const target=roles[targetRole]?.title||targetRole;
+  const key=targetRole+":"+injectId;
+  const now=Date.now();
+  if(injectBusy)return;
+  if(key===lastInjectKey&&now-lastInjectAt<2000){
+    status.textContent="That update was just sent to "+target+". Choose another update or wait before sending it again.";
+    return;
+  }
+  injectBusy=true;
+  button.disabled=true;
+  button.textContent="Sending update…";
+  status.textContent="Sending private update to "+target+"…";
   try {
     const d=await api({action:"inject",code:sessionCode,instructorKey,injectId,targetRole});
-    status.textContent="Update sent to "+(roles[targetRole]?.title||targetRole)+".";
+    lastInjectKey=key;
+    lastInjectAt=Date.now();
+    status.textContent="Private update sent to "+target+".";
     renderHost(d.state);
-  } catch(e) {status.textContent=e.message;}
+  } catch(e) {
+    status.textContent="Update not sent: "+e.message;
+  } finally {
+    injectBusy=false;
+    button.disabled=false;
+    button.textContent="Send private update";
+  }
 }
 async function choose(choice){try{const d=await api({action:"participant",code:sessionCode,participantId,choice});renderPlayer(d.state);}catch(e){alert(e.message);}}
 function branchText(state,text){if(state.branch==="reinforced-attack"&&role==="engine")return text+" A second line is moving toward your division and fire growth is slowing.";if(state.branch==="withdrawal")return "Command has selected withdrawal. Use the department radio and accountability process to confirm your crew's movement and status.";return text;}
