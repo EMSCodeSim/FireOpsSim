@@ -16,4 +16,46 @@ withdrawal:{command:["Withdrawal ordered","Accountability priority","Interior cr
 defensive:{command:["Defensive strategy","Interior commitment avoided","The incident transitions to exterior operations and exposure priorities."],engine:["Exterior assignment","Do not enter","Command selected defensive operations. Await an exterior assignment."],truck:["Exterior operations","Search not initiated","Interior search is not initiated under this branch."],rit:["Exterior posture","Monitor collapse zone","Maintain readiness and observe changing structural conditions."],engine2:["Exterior resource","Await assignment","Prepare for exposure or water-supply tasks."]}}
 ;
 
-export { roles, visualCopy };
+const branchEvents = {
+  "reinforced-attack": {
+    command: {2:["Support assigned","Confirm Engine 2's assignment by radio.",["Confirm assignment","Request status report"]]},
+    engine: {2:["Support approaching","Engine 2 has been assigned to support your crew.",["Report location","Coordinate support"]]},
+    truck: {2:["Search priority","You still hold the unconfirmed occupant report.",["Share occupant information","Request assistance"]]},
+    rit: {2:["Exterior conditions","Smoke volume appears to be stabilizing.",["Report observation","Continue monitoring"]]},
+    engine2: {2:["Support assignment","Confirm the assignment and location over the radio.",["Acknowledge assignment","Request clarification"]]}
+  },
+  "delayed-reinforcement": {
+    command: {2:["Information gap","No support crew has been assigned. Seek updated radio reports.",["Request conditions report","Assign support"]]},
+    engine: {2:["Changing conditions","Interior heat and smoke have increased.",["Report change","Request assistance"]]},
+    truck: {2:["Search uncertainty","You have an unconfirmed occupant location.",["Report search status","Request guidance"]]},
+    rit: {2:["Exterior warning","You observe increasing smoke at the rear.",["Transmit observation","Request status"]]},
+    engine2: {2:["Awaiting assignment","You hear indications that assistance may be needed.",["Request assignment","Remain available"]]}
+  },
+  withdrawal: {
+    command: {2:["Accountability","Confirm acknowledgments and crew status.",["Request acknowledgments","Request crew status"]]},
+    engine: {2:["Command update","Acknowledge the new strategy and report crew status.",["Acknowledge message","Report crew status"]]},
+    truck: {2:["Search interrupted","Report unresolved search information and crew status.",["Report search status","Report crew status"]]},
+    rit: {2:["Exterior monitoring","Observe crew movement and accountability.",["Report observation","Request clarification"]]},
+    engine2: {2:["Assignment changed","Confirm the updated assignment over the radio.",["Acknowledge change","Request assignment"]]}
+  },
+  "additional-alarm": {
+    command: {2:["Resources requested","Additional companies are responding but not yet on scene.",["Request ETA","Confirm assignments"]]},
+    engine: {2:["Resources pending","Continue reporting your actual conditions.",["Report conditions","Request guidance"]]},
+    truck: {2:["Search information","Your occupant report remains important.",["Share information","Request guidance"]]},
+    rit: {2:["Exterior monitoring","Continue reporting exterior observations.",["Report observation","Continue monitoring"]]},
+    engine2: {2:["No new assignment","Additional resources do not change your assignment.",["Confirm assignment","Remain available"]]}
+  },
+  defensive: {
+    command: {1:["Strategy change","Confirm each unit understands the new strategy.",["Confirm assignments","Request reports"]]},
+    engine: {1:["Strategy change","Confirm your new assignment.",["Acknowledge change","Request assignment"]]},
+    truck: {1:["Search information","Report any occupant information to Command.",["Share information","Acknowledge strategy"]]},
+    rit: {1:["Exterior monitoring","Continue exterior observations.",["Report observation","Continue monitoring"]]},
+    engine2: {1:["Await assignment","Confirm instructions before proceeding.",["Request assignment","Remain available"]]}
+  }
+};
+const resolveEvent = (role, phase, branch) => {
+  const events = roles[role]?.events || [];
+  const index = Math.max(0, Math.min(Number(phase) || 0, events.length - 1));
+  return branchEvents[branch]?.[role]?.[index] || events[index] || null;
+};
+export { roles, visualCopy, branchEvents, resolveEvent };
