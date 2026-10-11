@@ -150,6 +150,14 @@ export async function handler(event) {
   } catch (err) {
     console.error("Live crew session error", err);
     const missingDatabase = !process.env.DATABASE_URL;
-    return json(503, { error: missingDatabase ? "Database connection is not configured for this deployment. Check Netlify environment variable scopes and redeploy." : "Database request failed. Check Netlify function logs for the Live Crew database error." });
+    const code = typeof err?.code === "string" && /^[A-Z0-9]{5}$/.test(err.code) ? err.code : null;
+    const reason = code === "42P01" ? "Required database table is missing." :
+      code === "42501" ? "Database user lacks required table permissions." :
+      code === "23502" ? "Database schema is missing a required default value." :
+      code === "3D000" ? "Database name in the connection string does not exist." :
+      code === "28P01" ? "Database credentials were rejected." :
+      code === "08006" ? "Database connection could not be established." :
+      "Database request failed.";
+    return json(503, { error: missingDatabase ? "DATABASE_URL is unavailable to this deployment." : reason + (code ? " (PostgreSQL " + code + ")" : " Check the Netlify function logs."), diagnosticCode: code });
   }
 }
