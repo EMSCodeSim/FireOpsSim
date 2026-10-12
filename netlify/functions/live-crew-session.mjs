@@ -1,5 +1,5 @@
 import { neon } from "@neondatabase/serverless";
-import { roles as scenarioRoles, visualCopy, resolveEvent, instructorInjects, roleSceneImages, sceneSizeup, sceneBoardImage, sceneSides, roleIntel, arrivalSchedule, arrivalEvents } from "./live-crew-content.mjs";
+import { roles as scenarioRoles, visualCopy, resolveEvent, instructorInjects, roleSceneImages, sceneSizeup, sceneBoardImage, sceneSides, roleIntel, rolePhotoUpdates, arrivalSchedule, arrivalEvents } from "./live-crew-content.mjs";
 import { createHash, randomBytes, timingSafeEqual } from "node:crypto";
 
 const roles = ["command", "engine", "truck", "rit", "engine2"];
@@ -56,6 +56,7 @@ function publicState(s, participantId, instructor, includeSceneImage = false) {
   const radioTraffic = s.events.filter(e => e.type === "radio").slice(-30).map(e => ({at:e.at,role:e.role,text:e.text}));
   const arrivals = roles.map(unitRole => ({role:unitRole,title:scenarioRoles[unitRole]?.title || unitRole,onScene:unitRole === "engine" ? s.status !== "lobby" : arrivedRoles.has(unitRole),arrivedAt:s.events.find(e=>e.type==="arrival"&&e.role===unitRole)?.at || null}));
   const roleImage = includeSceneImage && onScene && role ? roleSceneImages[role] : null;
+  const scenePhotos = includeSceneImage && onScene && role ? (rolePhotoUpdates[role] || []) : [];
   const latestForecasts = {};
   for (const item of s.events.filter(e => e.type === "forecast")) latestForecasts[item.role] = item;
   const ownForecast = latestForecasts[instructor ? "instructor" : role] || null;
@@ -64,6 +65,7 @@ function publicState(s, participantId, instructor, includeSceneImage = false) {
     injects,
     scene,
     sceneImage: roleImage,
+    scenePhotos,
     sceneBoard: (instructor || (role === "engine" && onScene)) && includeSceneImage ? sceneBoardImage : null,
     sceneSides: (instructor || (role === "engine" && onScene)) ? sceneSides : null,
     roleBrief: !onScene && role ? "You are responding. Use dispatch and radio reports only; your role-specific scene view unlocks on arrival." : role === "engine2" && onScene ? "Engine 184 is on scene. Review your assigned staging view and Engine 181’s assignment; read it back and clarify before deployment." : (definition?.brief || null),
