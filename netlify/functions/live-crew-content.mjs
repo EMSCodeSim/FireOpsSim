@@ -1,6 +1,5 @@
 // Server-only scenario definitions. Do not publish this file as a static asset.
 import commandImage from "./live-crew-images/command.mjs";
-import engineImage from "./live-crew-images/engine.mjs";
 import truckImage from "./live-crew-images/truck.mjs";
 import ritImage from "./live-crew-images/rit.mjs";
 import engine2Image from "./live-crew-images/engine2.mjs";
@@ -38,7 +37,7 @@ const sceneSides = {
 };
 const roleSceneImages = {
   command: {dataUrl:commandImage,alt:"Street-front command view of a two-story residence with smoke venting from a Division 2 window."},
-  engine: {dataUrl:engineImage,alt:"Engine 1 interior approach showing a hose line, a dim hallway, and a smoky bedroom doorway."},
+  engine: {dataUrl:commandImage,alt:"Engine 181 Alpha-side first-arrival view of the front of a two-story residence with smoke venting from a Division 2 window."},
   truck: {dataUrl:truckImage,alt:"Truck/Search view of a second-floor hallway with a closed rear bedroom door and a small backpack nearby."},
   rit: {dataUrl:ritImage,alt:"RIT exterior view from the Charlie side showing smoke near the eaves and roofline."},
   engine2: {dataUrl:engine2Image,alt:"Engine 2 staging view looking toward the residence from beside the staged fire engine."}

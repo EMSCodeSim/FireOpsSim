@@ -36,7 +36,7 @@ function publicState(s, participantId, instructor, includeSceneImage = false) {
   const event = instructor ? null : (!onScene && arrivalEvents[role]) ? arrivalEvents[role] : resolveEvent(role, s.phase, s.branch);
   const injects = instructor ? [] : s.events.filter(e => e.type === "inject" && (e.role === role || e.role === null)).slice(-5).map(e => ({at:e.at,text:e.text}));
   const sceneKey = visualCopy[s.branch] ? s.branch : "initial";
-  const scene = role ? (visualCopy[sceneKey]?.[role] || visualCopy.initial[role]) : null;
+  const scene = !role ? null : !onScene ? ["Responding", "Awaiting arrival", "Your role-specific scene view appears when you arrive. Use dispatch and radio traffic only while responding."] : (visualCopy[sceneKey]?.[role] || visualCopy.initial[role]);
   const commandParticipant = s.participants.find(p => p.role === "command");
   const assignments = s.events.filter(e => e.type === "assignment" && (instructor || e.role === role || role === "command" || role === "engine"));
   const viewedSides = (instructor || role === "engine") ? [...new Set(s.events.filter(e => e.type === "discovery" && e.role === "engine").map(e => e.text.split(": ").pop()))] : [];
@@ -55,9 +55,9 @@ function publicState(s, participantId, instructor, includeSceneImage = false) {
     sceneImage: roleImage,
     sceneBoard: (instructor || (role === "engine" && onScene)) && includeSceneImage ? sceneBoardImage : null,
     sceneSides: (instructor || (role === "engine" && onScene)) ? sceneSides : null,
-    roleBrief: definition?.brief || null,
-    roleIntel: role ? roleIntel[role] : null,
-    sceneSizeup: role ? sceneSizeup[role] : null,
+    roleBrief: !onScene && role ? "You are responding. Use dispatch and radio reports only; your role-specific scene view unlocks on arrival." : (definition?.brief || null),
+    roleIntel: !onScene && role ? "No additional scene-specific information is available while responding. Listen to radio traffic and ask for clarification when needed." : (role ? roleIntel[role] : null),
+    sceneSizeup: !onScene ? "No on-scene size-up is available yet. Use radio reports only." : (role ? sceneSizeup[role] : null),
     assignments: assignments.map(e => ({ at:e.at, role:e.role, text:e.text })),
     viewedSides,
     attackMode: s.events.find(e => e.type === "mode")?.text.replace(/^Attack mode: /, "") || null,
@@ -92,7 +92,17 @@ async function recordDueArrivals(session) {
   if (session.status !== "active" && session.status !== "paused") return;
   const start = session.events.find(e => e.type === "incident-start");
   if (!start) return;
-  const elapsed = Math.max(0, (Date.now() - new Date(start.at).getTime()) / 1000);
+  const startedAt = new Date(start.at).getTime();
+  const clock = session.events.filter(e => e.type === "instructor" && new Date(e.at).getTime() >= startedAt);
+  let pausedAt = null, pausedMs = 0;
+  for (const item of clock) {
+    const at = new Date(item.at).getTime();
+    if (item.text.includes(": pause ")) pausedAt = at;
+    else if (item.text.includes(": resume ") && pausedAt !== null) { pausedMs += at - pausedAt; pausedAt = null; }
+  }
+  if (pausedAt !== null) pausedMs += Date.now() - pausedAt;
+  const elapsed = Math.max(0, (Date.now() - startedAt - pausedMs) / 1000);
+  if (session.status === "paused") return;
   const already = new Set(session.events.filter(e => e.type === "arrival").map(e => e.role));
   for (const role of roles) {
     if (role === "engine" || already.has(role)) continue;
