@@ -207,10 +207,10 @@ export async function handler(event) {
       const target = String(body.targetRole || "");
       const assignment = String(body.assignment || "").trim().slice(0, 160);
       if (!roles.includes(target) || target === "command" || !assignment) return json(400, { error: "Choose a unit and enter its assignment" });
-      await eventRow(code, "assignment", assignment, target);
-      const sender = scenarioRoles[auth.participant.role]?.title || auth.participant.role;
-      const recipient = scenarioRoles[target]?.title || target;
-      await eventRow(code, "radio", sender + " to " + recipient + ": " + assignment, auth.participant.role);
+      await sql.transaction([
+        sql`INSERT INTO live_events (session_code, type, text, role) VALUES (${code}, 'assignment', ${assignment}, ${target})`,
+        sql`INSERT INTO live_events (session_code, type, text, role) VALUES (${code}, 'radio', ${(scenarioRoles[auth.participant.role]?.title || auth.participant.role) + " to " + (scenarioRoles[target]?.title || target) + ": " + assignment}, ${auth.participant.role})`
+      ]);
       return json(200, { state: publicState(await getSession(code), auth.participantId, false) });
     }
     if (action === "mode") {
