@@ -56,7 +56,7 @@ function publicState(s, participantId, instructor, includeSceneImage = false) {
     sceneBoard: (instructor || (role === "engine" && onScene)) && includeSceneImage ? sceneBoardImage : null,
     sceneSides: (instructor || (role === "engine" && onScene)) ? sceneSides : null,
     roleBrief: !onScene && role ? "You are responding. Use dispatch and radio reports only; your role-specific scene view unlocks on arrival." : (definition?.brief || null),
-    roleIntel: !onScene && role ? "No additional scene-specific information is available while responding. Listen to radio traffic and ask for clarification when needed." : (role ? roleIntel[role] : null),
+    roleIntel: !onScene && role ? "No additional scene-specific information is available while responding. Listen to radio traffic and ask for clarification when needed." : role === "command" ? "Alpha-side view: a two-story residence with smoke venting from a Division 2 window. Interior conditions and the other sides are known only from your 360 or radio reports." : (role ? roleIntel[role] : null),
     sceneSizeup: !onScene ? "No on-scene size-up is available yet. Use radio reports only." : (role ? sceneSizeup[role] : null),
     assignments: assignments.map(e => ({ at:e.at, role:e.role, text:e.text })),
     viewedSides,
@@ -236,7 +236,7 @@ export async function handler(event) {
       if (!s.events.some(e => e.type === "arrival" && e.role === "command")) return json(409, { error: "Incident Command has not arrived yet" });
       if (s.events.some(e => e.type === "handoff")) return json(409, { error: "Handoff was already sent" });
       const discoveries = s.events.filter(e=>e.type==="discovery"&&e.role==="engine").map(e=>e.text.split(": ").pop());
-      const mode = s.events.find(e=>e.type==="mode")?.text.replace(/^Attack mode: /, "not yet selected") || "not yet selected";
+      const mode = s.events.find(e=>e.type==="mode")?.text.replace(/^Attack mode: /, "") || "not yet selected";
       const assignments = s.events.filter(e=>e.type==="assignment").map(e=>`${scenarioRoles[e.role]?.title || e.role}: ${e.text}`);
       const report = `Engine 181 handoff — 360 completed: ${discoveries.join(", ") || "not completed"}. Initial strategy: ${mode}. Unit assignments: ${assignments.join("; ") || "none recorded"}. Confirm current conditions and outstanding assignments.`;
       await eventRow(code,"handoff",report,"engine");
