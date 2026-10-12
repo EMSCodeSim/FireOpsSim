@@ -11,6 +11,20 @@ const forecastOptions = {
   rit: ["Remain staged and monitor radio traffic", "Prepare for rapid intervention deployment", "Request a crew accountability and conditions check"],
   engine2: ["Expect a second-line or water-supply assignment", "Stage until Command gives an assignment", "Prepare to support a withdrawal"]
 };
+const branchChoices = {
+  "Send a second line to Division 2": "reinforced-attack",
+  "Continue current attack": "delayed-reinforcement",
+  "Order withdrawal": "withdrawal",
+  "Request additional alarm": "additional-alarm",
+  "Defensive operations": "defensive",
+  "Offensive operations": "offensive"
+};
+const radioResponses = [
+  "Continue current action",
+  "Modify assignment over radio",
+  "Request clarification",
+  "Emergency support or withdrawal direction"
+];
 const json = (statusCode, body) => ({ statusCode, headers: { "content-type": "application/json", "cache-control": "no-store" }, body: JSON.stringify(body) });
 const token = (bytes = 24) => randomBytes(bytes).toString("hex");
 const hash = value => createHash("sha256").update(String(value)).digest("hex");
@@ -49,10 +63,20 @@ function publicState(s, participantId, instructor, includeSceneImage = false) {
   const assignments = s.events.filter(e => e.type === "assignment" && (instructor || e.role === role || role === "command" || role === "engine"));
   const viewedSides = (instructor || role === "engine") ? [...new Set(s.events.filter(e => e.type === "discovery" && e.role === "engine").map(e => e.text.split(": ").pop()))] : [];
   const activeCrew = s.participants.filter(p => p.role === "engine" || arrivedRoles.has(p.role));
-  const actedCount = activeCrew.filter(p => Number(p.last_action?.phase) === Number(s.phase)).length;
+  const actionForPhase = p => Number(p.last_action?.phase) === Number(s.phase) ? p.last_action : null;
+  const stageFor = p => {
+    const action = actionForPhase(p);
+    if (!action) return "needs-decision";
+    return action.stage || "complete";
+  };
+  const actedCount = activeCrew.filter(p => Boolean(actionForPhase(p))).length;
+  const completedCount = activeCrew.filter(p => stageFor(p) === "complete").length;
   const handoff = s.events.find(e => e.type === "handoff") || null;
   const handoffAccepted = s.events.some(e => e.type === "handoff-accepted");
   const leaderRole = handoffAccepted ? "command" : "engine";
+  const pendingReports = role === leaderRole ? activeCrew
+    .filter(p => p.role !== leaderRole && stageFor(p) === "awaiting-command")
+    .map(p => ({participantId:p.id,role:p.role,name:p.name,reportedAt:p.last_action.reportedAt || p.last_action.at})) : [];
   const radioTraffic = s.events.filter(e => e.type === "radio").slice(-30).map(e => ({at:e.at,role:e.role,text:e.text}));
   const arrivals = roles.map(unitRole => ({role:unitRole,title:scenarioRoles[unitRole]?.title || unitRole,onScene:unitRole === "engine" ? s.status !== "lobby" : arrivedRoles.has(unitRole),arrivedAt:s.events.find(e=>e.type==="arrival"&&e.role===unitRole)?.at || null}));
   const roleImage = includeSceneImage && onScene && role ? roleSceneImages[role] : null;
@@ -77,7 +101,8 @@ function publicState(s, participantId, instructor, includeSceneImage = false) {
     forecastOptions: forecastOptions[instructor ? "instructor" : role] || [],
     forecast: ownForecast ? { at:ownForecast.at, role:ownForecast.role, text:ownForecast.text } : null,
     forecasts: instructor ? Object.entries(latestForecasts).map(([forecastRole,item]) => ({at:item.at,role:forecastRole,text:item.text})) : [],
-    actionProgress: { acted:actedCount, total:activeCrew.length },
+    actionProgress: { acted:actedCount, completed:completedCount, total:activeCrew.length },
+    radioProtocol: { stage: own ? stageFor(own) : null, pendingReports, responseOptions: radioResponses },
     arrivals, onScene, leaderRole, canDirect: role === leaderRole && onScene && s.status === "active",
     handoff: handoff ? {at:handoff.at,text:handoff.text,accepted:handoffAccepted} : null,
     radioTraffic,
@@ -94,7 +119,7 @@ async function autoAdvanceIfReady(code, phase) {
   const ready = await sql`UPDATE live_sessions
     SET phase = phase + 1, updated_at = now()
     WHERE code = ${code} AND phase = ${phase} AND status = 'active'
-      AND (SELECT COUNT(*) FROM live_participants p WHERE p.session_code = ${code} AND (p.role = 'engine' OR EXISTS (SELECT 1 FROM live_events a WHERE a.session_code = ${code} AND a.type = 'arrival' AND a.role = p.role)) AND p.last_action->>'phase' = ${String(phase)}) =
+      AND (SELECT COUNT(*) FROM live_participants p WHERE p.session_code = ${code} AND (p.role = 'engine' OR EXISTS (SELECT 1 FROM live_events a WHERE a.session_code = ${code} AND a.type = 'arrival' AND a.role = p.role)) AND p.last_action->>'phase' = ${String(phase)} AND COALESCE(p.last_action->>'stage', 'complete') = 'complete') =
           (SELECT COUNT(*) FROM live_participants p WHERE p.session_code = ${code} AND (p.role = 'engine' OR EXISTS (SELECT 1 FROM live_events a WHERE a.session_code = ${code} AND a.type = 'arrival' AND a.role = p.role)))
       AND (${phase} <> 0 OR ((SELECT COUNT(DISTINCT text) FROM live_events WHERE session_code = ${code} AND type = 'discovery' AND role = 'engine') >= 4 AND EXISTS (SELECT 1 FROM live_events WHERE session_code = ${code} AND type = 'mode')))
       AND (NOT EXISTS (SELECT 1 FROM live_events WHERE session_code = ${code} AND type = 'arrival' AND role = 'command') OR EXISTS (SELECT 1 FROM live_events WHERE session_code = ${code} AND type = 'handoff-accepted'))
@@ -310,6 +335,54 @@ export async function handler(event) {
       await eventRow(code, "forecast", choice, forecastRole);
       return json(200, { state: publicState(await getSession(code), auth.participantId, Boolean(auth.instructor)) });
     }
+    if (action === "confirm-radio") {
+      if (!auth.participant) return json(403, { error: "Participant authorization required" });
+      if (s.status !== "active") return json(409, { error: "Scenario is not active" });
+      const current = auth.participant.last_action;
+      if (Number(current?.phase) !== Number(s.phase) || current?.stage !== "decision") return json(409, { error: "Make your current tactical decision before confirming the radio report" });
+      const handoffAccepted = s.events.some(e => e.type === "handoff-accepted");
+      const leaderRole = handoffAccepted ? "command" : "engine";
+      const isLeader = auth.participant.role === leaderRole;
+      const updated = JSON.stringify({ ...current, stage:isLeader ? "complete" : "awaiting-command", reportedAt:new Date().toISOString() });
+      await sql.transaction([
+        sql`UPDATE live_participants SET last_action = ${updated}::jsonb WHERE id = ${auth.participantId} AND session_code = ${code} AND last_action->>'stage' = 'decision'`,
+        sql`INSERT INTO live_events (session_code, type, text, role) VALUES (${code}, 'radio-confirmed', ${auth.participant.name + " confirmed a radio report was transmitted"}, ${auth.participant.role})`
+      ]);
+      if (isLeader && branchChoices[current.choice]) {
+        await sql`UPDATE live_sessions SET branch = ${branchChoices[current.choice]}, updated_at = now() WHERE code = ${code}`;
+      }
+      await autoAdvanceIfReady(code, Number(s.phase));
+      return json(200, { state: publicState(await getSession(code), auth.participantId, false) });
+    }
+    if (action === "command-response") {
+      if (!auth.participant) return json(403, { error: "Incident lead authorization required" });
+      if (s.status !== "active") return json(409, { error: "Scenario is not active" });
+      const handoffAccepted = s.events.some(e => e.type === "handoff-accepted");
+      const leaderRole = handoffAccepted ? "command" : "engine";
+      if (auth.participant.role !== leaderRole) return json(403, { error: "Only the current incident lead can record the radio response" });
+      const targetId = String(body.targetParticipantId || "");
+      const response = String(body.response || "");
+      if (!radioResponses.includes(response)) return json(400, { error: "Choose the radio response that best matches what you transmitted" });
+      const target = s.participants.find(p => p.id === targetId);
+      if (!target || target.role === leaderRole || Number(target.last_action?.phase) !== Number(s.phase) || target.last_action?.stage !== "awaiting-command") return json(409, { error: "That unit does not have a radio report awaiting a response" });
+      const updated = JSON.stringify({ ...target.last_action, stage:"awaiting-ack", commandResponse:response, respondedAt:new Date().toISOString() });
+      const changed = await sql`UPDATE live_participants SET last_action = ${updated}::jsonb WHERE id = ${targetId} AND session_code = ${code} AND last_action->>'stage' = 'awaiting-command' RETURNING id`;
+      if (!changed.length) return json(409, { error: "That radio report was already handled" });
+      await eventRow(code, "command-response", (scenarioRoles[leaderRole]?.title || leaderRole) + " confirmed a radio response to " + (scenarioRoles[target.role]?.title || target.role) + ": " + response, target.role);
+      return json(200, { state: publicState(await getSession(code), auth.participantId, false) });
+    }
+    if (action === "acknowledge-radio") {
+      if (!auth.participant) return json(403, { error: "Participant authorization required" });
+      if (s.status !== "active") return json(409, { error: "Scenario is not active" });
+      const current = auth.participant.last_action;
+      if (Number(current?.phase) !== Number(s.phase) || current?.stage !== "awaiting-ack") return json(409, { error: "No current Command response is waiting for acknowledgement" });
+      const updated = JSON.stringify({ ...current, stage:"complete", acknowledgedAt:new Date().toISOString() });
+      const changed = await sql`UPDATE live_participants SET last_action = ${updated}::jsonb WHERE id = ${auth.participantId} AND session_code = ${code} AND last_action->>'stage' = 'awaiting-ack' RETURNING id`;
+      if (!changed.length) return json(409, { error: "Acknowledgement was already recorded" });
+      await eventRow(code, "radio-acknowledged", auth.participant.name + " confirmed the radio assignment was acknowledged", auth.participant.role);
+      await autoAdvanceIfReady(code, Number(s.phase));
+      return json(200, { state: publicState(await getSession(code), auth.participantId, false) });
+    }
     if (action === "participant") {
       if (!auth.participant) return json(403, { error: "Participant authorization required" });
       if (s.status !== "active") return json(409, { error: "Scenario is not active" });
@@ -319,27 +392,11 @@ export async function handler(event) {
       if (waitingForHandoff && arrived) return json(409,{error:"Accept Engine 181’s handoff before directing the incident"});
       const available = (!arrived && arrivalEvents[auth.participant.role]) ? arrivalEvents[auth.participant.role][2] : (resolveEvent(auth.participant.role, s.phase, s.branch)?.[2] || []);
       if (!available.includes(choice)) return json(400, { error: "Choice is not available for your current role and phase" });
-      const branchChoices = {
-        "Send a second line to Division 2": "reinforced-attack",
-        "Continue current attack": "delayed-reinforcement",
-        "Order withdrawal": "withdrawal",
-        "Request additional alarm": "additional-alarm",
-        "Defensive operations": "defensive",
-        "Offensive operations": "offensive"
-      };
-      const branch = auth.participant.role === "command" && s.events.some(e=>e.type==="handoff-accepted") ? branchChoices[choice] : null;
-      const lastAction = JSON.stringify({ phase: s.phase, choice, at: new Date().toISOString() });
-      const updates = [
+      const lastAction = JSON.stringify({ phase:s.phase, choice, stage:"decision", at:new Date().toISOString() });
+      await sql.transaction([
         sql`UPDATE live_participants SET last_action = ${lastAction}::jsonb WHERE id = ${auth.participantId} AND session_code = ${code}`,
-        sql`INSERT INTO live_events (session_code, type, text, role) VALUES (${code}, 'action', ${auth.participant.name + ": " + choice}, ${auth.participant.role})`
-      ];
-      if (/radio|report|acknowledge|request|transmit|read back/i.test(choice) || (branch && auth.participant.role === "command")) {
-        const radioText = branch && auth.participant.role === "command" ? "Incident Command: " + choice : auth.participant.name + ": " + choice;
-        updates.push(sql`INSERT INTO live_events (session_code, type, text, role) VALUES (${code}, 'radio', ${radioText}, ${auth.participant.role})`);
-      }
-      if (branch) updates.push(sql`UPDATE live_sessions SET branch = ${branch}, updated_at = now() WHERE code = ${code}`);
-      await sql.transaction(updates);
-      await autoAdvanceIfReady(code, Number(s.phase));
+        sql`INSERT INTO live_events (session_code, type, text, role) VALUES (${code}, 'decision', ${auth.participant.name + " selected a tactical action and must report it by department radio"}, ${auth.participant.role})`
+      ]);
       return json(200, { state: publicState(await getSession(code), auth.participantId, false) });
     }
     return json(400, { error: "Unknown action" });
