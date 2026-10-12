@@ -33,7 +33,7 @@ function publicState(s, participantId, instructor, includeSceneImage = false) {
   const definition = role ? scenarioRoles[role] : null;
   const arrivedRoles = new Set(s.events.filter(e => e.type === "arrival").map(e => e.role));
   const onScene = Boolean(instructor || (s.status !== "lobby" && role === "engine") || arrivedRoles.has(role));
-  const event = instructor ? null : (!onScene && arrivalEvents[role]) ? arrivalEvents[role] : resolveEvent(role, s.phase, s.branch);
+  const event = instructor ? null : (!onScene && arrivalEvents[role]) ? arrivalEvents[role] : (role === "engine2" && Number(s.phase) === 0 ? scenarioRoles.engine2.events[1] : resolveEvent(role, s.phase, s.branch));
   const injects = instructor ? [] : s.events.filter(e => e.type === "inject" && (e.role === role || e.role === null)).slice(-5).map(e => ({at:e.at,text:e.text}));
   const sceneKey = visualCopy[s.branch] ? s.branch : "initial";
   const scene = !role ? null : !onScene ? ["Responding", "Awaiting arrival", "Your role-specific scene view appears when you arrive. Use dispatch and radio traffic only while responding."] : (visualCopy[sceneKey]?.[role] || visualCopy.initial[role]);
