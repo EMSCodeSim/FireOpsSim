@@ -1,5 +1,5 @@
 import { neon } from "@neondatabase/serverless";
-import { roles as scenarioRoles, visualCopy, resolveEvent, instructorInjects, roleSceneImages, sceneSizeup } from "./live-crew-content.mjs";
+import { roles as scenarioRoles, visualCopy, resolveEvent, instructorInjects, roleSceneImages, sceneSizeup, sceneBoardImage, sceneSides, roleIntel } from "./live-crew-content.mjs";
 import { createHash, randomBytes, timingSafeEqual } from "node:crypto";
 
 const roles = ["command", "engine", "truck", "rit", "engine2"];
@@ -35,18 +35,44 @@ function publicState(s, participantId, instructor, includeSceneImage = false) {
   const injects = instructor ? [] : s.events.filter(e => e.type === "inject" && (e.role === role || e.role === null)).slice(-5).map(e => ({at:e.at,text:e.text}));
   const sceneKey = visualCopy[s.branch] ? s.branch : "initial";
   const scene = role ? (visualCopy[sceneKey]?.[role] || visualCopy.initial[role]) : null;
+  const commandParticipant = s.participants.find(p => p.role === "command");
+  const assignments = s.events.filter(e => e.type === "assignment" && (instructor || e.role === role || role === "command"));
+  const viewedSides = (instructor || role === "command") ? [...new Set(s.events.filter(e => e.type === "discovery" && e.role === "command").map(e => e.text.split(": ").pop()))] : [];
+  const actedCount = s.participants.filter(p => Number(p.last_action?.phase) === Number(s.phase)).length;
   return {
     event,
     injects,
     scene,
     sceneImage: includeSceneImage && role ? roleSceneImages[role] : null,
+    sceneBoard: (instructor || role === "command") && includeSceneImage ? sceneBoardImage : null,
+    sceneSides: (instructor || role === "command") ? sceneSides : null,
+    roleBrief: definition?.brief || null,
+    roleIntel: role ? roleIntel[role] : null,
     sceneSizeup: role ? sceneSizeup[role] : null,
+    assignments: assignments.map(e => ({ at:e.at, role:e.role, text:e.text })),
+    viewedSides,
+    attackMode: commandParticipant?.last_action?.mode || null,
+    actionProgress: { acted:actedCount, total:s.participants.length },
     code: s.code, status: s.status, phase: s.phase, branch: s.branch,
     participants: instructor ? s.participants.map(p => ({ name: p.name, role: p.role, joinedAt: p.joined_at })) : [],
-    timeline: instructor ? s.events : s.events.filter(e => ["system", "instructor"].includes(e.type) || (e.type === "inject" && (e.role === own?.role || e.role === null))),
+    timeline: instructor ? s.events : s.events.filter(e => ["system", "instructor"].includes(e.type) || ((e.type === "inject" || e.type === "assignment") && (e.role === own?.role || (role === "command" && e.type === "assignment") || e.role === null))),
     participant: own ? { id: own.id, name: own.name, role: own.role, joinedAt: own.joined_at, lastAction: own.last_action } : null,
     createdAt: s.created_at, updatedAt: s.updated_at
   };
+}
+async function autoAdvanceIfReady(code, phase) {
+  if (phase >= 4) return false;
+  const sql = db();
+  const ready = await sql`UPDATE live_sessions
+    SET phase = phase + 1, updated_at = now()
+    WHERE code = ${code} AND phase = ${phase} AND status = 'active'
+      AND (SELECT COUNT(*) FROM live_participants WHERE session_code = ${code} AND last_action->>'phase' = ${String(phase)}) =
+          (SELECT COUNT(*) FROM live_participants WHERE session_code = ${code})
+      AND (${phase} <> 0 OR (SELECT COUNT(DISTINCT text) FROM live_events WHERE session_code = ${code} AND type = 'discovery' AND role = 'command') >= 4)
+    RETURNING phase`;
+  if (!ready.length) return false;
+  await eventRow(code, "system", `All crew choices and required discoveries are in; incident automatically advanced to phase ${Number(ready[0].phase) + 1}`);
+  return true;
 }
 const authorize = (s, body, query) => {
   const instructor = equalHash(body.instructorKey || query.instructorKey || "", s.instructor_key_hash);
@@ -107,6 +133,39 @@ export async function handler(event) {
       await eventRow(code, "inject", inject.title + ": " + inject.text, target);
       return json(200, { state: publicState(await getSession(code), "", true) });
     }
+    if (action === "discover") {
+      if (!auth.participant || auth.participant.role !== "command") return json(403, { error: "First-due Command authorization required" });
+      if (s.status !== "active") return json(409, { error: "Scenario is not active" });
+      const side = String(body.side || "");
+      if (!Object.hasOwn(sceneSides, side)) return json(400, { error: "Unknown 360 side" });
+      await eventRow(code, "discovery", `Command viewed 360: ${side}`, "command");
+      await autoAdvanceIfReady(code, Number(s.phase));
+      return json(200, { state: publicState(await getSession(code), auth.participantId, false) });
+    }
+    if (action === "assignment") {
+      if (!auth.participant || auth.participant.role !== "command") return json(403, { error: "First-due Command authorization required" });
+      if (s.status !== "active") return json(409, { error: "Scenario is not active" });
+      const target = String(body.targetRole || "");
+      const assignment = String(body.assignment || "").trim().slice(0, 160);
+      if (!roles.includes(target) || target === "command" || !assignment) return json(400, { error: "Choose a unit and enter its assignment" });
+      await eventRow(code, "assignment", assignment, target);
+      return json(200, { state: publicState(await getSession(code), auth.participantId, false) });
+    }
+    if (action === "mode") {
+      if (!auth.participant || auth.participant.role !== "command") return json(403, { error: "First-due Command authorization required" });
+      if (s.status !== "active") return json(409, { error: "Scenario is not active" });
+      const mode = String(body.mode || "");
+      const choices = { offensive:"offensive", investigate:"delayed-reinforcement", defensive:"defensive" };
+      if (!Object.hasOwn(choices, mode)) return json(400, { error: "Choose a valid attack mode" });
+      const lastAction = JSON.stringify({ phase:s.phase, choice:`Attack mode: ${mode}`, mode, at:new Date().toISOString() });
+      await sql.transaction([
+        sql`UPDATE live_participants SET last_action = ${lastAction}::jsonb WHERE id = ${auth.participantId} AND session_code = ${code}`,
+        sql`UPDATE live_sessions SET branch = ${choices[mode]}, updated_at = now() WHERE code = ${code}`,
+        sql`INSERT INTO live_events (session_code, type, text, role) VALUES (${code}, 'action', ${"Command selected attack mode: " + mode}, 'command')`
+      ]);
+      await autoAdvanceIfReady(code, Number(s.phase));
+      return json(200, { state: publicState(await getSession(code), auth.participantId, false) });
+    }
     if (action === "instructor") {
       if (!auth.instructor) return json(403, { error: "Instructor authorization required" });
       const command = String(body.command || "");
@@ -146,6 +205,7 @@ export async function handler(event) {
       ];
       if (branch) updates.push(sql`UPDATE live_sessions SET branch = ${branch}, updated_at = now() WHERE code = ${code}`);
       await sql.transaction(updates);
+      await autoAdvanceIfReady(code, Number(s.phase));
       return json(200, { state: publicState(await getSession(code), auth.participantId, false) });
     }
     return json(400, { error: "Unknown action" });
@@ -175,3 +235,4 @@ export async function handler(event) {
     return json(503, { error: missingDatabase ? "DATABASE_URL is unavailable to this deployment." : reason + (code ? " (PostgreSQL " + code + ")" : " Check the Netlify function logs."), diagnosticCode: code, diagnosticType: !formatValid ? "url-format" : isAuth ? "authentication" : isDatabase ? "database" : isSchema ? "schema" : isFetch ? "network" : "unknown" });
   }
 }
+
