@@ -6,7 +6,8 @@ const roles = {
 let sessionCode="",instructorKey="",participantId="",role="",pollTimer=null;
 let injectBusy=false,lastInjectKey="",lastInjectAt=0;
 let sceneImageData="",sceneImageAlt="",sceneBoardData="",sceneSidesData={},viewedSidesData=[],scenePhotoUpdates=[],scenePhotoIndex=0;
-document.addEventListener("DOMContentLoaded",()=>{renderRoleButtons();const q=new URLSearchParams(location.search);if(q.get("code")){showJoin();document.getElementById("joinCode").value=q.get("code").toUpperCase();}});
+document.addEventListener("DOMContentLoaded",()=>{setupResponsiveReferences();renderRoleButtons();const q=new URLSearchParams(location.search);if(q.get("code")){showJoin();document.getElementById("joinCode").value=q.get("code").toUpperCase();}});
+function setupResponsiveReferences(){const mobile=window.matchMedia("(max-width: 700px)").matches;document.querySelectorAll("#sim details.crew-reference").forEach(section=>{section.open=!mobile;});}
 function renderRoleButtons(){const el=document.getElementById("roles");el.innerHTML="";Object.entries(roles).forEach(([k,v])=>{const b=document.createElement("button");b.className="btn alt";b.textContent=v.title;b.onclick=()=>joinSession(k);el.appendChild(b);});}
 function showJoin(){document.getElementById("joinBox").classList.remove("hidden");}
 async function api(body){const r=await fetch(API,{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(body)});const data=await r.json().catch(()=>({}));if(!r.ok)throw new Error(data.error||"Session service error (HTTP "+r.status+")");return data;}
