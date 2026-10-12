@@ -77,7 +77,7 @@ function publicState(s, participantId, instructor, includeSceneImage = false) {
   const pendingReports = role === leaderRole ? activeCrew
     .filter(p => p.role !== leaderRole && stageFor(p) === "awaiting-command")
     .map(p => ({participantId:p.id,role:p.role,name:p.name,reportedAt:p.last_action.reportedAt || p.last_action.at})) : [];
-  const radioTraffic = s.events.filter(e => e.type === "radio").slice(-30).map(e => ({at:e.at,role:e.role,text:e.text}));
+  const radioTraffic = s.events.filter(e => ["radio-confirmed","command-response","radio-acknowledged","handoff-accepted"].includes(e.type)).slice(-30).map(e => ({at:e.at,role:e.role,text:e.text}));
   const arrivals = roles.map(unitRole => ({role:unitRole,title:scenarioRoles[unitRole]?.title || unitRole,onScene:unitRole === "engine" ? s.status !== "lobby" : arrivedRoles.has(unitRole),arrivedAt:s.events.find(e=>e.type==="arrival"&&e.role===unitRole)?.at || null}));
   const roleImage = includeSceneImage && onScene && role ? roleSceneImages[role] : null;
   const scenePhotos = includeSceneImage && onScene && role ? (rolePhotoUpdates[role] || []) : [];
@@ -223,10 +223,7 @@ export async function handler(event) {
       if (s.events.some(e=>e.type==="handoff-accepted")) return json(403,{error:"Engine 181 has transferred tactical control"});
       const side = String(body.side || "");
       if (!Object.hasOwn(sceneSides, side)) return json(400, { error: "Unknown 360 side" });
-      await sql.transaction([
-        sql`INSERT INTO live_events (session_code, type, text, role) VALUES (${code}, 'discovery', ${"Engine 181 viewed 360: " + side}, 'engine')`,
-        sql`INSERT INTO live_events (session_code, type, text, role) VALUES (${code}, 'radio', ${"Engine 181: " + side + " side 360 report — " + sceneSides[side]}, 'engine')`
-      ]);
+      await eventRow(code, "discovery", "Engine 181 viewed 360: " + side, "engine");
       await autoAdvanceIfReady(code, Number(s.phase));
       return json(200, { state: publicState(await getSession(code), auth.participantId, false) });
     }
@@ -238,9 +235,6 @@ export async function handler(event) {
       const assignment = String(body.assignment || "").trim().slice(0, 160);
       if (!roles.includes(target) || target === "command" || !assignment) return json(400, { error: "Choose a unit and enter its assignment" });
       await eventRow(code, "assignment", assignment, target);
-      const sender = scenarioRoles[auth.participant.role]?.title || auth.participant.role;
-      const recipient = scenarioRoles[target]?.title || target;
-      await eventRow(code, "radio", sender + " to " + recipient + ": " + assignment, auth.participant.role);
       return json(200, { state: publicState(await getSession(code), auth.participantId, false) });
     }
     if (action === "mode") {
@@ -253,8 +247,7 @@ export async function handler(event) {
       if (!Object.hasOwn(choices, mode)) return json(400, { error: "Choose a valid attack mode" });
       await sql.transaction([
         sql`UPDATE live_sessions SET branch = ${choices[mode]}, updated_at = now() WHERE code = ${code}`,
-        sql`INSERT INTO live_events (session_code, type, text, role) VALUES (${code}, 'mode', ${"Attack mode: " + mode}, 'engine')`,
-        sql`INSERT INTO live_events (session_code, type, text, role) VALUES (${code}, 'radio', ${"Engine 181: Attack mode " + mode + " — crews acknowledge and report changing conditions"}, 'engine')`
+        sql`INSERT INTO live_events (session_code, type, text, role) VALUES (${code}, 'mode', ${"Attack mode: " + mode}, 'engine')`
       ]);
       await autoAdvanceIfReady(code, Number(s.phase));
       return json(200, { state: publicState(await getSession(code), auth.participantId, false) });
@@ -316,7 +309,6 @@ export async function handler(event) {
       const assignments = s.events.filter(e=>e.type==="assignment").map(e=>`${scenarioRoles[e.role]?.title || e.role}: ${e.text}`);
       const report = `Engine 181 handoff — 360 completed: ${discoveries.join(", ") || "not completed"}. Initial strategy: ${mode}. Unit assignments: ${assignments.join("; ") || "none recorded"}. Confirm current conditions and outstanding assignments.`;
       await eventRow(code,"handoff",report,"engine");
-      await eventRow(code,"radio",report,"engine");
       return json(200,{state:publicState(await getSession(code),auth.participantId,false)});
     }
     if (action === "accept-handoff") {
