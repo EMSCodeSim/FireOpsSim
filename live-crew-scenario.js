@@ -51,6 +51,34 @@ async function sendInject(){
   }
 }
 async function choose(choice){try{const d=await api({action:"participant",code:sessionCode,participantId,choice});renderPlayer(d.state);}catch(e){alert(e.message);}}
+async function confirmRadio(){try{const d=await api({action:"confirm-radio",code:sessionCode,participantId});renderPlayer(d.state);}catch(e){alert(e.message);}}
+async function acknowledgeRadio(){try{const d=await api({action:"acknowledge-radio",code:sessionCode,participantId});renderPlayer(d.state);}catch(e){alert(e.message);}}
+async function respondToRadio(targetParticipantId,response){try{const d=await api({action:"command-response",code:sessionCode,participantId,targetParticipantId,response});renderPlayer(d.state);}catch(e){alert(e.message);}}
+function renderDecisionControls(container,state,event){
+  container.innerHTML="";
+  if(state.status==="lobby"){container.innerHTML='<p class="muted">Waiting for the instructor to start the incident.</p>';return;}
+  if(state.status==="paused"){container.innerHTML='<p class="muted">Scenario paused by instructor.</p>';return;}
+  if(state.status==="ended"){container.innerHTML='<p class="muted">Scenario ended. Keep your phone available for the AAR.</p>';return;}
+  if(role==="command"&&state.onScene&&!state.handoff?.accepted){container.innerHTML='<p class="muted">On scene. Engine 181 is acting lead; receive and accept the radio handoff before directing units.</p>';return;}
+  const action=state.participant?.lastAction;
+  const current=Number(action?.phase)===Number(state.phase);
+  const stage=current?(action.stage||"complete"):"needs-decision";
+  if(stage==="decision"){
+    container.innerHTML='<div class="radio-step"><h3>Radio report required</h3><p>Use the department radio. Include your location, conditions, need, and intended action when they apply.</p><p class="muted">The app does not send or display your message.</p><button class="btn good" type="button">I transmitted the radio report</button></div>';
+    container.querySelector("button").onclick=confirmRadio;return;
+  }
+  if(stage==="awaiting-command"){
+    container.innerHTML='<div class="radio-step waiting"><h3>Monitor the radio</h3><p>Your transmission is recorded. Wait for the incident lead to answer over the department radio.</p></div>';return;
+  }
+  if(stage==="awaiting-ack"){
+    container.innerHTML='<div class="radio-step"><h3>Command response received</h3><p><b>'+escapeHtml(action.commandResponse||"Direction was given over the radio")+'</b></p><p>Acknowledge the direction over the department radio, then record the acknowledgement.</p><button class="btn good" type="button">I acknowledged over the radio</button></div>';
+    container.querySelector("button").onclick=acknowledgeRadio;return;
+  }
+  if(stage==="complete"){
+    container.innerHTML='<div class="radio-step complete"><h3>Communication loop complete</h3><p>Decision, radio report, Command response, and acknowledgement are recorded. Continue operating and monitor the radio.</p></div>';return;
+  }
+  (event[2]||[]).forEach(choice=>{const b=document.createElement("button");b.className="btn";b.textContent=choice;b.onclick=()=>choose(choice);container.appendChild(b);});
+}
 async function submitForecast(choice,host){
   try{
     const payload={action:"forecast",code:sessionCode,choice};
@@ -95,7 +123,7 @@ function renderScene(id,state,r){
 function showScenePhoto(index){const photo=scenePhotoUpdates[index];if(!photo)return;scenePhotoIndex=index;const image=document.getElementById("sceneEvidencePhoto");if(image){image.src=photo.dataUrl;image.alt=photo.alt;}document.querySelectorAll(".photo-tab").forEach((button,i)=>button.setAttribute("aria-pressed",String(i===index)));}
 function renderPlayer(state){cacheSceneImage(state);document.getElementById("roleBrief").textContent=role==="engine2"&&(state.onScene||state.event?.[0]==="On-scene assignment")?"Engine 184 has arrived. Compare the approach, hydrant, driveway, and side-entry photos. What support appears useful? Confirm the assignment with the acting lead.":(state.roleBrief||"Follow your assigned role and relay important details by radio.");document.getElementById("roleIntel").textContent=state.roleIntel||"";document.getElementById("arrivalStatus").textContent=state.onScene?"ON SCENE — role view available":"RESPONDING — dispatch and radio traffic only; scene photo unlocks on arrival";document.getElementById("playerStatus").textContent=state.status.toUpperCase();document.getElementById("syncState").textContent="Synced "+new Date().toLocaleTimeString();const e=state.event || ["Awaiting instructor","Wait for the instructor to start the scenario.",[]];renderScene("playerScene",state,role);document.getElementById("eventTitle").textContent=e[0];document.getElementById("eventText").textContent=branchText(state,e[1]);const inbox=document.getElementById("injectInbox");
 inbox.innerHTML=(state.injects||[]).map(x=>'<div class="card private"><b>Instructor update</b><p>'+escapeHtml(x.text)+'</p></div>').join("");
-renderCommandTools(state);renderAssignments(state);renderHandoff(state);renderRadio(state.radioTraffic);renderForecastPanel("playerForecast",state.forecastOptions,state.forecast,state.status,false);const c=document.getElementById("choices");c.innerHTML="";if(state.status==="lobby")c.innerHTML='<p class="muted">Waiting for the instructor to start the incident.</p>';else if(state.status==="paused")c.innerHTML='<p class="muted">Scenario paused by instructor.</p>';else if(state.status==="ended")c.innerHTML='<p class="muted">Scenario ended. Keep your phone available for the AAR.</p>';else if(role==="command"&&state.onScene&&!state.handoff?.accepted)c.innerHTML="<p class=\"muted\">On scene. Engine 181 is acting lead; receive and accept the radio handoff before directing units.</p>";else if(Number(state.participant?.lastAction?.phase)===Number(state.phase))c.innerHTML="<p class=\"muted\">Choice recorded. The next scene will open when the crew has made its decisions and Command completes the first-due 360.</p>";else e[2].forEach(x=>{const b=document.createElement("button");b.className="btn";b.textContent=x;b.onclick=()=>choose(x);c.appendChild(b);});renderTimeline("timeline",state.timeline);}
+renderCommandTools(state);renderAssignments(state);renderHandoff(state);renderRadio(state.radioTraffic);renderForecastPanel("playerForecast",state.forecastOptions,state.forecast,state.status,false);const c=document.getElementById("choices");renderDecisionControls(c,state,e);renderTimeline("timeline",state.timeline);}
 function renderRoleControlPanel(state){
   const el=document.getElementById("roleStatusPanel");if(!el)return;
   const order=["engine","truck","rit","engine2","command"];
@@ -108,10 +136,13 @@ function renderRoleControlPanel(state){
     const arrival=arrivals.find(a=>a.role===role);
     const onScene=Boolean(participant?.onScene||arrival?.onScene);
     const phaseAction=participant?.lastAction;
-    const complete=Boolean(phaseAction&&Number(phaseAction.phase)===Number(state.phase));
-    const phaseText=state.status==="lobby"?"Waiting to start":!participant?"Role unfilled":!onScene?"Responding · radio only":complete?"Action recorded":"Needs action";
-    const choice=complete?phaseAction.choice:"";
-    const actionLine=choice?'<div class="role-action-cell"><span class="master-label">Current phase</span><span class="role-action-done">✓ '+escapeHtml(choice)+'</span></div>':'<div class="role-action-cell"><span class="master-label">Current phase</span><span class="'+(participant&&onScene&&state.status==="active"?"role-action-needed":"muted")+'">'+escapeHtml(phaseText)+'</span></div>';
+    const current=Boolean(phaseAction&&Number(phaseAction.phase)===Number(state.phase));
+    const stage=current?(phaseAction.stage||"complete"):"needs-decision";
+    const stageLabels={"needs-decision":"Needs decision","decision":"Decision made · radio report needed","awaiting-command":"Report sent · Command response needed","awaiting-ack":"Direction given · crew acknowledgement needed","complete":"Communication loop complete"};
+    const phaseText=state.status==="lobby"?"Waiting to start":!participant?"Role unfilled":!onScene?"Responding · radio only":stageLabels[stage]||"Needs action";
+    const choice=current?phaseAction.choice:"";
+    const done=stage==="complete";
+    const actionLine='<div class="role-action-cell"><span class="master-label">Current phase</span><span class="'+(done?"role-action-done":participant&&onScene&&state.status==="active"?"role-action-needed":"muted")+'">'+(done?"✓ ":"")+escapeHtml(phaseText)+'</span>'+(choice?'<small class="muted">'+escapeHtml(choice)+'</small>':"")+'</div>';
     let controls='<div class="reassign-control muted">—</div>';
     if(participant){
       const targets=order.filter(target=>target!==role&&!occupied.has(target));
@@ -136,8 +167,25 @@ function renderRoleControlPanel(state){
     catch(e){status.textContent="Role not changed: "+e.message;}
   };});
 }
-function renderHost(state){cacheSceneImage(state);renderArrivalTracker(state);renderRoleControlPanel(state);document.getElementById("hostStatus").textContent=state.status.toUpperCase();document.getElementById("hostPhase").textContent=(Number(state.phase||0)+1)+" / 5";document.getElementById("hostBranch").textContent=state.branch;document.getElementById("hostProgress").textContent=`Crew choices: ${state.actionProgress?.acted||0}/${state.actionProgress?.total||0}. Each arrived role advances the incident by making its phase choice; Engine 181’s 360/mode and an arriving IC’s accepted handoff are required gates. When everyone is ready, the next phase opens automatically. Use the override if a step is missed.`;renderHostSides(state);renderScene("hostScene",state,"command");renderCrew("hostCrew",state.participants);renderCrew("lobbyCrew",state.participants);renderHostForecasts(state);renderTimeline("hostTimeline",state.timeline);if(state.status!=="lobby")document.getElementById("lobby").classList.add("hidden");}
+function renderHost(state){cacheSceneImage(state);renderArrivalTracker(state);renderRoleControlPanel(state);document.getElementById("hostStatus").textContent=state.status.toUpperCase();document.getElementById("hostPhase").textContent=(Number(state.phase||0)+1)+" / 5";document.getElementById("hostBranch").textContent=state.branch;document.getElementById("hostProgress").textContent=`Communication loops complete: ${state.actionProgress?.completed||0}/${state.actionProgress?.total||0}. Decisions made: ${state.actionProgress?.acted||0}/${state.actionProgress?.total||0}. The phase advances after each arrived role completes its radio report, lead response, and acknowledgement. Required 360, strategy, and handoff gates still apply.`;renderHostSides(state);renderScene("hostScene",state,"command");renderCrew("hostCrew",state.participants);renderCrew("lobbyCrew",state.participants);renderHostForecasts(state);renderTimeline("hostTimeline",state.timeline);if(state.status!=="lobby")document.getElementById("lobby").classList.add("hidden");}
+function renderPendingRadioReports(state){
+  const panel=document.getElementById("pendingRadioReports"),list=document.getElementById("pendingRadioList");
+  if(!panel||!list)return;
+  const reports=state.radioProtocol?.pendingReports||[];
+  panel.classList.toggle("hidden",!state.canDirect);
+  if(!state.canDirect)return;
+  if(!reports.length){list.innerHTML='<p class="muted">No crew radio reports are waiting for a response.</p>';return;}
+  list.innerHTML="";
+  reports.forEach(report=>{
+    const item=document.createElement("div");item.className="radio-step waiting";
+    item.innerHTML='<h4>'+escapeHtml(roles[report.role]?.title||report.role)+'</h4><p>'+escapeHtml(report.name)+' confirmed a radio report. Use what you actually heard on the department radio.</p><div class="radio-response-grid"></div>';
+    const grid=item.querySelector(".radio-response-grid");
+    (state.radioProtocol?.responseOptions||[]).forEach(response=>{const b=document.createElement("button");b.type="button";b.className="btn alt";b.textContent=response;b.onclick=()=>respondToRadio(report.participantId,response);grid.appendChild(b);});
+    list.appendChild(item);
+  });
+}
 function renderCommandTools(state){
+  renderPendingRadioReports(state);
   const panel=document.getElementById("commandTools");if(!panel)return;const hasControl=role==="engine"||(role==="command"&&state.handoff?.accepted);panel.classList.toggle("hidden",!hasControl);if(!hasControl)return;const firstDue=document.getElementById("firstDueTools");if(firstDue)firstDue.classList.toggle("hidden",role!=="engine");const tag=panel.querySelector(".tag");if(tag)tag.textContent=role==="engine"?"Engine 181 — acting lead":"Incident Command — tactical control";const heading=document.getElementById("assignmentToolsHeading");if(heading)heading.textContent=role==="engine"?"Assign a unit":"Direct a unit";
   const progress=state.viewedSides||viewedSidesData;viewedSidesData=progress;
   const sides=Object.keys(state.sceneSides||sceneSidesData||{});
