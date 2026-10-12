@@ -55,7 +55,7 @@ function publicState(s, participantId, instructor, includeSceneImage = false) {
     sceneImage: roleImage,
     sceneBoard: (instructor || (role === "engine" && onScene)) && includeSceneImage ? sceneBoardImage : null,
     sceneSides: (instructor || (role === "engine" && onScene)) ? sceneSides : null,
-    roleBrief: !onScene && role ? "You are responding. Use dispatch and radio reports only; your role-specific scene view unlocks on arrival." : (definition?.brief || null),
+    roleBrief: !onScene && role ? "You are responding. Use dispatch and radio reports only; your role-specific scene view unlocks on arrival." : role === "engine2" && onScene ? "Engine 184 is on scene. Review your assigned staging view and Engine 181’s assignment; read it back and clarify before deployment." : (definition?.brief || null),
     roleIntel: !onScene && role ? "No additional scene-specific information is available while responding. Listen to radio traffic and ask for clarification when needed." : role === "command" ? "Alpha-side view: a two-story residence with smoke venting from a Division 2 window. Interior conditions and the other sides are known only from your 360 or radio reports." : (role ? roleIntel[role] : null),
     sceneSizeup: !onScene ? "No on-scene size-up is available yet. Use radio reports only." : (role ? sceneSizeup[role] : null),
     assignments: assignments.map(e => ({ at:e.at, role:e.role, text:e.text })),
