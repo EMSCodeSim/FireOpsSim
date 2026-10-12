@@ -82,7 +82,7 @@ function publicState(s, participantId, instructor, includeSceneImage = false) {
     handoff: handoff ? {at:handoff.at,text:handoff.text,accepted:handoffAccepted} : null,
     radioTraffic,
     code: s.code, status: s.status, phase: s.phase, branch: s.branch,
-    participants: instructor ? s.participants.map(p => ({ name: p.name, role: p.role, joinedAt: p.joined_at })) : [],
+    participants: instructor ? s.participants.map(p => ({ id:p.id, name:p.name, role:p.role, joinedAt:p.joined_at, lastAction:p.last_action, onScene:p.role === "engine" ? s.status !== "lobby" : arrivedRoles.has(p.role) })) : [],
     timeline: instructor ? s.events : s.events.filter(e => ["system", "instructor"].includes(e.type) || ((e.type === "inject" || e.type === "assignment") && (e.role === own?.role || (role === "command" && e.type === "assignment") || e.role === null))),
     participant: own ? { id: own.id, name: own.name, role: own.role, joinedAt: own.joined_at, lastAction: own.last_action } : null,
     createdAt: s.created_at, updatedAt: s.updated_at
@@ -182,11 +182,14 @@ export async function handler(event) {
     if (action === "inject") {
       if (!auth.instructor) return json(403, { error: "Instructor authorization required" });
       if (s.status === "ended" || s.status === "lobby") return json(409, { error: "Incident must be running or paused" });
-      const inject = instructorInjects[String(body.injectId || "")];
-      if (!inject) return json(400, { error: "Unknown inject" });
+      const customText = String(body.customText || "").trim().slice(0, 500);
+      const preset = instructorInjects[String(body.injectId || "")];
+      if (!customText && !preset) return json(400, { error: "Enter a live prompt or choose an update" });
       const target = String(body.targetRole || "");
-      if (!inject.roles.includes(target)) return json(400, { error: "Invalid target role" });
-      await eventRow(code, "inject", inject.title + ": " + inject.text, target);
+      if (!roles.includes(target)) return json(400, { error: "Choose one recipient role" });
+      if (preset && !customText && !preset.roles.includes(target)) return json(400, { error: "Invalid target role for this update" });
+      const message = customText || (preset.title + ": " + preset.text);
+      await eventRow(code, "inject", customText ? "Instructor prompt: " + message : message, target);
       return json(200, { state: publicState(await getSession(code), "", true) });
     }
     if (action === "discover") {
@@ -239,6 +242,29 @@ export async function handler(event) {
         previous: [s.status, Math.max(0, s.phase - 1)],
         pause: ["paused", s.phase], resume: ["active", s.phase], end: ["ended", s.phase]
       };
+      if (command === "reassign") {
+        const participantId = String(body.participantId || "");
+        const targetRole = String(body.targetRole || "");
+        const participant = s.participants.find(p => p.id === participantId);
+        if (!participant) return json(404, { error: "Participant not found" });
+        if (!roles.includes(targetRole)) return json(400, { error: "Choose a valid crew role" });
+        if (targetRole === participant.role) return json(400, { error: "Choose a different role" });
+        if (s.status === "ended") return json(409, { error: "Session ended" });
+        const changed = await sql`WITH session_lock AS MATERIALIZED (
+          SELECT code FROM live_sessions WHERE code = ${code} FOR UPDATE
+        ), moved AS (
+          UPDATE live_participants p SET role = ${targetRole}, last_action = NULL
+          FROM session_lock
+          WHERE p.id = ${participantId} AND p.session_code = ${code}
+            AND NOT EXISTS (SELECT 1 FROM live_participants occupied WHERE occupied.session_code = ${code} AND occupied.role = ${targetRole} AND occupied.id <> p.id)
+          RETURNING p.id
+        )
+        INSERT INTO live_events (session_code, type, text, role)
+        SELECT ${code}, 'role-change', ${"Instructor reassigned " + participant.name + " from " + (scenarioRoles[participant.role]?.title || participant.role) + " to " + (scenarioRoles[targetRole]?.title || targetRole)}, ${targetRole}
+        FROM moved RETURNING id`;
+        if (!changed.length) return json(409, { error: "That role is already assigned to another participant" });
+        return json(200, { state: publicState(await getSession(code), "", true) });
+      }
       if (command === "arrival") {
         const target = String(body.targetRole || "");
         if (!roles.includes(target) || target === "engine") return json(400, { error: "Choose a responding unit" });
