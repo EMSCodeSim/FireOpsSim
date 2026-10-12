@@ -3,6 +3,14 @@ import { roles as scenarioRoles, visualCopy, resolveEvent, instructorInjects, ro
 import { createHash, randomBytes, timingSafeEqual } from "node:crypto";
 
 const roles = ["command", "engine", "truck", "rit", "engine2"];
+const forecastOptions = {
+  instructor: ["Offensive attack with a second line", "Hold and reassess before committing", "Withdraw and account for all crews"],
+  command: ["Continue the current attack", "Reinforce the attack with another line", "Withdraw and account for all crews"],
+  engine: ["Continue the initial line and report progress", "Request another line or water supply", "Hold position and reassess conditions"],
+  truck: ["Continue primary search", "Request occupant location or search support", "Exit the search area and report conditions"],
+  rit: ["Remain staged and monitor radio traffic", "Prepare for rapid intervention deployment", "Request a crew accountability and conditions check"],
+  engine2: ["Expect a second-line or water-supply assignment", "Stage until Command gives an assignment", "Prepare to support a withdrawal"]
+};
 const json = (statusCode, body) => ({ statusCode, headers: { "content-type": "application/json", "cache-control": "no-store" }, body: JSON.stringify(body) });
 const token = (bytes = 24) => randomBytes(bytes).toString("hex");
 const hash = value => createHash("sha256").update(String(value)).digest("hex");
@@ -48,6 +56,9 @@ function publicState(s, participantId, instructor, includeSceneImage = false) {
   const radioTraffic = s.events.filter(e => e.type === "radio").slice(-30).map(e => ({at:e.at,role:e.role,text:e.text}));
   const arrivals = roles.map(unitRole => ({role:unitRole,title:scenarioRoles[unitRole]?.title || unitRole,onScene:unitRole === "engine" ? s.status !== "lobby" : arrivedRoles.has(unitRole),arrivedAt:s.events.find(e=>e.type==="arrival"&&e.role===unitRole)?.at || null}));
   const roleImage = includeSceneImage && onScene && role ? roleSceneImages[role] : null;
+  const latestForecasts = {};
+  for (const item of s.events.filter(e => e.type === "forecast")) latestForecasts[item.role] = item;
+  const ownForecast = latestForecasts[instructor ? "instructor" : role] || null;
   return {
     event,
     injects,
@@ -61,6 +72,9 @@ function publicState(s, participantId, instructor, includeSceneImage = false) {
     assignments: assignments.map(e => ({ at:e.at, role:e.role, text:e.text })),
     viewedSides,
     attackMode: s.events.find(e => e.type === "mode")?.text.replace(/^Attack mode: /, "") || null,
+    forecastOptions: forecastOptions[instructor ? "instructor" : role] || [],
+    forecast: ownForecast ? { at:ownForecast.at, role:ownForecast.role, text:ownForecast.text } : null,
+    forecasts: instructor ? Object.entries(latestForecasts).map(([forecastRole,item]) => ({at:item.at,role:forecastRole,text:item.text})) : [],
     actionProgress: { acted:actedCount, total:activeCrew.length },
     arrivals, onScene, leaderRole, canDirect: role === leaderRole && onScene && s.status === "active",
     handoff: handoff ? {at:handoff.at,text:handoff.text,accepted:handoffAccepted} : null,
@@ -179,7 +193,10 @@ export async function handler(event) {
       if (s.events.some(e=>e.type==="handoff-accepted")) return json(403,{error:"Engine 181 has transferred tactical control"});
       const side = String(body.side || "");
       if (!Object.hasOwn(sceneSides, side)) return json(400, { error: "Unknown 360 side" });
-      await eventRow(code, "discovery", `Engine 181 viewed 360: ${side}`, "engine");
+      await sql.transaction([
+        sql`INSERT INTO live_events (session_code, type, text, role) VALUES (${code}, 'discovery', ${"Engine 181 viewed 360: " + side}, 'engine')`,
+        sql`INSERT INTO live_events (session_code, type, text, role) VALUES (${code}, 'radio', ${"Engine 181: " + side + " side 360 report — " + sceneSides[side]}, 'engine')`
+      ]);
       await autoAdvanceIfReady(code, Number(s.phase));
       return json(200, { state: publicState(await getSession(code), auth.participantId, false) });
     }
@@ -190,7 +207,10 @@ export async function handler(event) {
       const target = String(body.targetRole || "");
       const assignment = String(body.assignment || "").trim().slice(0, 160);
       if (!roles.includes(target) || target === "command" || !assignment) return json(400, { error: "Choose a unit and enter its assignment" });
-      await eventRow(code, "assignment", assignment, target);
+      await sql.transaction([
+        sql`INSERT INTO live_events (session_code, type, text, role) VALUES (${code}, 'assignment', ${assignment}, ${target})`,
+        sql`INSERT INTO live_events (session_code, type, text, role) VALUES (${code}, 'radio', ${(scenarioRoles[auth.participant.role]?.title || auth.participant.role) + " to " + (scenarioRoles[target]?.title || target) + ": " + assignment}, ${auth.participant.role})`
+      ]);
       return json(200, { state: publicState(await getSession(code), auth.participantId, false) });
     }
     if (action === "mode") {
@@ -203,7 +223,8 @@ export async function handler(event) {
       if (!Object.hasOwn(choices, mode)) return json(400, { error: "Choose a valid attack mode" });
       await sql.transaction([
         sql`UPDATE live_sessions SET branch = ${choices[mode]}, updated_at = now() WHERE code = ${code}`,
-        sql`INSERT INTO live_events (session_code, type, text, role) VALUES (${code}, 'mode', ${"Attack mode: " + mode}, 'engine')`
+        sql`INSERT INTO live_events (session_code, type, text, role) VALUES (${code}, 'mode', ${"Attack mode: " + mode}, 'engine')`,
+        sql`INSERT INTO live_events (session_code, type, text, role) VALUES (${code}, 'radio', ${"Engine 181: Attack mode " + mode + " — crews acknowledge and report changing conditions"}, 'engine')`
       ]);
       await autoAdvanceIfReady(code, Number(s.phase));
       return json(200, { state: publicState(await getSession(code), auth.participantId, false) });
@@ -252,6 +273,15 @@ export async function handler(event) {
       if (!s.events.some(e=>e.type==="handoff-accepted")) await eventRow(code,"handoff-accepted","Incident Command accepted Engine 181’s radio handoff","command");
       return json(200,{state:publicState(await getSession(code),auth.participantId,false)});
     }
+    if (action === "forecast") {
+      const forecastRole = auth.instructor ? "instructor" : auth.participant?.role;
+      if (!auth.instructor && !auth.participant) return json(403, { error: "Participant authorization required" });
+      if (s.status !== "active") return json(409, { error: "Forecasts are available while the scenario is active" });
+      const choice = String(body.choice || "").slice(0, 160);
+      if (!forecastOptions[forecastRole]?.includes(choice)) return json(400, { error: "Forecast choice is not available" });
+      await eventRow(code, "forecast", choice, forecastRole);
+      return json(200, { state: publicState(await getSession(code), auth.participantId, Boolean(auth.instructor)) });
+    }
     if (action === "participant") {
       if (!auth.participant) return json(403, { error: "Participant authorization required" });
       if (s.status !== "active") return json(409, { error: "Scenario is not active" });
@@ -275,7 +305,10 @@ export async function handler(event) {
         sql`UPDATE live_participants SET last_action = ${lastAction}::jsonb WHERE id = ${auth.participantId} AND session_code = ${code}`,
         sql`INSERT INTO live_events (session_code, type, text, role) VALUES (${code}, 'action', ${auth.participant.name + ": " + choice}, ${auth.participant.role})`
       ];
-      if (/radio|report|acknowledge|request|transmit|read back/i.test(choice)) updates.push(sql`INSERT INTO live_events (session_code, type, text, role) VALUES (${code}, 'radio', ${auth.participant.name + ": " + choice}, ${auth.participant.role})`);
+      if (/radio|report|acknowledge|request|transmit|read back/i.test(choice) || (branch && auth.participant.role === "command")) {
+        const radioText = branch && auth.participant.role === "command" ? "Incident Command: " + choice : auth.participant.name + ": " + choice;
+        updates.push(sql`INSERT INTO live_events (session_code, type, text, role) VALUES (${code}, 'radio', ${radioText}, ${auth.participant.role})`);
+      }
       if (branch) updates.push(sql`UPDATE live_sessions SET branch = ${branch}, updated_at = now() WHERE code = ${code}`);
       await sql.transaction(updates);
       await autoAdvanceIfReady(code, Number(s.phase));
