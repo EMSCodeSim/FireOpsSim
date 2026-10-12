@@ -16,32 +16,37 @@ async function instructorCommand(command){try{const d=await api({action:"instruc
 async function sendInject(){
   const button=document.getElementById("sendInjectButton");
   const injectId=document.getElementById("injectType").value;
+  const customText=document.getElementById("customPrompt").value.trim();
   const targetRole=document.getElementById("injectRole").value;
   const status=document.getElementById("injectResult");
   const target=roles[targetRole]?.title||targetRole;
-  const key=targetRole+":"+injectId;
+  const key=targetRole+":"+(customText||injectId);
   const now=Date.now();
   if(injectBusy)return;
+  if(customText.length>500){status.textContent="Keep the live prompt to 500 characters or fewer.";return;}
   if(key===lastInjectKey&&now-lastInjectAt<2000){
     status.textContent="That update was just sent to "+target+". Choose another update or wait before sending it again.";
     return;
   }
   injectBusy=true;
   button.disabled=true;
-  button.textContent="Sending update…";
-  status.textContent="Sending private update to "+target+"…";
+  button.textContent="Sending…";
+  status.textContent="Sending private "+(customText?"prompt":"update")+" to "+target+"…";
   try {
-    const d=await api({action:"inject",code:sessionCode,instructorKey,injectId,targetRole});
+    const payload={action:"inject",code:sessionCode,instructorKey,targetRole};
+    if(customText)payload.customText=customText;else payload.injectId=injectId;
+    const d=await api(payload);
     lastInjectKey=key;
     lastInjectAt=Date.now();
-    status.textContent="Private update sent to "+target+".";
+    document.getElementById("customPrompt").value="";
+    status.textContent="Private "+(customText?"prompt":"update")+" sent to "+target+".";
     renderHost(d.state);
   } catch(e) {
     status.textContent="Update not sent: "+e.message;
   } finally {
     injectBusy=false;
     button.disabled=false;
-    button.textContent="Send private update";
+    button.textContent="Send private prompt / update";
   }
 }
 async function choose(choice){try{const d=await api({action:"participant",code:sessionCode,participantId,choice});renderPlayer(d.state);}catch(e){alert(e.message);}}
@@ -90,7 +95,47 @@ function showScenePhoto(index){const photo=scenePhotoUpdates[index];if(!photo)re
 function renderPlayer(state){cacheSceneImage(state);document.getElementById("roleBrief").textContent=role==="engine2"&&(state.onScene||state.event?.[0]==="On-scene assignment")?"Engine 184 has arrived. Compare the approach, hydrant, driveway, and side-entry photos. What support appears useful? Confirm the assignment with the acting lead.":(state.roleBrief||"Follow your assigned role and relay important details by radio.");document.getElementById("roleIntel").textContent=state.roleIntel||"";document.getElementById("arrivalStatus").textContent=state.onScene?"ON SCENE — role view available":"RESPONDING — dispatch and radio traffic only; scene photo unlocks on arrival";document.getElementById("playerStatus").textContent=state.status.toUpperCase();document.getElementById("syncState").textContent="Synced "+new Date().toLocaleTimeString();const e=state.event || ["Awaiting instructor","Wait for the instructor to start the scenario.",[]];renderScene("playerScene",state,role);document.getElementById("eventTitle").textContent=e[0];document.getElementById("eventText").textContent=branchText(state,e[1]);const inbox=document.getElementById("injectInbox");
 inbox.innerHTML=(state.injects||[]).map(x=>'<div class="card private"><b>Instructor update</b><p>'+escapeHtml(x.text)+'</p></div>').join("");
 renderCommandTools(state);renderAssignments(state);renderHandoff(state);renderRadio(state.radioTraffic);renderForecastPanel("playerForecast",state.forecastOptions,state.forecast,state.status,false);const c=document.getElementById("choices");c.innerHTML="";if(state.status==="lobby")c.innerHTML='<p class="muted">Waiting for the instructor to start the incident.</p>';else if(state.status==="paused")c.innerHTML='<p class="muted">Scenario paused by instructor.</p>';else if(state.status==="ended")c.innerHTML='<p class="muted">Scenario ended. Keep your phone available for the AAR.</p>';else if(role==="command"&&state.onScene&&!state.handoff?.accepted)c.innerHTML="<p class=\"muted\">On scene. Engine 181 is acting lead; receive and accept the radio handoff before directing units.</p>";else if(Number(state.participant?.lastAction?.phase)===Number(state.phase))c.innerHTML="<p class=\"muted\">Choice recorded. The next scene will open when the crew has made its decisions and Command completes the first-due 360.</p>";else e[2].forEach(x=>{const b=document.createElement("button");b.className="btn";b.textContent=x;b.onclick=()=>choose(x);c.appendChild(b);});renderTimeline("timeline",state.timeline);}
-function renderHost(state){cacheSceneImage(state);renderArrivalTracker(state);document.getElementById("hostStatus").textContent=state.status.toUpperCase();document.getElementById("hostPhase").textContent=(Number(state.phase||0)+1)+" / 5";document.getElementById("hostBranch").textContent=state.branch;document.getElementById("hostProgress").textContent=`Crew choices: ${state.actionProgress?.acted||0}/${state.actionProgress?.total||0}. Phase transitions happen automatically after all connected roles choose; the instructor can override.`;renderHostSides(state);renderScene("hostScene",state,"command");renderCrew("hostCrew",state.participants);renderCrew("lobbyCrew",state.participants);renderHostForecasts(state);renderTimeline("hostTimeline",state.timeline);if(state.status!=="lobby")document.getElementById("lobby").classList.add("hidden");}
+function renderRoleControlPanel(state){
+  const el=document.getElementById("roleStatusPanel");if(!el)return;
+  const order=["engine","truck","rit","engine2","command"];
+  const arrivals=state.arrivals||[];
+  const crew=state.participants||[];
+  const occupied=new Set(crew.map(p=>p.role));
+  el.innerHTML=order.map(role=>{
+    const title=roles[role]?.title||role;
+    const participant=crew.find(p=>p.role===role);
+    const arrival=arrivals.find(a=>a.role===role);
+    const onScene=Boolean(participant?.onScene||arrival?.onScene);
+    const phaseAction=participant?.lastAction;
+    const complete=Boolean(phaseAction&&Number(phaseAction.phase)===Number(state.phase));
+    const phaseText=state.status==="lobby"?"Waiting to start":!participant?"Role unfilled":!onScene?"Responding · radio only":complete?"Action recorded":"Needs action";
+    const choice=complete?phaseAction.choice:"";
+    const actionLine=choice?'<div class="role-action-cell"><span class="master-label">Current phase</span><span class="role-action-done">✓ '+escapeHtml(choice)+'</span></div>':'<div class="role-action-cell"><span class="master-label">Current phase</span><span class="'+(participant&&onScene&&state.status==="active"?"role-action-needed":"muted")+'">'+escapeHtml(phaseText)+'</span></div>';
+    let controls='<div class="reassign-control muted">—</div>';
+    if(participant){
+      const targets=order.filter(target=>target!==role&&!occupied.has(target));
+      const select='<select class="field reassign-select" aria-label="Reassign '+escapeHtml(participant.name)+' from '+escapeHtml(title)+'">'+
+        '<option value="">Move to open role</option>'+targets.map(target=>'<option value="'+target+'">'+escapeHtml(roles[target]?.title||target)+'</option>').join("")+
+        '</select>';
+      controls='<div class="reassign-control">'+select+'<button type="button" class="btn alt reassign-role" '+(targets.length&&state.status!=="ended"?"":"disabled")+'>Move role</button></div>';
+    }
+    const arrivalText=state.status==="lobby"?"Lobby":onScene?"On scene":"Responding";
+    return '<div class="role-control-row"><div><span class="master-label">Role</span><div class="role-cell-title">'+escapeHtml(title)+'</div></div><div><span class="master-label">Assigned firefighter</span><div>'+escapeHtml(participant?.name||"Unfilled")+'</div></div><div><span class="master-label">Arrival</span><div>'+escapeHtml(arrivalText)+'</div></div>'+actionLine+'<div><span class="master-label">Change assignment</span>'+controls+'</div></div>';
+  }).join("");
+  el.querySelectorAll(".reassign-role").forEach(button=>{button.onclick=async()=>{
+    const row=button.closest(".role-control-row");
+    const select=row?.querySelector(".reassign-select");
+    const targetRole=select?.value;
+    const roleName=row?.querySelector(".role-cell-title")?.textContent||"participant";
+    const participant=crew.find(p=>p.role===order.find(role=>(roles[role]?.title||role)===roleName));
+    if(!participant||!targetRole)return;
+    const status=document.getElementById("roleControlResult");
+    button.disabled=true;status.textContent="Reassigning "+participant.name+"…";
+    try{const d=await api({action:"instructor",code:sessionCode,instructorKey,command:"reassign",participantId:participant.id,targetRole});status.textContent=participant.name+" moved to "+(roles[targetRole]?.title||targetRole)+". Their new private role view will follow its arrival status.";renderHost(d.state);}
+    catch(e){status.textContent="Role not changed: "+e.message;}
+  };});
+}
+function renderHost(state){cacheSceneImage(state);renderArrivalTracker(state);renderRoleControlPanel(state);document.getElementById("hostStatus").textContent=state.status.toUpperCase();document.getElementById("hostPhase").textContent=(Number(state.phase||0)+1)+" / 5";document.getElementById("hostBranch").textContent=state.branch;document.getElementById("hostProgress").textContent=`Crew choices: ${state.actionProgress?.acted||0}/${state.actionProgress?.total||0}. Each arrived role advances the incident by making its phase choice; Engine 181’s 360/mode and an arriving IC’s accepted handoff are required gates. When everyone is ready, the next phase opens automatically. Use the override if a step is missed.`;renderHostSides(state);renderScene("hostScene",state,"command");renderCrew("hostCrew",state.participants);renderCrew("lobbyCrew",state.participants);renderHostForecasts(state);renderTimeline("hostTimeline",state.timeline);if(state.status!=="lobby")document.getElementById("lobby").classList.add("hidden");}
 function renderCommandTools(state){
   const panel=document.getElementById("commandTools");if(!panel)return;const hasControl=role==="engine"||(role==="command"&&state.handoff?.accepted);panel.classList.toggle("hidden",!hasControl);if(!hasControl)return;const firstDue=document.getElementById("firstDueTools");if(firstDue)firstDue.classList.toggle("hidden",role!=="engine");const tag=panel.querySelector(".tag");if(tag)tag.textContent=role==="engine"?"Engine 181 — acting lead":"Incident Command — tactical control";const heading=document.getElementById("assignmentToolsHeading");if(heading)heading.textContent=role==="engine"?"Assign a unit":"Direct a unit";
   const progress=state.viewedSides||viewedSidesData;viewedSidesData=progress;
