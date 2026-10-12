@@ -176,6 +176,7 @@ export async function handler(event) {
     if (action === "discover") {
       if (!auth.participant || auth.participant.role !== "engine") return json(403, { error: "Engine 181 first-due authorization required" });
       if (s.status !== "active") return json(409, { error: "Scenario is not active" });
+      if (s.events.some(e=>e.type==="handoff-accepted")) return json(403,{error:"Engine 181 has transferred tactical control"});
       const side = String(body.side || "");
       if (!Object.hasOwn(sceneSides, side)) return json(400, { error: "Unknown 360 side" });
       await eventRow(code, "discovery", `Engine 181 viewed 360: ${side}`, "engine");
@@ -195,6 +196,7 @@ export async function handler(event) {
     if (action === "mode") {
       if (!auth.participant || auth.participant.role !== "engine") return json(403, { error: "Engine 181 first-due authorization required" });
       if (s.status !== "active") return json(409, { error: "Scenario is not active" });
+      if (s.events.some(e=>e.type==="handoff-accepted")) return json(403,{error:"Incident Command has accepted tactical control"});
       const mode = String(body.mode || "");
       if (Number(s.phase) !== 0 || s.events.some(e=>e.type==="mode")) return json(409, { error: "Initial attack mode has already been set" });
       const choices = { offensive:"offensive", investigate:"delayed-reinforcement", defensive:"defensive" };
