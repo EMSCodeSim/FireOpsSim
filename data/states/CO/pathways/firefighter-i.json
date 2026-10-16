@@ -1,0 +1,68 @@
+{
+  "id": "state.CO.firefighter_i",
+  "stateCode": "CO",
+  "overlaysNationalPathwayId": "national.firefighter_i",
+  "version": "2026.08.23",
+  "title": "Colorado Fire Fighter I — state overlay",
+  "description": "Thin overlay on the national Firefighter I pathway. Use national JPR structure; apply these Colorado-specific conditions.",
+  "differencesFromNational": [
+    {
+      "area": "affiliation",
+      "detail": "Must be affiliated with a Colorado Emergency Services Agency for the DFPC certification pathway."
+    },
+    {
+      "area": "hazmat",
+      "detail": "Colorado requires minimal certification at Hazardous Materials Operations (not Awareness alone) as part of the Fire Fighter I path."
+    },
+    {
+      "area": "testing",
+      "detail": "Written exam (historically 70% on 100 questions), practical JPRs at 100% standard, and a required Live Burn Practical Examination."
+    },
+    {
+      "area": "standard_edition",
+      "detail": "DFPC has published transition memorandums toward NFPA 1010 (2024 edition) for Firefighter I with an effective date of 1 July 2026. Confirm which edition is in force on your test date."
+    },
+    {
+      "area": "certificate_term",
+      "detail": "Colorado certifications are typically issued for five (5) years under current rules — confirm at application/renewal."
+    },
+    {
+      "area": "national_seals",
+      "detail": "Successful DFPC certification at this level is associated with IFSAC and Pro Board accreditation pathways."
+    }
+  ],
+  "coloradoSequenceNotes": [
+    "Complete agency affiliation and medical/physical requirements set by the department/academy.",
+    "Train to current DFPC JPR skill sheets for Fire Fighter I.",
+    "Complete Hazardous Materials Operations certification (Colorado minimal).",
+    "Pass DFPC written examination.",
+    "Pass practical examination (mandatory + random JPRs).",
+    "Pass live-burn practical examination.",
+    "Apply for certificate issuance through DFPC process and retain seals/numbers in Career Record."
+  ],
+  "officialResources": [
+    {
+      "title": "DFPC Certification home",
+      "url": "https://dfpc.colorado.gov/sections/professional-qualifications-and-training/certification"
+    },
+    {
+      "title": "DFPC Job Performance Requirements",
+      "url": "https://dfpc.colorado.gov/sections/professional-qualifications-and-training/certification/job-performance-requirements"
+    }
+  ],
+  "outputsForCareerRoad": {
+    "primaryCertificationId": "firefighter_1",
+    "forceCompanionRequirementIds": ["haz_ops"],
+    "extraTaskBookChapters": [
+      "Colorado agency affiliation",
+      "HazMat Operations (CO required companion)",
+      "DFPC written exam prep",
+      "DFPC practical JPR sheets",
+      "Live-burn practical",
+      "DFPC certificate & seal filing"
+    ]
+  },
+  "lastVerified": "2026-08-23",
+  "confidence": "high",
+  "disclaimer": "Overlay only. DFPC rules and adopted NFPA editions change. Verify on official DFPC pages before testing."
+}
