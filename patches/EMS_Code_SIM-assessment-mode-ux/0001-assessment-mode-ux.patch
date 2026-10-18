@@ -1,60 +1,37 @@
-From f7a68affd63d8c3ebd30a4a29a144f9c69faf8d2 Mon Sep 17 00:00:00 2001
+From 325c89c0e2e665e53568564f1aefeae41f9cb3d4 Mon Sep 17 00:00:00 2001
 From: Cursor Agent <cursoragent@cursor.com>
-Date: Sun, 16 Aug 2026 14:27:36 +0000
+Date: Tue, 25 Aug 2026 21:37:03 +0000
 Subject: [PATCH] Improve Assessment Mode UX for Visual Patient scenarios
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
 
-Add a generalizable Assessment Mode layer with onboarding guidance,
-interactive patient hotspots, decision discovery checklists, action-bar
-progress feedback, mobile polish, soft prompts, and lightweight progress
-reset—starting with the horse-crush hip injury case.
+Add onboarding guidance, interactive patient hotspots, decision discovery
+checklists, action-bar progress feedback, mobile polish, soft prompts,
+and lightweight progress reset—starting with the horse-crush case.
 ---
- netlify.toml                           |  10 +
  package.json                           |   3 +-
  tools/test-assessment-mode-ux.js       |  28 +
- vitals/horse-crush-bootstrap.js        |   3 +-
+ vitals/horse-crush-bootstrap.js        |   1 +
  vitals/scenario-assessment-mode-ux.css | 612 +++++++++++++++++
  vitals/scenario-assessment-mode-ux.js  | 907 +++++++++++++++++++++++++
  vitals/scenario-learning-upgrade.js    |  38 +-
- vitals/visual-patient.html             |   3 +-
- 8 files changed, 1599 insertions(+), 5 deletions(-)
+ vitals/visual-patient.html             |   1 +
+ 7 files changed, 1587 insertions(+), 3 deletions(-)
  create mode 100644 tools/test-assessment-mode-ux.js
  create mode 100644 vitals/scenario-assessment-mode-ux.css
  create mode 100644 vitals/scenario-assessment-mode-ux.js
 
-diff --git a/netlify.toml b/netlify.toml
-index 18e493a..092d631 100644
---- a/netlify.toml
-+++ b/netlify.toml
-@@ -34,6 +34,16 @@
-   [headers.values]
-     Cache-Control = "public, max-age=0, must-revalidate"
- 
-+[[headers]]
-+  for = "/vitals/scenario-assessment-mode-ux.js"
-+  [headers.values]
-+    Cache-Control = "public, max-age=0, must-revalidate"
-+
-+[[headers]]
-+  for = "/vitals/scenario-assessment-mode-ux.css"
-+  [headers.values]
-+    Cache-Control = "public, max-age=0, must-revalidate"
-+
- [[headers]]
-   for = "/vitals/scenario-learning-upgrade.js"
-   [headers.values]
 diff --git a/package.json b/package.json
-index 3aaef52..76a9beb 100644
+index ea0ec07..6dcd42f 100644
 --- a/package.json
 +++ b/package.json
 @@ -11,7 +11,7 @@
      "build:public": "node tools/build-public.js",
      "build:functions": "node tools/prepare-functions.js",
      "verify:dist": "node tools/validate-site.js --root dist --deployment",
--    "build": "npm run clean:retired && npm run validate && npm run verify:scenario-contracts && npm run test:scenario-deployment && npm run test:scenario-definitions && npm run test:scenario-images && npm run test:scenario-reasoning && npm run test:daily-protocol && npm run test:scenario-modes && npm run test:scenario-selection && npm run test:rapid-primary && npm run test:vitals-tab && npm run test:patient-interview && npm run test:treatment-workflow && npm run test:treatment-decision && npm run test:targeted-reassessment && npm run test:crash-recovery && npm run test:full-call-debrief && npm run test:persistence && npm run test:care-log && npm run test:scenario-phases && npm run test:scenario-history && npm run test:condition-engine && npm run build:public && npm run build:functions && npm run verify:dist",
-+    "build": "npm run clean:retired && npm run validate && npm run verify:scenario-contracts && npm run test:scenario-deployment && npm run test:scenario-definitions && npm run test:scenario-images && npm run test:scenario-reasoning && npm run test:assessment-mode-ux && npm run test:daily-protocol && npm run test:scenario-modes && npm run test:scenario-selection && npm run test:rapid-primary && npm run test:vitals-tab && npm run test:patient-interview && npm run test:treatment-workflow && npm run test:treatment-decision && npm run test:targeted-reassessment && npm run test:crash-recovery && npm run test:full-call-debrief && npm run test:persistence && npm run test:care-log && npm run test:scenario-phases && npm run test:scenario-history && npm run test:condition-engine && npm run build:public && npm run build:functions && npm run verify:dist",
+-    "build": "npm run clean:retired && npm run validate && npm run verify:scenario-contracts && npm run test:scenario-deployment && npm run test:scenario-definitions && npm run test:scenario-images && npm run test:scenario-reasoning && npm run test:daily-protocol && npm run test:scenario-modes && npm run test:scenario-selection && npm run test:rapid-primary && npm run test:vitals-tab && npm run test:patient-interview && npm run test:treatment-workflow && npm run test:treatment-decision && npm run test:targeted-reassessment && npm run test:crash-recovery && npm run test:full-call-debrief && npm run test:scenario-grading && npm run test:persistence && npm run test:care-log && npm run test:scenario-phases && npm run test:scenario-history && npm run test:condition-engine && npm run build:public && npm run build:functions && npm run verify:dist",
++    "build": "npm run clean:retired && npm run validate && npm run verify:scenario-contracts && npm run test:scenario-deployment && npm run test:scenario-definitions && npm run test:scenario-images && npm run test:scenario-reasoning && npm run test:assessment-mode-ux && npm run test:daily-protocol && npm run test:scenario-modes && npm run test:scenario-selection && npm run test:rapid-primary && npm run test:vitals-tab && npm run test:patient-interview && npm run test:treatment-workflow && npm run test:treatment-decision && npm run test:targeted-reassessment && npm run test:crash-recovery && npm run test:full-call-debrief && npm run test:scenario-grading && npm run test:persistence && npm run test:care-log && npm run test:scenario-phases && npm run test:scenario-history && npm run test:condition-engine && npm run build:public && npm run build:functions && npm run verify:dist",
      "serve:dist": "node tools/serve-dist.js",
      "test:interaction": "npm run build && playwright test",
      "test:interaction:headed": "npm run build && playwright test --headed",
@@ -101,21 +78,12 @@ index 0000000..7935108
 +
 +console.log('Assessment Mode UX contract checks passed.');
 diff --git a/vitals/horse-crush-bootstrap.js b/vitals/horse-crush-bootstrap.js
-index 74c1896..027676e 100644
+index a1bbe04..37316df 100644
 --- a/vitals/horse-crush-bootstrap.js
 +++ b/vitals/horse-crush-bootstrap.js
-@@ -2,7 +2,7 @@
-   'use strict';
- 
-   const CASE_ID = 'horse_crush';
--  const BUILD = '2026.08.14.35';
-+  const BUILD = '2026.08.16.1';
- 
-   function loadOnce(attribute, src) {
-     if (document.querySelector(`script[${attribute}]`)) return;
-@@ -93,6 +93,7 @@
+@@ -132,6 +132,7 @@
    loadOnce('data-condition-alert-priority', '/vitals/scenario-condition-alert-priority.js');
-   loadOnce('data-horse-crush-ui-fix', '/vitals/horse-crush-ui-fix.js?v=2026.08.15.5');
+   loadOnce('data-horse-crush-ui-fix', '/vitals/horse-crush-ui-fix.js');
    loadOnce('data-horse-photo-layer-fix', '/vitals/horse-photo-layer-fix.js');
 +  // Assessment Mode UX is loaded from visual-patient.html for all cases.
    const defs = window.EMSCodeSimScenarioDefinitions;
@@ -1715,19 +1683,14 @@ index a418539..119b705 100644
    if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init,{once:true}); else init();
  })();
 diff --git a/vitals/visual-patient.html b/vitals/visual-patient.html
-index b1fe4c5..5f1444e 100644
+index ae3c5f3..00f3e14 100644
 --- a/vitals/visual-patient.html
 +++ b/vitals/visual-patient.html
-@@ -410,9 +410,10 @@
-   <script src="/vitals/scenario-runtime.js?v=2223"></script>
-   <script src="/vitals/scenario-tool-registry.js?v=2221"></script>
-   <script src="/vitals/scenario-phase-model.js?v=2200"></script>
--  <script src="/vitals/horse-crush-bootstrap.js?v=2237"></script>
-+  <script src="/vitals/horse-crush-bootstrap.js?v=2238"></script>
-   <script src="/vitals/horse-crush-scenario.js?v=2223"></script>
-   <script src="/vitals/visual-patient.js?v=2339"></script>
-   <script src="/vitals/scenario-guided-start.js?v=2202"></script>
-+  <script src="/vitals/scenario-assessment-mode-ux.js?v=2026.08.16.1"></script>
+@@ -440,5 +440,6 @@
+   <script src="/vitals/horse-crush-scenario.js?v=2026.08.18.34"></script>
+   <script src="/vitals/visual-patient.js?v=2026.08.18.34"></script>
+   <script src="/vitals/scenario-guided-start.js?v=2026.08.18.34"></script>
++  <script src="/vitals/scenario-assessment-mode-ux.js?v=2026.08.18.34"></script>
  </body>
  </html>
 -- 
