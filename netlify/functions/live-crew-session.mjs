@@ -533,7 +533,10 @@ export async function handler(event) {
       if (Number(current?.phase) === Number(s.phase) && ["decision", "awaiting-command", "awaiting-ack"].includes(current?.stage)) {
         return json(409, { error: "Complete the current radio communication loop before selecting another action" });
       }
-      const available = (!arrived && arrivalEvents[auth.participant.role]) ? arrivalEvents[auth.participant.role][2] : (resolveEvent(auth.participant.role, s.phase, s.branch)?.[2] || []);
+      const currentEvent = (!arrived && arrivalEvents[auth.participant.role])
+        ? arrivalEvents[auth.participant.role]
+        : (auth.participant.role === "engine2" && Number(s.phase) === 0 ? scenarioRoles.engine2.events[1] : resolveEvent(auth.participant.role, s.phase, s.branch));
+      const available = currentEvent?.[2] || [];
       if (!available.includes(choice)) return json(400, { error: "Choice is not available for your current role and phase" });
       const lastAction = JSON.stringify({ phase:s.phase, choice, stage:"decision", at:new Date().toISOString() });
       await sql.transaction([
