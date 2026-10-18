@@ -17,7 +17,14 @@ const branchChoices = {
   "Order withdrawal": "withdrawal",
   "Request additional alarm": "additional-alarm",
   "Defensive operations": "defensive",
-  "Offensive operations": "offensive"
+  "Offensive operations": "offensive",
+  "Continue offensive operations": "offensive",
+  "Reassess strategy": "delayed-reinforcement",
+  "Commit the initial line under the selected strategy": "offensive",
+  "Hold at the entry and request an updated report": "delayed-reinforcement",
+  "Request Engine 184 to prepare a second line": "reinforced-attack",
+  "Recommend withdraw / defensive transition": "withdrawal",
+  "Prepare for Mayday or RIT activation": "withdrawal"
 };
 const radioResponses = [
   "Continue current action",
@@ -25,6 +32,20 @@ const radioResponses = [
   "Request clarification",
   "Emergency support or withdrawal direction"
 ];
+const unexpectedCategories = [
+  "Different tactical action",
+  "Delayed action",
+  "Missed radio report",
+  "Incomplete report",
+  "Assignment change",
+  "New hazard",
+  "New occupant information",
+  "Resource problem",
+  "Accountability issue",
+  "Emergency traffic",
+  "Other"
+];
+const branchOptions = ["initial", "offensive", "reinforced-attack", "delayed-reinforcement", "withdrawal", "additional-alarm", "defensive"];
 const json = (statusCode, body) => ({ statusCode, headers: { "content-type": "application/json", "cache-control": "no-store" }, body: JSON.stringify(body) });
 const token = (bytes = 24) => randomBytes(bytes).toString("hex");
 const hash = value => createHash("sha256").update(String(value)).digest("hex");
@@ -73,17 +94,42 @@ function publicState(s, participantId, instructor, includeSceneImage = false) {
   const completedCount = activeCrew.filter(p => stageFor(p) === "complete").length;
   const handoff = s.events.find(e => e.type === "handoff") || null;
   const handoffAccepted = s.events.some(e => e.type === "handoff-accepted");
-  const leaderRole = handoffAccepted ? "command" : "engine";
-  const pendingReports = role === leaderRole ? activeCrew
+  const leadOverride = [...s.events].reverse().find(e => e.type === "lead-change");
+  const leaderRole = leadOverride?.role || (handoffAccepted ? "command" : "engine");
+  const pendingReports = activeCrew
     .filter(p => p.role !== leaderRole && stageFor(p) === "awaiting-command")
-    .map(p => ({participantId:p.id,role:p.role,name:p.name,reportedAt:p.last_action.reportedAt || p.last_action.at})) : [];
-  const radioTraffic = s.events.filter(e => ["radio-confirmed","command-response","radio-acknowledged","handoff-accepted"].includes(e.type)).slice(-30).map(e => ({at:e.at,role:e.role,text:e.text}));
+    .map(p => ({participantId:p.id,role:p.role,name:p.name,reportedAt:p.last_action.reportedAt || p.last_action.at,choice:p.last_action.choice || null}));
+  const visiblePending = (instructor || role === leaderRole) ? pendingReports : [];
+  const radioTraffic = s.events.filter(e => ["radio-confirmed","command-response","radio-acknowledged","handoff-accepted","unexpected","loop-override","benchmark","missed-step"].includes(e.type)).slice(-30).map(e => ({at:e.at,role:e.role,text:e.text}));
   const arrivals = roles.map(unitRole => ({role:unitRole,title:scenarioRoles[unitRole]?.title || unitRole,onScene:unitRole === "engine" ? s.status !== "lobby" : arrivedRoles.has(unitRole),arrivedAt:s.events.find(e=>e.type==="arrival"&&e.role===unitRole)?.at || null}));
   const roleImage = includeSceneImage && onScene && role ? roleSceneImages[role] : null;
   const scenePhotos = includeSceneImage && onScene && role ? (rolePhotoUpdates[role] || []) : [];
   const latestForecasts = {};
   for (const item of s.events.filter(e => e.type === "forecast")) latestForecasts[item.role] = item;
   const ownForecast = latestForecasts[instructor ? "instructor" : role] || null;
+  const roleStatuses = instructor ? s.participants.map(p => {
+    const unitOnScene = p.role === "engine" ? s.status !== "lobby" : arrivedRoles.has(p.role);
+    const stage = stageFor(p);
+    const action = actionForPhase(p);
+    const stalled = Boolean(unitOnScene && s.status === "active" && stage !== "complete" && stage !== "needs-decision" && action?.at && (Date.now() - new Date(action.at).getTime()) > 90000);
+    return {
+      id: p.id, name: p.name, role: p.role, joinedAt: p.joined_at, lastAction: p.last_action,
+      onScene: unitOnScene, stage, stalled,
+      assignment: [...assignments].reverse().find(e => e.role === p.role)?.text || null
+    };
+  }) : [];
+  const missingBenchmarks = [];
+  if (instructor && s.status === "active") {
+    if (Number(s.phase) === 0 && viewedSides.length < 4) missingBenchmarks.push("Engine 181 360 incomplete (" + viewedSides.length + "/4 sides)");
+    if (Number(s.phase) === 0 && !s.events.some(e => e.type === "mode")) missingBenchmarks.push("Initial attack mode not recorded");
+    if (arrivedRoles.has("command") && !handoffAccepted) missingBenchmarks.push(handoff ? "Command handoff awaiting acceptance" : "Command arrived — handoff not sent");
+    activeCrew.forEach(p => {
+      const stage = stageFor(p);
+      if (stage === "decision") missingBenchmarks.push((scenarioRoles[p.role]?.title || p.role) + " owes a radio report");
+      if (stage === "awaiting-command") missingBenchmarks.push((scenarioRoles[p.role]?.title || p.role) + " waiting for incident lead response");
+      if (stage === "awaiting-ack") missingBenchmarks.push((scenarioRoles[p.role]?.title || p.role) + " acknowledgement required");
+    });
+  }
   return {
     event,
     injects,
@@ -93,8 +139,11 @@ function publicState(s, participantId, instructor, includeSceneImage = false) {
     sceneBoard: (instructor || (role === "engine" && onScene)) && includeSceneImage ? sceneBoardImage : null,
     sceneSides: (instructor || (role === "engine" && onScene)) ? sceneSides : null,
     roleBrief: !onScene && role ? "You are responding. Use dispatch and radio reports only; your role-specific scene view unlocks on arrival." : role === "engine2" && onScene ? "Engine 184 is on scene. Review your assigned staging view and Engine 181’s assignment; read it back and clarify before deployment." : (definition?.brief || null),
-    roleIntel: !onScene && role ? "No additional scene-specific information is available while responding. Listen to radio traffic and ask for clarification when needed." : role === "command" ? "Alpha-side view: a two-story residence with smoke venting from a Division 2 window. Interior conditions and the other sides are known only from your 360 or radio reports." : (role ? roleIntel[role] : null),
+    roleIntel: !onScene && role ? "No additional scene-specific information is available while responding. Listen to radio traffic and ask for clarification when needed." : role === "command" ? "Alpha-side view: a two-story residence with smoke venting from a Division 2 window. Interior conditions and the other sides are known only from radio reports you actually hear." : (role ? roleIntel[role] : null),
     sceneSizeup: !onScene ? "No on-scene size-up is available yet. Use radio reports only." : (role ? sceneSizeup[role] : null),
+    photoPrompt: !onScene ? null : "What can you directly observe? What are you inferring? What should you confirm? What information should Command receive?",
+    listenFor: !onScene && role ? "Listen for first-due size-up, strategy, and any assignment to your unit." : role === "engine" ? "Listen for incoming unit status, search findings, and Command arrival." : role === "truck" ? "Listen for attack progress, secondary search assignments, and Command direction." : role === "rit" ? "Listen for crew locations, Mayday cues, deteriorating conditions, and accountability traffic." : role === "engine2" ? "Listen for water-supply or second-line assignment and any change to staging." : role === "command" ? "Listen for handoff content, progress reports, and incomplete or conflicting traffic." : null,
+    nextStepHint: own ? (stageFor(own) === "needs-decision" ? "Review your private information and choose your next action." : stageFor(own) === "decision" ? "Radio report required before the scenario can credit this action." : stageFor(own) === "awaiting-command" ? "Waiting for the incident lead to answer on the department radio." : stageFor(own) === "awaiting-ack" ? "Acknowledge the direction over the radio, then record the acknowledgement." : stageFor(own) === "complete" ? "Communication loop complete. Continue operating and monitor the radio." : null) : null,
     assignments: assignments.map(e => ({ at:e.at, role:e.role, text:e.text })),
     viewedSides,
     attackMode: s.events.find(e => e.type === "mode")?.text.replace(/^Attack mode: /, "") || null,
@@ -102,13 +151,17 @@ function publicState(s, participantId, instructor, includeSceneImage = false) {
     forecast: ownForecast ? { at:ownForecast.at, role:ownForecast.role, text:ownForecast.text } : null,
     forecasts: instructor ? Object.entries(latestForecasts).map(([forecastRole,item]) => ({at:item.at,role:forecastRole,text:item.text})) : [],
     actionProgress: { acted:actedCount, completed:completedCount, total:activeCrew.length },
-    radioProtocol: { stage: own ? stageFor(own) : null, pendingReports, responseOptions: radioResponses },
+    radioProtocol: { stage: own ? stageFor(own) : null, pendingReports: visiblePending, responseOptions: radioResponses },
     arrivals, onScene, leaderRole, canDirect: role === leaderRole && onScene && s.status === "active",
     handoff: handoff ? {at:handoff.at,text:handoff.text,accepted:handoffAccepted} : null,
     radioTraffic,
+    unexpectedCategories: instructor ? unexpectedCategories : undefined,
+    branchOptions: instructor ? branchOptions : undefined,
+    missingBenchmarks: instructor ? missingBenchmarks : undefined,
+    roleStatuses: instructor ? roleStatuses : undefined,
     code: s.code, status: s.status, phase: s.phase, branch: s.branch,
     participants: instructor ? s.participants.map(p => ({ id:p.id, name:p.name, role:p.role, joinedAt:p.joined_at, lastAction:p.last_action, onScene:p.role === "engine" ? s.status !== "lobby" : arrivedRoles.has(p.role) })) : [],
-    timeline: instructor ? s.events : s.events.filter(e => ["system", "instructor"].includes(e.type) || ((e.type === "inject" || e.type === "assignment") && (e.role === own?.role || (role === "command" && e.type === "assignment") || e.role === null))),
+    timeline: instructor ? s.events : s.events.filter(e => ["system", "instructor"].includes(e.type) || ((e.type === "inject" || e.type === "assignment") && (e.role === own?.role || ((role === "command" || role === "engine") && e.type === "assignment") || e.role === null))),
     participant: own ? { id: own.id, name: own.name, role: own.role, joinedAt: own.joined_at, lastAction: own.last_action } : null,
     createdAt: s.created_at, updatedAt: s.updated_at
   };
@@ -119,13 +172,14 @@ async function autoAdvanceIfReady(code, phase) {
   const ready = await sql`UPDATE live_sessions
     SET phase = phase + 1, updated_at = now()
     WHERE code = ${code} AND phase = ${phase} AND status = 'active'
+      AND (SELECT COUNT(*) FROM live_participants p WHERE p.session_code = ${code} AND (p.role = 'engine' OR EXISTS (SELECT 1 FROM live_events a WHERE a.session_code = ${code} AND a.type = 'arrival' AND a.role = p.role))) > 0
       AND (SELECT COUNT(*) FROM live_participants p WHERE p.session_code = ${code} AND (p.role = 'engine' OR EXISTS (SELECT 1 FROM live_events a WHERE a.session_code = ${code} AND a.type = 'arrival' AND a.role = p.role)) AND p.last_action->>'phase' = ${String(phase)} AND COALESCE(p.last_action->>'stage', 'complete') = 'complete') =
           (SELECT COUNT(*) FROM live_participants p WHERE p.session_code = ${code} AND (p.role = 'engine' OR EXISTS (SELECT 1 FROM live_events a WHERE a.session_code = ${code} AND a.type = 'arrival' AND a.role = p.role)))
       AND (${phase} <> 0 OR ((SELECT COUNT(DISTINCT text) FROM live_events WHERE session_code = ${code} AND type = 'discovery' AND role = 'engine') >= 4 AND EXISTS (SELECT 1 FROM live_events WHERE session_code = ${code} AND type = 'mode')))
       AND (NOT EXISTS (SELECT 1 FROM live_events WHERE session_code = ${code} AND type = 'arrival' AND role = 'command') OR EXISTS (SELECT 1 FROM live_events WHERE session_code = ${code} AND type = 'handoff-accepted'))
     RETURNING phase`;
   if (!ready.length) return false;
-  await eventRow(code, "system", `All crew choices and required discoveries are in; incident automatically advanced to phase ${Number(ready[0].phase) + 1}`);
+  await eventRow(code, "system", `Required communication loops and benchmarks complete; incident automatically advanced to phase ${Number(ready[0].phase) + 1}`);
   return true;
 }
 
@@ -290,6 +344,93 @@ export async function handler(event) {
         if (!s.events.some(e => e.type === "arrival" && e.role === target)) await eventRow(code, "arrival", `${scenarioRoles[target]?.title || target} arrived on scene by instructor override`, target);
         return json(200, { state: publicState(await getSession(code), "", true) });
       }
+      if (command === "set-lead") {
+        const target = String(body.targetRole || "");
+        if (!["engine", "command"].includes(target)) return json(400, { error: "Incident lead must be Engine 181 or Incident Command" });
+        if (s.status === "ended" || s.status === "lobby") return json(409, { error: "Incident must be running or paused" });
+        if (target === "command" && !s.participants.some(p => p.role === "command")) return json(409, { error: "Incident Command has not joined" });
+        await eventRow(code, "lead-change", "Instructor set incident lead to " + (scenarioRoles[target]?.title || target), target);
+        return json(200, { state: publicState(await getSession(code), "", true) });
+      }
+      if (command === "set-branch") {
+        const branch = String(body.branch || "");
+        if (!branchOptions.includes(branch)) return json(400, { error: "Choose a valid tactical branch" });
+        if (s.status === "ended" || s.status === "lobby") return json(409, { error: "Incident must be running or paused" });
+        await sql.transaction([
+          sql`UPDATE live_sessions SET branch = ${branch}, updated_at = now() WHERE code = ${code}`,
+          sql`INSERT INTO live_events (session_code, type, text) VALUES (${code}, 'instructor', ${"Instructor redirected tactical branch to " + branch})`
+        ]);
+        return json(200, { state: publicState(await getSession(code), "", true) });
+      }
+      if (command === "override-loop") {
+        const participantId = String(body.participantId || "");
+        const resolution = String(body.resolution || "complete");
+        const participant = s.participants.find(p => p.id === participantId);
+        if (!participant) return json(404, { error: "Participant not found" });
+        if (s.status === "ended" || s.status === "lobby") return json(409, { error: "Incident must be running or paused" });
+        if (!["complete", "reset", "missed-radio"].includes(resolution)) return json(400, { error: "Choose complete, reset, or missed-radio" });
+        const current = Number(participant.last_action?.phase) === Number(s.phase) ? participant.last_action : { phase: s.phase, choice: participant.last_action?.choice || "Instructor override", at: new Date().toISOString() };
+        let updated;
+        let eventType = "loop-override";
+        let eventText;
+        if (resolution === "reset") {
+          updated = null;
+          eventText = "Instructor reset the communication loop for " + (scenarioRoles[participant.role]?.title || participant.role);
+        } else if (resolution === "missed-radio") {
+          updated = { ...current, stage: "complete", commandResponse: current.commandResponse || "Instructor recorded missed radio step", acknowledgedAt: new Date().toISOString(), override: "missed-radio" };
+          eventType = "missed-step";
+          eventText = "Instructor recorded a missed communication step for " + (scenarioRoles[participant.role]?.title || participant.role) + " and continued the scenario";
+        } else {
+          updated = { ...current, stage: "complete", reportedAt: current.reportedAt || new Date().toISOString(), commandResponse: current.commandResponse || "Instructor override", respondedAt: current.respondedAt || new Date().toISOString(), acknowledgedAt: new Date().toISOString(), override: "complete" };
+          eventText = "Instructor overrode a stalled communication loop for " + (scenarioRoles[participant.role]?.title || participant.role);
+        }
+        if (updated === null) {
+          await sql`UPDATE live_participants SET last_action = NULL WHERE id = ${participantId} AND session_code = ${code}`;
+        } else {
+          await sql`UPDATE live_participants SET last_action = ${JSON.stringify(updated)}::jsonb WHERE id = ${participantId} AND session_code = ${code}`;
+        }
+        await eventRow(code, eventType, eventText, participant.role);
+        if (resolution !== "reset") await autoAdvanceIfReady(code, Number(s.phase));
+        return json(200, { state: publicState(await getSession(code), "", true) });
+      }
+      if (command === "benchmark") {
+        const note = String(body.note || "").trim().slice(0, 200);
+        if (!note) return json(400, { error: "Enter a short benchmark note" });
+        if (s.status === "ended" || s.status === "lobby") return json(409, { error: "Incident must be running or paused" });
+        await eventRow(code, "benchmark", "Benchmark: " + note, body.targetRole && roles.includes(body.targetRole) ? body.targetRole : null);
+        return json(200, { state: publicState(await getSession(code), "", true) });
+      }
+      if (command === "unexpected") {
+        const target = String(body.targetRole || "");
+        const category = String(body.category || "");
+        const consequence = String(body.consequence || "").trim().slice(0, 500);
+        const shareWith = String(body.shareWith || "private");
+        const changeBranch = Boolean(body.changeBranch);
+        const nextBranch = String(body.branch || s.branch);
+        const communicationSatisfied = Boolean(body.communicationSatisfied);
+        if (!roles.includes(target)) return json(400, { error: "Select a role" });
+        if (!unexpectedCategories.includes(category)) return json(400, { error: "Select an unexpected-action category" });
+        if (!consequence) return json(400, { error: "Enter a short consequence" });
+        if (s.status === "ended" || s.status === "lobby") return json(409, { error: "Incident must be running or paused" });
+        if (changeBranch && !branchOptions.includes(nextBranch)) return json(400, { error: "Choose a valid branch when redirecting the scenario" });
+        const participant = s.participants.find(p => p.role === target);
+        const ops = [];
+        if (changeBranch) ops.push(sql`UPDATE live_sessions SET branch = ${nextBranch}, updated_at = now() WHERE code = ${code}`);
+        ops.push(sql`INSERT INTO live_events (session_code, type, text, role) VALUES (${code}, 'unexpected', ${"Unexpected action (" + category + ") for " + (scenarioRoles[target]?.title || target) + ": " + consequence + (changeBranch ? " [branch → " + nextBranch + "]" : "") + (communicationSatisfied ? " [radio requirement satisfied]" : "")}, ${target})`);
+        if (shareWith === "private" || shareWith === "shared") {
+          const injectText = shareWith === "shared" ? "Scene update: " + consequence : "Instructor prompt: " + consequence;
+          const injectRole = shareWith === "shared" ? null : target;
+          ops.push(sql`INSERT INTO live_events (session_code, type, text, role) VALUES (${code}, 'inject', ${injectText}, ${injectRole})`);
+        }
+        if (communicationSatisfied && participant) {
+          const current = Number(participant.last_action?.phase) === Number(s.phase) ? participant.last_action : { phase: s.phase, choice: category, at: new Date().toISOString() };
+          const updated = { ...current, stage: "complete", reportedAt: current.reportedAt || new Date().toISOString(), commandResponse: current.commandResponse || "Unexpected action accepted", respondedAt: current.respondedAt || new Date().toISOString(), acknowledgedAt: new Date().toISOString(), override: "unexpected" };
+          ops.push(sql`UPDATE live_participants SET last_action = ${JSON.stringify(updated)}::jsonb WHERE id = ${participant.id} AND session_code = ${code}`);
+        }
+        await sql.transaction(ops);
+        if (communicationSatisfied) await autoAdvanceIfReady(code, Number(s.phase));
+        return json(200, { state: publicState(await getSession(code), "", true) });
+      }
       if (!transitions[command]) return json(400, { error: "Unknown instructor command" });
       if (s.status === "ended") return json(409, { error: "Session ended" });
       const [status, phase] = transitions[command];
@@ -333,7 +474,8 @@ export async function handler(event) {
       const current = auth.participant.last_action;
       if (Number(current?.phase) !== Number(s.phase) || current?.stage !== "decision") return json(409, { error: "Make your current tactical decision before confirming the radio report" });
       const handoffAccepted = s.events.some(e => e.type === "handoff-accepted");
-      const leaderRole = handoffAccepted ? "command" : "engine";
+      const leadOverride = [...s.events].reverse().find(e => e.type === "lead-change");
+      const leaderRole = leadOverride?.role || (handoffAccepted ? "command" : "engine");
       const isLeader = auth.participant.role === leaderRole;
       const updated = JSON.stringify({ ...current, stage:isLeader ? "complete" : "awaiting-command", reportedAt:new Date().toISOString() });
       await sql.transaction([
@@ -347,11 +489,12 @@ export async function handler(event) {
       return json(200, { state: publicState(await getSession(code), auth.participantId, false) });
     }
     if (action === "command-response") {
-      if (!auth.participant) return json(403, { error: "Incident lead authorization required" });
+      if (!auth.participant && !auth.instructor) return json(403, { error: "Incident lead authorization required" });
       if (s.status !== "active") return json(409, { error: "Scenario is not active" });
       const handoffAccepted = s.events.some(e => e.type === "handoff-accepted");
-      const leaderRole = handoffAccepted ? "command" : "engine";
-      if (auth.participant.role !== leaderRole) return json(403, { error: "Only the current incident lead can record the radio response" });
+      const leadOverride = [...s.events].reverse().find(e => e.type === "lead-change");
+      const leaderRole = leadOverride?.role || (handoffAccepted ? "command" : "engine");
+      if (!auth.instructor && auth.participant?.role !== leaderRole) return json(403, { error: "Only the current incident lead can record the radio response" });
       const targetId = String(body.targetParticipantId || "");
       const response = String(body.response || "");
       if (!radioResponses.includes(response)) return json(400, { error: "Choose the radio response that best matches what you transmitted" });
@@ -360,8 +503,9 @@ export async function handler(event) {
       const updated = JSON.stringify({ ...target.last_action, stage:"awaiting-ack", commandResponse:response, respondedAt:new Date().toISOString() });
       const changed = await sql`UPDATE live_participants SET last_action = ${updated}::jsonb WHERE id = ${targetId} AND session_code = ${code} AND last_action->>'stage' = 'awaiting-command' RETURNING id`;
       if (!changed.length) return json(409, { error: "That radio report was already handled" });
-      await eventRow(code, "command-response", (scenarioRoles[leaderRole]?.title || leaderRole) + " confirmed a radio response to " + (scenarioRoles[target.role]?.title || target.role) + ": " + response, target.role);
-      return json(200, { state: publicState(await getSession(code), auth.participantId, false) });
+      const responder = auth.instructor ? "Instructor (for incident lead)" : (scenarioRoles[leaderRole]?.title || leaderRole);
+      await eventRow(code, "command-response", responder + " confirmed a radio response to " + (scenarioRoles[target.role]?.title || target.role) + ": " + response, target.role);
+      return json(200, { state: publicState(await getSession(code), auth.participantId, Boolean(auth.instructor)) });
     }
     if (action === "acknowledge-radio") {
       if (!auth.participant) return json(403, { error: "Participant authorization required" });
@@ -380,8 +524,15 @@ export async function handler(event) {
       if (s.status !== "active") return json(409, { error: "Scenario is not active" });
       const choice = String(body.choice || "").slice(0, 120);
       const arrived = auth.participant.role === "engine" || s.events.some(e=>e.type==="arrival"&&e.role===auth.participant.role);
-      const waitingForHandoff = auth.participant.role === "command" && !s.events.some(e=>e.type==="handoff-accepted");
+      const leadOverride = [...s.events].reverse().find(e => e.type === "lead-change");
+      const handoffAccepted = s.events.some(e=>e.type==="handoff-accepted");
+      const leaderRole = leadOverride?.role || (handoffAccepted ? "command" : "engine");
+      const waitingForHandoff = auth.participant.role === "command" && leaderRole !== "command" && !handoffAccepted;
       if (waitingForHandoff && arrived) return json(409,{error:"Accept Engine 181’s handoff before directing the incident"});
+      const current = auth.participant.last_action;
+      if (Number(current?.phase) === Number(s.phase) && ["decision", "awaiting-command", "awaiting-ack"].includes(current?.stage)) {
+        return json(409, { error: "Complete the current radio communication loop before selecting another action" });
+      }
       const available = (!arrived && arrivalEvents[auth.participant.role]) ? arrivalEvents[auth.participant.role][2] : (resolveEvent(auth.participant.role, s.phase, s.branch)?.[2] || []);
       if (!available.includes(choice)) return json(400, { error: "Choice is not available for your current role and phase" });
       const lastAction = JSON.stringify({ phase:s.phase, choice, stage:"decision", at:new Date().toISOString() });
