@@ -32,10 +32,11 @@
   ];
   const stageLabels = Object.fromEntries(stages);
   const navItems = [
-    ['Stages', '/career-stages.html'],
-    ['Study', '/study-center.html'],
-    ['Sims', '/fireground-decision-sim.html'],
-    ['Drills', '/focus-drills.html'],
+    ['Training', '/fire-service-training-library.html'],
+    ['Drills', '/fire-service-training-library.html#drills'],
+    ['Scenarios', '/fire-service-training-library.html#scenarios'],
+    ['Skills', '/fire-service-training-library.html#skills'],
+    ['Learning', '/fire-service-training-library.html#learning'],
     ['Tools', '/tools.html'],
     ['My Career', '/my-fire-career.html']
   ];
