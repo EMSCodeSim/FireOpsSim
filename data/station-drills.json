@@ -1,0 +1,4487 @@
+{
+  "version": 1,
+  "drills": [
+    {
+      "id": "station-1-1",
+      "category": "Engine Operations",
+      "title": "Hosebed inventory",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "engine",
+        "hose inventory sheet"
+      ],
+      "goal": "Compare actual hose loads with apparatus inventory and identify missing or mislabeled equipment.",
+      "objectives": [
+        "Compare actual hose loads with apparatus inventory and identify missing or mislabeled equipment",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Compare actual hose loads with apparatus inventory and identify missing or mislabeled equipment",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A spare length is stored in the wrong compartment",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A spare length is stored in the wrong compartment",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A spare length is stored in the wrong compartment"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A spare length is stored in the wrong compartment?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://training.fsri.org/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-1-2",
+      "category": "Engine Operations",
+      "title": "Stretch estimation",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "district building sketch",
+        "measuring tape"
+      ],
+      "goal": "Estimate hose needed for two marked routes and compare with measured distance.",
+      "objectives": [
+        "Estimate hose needed for two marked routes and compare with measured distance",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Estimate hose needed for two marked routes and compare with measured distance",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: The intended entrance is unavailable",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: The intended entrance is unavailable",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "The intended entrance is unavailable"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: The intended entrance is unavailable?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://training.fsri.org/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-1-3",
+      "category": "Engine Operations",
+      "title": "Dry stairwell stretch",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "uncharged hose",
+        "approved stairwell"
+      ],
+      "goal": "Lay an uncharged line to a marked landing without obstructing the designated escape route.",
+      "objectives": [
+        "Lay an uncharged line to a marked landing without obstructing the designated escape route",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Lay an uncharged line to a marked landing without obstructing the designated escape route",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A landing is designated unavailable",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A landing is designated unavailable",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A landing is designated unavailable"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A landing is designated unavailable?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://training.fsri.org/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-1-4",
+      "category": "Engine Operations",
+      "title": "Nozzle inspection",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "depressurized nozzles",
+        "manufacturer manual"
+      ],
+      "goal": "Inspect identification, condition and controls against the manual.",
+      "objectives": [
+        "Inspect identification, condition and controls against the manual",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Inspect identification, condition and controls against the manual",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A nozzle has an unreadable flow marking",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A nozzle has an unreadable flow marking",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A nozzle has an unreadable flow marking"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A nozzle has an unreadable flow marking?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://training.fsri.org/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-1-5",
+      "category": "Engine Operations",
+      "title": "Hose coupling inspection",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "dry hose",
+        "inspection checklist"
+      ],
+      "goal": "Identify damaged threads, seals and coupling defects on training samples.",
+      "objectives": [
+        "Identify damaged threads, seals and coupling defects on training samples",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Identify damaged threads, seals and coupling defects on training samples",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A coupling has a missing gasket",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A coupling has a missing gasket",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A coupling has a missing gasket"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A coupling has a missing gasket?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://training.fsri.org/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-1-6",
+      "category": "Engine Operations",
+      "title": "Standpipe preplan",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "building diagram",
+        "department standpipe kit"
+      ],
+      "goal": "Identify connection locations and information needed before selecting a hose package.",
+      "objectives": [
+        "Identify connection locations and information needed before selecting a hose package",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Identify connection locations and information needed before selecting a hose package",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: The floor connection is inaccessible",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: The floor connection is inaccessible",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "The floor connection is inaccessible"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: The floor connection is inaccessible?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://training.fsri.org/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-1-7",
+      "category": "Engine Operations",
+      "title": "Exposure protection priorities",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "fictional occupancy map",
+        "whiteboard"
+      ],
+      "goal": "Compare threatened exposures and communicate resource priorities.",
+      "objectives": [
+        "Compare threatened exposures and communicate resource priorities",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Compare threatened exposures and communicate resource priorities",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: Wind direction changes",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: Wind direction changes",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "Wind direction changes"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: Wind direction changes?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://training.fsri.org/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-1-8",
+      "category": "Engine Operations",
+      "title": "Overhaul hazard survey",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "cold training room",
+        "hazard cards"
+      ],
+      "goal": "Mark concealed spaces and identify structural and atmospheric uncertainties.",
+      "objectives": [
+        "Mark concealed spaces and identify structural and atmospheric uncertainties",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Mark concealed spaces and identify structural and atmospheric uncertainties",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A ceiling shows simulated sagging",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A ceiling shows simulated sagging",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A ceiling shows simulated sagging"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A ceiling shows simulated sagging?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://training.fsri.org/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-1-9",
+      "category": "Engine Operations",
+      "title": "Foam inventory review",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "product labels",
+        "SDS",
+        "apparatus inventory"
+      ],
+      "goal": "Match stocked products to approved uses and identify disposal requirements.",
+      "objectives": [
+        "Match stocked products to approved uses and identify disposal requirements",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Match stocked products to approved uses and identify disposal requirements",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: An unfamiliar concentrate is found",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: An unfamiliar concentrate is found",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "An unfamiliar concentrate is found"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: An unfamiliar concentrate is found?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://training.fsri.org/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-1-10",
+      "category": "Engine Operations",
+      "title": "Fire attack communications",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "radios",
+        "fictional incident cards"
+      ],
+      "goal": "Exchange concise water readiness, progress and interruption reports.",
+      "objectives": [
+        "Exchange concise water readiness, progress and interruption reports",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Exchange concise water readiness, progress and interruption reports",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A transmission is missed",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A transmission is missed",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A transmission is missed"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A transmission is missed?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://training.fsri.org/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-2-1",
+      "category": "Truck Operations",
+      "title": "Ladder inventory and inspection",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "ground ladders",
+        "manufacturer checklist"
+      ],
+      "goal": "Identify ladder types and inspect accessible components while ladders remain secured.",
+      "objectives": [
+        "Identify ladder types and inspect accessible components while ladders remain secured",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Identify ladder types and inspect accessible components while ladders remain secured",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: An inspection tag is missing",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: An inspection tag is missing",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "An inspection tag is missing"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: An inspection tag is missing?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://training.fsri.org/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-2-2",
+      "category": "Truck Operations",
+      "title": "Ladder reach planning",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "building elevations",
+        "tape measure"
+      ],
+      "goal": "Compare available ladder lengths with marked access objectives on paper.",
+      "objectives": [
+        "Compare available ladder lengths with marked access objectives on paper",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Compare available ladder lengths with marked access objectives on paper",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: The preferred placement area is obstructed",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: The preferred placement area is obstructed",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "The preferred placement area is obstructed"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: The preferred placement area is obstructed?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://training.fsri.org/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-2-3",
+      "category": "Truck Operations",
+      "title": "Window access assessment",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "building photos",
+        "whiteboard"
+      ],
+      "goal": "Identify window access constraints and communicate alternate options.",
+      "objectives": [
+        "Identify window access constraints and communicate alternate options",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Identify window access constraints and communicate alternate options",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: Security bars are visible",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: Security bars are visible",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "Security bars are visible"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: Security bars are visible?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://training.fsri.org/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-2-4",
+      "category": "Truck Operations",
+      "title": "Door construction identification",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "door photos",
+        "sample hardware"
+      ],
+      "goal": "Distinguish door swing, frame and locking clues without forcing anything.",
+      "objectives": [
+        "Distinguish door swing, frame and locking clues without forcing anything",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Distinguish door swing, frame and locking clues without forcing anything",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A photo hides the hinge side",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A photo hides the hinge side",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A photo hides the hinge side"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A photo hides the hinge side?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://training.fsri.org/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-2-5",
+      "category": "Truck Operations",
+      "title": "Hand tool inspection",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "department hand tools",
+        "inspection sheet"
+      ],
+      "goal": "Identify defects and remove simulated defective tools from service.",
+      "objectives": [
+        "Identify defects and remove simulated defective tools from service",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Identify defects and remove simulated defective tools from service",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A handle has a marked crack",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A handle has a marked crack",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A handle has a marked crack"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A handle has a marked crack?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://training.fsri.org/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-2-6",
+      "category": "Truck Operations",
+      "title": "Ventilation opening inventory",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "building plan",
+        "markers"
+      ],
+      "goal": "Identify existing openings and information needed for coordinated ventilation.",
+      "objectives": [
+        "Identify existing openings and information needed for coordinated ventilation",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Identify existing openings and information needed for coordinated ventilation",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A window fails unexpectedly in the scenario",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A window fails unexpectedly in the scenario",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A window fails unexpectedly in the scenario"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A window fails unexpectedly in the scenario?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://training.fsri.org/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-2-7",
+      "category": "Truck Operations",
+      "title": "Roof construction recognition",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "roof diagrams",
+        "district photos"
+      ],
+      "goal": "Compare roof assemblies and identify unknown load or collapse hazards.",
+      "objectives": [
+        "Compare roof assemblies and identify unknown load or collapse hazards",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Compare roof assemblies and identify unknown load or collapse hazards",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A rooftop unit is added",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A rooftop unit is added",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A rooftop unit is added"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A rooftop unit is added?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://training.fsri.org/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-2-8",
+      "category": "Truck Operations",
+      "title": "Thermal imager familiarization",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "thermal imager",
+        "room-temperature objects"
+      ],
+      "goal": "Compare displayed images of safe objects and explain limitations.",
+      "objectives": [
+        "Compare displayed images of safe objects and explain limitations",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Compare displayed images of safe objects and explain limitations",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A reflective surface produces a misleading image",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A reflective surface produces a misleading image",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A reflective surface produces a misleading image"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A reflective surface produces a misleading image?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://training.fsri.org/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-2-9",
+      "category": "Truck Operations",
+      "title": "Secondary search documentation",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "floor plan",
+        "room markers"
+      ],
+      "goal": "Record searched areas and reconcile conflicting room status reports.",
+      "objectives": [
+        "Record searched areas and reconcile conflicting room status reports",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Record searched areas and reconcile conflicting room status reports",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A room is missing from the original plan",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A room is missing from the original plan",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A room is missing from the original plan"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A room is missing from the original plan?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://training.fsri.org/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-2-10",
+      "category": "Truck Operations",
+      "title": "Salvage planning",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "salvage covers",
+        "clean training furniture"
+      ],
+      "goal": "Protect designated property and maintain clear access in a dry room.",
+      "objectives": [
+        "Protect designated property and maintain clear access in a dry room",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Protect designated property and maintain clear access in a dry room",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A second protected area is requested",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A second protected area is requested",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A second protected area is requested"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A second protected area is requested?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://training.fsri.org/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-3-1",
+      "category": "Driver / Operator",
+      "title": "Daily apparatus inspection",
+      "level": [
+        "driver"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "parked apparatus",
+        "local checklist"
+      ],
+      "goal": "Complete a stationary inspection and document simulated defects.",
+      "objectives": [
+        "Complete a stationary inspection and document simulated defects",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Complete a stationary inspection and document simulated defects",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A warning indicator is reported",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A warning indicator is reported",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A warning indicator is reported"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A warning indicator is reported?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.usfa.fema.gov/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-3-2",
+      "category": "Driver / Operator",
+      "title": "Pump panel identification",
+      "level": [
+        "driver"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "parked engine",
+        "manufacturer manual"
+      ],
+      "goal": "Locate controls and explain their functions without operating the pump.",
+      "objectives": [
+        "Locate controls and explain their functions without operating the pump",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Locate controls and explain their functions without operating the pump",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A control label is obscured",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A control label is obscured",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A control label is obscured"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A control label is obscured?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.usfa.fema.gov/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-3-3",
+      "category": "Driver / Operator",
+      "title": "Friction loss worksheet",
+      "level": [
+        "driver"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "department hydraulic charts",
+        "calculator"
+      ],
+      "goal": "Calculate pressure loss for two hypothetical hose layouts using approved coefficients.",
+      "objectives": [
+        "Calculate pressure loss for two hypothetical hose layouts using approved coefficients",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Calculate pressure loss for two hypothetical hose layouts using approved coefficients",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: Hose length changes",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: Hose length changes",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "Hose length changes"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: Hose length changes?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.usfa.fema.gov/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-3-4",
+      "category": "Driver / Operator",
+      "title": "Elevation pressure worksheet",
+      "level": [
+        "driver"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "building diagram",
+        "calculator"
+      ],
+      "goal": "Account for elevation in a hypothetical pump pressure calculation.",
+      "objectives": [
+        "Account for elevation in a hypothetical pump pressure calculation",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Account for elevation in a hypothetical pump pressure calculation",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: The destination floor changes",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: The destination floor changes",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "The destination floor changes"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: The destination floor changes?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.usfa.fema.gov/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-3-5",
+      "category": "Driver / Operator",
+      "title": "Hydrant preplan mapping",
+      "level": [
+        "driver"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "district map",
+        "hydrant records"
+      ],
+      "goal": "Identify candidate water sources and record access limitations.",
+      "objectives": [
+        "Identify candidate water sources and record access limitations",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Identify candidate water sources and record access limitations",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: The nearest hydrant is marked out of service",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: The nearest hydrant is marked out of service",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "The nearest hydrant is marked out of service"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: The nearest hydrant is marked out of service?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.usfa.fema.gov/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-3-6",
+      "category": "Driver / Operator",
+      "title": "Tender shuttle tabletop",
+      "level": [
+        "driver"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "road map",
+        "tank capacities"
+      ],
+      "goal": "Estimate water delivery from hypothetical fill, travel and dump cycles.",
+      "objectives": [
+        "Estimate water delivery from hypothetical fill, travel and dump cycles",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Estimate water delivery from hypothetical fill, travel and dump cycles",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: One tender becomes unavailable",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: One tender becomes unavailable",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "One tender becomes unavailable"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: One tender becomes unavailable?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.usfa.fema.gov/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-3-7",
+      "category": "Driver / Operator",
+      "title": "Relay pumping tabletop",
+      "level": [
+        "driver"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "route map",
+        "hose inventory"
+      ],
+      "goal": "Identify relay planning inputs and communication responsibilities.",
+      "objectives": [
+        "Identify relay planning inputs and communication responsibilities",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Identify relay planning inputs and communication responsibilities",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A relay engine is delayed",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A relay engine is delayed",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A relay engine is delayed"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A relay engine is delayed?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.usfa.fema.gov/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-3-8",
+      "category": "Driver / Operator",
+      "title": "Backing communication rehearsal",
+      "level": [
+        "driver"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "stationary apparatus",
+        "radios"
+      ],
+      "goal": "Rehearse driver and spotter signals without moving the vehicle.",
+      "objectives": [
+        "Rehearse driver and spotter signals without moving the vehicle",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Rehearse driver and spotter signals without moving the vehicle",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: Visual contact is lost in the scenario",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: Visual contact is lost in the scenario",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "Visual contact is lost in the scenario"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: Visual contact is lost in the scenario?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.usfa.fema.gov/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-3-9",
+      "category": "Driver / Operator",
+      "title": "Apparatus clearance survey",
+      "level": [
+        "driver"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "parked apparatus dimensions",
+        "route photos"
+      ],
+      "goal": "Compare clearance requirements with marked district obstacles.",
+      "objectives": [
+        "Compare clearance requirements with marked district obstacles",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Compare clearance requirements with marked district obstacles",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A low overhead obstruction is added",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A low overhead obstruction is added",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A low overhead obstruction is added"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A low overhead obstruction is added?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.usfa.fema.gov/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-3-10",
+      "category": "Driver / Operator",
+      "title": "Pump fault recognition tabletop",
+      "level": [
+        "driver"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "manufacturer manual",
+        "fault cards"
+      ],
+      "goal": "Locate approved troubleshooting guidance for hypothetical gauge readings.",
+      "objectives": [
+        "Locate approved troubleshooting guidance for hypothetical gauge readings",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Locate approved troubleshooting guidance for hypothetical gauge readings",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A second conflicting reading appears",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A second conflicting reading appears",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A second conflicting reading appears"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A second conflicting reading appears?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.usfa.fema.gov/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-4-1",
+      "category": "Firefighter Survival",
+      "title": "SCBA cylinder inventory",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "SCBA cylinders",
+        "inspection records"
+      ],
+      "goal": "Check markings, service status and inventory against local requirements without opening valves.",
+      "objectives": [
+        "Check markings, service status and inventory against local requirements without opening valves",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Check markings, service status and inventory against local requirements without opening valves",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A cylinder record is incomplete",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A cylinder record is incomplete",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A cylinder record is incomplete"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A cylinder record is incomplete?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.cdc.gov/niosh/firefighters/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-4-2",
+      "category": "Firefighter Survival",
+      "title": "Air consumption planning",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "fictional cylinder readings",
+        "worksheet"
+      ],
+      "goal": "Compare hypothetical air use and identify local turnaround requirements.",
+      "objectives": [
+        "Compare hypothetical air use and identify local turnaround requirements",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Compare hypothetical air use and identify local turnaround requirements",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: Workload increases",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: Workload increases",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "Workload increases"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: Workload increases?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.cdc.gov/niosh/firefighters/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-4-3",
+      "category": "Firefighter Survival",
+      "title": "PASS device familiarization",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "SCBA manual",
+        "approved training unit"
+      ],
+      "goal": "Identify alarm meanings and demonstrate approved checks under instructor control.",
+      "objectives": [
+        "Identify alarm meanings and demonstrate approved checks under instructor control",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Identify alarm meanings and demonstrate approved checks under instructor control",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: An alarm is reported as intermittent",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: An alarm is reported as intermittent",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "An alarm is reported as intermittent"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: An alarm is reported as intermittent?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.cdc.gov/niosh/firefighters/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-4-4",
+      "category": "Firefighter Survival",
+      "title": "Emergency contact information",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "department emergency forms",
+        "radios"
+      ],
+      "goal": "Locate emergency reporting and accountability procedures.",
+      "objectives": [
+        "Locate emergency reporting and accountability procedures",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Locate emergency reporting and accountability procedures",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: The usual contact is unavailable",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: The usual contact is unavailable",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "The usual contact is unavailable"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: The usual contact is unavailable?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.cdc.gov/niosh/firefighters/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-4-5",
+      "category": "Firefighter Survival",
+      "title": "Crew integrity tabletop",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "floor plan",
+        "crew markers"
+      ],
+      "goal": "Track crew locations and identify missing accountability information.",
+      "objectives": [
+        "Track crew locations and identify missing accountability information",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Track crew locations and identify missing accountability information",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A member is reported separated",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A member is reported separated",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A member is reported separated"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A member is reported separated?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.cdc.gov/niosh/firefighters/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-4-6",
+      "category": "Firefighter Survival",
+      "title": "Emergency exit recognition",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "approved training room",
+        "exit map"
+      ],
+      "goal": "Identify and walk unobstructed exits in normal visibility.",
+      "objectives": [
+        "Identify and walk unobstructed exits in normal visibility",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Identify and walk unobstructed exits in normal visibility",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: One route is marked unavailable",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: One route is marked unavailable",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "One route is marked unavailable"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: One route is marked unavailable?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.cdc.gov/niosh/firefighters/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-4-7",
+      "category": "Firefighter Survival",
+      "title": "Rehab recognition",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "fictional symptom cards",
+        "rehab policy"
+      ],
+      "goal": "Recognize when a simulated member needs assessment or removal from training.",
+      "objectives": [
+        "Recognize when a simulated member needs assessment or removal from training",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Recognize when a simulated member needs assessment or removal from training",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A member reports dizziness",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A member reports dizziness",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A member reports dizziness"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A member reports dizziness?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.cdc.gov/niosh/firefighters/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-4-8",
+      "category": "Firefighter Survival",
+      "title": "Radio emergency button review",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "training radio",
+        "radio manual"
+      ],
+      "goal": "Explain emergency activation and reset using a non-dispatch training channel.",
+      "objectives": [
+        "Explain emergency activation and reset using a non-dispatch training channel",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Explain emergency activation and reset using a non-dispatch training channel",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A radio model differs from the usual unit",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A radio model differs from the usual unit",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A radio model differs from the usual unit"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A radio model differs from the usual unit?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.cdc.gov/niosh/firefighters/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-4-9",
+      "category": "Firefighter Survival",
+      "title": "Accountability board reconciliation",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "accountability board",
+        "crew cards"
+      ],
+      "goal": "Reconcile roster and assignment changes and flag discrepancies.",
+      "objectives": [
+        "Reconcile roster and assignment changes and flag discrepancies",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Reconcile roster and assignment changes and flag discrepancies",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A crew changes assignment without updating the board",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A crew changes assignment without updating the board",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A crew changes assignment without updating the board"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A crew changes assignment without updating the board?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.cdc.gov/niosh/firefighters/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-4-10",
+      "category": "Firefighter Survival",
+      "title": "Near-miss discussion",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "anonymized fictional incident summary",
+        "whiteboard"
+      ],
+      "goal": "Identify contributing conditions and propose a measurable prevention action.",
+      "objectives": [
+        "Identify contributing conditions and propose a measurable prevention action",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Identify contributing conditions and propose a measurable prevention action",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A second witness provides conflicting information",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A second witness provides conflicting information",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A second witness provides conflicting information"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A second witness provides conflicting information?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.cdc.gov/niosh/firefighters/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-5-1",
+      "category": "Technical Rescue",
+      "title": "Vehicle hazard survey",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "vehicle diagrams",
+        "rescue reference"
+      ],
+      "goal": "Identify potential energy sources and information needed before rescue operations.",
+      "objectives": [
+        "Identify potential energy sources and information needed before rescue operations",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Identify potential energy sources and information needed before rescue operations",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: An alternative-fuel badge is discovered",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: An alternative-fuel badge is discovered",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "An alternative-fuel badge is discovered"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: An alternative-fuel badge is discovered?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.usfa.fema.gov/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-5-2",
+      "category": "Technical Rescue",
+      "title": "Cribbing inventory",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "unloaded cribbing",
+        "inspection sheet"
+      ],
+      "goal": "Inspect cribbing condition and identify compatible equipment without lifting loads.",
+      "objectives": [
+        "Inspect cribbing condition and identify compatible equipment without lifting loads",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Inspect cribbing condition and identify compatible equipment without lifting loads",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A block is damaged",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A block is damaged",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A block is damaged"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A block is damaged?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.usfa.fema.gov/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-5-3",
+      "category": "Technical Rescue",
+      "title": "Extrication access planning",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "fictional crash diagram",
+        "patient card"
+      ],
+      "goal": "Compare access options and coordinate priorities with EMS.",
+      "objectives": [
+        "Compare access options and coordinate priorities with EMS",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Compare access options and coordinate priorities with EMS",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: Patient condition changes",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: Patient condition changes",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "Patient condition changes"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: Patient condition changes?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.usfa.fema.gov/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-5-4",
+      "category": "Technical Rescue",
+      "title": "Rope equipment inspection",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "unloaded rope and hardware",
+        "manufacturer guidance"
+      ],
+      "goal": "Identify inspection and retirement criteria without loading equipment.",
+      "objectives": [
+        "Identify inspection and retirement criteria without loading equipment",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Identify inspection and retirement criteria without loading equipment",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A rope history is unknown",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A rope history is unknown",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A rope history is unknown"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A rope history is unknown?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.usfa.fema.gov/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-5-5",
+      "category": "Technical Rescue",
+      "title": "Knot recognition",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "unloaded practice rope",
+        "local skill sheet"
+      ],
+      "goal": "Identify department-approved knots and explain intended applications without life-safety loading.",
+      "objectives": [
+        "Identify department-approved knots and explain intended applications without life-safety loading",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Identify department-approved knots and explain intended applications without life-safety loading",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A knot is dressed incorrectly",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A knot is dressed incorrectly",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A knot is dressed incorrectly"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A knot is dressed incorrectly?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.usfa.fema.gov/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-5-6",
+      "category": "Technical Rescue",
+      "title": "Mechanical advantage worksheet",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "pulley diagrams",
+        "calculator"
+      ],
+      "goal": "Calculate ideal mechanical advantage and discuss friction limitations on paper.",
+      "objectives": [
+        "Calculate ideal mechanical advantage and discuss friction limitations on paper",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Calculate ideal mechanical advantage and discuss friction limitations on paper",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A redirect is added",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A redirect is added",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A redirect is added"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A redirect is added?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.usfa.fema.gov/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-5-7",
+      "category": "Technical Rescue",
+      "title": "Confined space recognition",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "facility diagram",
+        "permit examples"
+      ],
+      "goal": "Identify potential confined spaces and specialist resource needs without entry.",
+      "objectives": [
+        "Identify potential confined spaces and specialist resource needs without entry",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Identify potential confined spaces and specialist resource needs without entry",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A worker is reported missing",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A worker is reported missing",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A worker is reported missing"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A worker is reported missing?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.usfa.fema.gov/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-5-8",
+      "category": "Technical Rescue",
+      "title": "Trench hazard recognition",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "excavation photos",
+        "hazard cards"
+      ],
+      "goal": "Identify collapse and secondary hazard indicators without approaching an excavation.",
+      "objectives": [
+        "Identify collapse and secondary hazard indicators without approaching an excavation",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Identify collapse and secondary hazard indicators without approaching an excavation",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: Water accumulation is reported",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: Water accumulation is reported",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "Water accumulation is reported"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: Water accumulation is reported?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.usfa.fema.gov/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-5-9",
+      "category": "Technical Rescue",
+      "title": "Water rescue size-up",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "shoreline map",
+        "weather card"
+      ],
+      "goal": "Identify access, downstream hazards and qualified rescue resources without entering water.",
+      "objectives": [
+        "Identify access, downstream hazards and qualified rescue resources without entering water",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Identify access, downstream hazards and qualified rescue resources without entering water",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: The reported victim location changes",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: The reported victim location changes",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "The reported victim location changes"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: The reported victim location changes?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.usfa.fema.gov/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-5-10",
+      "category": "Technical Rescue",
+      "title": "Patient movement planning",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "manikin",
+        "empty stretcher",
+        "local policy"
+      ],
+      "goal": "Plan a controlled movement route and rehearse communication without lifting a person.",
+      "objectives": [
+        "Plan a controlled movement route and rehearse communication without lifting a person",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Plan a controlled movement route and rehearse communication without lifting a person",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: The planned route is blocked",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: The planned route is blocked",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "The planned route is blocked"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: The planned route is blocked?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.usfa.fema.gov/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-6-1",
+      "category": "Company Officer",
+      "title": "Shift training needs review",
+      "level": [
+        "advanced"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "fictional crew competency records",
+        "calendar"
+      ],
+      "goal": "Select training priorities based on documented gaps and available time.",
+      "objectives": [
+        "Select training priorities based on documented gaps and available time",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Select training priorities based on documented gaps and available time",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A required qualification expires soon",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A required qualification expires soon",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A required qualification expires soon"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A required qualification expires soon?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.usfa.fema.gov/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-6-2",
+      "category": "Company Officer",
+      "title": "Training safety briefing",
+      "level": [
+        "advanced"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "sample drill plan",
+        "safety checklist"
+      ],
+      "goal": "Deliver a briefing with boundaries, stop signal and emergency plan.",
+      "objectives": [
+        "Deliver a briefing with boundaries, stop signal and emergency plan",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Deliver a briefing with boundaries, stop signal and emergency plan",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A participant reports an equipment concern",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A participant reports an equipment concern",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A participant reports an equipment concern"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A participant reports an equipment concern?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.usfa.fema.gov/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-6-3",
+      "category": "Company Officer",
+      "title": "Transfer of command tabletop",
+      "level": [
+        "advanced"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "incident worksheet",
+        "radio"
+      ],
+      "goal": "Summarize conditions, assignments, hazards and outstanding needs.",
+      "objectives": [
+        "Summarize conditions, assignments, hazards and outstanding needs",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Summarize conditions, assignments, hazards and outstanding needs",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A new company arrives during transfer",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A new company arrives during transfer",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A new company arrives during transfer"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A new company arrives during transfer?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.usfa.fema.gov/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-6-4",
+      "category": "Company Officer",
+      "title": "Resource request exercise",
+      "level": [
+        "advanced"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "fictional dispatch cards",
+        "whiteboard"
+      ],
+      "goal": "Identify capability gaps and communicate a justified resource request.",
+      "objectives": [
+        "Identify capability gaps and communicate a justified resource request",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Identify capability gaps and communicate a justified resource request",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: An expected unit is delayed",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: An expected unit is delayed",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "An expected unit is delayed"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: An expected unit is delayed?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.usfa.fema.gov/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-6-5",
+      "category": "Company Officer",
+      "title": "Progress report practice",
+      "level": [
+        "advanced"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "incident timeline cards",
+        "radio"
+      ],
+      "goal": "Deliver concise reports distinguishing completed work and unresolved hazards.",
+      "objectives": [
+        "Deliver concise reports distinguishing completed work and unresolved hazards",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Deliver concise reports distinguishing completed work and unresolved hazards",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A report conflicts with another crew",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A report conflicts with another crew",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A report conflicts with another crew"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A report conflicts with another crew?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.usfa.fema.gov/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-6-6",
+      "category": "Company Officer",
+      "title": "Preincident plan review",
+      "level": [
+        "advanced"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "fictional commercial floor plan",
+        "checklist"
+      ],
+      "goal": "Identify missing access, occupancy and water supply information.",
+      "objectives": [
+        "Identify missing access, occupancy and water supply information",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Identify missing access, occupancy and water supply information",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: Occupancy changes after hours",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: Occupancy changes after hours",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "Occupancy changes after hours"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: Occupancy changes after hours?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.usfa.fema.gov/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-6-7",
+      "category": "Company Officer",
+      "title": "Coaching a skill deficiency",
+      "level": [
+        "advanced"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "fictional evaluation sheet",
+        "role cards"
+      ],
+      "goal": "Give specific feedback and define a repeatable improvement objective.",
+      "objectives": [
+        "Give specific feedback and define a repeatable improvement objective",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Give specific feedback and define a repeatable improvement objective",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: The member disagrees with the evaluation",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: The member disagrees with the evaluation",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "The member disagrees with the evaluation"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: The member disagrees with the evaluation?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.usfa.fema.gov/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-6-8",
+      "category": "Company Officer",
+      "title": "After-action facilitation",
+      "level": [
+        "advanced"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "fictional incident summary",
+        "whiteboard"
+      ],
+      "goal": "Separate facts from opinions and assign a follow-up action.",
+      "objectives": [
+        "Separate facts from opinions and assign a follow-up action",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Separate facts from opinions and assign a follow-up action",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: Participants recall different sequences",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: Participants recall different sequences",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "Participants recall different sequences"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: Participants recall different sequences?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.usfa.fema.gov/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-6-9",
+      "category": "Company Officer",
+      "title": "Multi-company staging tabletop",
+      "level": [
+        "advanced"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "district map",
+        "apparatus cards"
+      ],
+      "goal": "Organize hypothetical staging and maintain clear access.",
+      "objectives": [
+        "Organize hypothetical staging and maintain clear access",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Organize hypothetical staging and maintain clear access",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: An additional mutual-aid unit arrives",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: An additional mutual-aid unit arrives",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "An additional mutual-aid unit arrives"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: An additional mutual-aid unit arrives?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.usfa.fema.gov/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-6-10",
+      "category": "Company Officer",
+      "title": "Training documentation audit",
+      "level": [
+        "advanced"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "fictional roster",
+        "drill sheet"
+      ],
+      "goal": "Check attendance, objectives, evaluation and instructor documentation for gaps.",
+      "objectives": [
+        "Check attendance, objectives, evaluation and instructor documentation for gaps",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Check attendance, objectives, evaluation and instructor documentation for gaps",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A participant has no recorded result",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A participant has no recorded result",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A participant has no recorded result"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A participant has no recorded result?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.usfa.fema.gov/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-7-1",
+      "category": "Wildland / HazMat",
+      "title": "Fire weather interpretation",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "sample weather forecast",
+        "map"
+      ],
+      "goal": "Identify forecast changes that require reassessment.",
+      "objectives": [
+        "Identify forecast changes that require reassessment",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Identify forecast changes that require reassessment",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A wind shift is forecast",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A wind shift is forecast",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A wind shift is forecast"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A wind shift is forecast?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.nwcg.gov/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-7-2",
+      "category": "Wildland / HazMat",
+      "title": "LCES tabletop",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "fictional terrain map",
+        "markers"
+      ],
+      "goal": "Identify proposed lookouts, communications, escape routes and safety zones for instructor review.",
+      "objectives": [
+        "Identify proposed lookouts, communications, escape routes and safety zones for instructor review",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Identify proposed lookouts, communications, escape routes and safety zones for instructor review",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A route is no longer available",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A route is no longer available",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A route is no longer available"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A route is no longer available?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.nwcg.gov/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-7-3",
+      "category": "Wildland / HazMat",
+      "title": "WUI access survey",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "district road map",
+        "structure photos"
+      ],
+      "goal": "Identify access limitations and evacuation conflicts.",
+      "objectives": [
+        "Identify access limitations and evacuation conflicts",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Identify access limitations and evacuation conflicts",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A road becomes congested",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A road becomes congested",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A road becomes congested"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A road becomes congested?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.nwcg.gov/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-7-4",
+      "category": "Wildland / HazMat",
+      "title": "Wildland equipment inventory",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "unpowered tools",
+        "inspection checklist"
+      ],
+      "goal": "Identify missing or damaged equipment without operating powered tools.",
+      "objectives": [
+        "Identify missing or damaged equipment without operating powered tools",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Identify missing or damaged equipment without operating powered tools",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A tool guard is missing",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A tool guard is missing",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A tool guard is missing"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A tool guard is missing?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.nwcg.gov/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-7-5",
+      "category": "Wildland / HazMat",
+      "title": "Wildland radio plan",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "fictional channel plan",
+        "training radios"
+      ],
+      "goal": "Rehearse assignment and emergency communication on approved training channels.",
+      "objectives": [
+        "Rehearse assignment and emergency communication on approved training channels",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Rehearse assignment and emergency communication on approved training channels",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A channel becomes unavailable",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A channel becomes unavailable",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A channel becomes unavailable"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A channel becomes unavailable?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.nwcg.gov/",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-7-6",
+      "category": "Wildland / HazMat",
+      "title": "ERG lookup practice",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "current ERG",
+        "fictional placards"
+      ],
+      "goal": "Locate the applicable guide and explain information limitations.",
+      "objectives": [
+        "Locate the applicable guide and explain information limitations",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Locate the applicable guide and explain information limitations",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A placard is partially obscured",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A placard is partially obscured",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A placard is partially obscured"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A placard is partially obscured?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.phmsa.dot.gov/hazmat/erg/emergency-response-guidebook-erg",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-7-7",
+      "category": "Wildland / HazMat",
+      "title": "SDS information retrieval",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "sample safety data sheets",
+        "worksheet"
+      ],
+      "goal": "Locate hazard, protective and emergency information for a fictional product.",
+      "objectives": [
+        "Locate hazard, protective and emergency information for a fictional product",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Locate hazard, protective and emergency information for a fictional product",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: Two products have similar names",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: Two products have similar names",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "Two products have similar names"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: Two products have similar names?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.phmsa.dot.gov/hazmat/erg/emergency-response-guidebook-erg",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-7-8",
+      "category": "Wildland / HazMat",
+      "title": "Gas monitor familiarization",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "monitor manual",
+        "training unit"
+      ],
+      "goal": "Identify sensor types, display meanings and required checks without exposure to test hazards.",
+      "objectives": [
+        "Identify sensor types, display meanings and required checks without exposure to test hazards",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Identify sensor types, display meanings and required checks without exposure to test hazards",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: A sensor fault is displayed",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: A sensor fault is displayed",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "A sensor fault is displayed"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: A sensor fault is displayed?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.phmsa.dot.gov/hazmat/erg/emergency-response-guidebook-erg",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-7-9",
+      "category": "Wildland / HazMat",
+      "title": "Decontamination layout tabletop",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "site map",
+        "markers"
+      ],
+      "goal": "Separate clean and contaminated areas and identify access control needs.",
+      "objectives": [
+        "Separate clean and contaminated areas and identify access control needs",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Separate clean and contaminated areas and identify access control needs",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: Wind direction changes",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: Wind direction changes",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "Wind direction changes"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: Wind direction changes?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.phmsa.dot.gov/hazmat/erg/emergency-response-guidebook-erg",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    },
+    {
+      "id": "station-7-10",
+      "category": "Wildland / HazMat",
+      "title": "HazMat notification exercise",
+      "level": [
+        "company"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4
+      ],
+      "equipment": [
+        "fictional dispatch card",
+        "local contact plan"
+      ],
+      "goal": "Communicate known hazards and request qualified resources without approaching the release.",
+      "objectives": [
+        "Communicate known hazards and request qualified resources without approaching the release",
+        "Explain the applicable local procedure or reference",
+        "Recognize and communicate the changed condition"
+      ],
+      "setup": [
+        "Instructor verifies local procedure and equipment suitability",
+        "Prepare the listed materials and a clearly bounded training area",
+        "Use dry, stationary, unloaded or tabletop conditions; no live fire, hazardous exposure, vehicle movement or life-safety loading"
+      ],
+      "evolution": [
+        "Communicate known hazards and request qualified resources without approaching the release",
+        "Have a second member independently check the result against the local reference",
+        "Present the scenario change: The substance identity remains unknown",
+        "Repeat the affected decision or task and record the revised result"
+      ],
+      "performance": [
+        "Completes the stated task accurately against the approved reference",
+        "Identifies the specific changed condition: The substance identity remains unknown",
+        "Explains the correction and documents unresolved issues"
+      ],
+      "criticalErrors": [
+        "Continues after an unsafe condition or instructor stop",
+        "Uses equipment outside approved training conditions",
+        "Treats an unverified assumption as a confirmed fact"
+      ],
+      "injects": [
+        "The substance identity remains unknown"
+      ],
+      "remediation": "Instructor demonstrates the missed portion using the local reference; member repeats it under controlled conditions before progressing.",
+      "advanced": "Repeat with a different apparatus, diagram or equipment configuration and have a second crew independently review the result.",
+      "aar": [
+        "What did the task reveal about our readiness?",
+        "How did this change affect the result: The substance identity remains unknown?",
+        "What specific correction or follow-up should be documented?"
+      ],
+      "outcome": "Member completes the stated task and identifies a defensible response to the scenario change.",
+      "sources": [
+        "https://www.phmsa.dot.gov/hazmat/erg/emergency-response-guidebook-erg",
+        "Local SOP/SOG and applicable manufacturer guidance; instructor validation required"
+      ]
+    }
+  ]
+}
