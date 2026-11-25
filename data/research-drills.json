@@ -1,0 +1,695 @@
+{
+  "version": 1,
+  "drills": [
+    {
+      "id": "research-water-mapping",
+      "category": "Fire Attack",
+      "title": "Water Mapping Observation",
+      "level": [
+        "new",
+        "company",
+        "advanced"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "equipment": [
+        "Printed fictional scene or diagram",
+        "Department SOP/SOG",
+        "Research reference",
+        "Whiteboard"
+      ],
+      "goal": "Compare water coverage using FSRI demonstration videos.",
+      "objectives": [
+        "Compare water coverage using FSRI demonstration videos.",
+        "Communicate observations separately from assumptions",
+        "Identify a department-approved decision and reassessment trigger"
+      ],
+      "setup": [
+        "Instructor reviews linked research and local procedures",
+        "Prepare a fictional diagram or photo and assign officer, crew and observer roles",
+        "Tabletop only; no live fire, energized equipment or hazardous materials"
+      ],
+      "evolution": [
+        "Mark wetted and missed surfaces on a room diagram.",
+        "Each participant states an observation and a missing fact",
+        "Officer explains a proposed action within local procedures and identifies safety limits",
+        "Instructor presents the inject; crew revises its plan and communicates the change"
+      ],
+      "performance": [
+        "Completes topic-specific observation task",
+        "Separates confirmed information from assumptions",
+        "Identifies relevant safety limits and communicates a reassessment trigger"
+      ],
+      "criticalErrors": [
+        "Treating an assumption as a verified condition",
+        "Proposing action outside local procedures or qualifications",
+        "Attempting a hazardous practical evolution from this tabletop"
+      ],
+      "injects": [
+        "An obstruction changes coverage."
+      ],
+      "remediation": "Revisit the linked research with the instructor, identify the missed cue on the diagram and repeat with a different scene.",
+      "advanced": "Repeat with incomplete information and require a concise radio update explaining the revised priorities.",
+      "aar": [
+        "Which observation mattered most for this topic?",
+        "What remained unknown?",
+        "How did the inject change your plan?"
+      ],
+      "outcome": "Crew explains the topic-specific hazard or concept and communicates a defensible, locally approved plan.",
+      "sources": [
+        "https://training.fsri.org/course/80/water-mapping-in-residential-structures",
+        "Department SOP/SOG; instructor review required"
+      ]
+    },
+    {
+      "id": "research-basement-sizeup",
+      "category": "Building Construction",
+      "title": "Below-Grade Fire Recognition",
+      "level": [
+        "new",
+        "company",
+        "advanced"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "equipment": [
+        "Printed fictional scene or diagram",
+        "Department SOP/SOG",
+        "Research reference",
+        "Whiteboard"
+      ],
+      "goal": "Identify below-grade access and floor stability concerns from a building sketch.",
+      "objectives": [
+        "Identify below-grade access and floor stability concerns from a building sketch.",
+        "Communicate observations separately from assumptions",
+        "Identify a department-approved decision and reassessment trigger"
+      ],
+      "setup": [
+        "Instructor reviews linked research and local procedures",
+        "Prepare a fictional diagram or photo and assign officer, crew and observer roles",
+        "Tabletop only; no live fire, energized equipment or hazardous materials"
+      ],
+      "evolution": [
+        "Mark possible access points and areas of uncertain structural integrity.",
+        "Each participant states an observation and a missing fact",
+        "Officer explains a proposed action within local procedures and identifies safety limits",
+        "Instructor presents the inject; crew revises its plan and communicates the change"
+      ],
+      "performance": [
+        "Completes topic-specific observation task",
+        "Separates confirmed information from assumptions",
+        "Identifies relevant safety limits and communicates a reassessment trigger"
+      ],
+      "criticalErrors": [
+        "Treating an assumption as a verified condition",
+        "Proposing action outside local procedures or qualifications",
+        "Attempting a hazardous practical evolution from this tabletop"
+      ],
+      "injects": [
+        "A rear walkout is discovered."
+      ],
+      "remediation": "Revisit the linked research with the instructor, identify the missed cue on the diagram and repeat with a different scene.",
+      "advanced": "Repeat with incomplete information and require a concise radio update explaining the revised priorities.",
+      "aar": [
+        "Which observation mattered most for this topic?",
+        "What remained unknown?",
+        "How did the inject change your plan?"
+      ],
+      "outcome": "Crew explains the topic-specific hazard or concept and communicates a defensible, locally approved plan.",
+      "sources": [
+        "https://fsri.org/research-update/new-report-understanding-and-fighting-basement-fires",
+        "Department SOP/SOG; instructor review required"
+      ]
+    },
+    {
+      "id": "research-attic-sizeup",
+      "category": "Building Construction",
+      "title": "Attic Fire Decision Tabletop",
+      "level": [
+        "new",
+        "company",
+        "advanced"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "equipment": [
+        "Printed fictional scene or diagram",
+        "Department SOP/SOG",
+        "Research reference",
+        "Whiteboard"
+      ],
+      "goal": "Identify concealed fire extension and roof construction uncertainties.",
+      "objectives": [
+        "Identify concealed fire extension and roof construction uncertainties.",
+        "Communicate observations separately from assumptions",
+        "Identify a department-approved decision and reassessment trigger"
+      ],
+      "setup": [
+        "Instructor reviews linked research and local procedures",
+        "Prepare a fictional diagram or photo and assign officer, crew and observer roles",
+        "Tabletop only; no live fire, energized equipment or hazardous materials"
+      ],
+      "evolution": [
+        "Compare exterior observations with a cutaway attic diagram.",
+        "Each participant states an observation and a missing fact",
+        "Officer explains a proposed action within local procedures and identifies safety limits",
+        "Instructor presents the inject; crew revises its plan and communicates the change"
+      ],
+      "performance": [
+        "Completes topic-specific observation task",
+        "Separates confirmed information from assumptions",
+        "Identifies relevant safety limits and communicates a reassessment trigger"
+      ],
+      "criticalErrors": [
+        "Treating an assumption as a verified condition",
+        "Proposing action outside local procedures or qualifications",
+        "Attempting a hazardous practical evolution from this tabletop"
+      ],
+      "injects": [
+        "Smoke appears at a second roof section."
+      ],
+      "remediation": "Revisit the linked research with the instructor, identify the missed cue on the diagram and repeat with a different scene.",
+      "advanced": "Repeat with incomplete information and require a concise radio update explaining the revised priorities.",
+      "aar": [
+        "Which observation mattered most for this topic?",
+        "What remained unknown?",
+        "How did the inject change your plan?"
+      ],
+      "outcome": "Crew explains the topic-specific hazard or concept and communicates a defensible, locally approved plan.",
+      "sources": [
+        "https://training.fsri.org/resources/238/tactical-consideration-get-water-in-the-eaves-for-attic-fires",
+        "Department SOP/SOG; instructor review required"
+      ]
+    },
+    {
+      "id": "research-stream-air",
+      "category": "Fire Attack",
+      "title": "Hose Stream Air Movement",
+      "level": [
+        "new",
+        "company",
+        "advanced"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "equipment": [
+        "Printed fictional scene or diagram",
+        "Department SOP/SOG",
+        "Research reference",
+        "Whiteboard"
+      ],
+      "goal": "Explain how hose streams can influence air movement using demonstration footage.",
+      "objectives": [
+        "Explain how hose streams can influence air movement using demonstration footage.",
+        "Communicate observations separately from assumptions",
+        "Identify a department-approved decision and reassessment trigger"
+      ],
+      "setup": [
+        "Instructor reviews linked research and local procedures",
+        "Prepare a fictional diagram or photo and assign officer, crew and observer roles",
+        "Tabletop only; no live fire, energized equipment or hazardous materials"
+      ],
+      "evolution": [
+        "Record observed airflow changes without assuming they predict every building.",
+        "Each participant states an observation and a missing fact",
+        "Officer explains a proposed action within local procedures and identifies safety limits",
+        "Instructor presents the inject; crew revises its plan and communicates the change"
+      ],
+      "performance": [
+        "Completes topic-specific observation task",
+        "Separates confirmed information from assumptions",
+        "Identifies relevant safety limits and communicates a reassessment trigger"
+      ],
+      "criticalErrors": [
+        "Treating an assumption as a verified condition",
+        "Proposing action outside local procedures or qualifications",
+        "Attempting a hazardous practical evolution from this tabletop"
+      ],
+      "injects": [
+        "An opening is added to the diagram."
+      ],
+      "remediation": "Revisit the linked research with the instructor, identify the missed cue on the diagram and repeat with a different scene.",
+      "advanced": "Repeat with incomplete information and require a concise radio update explaining the revised priorities.",
+      "aar": [
+        "Which observation mattered most for this topic?",
+        "What remained unknown?",
+        "How did the inject change your plan?"
+      ],
+      "outcome": "Crew explains the topic-specific hazard or concept and communicates a defensible, locally approved plan.",
+      "sources": [
+        "https://training.fsri.org/resources/folder/3/hose-stream-mechanics-hands-on-training-toolkit",
+        "Department SOP/SOG; instructor review required"
+      ]
+    },
+    {
+      "id": "research-search-coordination",
+      "category": "Search & Rescue",
+      "title": "Search and Suppression Coordination",
+      "level": [
+        "new",
+        "company",
+        "advanced"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "equipment": [
+        "Printed fictional scene or diagram",
+        "Department SOP/SOG",
+        "Research reference",
+        "Whiteboard"
+      ],
+      "goal": "Practice communicating search progress and suppression status on a tabletop.",
+      "objectives": [
+        "Practice communicating search progress and suppression status on a tabletop.",
+        "Communicate observations separately from assumptions",
+        "Identify a department-approved decision and reassessment trigger"
+      ],
+      "setup": [
+        "Instructor reviews linked research and local procedures",
+        "Prepare a fictional diagram or photo and assign officer, crew and observer roles",
+        "Tabletop only; no live fire, energized equipment or hazardous materials"
+      ],
+      "evolution": [
+        "Mark occupied rooms and identify information needed from other crews.",
+        "Each participant states an observation and a missing fact",
+        "Officer explains a proposed action within local procedures and identifies safety limits",
+        "Instructor presents the inject; crew revises its plan and communicates the change"
+      ],
+      "performance": [
+        "Completes topic-specific observation task",
+        "Separates confirmed information from assumptions",
+        "Identifies relevant safety limits and communicates a reassessment trigger"
+      ],
+      "criticalErrors": [
+        "Treating an assumption as a verified condition",
+        "Proposing action outside local procedures or qualifications",
+        "Attempting a hazardous practical evolution from this tabletop"
+      ],
+      "injects": [
+        "Suppression progress is delayed."
+      ],
+      "remediation": "Revisit the linked research with the instructor, identify the missed cue on the diagram and repeat with a different scene.",
+      "advanced": "Repeat with incomplete information and require a concise radio update explaining the revised priorities.",
+      "aar": [
+        "Which observation mattered most for this topic?",
+        "What remained unknown?",
+        "How did the inject change your plan?"
+      ],
+      "outcome": "Crew explains the topic-specific hazard or concept and communicates a defensible, locally approved plan.",
+      "sources": [
+        "https://fsri.org/research-update/updated-firefighting-search-rescue-training-new-research-drives-strategies",
+        "Department SOP/SOG; instructor review required"
+      ]
+    },
+    {
+      "id": "research-engineered-floor",
+      "category": "Building Construction",
+      "title": "Engineered Floor Hazard Recognition",
+      "level": [
+        "new",
+        "company",
+        "advanced"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "equipment": [
+        "Printed fictional scene or diagram",
+        "Department SOP/SOG",
+        "Research reference",
+        "Whiteboard"
+      ],
+      "goal": "Recognize lightweight floor assemblies and limitations of visual assessment.",
+      "objectives": [
+        "Recognize lightweight floor assemblies and limitations of visual assessment.",
+        "Communicate observations separately from assumptions",
+        "Identify a department-approved decision and reassessment trigger"
+      ],
+      "setup": [
+        "Instructor reviews linked research and local procedures",
+        "Prepare a fictional diagram or photo and assign officer, crew and observer roles",
+        "Tabletop only; no live fire, energized equipment or hazardous materials"
+      ],
+      "evolution": [
+        "Compare photographs of conventional joists and engineered assemblies.",
+        "Each participant states an observation and a missing fact",
+        "Officer explains a proposed action within local procedures and identifies safety limits",
+        "Instructor presents the inject; crew revises its plan and communicates the change"
+      ],
+      "performance": [
+        "Completes topic-specific observation task",
+        "Separates confirmed information from assumptions",
+        "Identifies relevant safety limits and communicates a reassessment trigger"
+      ],
+      "criticalErrors": [
+        "Treating an assumption as a verified condition",
+        "Proposing action outside local procedures or qualifications",
+        "Attempting a hazardous practical evolution from this tabletop"
+      ],
+      "injects": [
+        "Fire is reported below an apparently intact floor."
+      ],
+      "remediation": "Revisit the linked research with the instructor, identify the missed cue on the diagram and repeat with a different scene.",
+      "advanced": "Repeat with incomplete information and require a concise radio update explaining the revised priorities.",
+      "aar": [
+        "Which observation mattered most for this topic?",
+        "What remained unknown?",
+        "How did the inject change your plan?"
+      ],
+      "outcome": "Crew explains the topic-specific hazard or concept and communicates a defensible, locally approved plan.",
+      "sources": [
+        "https://training.fsri.org/faq",
+        "Department SOP/SOG; instructor review required"
+      ]
+    },
+    {
+      "id": "research-solar-array",
+      "category": "HazMat",
+      "title": "Photovoltaic System Recognition",
+      "level": [
+        "new",
+        "company",
+        "advanced"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "equipment": [
+        "Printed fictional scene or diagram",
+        "Department SOP/SOG",
+        "Research reference",
+        "Whiteboard"
+      ],
+      "goal": "Identify photovoltaic equipment and electrical uncertainties during size-up.",
+      "objectives": [
+        "Identify photovoltaic equipment and electrical uncertainties during size-up.",
+        "Communicate observations separately from assumptions",
+        "Identify a department-approved decision and reassessment trigger"
+      ],
+      "setup": [
+        "Instructor reviews linked research and local procedures",
+        "Prepare a fictional diagram or photo and assign officer, crew and observer roles",
+        "Tabletop only; no live fire, energized equipment or hazardous materials"
+      ],
+      "evolution": [
+        "Mark panels, potential equipment locations and information needed from qualified personnel.",
+        "Each participant states an observation and a missing fact",
+        "Officer explains a proposed action within local procedures and identifies safety limits",
+        "Instructor presents the inject; crew revises its plan and communicates the change"
+      ],
+      "performance": [
+        "Completes topic-specific observation task",
+        "Separates confirmed information from assumptions",
+        "Identifies relevant safety limits and communicates a reassessment trigger"
+      ],
+      "criticalErrors": [
+        "Treating an assumption as a verified condition",
+        "Proposing action outside local procedures or qualifications",
+        "Attempting a hazardous practical evolution from this tabletop"
+      ],
+      "injects": [
+        "Utility isolation is reported but array status is unknown."
+      ],
+      "remediation": "Revisit the linked research with the instructor, identify the missed cue on the diagram and repeat with a different scene.",
+      "advanced": "Repeat with incomplete information and require a concise radio update explaining the revised priorities.",
+      "aar": [
+        "Which observation mattered most for this topic?",
+        "What remained unknown?",
+        "How did the inject change your plan?"
+      ],
+      "outcome": "Crew explains the topic-specific hazard or concept and communicates a defensible, locally approved plan.",
+      "sources": [
+        "https://training.fsri.org/faq",
+        "Department SOP/SOG; instructor review required"
+      ]
+    },
+    {
+      "id": "research-battery-hazards",
+      "category": "HazMat",
+      "title": "Lithium-Ion Battery Hazard Recognition",
+      "level": [
+        "new",
+        "company",
+        "advanced"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "equipment": [
+        "Printed fictional scene or diagram",
+        "Department SOP/SOG",
+        "Research reference",
+        "Whiteboard"
+      ],
+      "goal": "Recognize potential battery involvement and communicate uncertainty.",
+      "objectives": [
+        "Recognize potential battery involvement and communicate uncertainty.",
+        "Communicate observations separately from assumptions",
+        "Identify a department-approved decision and reassessment trigger"
+      ],
+      "setup": [
+        "Instructor reviews linked research and local procedures",
+        "Prepare a fictional diagram or photo and assign officer, crew and observer roles",
+        "Tabletop only; no live fire, energized equipment or hazardous materials"
+      ],
+      "evolution": [
+        "Identify battery locations and escalation indicators on a fictional dispatch card.",
+        "Each participant states an observation and a missing fact",
+        "Officer explains a proposed action within local procedures and identifies safety limits",
+        "Instructor presents the inject; crew revises its plan and communicates the change"
+      ],
+      "performance": [
+        "Completes topic-specific observation task",
+        "Separates confirmed information from assumptions",
+        "Identifies relevant safety limits and communicates a reassessment trigger"
+      ],
+      "criticalErrors": [
+        "Treating an assumption as a verified condition",
+        "Proposing action outside local procedures or qualifications",
+        "Attempting a hazardous practical evolution from this tabletop"
+      ],
+      "injects": [
+        "A report of repeated venting is received."
+      ],
+      "remediation": "Revisit the linked research with the instructor, identify the missed cue on the diagram and repeat with a different scene.",
+      "advanced": "Repeat with incomplete information and require a concise radio update explaining the revised priorities.",
+      "aar": [
+        "Which observation mattered most for this topic?",
+        "What remained unknown?",
+        "How did the inject change your plan?"
+      ],
+      "outcome": "Crew explains the topic-specific hazard or concept and communicates a defensible, locally approved plan.",
+      "sources": [
+        "https://training.fsri.org/faq",
+        "Department SOP/SOG; instructor review required"
+      ]
+    },
+    {
+      "id": "research-refrigerant",
+      "category": "HazMat",
+      "title": "Flammable Refrigerant Awareness",
+      "level": [
+        "new",
+        "company",
+        "advanced"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "equipment": [
+        "Printed fictional scene or diagram",
+        "Department SOP/SOG",
+        "Research reference",
+        "Whiteboard"
+      ],
+      "goal": "Identify equipment labels and information gaps associated with refrigerants.",
+      "objectives": [
+        "Identify equipment labels and information gaps associated with refrigerants.",
+        "Communicate observations separately from assumptions",
+        "Identify a department-approved decision and reassessment trigger"
+      ],
+      "setup": [
+        "Instructor reviews linked research and local procedures",
+        "Prepare a fictional diagram or photo and assign officer, crew and observer roles",
+        "Tabletop only; no live fire, energized equipment or hazardous materials"
+      ],
+      "evolution": [
+        "Review sample equipment labels and locate applicable reference information.",
+        "Each participant states an observation and a missing fact",
+        "Officer explains a proposed action within local procedures and identifies safety limits",
+        "Instructor presents the inject; crew revises its plan and communicates the change"
+      ],
+      "performance": [
+        "Completes topic-specific observation task",
+        "Separates confirmed information from assumptions",
+        "Identifies relevant safety limits and communicates a reassessment trigger"
+      ],
+      "criticalErrors": [
+        "Treating an assumption as a verified condition",
+        "Proposing action outside local procedures or qualifications",
+        "Attempting a hazardous practical evolution from this tabletop"
+      ],
+      "injects": [
+        "The equipment label cannot be read."
+      ],
+      "remediation": "Revisit the linked research with the instructor, identify the missed cue on the diagram and repeat with a different scene.",
+      "advanced": "Repeat with incomplete information and require a concise radio update explaining the revised priorities.",
+      "aar": [
+        "Which observation mattered most for this topic?",
+        "What remained unknown?",
+        "How did the inject change your plan?"
+      ],
+      "outcome": "Crew explains the topic-specific hazard or concept and communicates a defensible, locally approved plan.",
+      "sources": [
+        "https://training.fsri.org/faq",
+        "Department SOP/SOG; instructor review required"
+      ]
+    },
+    {
+      "id": "research-training-exposure",
+      "category": "Firefighter Safety",
+      "title": "Training Exposure Controls",
+      "level": [
+        "new",
+        "company",
+        "advanced"
+      ],
+      "minutes": [
+        10,
+        20,
+        30
+      ],
+      "crew": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "equipment": [
+        "Printed fictional scene or diagram",
+        "Department SOP/SOG",
+        "Research reference",
+        "Whiteboard"
+      ],
+      "goal": "Review exposure prevention before and after a simulated training event.",
+      "objectives": [
+        "Review exposure prevention before and after a simulated training event.",
+        "Communicate observations separately from assumptions",
+        "Identify a department-approved decision and reassessment trigger"
+      ],
+      "setup": [
+        "Instructor reviews linked research and local procedures",
+        "Prepare a fictional diagram or photo and assign officer, crew and observer roles",
+        "Tabletop only; no live fire, energized equipment or hazardous materials"
+      ],
+      "evolution": [
+        "Map clean and contaminated areas and identify potential cross contamination.",
+        "Each participant states an observation and a missing fact",
+        "Officer explains a proposed action within local procedures and identifies safety limits",
+        "Instructor presents the inject; crew revises its plan and communicates the change"
+      ],
+      "performance": [
+        "Completes topic-specific observation task",
+        "Separates confirmed information from assumptions",
+        "Identifies relevant safety limits and communicates a reassessment trigger"
+      ],
+      "criticalErrors": [
+        "Treating an assumption as a verified condition",
+        "Proposing action outside local procedures or qualifications",
+        "Attempting a hazardous practical evolution from this tabletop"
+      ],
+      "injects": [
+        "A contaminated item enters the clean area."
+      ],
+      "remediation": "Revisit the linked research with the instructor, identify the missed cue on the diagram and repeat with a different scene.",
+      "advanced": "Repeat with incomplete information and require a concise radio update explaining the revised priorities.",
+      "aar": [
+        "Which observation mattered most for this topic?",
+        "What remained unknown?",
+        "How did the inject change your plan?"
+      ],
+      "outcome": "Crew explains the topic-specific hazard or concept and communicates a defensible, locally approved plan.",
+      "sources": [
+        "https://training.fsri.org/faq",
+        "Department SOP/SOG; instructor review required"
+      ]
+    }
+  ]
+}
