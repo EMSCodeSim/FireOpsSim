@@ -16,6 +16,16 @@
 .global-menu-icon,.global-menu-icon:before,.global-menu-icon:after{display:block;width:24px;height:2px;background:currentColor;content:""}
 .global-menu-icon{position:relative}.global-menu-icon:before{position:absolute;top:-7px}.global-menu-icon:after{position:absolute;top:7px}
 
+/* Roadmap opens these pages in the phone's browser. Keep shared companion,
+   library, calculator, support, and task-book layouts inside the viewport. */
+html,body{max-width:100%;overflow-x:clip}
+*,*::before,*::after{box-sizing:border-box}
+img,svg,video,canvas,iframe{max-width:100%}
+.shell,.wrap,.companion-wrap,.companion-grid,.c-card,.c-link,.drill,.tool-card,.roadmap-handoff-card{min-width:0}
+.c-link,.drill,.tool-card,.roadmap-handoff-card,p,li,h1,h2,h3,label{overflow-wrap:anywhere}
+input,select,textarea,button,.button{max-width:100%;font:inherit}
+.c-link,.button,button,[role="button"]{touch-action:manipulation}
+
 .career-stage-dialog{width:min(760px,calc(100% - 28px));max-height:min(86vh,760px);padding:0;border:0;border-radius:18px;background:#fff;color:#0f172a;box-shadow:0 28px 90px rgba(2,6,23,.42)}
 .career-stage-dialog::backdrop{background:rgba(2,6,23,.78);backdrop-filter:blur(3px)}
 .career-stage-card{padding:28px}
@@ -36,4 +46,12 @@
 }
 @media(max-width:640px){
   .global-nav{width:min(100% - 24px,1180px);gap:9px}.global-brand>span:last-child{display:none}.global-stage-button{max-width:150px}.global-menu-label{display:none}.global-nav-links.is-open{grid-template-columns:1fr 1fr}.career-stage-card{padding:24px 18px 20px}.career-stage-options{grid-template-columns:1fr;max-height:50vh;overflow:auto}.career-stage-footer{align-items:flex-start;flex-direction:column}.career-stage-dialog{max-height:92vh}
+  .wrap,.shell{width:min(100% - 24px,1180px)}
+  .wrap{padding-left:0!important;padding-right:0!important}
+  .wrap .card{padding:18px;border-radius:14px}
+  .companion-wrap{padding-left:12px;padding-right:12px}
+  .c-link,.button,button{min-height:44px}
+  .filters select,.filters input{width:100%;min-width:0}
+  .roadmap-handoff-actions{display:grid;width:100%;grid-template-columns:1fr}
+  .roadmap-handoff-actions .button{width:100%;text-align:center}
 }
