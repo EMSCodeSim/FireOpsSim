@@ -1,4 +1,5 @@
 [build]
+  command = "node tools/test-roadmap-learning-hub.mjs"
   publish = "."
   functions = "netlify/functions"
 
